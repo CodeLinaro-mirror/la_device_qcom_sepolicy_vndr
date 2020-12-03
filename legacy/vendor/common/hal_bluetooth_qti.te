@@ -51,6 +51,7 @@ allow hal_bluetooth self:socket create_socket_perms;
 allowxperm hal_bluetooth self:socket ioctl msm_sock_ipc_ioctls;
 allow hal_bluetooth_qti vendor_bt_data_file:dir ra_dir_perms;
 allow hal_bluetooth_qti vendor_bt_data_file:file create_file_perms;
+allow hal_bluetooth_qti sysfs_wlan_bt_profile:file w_file_perms;
 
 #bt power node access
 allow hal_bluetooth {
