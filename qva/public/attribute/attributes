@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -52,6 +52,10 @@ attribute vendor_hal_pasrmanager_server;
 attribute vendor_hal_qseecom;
 attribute vendor_hal_qseecom_client;
 attribute vendor_hal_qseecom_server;
+
+attribute vendor_agmservice;
+attribute vendor_agmservice_client;
+attribute vendor_agmservice_server;
 
 attribute vendor_hal_secureprocessor;
 attribute vendor_hal_secureprocessor_client;
