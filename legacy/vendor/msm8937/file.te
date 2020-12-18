@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,3 +27,7 @@
 
 #sysfs emmc dload type
 type sysfs_emmc_dload, sysfs_type, fs_type;
+type sysfs_fps_attr, fs_type, sysfs_type;
+type sysfs_twm, sysfs_type, fs_type;
+# vendor bgdaemon data file
+type vendor_bgdaemon_data_file, file_type, data_file_type;
