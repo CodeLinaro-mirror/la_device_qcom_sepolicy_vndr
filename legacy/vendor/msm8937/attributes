@@ -1,4 +1,4 @@
-# Copyright (c) 2016, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,14 +25,22 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#define glink display_ctrl char device
-type glink_display_ctrl_device, dev_type;
+# SideKickGraphics HAL
+attribute hal_sidekickgraphics;
+attribute hal_sidekickgraphics_client;
+attribute hal_sidekickgraphics_server;
 
-#define glink display_data char device
-type glink_display_data_device, dev_type;
-type glink_bg_daemon_device, dev_type;
-type glink_bg_daemon_ctrl_device, dev_type;
-type glink_bg_daemon_data_device, dev_type;
-type glink_bg_rsb_device, dev_type;
-type glink_sso_ctrl_device, dev_type;
-type glink_buzzer_ctrl_device, dev_type;
+# SideKickMetrics HAL
+attribute hal_sidekickmetrics;
+attribute hal_sidekickmetrics_client;
+attribute hal_sidekickmetrics_server;
+
+# SidekickUtility HAL
+attribute hal_sidekickutility;
+attribute hal_sidekickutility_client;
+attribute hal_sidekickutility_server;
+
+# Buzzer HAL
+attribute hal_buzzer;
+attribute hal_buzzer_client;
+attribute hal_buzzer_server;

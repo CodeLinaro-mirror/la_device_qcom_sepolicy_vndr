@@ -1,4 +1,4 @@
-# Copyright (c) 2016, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,14 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#define glink display_ctrl char device
-type glink_display_ctrl_device, dev_type;
+type sidekick_metrics_service, domain;
 
-#define glink display_data char device
-type glink_display_data_device, dev_type;
-type glink_bg_daemon_device, dev_type;
-type glink_bg_daemon_ctrl_device, dev_type;
-type glink_bg_daemon_data_device, dev_type;
-type glink_bg_rsb_device, dev_type;
-type glink_sso_ctrl_device, dev_type;
-type glink_buzzer_ctrl_device, dev_type;
+# Domain to run SidekickMetrics Service (com.qualcomm.qti.sidekickmetrics)
+app_domain(sidekick_metrics_service)
+
+# Allow SidekickMetrics Service to access certain system services.
+allow sidekick_metrics_service activity_service:service_manager find;
+allow sidekick_metrics_service surfaceflinger_service:service_manager find;
+
+allow sidekick_metrics_service system_app_data_file:dir { getattr search };
+
+# Allow SidekickMetrics Service to be the client sidekickmetrics HAL
+hal_client_domain(sidekick_metrics_service, hal_sidekickmetrics);

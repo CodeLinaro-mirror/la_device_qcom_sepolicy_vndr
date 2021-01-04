@@ -1,4 +1,4 @@
-# Copyright (c) 2016, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017, 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -18,21 +18,14 @@
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
 # BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
 # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
 # BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#define glink display_ctrl char device
-type glink_display_ctrl_device, dev_type;
-
-#define glink display_data char device
-type glink_display_data_device, dev_type;
-type glink_bg_daemon_device, dev_type;
-type glink_bg_daemon_ctrl_device, dev_type;
-type glink_bg_daemon_data_device, dev_type;
-type glink_bg_rsb_device, dev_type;
-type glink_sso_ctrl_device, dev_type;
-type glink_buzzer_ctrl_device, dev_type;
+type hal_sidekickgraphics_hwservice, hwservice_manager_type;
+type hal_sidekickmetrics_hwservice, hwservice_manager_type;
+type hal_sidekickutility_hwservice, hwservice_manager_type;
+type hal_buzzer_hwservice, hwservice_manager_type;

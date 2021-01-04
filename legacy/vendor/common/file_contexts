@@ -242,6 +242,7 @@
 /(vendor|system/vendor)/bin/tftp_server         u:object_r:rfs_access_exec:s0
 /(vendor|system/vendor)/bin/hvdcp               u:object_r:hvdcp_exec:s0
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
 /(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
 /(vendor|system/vendor)/bin/sec_nvm             u:object_r:sec_nvm_exec:s0
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
@@ -464,6 +465,8 @@
 /sys/devices/msm_hsic_host/host_ready                               u:object_r:sysfs_hsic_host_rdy:s0
 /sys/bus/esoc(/.*)?                                                 u:object_r:sysfs_esoc:s0
 /sys/bus/msm_subsys(/.*)?                                           u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/name         u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/state         u:object_r:sysfs_ssr:s0
 /sys/bus/msm_subsys/devices/subsys0/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys1/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys2/restart_level                   u:object_r:sysfs_ssr_toggle:s0
