@@ -1,4 +1,4 @@
-# Copyright (c) 2015, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2015, 2020-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -116,6 +116,9 @@
 
 # vendor bg_rsb
 /sys/devices(/platform)?/soc/soc:qcom,bg-rsb/enable                 u:object_r:sysfs_bg_rsb:s0
+/sys/class/pmic_twm/twm_enable                                      u:object_r:sysfs_twm:s0
+/sys/class/graphics/fb0/mdp/twm_enable                              u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/twm_enable     u:object_r:sysfs_graphics:s0
 
 #SSR nodes
 /sys/devices/platform/soc/4080000.qcom,mss/subsys[0-9]+/name        u:object_r:sysfs_ssr:s0
