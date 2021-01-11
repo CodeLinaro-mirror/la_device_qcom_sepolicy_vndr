@@ -57,6 +57,15 @@ genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.q
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,leds@d300/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8937@3:qcom,leds@d800/leds/wled u:object_r:sysfs_leds:s0
 genfscon sysfs /bus/spmi/devices/spmi0-02/200f000.qcom,spmi:qcom,pmi8937@2:vadc@3100/usbin u:object_r:sysfs_battery_supply:s0
+
+#PMI660
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/dc u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/main u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/pc_port u:object_r:sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/battery u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm660@0:qpnp,fg/power_supply/bms u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/usb u:object_r:sysfs_usb_supply:s0
+
 #PMI path
 genfscon sysfs /devices/soc/qpnp-smbcharger-16/power_supply/battery u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/soc/qpnp-smbcharger-17/power_supply/battery u:object_r:sysfs_battery_supply:s0
