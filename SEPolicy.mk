@@ -65,6 +65,11 @@ ifneq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PL
     else
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/$(TARGET_SEPOLICY_DIR)
     endif
+    ifeq ($(TARGET_SUPPORTS_ANDROID_WEAR),true)
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/sdm429w/
+    else
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/sdm429w_law
+    endif
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/test
     endif
