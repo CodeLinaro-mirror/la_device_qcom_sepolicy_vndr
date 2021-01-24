@@ -32,3 +32,15 @@ allow update_engine fuse:dir r_dir_perms;
 allow update_engine sdcard_type:dir r_dir_perms;
 allow update_engine sdcard_type:file r_file_perms;
 binder_call( update_engine, system_app )
+
+#============= update_engine ==============
+allow update_engine block_device:blk_file { getattr ioctl open read write };
+allow update_engine custom_ab_block_device:blk_file { getattr open read };
+allow update_engine firmware_file:filesystem getattr;
+allow update_engine mdtp_device:blk_file { getattr ioctl open read write };
+allow update_engine modem_block_device:blk_file { getattr ioctl open read write };
+allow update_engine xbl_block_device:blk_file { getattr ioctl open read write };
+allow update_engine block_device:blk_file { read write };
+allow update_engine firmware_file:dir search;
+allow update_engine firmware_file:filesystem getattr;
+
