@@ -59,6 +59,9 @@
 
 /vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
 
+#VETH_ipa
+/(vendor|system/vendor)/bin/init\.veth_ipa_config\.sh               u:object_r:vendor_init-veth-ipa-config-sh_exec:s0
+
 # amfs service
 /(vendor|system/vendor)/bin/amfsservice                             u:object_r:vendor_amfsservice_exec:s0
 
