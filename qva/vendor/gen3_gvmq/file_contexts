@@ -52,6 +52,7 @@
 /dev/block/vendor                                                   u:object_r:system_block_device:s0
 /dev/block/persist                                                  u:object_r:vendor_persist_block_device:s0
 /dev/block/misc                                                     u:object_r:misc_block_device:s0
+/dev/block/by-name/super                                            u:object_r:super_block_device:s0
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
