@@ -73,6 +73,9 @@ allow hal_sidekickgraphics_default sysfs_bg_rsb:file rw_file_perms;
 vndbinder_use(hal_sidekickgraphics_default);
 binder_call(hal_sidekickgraphics_default, hal_graphics_composer)
 allow hal_sidekickgraphics_default qdisplay_service:service_manager find;
+
+hal_client_domain(hal_sidekickgraphics_default, hal_wristorientation)
+
 #wakelock policy
 wakelock_use(hal_sidekickgraphics_default);
 

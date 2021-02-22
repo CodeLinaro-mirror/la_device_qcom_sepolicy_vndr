@@ -27,3 +27,10 @@
 
 # All types in /mnt/vendor/persist
 attribute vendor_persist_type;
+
+attribute hal_wristorientation;
+expandattribute hal_wristorientation true;
+attribute hal_wristorientation_client;
+expandattribute hal_wristorientation_client true;
+attribute hal_wristorientation_server;
+expandattribute hal_wristorientation_server false;
