@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -33,7 +33,7 @@ type vendor_qsta_app, domain;
 app_domain(vendor_qsta_app)
 hal_client_domain(vendor_qsta_app, vendor_hal_perf)
 r_dir_file(vendor_qsta_app, sensors_persist_file)
-get_prop(vendor_qsta_app, sensors_prop)
+get_prop(vendor_qsta_app, vendor_sensors_prop)
 
 allow vendor_qsta_app {
   app_api_service
@@ -52,4 +52,4 @@ userdebug_or_eng(`
 allow vendor_qsta_app mnt_vendor_file:dir r_dir_perms;
 allow vendor_qsta_app system_app_data_file:dir create_dir_perms;
 allow vendor_qsta_app system_app_data_file:file create_file_perms;
-allow sensors_prop vendor_default_prop:property_service set;
+allow vendor_sensors_prop vendor_default_prop:property_service set;

@@ -82,7 +82,7 @@ allow qti_init_shell self:capability {
 set_prop(qti_init_shell, freq_prop)
 set_prop(qti_init_shell, vendor_mpctl_prop)
 set_prop(qti_init_shell, vendor_bluetooth_prop)
-set_prop(qti_init_shell, sensors_prop)
+set_prop(qti_init_shell, vendor_sensors_prop)
 set_prop(qti_init_shell, vendor_msm_irqbalance_prop)
 set_prop(qti_init_shell, vendor_msm_irqbl_sdm630_prop)
 set_prop(qti_init_shell, vendor_ipacm_prop)
