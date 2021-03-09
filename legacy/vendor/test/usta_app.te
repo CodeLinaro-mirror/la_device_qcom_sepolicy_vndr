@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -33,7 +33,7 @@ type vendor_usta_app, domain, mlstrustedsubject;
 
 app_domain(vendor_usta_app)
 hal_client_domain(vendor_usta_app, vendor_hal_perf)
-get_prop(vendor_usta_app, sensors_prop)
+get_prop(vendor_usta_app, vendor_sensors_prop)
 
 #allow only vendor_usta_app with userdebug to access ioctl
 userdebug_or_eng(`
