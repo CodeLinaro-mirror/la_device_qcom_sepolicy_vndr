@@ -64,6 +64,7 @@ allow init { bt_firmware_file firmware_file }:filesystem  { relabelfrom  mount }
 allow { bt_firmware_file firmware_file  }self:filesystem associate;
 
 allow init sysfs_boot_adsp:file write;
+allow init vendor_sysfs_adsp:file write;
 allow init sysfs_slpi:file write;
 allow init sysfs_graphics:file setattr;
 

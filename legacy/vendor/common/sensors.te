@@ -113,3 +113,9 @@ get_prop(sensors, adsprpc_prop)
 allow sensors sensors_vendor_data_file:dir create_dir_perms;
 allow sensors sensors_vendor_data_file:file create_file_perms;
 allow sensors sensors_vendor_data_file:fifo_file create_file_perms;
+
+# Add wrist orientation permissions
+hal_client_domain(sensors, hal_wristorientation)
+set_prop(sensors, vendor_bg_daemon_prop);
+allow sensors vendor_sysfs_adsp:file { write open };
+get_prop(sensors, vendor_sensors_prop)
