@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -50,12 +50,17 @@ dontaudit domain kernel:system module_request;
 # For compliance testing test suite reads vendor_security_path_level
 # Which is the public readable property “ ro.vendor.build.security_patch
 get_prop(domain, vendor_security_patch_level_prop)
-neverallow {
-     coredomain
-     -init
-     -ueventd
-     -vold
-     } vendor_persist_type: { dir file } *;
 
+allow { domain - isolated_app } vendor_sysfs_kgsl:dir search;
 # Allow all context to read gpu model
 allow { domain - isolated_app } vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+allow { domain - isolated_app } vendor_sysfs_kgsl_gpubusy:file r_file_perms;
+allow { domain - isolated_app } vendor_sysfs_kgsl_max_gpuclk:file r_file_perms;
+allow { domain - isolated_app } vendor_sysfs_gpu_max_clock:file r_file_perms;
+
+neverallow {
+    coredomain
+    -init
+    -ueventd
+    -hal_graphics_composer_default
+} vendor_qmcs_file_type: { dir file } *;

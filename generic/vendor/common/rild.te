@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -59,6 +59,9 @@ get_prop(rild, vendor_dataqdp_prop)
 
 allow rild vendor_qmuxd_socket:dir w_dir_perms;
 allow rild vendor_qmuxd_socket:sock_file create_file_perms;
+
+allow rild vendor_rild_socket:dir w_dir_perms;
+allow rild vendor_rild_socket:sock_file create_file_perms;
 
 r_dir_file(rild, vendor_mbn_data_file)
 allow rild self:qipcrtr_socket create_socket_perms_no_ioctl;

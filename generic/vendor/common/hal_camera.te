@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -39,7 +39,7 @@ set_prop(hal_camera, vendor_camera_prop)
 # ignore spurious denial
 dontaudit hal_camera graphics_device:dir search;
 
-allow hal_camera vendor_camera_data_file:dir rw_dir_perms;
+allow hal_camera vendor_camera_data_file:dir create_dir_perms;
 allow hal_camera vendor_camera_data_file:file create_file_perms;
 unix_socket_connect(hal_camera, vendor_thermal, vendor_thermal-engine)
 

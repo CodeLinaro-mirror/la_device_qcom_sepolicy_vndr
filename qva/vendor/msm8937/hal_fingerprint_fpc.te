@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,37 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute vendor_hal_hbtp;
-attribute vendor_hal_hbtp_client;
-attribute vendor_hal_hbtp_server;
+type hal_fingerprint_fpc, domain;
+hal_server_domain(hal_fingerprint_fpc, hal_fingerprint)
 
-attribute vendor_hal_qdutils_disp;
-attribute vendor_hal_qdutils_disp_client;
-attribute vendor_hal_qdutils_disp_server;
+type hal_fingerprint_fpc_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_fingerprint_fpc)
 
-attribute vendor_hal_trustedui;
-attribute vendor_hal_trustedui_client;
-attribute vendor_hal_trustedui_server;
+allow hal_fingerprint_fpc input_device:chr_file r_file_perms;
+allow hal_fingerprint_fpc tee_device:chr_file rw_file_perms;
 
-attribute vendor_hal_tui_comm;
-attribute vendor_hal_tui_comm_client;
-attribute vendor_hal_tui_comm_server;
-
-attribute vendor_hal_display_color;
-attribute vendor_hal_display_color_client;
-attribute vendor_hal_display_color_server;
-
-attribute vendor_hal_display_postproc;
-attribute vendor_hal_display_postproc_client;
-attribute vendor_hal_display_postproc_server;
-
-# All types in /mnt/vendor/persist
-attribute vendor_persist_type;
-
-attribute vendor_hal_capabilityconfigstore_qti;
-attribute vendor_hal_capabilityconfigstore_qti_client;
-attribute vendor_hal_capabilityconfigstore_qti_server;
-
-attribute vendor_hal_dataconnection_qti;
-attribute vendor_hal_dataconnection_qti_client;
-attribute vendor_hal_dataconnection_qti_server;
+allow hal_fingerprint_fpc input_device:dir r_dir_perms;
+allow hal_fingerprint_fpc sysfs_fps_attr:file rw_file_perms;
+allow hal_fingerprint_fpc uhid_device:chr_file rw_file_perms;
+allow hal_fingerprint_fpc vendor_sysfs_graphics:dir r_dir_perms;
+r_dir_file(hal_fingerprint, firmware_file);
+r_dir_file(hal_fingerprint, sysfs_leds);

@@ -3,7 +3,8 @@ ifeq ($(call is-vendor-board-platform,QCOM),true)
 SEPOLICY_PATH:= $(BOARD_SEPOLICY_DIR)
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/generic/public
+    $(SEPOLICY_PATH)/generic/public \
+    $(SEPOLICY_PATH)/generic/public/attribute
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
@@ -11,7 +12,8 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/qva/public
+    $(SEPOLICY_PATH)/qva/public \
+    $(SEPOLICY_PATH)/qva/public/attribute
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
@@ -29,7 +31,7 @@ PRODUCT_PRIVATE_SEPOLICY_DIRS := \
     $(SEPOLICY_PATH)/generic/product/private \
     $(SEPOLICY_PATH)/qva/product/private
 
-ifeq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLATFORM)))
+ifeq (,$(filter sdm845 sdm710 sdm660 msm8953 msm8998, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
        $(SEPOLICY_PATH) \
@@ -45,6 +47,11 @@ ifeq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLA
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/$(TARGET_SEPOLICY_DIR)
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/$(TARGET_SEPOLICY_DIR)
     endif
+    ifeq ($(TARGET_SUPPORTS_ANDROID_WEAR),true)
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/sdm429w/
+    else
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/sdm429w_law
+    endif
 
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
@@ -52,7 +59,7 @@ ifeq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLA
     endif
 endif
 
-ifneq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter sdm845 sdm710 sdm660 msm8953 msm8998, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS := \
                  $(BOARD_SEPOLICY_DIRS) \
                  $(SEPOLICY_PATH) \
@@ -64,11 +71,6 @@ ifneq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PL
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/$(TARGET_BOARD_PLATFORM)
     else
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/$(TARGET_SEPOLICY_DIR)
-    endif
-    ifeq ($(TARGET_SUPPORTS_ANDROID_WEAR),true)
-      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/sdm429w/
-    else
-      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/sdm429w_law
     endif
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/test
