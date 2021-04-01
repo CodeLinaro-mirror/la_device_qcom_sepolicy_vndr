@@ -42,6 +42,7 @@ r_dir_file({domain - isolated_app}, vendor_sysfs_soc);
 r_dir_file({domain - isolated_app}, vendor_sysfs_esoc);
 r_dir_file({domain - isolated_app}, vendor_sysfs_ssr);
 r_dir_file({domain - isolated_app}, sysfs_thermal);
+r_dir_file({domain - isolated_app}, sysfs_socinfo);
 
 get_prop(domain, vendor_public_vendor_default_prop)
 

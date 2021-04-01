@@ -117,6 +117,7 @@
 # vendor bg_rsb
 /sys/devices(/platform)?/soc/soc:qcom,bg-rsb/enable                 u:object_r:sysfs_bg_rsb:s0
 /sys/class/pmic_twm/twm_enable                                      u:object_r:sysfs_twm:s0
+/sys/class/pmic_twm/twm_exit                                        u:object_r:sysfs_twm:s0
 /sys/class/graphics/fb0/mdp/twm_enable                              u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,mdss_mdp/twm_enable     u:object_r:vendor_sysfs_graphics:s0
 

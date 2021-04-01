@@ -121,6 +121,9 @@ genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys3/name      u:objec
 genfscon  sysfs /devices/soc/4080000.qcom,mss/subsys0/name    u:object_r:vendor_sysfs_ssr:s0
 genfscon  sysfs /devices/platform/soc/4080000.qcom,mss/subsys0/name    u:object_r:vendor_sysfs_ssr:s0
 
+#cpu-ddr devfreq nodes for K4.19.
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq u:object_r:vendor_sysfs_devfreq:s0
+
 #PM8916 FILES
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,vmbms/power_supply/bms u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:pm8916@0:qcom,charger/power_supply/usb u:object_r:vendor_sysfs_usb_supply:s0
