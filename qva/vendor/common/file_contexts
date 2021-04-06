@@ -271,3 +271,7 @@
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:vendor_wifilearnersvc_exec:s0
+
+/sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/name         u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/state        u:object_r:vendor_sysfs_ssr:s0
+/(vendor|system/vendor)/bin/bg_daemon                                   u:object_r:bg_daemon_exec:s0
