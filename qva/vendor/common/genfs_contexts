@@ -49,3 +49,4 @@ genfscon sysfs /kernel/slab/zs_handle/store_user u:object_r:vendor_sysfs_slab_zs
 genfscon sysfs /kernel/slab/zspage/store_user u:object_r:vendor_sysfs_slab_zspage_storeuser:s0
 
 genfscon sysfs /devices/platform/soc/a000000.qcom,wcnss-wlan/bt_profile u:object_r:sysfs_wlan_bt_profile:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:object_r:vendor_sysfs_devfreq:s0
