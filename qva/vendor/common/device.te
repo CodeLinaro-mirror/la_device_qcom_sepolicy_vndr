@@ -55,13 +55,7 @@ type bg_daemon_device, dev_type;
 
 type vendor_device_latency, dev_type;
 
-type custom_ab_block_device, dev_type;
-
-type xbl_block_device, dev_type;
-
 type ssd_device, dev_type;
-
-type modem_block_device, dev_type;
 
 type qdss_device, dev_type;
 
