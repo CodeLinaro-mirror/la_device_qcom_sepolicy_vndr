@@ -56,6 +56,9 @@
 /dev/coresight-tmc-etf                u:object_r:qdss_device:s0
 /dev/coresight-tmc-etr                u:object_r:qdss_device:s0
 /dev/coresight-tmc-etr-stream         u:object_r:qdss_device:s0
+/dev/wcnss_ctrl                                 u:object_r:wcnss_device:s0
+/dev/wcnss_wlan                                 u:object_r:wcnss_device:s0
+
 
 ###################################
 # Dev socket nodes
@@ -179,6 +182,9 @@
 /(vendor|system/vendor)/bin/test_diag           u:object_r:diag_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.can\.sh u:object_r:vendor_qti_init_shell_exec:s0
 
+/(vendor|system/vendor)/bin/wpa_cli             u:object_r:vendor_wcnss_service_exec:s0
+/(vendor|system/vendor)/bin/wcnss_service       u:object_r:vendor_wcnss_service_exec:s0
+
 
 #hvdcp
 /vendor/bin/hvdcp_opti                                                             u:object_r:vendor_hvdcp_exec:s0
@@ -276,3 +282,5 @@
 /sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/name         u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/state        u:object_r:vendor_sysfs_ssr:s0
 /(vendor|system/vendor)/bin/bg_daemon                                   u:object_r:bg_daemon_exec:s0
+
+

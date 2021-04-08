@@ -32,3 +32,17 @@ unix_socket_connect(vendor_wcnss_service, vendor_wigignpt, vendor_wigignpt)
 allow vendor_wcnss_service self:capability net_admin;
 allow vendor_wcnss_service kmsg_device:chr_file { write open };
 allow vendor_wcnss_service proc_net:file read;
+
+allow vendor_wcnss_service mnt_vendor_file:dir r_dir_perms;
+allow vendor_wcnss_service mnt_vendor_file:file rw_file_perms;
+allow vendor_wcnss_service sdcardfs:dir create_dir_perms;
+allow vendor_wcnss_service sdcardfs:file create_file_perms;
+allow vendor_wcnss_service rootfs:dir r_dir_perms;
+
+allow vendor_wcnss_service vendor_sysfs_data:file r_file_perms;
+allow vendor_wcnss_service fuse:dir create_dir_perms;
+allow vendor_wcnss_service fuse:file create_file_perms;
+allow vendor_wcnss_service vfat:dir create_dir_perms;
+allow vendor_wcnss_service vfat:file create_file_perms;
+allow vendor_wcnss_service wcnss_device:chr_file rw_file_perms;
+get_prop(vendor_wcnss_service, hwservicemanager_prop)
