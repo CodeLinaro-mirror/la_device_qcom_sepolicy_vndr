@@ -30,5 +30,6 @@ allow system_server resourcecache_data_file:file create_file_perms;
 
 allow system_server sysfs_virtualkeys:file r_file_perms;
 hal_client_domain(system_server, hal_sidekickgraphics);
+hal_client_domain(system_server, hal_wristorientation);
 hal_client_domain(system_server, hal_sidekickmetrics);
 hal_client_domain(system_server, hal_buzzer);
