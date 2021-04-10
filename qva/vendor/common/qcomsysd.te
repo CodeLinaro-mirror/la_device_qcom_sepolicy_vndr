@@ -47,6 +47,7 @@ allow vendor_qcomsysd self:qipcrtr_socket create_socket_perms_no_ioctl;
 use_vendor_per_mgr(vendor_qcomsysd);
 #allow qcomsysd access boot mode switch
 set_prop(vendor_qcomsysd, vendor_boot_mode_prop);
+allow vendor_qcomsysd sysfs_socinfo:file w_file_perms;
 
 #diag
 userdebug_or_eng(`
