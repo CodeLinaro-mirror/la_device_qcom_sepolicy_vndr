@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -37,6 +37,8 @@ allow tee vendor_data_qsee_file:file create_file_perms;
 allow tee graphics_device:dir r_dir_perms;
 allow tee graphics_device:chr_file r_file_perms;
 allow tee vendor_data_file:dir r_dir_perms;
+
+dontaudit tee rootfs:dir { read };
 
 wakelock_use(tee)
 r_dir_file(tee, firmware_file)

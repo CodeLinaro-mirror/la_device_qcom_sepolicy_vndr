@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -52,3 +52,6 @@ allow ueventd vendor_vm_system_file:file r_file_perms;
 
 # For wifi to access  mnt_vendor_file
 r_dir_file(ueventd, mnt_vendor_file)
+
+# for VM firmware handler
+domain_auto_trans(ueventd, vendor_vm_mgr_exec, vendor_vm_mgr)

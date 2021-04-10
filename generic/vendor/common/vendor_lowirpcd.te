@@ -24,4 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type vendor_imsuce_service,              service_manager_type;
+type vendor_lowirpcd_service, domain;
+type vendor_lowirpcd_service_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_lowirpcd_service)
+
+allow vendor_lowirpcd_service ion_device:chr_file r_file_perms;
+allow vendor_lowirpcd_service vendor_qdsp_device:chr_file r_file_perms;
+allow vendor_lowirpcd_service vendor_xdsp_device:chr_file r_file_perms;
+
+# For reading adsprpc_prop
+get_prop(vendor_lowirpcd_service, vendor_adsprpc_prop)
+
+# Access to wakelock sysfs
+wakelock_use(vendor_lowirpcd_service)
+

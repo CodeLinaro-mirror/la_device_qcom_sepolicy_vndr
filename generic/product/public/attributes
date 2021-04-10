@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,7 +28,3 @@
 attribute vendor_hal_systemhelper;
 attribute vendor_hal_systemhelper_client;
 attribute vendor_hal_systemhelper_server;
-
-attribute vendor_hal_perf;
-attribute vendor_hal_perf_client;
-attribute vendor_hal_perf_server;

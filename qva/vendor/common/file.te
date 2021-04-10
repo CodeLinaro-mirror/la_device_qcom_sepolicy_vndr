@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -56,6 +56,9 @@ type vendor_sysfs_jpeg, fs_type, sysfs_type;
 
 #vendor sysfs ddr
 type vendor_sysfs_ddr, fs_type, sysfs_type;
+
+#vendor sysfs sku version
+type vendor_sysfs_sku, fs_type, sysfs_type;
 
 # qcc-trd data files
 type vendor_qcc_trd_data_file, file_type, data_file_type;
@@ -128,11 +131,26 @@ type vendor_sysfs_bootguestvm, fs_type, sysfs_type;
 #qspm-hal
 type vendor_qspmhal_data_file, file_type, data_file_type;
 
-#Memory offlining file types
-type vendor_sysfs_memory_offline, sysfs_type, fs_type;
+#System memory file types
+type vendor_sysfs_system_memory, sysfs_type, fs_type;
 
-type vendor_sysfs_qfprom, fs_type, sysfs_type;
+# Memory offlining file types
+type vendor_sysfs_mem_offline, sysfs_type, fs_type;
 
 #slub-debug
 type vendor_sysfs_slab_zshandle_storeuser, fs_type, sysfs_type;
 type vendor_sysfs_slab_zspage_storeuser, fs_type, sysfs_type;
+
+type persist_bluetooth_file, file_type , vendor_persist_type;
+type sysfs_wlan_bt_profile, sysfs_type, fs_type;
+type vendor_fm_data_file, file_type, data_file_type;
+type sysfs_fm, sysfs_type, fs_type;
+type vendor_sidekick_hal_data_file, file_type, vendor_file_type;
+type sysfs_bg_rsb, fs_type, sysfs_type;
+type sensors_persist_file, file_type, vendor_persist_type;
+type regionalization_file, file_type , vendor_persist_type;
+type sysfs_virtualkeys, sysfs_type, fs_type;
+type sensors_socket, file_type;
+type sysfs_socinfo, fs_type, sysfs_type;
+type qlogd_socket, file_type, mlstrustedobject;
+type persist_data_file, file_type , vendor_persist_type;
