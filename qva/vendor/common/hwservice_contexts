@@ -75,3 +75,15 @@ vendor.qti.spu::ISPUManager                                  u:object_r:vendor_h
 vendor.qti.hardware.slmadapter::ISlmAdapter                  u:object_r:vendor_hal_slmadapter_hwservice:s0
 vendor.qti.hardware.perf::IPerfCallback                      u:object_r:vendor_hal_perfcallback_hwservice:s0
 vendor.qti.hardware.mwqemadapter::IMwqemAdapter              u:object_r:vendor_hal_mwqemadapter_hwservice:s0
+
+
+vendor.qti.hardware.radio.config::IConfig                    u:object_r:hal_telephony_hwservice:s0
+vendor.nxp.nxpnfclegacy::INxpNfcLegacy                       u:object_r:hal_nfc_hwservice:s0
+vendor.qti.hardware.wipower::IWipower                        u:object_r:hal_bluetooth_hwservice:s0
+vendor.qti.voiceprint::IQtiVoicePrintService                 u:object_r:vendor_hal_voiceprint_hwservice:s0
+
+vendor.qti.qcril.am::IQcRilAudio                             u:object_r:hal_telephony_hwservice:s0
+com.qualcomm.qti.ims.radio::IImsRadio                        u:object_r:hal_telephony_hwservice:s0
+com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_telephony_hwservice:s0
+vendor.qti.atcmdfwd::IAtCmdFwd                               u:object_r:vendor_hal_atfwd_hwservice:s0
+com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:vendor_hal_imsrtp_hwservice:s0
