@@ -30,5 +30,5 @@ get_prop(vold, vendor_tee_listener_prop)
 # be needed
 allow vold mnt_vendor_file:dir { open read ioctl };
 
-#============= vold ==============
 allow vold vendor_sysfs_mmc_host:file write;
+allow vold swap_block_device:blk_file r_file_perms;
