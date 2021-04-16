@@ -59,6 +59,7 @@ set_prop(hal_sidekickgraphics_default, vendor_skghal_debug_glink_read_timeout_pr
 get_prop(hal_sidekickgraphics_default, vendor_skghal_logging_prop)
 set_prop(hal_sidekickgraphics_default, vendor_lefty_prop)
 get_prop(hal_sidekickgraphics_default, vendor_sensors_prop);
+get_prop(hal_sidekickgraphics_default, wrist_orientation_prop)
 
 r_dir_file(hal_sidekickgraphics, sysfs_twm)
 allow hal_sidekickgraphics_default sysfs_twm:file w_file_perms;
