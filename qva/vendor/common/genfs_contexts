@@ -50,3 +50,7 @@ genfscon sysfs /kernel/slab/zspage/store_user u:object_r:vendor_sysfs_slab_zspag
 
 genfscon sysfs /devices/platform/soc/a000000.qcom,wcnss-wlan/bt_profile u:object_r:sysfs_wlan_bt_profile:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:object_r:vendor_sysfs_devfreq:s0
+
+#Label wakeup node for sdm429_law
+genfscon sysfs /devices/platform/soc/1b0c000.qcom,cci/1b0c000.qcom,cci:qcom,camera@1/video4linux/video2/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1b0c000.qcom,cci/1b0c000.qcom,cci:qcom,camera@0/video4linux/video1/wakeup u:object_r:sysfs_wakeup:s0
