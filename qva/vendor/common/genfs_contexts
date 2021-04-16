@@ -54,3 +54,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-latfloor/devfreq u:ob
 #Label wakeup node for sdm429_law
 genfscon sysfs /devices/platform/soc/1b0c000.qcom,cci/1b0c000.qcom,cci:qcom,camera@1/video4linux/video2/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1b0c000.qcom,cci/1b0c000.qcom,cci:qcom,camera@0/video4linux/video1/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /block/mmcblk0/bdi/read_ahead_kb                                         u:object_r:vendor_sysfs_mmc_host:s0
+genfscon sysfs /block/mmcblk0rpmb/bdi/read_ahead_kb                                     u:object_r:vendor_sysfs_mmc_host:s0
