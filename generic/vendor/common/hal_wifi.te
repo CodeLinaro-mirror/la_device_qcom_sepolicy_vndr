@@ -40,6 +40,9 @@ unix_socket_connect(hal_wifi, vendor_location, vendor_location)
 allow hal_wifi_default vendor_wifihal_socket:dir rw_dir_perms;
 allow hal_wifi_default vendor_wifihal_socket:sock_file create_file_perms;
 
+# Allow read powerctl property
+get_prop(hal_wifi_default, powerctl_prop)
+
 allow hal_wifi self:capability sys_module;
 allow hal_wifi kernel:key search;
 allow hal_wifi vendor_file:system module_load;
