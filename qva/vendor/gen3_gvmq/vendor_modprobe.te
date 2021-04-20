@@ -26,4 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_modprobe proc_cmdline:file r_file_perms;
-allow vendor_modprobe vendor_debugfs_ipc:dir search;
+
+userdebug_or_eng(`
+  allow vendor_modprobe vendor_debugfs_ipc:dir search;
+')
