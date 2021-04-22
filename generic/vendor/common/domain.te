@@ -32,9 +32,10 @@ userdebug_or_eng(`
 # to be created for memory tracking, the domain of
 # the tracked process must have permission to search
 # in /sys/kernel/debug/kgsl
-allow domain vendor_debugfs_kgsl:dir search;
-
-allow domain vendor_debugfs_ion:dir search;
+userdebug_or_eng(`
+  allow domain vendor_debugfs_kgsl:dir search;
+  allow domain vendor_debugfs_ion:dir search;
+')
 
 get_prop(domain, vendor_gralloc_prop)
 
