@@ -132,6 +132,8 @@
 /sys/devices/platform/soc/a21b000.qcom,pronto/subsys[0-9]+/name     u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/1de0000.qcom,venus/subsys[0-9]+/name      u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-9]+/name     u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-9]/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/c000000.qcom,lpass/subsys[0-9]/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
 
 #Context for bgdaemon
 /data/vendor/bgdaemon(/.*)?                                            u:object_r:vendor_bgdaemon_data_file:s0
