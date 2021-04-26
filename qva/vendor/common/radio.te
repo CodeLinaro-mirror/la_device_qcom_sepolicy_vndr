@@ -27,3 +27,5 @@
 
 #qspm
 hal_client_domain(radio, vendor_hal_qspmhal)
+
+binder_call(radio, gpuservice)
