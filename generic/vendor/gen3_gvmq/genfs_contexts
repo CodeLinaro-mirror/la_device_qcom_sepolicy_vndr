@@ -27,6 +27,10 @@
 
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:vendor_sysfs_usb_controller:s0
 
+genfscon sysfs /devices/soc/a400000.ssusb/a400000.dwc3/xhci-hcd.0.auto/usb2 u:object_r:vendor_sysfs_usb_device:s0
+genfscon sysfs /devices/soc/a400000.ssusb/a400000.dwc3/xhci-hcd.0.auto/usb3 u:object_r:vendor_sysfs_usb_device:s0
+genfscon sysfs /devices/platform/soc/a400000.ssusb/mode u:object_r:vendor_sysfs_usb_device:s0
+
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
 
