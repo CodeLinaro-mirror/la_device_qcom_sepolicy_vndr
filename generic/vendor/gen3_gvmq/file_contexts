@@ -49,6 +49,7 @@
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/wakeup(/.*)?                                                                               u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a600000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a800000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/17300000\.qcom,lpass/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/17300000\.qcom,lpass/subsys[0-9]+/wakeup(/.*)?                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/5c00000\.qcom,ssc/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
@@ -56,8 +57,10 @@
 /sys/devices/platform/soc/8300000\.qcom,turing/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/8300000\.qcom,turing/subsys[0-9]+/wakeup(/.*)?                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a800000\.ssusb/a800000\.dwc3/xhci-hcd\.2\.auto/usb2/wakeup(/.*)?                                                       u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000\.ssusb/a400000\.dwc3/xhci-hcd\.2\.auto/usb2/wakeup(/.*)?                                                       u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1c08000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a800000\.ssusb/a800000\.dwc3/xhci-hcd\.2\.auto/usb1/wakeup(/.*)?                                                       u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000\.ssusb/a400000\.dwc3/xhci-hcd\.2\.auto/usb3/wakeup(/.*)?                                                       u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/c8c000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/aae0000\.qcom,venus/wakeup(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/aae0000\.qcom,venus/subsys[0-9]+/wakeup(/.*)?                                                                          u:object_r:sysfs_wakeup:s0
