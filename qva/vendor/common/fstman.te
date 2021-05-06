@@ -80,3 +80,8 @@ allow vendor_fstman hostapd_data_file:dir rw_dir_perms;
 allow vendor_fstman hostapd_data_file:sock_file create_file_perms;
 # access capability config store
 hal_client_domain(vendor_fstman, vendor_hal_capabilityconfigstore_qti);
+
+# set call permissions for fstman service
+hwbinder_use(vendor_fstman)
+# Add open read and getattr permissions for fstman service
+get_prop( vendor_fstman, hwservicemanager_prop )
