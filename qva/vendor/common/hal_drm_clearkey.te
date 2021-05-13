@@ -33,3 +33,4 @@ init_daemon_domain(vendor_hal_drm_clearkey)
 
 hal_server_domain(vendor_hal_drm_clearkey, hal_drm)
 vndbinder_use(vendor_hal_drm_clearkey);
+allow vendor_hal_drm_clearkey dumpstate:fifo_file { write getattr };
