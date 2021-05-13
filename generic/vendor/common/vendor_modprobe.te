@@ -28,3 +28,10 @@
 domain_trans(init, vendor_modinstall-sh_exec, vendor_modprobe)
 allow vendor_modprobe vendor_shell_exec:file rx_file_perms;
 allow vendor_modprobe vendor_toolbox_exec:file rx_file_perms;
+
+allow vendor_modprobe proc_cmdline:file r_file_perms;
+
+userdebug_or_eng(`
+allow vendor_modprobe vendor_debugfs_ipc:file rw_file_perms;
+allow vendor_modprobe vendor_debugfs_ipc:dir rw_dir_perms;
+')
