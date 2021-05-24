@@ -57,3 +57,6 @@ set_prop(vendor_init, vendor_persist_dpm_prop)
 
 # WLAN dynamic detect
 get_prop(vendor_init, vendor_qcom_wlan_prop)
+
+# To get service status
+get_prop(vendor_init, default_prop)
