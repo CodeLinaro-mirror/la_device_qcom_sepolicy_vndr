@@ -65,3 +65,6 @@ hal_client_domain(hal_sensors_default, hal_graphics_allocator)
 
 # allow to read adsprpc related properties
 get_prop(hal_sensors_default, vendor_adsprpc_prop)
+
+#allow to open glink dev node
+allow hal_sensors_default vendor_glink_slate_ssc_hal_device:chr_file rw_file_perms;
