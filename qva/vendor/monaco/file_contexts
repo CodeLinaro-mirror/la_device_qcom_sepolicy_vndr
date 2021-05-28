@@ -157,8 +157,8 @@
 
 ##################################
 # same process HAL libs
-/vendor/lib(64)?/hw/vulkan\monaco\.so                           u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/gralloc\.monaco\.so                         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\bengal\.so                           u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/gralloc\.bengal\.so                         u:object_r:same_process_hal_file:s0
 
 ###################################
 # sysfs files
