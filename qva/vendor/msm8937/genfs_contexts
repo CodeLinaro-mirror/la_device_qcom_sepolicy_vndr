@@ -155,6 +155,7 @@ genfscon sysfs /devices/virtual/misc/msm_g711alaw/wakeup                        
 genfscon sysfs /devices/virtual/misc/msm_amrwbplus/wakeup                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_multi_aac/wakeup                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/78db000.usb/wakeup/wakeup                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:gpio_keys/wakeup/wakeup                   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c0f0000.msm_dig_codec/wakeup/wakeup           u:object_r:sysfs_wakeup:s0
