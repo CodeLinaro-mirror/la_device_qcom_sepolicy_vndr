@@ -43,3 +43,5 @@ hal_client_domain(mediacodec, wifidisplayhalservice)
 allow mediacodec vendor_hal_perf_hwservice:hwservice_manager find;
 binder_call(mediacodec, vendor_hal_perf_default)
 
+#Allow mediacodec to access audio HAL
+hal_client_domain(mediacodec, hal_audio)
