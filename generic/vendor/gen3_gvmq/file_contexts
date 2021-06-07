@@ -112,3 +112,6 @@
 /sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                                                     u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                                                    u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/platform/soc/8804000\.sdhci/mmc_host/mmc0/mmc0:aaaa/block/mmcblk0/queue/read_ahead_kb                                               u:object_r:vendor_sysfs_mmc_host:s0
+
+/sys/devices/platform/soc:qcom,sde-cfg:qcom,sde-sub-cfg@([0-1]):qcom,sde_kms_hyp@[a-f0-9]+/drm/card[0-9]+/card[0-9]+-DSI-1/modes    u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc:qcom,sde-cfg:qcom,sde-sub-cfg@([0-1]):qcom,sde_kms_hyp@[a-f0-9]+/drm/card[0-9]+/card[0-9]+-DSI-1/status   u:object_r:vendor_sysfs_graphics:s0
