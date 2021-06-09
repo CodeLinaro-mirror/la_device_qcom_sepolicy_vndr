@@ -85,8 +85,4 @@ allow vendor_sensors vendor_sysfs_slpi:file getattr;
 
 # Add wrist orientation permissions
 hal_client_domain(vendor_sensors, hal_wristorientation)
-set_prop(vendor_sensors, vendor_bg_daemon_prop);
-allow vendor_sensors vendor_sysfs_adsp_ssr:file { write open };
-allow vendor_sensors vendor_sysfs_ssr_toggle:file rw_file_perms;
-allow vendor_sensors vendor_sysfs_ssr:file rw_file_perms;
-set_prop(vendor_sensors, vendor_ssr_prop)
+set_prop(vendor_sensors, vendor_sensors_prop)
