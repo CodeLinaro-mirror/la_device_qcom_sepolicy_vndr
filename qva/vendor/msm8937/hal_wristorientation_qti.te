@@ -34,5 +34,7 @@ hal_server_domain(hal_wristorientation_qti, hal_wristorientation)
 
 hal_client_domain(hal_wristorientation_qti, hal_sidekickgraphics)
 
+allow hal_wristorientation_qti self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
 #wakelock policy
 wakelock_use(hal_wristorientation_qti);
