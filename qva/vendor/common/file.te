@@ -139,4 +139,6 @@ type vendor_sysfs_slab_zspage_storeuser, fs_type, sysfs_type;
 
 #camera file
 type vendor_camera_socket, file_type;
-type vendor_debugfs_kpi, debugfs_type, fs_type;
+
+#Boot KPI node
+type vendor_sysfs_kpi, sysfs_type, fs_type;

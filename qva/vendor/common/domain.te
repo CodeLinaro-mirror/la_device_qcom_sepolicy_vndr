@@ -32,7 +32,3 @@ neverallow {
    -ueventd
    -vendor_spdaemon
 } vendor_spunvm_file_type: { dir file } *;
-
-userdebug_or_eng(`
-  allow {domain -appdomain} vendor_debugfs_kpi:file rw_file_perms;
-')

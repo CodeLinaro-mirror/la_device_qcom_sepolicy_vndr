@@ -39,6 +39,4 @@ allow vendor_hal_ais_qti vendor_hab_device:chr_file rw_file_perms;
 
 add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
 
-userdebug_or_eng(`
-  allow vendor_hal_ais_qti vendor_debugfs_kpi:file rw_file_perms;
-')
+allow vendor_hal_ais_qti vendor_sysfs_kpi:file w_file_perms;
