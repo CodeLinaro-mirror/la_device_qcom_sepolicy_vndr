@@ -52,4 +52,4 @@ diag_use(hal_sidekickmetrics_default);
 allow hal_sidekickmetrics_default mnt_vendor_file:dir r_dir_perms;
 allow hal_sidekickmetrics_default sensors_persist_file:dir create_dir_perms;
 allow hal_sidekickmetrics_default sensors_persist_file:file create_file_perms;
-allow hal_sidekickmetrics_default vendor_sensors_prop:file { read open getattr };
+get_prop(hal_sidekickmetrics_default, vendor_sensors_prop)
