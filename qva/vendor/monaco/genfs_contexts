@@ -55,6 +55,34 @@ genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-01/1c40000.q
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-01/1c40000.qcom,spmi:qcom,pm2250@1:qcom,vibrator@5600/leds/vibrator u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-01/1c40000.qcom,spmi:qcom,pm2250@1:qcom,rg_leds/leds u:object_r:sysfs_leds:s0
 
+#PM5100
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:rtc@6400/rtc u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power_supply/usb u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qpnp,qbg@4f00/power_supply/bms u:object_r:vendor_sysfs_battery_supply:s0
+
+#IIO device nodes
+genfscon sysfs /bus/iio/devices u:object_r:vendor_sysfs_battery_supply:s0
+
+#PM5100 device wakeup nodes
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power_supply/usb/wakeup9 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power_supply/usb/power/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power_supply/battery/wakeup10 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power_supply/battery/power/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/wakeup/wakeup8 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/wakeup/wakeup11 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:rtc@6400/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:rtc@6400/power/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:rtc@6400/rtc/rtc0/wakeup6 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:rtc@6400/wakeup/wakeup5 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qpnp,qbg@4f00/power_supply/bms/power/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qpnp,qbg@4f00/power_supply/bms/wakeup12 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:pon_hlos@1300/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:pon_hlos@1300/power/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:pon_hlos@1300/wakeup/wakeup0 u:object_r:sysfs_wakeup:s0
+
 #qdss sysfs-node
 genfscon sysfs /devices/platform/soc/8047000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/8048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0

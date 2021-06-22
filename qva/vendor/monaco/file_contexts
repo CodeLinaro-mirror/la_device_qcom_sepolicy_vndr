@@ -171,3 +171,8 @@
 #camera
 /sys/firmware/devicetree/base/memory/ddr_device_rank_ch0               u:object_r:vendor_sysfs_ddr:s0
 /sys/firmware/devicetree/base/memory/ddr_device_type                   u:object_r:vendor_sysfs_ddr:s0
+
+# IIO devices for Charger & QBG
+/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:vadc@8000/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qpnp,qbg@4f00/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
