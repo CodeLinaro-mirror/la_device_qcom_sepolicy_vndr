@@ -43,8 +43,8 @@
 /dev/block/la_userdata                                              u:object_r:userdata_block_device:s0
 /dev/block/la_vendor                                                u:object_r:system_block_device:s0
 /dev/block/la_persist                                               u:object_r:vendor_persist_block_device:s0
-/dev/block/modem                                                    u:object_r:vendor_modem_block_device:s0
-/dev/block/bluetooth                                                u:object_r:vendor_modem_block_device:s0
+/dev/block/modem_[ab]                                               u:object_r:vendor_modem_block_device:s0
+/dev/block/bluetooth_[ab]                                           u:object_r:vendor_modem_block_device:s0
 /dev/block/la_misc                                                  u:object_r:misc_block_device:s0
 
 /dev/block/system                                                   u:object_r:system_block_device:s0
@@ -53,6 +53,7 @@
 /dev/block/persist                                                  u:object_r:vendor_persist_block_device:s0
 /dev/block/misc                                                     u:object_r:misc_block_device:s0
 /dev/block/by-name/super                                            u:object_r:super_block_device:s0
+/dev/block/vbmeta_[ab]                                              u:object_r:vendor_custom_ab_block_device:s0
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
