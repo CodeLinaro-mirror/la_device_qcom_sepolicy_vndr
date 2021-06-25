@@ -39,7 +39,6 @@ allow vendor_wcnss_service sdcardfs:dir create_dir_perms;
 allow vendor_wcnss_service sdcardfs:file create_file_perms;
 allow vendor_wcnss_service rootfs:dir r_dir_perms;
 allow vendor_wcnss_service property_socket:sock_file write;
-allow vendor_wcnss_service property_socket:unix_stream_socket connectto;
 
 allow vendor_wcnss_service vendor_sysfs_data:file r_file_perms;
 allow vendor_wcnss_service fuse:dir create_dir_perms;
@@ -48,6 +47,7 @@ allow vendor_wcnss_service vfat:dir create_dir_perms;
 allow vendor_wcnss_service vfat:file create_file_perms;
 allow vendor_wcnss_service wcnss_device:chr_file rw_file_perms;
 get_prop(vendor_wcnss_service, hwservicemanager_prop)
+set_prop(vendor_wcnss_service, vendor_wifi_prop)
 
 # Ignore these denials.
 dontaudit vendor_wcnss_service serialno_prop:file read;
