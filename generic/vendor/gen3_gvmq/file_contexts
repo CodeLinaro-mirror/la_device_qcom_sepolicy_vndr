@@ -107,8 +107,6 @@
 /sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]/wakeup(/.*)?                                                                              u:object_r:sysfs_wakeup:s0
 
-/sys/devices/virtual/block/dm-0/queue/read_ahead_kb                                                                                              u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/virtual/block/dm-1/queue/read_ahead_kb                                                                                              u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                                                     u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                                                    u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/platform/soc/8804000\.sdhci/mmc_host/mmc0/mmc0:aaaa/block/mmcblk0/queue/read_ahead_kb                                               u:object_r:vendor_sysfs_mmc_host:s0
