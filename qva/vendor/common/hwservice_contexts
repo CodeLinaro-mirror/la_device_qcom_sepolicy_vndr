@@ -90,3 +90,4 @@ com.qualcomm.qti.qcril.qcrilhook::IQtiOemHook                u:object_r:hal_tele
 vendor.qti.atcmdfwd::IAtCmdFwd                               u:object_r:vendor_hal_atfwd_hwservice:s0
 com.qualcomm.qti.imsrtpservice::IRTPService                  u:object_r:vendor_hal_imsrtp_hwservice:s0
 vendor.qti.hardware.limits::ILimits                          u:object_r:hal_thermal_hwservice:s0
+vendor.google_clockwork.displayoffload::IDisplayOffload      u:object_r:hal_displayoffload_hwservice:s0

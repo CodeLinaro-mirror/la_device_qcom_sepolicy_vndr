@@ -63,3 +63,6 @@ type vendor_dip_device, dev_type;
 type vendor_logdump_partition, dev_type;
 type vendor_rawdump_block_device, dev_type;
 type wcnss_device, dev_type;
+
+type glink_slate_display_ctrl_device, dev_type;
+type glink_slate_display_data_device, dev_type;

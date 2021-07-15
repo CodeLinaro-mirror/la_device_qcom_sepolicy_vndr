@@ -61,7 +61,8 @@
 /dev/coresight-tmc-etr-stream         u:object_r:qdss_device:s0
 /dev/wcnss_ctrl                                 u:object_r:wcnss_device:s0
 /dev/wcnss_wlan                                 u:object_r:wcnss_device:s0
-
+/dev/glink_pkt_slate_display_ctrl               u:object_r:glink_slate_display_ctrl_device:s0
+/dev/glink_pkt_slate_display_data               u:object_r:glink_slate_display_data_device:s0
 
 ###################################
 # Dev socket nodes
@@ -287,5 +288,6 @@
 /sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/name         u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/state        u:object_r:vendor_sysfs_ssr:s0
 /(vendor|system/vendor)/bin/bg_daemon                                   u:object_r:bg_daemon_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.0-service      u:object_r:hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/slatedaemon                                 u:object_r:slate_daemon_exec:s0
 
