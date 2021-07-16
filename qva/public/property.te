@@ -34,4 +34,7 @@ type vendor_bt_prop, property_type, extended_core_property_type;
 
 type vendor_sys_video_prop, property_type, extended_core_property_type;
 
+#mm-parser
+type vendor_mm_parser_prop, property_type, extended_core_property_type;
+
 type vendor_wlc_prop, property_type, extended_core_property_type;
