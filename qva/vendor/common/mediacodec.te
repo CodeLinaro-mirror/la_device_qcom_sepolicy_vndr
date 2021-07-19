@@ -38,3 +38,8 @@ allow mediacodec vendor_qdsp_device:chr_file r_file_perms;
 #Allow mediacodec to access service manager wfdnativemm_service
 allow mediacodec wfdnativemm_service:service_manager find;
 hal_client_domain(mediacodec, wifidisplayhalservice)
+
+# Allow mediacodec to access perf service
+allow mediacodec vendor_hal_perf_hwservice:hwservice_manager find;
+binder_call(mediacodec, vendor_hal_perf_default)
+
