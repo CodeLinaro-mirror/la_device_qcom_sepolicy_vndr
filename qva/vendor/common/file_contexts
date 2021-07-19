@@ -50,6 +50,8 @@
 /dev/radio0                           u:object_r:vendor_fm_radio_device:s0
 /dev/qg                               u:object_r:vendor_qg_device:s0
 /dev/qg_battery                       u:object_r:vendor_qg_device:s0
+/dev/qbg                              u:object_r:vendor_qbg_device:s0
+/dev/qbg_battery                      u:object_r:vendor_qbg_device:s0
 /dev/qvr_external_sensor_ioctl        u:object_r:vendor_qvr_external_sensor_device:s0
 /dev/bg_com_dev                       u:object_r:bg_daemon_device:s0
 /dev/slate_com_dev                    u:object_r:slate_daemon_device:s0
