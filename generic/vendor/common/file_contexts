@@ -120,6 +120,9 @@
 #senors glink dev node
 /dev/glinkpkt_slate_ssc_hal                     u:object_r:vendor_glink_slate_ssc_hal_device:s0
 
+#Vibrator offload glink dev node
+/dev/glinkpkt_slate_haptics_offload             u:object_r:vendor_glink_slate_haptics_offload_device:s0
+
 # files in /vendor
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
 /vendor/bt_firmware(/.*)?       u:object_r:vendor_firmware_file:s0
