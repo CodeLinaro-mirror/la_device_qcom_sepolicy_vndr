@@ -289,5 +289,6 @@
 /sys/devices/platform/soc/soc:qcom,blackghost/subsys[0-6]+/state        u:object_r:vendor_sysfs_ssr:s0
 /(vendor|system/vendor)/bin/bg_daemon                                   u:object_r:bg_daemon_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.0-service      u:object_r:hal_displayoffload_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonutility@1\.0-service      u:object_r:hal_aonutility_default_exec:s0
 /(vendor|system/vendor)/bin/slatedaemon                                 u:object_r:slate_daemon_exec:s0
 

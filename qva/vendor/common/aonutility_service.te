@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,16 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute wifidisplayhalservice;
-attribute wifidisplayhalservice_client;
-attribute wifidisplayhalservice_server;
+type aonutility_service, domain;
 
-# Display offload HAL
-attribute hal_displayoffload;
-attribute hal_displayoffload_client;
-attribute hal_displayoffload_server;
+# Domain to run AONUtility Service (com.qualcomm.qti.aonutility)
+app_domain(aonutility_service)
 
-# AONUtility HAL
-attribute hal_aonutility;
-attribute hal_aonutility_client;
-attribute hal_aonutility_server;
+# Allow AONUtility Service to access certain system services.
+allow aonutility_service activity_service:service_manager find;
+allow aonutility_service surfaceflinger_service:service_manager find;
+
+# Allow AONUtility Service to be the client AONUtility HAL
+hal_client_domain(aonutility_service, hal_aonutility);
