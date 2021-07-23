@@ -48,6 +48,9 @@ type vendor_fm_radio_device, dev_type;
 #define qg char device
 type vendor_qg_device, dev_type;
 
+#define qbg char device
+type vendor_qbg_device, dev_type;
+
 #define qvr external sensor device
 type vendor_qvr_external_sensor_device, dev_type;
 type bg_daemon_device, dev_type;
