@@ -55,6 +55,9 @@ allow hal_audio_default self:qipcrtr_socket create_socket_perms_no_ioctl;
 #Allow hal audio to use Binder IPC
 vndbinder_use(hal_audio)
 
+#Allow hal audio to access wakelock
+wakelock_use(hal_audio)
+
 #allow acess to wcd_cpe
 allow hal_audio vendor_sysfs_audio:file rw_file_perms;
 allow hal_audio vendor_sysfs_audio:dir r_dir_perms ;
