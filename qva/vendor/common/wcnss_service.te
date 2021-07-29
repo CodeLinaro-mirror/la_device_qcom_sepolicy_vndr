@@ -41,3 +41,10 @@ allow vendor_wcnss_service vendor_wifi_vendor_wpa_socket:sock_file create_file_p
 allow vendor_wcnss_service vendor_wifi_vendor_wpa_socket:sock_file rw_file_perms;
 allow vendor_wcnss_service vendor_wifi_vendor_wpa_socket:file create_file_perms;
 allow vendor_wcnss_service vendor_wifi_vendor_wpa_socket:file rw_file_perms;
+
+allow vendor_wcnss_service vendor_sysfs_dump_in_progress:file { getattr open read write watch };
+allow vendor_wcnss_service vendor_sysfs_dump_in_progress:dir search;
+allow vendor_wcnss_service vendor_wifihal_socket:dir { write remove_name search add_name };
+allow vendor_wcnss_service vendor_wifihal_socket:sock_file { setattr unlink create };
+allow vendor_wcnss_service wpa_data_file:sock_file write;
+allow vendor_wcnss_service hal_wifi_supplicant_default:unix_dgram_socket sendto;
