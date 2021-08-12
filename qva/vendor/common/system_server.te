@@ -61,6 +61,9 @@ hal_client_domain(system_server, vendor_hal_wifilearner);
 # allow system_server to access Qspmhal
 hal_client_domain(system_server, vendor_hal_qspmhal);
 
+# allow system_server to access Display offload hal
+hal_client_domain(system_server, hal_displayoffload);
+
 get_prop(system_server, vendor_qspm_prop)
 
 get_prop(system_server, vendor_xlat_prop)

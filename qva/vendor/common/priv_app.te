@@ -28,4 +28,5 @@
 #allow priv_app to access hal_qspmhal
 hal_client_domain(priv_app, vendor_hal_qspmhal)
 
-
+#allow priv_app to access Display offload hal
+hal_client_domain(priv_app, hal_displayoffload)

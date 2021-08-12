@@ -156,6 +156,8 @@ persist.vendor.skghal.debug.glink_read_timeout   u:object_r:vendor_skghal_debug_
 
 persist.vendor.skghal.logs.level    	     u:object_r:vendor_skghal_logging_prop:s0
 
+persist.vendor.uioffload.logs.level          u:object_r:vendor_uioffload_logging_prop:s0
+
 ro.boot.vendor.lefty          		     u:object_r:vendor_lefty_prop:s0
 
 ro.vendor.enable_haptics_twm  		     u:object_r:vendor_haptics_twm_prop:s0
