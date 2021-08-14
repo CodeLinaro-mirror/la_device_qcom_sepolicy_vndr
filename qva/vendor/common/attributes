@@ -38,3 +38,7 @@ attribute hal_displayoffload_server;
 attribute hal_aonutility;
 attribute hal_aonutility_client;
 attribute hal_aonutility_server;
+# UI offload HAL
+attribute hal_uioffload;
+attribute hal_uioffload_client;
+attribute hal_uioffload_server;
