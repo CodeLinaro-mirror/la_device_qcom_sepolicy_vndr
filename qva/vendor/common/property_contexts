@@ -125,9 +125,3 @@ ro.vendor.wlan.                         u:object_r:vendor_qcom_wlan_prop:s0
 
 # Car service property
 persist.vendor.car.                          u:object_r:vendor_car_service_prop:s0
-
-# Beluga
-ro.vendor.beluga.p                         u:object_r:vendor_exported_system_prop:s0
-ro.vendor.beluga.c                         u:object_r:vendor_exported_system_prop:s0
-ro.vendor.beluga.s                         u:object_r:vendor_exported_system_prop:s0
-ro.vendor.beluga.t                         u:object_r:vendor_exported_system_prop:s0
