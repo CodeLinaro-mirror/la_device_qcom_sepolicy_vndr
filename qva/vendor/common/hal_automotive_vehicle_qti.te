@@ -32,6 +32,7 @@ init_daemon_domain(vendor_hal_automotive_vehicle_qti)
 
 hal_server_domain(vendor_hal_automotive_vehicle_qti, hal_vehicle);
 
+allow vendor_hal_automotive_vehicle_qti vendor_sysfs_kpi:file w_file_perms;
 allow vendor_hal_automotive_vehicle_qti self:can_socket create_socket_perms;
 allowxperm vendor_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
 allow vendor_hal_automotive_vehicle_qti input_device:chr_file r_file_perms;
