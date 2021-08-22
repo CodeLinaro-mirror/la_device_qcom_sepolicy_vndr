@@ -73,3 +73,13 @@ get_prop(hal_audio, vendor_audio_prop)
 
 #to read bluetooth prop
 get_prop(hal_audio, vendor_bluetooth_prop)
+
+#allow access to uevent_socket
+allow hal_audio_default self:netlink_kobject_uevent_socket { create_socket_perms_no_ioctl };
+
+#Allow hal audio to read/write for concurrent node sysfs
+allow hal_audio_default vendor_sysfs_boost_concurrent_mode:file rw_file_perms;
+
+#Allow hal audio to read usb_supply sysfs
+allow hal_audio_default vendor_sysfs_battery_supply:dir r_dir_perms;
+allow hal_audio_default vendor_sysfs_battery_supply:file r_file_perms;
