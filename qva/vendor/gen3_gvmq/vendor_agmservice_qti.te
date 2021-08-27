@@ -1,4 +1,4 @@
-# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,6 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_audio_default vendor_hab_device:chr_file ioctl;
-allow hal_audio_default vendor_hab_device:chr_file { open read write };
-allow hal_audio_default sysfs_wake_lock:file { append open };
+allow vendor_agmservice_qti vendor_hab_device:chr_file rw_file_perms;
