@@ -42,3 +42,13 @@ attribute hal_aonutility_server;
 attribute hal_uioffload;
 attribute hal_uioffload_client;
 attribute hal_uioffload_server;
+
+# PowerState Service
+attribute vendor_hal_powerstateservice;
+attribute vendor_hal_powerstateservice_client;
+attribute vendor_hal_powerstateservice_server;
+
+# PowerState Utility
+attribute vendor_hal_powerstateutility;
+attribute vendor_hal_powerstateutility_client;
+attribute vendor_hal_powerstateutility_server;

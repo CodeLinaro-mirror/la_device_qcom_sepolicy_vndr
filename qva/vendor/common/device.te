@@ -66,3 +66,6 @@ type wcnss_device, dev_type;
 
 type glink_slate_display_ctrl_device, dev_type;
 type glink_slate_display_data_device, dev_type;
+
+#define power_state char device
+type vendor_power_state_device, dev_type;

@@ -67,3 +67,5 @@ type vendor_hal_voiceprint_hwservice, hwservice_manager_type;
 type hal_displayoffload_hwservice, hwservice_manager_type, protected_hwservice;
 type hal_aonutility_hwservice, hwservice_manager_type;
 type hal_uioffload_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_powerstateservice_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_powerstateutility_hwservice, hwservice_manager_type, protected_hwservice;
