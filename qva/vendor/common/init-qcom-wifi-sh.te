@@ -34,5 +34,12 @@ init_daemon_domain(vendor_init-qcom-wifi-sh)
 # - allow exec lspci: access /sys/bus/pci/devices & /sys/devices/platform/soc
 # - set wlan prop
 allow vendor_init-qcom-wifi-sh vendor_toolbox_exec:file rx_file_perms;
+allow vendor_init-qcom-wifi-sh self:process setexec;
+
+# To change domain to vendor_modprobe once it is executed from the script
+domain_trans(vendor_init-qcom-wifi-sh, vendor_toolbox_exec, vendor_modprobe)
+
 r_dir_file(vendor_init-qcom-wifi-sh, sysfs_type)
 set_prop(vendor_init-qcom-wifi-sh, vendor_qcom_wlan_prop);
+set_prop(vendor_init-qcom-wifi-sh, vendor_wifi_prop)
+get_prop(vendor_init, vendor_wifi_prop)
