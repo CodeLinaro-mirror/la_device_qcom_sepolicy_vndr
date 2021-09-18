@@ -43,7 +43,7 @@ vndbinder_use(hal_uioffload_default);
 binder_call(hal_uioffload_default, hal_graphics_composer)
 allow hal_uioffload_default vendor_qdisplay_service:service_manager find;
 
-get_prop(hal_uioffload_default, vendor_slate_boot_complete_prop)
+set_prop(hal_uioffload_default, vendor_slate_boot_complete_prop)
 get_prop(hal_uioffload_default, vendor_uioffload_logging_prop)
 
 #wakelock policy
