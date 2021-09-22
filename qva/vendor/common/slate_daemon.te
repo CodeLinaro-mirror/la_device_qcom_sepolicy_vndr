@@ -40,3 +40,5 @@ allow slate_daemon vendor_ssr_device:chr_file r_file_perms;
 allow slate_daemon self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 set_prop(slate_daemon, vendor_slate_daemon_prop)
 set_prop(slate_daemon, vendor_slate_boot_complete_prop)
+allow slate_daemon vendor_debugfs_ipc:dir search;
+allow slate_daemon sysfs:file { read open getattr };
