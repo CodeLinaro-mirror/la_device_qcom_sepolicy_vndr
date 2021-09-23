@@ -38,3 +38,4 @@ allow hal_aonutility slate_daemon_device:chr_file rw_file_perms;
 wakelock_use(hal_aonutility_default);
 allow hal_aonutility_default sysfs_rtc:dir search;
 allow hal_aonutility_default sysfs_rtc:file r_file_perms;
+get_prop(hal_aonutility_default, vendor_slate_boot_complete_prop);
