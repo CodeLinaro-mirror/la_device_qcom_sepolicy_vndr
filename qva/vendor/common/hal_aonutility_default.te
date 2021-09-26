@@ -34,6 +34,9 @@ type hal_aonutility_default_exec, exec_type, vendor_file_type, file_type;
 allow hal_aonutility_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 init_daemon_domain(hal_aonutility_default);
 allow hal_aonutility slate_daemon_device:chr_file rw_file_perms;
+r_dir_file(hal_aonutility, vendor_sysfs_twm)
+allow hal_aonutility_default vendor_sysfs_twm:file w_file_perms;
+
 #wakelock policy
 wakelock_use(hal_aonutility_default);
 allow hal_aonutility_default sysfs_rtc:dir search;

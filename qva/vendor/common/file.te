@@ -154,6 +154,7 @@ type sensors_socket, file_type;
 type sysfs_socinfo, fs_type, sysfs_type;
 type qlogd_socket, file_type, mlstrustedobject;
 type persist_data_file, file_type , vendor_persist_type;
+type vendor_sysfs_twm, sysfs_type, fs_type;
 
 # System power-disk file type
 type sysfs_power_disk, sysfs_type, fs_type;
