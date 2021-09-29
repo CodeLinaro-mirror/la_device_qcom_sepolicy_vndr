@@ -100,6 +100,8 @@ genfscon sysfs /devices/platform/soc/8a03000.csr/coresight-swao-csr u:object_r:v
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-lat/devfreq u:object_r:vendor_sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq u:object_r:vendor_sysfs_devfreq:s0
 
+# venus sysfs-node
+genfscon sysfs /devices/platform/soc/5ab0000.qcom,venus/wakeup u:object_r:sysfs_wakeup:s0
 
 #net sysfs
 genfscon sysfs /devices/platform/soc/c800000.qcom,icnss u:object_r:sysfs_net:s0
