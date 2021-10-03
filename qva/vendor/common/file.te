@@ -147,6 +147,7 @@ type vendor_fm_data_file, file_type, data_file_type;
 type sysfs_fm, sysfs_type, fs_type;
 type vendor_sidekick_hal_data_file, file_type, vendor_file_type;
 type sysfs_bg_rsb, fs_type, sysfs_type;
+type sysfs_slate_rsb, fs_type, sysfs_type;
 type sensors_persist_file, file_type, vendor_persist_type;
 type regionalization_file, file_type , vendor_persist_type;
 type sysfs_virtualkeys, sysfs_type, fs_type;

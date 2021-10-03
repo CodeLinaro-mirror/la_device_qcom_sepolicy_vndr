@@ -178,6 +178,8 @@
 /sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
 /sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:qpnp,qbg@4f00/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
 
+#vendor rsb
+/sys/devices(/platform)?/soc/soc:qcom,slate-rsb/enable                 u:object_r:sysfs_slate_rsb:s0
 
 #SSR nodes
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
