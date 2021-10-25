@@ -55,3 +55,5 @@ allow { domain - isolated_app } vendor_sysfs_kgsl_gpu_model:file r_file_perms;
 
 # Some process search debugfs directory to see if file is present or not, which is never present since debugfs is removed. Suppress those denials till kernel is fixed
 dontaudit { domain coredomain -dumpstate -init -vendor_init } { vendor_debugfs_ipc vendor_debugfs_kgsl }:dir search;
+
+allow {domain -appdomain} vendor_sysfs_kpi:file rw_file_perms;
