@@ -70,4 +70,6 @@ type vendor_qce_device, dev_type;
 type vendor_npu_device, dev_type;
 type vendor_qmcs_block_device, dev_type;
 type vendor_glink_slate_ssc_hal_device, dev_type;
+type vendor_glink_slate_sso_hal_device, dev_type;
+type vendor_glink_slate_ssc_usta_device, dev_type;
 type vendor_glink_slate_haptics_offload_device, dev_type;
