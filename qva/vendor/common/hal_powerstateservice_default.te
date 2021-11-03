@@ -49,3 +49,4 @@ allow vendor_hal_powerstateservice_qti slate_daemon_device:chr_file rw_file_perm
 allow vendor_hal_powerstateservice_qti self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 hal_client_domain(vendor_hal_powerstateservice_qti, vendor_hal_powerstateutility)
+allow vendor_hal_powerstateservice_qti sysfs_power:file rw_file_perms;
