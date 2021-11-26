@@ -64,6 +64,7 @@
 /dev/glink_pkt_slate_display_ctrl               u:object_r:glink_slate_display_ctrl_device:s0
 /dev/glink_pkt_slate_display_data               u:object_r:glink_slate_display_data_device:s0
 /dev/power_state                      u:object_r:vendor_power_state_device:s0
+/dev/glink_pkt_slate_ux_ctl          u:object_r:glink_slate_ux_ctl_device:s0
 
 ###################################
 # Dev socket nodes
