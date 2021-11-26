@@ -54,3 +54,6 @@ allow hal_sidekickmetrics_default sensors_persist_file:dir create_dir_perms;
 allow hal_sidekickmetrics_default sensors_persist_file:file create_file_perms;
 allow hal_sidekickmetrics_default vendor_glink_slate_sso_hal_device:chr_file rw_file_perms;
 get_prop(hal_sidekickmetrics_default, vendor_sensors_prop)
+
+#Allow sidekickmetrics hal to interact with powerStateService
+hal_client_domain(hal_sidekickmetrics_default, vendor_hal_powerstateservice);
