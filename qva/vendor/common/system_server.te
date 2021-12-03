@@ -67,6 +67,9 @@ hal_client_domain(system_server, hal_displayoffload);
 # allow system_server to access UI offload hal
 hal_client_domain(system_server, hal_uioffload);
 
+# allow system_server to access AONUtility hal
+hal_client_domain(system_server, hal_aonutility);
+
 get_prop(system_server, vendor_qspm_prop)
 
 get_prop(system_server, vendor_xlat_prop)
