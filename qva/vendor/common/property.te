@@ -123,3 +123,4 @@ vendor_internal_prop(vendor_haptics_twm_prop);
 
 vendor_internal_prop(vendor_audio_twm_prop);
 vendor_internal_prop(camera_prop);
+vendor_internal_prop(qc_aon_prop);

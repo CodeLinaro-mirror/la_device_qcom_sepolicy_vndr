@@ -46,6 +46,8 @@ allow hal_uioffload_default vendor_qdisplay_service:service_manager find;
 set_prop(hal_uioffload_default, vendor_slate_boot_complete_prop)
 get_prop(hal_uioffload_default, vendor_uioffload_logging_prop)
 
+get_prop(hal_uioffload_default, qc_aon_prop)
+
 #wakelock policy
 wakelock_use(hal_uioffload_default);
 allow hal_uioffload_default vendor_sysfs_drm:file { open read };

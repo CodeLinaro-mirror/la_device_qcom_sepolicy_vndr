@@ -52,5 +52,7 @@ get_prop(hal_displayoffload_default, vendor_uioffload_logging_prop)
 get_prop(hal_displayoffload_default, wrist_orientation_prop)
 hal_client_domain(hal_displayoffload_default, hal_wristorientation)
 
+get_prop(hal_displayoffload_default, qc_aon_prop)
+
 #wakelock policy
 wakelock_use(hal_displayoffload_default);
