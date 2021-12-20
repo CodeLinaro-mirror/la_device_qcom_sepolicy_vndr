@@ -164,3 +164,5 @@ ro.boot.vendor.lefty          		     u:object_r:vendor_lefty_prop:s0
 ro.vendor.enable_haptics_twm  		     u:object_r:vendor_haptics_twm_prop:s0
 
 ro.vendor.enable_audio_twm  		     u:object_r:vendor_audio_twm_prop:s0
+
+ro.vendor.qc_aon_presence                    u:object_r:qc_aon_prop:s0
