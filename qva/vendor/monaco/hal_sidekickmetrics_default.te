@@ -57,3 +57,7 @@ get_prop(hal_sidekickmetrics_default, vendor_sensors_prop)
 
 #Allow sidekickmetrics hal to interact with powerStateService
 hal_client_domain(hal_sidekickmetrics_default, vendor_hal_powerstateservice);
+
+#Allow sidekickmetrics hal to access sensorstore
+allow hal_sidekickmetrics_default block_device:dir search;
+allow hal_sidekickmetrics_default vendor_sensorstore_block_device:blk_file rw_file_perms;
