@@ -40,7 +40,7 @@ allow vendor_ais_server vendor_camera_socket:sock_file create_file_perms;
 allow vendor_ais_server video_device:chr_file rw_file_perms;
 allow vendor_ais_server hal_tv_input_default:unix_dgram_socket sendto;
 allow vendor_ais_server vendor_qcarcam_edrm_rvc:fd use;
-allow vendor_ais_server ais_v4l2_proxy:fd use;
+allow vendor_ais_server vendor_ais_v4l2_proxy:fd use;
 allow vendor_ais_server devpts:chr_file { read write };
 # gpu resources
 allow vendor_ais_server gpu_device:chr_file rw_file_perms;
@@ -50,7 +50,7 @@ allow vendor_ais_server ion_device:chr_file r_file_perms;
 allow vendor_ais_server vendor_camera_socket:file create;
 allow vendor_ais_server vendor_camera_socket:file unlink;
 # To connect v4l2 proxy service
-allow vendor_ais_server ais_v4l2_proxy:unix_stream_socket { read write };
+allow vendor_ais_server vendor_ais_v4l2_proxy:unix_stream_socket { read write };
 
 allow vendor_ais_server su:fifo_file read;
 allow vendor_ais_server self:qipcrtr_socket create_socket_perms;
