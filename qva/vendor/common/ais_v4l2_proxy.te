@@ -26,20 +26,20 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # ais_v4l2_proxy service
-type ais_v4l2_proxy, domain;
-type ais_v4l2_proxy_exec, exec_type, file_type, vendor_file_type;
+type vendor_ais_v4l2_proxy, domain;
+type vendor_ais_v4l2_proxy_exec, exec_type, file_type, vendor_file_type;
 
-init_daemon_domain(ais_v4l2_proxy)
+init_daemon_domain(vendor_ais_v4l2_proxy)
 
 userdebug_or_eng(`
-allow ais_v4l2_proxy su:unix_dgram_socket sendto;
+allow vendor_ais_v4l2_proxy su:unix_dgram_socket sendto;
 ')
-hal_client_domain(ais_v4l2_proxy, hal_graphics_allocator)
-allow ais_v4l2_proxy video_device:chr_file rw_file_perms;
-allow ais_v4l2_proxy ion_device:chr_file r_file_perms;
-allow ais_v4l2_proxy vendor_ais_server:unix_stream_socket connectto;
-allow ais_v4l2_proxy hal_tv_input_default:unix_dgram_socket sendto;
-allow ais_v4l2_proxy audio_device:chr_file { rw_file_perms };
-allow ais_v4l2_proxy vendor_camera_socket:dir search;
-allow ais_v4l2_proxy vendor_camera_socket:sock_file create_file_perms;
-allow ais_v4l2_proxy vendor_sysfs_kpi:file w_file_perms;
+hal_client_domain(vendor_ais_v4l2_proxy, hal_graphics_allocator)
+allow vendor_ais_v4l2_proxy video_device:chr_file rw_file_perms;
+allow vendor_ais_v4l2_proxy ion_device:chr_file r_file_perms;
+allow vendor_ais_v4l2_proxy vendor_ais_server:unix_stream_socket connectto;
+allow vendor_ais_v4l2_proxy hal_tv_input_default:unix_dgram_socket sendto;
+allow vendor_ais_v4l2_proxy audio_device:chr_file { rw_file_perms };
+allow vendor_ais_v4l2_proxy vendor_camera_socket:dir search;
+allow vendor_ais_v4l2_proxy vendor_camera_socket:sock_file create_file_perms;
+allow vendor_ais_v4l2_proxy vendor_sysfs_kpi:file w_file_perms;
