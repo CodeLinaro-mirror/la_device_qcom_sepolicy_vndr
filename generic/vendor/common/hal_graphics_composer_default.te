@@ -104,3 +104,6 @@ hal_client_domain(hal_graphics_composer_default, vendor_hal_perf);
 # Remove this when QMI service moves to pfmd
 allow hal_graphics_composer self:{ socket qipcrtr_socket } create_socket_perms;
 allowxperm hal_graphics_composer self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+#Allow access to comm_service and Hwbinder
+get_prop(hal_graphics_composer_default, vendor_display_notch_prop)
