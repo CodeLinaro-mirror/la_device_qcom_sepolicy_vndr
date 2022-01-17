@@ -130,6 +130,7 @@
 /dev/block/platform/soc/4744000.sdhci/by-name/uefisecapp_[ab]   u:object_r:vendor_uefi_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/recovery_[ab]     u:object_r:recovery_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/vbmeta_system_[ab] u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/sensorstore       u:object_r:vendor_sensorstore_block_device:s0
 
 #non A/B
 /dev/block/platform/soc/4744000.sdhci/by-name/system            u:object_r:system_block_device:s0
@@ -153,9 +154,6 @@
 /dev/block/platform/soc/4744000.sdhci/by-name/storsec           u:object_r:boot_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/persist           u:object_r:vendor_persist_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/super             u:object_r:super_block_device:s0
-
-#sensorstore block device
-/dev/block/mmcblk.* u:object_r:vendor_sensorstore_block_device:s0
 
 # FBE
 /vendor/bin/init.qti.qseecomd.sh                                u:object_r:vendor_init-qti-fbe-sh_exec:s0
