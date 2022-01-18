@@ -26,45 +26,45 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #allow access to sysfs to know HDMI repeater state
-allow wfdservice vendor_sysfs_graphics:file rw_file_perms;
-allow wfdservice vendor_sysfs_graphics:dir r_dir_perms;
+allow vendor_wfdservice vendor_sysfs_graphics:file rw_file_perms;
+allow vendor_wfdservice vendor_sysfs_graphics:dir r_dir_perms;
 
 #Allow hardware binder use
-hwbinder_use(wfdservice)
-get_prop(wfdservice, hwservicemanager_prop)
+hwbinder_use(vendor_wfdservice)
+get_prop(vendor_wfdservice, hwservicemanager_prop)
 
 #Allow hal graphics mapper permissions
-hal_client_domain(wfdservice, hal_graphics_composer);
+hal_client_domain(vendor_wfdservice, hal_graphics_composer);
 
 #Allow hal graphics allocator permissions
-hal_client_domain(wfdservice, hal_graphics_allocator);
+hal_client_domain(vendor_wfdservice, hal_graphics_allocator);
 
-hal_client_domain(wfdservice, wifidisplayhalservice);
+hal_client_domain(vendor_wfdservice, wifidisplayhalservice);
 
 #Denial seen - SELinux : avc:  denied  { find } for interface=com.qualcomm.qti.wifidisplayhal::IHDCPSession
-#pid=3530 scontext=u:r:wfdservice:s0 tcontext=u:object_r:wifidisplayhalservice_hwservice:s0 tclass=hwservice_manager
-allow wfdservice wifidisplayhalservice_hwservice:hwservice_manager find;
+#pid=3530 scontext=u:r:vendor_wfdservice:s0 tcontext=u:object_r:wifidisplayhalservice_hwservice:s0 tclass=hwservice_manager
+allow vendor_wfdservice wifidisplayhalservice_hwservice:hwservice_manager find;
 
 #Allow for property access
-get_prop(wfdservice, vendor_gralloc_prop)
-get_prop(wfdservice, vendor_video_prop)
+get_prop(vendor_wfdservice, vendor_gralloc_prop)
+get_prop(vendor_wfdservice, vendor_video_prop)
 
 # Add the rule for wfd to access /proc/asound/pcm file
-r_dir_file(wfdservice, proc_asound)
+r_dir_file(vendor_wfdservice, proc_asound)
 
 # Add the rule for wfd to access /proc/asound/card0/state file
-r_dir_file(wfdservice, vendor_proc_audiod)
+r_dir_file(vendor_wfdservice, vendor_proc_audiod)
 
 # Fix sink avc denials
-allow wfdservice mediametrics:binder call;
-allow wfdservice vendor_audio_prop:file read;
-#allow wfdservice vendor_mm_osal_prop:file read;
-allow wfdservice vendor_audio_prop:file open;
-#allow wfdservice vendor_mm_osal_prop:file open;
-allow wfdservice vendor_audio_prop:file getattr;
-#allow wfdservice vendor_mm_osal_prop:file getattr;
+allow vendor_wfdservice mediametrics:binder call;
+allow vendor_wfdservice vendor_audio_prop:file read;
+#allow vendor_wfdservice vendor_mm_osal_prop:file read;
+allow vendor_wfdservice vendor_audio_prop:file open;
+#allow vendor_wfdservice vendor_mm_osal_prop:file open;
+allow vendor_wfdservice vendor_audio_prop:file getattr;
+#allow vendor_wfdservice vendor_mm_osal_prop:file getattr;
 
 # Fix source avc denials
-allow wfdservice vendor_default_prop:file read;
-allow wfdservice vendor_default_prop:file open;
-allow wfdservice vendor_default_prop:file getattr;
+allow vendor_wfdservice vendor_default_prop:file read;
+allow vendor_wfdservice vendor_default_prop:file open;
+allow vendor_wfdservice vendor_default_prop:file getattr;
