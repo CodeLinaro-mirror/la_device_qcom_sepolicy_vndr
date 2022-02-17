@@ -142,3 +142,6 @@ ro.vendor.qti.soc_name       u:object_r:vendor_soc_name_prop:s0
 persist.vendor.console.silent.config    u:object_r:vendor_console_log_level_prop:s0
 
 vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0
+
+#Property for CtsSecurityHostTestCases  android.security.cts.SELinuxHostTest#testNoBugreportDenials
+persist.dumpstate.verbose_logging.enabled   u:object_r:hal_dumpstate_default_prop:s0
