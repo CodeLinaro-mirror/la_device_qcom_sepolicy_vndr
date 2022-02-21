@@ -82,7 +82,7 @@
 /sys/devices/platform/soc/20000\.qcom,ethernet/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/9800000\.qcom,npu/subsys[0-9]+/wakeup(/.*)?                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,kgsl-hyp/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/wakeup(/.*)?                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1e00000\.qcom,ipa/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,ipa_fws/wakeup(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
@@ -101,10 +101,30 @@
 /sys/devices/virtual/diag/diag/wakeup[0-9]*(/.*)?                                                                                                u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:gpio_keys/wakeup(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
 
-/sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]/wakeup(/.*)?                                                                          u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]/wakeup(/.*)?                                                                              u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]+/wakeup(/.*)?                                                                         u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]+/wakeup(/.*)?                                                                            u:object_r:sysfs_wakeup:s0
 
 /sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                                                     u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                                                    u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/platform/soc/[a-f0-9]+\.sdhci/mmc_host/mmc[0-9]+/mmc[0-9]+:[a-f0-9]+/block/mmcblk[0-9]+/queue/read_ahead_kb                         u:object_r:vendor_sysfs_mmc_host:s0
+
+
+# HGH specific nodes
+/dev/block/platform/300582000\.virtio-scsi/by-name/system                                                                                        u:object_r:system_block_device:s0
+/dev/block/platform/300582000\.virtio-scsi/by-name/vendor                                                                                        u:object_r:system_block_device:s0
+/dev/block/platform/300582000\.virtio-scsi/by-name/persist                                                                                       u:object_r:vendor_persist_block_device:s0
+/dev/block/platform/300582000\.virtio-scsi/by-name/userdata                                                                                      u:object_r:userdata_block_device:s0
+/dev/block/platform/300582000\.virtio-scsi/by-name/modem                                                                                         u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/300582000\.virtio-scsi/by-name/bluetooth                                                                                     u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/300582000\.virtio-scsi/by-name/vbmeta                                                                                        u:object_r:vendor_custom_ab_block_device:s0
+
+/sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/name                                                                                     u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/restart_level                                                                            u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/a80000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/soc:vm_cnss_pcie/wakeup(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
+
+/sys/devices/platform/soc/soc:qcom,sde_kms_hyp@[a-f0-9]+/backlight(/.*)?                                                                         u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/soc:qcom,sde_kms_hyp@[a-f0-9]+/drm/card[0-9]+/card[0-9]+-DSI-1/modes                                                   u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/soc:qcom,sde_kms_hyp@[a-f0-9]+/drm/card[0-9]+/card[0-9]+-DSI-1/status                                                  u:object_r:vendor_sysfs_graphics:s0
