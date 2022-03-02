@@ -96,6 +96,7 @@
 /dev/nq-nci                                     u:object_r:nfc_device:s0
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:vendor_wlan_device:s0
+/dev/ks_usb_bridge                              u:object_r:vendor_ks_device:s0
 /dev/socket/qmux_radio(/.*)?                    u:object_r:vendor_qmuxd_socket:s0
 /dev/socket/qcrild(/.*)?                        u:object_r:vendor_rild_socket:s0
 /data/vendor/modem_config(/.*)?                 u:object_r:vendor_mbn_data_file:s0
@@ -525,3 +526,6 @@
 /(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 
 /vendor/bin/embmsslServer       u:object_r:vendor_hal_embmssl_qti_exec:s0
+
+#ks application for loading wlan firmware
+/vendor/bin/ks                                              u:object_r:ks_exec:s0

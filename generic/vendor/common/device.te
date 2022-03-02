@@ -67,3 +67,4 @@ type vendor_uefi_block_device, dev_type;
 type vendor_qce_device, dev_type;
 type vendor_npu_device, dev_type;
 type vendor_qmcs_block_device, dev_type;
+type vendor_ks_device, dev_type;

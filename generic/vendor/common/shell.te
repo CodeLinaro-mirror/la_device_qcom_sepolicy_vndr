@@ -30,5 +30,11 @@ hal_client_domain(shell, vendor_hal_dspmanager)
 
 get_prop(shell, vendor_opengles_prop)
 
+# allow shell users to access firmware path
+allow shell ks_exec:file { entrypoint open read execute getattr map };
+allow shell vendor_ks_device:chr_file rw_file_perms;
+allow shell firmware_file:dir r_dir_perms;
+allow shell firmware_file:file r_file_perms;
+
 # allow shell users to control kgsl perfcounters
 allow shell vendor_sysfs_kgsl_shell:file rw_file_perms;
