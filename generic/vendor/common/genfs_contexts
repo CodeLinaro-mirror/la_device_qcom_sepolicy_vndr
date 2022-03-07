@@ -132,7 +132,6 @@ genfscon sysfs /kernel/boot_kpi/kpi_values                  u:object_r:vendor_sy
 
 genfscon debugfs /kgsl/proc                           u:object_r:vendor_debugfs_kgsl:s0
 genfscon debugfs /clk/debug_suspend                   u:object_r:vendor_debugfs_clk:s0
-genfscon debugfs /wlan0                               u:object_r:vendor_debugfs_wlan:s0
 
 genfscon debugfs /rpm_stats                           u:object_r:vendor_debugfs_rpm:s0
 genfscon debugfs /rpm_master_stats                    u:object_r:vendor_debugfs_rpm:s0

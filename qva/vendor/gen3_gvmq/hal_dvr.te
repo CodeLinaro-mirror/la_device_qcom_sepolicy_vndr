@@ -25,6 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# DVR
-type vendor_dvr_pipe_file, file_type;
-type vendor_dvr_mux_file, file_type;
+type vendor_hal_dvr_qti, domain;
+type vendor_hal_dvr_qti_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(vendor_hal_dvr_qti, vendor_hal_dvr)
+init_daemon_domain(vendor_hal_dvr_qti)
+
+binder_call(vendor_hal_dvr_client, vendor_hal_dvr_server)
+binder_call(vendor_hal_dvr_server, vendor_hal_dvr_client)
+add_hwservice(vendor_hal_dvr_server, vendor_hal_dvr_hwservice)
+
+allow vendor_hal_dvr_qti vendor_hab_device:chr_file rw_file_perms;
+hal_client_domain(vendor_hal_dvr_qti, hal_graphics_allocator)
+allow vendor_hal_dvr_qti vendor_dvr_pipe_file:dir create_dir_perms;
+allow vendor_hal_dvr_qti vendor_dvr_pipe_file:fifo_file create_file_perms;
+allow vendor_hal_dvr_qti mnt_vendor_file:dir search;
+allow vendor_hal_dvr_qti mnt_vendor_file:dir r_dir_perms;
