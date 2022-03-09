@@ -127,7 +127,12 @@
 
 /sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/name                                                                                     u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/restart_level                                                                            u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:vm_cnss_qca6390/subsys[0-9]+/name                                                                                  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:vm_cnss_qca6390/subsys[0-9]+/restart_level                                                                         u:object_r:vendor_sysfs_ssr_toggle:s0
 
 /sys/devices/platform/soc/a80000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:vm_cnss_pcie/wakeup(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/c80000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/soc:vm_cnss_qca6390/wakeup(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/soc:vm_cnss_qca6390/subsys[0-9]+/wakeup(/.*)?                                                                          u:object_r:sysfs_wakeup:s0
