@@ -35,5 +35,6 @@ allow powerstatemanager_service { activity_service bluetooth_manager_service sur
 allow powerstatemanager_service system_app_data_file:dir create_dir_perms;
 allow powerstatemanager_service system_app_data_file:{ file lnk_file } create_file_perms;
 allow powerstatemanager_service fs_bpf:dir search;
+get_prop(powerstatemanager_service,qc_aon_prop);
 
 hal_client_domain(powerstatemanager_service, vendor_hal_powerstateservice)
