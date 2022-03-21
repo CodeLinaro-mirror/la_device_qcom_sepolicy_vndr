@@ -48,5 +48,8 @@ allow vendor_audiod vendor_audio_hal_plugin_service_service:service_manager find
 binder_call(vendor_audiod, vendor_audio_hal_plugin_service)
 vndbinder_use(vendor_audiod)
 
+get_prop(vendor_audiod, vendor_audio_prop)
+set_prop(vendor_audiod, vendor_audio_prop)
+
 wakelock_use(vendor_audiod);
 allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;
