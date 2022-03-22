@@ -64,6 +64,7 @@ userdebug_or_eng(`
   #dontaudit vendor-qti-testscripts domain:debuggerd *;
   dontaudit vendor-qti-testscripts domain:drmservice *;
   dontaudit vendor-qti-testscripts unlabeled:filesystem *;
+  dontaudit vendor-qti-testscripts persist_debug_prop:file read;
   #super_user - end
 
   #Added below rule in same file to keep all debug policies

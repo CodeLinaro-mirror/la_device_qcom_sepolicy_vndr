@@ -43,6 +43,12 @@ allow hal_aonutility_default glink_slate_ux_ctl_device:chr_file rw_file_perms;
 get_prop(hal_aonutility_default, wrist_orientation_prop)
 hal_client_domain(hal_aonutility_default, hal_wristorientation)
 
+get_prop(hal_aonutility_default, vendor_watch_orientation_prop)
+hal_client_domain(hal_aonutility_default, hal_watchorientation)
+
+#Allow qipcrtr socket permisison
+allow hal_aonutility_default self:qipcrtr_socket create_socket_perms_no_ioctl;
+
 #wakelock policy
 wakelock_use(hal_aonutility_default);
 allow hal_aonutility_default sysfs_rtc:dir search;
