@@ -59,3 +59,7 @@ r_dir_file(hal_bluetooth_default, mnt_vendor_file)
 
 # Access lbsoc_helper to bluetooth
 use_libsoc_helper(hal_bluetooth_default)
+
+# Access socket
+allow hal_bluetooth_default self:bluetooth_socket { bind create read write };
+allow hal_bluetooth_default sysfs:file write;
