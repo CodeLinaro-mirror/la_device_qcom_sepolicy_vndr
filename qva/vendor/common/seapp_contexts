@@ -36,3 +36,6 @@ user=_app seinfo=platform name=com.qualcomm.qti.aonutility domain=aonutility_ser
 
 #Add new domain for powerstatemanager services
 user=_app seinfo=platform name=com.qualcomm.qti.powerstatemanagerservice domain=powerstatemanager_service type=app_data_file levelFrom=all
+
+#Add new domain for offloadsensor services
+user=_app seinfo=platform name=com.qualcomm.qti.offloadsensorservice domain=offload_sensor_service type=app_data_file levelFrom=all

@@ -49,6 +49,8 @@ allow hal_displayoffload_default vendor_sysfs_drm:file r_file_perms;
 set_prop(hal_displayoffload_default, vendor_slate_boot_complete_prop)
 get_prop(hal_displayoffload_default, vendor_uioffload_logging_prop)
 
+set_prop(hal_displayoffload_default, vendor_lefty_prop)
+
 get_prop(hal_displayoffload_default, wrist_orientation_prop)
 hal_client_domain(hal_displayoffload_default, hal_wristorientation)
 

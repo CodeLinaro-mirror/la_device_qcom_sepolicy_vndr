@@ -37,5 +37,8 @@ hal_client_domain(bluetooth, vendor_hal_bluetooth_dun);
 #allow bluetooth to access qspmhal
 hal_client_domain(bluetooth, vendor_hal_qspmhal)
 
+#allow bluetooth to access bluetooth_offload
+hal_client_domain(bluetooth, vendor_hal_bluetooth_offload)
+
 #allow bluetooth to make binder call to gpuservice
 binder_call(bluetooth, gpuservice);
