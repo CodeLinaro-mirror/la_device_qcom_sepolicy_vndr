@@ -40,6 +40,7 @@ allow vendor_ais_server vendor_camera_socket:sock_file create_file_perms;
 allow vendor_ais_server video_device:chr_file rw_file_perms;
 allow vendor_ais_server hal_tv_input_default:unix_dgram_socket sendto;
 allow vendor_ais_server vendor_qcarcam_edrm_rvc:fd use;
+allow vendor_ais_server self:qipcrtr_socket create;
 # gpu resources
 allow vendor_ais_server gpu_device:chr_file rw_file_perms;
 allow vendor_ais_server graphics_device:chr_file { ioctl open read write };
