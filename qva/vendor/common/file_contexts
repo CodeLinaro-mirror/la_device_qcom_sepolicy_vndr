@@ -158,7 +158,9 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.2-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:vendor_hal_perf_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service  u:object_r:vendor_hal_automotive_vehicle_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.[0-2]-service        u:object_r:vendor_hal_perf_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
 /(vendor|system/vendor)/bin/mm-audio-ftm                                           u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:vendor_qrtr_exec:s0
 /(vendor|system/vendor)/bin/spdaemon                                               u:object_r:vendor_spdaemon_exec:s0
@@ -315,15 +317,11 @@
 /dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
 /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
-# EVS and Qcarcam HAL
-/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais     u:object_r:vendor_hal_evs_driver_exec:s0
+# Qcarcam HAL
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service    u:object_r:vendor_hal_ais_qti_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0
-
-# Car power daemon
-/(vendor|system/vendor)/bin/car_power_daemon                        u:object_r:vendor_carpowerd_exec:s0
 
 # Dynamic splash
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:vendor_esplash_exec:s0
