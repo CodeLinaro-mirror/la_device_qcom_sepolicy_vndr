@@ -1,0 +1,123 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted (subject to the limitations in the
+# disclaimer below) provided that the following conditions are met:
+#
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#
+#    * Redistributions in binary form must reproduce the above
+#      copyright notice, this list of conditions and the following
+#      disclaimer in the documentation and/or other materials provided
+#      with the distribution.
+#
+#    * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
+#      contributors may be used to endorse or promote products derived
+#      from this software without specific prior written permission.
+#
+# NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+type vendor_smq_app, domain;
+type vendor_smq_app_exec, file_type, vendor_file_type, exec_type;
+app_domain(vendor_smq_app)
+#init_daemon_domain(vendor_smq_app)
+
+#vendor_smq_app sets socket
+allow vendor_smq_app dnsproxyd_socket:sock_file write;
+allow vendor_smq_app fwmarkd_socket:sock_file write;
+allow vendor_smq_app netd:unix_stream_socket connectto;
+allow vendor_smq_app port:tcp_socket name_connect;
+allow vendor_smq_app self:tcp_socket { write getattr connect read getopt create };
+
+vndbinder_use(vendor_smq_app)
+
+allow vendor_smq_app vendor_smq_app_data_file:file create_file_perms;
+allow vendor_smq_app vendor_smq_app_data_file:dir create_dir_perms;
+
+# access to /dev/ramdump_microdump_modem
+allow vendor_smq_app vendor_ramdump_microdump_modem_device:chr_file r_file_perms;
+
+# cpustats
+# access to /sys/class/power_supply/bms/charge_counter
+# access to /sys/class/power_supply/battery/capacity
+# access to /sys/class/power_supply/battery/status
+allow vendor_smq_app vendor_sysfs_battery_supply:{file lnk_file} r_file_perms;
+allow vendor_smq_app vendor_sysfs_battery_supply:dir r_dir_perms;
+
+# gpustats
+# /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage
+# /sys/class/kgsl/kgsl-3d0/gpuclk
+# /sys/class/kgsl/kgsl-3d0/gpu_clock_stats
+# /sys/class/kgsl/kgsl-3d0/num_pwrlevels
+# /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
+allow vendor_smq_app vendor_sysfs_kgsl:{file lnk_file} r_file_perms;
+allow vendor_smq_app vendor_sysfs_kgsl:dir r_dir_perms;
+
+# cpustats /sys/class/leds/lcd-backlight/brightness
+allow vendor_smq_app sysfs_leds:{file lnk_file} r_file_perms;
+allow vendor_smq_app sysfs_leds:dir r_dir_perms;
+
+# cpustats /sys/class/backlight/panel0-backlight/brightness
+allow vendor_smq_app vendor_sysfs_graphics:{file lnk_file} r_file_perms;
+allow vendor_smq_app vendor_sysfs_graphics:dir r_dir_perms;
+
+# cpustats /sys/class/thermal/thermal_zone%d
+allow vendor_smq_app sysfs_thermal:{file lnk_file} r_file_perms;
+allow vendor_smq_app sysfs_thermal:dir r_dir_perms;
+
+# cpustats /proc/stat
+allow vendor_smq_app proc_stat:file r_file_perms;
+allow vendor_smq_app proc_stat:dir r_dir_perms;
+
+# cpustats /proc/<pid>/ - todo find alternative sln
+#r_dir_file(vendor_smq_app, domain);
+
+# mps /persist/hlos_rfs/shared
+allow vendor_smq_app mnt_vendor_file:dir r_dir_perms;
+allow vendor_smq_app vendor_persist_rfs_shared_hlos_file:dir rw_dir_perms;
+#============= vendor_smq_app ==============
+allow vendor_smq_app activity_service:service_manager find;
+
+#============= vendor_smq_app run as vendor ==============
+allow vendor_smq_app content_capture_service:service_manager find;
+allow vendor_smq_app location_service:service_manager find;
+allow vendor_smq_app radio_service:service_manager find;
+allow vendor_smq_app registry_service:service_manager find;
+allow vendor_smq_app tethering_service:service_manager find;
+allow vendor_smq_app thermal_service:service_manager find;
+allow vendor_smq_app activity_task_service:service_manager find;
+allow vendor_smq_app gpu_service:service_manager find;
+allow vendor_smq_app surfaceflinger_service:service_manager find;
+
+allow vendor_smq_app bluetooth_manager_service:service_manager find;
+allow vendor_smq_app netstats_service:service_manager find;
+allow vendor_smq_app proc_pid_max:file { read open };
+allow vendor_smq_app system_data_file:dir search;
+allow vendor_smq_app wifi_service:service_manager find;
+allow vendor_smq_app audio_service:service_manager find;
+
+allow vendor_smq_app autofill_service:service_manager find;
+allow vendor_smq_app hint_service:service_manager find;
+allow vendor_smq_app audioserver_service:service_manager find;
+allow vendor_smq_app batteryproperties_service:service_manager find;
+allow vendor_smq_app batterystats_service:service_manager find;
+allow vendor_smq_app clipboard_service:service_manager find;
+dontaudit vendor_smq_app default_prop:file read;
+allow vendor_smq_app uimode_service:service_manager find;
+allow vendor_smq_app usb_service:service_manager find;
+allow vendor_smq_app webviewupdate_service:service_manager find;
+allow vendor_smq_app self:tcp_socket setopt;
+allow vendor_smq_app self:udp_socket create;

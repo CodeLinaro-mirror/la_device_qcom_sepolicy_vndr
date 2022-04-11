@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020-2021 The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,24 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-userdebug_or_eng(`
-  diag_use(hal_audio)
-')
-
-#Split A2dp specific
-binder_call(hal_audio,bluetooth)
-
-#to read bt props
-get_prop(hal_audio, vendor_bluetooth_prop)
-
-# Allow audio HAL to get updates from health hal
-hal_client_domain(hal_audio_default, hal_health)
-
-# Allow audio HAL to communicate with Audio HAL Plugin Service
-allow hal_audio_default vendor_audio_hal_plugin_service_service:service_manager find;
-
-# Allow audio HAL to communicate with ACDB Loader Service
-allow hal_audio_default vendor_acdb_loader_service_service:service_manager find;
-
-binder_call(hal_audio_default,vendor_acdb_loader_service)
-binder_call(hal_audio_default,vendor_audio_hal_plugin_service)
+type vendor_hal_dvr_hwservice, hwservice_manager_type, protected_hwservice;

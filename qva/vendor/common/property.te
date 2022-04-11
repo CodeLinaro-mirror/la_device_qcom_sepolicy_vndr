@@ -90,9 +90,6 @@ vendor_internal_prop(vendor_ctl_qmuxd_prop);
 # WLAN dynamic detect
 vendor_restricted_prop(vendor_qcom_wlan_prop);
 
-# Car service property
-vendor_internal_prop(vendor_car_service_prop);
-
 # Boot Completed property
 vendor_internal_prop(vendor_sysboot_completed_prop);
 
