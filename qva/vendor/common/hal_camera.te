@@ -38,3 +38,5 @@ allow hal_camera vendor_sysfs_ddr:file r_file_perms;
 
 allow hal_camera vendor_qdisplay_service:service_manager find;
 allow hal_camera_default vendor_ais_v4l2_proxy:fd use;
+allow hal_camera_default hal_graphics_allocator_hwservice:hwservice_manager find;
+allow hal_camera_default hal_graphics_allocator_default:binder call;
