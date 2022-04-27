@@ -51,9 +51,3 @@ allow vendor_ais_server vendor_sysfs_kpi:file w_file_perms;
 # To access ais_v4l2_proxy
 allow vendor_ais_server vendor_ais_v4l2_proxy:unix_stream_socket { read write };
 allow vendor_ais_server vendor_ais_v4l2_proxy:fd use;
-
-allow vendor_ais_server vendor_early_services:dir r_dir_perms;
-allow vendor_ais_server vendor_early_services:file r_file_perms;
-allow vendor_ais_server device:dir r_dir_perms;
-allow vendor_ais_server device:file r_file_perms;
-allow vendor_ais_server kmsg_device:chr_file r_file_perms;

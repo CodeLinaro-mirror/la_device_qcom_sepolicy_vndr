@@ -42,7 +42,3 @@ allow vendor_qcarcam_edrm_rvc hwservicemanager:binder call;
 allow vendor_qcarcam_edrm_rvc hwservicemanager_prop:file { getattr map open read };
 allow vendor_qcarcam_edrm_rvc vendor_sysfs_kgsl:file { getattr open read };
 allow vendor_qcarcam_edrm_rvc vendor_sysfs_kpi:file w_file_perms;
-
-allow vendor_qcarcam_edrm_rvc vendor_early_services:dir r_dir_perms;
-allow vendor_qcarcam_edrm_rvc vendor_early_services:file r_file_perms;
-allow vendor_qcarcam_edrm_rvc vendor_sysfs_kpi:file w_file_perms;

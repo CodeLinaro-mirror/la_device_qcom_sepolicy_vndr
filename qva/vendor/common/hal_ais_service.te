@@ -38,5 +38,3 @@ allow vendor_hal_ais_qti vendor_ais_server:unix_stream_socket connectto;
 allow vendor_hal_ais_qti vendor_sysfs_kpi:file w_file_perms;
 
 add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
-allow vendor_hal_ais_qti vendor_early_services:dir search;
-

@@ -104,5 +104,3 @@ get_prop(vendor_init, vendor_soc_name_prop);
 get_prop(vendor_init, bootanim_system_prop);
 
 allow vendor_init tee_device:chr_file getattr;
-
-allow vendor_init vfat:dir search;
