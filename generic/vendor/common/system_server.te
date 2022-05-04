@@ -52,6 +52,3 @@ get_prop(system_server, vendor_display_prop)
 get_prop(system_server, vendor_per_mgr_state_prop);
 
 hal_client_domain(system_server, vendor_hal_dataconnection_qti)
-
-allow system_server hal_audiocontrol_default:process signal;
-allow system_server vendor_hal_automotive_vehicle_qti:process signal;

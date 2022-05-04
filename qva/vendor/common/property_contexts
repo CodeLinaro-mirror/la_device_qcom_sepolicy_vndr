@@ -123,9 +123,6 @@ ro.vendor.bt.enablelazyhal                   u:object_r:vendor_bluetooth_prop:s0
 # WLAN dynamic detect
 ro.vendor.wlan.                         u:object_r:vendor_qcom_wlan_prop:s0
 
-# Car service property
-persist.vendor.car.                          u:object_r:vendor_car_service_prop:s0
-
 # Boot Completed
 vendor.sys.boot_completed                        u:object_r:vendor_sysboot_completed_prop:s0
 

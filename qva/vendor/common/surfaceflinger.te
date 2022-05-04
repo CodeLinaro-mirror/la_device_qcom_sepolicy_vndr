@@ -26,5 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 r_dir_file(surfaceflinger, vendor_sysfs_qfprom)
-allow surfaceflinger automotive_display_service_server:binder call;
-allow surfaceflinger vendor_hal_evs_driver:fd use;
