@@ -31,9 +31,10 @@ type powerstatemanager_service, domain;
 app_domain(powerstatemanager_service)
 
 # Allow powerstatemanager Service to access certain system services.
-allow powerstatemanager_service { activity_service bluetooth_manager_service surfaceflinger_service wifi_service audio_service location_service radio_service tethering_service}:service_manager find;
+allow powerstatemanager_service { activity_service bluetooth_manager_service surfaceflinger_service wifi_service audio_service location_service radio_service tethering_service thermal_service}:service_manager find;
 allow powerstatemanager_service system_app_data_file:dir create_dir_perms;
 allow powerstatemanager_service system_app_data_file:{ file lnk_file } create_file_perms;
 allow powerstatemanager_service fs_bpf:dir search;
+get_prop(powerstatemanager_service,qc_aon_prop);
 
 hal_client_domain(powerstatemanager_service, vendor_hal_powerstateservice)
