@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2022, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,18 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_hal_ais_qti, domain;
-hal_server_domain(vendor_hal_ais_qti, vendor_hal_ais)
-
-type vendor_hal_ais_qti_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(vendor_hal_ais_qti)
-
-allow vendor_hal_ais_qti vendor_camera_socket:dir search;
-allow vendor_hal_ais_qti vendor_camera_socket:sock_file write;
-allow vendor_hal_ais_qti hal_graphics_allocator_default:fd use;
-allow vendor_hal_ais_qti vendor_ais_server:unix_stream_socket connectto;
-allow vendor_hal_ais_qti vendor_sysfs_kpi:file w_file_perms;
-
-add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
-allow vendor_hal_ais_qti vendor_early_services:dir search;
-
+type earlyinit_test, domain;
+allow earlyinit_test tmpfs:dir r_dir_perms;
+allow earlyinit_test tmpfs:file rw_file_perms;
+allow earlyinit_test tmpfs:chr_file rw_file_perms;
+allow earlyinit_test vendor_early_services:dir search;
+allow earlyinit_test rootfs:file {r_file_perms execute};
+allow earlyinit_test graphics_device:chr_file rw_file_perms;
+allow earlyinit_test kmsg_device:chr_file rw_file_perms;
+allow earlyinit_test vendor_camera_socket:dir rw_dir_perms;
+allow earlyinit_test vendor_camera_socket:file {rw_file_perms create};

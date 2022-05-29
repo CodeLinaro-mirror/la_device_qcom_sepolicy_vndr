@@ -218,3 +218,6 @@ type vendor_sysfs_kgsl_gpuclk, sysfs_type, fs_type;
 type vendor_sysfs_aop_freq_message, fs_type, sysfs_type;
 #EMAC
 type vendor_sysfs_rx_config, fs_type, sysfs_type;
+
+type vendor_early_services, file_type;
+type vendor_earlyinit_test_exec, exec_type, file_type, vendor_file_type;

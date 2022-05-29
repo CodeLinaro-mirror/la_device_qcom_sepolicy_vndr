@@ -85,3 +85,66 @@ allow init vendor_sysfs_graphics:file w_file_perms;
 allow init vendor_sysfs_graphics:dir search;
 allow init vendor_sysfs_usb_device:file w_file_perms;
 ')
+
+allow init vendor_esplash_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_esplash_exec, vendor_esplash)
+
+#Allow early init to read early_service directory
+#To be removed once early_init is moved to its context
+allow init vendor_early_services:dir r_dir_perms;
+allow init vendor_early_services:file r_file_perms;
+
+#Allow earlyinit to access early_services/bin
+allow init vendor_early_services:lnk_file r_file_perms;
+
+#Required by second stage of early-init
+allow init kernel:process share;
+allow init proc:dir mounton;
+
+#Execute test app through early_init
+allow init vendor_earlyinit_test_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_earlyinit_test_exec, earlyinit_test)
+
+allow init tmpfs:chr_file rw_file_perms;
+allow init tmpfs:dir r_dir_perms;
+
+allow init device:chr_file { ioctl relabelfrom };
+allow init vendor_sysfs_kpi:file { open write };
+
+allow init self:capability {sys_module};
+allow init vendor_file:system module_load;
+
+allow init audio_device:dir relabelto;
+allow init audio_device:chr_file relabelto;
+allow audio_device device:filesystem associate;
+
+#Execute ais_server,qcarcam test app and esplash through early_init
+allow init vendor_ais_server_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_ais_server_exec, vendor_ais_server)
+allow init vendor_qcarcam_edrm_rvc_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_qcarcam_edrm_rvc_exec,vendor_qcarcam_edrm_rvc)
+allow init early_chime_exec:file {r_file_perms execute};
+domain_auto_trans(init, early_chime_exec, early_chime)
+
+#Relabing SE labels permission
+#allow init device:chr_file relabelfrom;
+allow init device:dir relabelfrom;
+allow init graphics_device:chr_file relabelto;
+allow graphics_device device:filesystem associate;
+allow init kmsg_device:chr_file relabelto;
+allow kmsg_device device:filesystem associate;
+allow init random_device:chr_file relabelto;
+allow random_device device:filesystem associate;
+allow init null_device:chr_file relabelto;
+allow null_device device:filesystem associate;
+allow init video_device:chr_file relabelto;
+allow video_device device:filesystem associate;
+allow init vendor_camera_socket:dir relabelto;
+allow vendor_camera_socket device:filesystem associate;
+allow init ion_device:chr_file relabelto;
+allow ion_device device:filesystem associate;
+allow init gpu_device:chr_file relabelto;
+allow gpu_device device:filesystem associate;
+allow init tmpfs:chr_file rw_file_perms;
+allow init tmpfs:dir r_dir_perms;
+#allow init rootfs:file { create };

@@ -12,6 +12,9 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS := \
     $(QSSI_SEPOLICY_PATH)/generic/private \
     $(QSSI_SEPOLICY_PATH)/qva/private
 
+BOARD_EARLY_EXTRA_SEPOLICY_DIRS := \
+     $(SEPOLICY_PATH)/generic/vendor/common/early_services
+
 #once all the services are moved to Product /ODM above lines will be removed.
 # sepolicy rules for product images
 PRODUCT_PUBLIC_SEPOLICY_DIRS := \
