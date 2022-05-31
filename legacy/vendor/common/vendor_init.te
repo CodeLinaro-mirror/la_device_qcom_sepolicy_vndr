@@ -123,7 +123,5 @@ userdebug_or_eng(`
   allow vendor_init proc_security:file rw_file_perms;
 ')
 
-get_prop(vendor_init, vendor_init_service_status_private_prop)
-
 allow vendor_init tee_device:chr_file getattr;
 allow vendor_init ipa_dev:file create_file_perms;
