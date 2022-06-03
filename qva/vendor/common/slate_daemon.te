@@ -43,4 +43,4 @@ set_prop(slate_daemon, vendor_slate_boot_complete_prop)
 allow slate_daemon vendor_debugfs_ipc:dir search;
 allow slate_daemon sysfs:file { read open getattr };
 
-get_prop(slate_daemon, qc_aon_prop)
+get_prop(slate_daemon, vendor_qc_aon_prop)

@@ -85,5 +85,5 @@ allow vendor_hal_powerstateservice_qti self:netlink_kobject_uevent_socket create
 hal_client_domain(vendor_hal_powerstateservice_qti, vendor_hal_powerstateutility)
 allow vendor_hal_powerstateservice_qti sysfs_power:file rw_file_perms;
 
-#allow service access to qc_aon_prop
-get_prop(vendor_hal_powerstateservice_qti, qc_aon_prop)
+#allow service access to vendor_qc_aon_prop
+get_prop(vendor_hal_powerstateservice_qti, vendor_qc_aon_prop)

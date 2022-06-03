@@ -82,7 +82,7 @@ get_prop(hal_uioffload_default, vendor_uioffload_logging_prop)
 
 set_prop(hal_uioffload_default, vendor_lefty_prop)
 
-get_prop(hal_uioffload_default, qc_aon_prop)
+get_prop(hal_uioffload_default, vendor_qc_aon_prop)
 
 get_prop(hal_uioffload_default, vendor_watch_orientation_prop)
 hal_client_domain(hal_uioffload_default, hal_watchorientation)
