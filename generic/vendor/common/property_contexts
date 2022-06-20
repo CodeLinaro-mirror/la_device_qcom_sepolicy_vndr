@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 persist.vendor.service.bdroid.       u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.            u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bluetooth.                 u:object_r:vendor_bluetooth_prop:s0
@@ -137,3 +142,4 @@ ro.vendor.qti.soc_name       u:object_r:vendor_soc_name_prop:s0
 persist.vendor.console.silent.config    u:object_r:vendor_console_log_level_prop:s0
 
 vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0
+vendor.sku*                      u:object_r:vendor_sku_prop:s0
