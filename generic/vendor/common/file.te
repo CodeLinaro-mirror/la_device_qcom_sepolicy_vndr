@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_sysfs_audio, fs_type, sysfs_type;
 type vendor_sysfs_battery_supply, sysfs_type, fs_type;
 type vendor_sysfs_bond0, fs_type, sysfs_type;
@@ -210,3 +215,5 @@ type vendor_sysfs_suspend, fs_type, sysfs_type;
 type vendor_sysfs_kgsl_gpu_model, sysfs_type, fs_type;
 
 type vendor_sysfs_kgsl_gpuclk, sysfs_type, fs_type;
+
+type vendor_sysfs_emmc_health, sysfs_type, fs_type;
