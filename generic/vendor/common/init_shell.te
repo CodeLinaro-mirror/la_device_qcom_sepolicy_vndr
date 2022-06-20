@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # Restricted domain for shell processes spawned by init.
 # Normally these are shell commands or scripts invoked via sh
 # from an init*.rc file.  No service should ever run in this domain.
@@ -201,3 +206,4 @@ allow vendor_qti_init_shell vendor_sysfs_rx_config:file w_file_perms;
 
 # SKU settings
 allow vendor_qti_init_shell vendor_sysfs_aop_freq_message:file w_file_perms;
+set_prop(vendor_qti_init_shell,vendor_sku_prop)
