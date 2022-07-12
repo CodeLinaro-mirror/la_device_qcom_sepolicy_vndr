@@ -47,6 +47,7 @@
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/wakeup(/.*)?                                                                  u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1c00000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/wakeup(/.*)?                                                                               u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a600000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a800000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/17300000\.qcom,lpass/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
@@ -92,7 +93,9 @@
 /sys/devices/platform/soc/a88000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a8c000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a94000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/988000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00\.0/0000:01:00\.0/1101_00\.01\.00/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/1c00000\.qcom,pcie/pci0004:00/0004:00:00\.0/0004:01:00\.0/1101_04\.01\.00/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/dummy_hcd\.0/usb1/wakeup(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
 
 /sys/devices/platform/soc/88e0000\.qcom,msm-eud/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0

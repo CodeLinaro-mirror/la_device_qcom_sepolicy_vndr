@@ -514,6 +514,7 @@
 
 #Silent boot node
 /sys/power/pm_silentmode_kernel_state                   u:object_r:sysfs_power:s0
+/sys/power/pm_silentmode_hw_state                       u:object_r:sysfs_power:s0
 
 /(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 

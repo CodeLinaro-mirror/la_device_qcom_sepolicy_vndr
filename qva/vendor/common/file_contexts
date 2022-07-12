@@ -27,7 +27,7 @@
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2021 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -286,3 +286,12 @@
 
 # Dynamic splash
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:vendor_esplash_exec:s0
+
+#AIDL VHAL
+/vendor/bin/hw/android.hardware.automotive.vehicle@V1-qti-service   u:object_r:vendor_aidl_hal_automotive_vehicle_qti_exec:s0
+
+# Car power usb service
+/(vendor|system/vendor)/bin/carpowerusbservice                      u:object_r:vendor_carpowerusbservice_exec:s0
+
+#Power Wrapper
+/(vendor|system/vendor)/bin/powerwrapper                            u:object_r:vendor_powerwrapper_exec:s0
