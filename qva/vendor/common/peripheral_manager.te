@@ -27,3 +27,4 @@
 
 allow vendor_per_mgr self:qipcrtr_socket create_socket_perms;
 allowxperm vendor_per_mgr self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;
+allow vendor_per_mgr vendor_sysfs_remoteproc:dir r_dir_perms;

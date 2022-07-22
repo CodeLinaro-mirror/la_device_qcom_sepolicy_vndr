@@ -219,7 +219,7 @@
 /sys/devices(/platform)?/soc/soc:qcom,gpubw/devfreq/soc:qcom,gpubw(/.*)? u:object_r:vendor_sysfs_devfreq:s0
 
 /sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:vendor_sysfs_spss:s0
-
+/sys/class/remoteproc                                              u:object_r:vendor_sysfs_remoteproc:s0
 ###################################
 # data files
 #

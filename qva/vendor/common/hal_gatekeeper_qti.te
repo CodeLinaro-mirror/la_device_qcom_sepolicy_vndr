@@ -36,3 +36,5 @@ allow vendor_hal_gatekeeper_qti vendor_sp_ssr_device:chr_file rw_file_perms;
 get_prop(vendor_hal_gatekeeper_qti, vendor_spcomlib_prop)
 
 get_prop(vendor_hal_gatekeeper_qti, vendor_disable_spu_prop)
+
+allow vendor_hal_gatekeeper_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;

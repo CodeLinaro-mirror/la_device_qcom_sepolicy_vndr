@@ -39,5 +39,6 @@ userdebug_or_eng(`
   allow qtidiagservices_app app_api_service:service_manager find;
   allow qtidiagservices_app system_app_data_file: dir create_dir_perms;
   allow qtidiagservices_app system_app_data_file: file create_file_perms;
-
+  allow qtidiagservices_app system_data_file:dir search;
+  allow qtidiagservices_app user_profile_root_file:dir search;
 ')
