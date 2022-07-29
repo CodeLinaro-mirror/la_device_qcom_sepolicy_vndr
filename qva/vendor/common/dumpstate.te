@@ -39,4 +39,7 @@ allow dumpstate firmware_file:filesystem getattr;
 dontaudit dumpstate sysfs:file *;
 allow dumpstate debugfs_mmc:dir search;
 
+allow dumpstate vendor_early_services:dir getattr;
+allow dumpstate vendor_early_services:dir search;
+
 dump_hal(hal_audiocontrol)
