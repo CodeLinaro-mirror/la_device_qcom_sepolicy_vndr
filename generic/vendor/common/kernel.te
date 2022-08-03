@@ -106,5 +106,5 @@ allow kernel vendor_qcarcam_edrm_rvc_exec:file relabelto;
 allow kernel vendor_ais_server_exec:file relabelto;
 allow kernel rootfs:dir relabelfrom;
 allow kernel vendor_early_services:dir relabelto;
-#allow kernel vendor_file:dir { open read relabelto };
-#allow kernel vendor_file:file relabelto;
+allow kernel vendor_file:dir { open read relabelto };
+allow kernel vendor_file:file relabelto;
