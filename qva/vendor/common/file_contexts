@@ -213,6 +213,7 @@
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.bluetooth-service-qti[0-9]                       u:object_r:hal_bluetooth_default_exec:s0
 
 #hvdcp
 /vendor/bin/hvdcp_opti                                                             u:object_r:vendor_hvdcp_exec:s0
@@ -294,7 +295,6 @@
 /mnt/vendor/persist/qcc(/.*)?       u:object_r:vendor_persist_qcc_file:s0
 
 #GNSS SiRFStarV device
-/dev/ttyHS1                                                                        u:object_r:vendor_location_device:s0
 /dev/gnss_sirf                                                                     u:object_r:vendor_location_device:s0
 
 # spunvm partition
