@@ -118,6 +118,22 @@
 /dev/block/platform/300582000\.virtio-scsi/by-name/bluetooth                                                                                     u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/300582000\.virtio-scsi/by-name/vbmeta                                                                                        u:object_r:vendor_custom_ab_block_device:s0
 
+/dev/block/platform/400582000\.virtio-scsi/by-name/system                                                                                        u:object_r:system_block_device:s0
+/dev/block/platform/400582000\.virtio-scsi/by-name/vendor                                                                                        u:object_r:system_block_device:s0
+/dev/block/platform/400582000\.virtio-scsi/by-name/persist                                                                                       u:object_r:vendor_persist_block_device:s0
+/dev/block/platform/400582000\.virtio-scsi/by-name/userdata                                                                                      u:object_r:userdata_block_device:s0
+/dev/block/platform/400582000\.virtio-scsi/by-name/modem                                                                                         u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/400582000\.virtio-scsi/by-name/bluetooth                                                                                     u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/400582000\.virtio-scsi/by-name/vbmeta                                                                                        u:object_r:vendor_custom_ab_block_device:s0
+
+/dev/block/platform/800582000\.virtio-scsi/by-name/system                                                                                        u:object_r:system_block_device:s0
+/dev/block/platform/800582000\.virtio-scsi/by-name/vendor                                                                                        u:object_r:system_block_device:s0
+/dev/block/platform/800582000\.virtio-scsi/by-name/persist                                                                                       u:object_r:vendor_persist_block_device:s0
+/dev/block/platform/800582000\.virtio-scsi/by-name/userdata                                                                                      u:object_r:userdata_block_device:s0
+/dev/block/platform/800582000\.virtio-scsi/by-name/modem                                                                                         u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/800582000\.virtio-scsi/by-name/bluetooth                                                                                     u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/800582000\.virtio-scsi/by-name/vbmeta                                                                                        u:object_r:vendor_custom_ab_block_device:s0
+
 /sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/name                                                                                     u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:vm_cnss_pcie/subsys[0-9]+/restart_level                                                                            u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/soc:vm_cnss_qca6390/subsys[0-9]+/name                                                                                  u:object_r:vendor_sysfs_ssr:s0
