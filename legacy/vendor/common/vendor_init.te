@@ -123,5 +123,8 @@ userdebug_or_eng(`
   allow vendor_init proc_security:file rw_file_perms;
 ')
 
+
+#Access rcs service
+set_prop(vendor_init, vendor_persist_rcs_qti_prop)
 allow vendor_init tee_device:chr_file getattr;
 allow vendor_init ipa_dev:file create_file_perms;

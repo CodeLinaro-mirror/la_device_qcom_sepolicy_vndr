@@ -46,3 +46,5 @@ userdebug_or_eng(`
   allow radio vendor_mbn_data_file:file r_file_perms;
 ')
 hal_client_domain(radio, hal_perf)
+  # RCS Apps are client of Ims HAL
+  hal_client_domain(radio, vendor_hal_imsfactory)

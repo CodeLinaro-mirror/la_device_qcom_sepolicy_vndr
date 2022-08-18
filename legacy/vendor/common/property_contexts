@@ -223,7 +223,7 @@ vendor.fastrpc.                  u:object_r:vendor_adsprpc_prop:s0
 
 #qvr properties
 vendor.qvr                       u:object_r:vendor_qvr_prop:s0
-
+persist.vendor.rcs.singlereg.                        u:object_r:vendor_persist_rcs_qti_prop:s0
 #bt lazyhal property
 ro.vendor.bt.enablelazyhal       u:object_r:vendor_bluetooth_prop:s0 exact bool
 

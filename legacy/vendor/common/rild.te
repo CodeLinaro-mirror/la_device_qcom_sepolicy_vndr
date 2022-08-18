@@ -84,3 +84,12 @@ get_prop(rild, exported3_radio_prop)
 set_prop(rild, vendor_xlat_prop)
 get_prop(rild, vendor_rild_libpath_prop)
 get_prop(rild, vendor_dataqdp_prop)
+
+# Fallback for seccomp
+crash_dump_fallback(rild)
+
+# rild would be a client for ims factory hal
+hal_client_domain(rild, vendor_hal_imsfactory)
+
+# rild to read singlereg property
+get_prop(rild, vendor_persist_rcs_qti_prop)

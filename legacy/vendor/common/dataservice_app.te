@@ -44,3 +44,11 @@ r_dir_file(vendor_dataservice_app, cnd_data_file)
 allow vendor_dataservice_app app_api_service:service_manager find;
 allow vendor_dataservice_app hal_perf_hwservice:hwservice_manager find;
 binder_call(vendor_dataservice_app, hal_perf_default)
+
+# dataservice_app is a client of ImsFactory HAL
+hal_client_domain(vendor_dataservice_app, vendor_hal_imsfactory)
+get_prop(vendor_dataservice_app, vendor_persist_rcs_qti_prop)
+
+# dataservice_app is a client of ImsFactory HAL
+hal_client_domain(vendor_dataservice_app, vendor_hal_imsfactory)
+get_prop(vendor_dataservice_app, vendor_persist_rcs_qti_prop)
