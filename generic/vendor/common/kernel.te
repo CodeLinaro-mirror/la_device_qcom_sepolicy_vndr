@@ -89,7 +89,7 @@ allow kernel proc_cmdline:file r_file_perms;
 
 allow kernel sepolicy_file:file r_file_perms;
 
-#allow kernel device:blk_file { create setattr };
+allow kernel userdata_block_device:blk_file { create setattr };
 allow kernel device:chr_file { create setattr };
 allow kernel device:dir create_dir_perms;
 allow kernel self:capability mknod;
@@ -108,3 +108,5 @@ allow kernel rootfs:dir relabelfrom;
 allow kernel vendor_early_services:dir relabelto;
 allow kernel vendor_file:dir { open read relabelto };
 allow kernel vendor_file:file relabelto;
+allow kernel system_lib_file:dir relabelto;
+allow kernel system_lib_file:file relabelto;
