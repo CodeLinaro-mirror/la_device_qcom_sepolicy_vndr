@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,22 +24,22 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
+
 # Changes from Qualcomm Innovation Center are provided under the following license:
-#
 # Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# vendor_mlid - Mink-Lowi Interface daemon
-type vendor_mlid, domain, mlstrustedsubject;
-type vendor_mlid_exec, exec_type, vendor_file_type, file_type;
+type powerstatemanager_service, domain;
 
-init_daemon_domain(vendor_mlid)
+# Domain to run powerstatemanager_service Service (com.qualcomm.qti.powerstatemanagerservice)
+app_domain(powerstatemanager_service)
 
-# Allow access to location socket
-allow vendor_mlid self:netlink_generic_socket create_socket_perms_no_ioctl;
-unix_socket_connect(vendor_mlid, vendor_location, vendor_location)
+# Allow powerstatemanager Service to access certain system services.
+allow powerstatemanager_service { activity_service bluetooth_manager_service surfaceflinger_service wifi_service audio_service location_service radio_service tethering_service thermal_service}:service_manager find;
+allow powerstatemanager_service system_app_data_file:dir create_dir_perms;
+allow powerstatemanager_service system_app_data_file:{ file lnk_file } create_file_perms;
+allow powerstatemanager_service fs_bpf:dir search;
+allow powerstatemanager_service activity_task_service:service_manager find;
+#get_prop(powerstatemanager_service, vendor_qc_aon_prop);
 
-allow vendor_mlid vendor_location:unix_dgram_socket sendto;
-allow vendor_mlid vendor_location_socket:dir rw_dir_perms;
-allow vendor_mlid vendor_location_socket:sock_file create_file_perms;
+hal_client_domain(powerstatemanager_service, vendor_hal_powerstateservice)
