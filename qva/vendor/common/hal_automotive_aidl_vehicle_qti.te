@@ -40,6 +40,5 @@ binder_call(vendor_aidl_hal_automotive_vehicle_qti, carservice_app)
 allow vendor_aidl_hal_automotive_vehicle_qti input_device:chr_file r_file_perms;
 allow vendor_aidl_hal_automotive_vehicle_qti input_device:dir r_dir_perms;
 
-hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle)
-
-
+hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle);
+allow vendor_aidl_hal_automotive_vehicle_qti self:can_socket { write create  bind setopt };

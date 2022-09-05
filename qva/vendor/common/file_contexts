@@ -293,5 +293,5 @@
 # Car power usb service
 /(vendor|system/vendor)/bin/carpowerusbservice                      u:object_r:vendor_carpowerusbservice_exec:s0
 
-#Power Wrapper
-/(vendor|system/vendor)/bin/powerwrapper                            u:object_r:vendor_powerwrapper_exec:s0
+# ufs device type
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes u:object_r:vendor_sysfs_sd:s0

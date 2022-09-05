@@ -36,3 +36,9 @@
 
 # Block device for hal_bootctl
 /dev/block/sdf                                                      u:object_r:boot_block_device:s0
+
+/sys/devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name      u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery  u:object_r:vendor_sysfs_ssr_toggle:s0
+
+#PMIC devices wakeup nodes
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/wakeup/wakeup0 u:object_r:sysfs_wakeup:s0

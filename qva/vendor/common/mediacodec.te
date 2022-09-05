@@ -37,3 +37,5 @@ get_prop(mediacodec, vendor_video_prop)
 hal_client_domain(mediacodec, vendor_hal_vpp)
 allow mediacodec vendor_xdsp_device:chr_file r_file_perms;
 allow mediacodec vendor_qdsp_device:chr_file r_file_perms;
+allow mediacodec dmabuf_system_heap_device:chr_file r_file_perms;
+allow mediacodec dmabuf_system_heap_device:chr_file { ioctl };

@@ -482,6 +482,9 @@
 
 /sys/bus/iio(/.*)?                                                                      u:object_r:vendor_sysfs_sensors:s0
 
+#vendor_hvdcp
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device1/name u:object_r:sysfs_hvdcp:s0
+
 #Android NN Driver
 /vendor/bin/hw/android\.hardware\.neuralnetworks@1\.3-service-qti   u:object_r:vendor_hal_neuralnetworks_default_exec:s0
 

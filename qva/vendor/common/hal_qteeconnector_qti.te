@@ -63,3 +63,5 @@ allow vendor_hal_qteeconnector_qti tee:unix_dgram_socket sendto;
 binder_call(vendor_hal_qteeconnector_client, vendor_hal_qteeconnector_server)
 binder_call(vendor_hal_qteeconnector_server, vendor_hal_qteeconnector_client)
 allow vendor_hal_qteeconnector_client vendor_hal_qteeconnector_hwservice:hwservice_manager find;
+
+allow vendor_hal_qteeconnector_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
