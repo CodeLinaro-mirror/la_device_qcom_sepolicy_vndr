@@ -1,0 +1,24 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_modem_monitor, domain;
+type vendor_modem_monitor_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_modem_monitor)
+
+#For Modem Monitor
+allow vendor_modem_monitor self:capability { chown setgid setpcap setuid net_bind_service };
+
+wakelock_use(vendor_modem_monitor)
+
+#For QMI sockets and IPCR Sockets
+allow vendor_modem_monitor self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
+
+#For access to the kmsg device
+allow vendor_modem_monitor kmsg_device:chr_file w_file_perms;
+
+#For vendor data - simul
+allow vendor_modem_monitor vendor_data_file:file r_file_perms;
+
+# Read write permissions for vendor_sysfs_pcie
+allow vendor_modem_monitor vendor_sysfs_pcie:file rw_file_perms;

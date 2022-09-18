@@ -168,6 +168,7 @@
 /vendor/bin/tloc_daemon         u:object_r:vendor_tlocd_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service        u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service        u:object_r:hal_power_default_exec:s0
+/vendor/bin/modem-monitor       u:object_r:vendor_modem_monitor_exec:s0
 
 /vendor/bin/hw/qcrild           u:object_r:rild_exec:s0
 /vendor/bin/hw/qcrilNrd         u:object_r:rild_exec:s0
@@ -357,6 +358,9 @@
 #vendor_sysfs_data
 /sys/devices/virtual/xt_hardidletimer/timers(/.*)?                  u:object_r:vendor_sysfs_data:s0
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:vendor_sysfs_data:s0
+
+#vendor_sysfs_pcie
+/sys/devices/0109_0[0-9].0[0-9].0[0-9]/ssr_power                    u:object_r:vendor_sysfs_pcie:s0
 
 #persist_bluetooth_file
 /mnt/vendor/persist/bluetooth(/.*)?                                 u:object_r:vendor_persist_bluetooth_file:s0
