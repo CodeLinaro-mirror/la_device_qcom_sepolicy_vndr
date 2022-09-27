@@ -42,3 +42,4 @@
 
 #PMIC devices wakeup nodes
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/wakeup/wakeup0 u:object_r:sysfs_wakeup:s0
+/vendor/bin/drop_caches.sh                                          u:object_r:vendor_qti_init_shell_exec:s0
