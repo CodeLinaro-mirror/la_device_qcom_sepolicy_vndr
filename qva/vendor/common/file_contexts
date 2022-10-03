@@ -167,6 +167,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.thermal@2\.0-service.mock                        u:object_r:hal_thermal_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:vendor_hal_audiocontrol_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol-service  u:object_r:vendor_hal_audiocontrol_qti_aidl_exec:s0
 /(vendor|system/vendor)/bin/audio_hal_plugin_service                               u:object_r:vendor_audio_hal_plugin_service_exec:s0
 /(vendor|system/vendor)/bin/acdb_loader_service                                    u:object_r:vendor_acdb_loader_service_exec:s0
 /(vendor|system/vendor)/bin/audio_chime                                            u:object_r:vendor_audio_chime_exec:s0

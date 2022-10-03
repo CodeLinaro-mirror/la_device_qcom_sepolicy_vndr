@@ -132,6 +132,8 @@
 # mem-buf device used for inter-VM memory transactions
 /dev/membuf                                     u:object_r:vendor_membuf_dev:s0
 
+/dev/mem_buf_vm/qcom,cp_bitstream       u:object_r:vendor_vm_cp_bitstream_device:s0
+
 # files in /vendor
 /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
 /vendor/bt_firmware(/.*)?       u:object_r:vendor_firmware_file:s0
