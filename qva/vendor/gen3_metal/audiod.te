@@ -50,3 +50,5 @@ vndbinder_use(vendor_audiod)
 
 wakelock_use(vendor_audiod);
 allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;
+carpowerpolicy_callback_domain(vendor_audiod)
+allow vendor_audiod carpowerpolicyd_service:service_manager find;
