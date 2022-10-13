@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 userdebug_or_eng(`
   domain_auto_trans(shell, vendor_netmgrd_exec, vendor_netmgrd)
@@ -53,7 +57,3 @@ allowxperm vendor_netmgrd self:udp_socket ioctl rmnet_sock_ioctls;
 # Allow vendor_netmgrd to set vendor properties
 set_prop(vendor_netmgrd, vendor_data_ko_prop)
 allow vendor_netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
-
-#Allow vendor_netmgrd to set rmnet module parameters
-allow vendor_netmgrd vendor_sysfs_rmnet:dir r_dir_perms;
-allow vendor_netmgrd vendor_sysfs_rmnet:file rw_file_perms;

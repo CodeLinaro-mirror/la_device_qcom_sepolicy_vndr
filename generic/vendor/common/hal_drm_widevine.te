@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # define SELinux domain
 type vendor_hal_drm_widevine, domain;
@@ -37,7 +41,7 @@ allow vendor_hal_drm_widevine { appdomain -isolated_app }:fd use;
 allow vendor_hal_drm_widevine vendor_qce_device:chr_file rw_file_perms;
 
 #Allow access to smcinvoke device
-allow vendor_hal_drm_widevine vendor_smcinvoke_device:chr_file rw_file_perms;
+allow vendor_hal_drm_widevine tee_device:chr_file rw_file_perms;
 
 # The QTI DRM-HAL implementation uses a vendor-binder service provided
 # by the HWC HAL.
@@ -47,6 +51,15 @@ allow vendor_hal_drm_widevine vendor_qdisplay_service:service_manager { find };
 hal_client_domain(vendor_hal_drm_widevine, hal_graphics_composer);
 allow vendor_hal_drm_widevine vendor_mediadrm_vendor_data_file:dir create_dir_perms;
 allow vendor_hal_drm_widevine vendor_mediadrm_vendor_data_file:file create_file_perms;
+
+#DMA Buf
+allow vendor_hal_drm_widevine vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow vendor_hal_drm_widevine vendor_membuf_dev:chr_file r_file_perms;
+allow vendor_hal_drm_widevine vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_hal_drm_widevine vendor_vm_cp_bitstream_device:chr_file r_file_perms;
+
+#socket change
+unix_socket_connect(vendor_hal_drm_widevine, vendor_notify-topology, tee);
 
 #DMA Buf
 allow vendor_hal_drm_widevine vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;

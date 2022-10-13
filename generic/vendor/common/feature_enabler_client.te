@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_feature_enabler_client, domain;
 type vendor_feature_enabler_client_exec, exec_type, vendor_file_type, file_type;
@@ -31,7 +35,6 @@ type vendor_feature_enabler_client_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_feature_enabler_client)
 allow vendor_feature_enabler_client tee_device:chr_file rw_file_perms;
 allow vendor_feature_enabler_client ion_device:chr_file rw_file_perms;
-allow vendor_feature_enabler_client vendor_smcinvoke_device:chr_file rw_file_perms;
 unix_socket_connect(vendor_feature_enabler_client , vendor_ssgtzd, vendor_ssgtzd)
 
 
@@ -50,3 +53,8 @@ allow vendor_feature_enabler_client vendor_qfeatenab_client_service:service_mana
 allow vendor_feature_enabler_client vendor_qdisplay_service:service_manager find;
 hal_client_domain(vendor_feature_enabler_client, hal_graphics_composer)
 allow vendor_feature_enabler_client graphics_device:chr_file rw_file_perms;
+
+#Allow access to various dmabuf heap device
+allow vendor_feature_enabler_client vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow vendor_feature_enabler_client vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+allow vendor_feature_enabler_client vendor_dmabuf_user_contig_heap_device:chr_file r_file_perms;

@@ -1,0 +1,6 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow reading/writing to DevCoreDump devices
+allow hal_graphics_composer vendor_sysfs_devcd:dir r_dir_perms;
+allow hal_graphics_composer vendor_sysfs_devcd:file rw_file_perms;

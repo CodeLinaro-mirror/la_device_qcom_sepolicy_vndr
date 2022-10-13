@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # qva/private/location_app_test.te - sepolicy rules for qti value added
 # location apps (internal) that will be part of system image. eg: ODLT, Qlogcat
@@ -58,4 +62,11 @@ userdebug_or_eng(`
     binder_call(vendor_location_app_test, gpuservice);
 
     allow vendor_location_app_test vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+
+    hal_client_domain(vendor_location_app_test, vendor_hal_qspmhal);
+
+    hal_client_domain(vendor_location_app_test, vendor_hal_diaghal);
+
+    dontaudit vendor_location_app_test vendor_hal_qspmhal_default:binder {call};
+    dontaudit vendor_location_app_test default_prop:file {read};
 ')

@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # audio daemon
 type vendor_audiod, domain;
@@ -50,5 +54,6 @@ vndbinder_use(vendor_audiod)
 
 wakelock_use(vendor_audiod);
 allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;
+allow vendor_audiod vendor_sysfs_sndcard:file r_file_perms;
 carpowerpolicy_callback_domain(vendor_audiod)
 allow vendor_audiod carpowerpolicyd_service:service_manager find;

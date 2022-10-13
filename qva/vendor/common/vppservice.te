@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Define domain
 type vendor_vppservice, domain;
@@ -56,10 +60,18 @@ allow vendor_vppservice mnt_vendor_file:dir search;
 allow vendor_vppservice ion_device:chr_file rw_file_perms;
 allow vendor_vppservice video_device:chr_file rw_file_perms;
 allow vendor_vppservice vendor_qdsp_device:chr_file r_file_perms;
-allow vendor_vppservice vendor_xdsp_device:chr_file r_file_perms;
 allow vendor_vppservice gpu_device:chr_file rw_file_perms;
+allow vendor_vppservice vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_vppservice dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_vppservice vendor_membuf_dev:chr_file r_file_perms;
+allow vendor_vppservice vendor_vm_cp_pixel_device:chr_file r_file_perms;
+
+# suppress xdsp denial, since it is expected
+dontaudit vendor_vppservice vendor_xdsp_device:chr_file { open read ioctl };
+
+# allow vppservice to access dsp read_prop
+get_prop(vendor_vppservice, vendor_adsprpc_prop)
 
 hal_client_domain(vendor_vppservice, hal_graphics_allocator)
 hal_client_domain(vendor_vppservice, vendor_hal_capabilityconfigstore_qti)
-
 get_prop(vendor_vppservice, vendor_adsprpc_prop)

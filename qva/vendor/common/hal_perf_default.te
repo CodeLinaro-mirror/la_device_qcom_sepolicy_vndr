@@ -24,9 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_perf_default, domain, mlstrustedsubject;
-hal_server_domain_bypass(vendor_hal_perf_default, vendor_hal_perf)
+hal_server_domain(vendor_hal_perf_default, vendor_hal_perf)
 
 type vendor_hal_perf_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_hal_perf_default)
@@ -91,6 +95,8 @@ allow vendor_hal_perf {
      vendor_sysfs_battery_supply
      vendor_sysfs_process_reclaim
      vendor_sysfs_qfprom
+     vendor_sysfs_kgsl_proc
+     sysfs_dm
 }:file rw_file_perms;
 
 allow vendor_hal_perf {
@@ -106,5 +112,42 @@ allow vendor_hal_perf_default self:capability { kill };
 # Allow QSPM access
 hal_client_domain(vendor_hal_perf_default, vendor_hal_qspmhal);
 
+# Allow hal_perf to set property
+set_prop(vendor_hal_perf_default, vendor_mpctl_prop)
+set_prop(vendor_hal_perf_default, vendor_wlc_public_prop)
+set_prop(vendor_hal_perf_default, vendor_procomp_prop)
+
 #Allow Display Config access
 hal_client_domain(vendor_hal_perf_default, hal_graphics_composer);
+
+# Allow connecting to thermal_socket
+unix_socket_connect(vendor_hal_perf_default, vendor_thermal, vendor_thermal-engine)
+
+#Allow display driver access
+allow vendor_hal_perf_default graphics_device:chr_file rw_file_perms;
+
+# Allow shared memory access
+hal_client_domain(vendor_hal_perf_default, hal_allocator);
+
+# Allow perf hal to interact with pasr memory hal
+hal_client_domain(vendor_hal_perf_default, vendor_hal_mem_pasrmanager);
+
+allow vendor_hal_perf_default block_device:dir { open read search };
+allow vendor_hal_perf_default proc_diskstats:file { getattr open read };
+
+allow vendor_hal_perf_default self:capability { sys_nice setuid };
+
+# Rule for vndbinder usage
+allow vendor_hal_perf vendor_qdisplay_service:service_manager find;
+vndbinder_use(vendor_hal_perf);
+
+hal_client_domain(vendor_hal_perf_default, hal_thermal);
+
+allow vendor_hal_perf_default surfaceflinger:process setsched;
+allow vendor_hal_perf_default hal_graphics_composer_default:process setsched;
+allow vendor_hal_perf_default appdomain:process setsched;
+allow vendor_hal_perf_default appdomain:process getsched;
+allow vendor_hal_perf_default self:capability sys_nice;
+dontaudit vendor_hal_perf_default self:capability dac_override;
+dontaudit vendor_hal_perf_default system_server:dir search;
+dontaudit vendor_hal_perf_default { domain - appdomain }:process { getsched setsched };

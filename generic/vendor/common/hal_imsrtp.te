@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 #vendor_ims rtp service
 type vendor_hal_imsrtp, domain;
 type vendor_hal_imsrtp_exec, exec_type, vendor_file_type, file_type;
@@ -37,16 +42,18 @@ get_prop(vendor_hal_imsrtp, hwservicemanager_prop)
 add_hwservice(vendor_hal_imsrtp, vendor_hal_imsrtp_hwservice)
 
 allow vendor_hal_imsrtp self: qipcrtr_socket  create_socket_perms_no_ioctl;
-unix_socket_connect(vendor_hal_imsrtp, vendor_ims, vendor_ims)
 
-allow vendor_hal_imsrtp vendor_sysfs_timestamp_switch:file r_file_perms;
+#allow ims_rtp_daemon to connect to server socket hosted in imsdaemon
+unix_socket_connect(vendor_hal_imsrtp, vendor_ims_service, vendor_ims_service)
 
 allow vendor_hal_imsrtp self:capability net_bind_service;
 
-allow vendor_hal_imsrtp vendor_sysfs_timestamp_switch:file r_file_perms;
 allow vendor_hal_imsrtp ion_device:chr_file r_file_perms;
 allow vendor_hal_imsrtp vendor_sysfs_data:file r_file_perms;
 r_dir_file(vendor_hal_imsrtp, vendor_sysfs_diag)
 
 get_prop(vendor_hal_imsrtp, vendor_ims_prop)
 binder_call(vendor_hal_imsrtp, vendor_qtelephony)
+
+crash_dump_fallback(vendor_hal_imsrtp)
+

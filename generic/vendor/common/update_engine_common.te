@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Allow update_engine and update_engine_sideload (recovery) read/write on the
 # device-specific partitions it should update.
@@ -40,6 +44,9 @@ allow update_engine_common tmpfs:lnk_file r_file_perms;
 allow update_engine_common metadata_file:dir search;
 allow update_engine_common {adsprpcd_file firmware_file}:dir search;
 allow update_engine_common {bt_firmware_file firmware_file}:filesystem getattr;
+allow update_engine misc_block_device:blk_file rw_file_perms;
+allow update_engine loop_device:blk_file rw_file_perms;
+allow update_engine proc_bootconfig:file r_file_perms;
 
 dontaudit update_engine_common self:capability {dac_read_search dac_override};
 

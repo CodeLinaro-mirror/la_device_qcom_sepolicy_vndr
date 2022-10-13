@@ -1,0 +1,17 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_battery_stats, domain;
+type vendor_battery_stats_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_battery_stats)
+
+qtr_sdk_use(vendor_battery_stats)
+
+allow vendor_battery_stats vendor_battery_stats_data_file:dir create_dir_perms;
+allow vendor_battery_stats vendor_battery_stats_data_file:file create_file_perms;
+
+allow vendor_battery_stats vendor_sysfs_battery_supply:{file lnk_file} r_file_perms;
+allow vendor_battery_stats vendor_sysfs_battery_supply:dir r_dir_perms;
+
+allow vendor_battery_stats vendor_sysfs_usb_supply:{file lnk_file} r_file_perms;
+allow vendor_battery_stats vendor_sysfs_usb_supply:dir r_dir_perms;

@@ -2,6 +2,7 @@
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 SEPOLICY_PATH:= device/qcom/sepolicy_vndr
 QSSI_SEPOLICY_PATH:= device/qcom/sepolicy
+SYS_ATTR_PROJECT_PATH := $(TOP)/device/qcom/sepolicy/generic/public/attribute
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS := \
     $(SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS) \
     $(QSSI_SEPOLICY_PATH)/generic/public \
@@ -29,9 +30,8 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(BOARD_SEPOLICY_DIRS) \
        $(SEPOLICY_PATH) \
        $(SEPOLICY_PATH)/generic/vendor/common \
-       $(SEPOLICY_PATH)/qva/vendor/common/sysmonapp \
-       $(SEPOLICY_PATH)/qva/vendor/ssg \
-       $(SEPOLICY_PATH)/qva/vendor/common
+       $(SEPOLICY_PATH)/qva/vendor/common \
+       $(SEPOLICY_PATH)/generic/vendor/common/attribute \
 
     ifeq ($(TARGET_SEPOLICY_DIR),)
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/$(TARGET_BOARD_PLATFORM)
@@ -44,6 +44,7 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
     BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
+    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
     endif
 endif
 

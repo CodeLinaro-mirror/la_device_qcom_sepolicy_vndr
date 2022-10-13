@@ -24,13 +24,21 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_sysfs_audio, fs_type, sysfs_type;
 type vendor_sysfs_sndcard, fs_type, sysfs_type;
 type vendor_sysfs_battery_supply, sysfs_type, fs_type;
 type vendor_sysfs_bond0, fs_type, sysfs_type;
 type vendor_sysfs_boot_adsp, sysfs_type, fs_type;
+type vendor_sysfs_boot_cdsp, sysfs_type, fs_type;
+type vendor_sysfs_boot_cvp, sysfs_type, fs_type;
 type vendor_sysfs_camera, sysfs_type, fs_type;
 type vendor_sysfs_cpu_boost, fs_type, sysfs_type;
+type vendor_sysfs_devcd, fs_type, sysfs_type;
 type vendor_sysfs_devfreq, fs_type, sysfs_type;
 type vendor_sysfs_easel, sysfs_type, fs_type;
 type vendor_sysfs_esoc, sysfs_type, fs_type;
@@ -59,9 +67,9 @@ type vendor_sysfs_slpi, fs_type, sysfs_type;
 type vendor_sysfs_spmi_dev, sysfs_type, fs_type;
 type vendor_sysfs_ssr, sysfs_type, fs_type;
 type vendor_sysfs_ssr_toggle, sysfs_type, fs_type;
-type vendor_sysfs_timestamp_switch, sysfs_type, fs_type;
 type vendor_sysfs_touch, sysfs_type, fs_type;
 type vendor_sysfs_uio_file, sysfs_type, fs_type;
+type vendor_sysfs_wdog_device, sysfs_type, fs_type;
 type vendor_sysfs_usb_c, sysfs_type, fs_type;
 type vendor_sysfs_usb_device, sysfs_type, fs_type;
 type vendor_sysfs_usb_supply, sysfs_type, fs_type;
@@ -69,6 +77,11 @@ type vendor_sysfs_usbpd_device, sysfs_type, fs_type;
 type vendor_sysfs_vadc_dev, sysfs_type, fs_type;
 type vendor_sysfs_lcd, sysfs_type, fs_type;
 type vendor_sysfs_adsp_ssr, sysfs_type, fs_type;
+type vendor_sysfs_svm_neuron, sysfs_type, fs_type;
+type vendor_sysfs_trusted_touch_enable, sysfs_type, fs_type;
+type vendor_sysfs_trusted_touch_event, sysfs_type, fs_type;
+type vendor_sysfs_trusted_touch_type, sysfs_type, fs_type;
+type vendor_sysfs_mmc_device_type, fs_type, sysfs_type;
 
 type vendor_debugfs_clk, debugfs_type, fs_type;
 type vendor_debugfs_ion, debugfs_type, fs_type;
@@ -87,32 +100,41 @@ type vendor_proc_audiod, fs_type, proc_type;
 type vendor_proc_shs, fs_type, proc_type;
 
 type vendor_qmuxd_socket, file_type;
+type vendor_rild_socket, file_type;
 type vendor_netmgrd_socket, file_type;
+type vendor_shsusrd_socket, file_type;
 type vendor_port-bridge_socket, file_type;
 type vendor_thermal_socket, file_type;
+type vendor_notify-topology_socket, file_type;
+type vendor_vuidmgr_socket, file_type;
 
 #Define the qti socket type
 type vendor_dataqti_socket, file_type;
 
-type vendor_ims_socket, file_type;
+type vendor_ims_service_socket, file_type;
 type vendor_ipacm_socket, file_type;
 type vendor_cnd_socket, file_type;
 type vendor_chre_socket, file_type;
 type vendor_hal_bootctl_socket, file_type;
 type vendor_location_socket, file_type;
+type vendor_qsap_location_socket, file_type;
 type vendor_wifihal_socket, file_type;
 type vendor_pps_socket, file_type;
 
 # imshelper_app file types
-type vendor_imshelper_app_data_file, file_type, data_file_type;
+#type vendor_imshelper_app_data_file, file_type, data_file_type;
+
+type vendor_imsd_data_file, file_type, data_file_type;
 
 type firmware_file, file_type, contextmount_type, vendor_file_type;
 
 type vendor_cnd_data_file, file_type, data_file_type;
 type vendor_location_data_file, file_type, data_file_type;
 type vendor_audio_data_file, file_type, data_file_type;
+type vendor_audio_dsp_data_file, file_type, data_file_type;
 type vendor_radio_data_file, file_type, data_file_type;
 type vendor_wifi_vendor_log_data_file, file_type, data_file_type;
+type vendor_log_wifi_data_file, file_type, data_file_type;
 # for mount /persist
 typeattribute mnt_vendor_file vendor_persist_type;
 type vendor_persist_file, file_type, vendor_persist_type;
@@ -142,6 +164,7 @@ type vendor_display_vendor_data_file, file_type, data_file_type;
 type vendor_nfc_vendor_data_file, file_type, data_file_type;
 type vendor_radio_vendor_data_file, file_type, data_file_type, mlstrustedobject;
 type vendor_ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;
+type vendor_pddump_data_file, file_type, data_file_type;
 type vendor_modem_dump_file, file_type, data_file_type;
 type vendor_sensors_vendor_data_file, file_type, data_file_type;
 type vendor_port_bridge_data_file, file_type, data_file_type;
@@ -149,6 +172,9 @@ type bt_firmware_file, file_type, contextmount_type, vendor_file_type;
 type vendor_firmware_file, vendor_file_type, file_type;
 type vendor_mdmhelperdata_data_file, file_type, data_file_type;
 type vendor_mbn_data_file, file_type, data_file_type;
+type vendor_firmware_data_file, file_type, data_file_type;
+type vendor_qmcs_file, file_type, vendor_qmcs_file_type;
+allow { vendor_qmcs_file }self:filesystem associate;
 
 #vendor capability configstore hal
 type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
@@ -181,6 +207,9 @@ type vendor_hbtp_cfg_file, file_type, vendor_file_type;
 #tloc data files
 type vendor_tlocd_data_file, file_type, data_file_type;
 
+#audio graph manager sysfs file
+type vendor_sysfs_agm, fs_type, sysfs_type;
+
 #qseecom
 type vendor_data_qsee_file, file_type, data_file_type;
 
@@ -189,9 +218,6 @@ type vendor_tui_data_file, file_type, data_file_type;
 
 # SFS listener data file
 type vendor_data_tzstorage_file, file_type, data_file_type;
-
-#NNHAL files
-type vendor_hal_neuralnetworks_data_file, file_type, data_file_type;
 
 #BT Files
 type vendor_bt_data_file, file_type, data_file_type;
@@ -211,10 +237,30 @@ type vendor_sysfs_suspend, fs_type, sysfs_type;
 type vendor_sysfs_kgsl_gpu_model, sysfs_type, fs_type;
 
 type vendor_sysfs_kgsl_gpuclk, sysfs_type, fs_type;
+type vendor_sysfs_kgsl_gpubusy, sysfs_type, fs_type;
+
+type vendor_sysfs_devicetree_cpu, sysfs_type, fs_type;
+
+type vendor_sysfs_devicetree_soc, sysfs_type, fs_type;
+type vendor_sysfs_microdump, fs_type, sysfs_type;
+
+#rmnet module files
+type vendor_sysfs_rmnet, fs_type, sysfs_type;
+
+# display boot param files
+type vendor_sysfs_disp_boot_param, fs_type, sysfs_type;
 
 # SKU settings
 type vendor_sysfs_aop_freq_message, fs_type, sysfs_type;
+
 #EMAC
 type vendor_sysfs_rx_config, fs_type, sysfs_type;
 
-type sysfs_hvdcp, fs_type, sysfs_type;
+#NNHAL files
+type vendor_hal_neuralnetworks_data_file, file_type, data_file_type;
+
+#Audio device
+type vendor_audio_device, dev_type;
+
+#Power device
+type vendor_sysfs_power, fs_type, sysfs_type;

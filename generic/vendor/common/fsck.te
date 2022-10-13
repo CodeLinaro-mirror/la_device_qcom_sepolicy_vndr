@@ -24,8 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 allow fsck vendor_persist_block_device:blk_file rw_file_perms;
+allow fsck vendor_qmcs_block_device:blk_file rw_file_perms;
+allowxperm fsck vendor_qmcs_block_device:blk_file ioctl { BLKGETSIZE };
 allow fsck vendor_custom_ab_block_device:blk_file rw_file_perms;
 allow fsck adsprpcd_file:dir getattr;

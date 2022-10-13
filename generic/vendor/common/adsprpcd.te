@@ -24,18 +24,27 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_adsprpcd, domain;
 type vendor_adsprpcd_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_adsprpcd)
 
 allow vendor_adsprpcd ion_device:chr_file r_file_perms;
+
+# Allocate DMA-BUF Heap memory through libadsprpc
+allow vendor_adsprpcd dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_adsprpcd vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_adsprpcd vendor_dmabuf_adsp_heap_device:chr_file r_file_perms;
 allow vendor_adsprpcd vendor_qdsp_device:chr_file r_file_perms;
 allow vendor_adsprpcd vendor_xdsp_device:chr_file r_file_perms;
 
 allow vendor_adsprpcd system_file:dir r_dir_perms;
-allow vendor_adsprpcd dmabuf_system_heap_device:chr_file r_file_perms;
-allow vendor_adsprpcd vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+
 r_dir_file(vendor_adsprpcd, adsprpcd_file)
 get_prop(vendor_adsprpcd, vendor_adsprpc_prop)
 

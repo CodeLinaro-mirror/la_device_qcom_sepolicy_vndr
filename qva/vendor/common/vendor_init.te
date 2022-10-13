@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_init_exec, exec_type, vendor_file_type, file_type;
 
@@ -38,22 +42,33 @@ get_prop(vendor_init, vendor_mmi_prop)
 
 set_prop(vendor_init, vendor_usb_prop)
 
-get_prop(vendor_init, vendor_video_prop)
+set_prop(vendor_init, vendor_video_prop)
 set_prop(vendor_init, vendor_sys_video_prop)
+set_prop(vendor_init, vendor_mm_parser_prop)
 
 set_prop(vendor_init, vendor_wigig_prop)
 
 set_prop(vendor_init, vendor_qspm_prop)
 
 set_prop(vendor_init, vendor_mpctl_prop)
+get_prop(vendor_init, vendor_procomp_prop)
+allow vendor_init kernel:process setsched;
+allow vendor_init kernel:dir search;
+allow vendor_init kernel:file { open write };
 
 userdebug_or_eng(`
   set_prop(vendor_init, vendor_audio_debug_prop)
 ')
 
+set_prop(vendor_init, vendor_confqmaa)
+
 set_prop(vendor_init, vendor_disable_spu_prop)
 
 set_prop(vendor_init, vendor_persist_dpm_prop)
+
+# Allow vendor_init to set vendor_pasr_prop
+set_prop(vendor_init, vendor_pasr_prop)
+
 
 # WLAN dynamic detect
 get_prop(vendor_init, vendor_qcom_wlan_prop)
@@ -63,3 +78,8 @@ get_prop(vendor_init, vendor_sysboot_completed_prop)
 get_prop(vendor_init, vendor_initsvc_bootanim_prop)
 
 dontaudit vendor_init persist_debug_prop:file r_file_perms;
+set_prop(vendor_init, qemu_sf_lcd_density_prop)
+
+get_prop(vendor_init, bootanim_system_prop)
+allow vendor_init vendor_ipa_dev:file rw_file_perms;
+allow vendor_init vendor_ipa_dev:file create;

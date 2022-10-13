@@ -24,12 +24,19 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 allow init {
     adsprpcd_file
     cache_file
     mnt_vendor_file
     storage_file
     vendor_vm_system_file
+    same_process_hal_file
+    mnt_product_file
 }:dir mounton;
 
 # symlink /sdcard to backing block
@@ -47,8 +54,8 @@ allow init { bt_firmware_file vendor_firmware_file  firmware_file } :dir mounton
 allow init { bt_firmware_file firmware_file }:filesystem  { relabelfrom  mount };
 allow { bt_firmware_file firmware_file  }self:filesystem associate;
 
-allow init firmware_file:filesystem getattr;
-allow init bt_firmware_file:filesystem getattr;
+allow init vendor_qmcs_file:dir { mounton };
+allow init vendor_qmcs_file:filesystem { relabelfrom mount unmount relabelto };
 
 dontaudit init kernel:system module_request;
 
@@ -77,7 +84,6 @@ allow init vendor_sysfs_boot_adsp:file w_file_perms;
 
 allow init bt_firmware_file:filesystem getattr;
 allow init firmware_file:filesystem getattr;
-allow init vendor_sysfs_usb_device:file w_file_perms;
 
 # Search and write access for vendor_sysfs_graphics for backlight in recovery
 recovery_only(`
@@ -85,3 +91,6 @@ allow init vendor_sysfs_graphics:file w_file_perms;
 allow init vendor_sysfs_graphics:dir search;
 allow init vendor_sysfs_usb_device:file w_file_perms;
 ')
+allow init vendor_sysfs_usb_device:file w_file_perms;
+allow init firmware_file:filesystem getattr;
+allow init bt_firmware_file:filesystem getattr;

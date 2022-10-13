@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #============= system_app ==============
 userdebug_or_eng(`
@@ -32,4 +36,15 @@ userdebug_or_eng(`
   allow system_app socket_device:dir read;
 
   allow system_app self:socket create_socket_perms_no_ioctl;
+')
+
+userdebug_or_eng(`
+  # allow system_app access diag hal
+  diag_use(system_app)
+  hal_client_domain(system_app, vendor_hal_diaghal)
+  hal_client_domain(system_app, hal_allocator)
+
+  allow system_app vendor_sysfs_qdss_dev:dir r_dir_perms;
+  allow system_app vendor_sysfs_qdss_dev:file rw_file_perms;
+  allow system_app vendor_qdss_device:chr_file rw_file_perms;
 ')

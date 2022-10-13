@@ -24,18 +24,23 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Allow hostapd to access it's data folder
 r_dir_file(hal_wifi_hostapd_default, vendor_wifi_vendor_data_file)
 allow hal_wifi_hostapd_default hostapd_data_file:dir rw_dir_perms;
 allow hal_wifi_hostapd_default hostapd_data_file:file create_file_perms;
+allow hal_wifi_hostapd_default vendor_wifi_vendor_data_file:dir rw_dir_perms;
 # Allow hostapd to create control socket under its data folder
 allow hal_wifi_hostapd_default hostapd_data_file:sock_file create_file_perms;
 
 # Allow hostapd to connect to fstman using control socket
 allow hal_wifi_hostapd_default vendor_fstman:unix_dgram_socket sendto;
-# Allow hostapd to connect to mutualex using control socket
-allow hal_wifi_hostapd_default vendor_mutualex:unix_dgram_socket sendto;
+# Allow hostapd to connect to qms using control socket
+allow hal_wifi_hostapd_default vendor_qms:unix_dgram_socket sendto;
 # wigig_hostapd has its own directory for sockets,
 # in order to prevent conflicts with wifi hostapd
 # allow wigig_hostapd to create the directory holding its control socket
@@ -48,3 +53,5 @@ allow hal_wifi_hostapd_default vendor_wigighalsvc:unix_dgram_socket sendto;
 allow hal_wifi_hostapd_default vendor_wifi_vendor_wpa_socket:dir r_dir_perms;
 allow hal_wifi_hostapd_default vendor_wifi_vendor_wpa_socket:sock_file rw_file_perms;
 allow hal_wifi_hostapd_default vendor_wigig_vendor_wpa_socket:sock_file rw_file_perms;
+# Allow hostapd to connect to cnd using control socket
+allow hal_wifi_hostapd_default vendor_cnd:unix_dgram_socket sendto;

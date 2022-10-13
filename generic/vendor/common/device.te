@@ -24,7 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_ab_block_device, dev_type;
+type vendor_agm_device, dev_type;
 type vendor_at_device, dev_type;
 type vendor_avtimer_device, dev_type;
 type vendor_bt_device, dev_type;
@@ -50,6 +56,7 @@ type vendor_dmabuf_secure_pixel, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_secure_non_pixel, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_adsp_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_secure_cdsp_heap_device, dmabuf_heap_device_type, dev_type;
+type vendor_dmabuf_cma_secure_cdsp_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_sp_hlos_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_secure_sp_modem_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_secure_sp_tz_heap_device, dmabuf_heap_device_type, dev_type;
@@ -58,10 +65,25 @@ type vendor_dmabuf_qseecom_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_qseecom_ta_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_display_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_audio_ml_heap_device, dmabuf_heap_device_type, dev_type;
+type vendor_dmabuf_demura_heap_device, dmabuf_heap_device_type, dev_type;
 
 type vendor_membuf_dev, dev_type;
 
+type vendor_vm_self_device, dev_type;
+type vendor_vm_trusted_device, dev_type;
+type vendor_vm_hlos_device, dev_type;
+type vendor_vm_cp_touch_device, dev_type;
 type vendor_vm_cp_bitstream_device, dev_type;
+type vendor_vm_cp_pixel_device, dev_type;
+type vendor_vm_cp_non_pixel_device, dev_type;
+type vendor_vm_cp_camera_device, dev_type;
+type vendor_vm_cp_sec_display_device, dev_type;
+type vendor_vm_cp_spss_sp_device, dev_type;
+type vendor_vm_cp_camera_preview_device, dev_type;
+type vendor_vm_cp_spss_sp_shared_device, dev_type;
+type vendor_vm_cp_spss_hlos_shared_device, dev_type;
+type vendor_vm_cp_cdsp_device, dev_type;
+type vendor_vm_cp_app_device, dev_type;
 
 type vendor_vm_data_block_device, dev_type;
 type vendor_qsee_ipc_irq_spss_device, dev_type;
@@ -75,6 +97,7 @@ type vendor_rpmb_device, dev_type;
 type vendor_seemplog_device, dev_type;
 type vendor_sg_device, dev_type;
 type vendor_bsg_device, dev_type;
+type vendor_ufs_lun4_bsg_device, dev_type;
 type vendor_smd_device, dev_type;
 type vendor_spcom_device, dev_type;
 type vendor_ssd_block_device, dev_type;
@@ -85,3 +108,8 @@ type vendor_xbl_block_device, dev_type;
 type vendor_uefi_block_device, dev_type;
 type vendor_qce_device, dev_type;
 type vendor_npu_device, dev_type;
+type vendor_qmcs_block_device, dev_type;
+type vendor_qdss_device, dev_type;
+type vendor_adsp_sleepmon_device, dev_type;
+type vendor_hidraw_device, dev_type;
+type vendor_audio_devic, dev_type;

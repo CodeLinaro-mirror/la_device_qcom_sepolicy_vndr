@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_spu_qti, domain;
 type vendor_hal_spu_qti_exec, exec_type, vendor_file_type, file_type;
@@ -42,7 +46,7 @@ binder_call(vendor_hal_spu_server, vendor_hal_spu_client)
 hal_attribute_hwservice(vendor_hal_spu, vendor_hal_spu_hwservice)
 
 # Allow access to spss_utils device
-#allow vendor_hal_spu_qti vendor_spss_utils_device:chr_file rw_file_perms;
+allow vendor_hal_spu_qti vendor_spss_utils_device:chr_file rw_file_perms;
 
 # Allow access to spcom devices
 allow vendor_hal_spu_qti vendor_spcom_device:chr_file rw_file_perms;
@@ -52,11 +56,26 @@ allow vendor_hal_spu_qti vendor_cryptoapp_device:chr_file rw_file_perms;
 allow vendor_hal_spu_qti vendor_iuicc_device:chr_file rw_file_perms;
 allow vendor_hal_spu_qti vendor_spu_hal_ssr_device:chr_file rw_file_perms;
 
-# Alloc acess to ion_device
-allow vendor_hal_spu_qti ion_device:chr_file rw_file_perms;
+# Allow read sysfs
+allow vendor_hal_spu_qti vendor_sysfs_data:file r_file_perms;
+allow vendor_hal_spu_qti vendor_sysfs_spdaemon:file r_file_perms;
+r_dir_file(vendor_hal_spu_qti, vendor_sysfs_spss);
 
 # Allow set / get spcomlib prop
 set_prop(vendor_hal_spu_qti, vendor_spcomlib_prop)
 
+# Allow to allocate HLOS<=>SP share buffers for loading SP apps (r_file_perms includes ioctl)
+allow vendor_hal_spu_qti vendor_dmabuf_sp_hlos_heap_device:chr_file r_file_perms;
+allow vendor_hal_spu_qti vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+
+# Allow hyp_assign() for HLOS<=>SP share buffers (r_file_perms includes ioctl)
+allow vendor_hal_spu_qti vendor_vm_hlos_device:chr_file r_file_perms;
+allow vendor_hal_spu_qti vendor_vm_cp_spss_sp_device:chr_file r_file_perms;
+allow vendor_hal_spu_qti vendor_vm_cp_spss_sp_shared_device:chr_file r_file_perms;
+allow vendor_hal_spu_qti vendor_vm_cp_spss_hlos_shared_device:chr_file r_file_perms;
+allow vendor_hal_spu_qti vendor_membuf_dev:chr_file r_file_perms;
+
 # Vendor binder
 use_vendor_per_mgr(vendor_hal_spu_qti)
+# Alloc acess to ion_device
+allow vendor_hal_spu_qti ion_device:chr_file rw_file_perms;

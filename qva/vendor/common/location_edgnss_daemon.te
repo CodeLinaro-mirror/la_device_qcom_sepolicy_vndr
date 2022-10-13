@@ -1,0 +1,39 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qva/vendor/common/location_edgnss_daemon.te - sepolicy rules for qti value added location module - edgnss-daemon
+type vendor_location_edgnss_daemon, domain;
+type vendor_location_edgnss_daemon_exec, exec_type, vendor_file_type, file_type;
+
+# allows loc_launcher to launch edgnss-daemon
+domain_auto_trans(vendor_location, vendor_location_edgnss_daemon_exec, vendor_location_edgnss_daemon)
+allow vendor_location_edgnss_daemon vendor_location:fd use;
+
+# allows file access in /data/vendor/location
+allow vendor_location_edgnss_daemon vendor_location_data_file:dir create_dir_perms;
+allow vendor_location_edgnss_daemon vendor_location_data_file:file create_file_perms;
+
+# allows socket access in /dev/socket/location
+allow vendor_location_edgnss_daemon vendor_location_socket:lnk_file { read open getattr };
+allow vendor_location_edgnss_daemon vendor_location_socket:sock_file create_file_perms;
+allow vendor_location_edgnss_daemon vendor_location_socket:dir rw_dir_perms;
+allow vendor_location_edgnss_daemon vendor_location:unix_dgram_socket { read write sendto };
+
+# allow socket communication with gnss hal
+allow vendor_location_edgnss_daemon vendor_hal_gnss_qti:unix_dgram_socket sendto;
+
+get_prop(vendor_location_edgnss_daemon, hwservicemanager_prop)
+binder_call(vendor_location_edgnss_daemon, system_server)
+
+# allows shell execute edgnss-daemon in userdebug mode.
+userdebug_or_eng(`
+  allow shell vendor_location_edgnss_daemon_exec:file rx_file_perms;
+')
+
+# Enable standard network access
+net_domain(vendor_location_edgnss_daemon)
+
+# IPC Router
+allow vendor_location_edgnss_daemon self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+allow vendor_location_edgnss_daemon vendor_location:unix_stream_socket { read write };

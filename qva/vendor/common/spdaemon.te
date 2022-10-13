@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # vendor_spdaemon service
 type vendor_spdaemon, domain;
@@ -31,11 +35,16 @@ type vendor_spdaemon, domain;
 type vendor_spdaemon_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_spdaemon)
+
+# Allow access to spss_utils device
+allow vendor_spdaemon vendor_spss_utils_device:chr_file rw_file_perms;
+
 allow vendor_spdaemon vendor_spcom_device:chr_file { getattr rw_file_perms };
 allow vendor_spdaemon vendor_skp_device:chr_file { getattr rw_file_perms };
 
 # Allow access to spss_utils device
 allow vendor_spdaemon vendor_spss_utils_device:chr_file rw_file_perms;
+allow vendor_spdaemon mnt_vendor_file:dir search;
 
 # Need to check if really needed
 set_prop(vendor_spdaemon, vendor_spcomlib_prop)
@@ -61,3 +70,15 @@ allow vendor_spdaemon vendor_spunvm_file:file create_file_perms;
 allow vendor_spdaemon vendor_sysfs_data:file r_file_perms;
 allow vendor_spdaemon vendor_sysfs_spdaemon:file r_file_perms;
 r_dir_file(vendor_spdaemon, vendor_sysfs_spss);
+
+# Allow to allocate HLOS<=>SP share buffers for loading SP apps (r_file_perms includes ioctl)
+allow vendor_spdaemon vendor_dmabuf_sp_hlos_heap_device:chr_file r_file_perms;
+allow vendor_spdaemon vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+
+# Allow hyp_assign() for HLOS<=>SP share buffers (r_file_perms includes ioctl)
+allow vendor_spdaemon vendor_vm_hlos_device:chr_file r_file_perms;
+allow vendor_spdaemon vendor_vm_cp_spss_sp_device:chr_file r_file_perms;
+allow vendor_spdaemon vendor_vm_cp_spss_sp_shared_device:chr_file r_file_perms;
+allow vendor_spdaemon vendor_vm_cp_spss_hlos_shared_device:chr_file r_file_perms;
+allow vendor_spdaemon vendor_membuf_dev:chr_file r_file_perms;
+

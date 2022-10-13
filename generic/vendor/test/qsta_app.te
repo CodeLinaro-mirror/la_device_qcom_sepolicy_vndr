@@ -24,10 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-## vendor_qsta_app
-##
-## This file defines the permissions that vendor_qsta_apps can carry
+# vendor_qsta_app
+# This file defines the permissions that vendor_qsta_apps can carry
 
 type vendor_qsta_app, domain;
 app_domain(vendor_qsta_app)
@@ -44,7 +47,9 @@ allow vendor_qsta_app {
 }:service_manager find;
 
 dontaudit vendor_qsta_app gpu_service:service_manager find;
+dontaudit vendor_qsta_app gpuservice:binder call;
 dontaudit vendor_qsta_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit vendor_qsta_app default_prop:file read;
 
 userdebug_or_eng(`
   allow vendor_qsta_app vendor_diag_device:chr_file { read write open ioctl };

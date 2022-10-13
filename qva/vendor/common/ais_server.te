@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # ais_server service
 type vendor_ais_server, domain;
@@ -51,4 +55,9 @@ allow vendor_ais_server vendor_sysfs_kpi:file w_file_perms;
 # To access ais_v4l2_proxy
 allow vendor_ais_server vendor_ais_v4l2_proxy:unix_stream_socket { read write };
 allow vendor_ais_server vendor_ais_v4l2_proxy:fd use;
+allow vendor_ais_server aac_drc_prop:file { getattr map open };
 allow vendor_ais_server dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_ais_server self:qipcrtr_socket create;
+allow vendor_ais_server ab_update_gki_prop:file { getattr map open };
+allow vendor_ais_server adbd_config_prop:file { getattr map open };
+allow vendor_ais_server vendor_sysfs_devicetree_cpu:file rw_file_perms;

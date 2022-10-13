@@ -24,10 +24,15 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_imshelper_app, domain;
 app_domain(vendor_imshelper_app);
-unix_socket_connect(vendor_imshelper_app, vendor_ims, vendor_ims)
+#allow imshelper_app to connect to server socket hosted in imsdaemon
+unix_socket_connect(vendor_imshelper_app, vendor_ims_service, vendor_ims_service)
 allow vendor_imshelper_app app_api_service:service_manager find;
 
 #allow qsee_svc_app vendor_imshelper_app_data_file:dir create_dir_perms;

@@ -25,17 +25,27 @@
 #OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # allow hal_wifi to write into /proc/debugdriver/driverdump
 r_dir_file(hal_wifi_default, vendor_proc_wifi_dbg)
 
 # write to files owned by location daemon
-allow hal_wifi_default vendor_location_socket:dir search;
+allow hal_wifi_default vendor_location_socket:dir rw_dir_perms;
+allow hal_wifi_default vendor_location_socket: {sock_file lnk_file } create_file_perms;
 allow hal_wifi_default vendor_location:unix_dgram_socket sendto;
+allow hal_wifi_default vendor_location_lowi_server:unix_dgram_socket sendto;
+
+# Hal_wifi doesnt need to communicate with SLIM. Denial can be ignored
+dontaudit hal_wifi_default vendor_location_slim_daemon:unix_dgram_socket sendto;
 
 # Connect to vendor_location via vendor_location socket.
 unix_socket_connect(hal_wifi, vendor_location, vendor_location)
+
+# Connect to vendor_location_lowi_server via vendor_location socket.
+unix_socket_connect(hal_wifi, vendor_location, vendor_location_lowi_server)
 
 allow hal_wifi_default vendor_wifihal_socket:dir rw_dir_perms;
 allow hal_wifi_default vendor_wifihal_socket:sock_file create_file_perms;
@@ -51,3 +61,9 @@ userdebug_or_eng(`
   allow hal_wifi_server vendor_tombstone_data_file:dir rw_dir_perms;
   allow hal_wifi_server vendor_tombstone_data_file:file create_file_perms;
 ')
+
+# allow hal_wifi to operate on bridged interfaces
+allowxperm hal_wifi_default self:udp_socket ioctl { SIOCBRADDBR
+                                                    SIOCBRDELBR
+                                                    SIOCBRADDIF
+                                                    SIOCBRDELIF };

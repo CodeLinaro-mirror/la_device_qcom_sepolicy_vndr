@@ -24,7 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Define Domain
 type vendor_wfdvndservice, domain;
@@ -52,6 +55,18 @@ allow vendor_wfdvndservice { mediacodec vendor_wfd_app vendor_wfdhdcphalservice_
 allow vendor_wfdvndservice tee_device:chr_file rw_file_perms;
 allow vendor_wfdvndservice ion_device:chr_file r_file_perms;
 
+#Allow /dev/dma_heap file access
+allow vendor_wfdvndservice vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_wfdvndservice vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow vendor_wfdvndservice vendor_dmabuf_display_heap_device:chr_file r_file_perms;
+allow vendor_wfdvndservice vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+
+#Allow /dev/qce file access
+allow vendor_wfdvndservice vendor_qce_device:chr_file rw_file_perms;
+
 #Allow access to graphics_composer and qdisplay_service
 hal_client_domain(vendor_wfdvndservice, hal_graphics_composer);
 allow vendor_wfdvndservice vendor_qdisplay_service:service_manager find;
+
+#Fallback for seccomp
+crash_dump_fallback(vendor_wfdvndservice)

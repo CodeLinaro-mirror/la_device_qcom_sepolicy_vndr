@@ -43,4 +43,6 @@ vndbinder_use(vendor_acdb_loader_service)
 get_prop(vendor_acdb_loader_service, vendor_audio_prop)
 add_service(vendor_acdb_loader_service, vendor_acdb_loader_service_service)
 allow vendor_acdb_loader_service dmabuf_heap_device:chr_file rw_file_perms;
+allow vendor_acdb_loader_service vendor_audio_device:chr_file rw_file_perms;
+allow vendor_acdb_loader_service vendor_sysfs_drv:chr_file rw_file_perms;
 allow vendor_acdb_loader_service vendor_dmabuf_system_heap_device:chr_file r_file_perms;

@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #qfp daemon for ultrasonic fingerprint sensor
 type vendor_qfp-daemon, domain;
@@ -53,6 +57,13 @@ r_dir_file(vendor_qfp-daemon, firmware_file)
 # R dir perms for persist qc_senseid dir
 r_dir_file(vendor_qfp-daemon, mnt_vendor_file)
 r_dir_file(vendor_qfp-daemon, vendor_persist_qti_fp_file)
+
+# Read file perms for vendor_dmabuf_qseecom
+allow vendor_qfp-daemon vendor_dmabuf_qseecom_heap_device:chr_file { read write open ioctl };
+allow vendor_qfp-daemon vendor_dmabuf_qseecom_ta_heap_device:chr_file { read write open ioctl };
+
+# Allow block suspend and wake capabilites
+allow vendor_qfp-daemon self:capability2 { block_suspend wake_alarm };
 
 #diag
 userdebug_or_eng(`

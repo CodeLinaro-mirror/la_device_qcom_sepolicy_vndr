@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # General definitions
 type vendor_ipacm, domain;
 type vendor_ipacm-diag, domain;
@@ -47,7 +52,7 @@ allow hal_tetheroffload vendor_ipa_dev:chr_file rw_file_perms;
 
 # Allow UDP socket create and ioctl
 allow hal_tetheroffload self:udp_socket create_socket_perms;
-allowxperm hal_tetheroffload self:udp_socket ioctl priv_sock_ioctls;
+allowxperm vendor_ipacm self:udp_socket ioctl SIOCGIFNAME;
 
 # Allow receiving NETLINK messages
 allow hal_tetheroffload self:netlink_route_socket { nlmsg_read nlmsg_readpriv create_socket_perms_no_ioctl };
@@ -60,8 +65,8 @@ allow hal_tetheroffload self:{
     netlink_generic_socket
 } create_socket_perms_no_ioctl;
 
-# Allow creating and modifying the PID file
-allow hal_tetheroffload vendor_ipa_vendor_data_file:dir w_dir_perms;
+# Allow creating, watching and modifying the PID file
+allow hal_tetheroffload vendor_ipa_vendor_data_file:dir rw_dir_perms;
 allow hal_tetheroffload vendor_ipa_vendor_data_file:file create_file_perms;
 
 # To register vendor_ipacm to hwbinder

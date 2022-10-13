@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_wcnss_service, domain;
 type vendor_wcnss_service_exec, exec_type, vendor_file_type, file_type;
 
@@ -53,6 +58,8 @@ allow vendor_wcnss_service self:netlink_socket create_socket_perms_no_ioctl;
 allow vendor_wcnss_service firmware_file:dir r_dir_perms;
 allow vendor_wcnss_service firmware_file:file r_file_perms;
 
+allow vendor_wcnss_service sysfs_net:dir search;
+allow vendor_wcnss_service sysfs_net:file { write getattr open };
 
 allow vendor_wcnss_service wpa_data_file:dir create_dir_perms;
 allow vendor_wcnss_service wpa_data_file:file create_file_perms;
@@ -64,7 +71,6 @@ allow vendor_wcnss_service vendor_sysfs_data:file r_file_perms;
 userdebug_or_eng(`
   r_dir_file(vendor_wcnss_service, vendor_proc_wifi_dbg)
   r_dir_file(vendor_wcnss_service, vendor_sysfs_diag)
-  allow vendor_wcnss_service vendor_sysfs_timestamp_switch:file r_file_perms;
 ')
 
 userdebug_or_eng(`
@@ -74,5 +80,4 @@ allow vendor_wcnss_service vendor_wifi_vendor_log_data_file:file create_file_per
 r_dir_file(vendor_wcnss_service, storage_file)
 r_dir_file(vendor_wcnss_service, mnt_user_file)
 ')
-allow vendor_wcnss_service vendor_sysfs_remoteproc:dir r_dir_perms;
 

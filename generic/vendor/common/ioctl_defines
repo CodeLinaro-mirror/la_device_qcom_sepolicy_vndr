@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # socket ioctls
 define(`RMNET_IOCTL_EXTENDED', `0x000089FD')
 
@@ -37,3 +42,5 @@ define(`IPC_ROUTER_IOCTL_CONFIG_SEC_RULES', `0x0000c305')
 
 #mmc ioctls defined in the kernel in include/uapi/linux/mmc/ioctl.h
 define(`MMC_IOC_MULTI_CMD', `0xc008b301')
+#add DMA_HEA_ION_ALLOC ioctl
+define(`DMA_HEAP_IOCTL_ALLOC', `0x00004800')

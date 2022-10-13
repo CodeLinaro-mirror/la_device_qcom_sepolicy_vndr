@@ -6,3 +6,4 @@ allow hal_graphics_allocator_default vendor_dmabuf_secure_pixel:chr_file r_file_
 allow hal_graphics_allocator_default vendor_dmabuf_display_heap_device:chr_file r_file_perms;
 allow hal_graphics_allocator_default vendor_dmabuf_secure_cdsp_heap_device:chr_file r_file_perms;
 allow hal_graphics_allocator_default vendor_membuf_dev:chr_file r_file_perms;
+

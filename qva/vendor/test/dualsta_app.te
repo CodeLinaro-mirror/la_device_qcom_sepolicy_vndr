@@ -1,0 +1,21 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_dualsta_app, domain;
+app_domain(vendor_dualsta_app)
+
+userdebug_or_eng(`
+  hal_client_domain(vendor_dualsta_app , vendor_hal_datafactory_qti)
+  allow vendor_dualsta_app activity_service:service_manager find;
+  allow vendor_dualsta_app activity_task_service:service_manager find;
+  allow vendor_dualsta_app audio_service:service_manager find;
+  allow vendor_dualsta_app autofill_service:service_manager find;
+  allow vendor_dualsta_app cgroup:file write;
+  allow vendor_dualsta_app gpu_service:service_manager find;
+  allow vendor_dualsta_app gpuservice:binder call;
+  allow vendor_dualsta_app surfaceflinger_service:service_manager find;
+  allow vendor_dualsta_app system_app_data_file:dir { add_name getattr remove_name search write };
+  allow vendor_dualsta_app system_app_data_file:file { create getattr map open read setattr unlink write };
+  allow vendor_dualsta_app textservices_service:service_manager find;
+')
+

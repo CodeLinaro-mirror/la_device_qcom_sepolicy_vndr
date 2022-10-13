@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Add netutils support to install iptables
 use_netutils(vendor_dpmd)
@@ -34,13 +38,11 @@ wakelock_use(vendor_dpmd)
 
 r_dir_file(vendor_dpmd, vendor_sysfs_data)
 
-#Allow vendor_dpmd to connect to hal_dpmQMiMgr
-allow vendor_dpmd vendor_hal_dpmqmi_hwservice:hwservice_manager find;
-get_prop(vendor_dpmd, hwservicemanager_prop)
-binder_call(vendor_dpmd,vendor_hal_dpmQmiMgr)
-hwbinder_use(vendor_dpmd)
+hal_client_domain(vendor_dpmd,vendor_hal_dpmqmiservice_qti)
 
 #diag
 userdebug_or_eng(`
     diag_use(vendor_dpmd)
+hal_client_domain(vendor_dpmd, vendor_hal_diaghal)
+hal_client_domain(vendor_dpmd, hal_allocator)
 ')

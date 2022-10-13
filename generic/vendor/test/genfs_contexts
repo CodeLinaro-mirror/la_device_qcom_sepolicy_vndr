@@ -24,7 +24,16 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
+genfscon tracefs /instances/hsuart u:object_r:vendor_debugfs_bt_tracing:s0
+
+genfscon sysfs /module/camera/parameters/cam_error_inject u:object_r:vendor_sysfs_camera:s0
+
+genfscon tracefs /instances/kgsl-fence u:object_r:vendor_debugfs_kgsl_fence_tracing:s0
 genfscon debugfs /dri/0/debug/dump u:object_r:vendor_qti_display_debugfs:s0
 genfscon debugfs /dri/0/debug/recovery_reg u:object_r:vendor_qti_display_debugfs:s0
 genfscon debugfs /dri/0/debug/recovery_dbgbus u:object_r:vendor_qti_display_debugfs:s0

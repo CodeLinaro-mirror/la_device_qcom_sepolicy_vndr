@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_atfwd, domain;
 type vendor_atfwd_exec, exec_type, vendor_file_type, file_type;
 
@@ -41,3 +46,10 @@ set_prop(vendor_atfwd, vendor_radio_prop)
 
 hwbinder_use(vendor_atfwd)
 get_prop(vendor_atfwd, hwservicemanager_prop)
+
+binder_call(vendor_atfwd, radio)
+allow vendor_atfwd radio_service:service_manager find;
+binder_use(vendor_atfwd)
+
+# Fallback for seccomp
+crash_dump_fallback(vendor_atfwd)

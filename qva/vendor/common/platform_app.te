@@ -24,8 +24,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#allow embms app to access vendor radio property
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
+#allow embms app to access vendor radio property
 #perf
 hal_client_domain(platform_app, vendor_hal_perf)
 #cvp
@@ -40,5 +44,6 @@ hal_client_domain(platform_app, vendor_hal_qspmhal)
 hal_client_domain(platform_app, hal_fingerprint)
 # allow platform_app to interact with pasr hal
 hal_client_domain(platform_app, vendor_hal_pasrmanager)
-#allow platform_app to access embmssl hal
-hal_client_domain(platform_app, vendor_hal_embmssl)
+
+# allow platform_app access to NFC service
+allow platform_app nfc_service:service_manager find;

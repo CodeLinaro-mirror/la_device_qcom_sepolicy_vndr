@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Allow update_engine 
 allow update_engine storage_file:file r_file_perms;
@@ -31,4 +35,5 @@ allow update_engine storage_file:dir r_dir_perms;
 allow update_engine fuse:dir r_dir_perms;
 allow update_engine sdcard_type:dir r_dir_perms;
 allow update_engine sdcard_type:file r_file_perms;
+allow update_engine vendor_vm_system_file:dir search;
 binder_call( update_engine, system_app )

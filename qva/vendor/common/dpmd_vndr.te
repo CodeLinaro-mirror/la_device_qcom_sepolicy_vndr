@@ -1,0 +1,68 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#dpmd_vndr as domain
+type vendor_dpmd_vndr, domain;
+
+type vendor_dpmd_vndr_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_dpmd_vndr)
+
+net_domain(vendor_dpmd_vndr)
+
+use_netutils(vendor_dpmd_vndr)
+set_prop(vendor_dpmd_vndr, vendor_persist_dpm_prop)
+set_prop(vendor_dpmd_vndr, vendor_persist_tcm_prop)
+
+wakelock_use(vendor_dpmd_vndr)
+
+r_dir_file(vendor_dpmd_vndr, vendor_sysfs_data)
+
+#dpmQmiHalService
+hal_client_domain(vendor_dpmd_vndr,vendor_hal_dpmqmiservice_qti)
+
+#register dpmApiHalService
+hal_server_domain_bypass(vendor_dpmd_vndr, vendor_hal_dpmapiservice_qti)
+binder_call(vendor_hal_dpmapiservice_qti_client, vendor_hal_dpmapiservice_qti_server)
+binder_call(vendor_hal_dpmapiservice_qti_server, vendor_hal_dpmapiservice_qti_client)
+hal_attribute_hwservice(vendor_hal_dpmapiservice_qti,vendor_hal_dpmapi_hwservice)
+
+allow vendor_dpmd_vndr vendor_dpm_vndr_data_file:file create_file_perms;
+allow vendor_dpmd_vndr vendor_dpm_vndr_data_file:dir create_dir_perms;
+
+#mwqemadapter client
+hal_client_domain(vendor_dpmd_vndr , vendor_hal_mwqemadapter_qti)
+
+r_dir_file(vendor_dpmd_vndr,proc_net)
+
+allow vendor_dpmd_vndr self:capability {
+    setuid
+    net_raw
+    net_admin
+};
+
+dontaudit vendor_dpmd_vndr self:capability sys_module;
+
+allow vendor_dpmd_vndr netutils_wrapper:process sigkill;
+allow vendor_dpmd_vndr self:capability2 wake_alarm;
+
+r_dir_file(vendor_dpmd_vndr, appdomain)
+
+#self kill rule to kill dpmd child process which executes iptable commands
+allow vendor_dpmd_vndr self:capability kill;
+
+allow vendor_dpmd_vndr proc_net:file write;
+
+allow vendor_dpmd_vndr self:netlink_netfilter_socket create_socket_perms_no_ioctl;
+
+add_service(vendor_dpmd_vndr, vendor_nwmgr_service)
+vndbinder_use(vendor_dpmd_vndr)
+
+#diag
+userdebug_or_eng(`
+    diag_use(vendor_dpmd_vndr)
+    hal_client_domain(vendor_dpmd_vndr, vendor_hal_diaghal)
+    hal_client_domain(vendor_dpmd_vndr, hal_allocator)
+')
+
+#allow vendor_dpmd_vndr default_prop:file read;

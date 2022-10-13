@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 get_prop(vendor_qtelephony, vendor_radio_prop)
 get_prop(vendor_qtelephony, vendor_ims_prop)
@@ -31,7 +35,6 @@ get_prop(vendor_qtelephony, vendor_persist_camera_prop)
 get_prop(vendor_qtelephony, vendor_audio_prop)
 get_prop(vendor_qtelephony, vendor_video_prop)
 
-allow vendor_qtelephony { cameraserver_service mediaextractor_service mediaserver_service mediametrics_service radio_service drmserver_service audioserver_service}:service_manager find;
 allow vendor_qtelephony vendor_hal_imsrtp_hwservice:hwservice_manager find;
-hal_client_domain(vendor_qtelephony, hal_telephony)
 binder_call(vendor_qtelephony, vendor_hal_imsrtp)
+hal_client_domain(vendor_qtelephony , vendor_hal_datafactory_qti)

@@ -1,0 +1,18 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qwesd - Wireless Edge Service Daemon
+type vendor_qwesd, domain;
+type vendor_qwesd_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_qwesd)
+
+unix_socket_connect(vendor_qwesd, vendor_ssgtzd, vendor_ssgtzd)
+net_domain(vendor_qwesd);
+
+allow vendor_qwesd self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
+
+# Allow qwesd to write state information to /data/vendor/qwes/qwesd.conf
+allow vendor_qwesd vendor_qwes_data_file:dir rw_dir_perms;
+allow vendor_qwesd vendor_qwes_data_file:file create_file_perms;
+

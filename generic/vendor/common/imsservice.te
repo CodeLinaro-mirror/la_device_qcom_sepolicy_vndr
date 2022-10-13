@@ -1,0 +1,59 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_ims_service, domain;
+type vendor_ims_service_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_ims_service)
+net_domain(vendor_ims_service)
+
+set_prop(vendor_ims_service, vendor_ims_prop)
+get_prop(vendor_ims_service, vendor_ims_prop)
+get_prop(vendor_ims_service, vendor_cnd_prop)
+get_prop(vendor_ims_service, vendor_persist_rcs_prop)
+
+allow vendor_ims_service vendor_sysfs_data:file r_file_perms;
+
+wakelock_use(vendor_ims_service)
+allow vendor_ims_service self:capability net_bind_service;
+allow vendor_ims_service self:capability2 wake_alarm;
+
+allow vendor_ims_service ion_device:chr_file r_file_perms;
+
+unix_socket_connect(vendor_ims_service, vendor_cnd, vendor_cnd)
+
+allow vendor_ims_service self: { socket qipcrtr_socket } create_socket_perms_no_ioctl;
+allow vendor_ims_service vendor_ims_service_socket:sock_file write;
+netmgr_socket(vendor_ims_service);
+allowxperm vendor_ims_service self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
+allow vendor_ims_service self:tipc_socket { create_socket_perms_no_ioctl };
+
+#diag
+userdebug_or_eng(`
+    diag_use(vendor_ims_service)
+    binder_call(vendor_ims_service, radio)
+')
+
+set_prop(vendor_ims_service, vendor_ctl_vendor_imsrcsservice_prop)
+
+hwbinder_use(vendor_ims_service)
+allow vendor_ims_service vendor_hal_cne_hwservice:hwservice_manager find;
+
+hal_client_domain(vendor_ims_service , vendor_hal_datafactory_qti)
+
+#add IUceService, IImsCmServiceService, IService and IImsFactory to HIDL interface
+
+#hal server domain for ims_service
+hal_server_domain_bypass(vendor_ims_service, vendor_hal_imsfactory)
+binder_call(vendor_hal_imsfactory_client, vendor_hal_imsfactory_server)
+binder_call(vendor_hal_imsfactory_server, vendor_hal_imsfactory_client)
+hal_attribute_hwservice(vendor_hal_imsfactory, vendor_hal_imsfactory_hwservice)
+hal_attribute_hwservice(vendor_hal_imsfactory, vendor_hal_imsrcsd_hwservice)
+hal_attribute_hwservice(vendor_hal_imsfactory, vendor_hal_imscallinfo_hwservice)
+
+# imsdaemon needs read/write access to devpts
+allow vendor_ims_service devpts:chr_file rw_file_perms;
+
+allow vendor_ims_service vendor_imsd_data_file:dir rw_dir_perms;
+allow vendor_ims_service vendor_imsd_data_file:file create_file_perms;
+neverallow {domain -vendor_ims_service} vendor_imsd_data_file:chr_file no_rw_file_perms;

@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_qdcm-ss, domain;
 type vendor_qdcm-ss_exec, exec_type, vendor_file_type, file_type;
@@ -37,3 +41,10 @@ hal_client_domain(vendor_qdcm-ss, hal_graphics_composer)
 
 # Allow adbd to connect to qdcm
 unix_socket_connect(adbd, vendor_qdcmsocket, vendor_qdcm-ss);
+
+# Allow qdcmss to read/write to /data/vendor/display and /mnt/vendor/persist/display/
+allow vendor_qdcm-ss vendor_display_vendor_data_file:dir rw_dir_perms;
+allow vendor_qdcm-ss vendor_display_vendor_data_file:file create_file_perms;
+allow vendor_qdcm-ss vendor_persist_display_file:dir rw_dir_perms;
+allow vendor_qdcm-ss vendor_persist_display_file:file create_file_perms;
+allow vendor_qdcm-ss mnt_vendor_file:dir search;

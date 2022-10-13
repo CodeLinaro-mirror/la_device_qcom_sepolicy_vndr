@@ -24,11 +24,16 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hsic_device, dev_type;
 type vendor_spss_utils_device, dev_type;
 type vendor_skp_device, dev_type;
 type vendor_sp_keymaster_device, dev_type;
+type vendor_sp_keymaster_ssr_device, dev_type;
 type vendor_sp_ssr_device, dev_type;
 type vendor_sp_nvm_device, dev_type;
 type vendor_spdaemon_ssr_device, dev_type;
@@ -43,12 +48,14 @@ type vendor_mhi_device, dev_type;
 type vendor_efs_boot_dev, dev_type;
 type vendor_smem_log_device, dev_type;
 type vendor_fm_radio_device, dev_type;
+type vendor_ese_gpio_device, dev_type;
 
 #define qg char device
 type vendor_qg_device, dev_type;
 
-#define location SiRFStarV device
-type vendor_location_device, dev_type;
-
 #define qvr external sensor device
 type vendor_qvr_external_sensor_device, dev_type;
+type vendor_qvr_hidraw_device, dev_type;
+
+#define location SiRFStarV device
+type vendor_location_device, dev_type;

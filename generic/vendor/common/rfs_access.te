@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_rfs_access, domain;
 type vendor_rfs_access_exec, exec_type, vendor_file_type, file_type;
 
@@ -38,6 +43,9 @@ type_transition vendor_rfs_access mnt_vendor_file:{ dir file } vendor_persist_rf
 type_transition vendor_rfs_access mnt_vendor_file:dir vendor_persist_rfs_shared_hlos_file "hlos_rfs";
 
 r_dir_file(vendor_rfs_access, firmware_file);
+
+allow vendor_rfs_access vendor_firmware_data_file:dir r_dir_perms;
+allow vendor_rfs_access vendor_firmware_data_file:file r_file_perms;
 
 allow vendor_rfs_access mnt_vendor_file:dir create_dir_perms;
 
@@ -55,3 +63,7 @@ allow vendor_rfs_access vendor_tombstone_data_file:file create_file_perms;
 
 #For access to the kmsg device
 allow vendor_rfs_access kmsg_device:chr_file w_file_perms;
+
+#For pddump write and create directory
+allow vendor_rfs_access vendor_pddump_data_file:dir create_dir_perms;
+allow vendor_rfs_access vendor_pddump_data_file:file create_file_perms;

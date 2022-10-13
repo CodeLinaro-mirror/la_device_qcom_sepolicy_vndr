@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 userdebug_or_eng(`
   allow domain vendor_diag_device:chr_file rw_file_perms;
 ')
@@ -58,9 +63,58 @@ neverallow {
      -vold
      } vendor_persist_type: { dir file } *;
 
-# Allow all context to read gpu model
 allow { domain - isolated_app } vendor_sysfs_kgsl:dir search;
+# Allow all context to read gpu model
 allow { domain - isolated_app } vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+allow { domain - isolated_app } vendor_sysfs_kgsl_gpubusy:file r_file_perms;
 
+neverallow {
+    coredomain
+    -init
+    -ueventd
+    -hal_graphics_composer_default
+} vendor_qmcs_file_type: { dir file } *;
+
+neverallow { domain
+- init
+- vendor_init
+- ueventd
+- shell
+- vendor_adsprpcd
+- vendor_cdsprpcd
+- vendor_sensors
+- vendor_lowirpcd_service
+- vendor_audioadsprpcd
+- vendor_chre
+- vendor_dspservice
+- hal_sensors_default
+- hal_camera_default
+userdebug_or_eng(` -vendor_usta_app')
+userdebug_or_eng(` -vendor_ustaservice_app')
+userdebug_or_eng(` -vendor_sysmonapp_app_test')
+}vendor_xdsp_device:chr_file *;
+
+neverallow { domain -init -vendor_init - ueventd } vendor_xdsp_device:chr_file ~{r_file_perms};
+
+neverallow { domain
+- init
+- vendor_init
+- appdomain
+- ueventd
+- mediacodec
+- vendor_adsprpcd
+- vendor_cdsprpcd
+- vendor_audioadsprpcd
+- hal_camera_default
+- vendor_chre
+- vendor_qvrd_vndr
+- vendor_vppservice
+- vendor_thermal-engine
+- vendor_dspservice
+userdebug_or_eng(` -vendor_sysmonapp_app_test')
+} vendor_qdsp_device:chr_file *;
+neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
+neverallow { appdomain - shell userdebug_or_eng(`-vendor_sysmonapp_app_test') } vendor_qdsp_device:chr_file ~{ioctl read};
+neverallow mediacodec vendor_qdsp_device:chr_file ~{ioctl read};
 # Some process search debugfs directory to see if file is present or not, which is never present since debugfs is removed. Suppress those denials till kernel is fixed
 dontaudit { domain coredomain -dumpstate -init -vendor_init } { vendor_debugfs_ipc vendor_debugfs_kgsl }:dir search;

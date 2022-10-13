@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 allow hal_tetheroffload_default vendor_ipa_dev:chr_file rw_file_perms;
 allow hal_tetheroffload_default vendor_ipacm_socket:sock_file w_file_perms;
@@ -36,5 +40,4 @@ allow hal_tetheroffload_default vendor_ipa_vendor_data_file:file create_file_per
 #diag
 userdebug_or_eng(`
     r_dir_file(hal_tetheroffload_default, vendor_sysfs_diag)
-    allow hal_tetheroffload_default vendor_sysfs_timestamp_switch:file r_file_perms;
 ')

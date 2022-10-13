@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_capabilityconfigstore_qti_default, domain;
 hal_server_domain(vendor_hal_capabilityconfigstore_qti_default, vendor_hal_capabilityconfigstore_qti)
@@ -34,4 +38,4 @@ init_daemon_domain(vendor_hal_capabilityconfigstore_qti_default)
 allow vendor_hal_capabilityconfigstore_qti_default vendor_capabilityconfigstore_data_file:file rw_file_perms;
 allow vendor_hal_capabilityconfigstore_qti_default vendor_capabilityconfigstore_data_file:dir rw_dir_perms;
 userdebug_or_eng(`get_prop(vendor_hal_capabilityconfigstore_qti_default, vendor_cap_configstore_dbg_prop)')
-dontaudit vendor_hal_capabilityconfigstore_qti_default vendor_cap_configstore_dbg_prop:file *;
+

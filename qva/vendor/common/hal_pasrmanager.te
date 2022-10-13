@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Define Domain
 type vendor_hal_pasrmanager_qti, domain;
@@ -36,5 +40,5 @@ add_hwservice(vendor_hal_pasrmanager_server, vendor_hal_pasrmanager_hwservice)
 allow vendor_hal_pasrmanager_client vendor_hal_pasrmanager_hwservice:hwservice_manager find;
 
 allow vendor_hal_pasrmanager_qti sysfs:dir r_dir_perms;
-allow vendor_hal_pasrmanager_qti vendor_sysfs_memory_offline:file rw_file_perms;
-allow vendor_hal_pasrmanager_qti vendor_sysfs_memory_offline:dir r_dir_perms;
+allow vendor_hal_pasrmanager_qti vendor_sysfs_system_memory:file rw_file_perms;
+allow vendor_hal_pasrmanager_qti vendor_sysfs_system_memory:dir r_dir_perms;

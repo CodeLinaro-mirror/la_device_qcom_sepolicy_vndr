@@ -24,17 +24,18 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 get_prop(vendor_dataservice_app, vendor_cnd_prop)
 
-allow vendor_dataservice_app vendor_hal_imsrcsd_hwservice:hwservice_manager find;
-allow vendor_dataservice_app vendor_hal_datafactory_hwservice:hwservice_manager find;
-
 allow vendor_dataservice_app vendor_sysfs_data:file r_file_perms;
 
-binder_call(vendor_dataservice_app, vendor_cnd)
-
-# imsrcsd to bind with UceShimService.apk
-binder_call(vendor_dataservice_app, vendor_hal_rcsservice)
+hal_client_domain(vendor_dataservice_app , vendor_hal_datafactory_qti)
 
 hal_client_domain(vendor_dataservice_app , vendor_hal_perf)
+
+# dataservice_app is a client of ImsFactory HAL
+hal_client_domain(vendor_dataservice_app, vendor_hal_imsfactory)

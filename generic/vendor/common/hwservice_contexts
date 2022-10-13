@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 com.qualcomm.qti.ant::IAntHci                                   u:object_r:hal_bluetooth_hwservice:s0
 com.dsi.ant::IAnt                                               u:object_r:hal_bluetooth_hwservice:s0
 vendor.qti.hardware.data.iwlan::IIWlan                          u:object_r:vendor_hal_iwlan_hwservice:s0
@@ -31,6 +36,7 @@ com.qualcomm.qti.uceservice::IUceService                        u:object_r:vendo
 com.qualcomm.qti.imscmservice::IImsCmService                    u:object_r:vendor_hal_imsrcsd_hwservice:s0
 vendor.qti.ims.callinfo::IService                               u:object_r:vendor_hal_imscallinfo_hwservice:s0
 vendor.qti.imsrtpservice::IRTPService                          u:object_r:vendor_hal_imsrtp_hwservice:s0
+vendor.qti.mstatservice::IMStatService                          u:object_r:vendor_hal_mstatservice_hwservice:s0
 vendor.qti.data.factory::IFactory                               u:object_r:vendor_hal_datafactory_hwservice:s0
 vendor.qti.ims.factory::IImsFactory                             u:object_r:vendor_hal_imsfactory_hwservice:s0
 vendor.qti.hardware.data.connection::IDataConnection            u:object_r:vendor_hal_dataconnection_hwservice:s0
@@ -38,6 +44,7 @@ vendor.qti.hardware.cacert::IService                            u:object_r:vendo
 vendor.display.config::IDisplayConfig                           u:object_r:vendor_hal_display_config_hwservice:s0
 vendor.display.color::IDisplayColor                             u:object_r:vendor_hal_display_color_hwservice:s0
 vendor.display.postproc::IDisplayPostproc                       u:object_r:vendor_hal_display_postproc_hwservice:s0
+vendor.qti.hardware.data.iwlan::IIWlan                          u:object_r:vendor_hal_iwlan_hwservice:s0
 vendor.qti.hardware.capabilityconfigstore::ICapabilityConfigStore     u:object_r:vendor_hal_capabilityconfigstore_qti_hwservice:s0
 vendor.qti.hardware.improvetouch.touchcompanion::ITouchCompanion       u:object_r:vendor_hal_hbtp_hwservice:s0
 vendor.qti.hardware.improvetouch.gesturemanager::IGestureManager       u:object_r:vendor_hal_hbtp_hwservice:s0
@@ -61,4 +68,8 @@ vendor.qti.hardware.trustedui::ITrustedInput              u:object_r:vendor_hal_
 android.hardware.media.c2::IConfigurable                     u:object_r:hal_codec2_hwservice:s0
 vendor.qti.hardware.display.mapper::IQtiMapper               u:object_r:hal_graphics_mapper_hwservice:s0
 vendor.qti.hardware.camera.postproc::IPostProcService        u:object_r:vendor_hal_camera_postproc_hwservice:s0
-vendor.qti.diaghal::Idiag                          	     u:object_r:vendor_hal_diaghal_hwservice:s0
+vendor.qti.hardware.embmssl::IEmbms                          u:object_r:vendor_hal_embmssl_hwservice:s0
+vendor.qti.hardware.dsp::IDspService                         u:object_r:vendor_hal_dspmanager_hwservice:s0
+vendor.qti.hardware.camera.aon::IAONService                  u:object_r:vendor_hal_camera_aon_hwservice:s0
+vendor.qti.hardware.power.powermodule::IPowerModule          u:object_r:vendor_hal_poweroptservice_hwservice:s0
+vendor.qti.hardware.limits::ILimits                          u:object_r:vendor_hal_limits_hwservice:s0

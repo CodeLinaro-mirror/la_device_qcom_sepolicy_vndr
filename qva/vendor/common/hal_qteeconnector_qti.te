@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #define the type
 type vendor_hal_qteeconnector_qti, domain;
@@ -40,9 +44,6 @@ add_hwservice(vendor_hal_qteeconnector_qti, vendor_hal_qteeconnector_hwservice)
 #allow access to hal_allocator
 hal_client_domain(vendor_hal_qteeconnector_qti, hal_allocator)
 
-#allow access to ion device
-allow vendor_hal_qteeconnector ion_device:chr_file rw_file_perms;
-
 #allow access to and use of graphics allocator
 hal_client_domain(vendor_hal_qteeconnector_qti, hal_graphics_allocator)
 
@@ -56,6 +57,9 @@ vndbinder_use(vendor_hal_qteeconnector);
 allow vendor_hal_qteeconnector firmware_file:dir r_dir_perms;
 allow vendor_hal_qteeconnector firmware_file:file r_file_perms;
 
+#Allow access to persist.vendor.qteeconnector.
+get_prop(vendor_hal_qteeconnector, vendor_qteeconnector_opti_prop)
+
 #Allow access to the gp_reqcancel socket
 allow vendor_hal_qteeconnector_qti tee:unix_dgram_socket sendto;
 
@@ -64,4 +68,9 @@ binder_call(vendor_hal_qteeconnector_client, vendor_hal_qteeconnector_server)
 binder_call(vendor_hal_qteeconnector_server, vendor_hal_qteeconnector_client)
 allow vendor_hal_qteeconnector_client vendor_hal_qteeconnector_hwservice:hwservice_manager find;
 
+#Allow access to qseecom DMABUF device
+allow vendor_hal_qteeconnector_qti vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
 allow vendor_hal_qteeconnector_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+
+#allow access to ion device
+allow vendor_hal_qteeconnector ion_device:chr_file rw_file_perms;

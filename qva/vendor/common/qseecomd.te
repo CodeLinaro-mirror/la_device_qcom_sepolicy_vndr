@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Allow access to qsee_ipc_irq_spss device
 allow tee vendor_qsee_ipc_irq_spss_device:chr_file rw_file_perms;
@@ -38,6 +42,8 @@ allow tee graphics_device:dir r_dir_perms;
 allow tee graphics_device:chr_file r_file_perms;
 allow tee vendor_data_file:dir r_dir_perms;
 
+dontaudit tee rootfs:dir { read };
+
 wakelock_use(tee)
 r_dir_file(tee, firmware_file)
 allow tee vendor_qfp-daemon_data_file:dir create_dir_perms;
@@ -51,6 +57,6 @@ allowxperm tee vendor_rpmb_device:chr_file ioctl {MMC_IOC_MULTI_CMD};
 # As each dma buf is seperate device, need to allow access to those devices
 allow tee vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
 allow tee vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
-
+allow tee vendor_dmabuf_user_contig_heap_device:chr_file r_file_perms;
 # Allow get prop  access for User space reboot property
 get_prop(tee, userspace_reboot_exported_prop);

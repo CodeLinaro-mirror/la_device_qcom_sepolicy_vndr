@@ -1,0 +1,6 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow network_stack vendor_dpmd:unix_stream_socket connectto;
+allow network_stack vendor_dpmtcm_socket:sock_file write;
+hal_client_domain(network_stack, vendor_hal_perf);

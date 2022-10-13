@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 vendor_internal_prop(vendor_ctl_netmgrd_prop);
 vendor_internal_prop(vendor_ctl_port-bridge_prop);
@@ -39,7 +43,6 @@ vendor_internal_prop(vendor_modem_diag_prop);
 vendor_internal_prop(vendor_msm_irqbalance_prop);
 vendor_restricted_prop(vendor_per_mgr_state_prop);
 vendor_internal_prop(vendor_dataqti_prop);
-vendor_internal_prop(vendor_ril_daemon_prop);
 vendor_internal_prop(vendor_dataqdp_prop);
 vendor_internal_prop(vendor_ramdump_prop);
 vendor_internal_prop(vendor_sensors_prop);
@@ -48,6 +51,7 @@ vendor_restricted_prop(vendor_km_strongbox_version_prop);
 vendor_restricted_prop(vendor_display_prop);
 vendor_internal_prop(vendor_usb_prop);
 vendor_restricted_prop(vendor_radio_prop);
+vendor_internal_prop(vendor_qteeconnector_opti_prop);
 
 #Needed for ubwc support
 vendor_restricted_prop(vendor_gralloc_prop);
@@ -101,6 +105,12 @@ vendor_internal_prop(vendor_wifi_prop);
 
 #qdcmss property
 vendor_internal_prop(vendor_qdcmss_prop);
+neverallow {
+  domain
+  -init
+  -vendor_init
+  -vendor_hal_display_color
+} vendor_qdcmss_prop:property_service set;
 
 #adsprpc props
 vendor_restricted_prop(vendor_adsprpc_prop);
@@ -108,10 +118,20 @@ vendor_restricted_prop(vendor_adsprpc_prop);
 # Wifi version recorder
 vendor_internal_prop(vendor_wifi_version);
 
-# QCV properties for storing soc_id and soc_name
+# QCV properties for storing soc_id, soc_name and soc_model
 vendor_internal_prop(vendor_soc_id_prop);
 vendor_internal_prop(vendor_soc_name_prop);
+vendor_internal_prop(vendor_soc_model_prop);
+
+# Property to set media performance class
+vendor_internal_prop(vendor_media_performance_class);
 
 #kernel console log level
 vendor_internal_prop(vendor_console_log_level_prop)
 vendor_internal_prop(vendor_dcvs_prop)
+
+#pcie property
+vendor_internal_prop(vendor_pcie_prop)
+
+#Dynamic sensor
+vendor_internal_prop(vendor_dynamic_sensor_prop)

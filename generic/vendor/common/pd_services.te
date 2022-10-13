@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_pd_mapper, domain;
 
 type vendor_pd_mapper_exec, exec_type, vendor_file_type, file_type;
@@ -39,3 +44,5 @@ allowxperm vendor_pd_mapper self:socket ioctl IPC_ROUTER_IOCTL_BIND_CONTROL_PORT
 
 allow vendor_pd_mapper vendor_sysfs_data:file r_file_perms;
 get_prop(vendor_pd_mapper, vendor_pd_locater_dbg_prop)
+
+userdebug_or_eng(`allow vendor_pd_mapper kmsg_device:chr_file {getattr write}');

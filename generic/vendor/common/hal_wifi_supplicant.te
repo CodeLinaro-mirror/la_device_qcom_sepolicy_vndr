@@ -25,7 +25,9 @@
 #OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Allow access to create socket and ioctl.
 allow hal_wifi_supplicant_default self:socket create_socket_perms;
@@ -37,7 +39,6 @@ allow hal_wifi_supplicant_default wpa_data_file:dir w_dir_perms;
 allow hal_wifi_supplicant_default wpa_data_file:file create_file_perms;
 # Permission for wpa socket which IMS use to communicate
 # # Allow wpa_supplicant to send back wifi information to cnd
-allow hal_wifi_supplicant_default { vendor_cnd vendor_ims vendor_mutualex}:unix_dgram_socket sendto;
-# # Allow wpa_supplicant to send back wifi information to vendor_location
-allow hal_wifi_supplicant_default vendor_location:unix_dgram_socket sendto;
-
+allow hal_wifi_supplicant_default { vendor_cnd vendor_qms}:unix_dgram_socket sendto;
+# # Allow wpa_supplicant to send back wifi information to vendor_location_lowi_server
+allow hal_wifi_supplicant_default vendor_location_lowi_server:unix_dgram_socket sendto;

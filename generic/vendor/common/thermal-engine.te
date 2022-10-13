@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_thermal-engine, domain;
 type vendor_thermal-engine_exec, exec_type, vendor_file_type, file_type;
 
@@ -90,7 +95,7 @@ r_dir_file(vendor_thermal-engine, sysfs_uio)
 r_dir_file(vendor_thermal-engine, vendor_sysfs_uio_file)
 
 # netlink access
-allow vendor_thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow vendor_thermal-engine self: { netlink_kobject_uevent_socket netlink_generic_socket } create_socket_perms_no_ioctl;
 #This is required to enable vendor_thermal-engine dsprpc communication
 r_dir_file(vendor_thermal-engine, adsprpcd_file);
 allow vendor_thermal-engine vendor_qdsp_device:chr_file r_file_perms;

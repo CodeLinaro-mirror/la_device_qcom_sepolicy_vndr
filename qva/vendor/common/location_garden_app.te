@@ -1,0 +1,16 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qva/vendor/common/location_garden_app.te - sepolicy rules for qti value added location module - garden_app
+type vendor_location_garden_app_exec, exec_type, vendor_file_type, file_type;
+type vendor_location_garden_app, domain;
+
+userdebug_or_eng(`
+    domain_auto_trans(shell, vendor_location_garden_app_exec, vendor_location_garden_app)
+
+    allow vendor_location_garden_app devpts:chr_file rw_file_perms;
+    allow vendor_location_garden_app {adbd shell}:fd use;
+
+    ## Read sepolicy status from /sys/fs/selinux/enforce
+    allow vendor_location_garden_app selinuxfs:file { read open getattr };
+')

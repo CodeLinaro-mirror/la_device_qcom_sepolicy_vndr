@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 recovery_only(`
  # Search and Read access for vendor_sysfs_graphics for backlight
@@ -44,4 +48,7 @@ recovery_only(`
  allow recovery vendor_sg_device:chr_file ioctl;
  allow recovery sysfs_dm:dir r_dir_perms;
  allow recovery sysfs_dm:file r_file_perms;
+ allow recovery proc_bootconfig:file r_file_perms;
+ allow recovery vendor_sysfs_mmc_device_type:file r_file_perms;
+ set_prop(recovery, boottime_public_prop)
 ')

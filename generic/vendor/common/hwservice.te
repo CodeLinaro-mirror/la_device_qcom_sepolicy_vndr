@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_hal_cne_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_cacert_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_dataconnection_hwservice, hwservice_manager_type, protected_hwservice;
@@ -31,6 +36,7 @@ type vendor_hal_iwlan_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_display_config_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_imsrcsd_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_imsrtp_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_mstatservice_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_imscallinfo_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_ipacm_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_hbtp_hwservice, hwservice_manager_type, protected_hwservice;
@@ -42,4 +48,8 @@ type vendor_hal_display_color_hwservice, hwservice_manager_type, protected_hwser
 type vendor_hal_display_postproc_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_capabilityconfigstore_qti_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_camera_postproc_hwservice, hwservice_manager_type, protected_hwservice;
-type vendor_hal_diaghal_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_embmssl_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_dspmanager_hwservice, hwservice_manager_type;
+type vendor_hal_camera_aon_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_poweroptservice_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_limits_hwservice, hwservice_manager_type, protected_hwservice;

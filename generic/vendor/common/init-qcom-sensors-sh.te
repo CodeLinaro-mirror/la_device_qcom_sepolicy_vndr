@@ -24,11 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_init-qcom-sensors-sh, domain;
 type vendor_init-qcom-sensors-sh_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_init-qcom-sensors-sh)
+
+get_prop(vendor_init-qcom-sensors-sh, vendor_sensors_prop)
 
 allow vendor_init-qcom-sensors-sh vendor_shell_exec:file rx_file_perms;
 allow vendor_init-qcom-sensors-sh vendor_toolbox_exec:file rx_file_perms;
@@ -36,8 +42,11 @@ allow vendor_init-qcom-sensors-sh vendor_toolbox_exec:file rx_file_perms;
 r_dir_file(vendor_init-qcom-sensors-sh, mnt_vendor_file)
 r_dir_file(vendor_init-qcom-sensors-sh, vendor_persist_sensors_file)
 
-allow vendor_init-qcom-sensors-sh vendor_persist_sensors_file:file setattr;
-allow vendor_init-qcom-sensors-sh vendor_persist_sensors_file:dir setattr;
+allow vendor_init-qcom-sensors-sh vendor_sensors_vendor_data_file:dir create_dir_perms;
+allow vendor_init-qcom-sensors-sh vendor_sensors_vendor_data_file:file create_file_perms;
+
 allow vendor_init-qcom-sensors-sh sensors_device:chr_file r_file_perms;
+
+r_dir_file(vendor_init-qcom-sensors-sh, vendor_sysfs_devicetree_soc)
 
 set_prop(vendor_init-qcom-sensors-sh, vendor_sensors_prop)

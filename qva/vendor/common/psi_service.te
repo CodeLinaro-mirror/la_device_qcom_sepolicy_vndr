@@ -1,0 +1,43 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Policy for PSI service
+type vendor_psiservice, domain;
+type vendor_psiservice_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(vendor_psiservice)
+
+# Allow PSI Service to be a client of PASR HAL
+hal_client_domain(vendor_psiservice, vendor_hal_mem_pasrmanager)
+
+# Read /proc/zoneinfo
+allow vendor_psiservice proc_zoneinfo:file r_file_perms;
+
+# Read /proc/meminfo
+allow vendor_psiservice proc_meminfo:file r_file_perms;
+
+# Read /proc/vmstat
+allow vendor_psiservice proc_vmstat:file r_file_perms;
+
+# Read/Write /proc/pressure/memory
+allow vendor_psiservice proc_pressure_mem:file rw_file_perms;
+
+# Read sysfs directories
+allow vendor_psiservice sysfs:dir r_dir_perms;
+
+# Read/Write "/sys/kernel/mem-offline/*" sysfs files
+allow vendor_psiservice vendor_sysfs_mem_offline:file rw_file_perms;
+allow vendor_psiservice vendor_sysfs_mem_offline:dir r_dir_perms;
+
+# Allow system resource capability
+allow vendor_psiservice self:global_capability_class_set sys_resource;
+
+# For reading "vendor.pasr." properties
+get_prop(vendor_psiservice, vendor_pasr_prop)
+
+# allow access to hal allocator
+hal_client_domain(vendor_psiservice, hal_allocator)
+
+# allow access to boot status property
+get_prop(vendor_psiservice, boot_status_prop)

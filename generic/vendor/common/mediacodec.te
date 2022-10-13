@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 allow mediacodec system_file:dir r_dir_perms;
 
 userdebug_or_eng(`
@@ -32,6 +37,9 @@ userdebug_or_eng(`
 #Allow mediacodec to access vendor_media_data_file files
 allow mediacodec vendor_media_data_file:dir create_dir_perms;
 allow mediacodec vendor_media_data_file:file create_file_perms;
+
+allow mediacodec dmabuf_system_heap_device:chr_file r_file_perms;
+allow mediacodec vendor_dmabuf_system_heap_device:chr_file r_file_perms;
 
 #Allow mediacodec to access configstore
 hal_client_domain(mediacodec, vendor_hal_capabilityconfigstore_qti)

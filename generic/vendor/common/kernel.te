@@ -59,9 +59,19 @@
 # IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# for diag over socket
 userdebug_or_eng(`
   allow kernel self:socket create;
   allow kernel self:qipcrtr_socket create;
+  allow kernel self:perf_event { open cpu };
+  allow kernel vendor_debugfs_kgsl_fence_tracing:dir search;
+  allow kernel debugfs_mmc:dir search;
+  neverallow kernel self:perf_event ~{ open cpu };
 ')
 
 # Access firmware_file
@@ -72,7 +82,6 @@ r_dir_file(kernel, firmware_file)
 r_dir_file(kernel, vendor_firmware_file)
 
 dontaudit kernel kernel:system module_request;
-
 allow kernel device:chr_file { create setattr };
 allow kernel device:dir { add_name write };
 allow kernel self:capability mknod;

@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 #####################################
 # qmux_socket(clientdomain)
 # Allow client domain to connecto and send
@@ -60,6 +65,16 @@ unix_socket_connect($1, vendor_port-bridge, vendor_port-bridge)
 allow $1 vendor_port-bridge_socket:sock_file { read write };
 ')
 
+#####################################
+# use_shsusrd_socket(clientdomain)
+# Allow client domain to connecto and send
+# via a local socket to the shsusrd domain.
+define(`use_shsusrd_socket', `
+allow $1 vendor_shsusrd_socket:dir r_dir_perms;
+unix_socket_connect($1, vendor_shsusrd, vendor_shsusrd)
+allow $1 vendor_shsusrd_socket:sock_file { read write };
+')
+
 ########################################
 # peripheral_manager
 # Allow clients to interact with peripheral
@@ -70,17 +85,6 @@ binder_call(vendor_per_mgr, $1);
 binder_call($1, vendor_per_mgr);
 allow $1 vendor_per_mgr_service:service_manager find;
 get_prop($1, vendor_per_mgr_state_prop);
-')
-
-#####################################
-# cnd_nims_socket_perm(clientdomain)
-# allow vendor_cnd to read /proc/pid/cmdline to get appname
-# allow vendor_cnd to use inet socket created by app.
-define(`cnd_nims_socket_perm', `
-allow vendor_cnd $1:dir r_dir_perms;
-allow vendor_cnd $1:file r_file_perms;
-allow vendor_cnd $1:fd use;
-allow vendor_cnd $1:tcp_socket rw_socket_perms;
 ')
 
 #####################################
@@ -168,4 +172,28 @@ define(`use_vendor_fwk_detect', `
 # Adds rules needed for vendor modules to get soc info at run time
 define(`use_libsoc_helper', `
 get_prop($1, vendor_soc_id_prop);
+')
+
+#######################################
+# Allow domains to use QTR SDK for metric collection
+# syntax: qtr_sdk_use(clientdomain)
+define(`qtr_sdk_use', `
+vndbinder_use($1)
+# qtrsdkservice client for registering & start/stop campaign
+allow $1 vendor_qtrsdkservice_service:service_manager find;
+binder_call($1, vendor_qccvendor)
+binder_call(vendor_qccvendor, $1)
+# qccsyshal client for sending data
+hal_client_domain($1, vendor_qccsyshal);
+')
+
+#####################################
+# qesdk_access(clientdomain)
+define(`qesdk_access', `
+hal_client_domain($1, vendor_hal_qesdhal)
+unix_socket_connect($1, vendor_qesd, vendor_hal_qesdhal)
+userdebug_or_eng(`
+  unix_socket_connect($1, vendor_qesd_one, vendor_hal_qesdonehal_default);
+  get_prop($1, vendor_qesdk_one_prop);
+  allow $1 vendor_qesd_one_socket:dir r_dir_perms; ')
 ')

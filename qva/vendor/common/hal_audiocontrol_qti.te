@@ -29,7 +29,6 @@
 # Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-
 type vendor_hal_audiocontrol_qti, domain;
 hal_server_domain(vendor_hal_audiocontrol_qti, hal_audiocontrol)
 
@@ -38,8 +37,6 @@ init_daemon_domain(vendor_hal_audiocontrol_qti)
 
 type vendor_hal_audiocontrol_qti_aidl, domain;
 hal_server_domain(vendor_hal_audiocontrol_qti_aidl, hal_audiocontrol)
-
 type vendor_hal_audiocontrol_qti_aidl_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_hal_audiocontrol_qti_aidl)
-
 hal_client_domain(vendor_hal_audiocontrol_qti_aidl, hal_audio)

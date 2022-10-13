@@ -1,0 +1,23 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#####################################
+# use_diag_handler_ffbm(clientdomain)
+# allow clientdomain to access boot mode switch
+define(`use_diag_handler_ffbm', `
+  userdebug_or_eng(`
+    set_prop($1, vendor_boot_mode_prop);
+  ')
+')
+
+#####################################
+# sprhd_socket(clientdomain)
+# Allow client domain to connecto and send
+# via a local socket to the sprhdd domain.
+# Also allow the client domain to remove
+# its own socket.
+define(`sprhd_socket', `
+allow $1 vendor_sprhdd_socket:dir r_dir_perms;
+unix_socket_connect($1, vendor_sprhdd, vendor_sprhdd)
+allow $1 vendor_sprhdd_socket:sock_file { read write };
+')

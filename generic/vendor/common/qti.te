@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_qti, domain;
 type vendor_qti_exec, exec_type, vendor_file_type, file_type;
 
@@ -41,7 +46,6 @@ allow vendor_qti { vendor_shell_exec }:file rx_file_perms;
 #diag
 userdebug_or_eng(`
     diag_use(vendor_qti)
-    allow vendor_qti { vendor_sysfs_data vendor_sysfs_timestamp_switch} :file r_file_perms;
 ')
 allow vendor_qti vendor_mhi_device:chr_file rw_file_perms;
 allow vendor_qti vendor_sysfs_mhi:dir r_dir_perms;

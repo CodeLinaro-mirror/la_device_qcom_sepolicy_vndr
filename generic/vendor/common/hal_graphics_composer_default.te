@@ -24,10 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # Binder access (for display.qservice)
 vndbinder_use(hal_graphics_composer_default)
 hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator);
 allow hal_graphics_composer_default vendor_qdisplay_service:service_manager { add find };
+
+binder_service(hal_graphics_composer_default)
 
 allow hal_graphics_composer_default vendor_persist_display_file:dir search;
 allow hal_graphics_composer_default vendor_persist_display_file:file r_file_perms;
@@ -52,11 +59,26 @@ r_dir_file(hal_graphics_composer_default, sysfs_leds)
 allow hal_graphics_composer_default video_device:chr_file rw_file_perms;
 allow hal_graphics_composer_default graphics_device:chr_file rw_file_perms;
 
+# Allow access to QMCS partition files
+allow hal_graphics_composer_default vendor_qmcs_file:dir create_dir_perms;
+allow hal_graphics_composer_default vendor_qmcs_file:file create_file_perms;
+
 # HWC_UeventThread
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 # Allow ion_device read/write permission
 allow hal_graphics_composer_default ion_device:chr_file rw_file_perms;
+
+# Allow hal_graphics_composer_default to open/read vendor_dmabuf_system heap device
+allow hal_graphics_composer_default vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+# whitelist the ioctl cmd that can be sent from hal_graphics_composer_default
+allowxperm hal_graphics_composer_default vendor_dmabuf_system_heap_device:chr_file ioctl DMA_HEAP_IOCTL_ALLOC;
+
+# Allow hal_graphics_composer_default to open/read vendor_membuf and vendor_vm_trusted device
+allow hal_graphics_composer_default vendor_membuf_dev:chr_file r_file_perms;
+allow hal_graphics_composer_default vendor_vm_trusted_device:chr_file r_file_perms;
+allow hal_graphics_composer_default vendor_vm_cp_pixel_device:chr_file r_file_perms;
+allow hal_graphics_composer_default vendor_vm_hlos_device:chr_file r_file_perms;
 
 # Access /sys/devices/virtual/graphics/fb0
 r_dir_file(hal_graphics_composer_default, sysfs_type)
@@ -69,6 +91,9 @@ allow hal_graphics_composer_default vendor_display_vendor_data_file:file create_
 allow hal_graphics_composer fwk_sensor_hwservice:hwservice_manager find;
 binder_call(hal_graphics_composer, system_server)
 
+# Allow writing to pps socket
+allow hal_graphics_composer_default vendor_pps_socket:sock_file write;
+
 # allow composer to register display config
 add_hwservice(hal_graphics_composer_server, vendor_hal_display_config_hwservice);
 # allow composer client to find display config service.
@@ -76,3 +101,20 @@ allow hal_graphics_composer_client vendor_hal_display_config_hwservice:hwservice
 
 # Allow qdcmss socket access
 unix_socket_connect(hal_graphics_composer_default, vendor_qdcmsocket, vendor_qdcm-ss)
+
+#allow composer to find hal_perf
+hal_client_domain(hal_graphics_composer_default, vendor_hal_perf);
+
+#allow composer to find hal_thermal
+hal_client_domain(hal_graphics_composer_default, hal_thermal);
+
+# Allow access to qipcrtr_socket
+# Remove this when QMI service moves to pfmd
+allow hal_graphics_composer self: qipcrtr_socket create_socket_perms_no_ioctl;
+
+# Allow display config aidl service
+hal_attribute_service(hal_graphics_composer, vendor_hal_displayconfig_service);
+binder_call(hal_graphics_composer, servicemanager);
+
+# Aloow access to panel boot param node
+allow hal_graphics_composer_default vendor_sysfs_disp_boot_param:file r_file_perms;

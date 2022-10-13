@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 ###################################
 # Dev block nodes
 
@@ -213,6 +218,8 @@
 /sys/devices/platform/soc/soc:qcom,kgsl-hyp/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a84000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/89c000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/c94000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 
 /sys/devices/platform/soc/88e0000\.qcom,msm-eud/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/20000\.qcom,emac/wakeup(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
@@ -233,10 +240,6 @@
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8195@0:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-04/c440000\.qcom,spmi:qcom,pm8195@4:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-08/c440000\.qcom,spmi:qcom,pm8195@8:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
-
-
-#vendor_hvdcp
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/0-04/c440000\.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device[0-9]+(/.*)?                       u:object_r:sysfs_hvdcp:s0
 
 #Primary storage device nodes
 /dev/block/mmcblk0rpmb                                                          u:object_r:vendor_rpmb_device:s0
@@ -308,5 +311,3 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/persist                            u:object_r:vendor_persist_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/super                              u:object_r:super_block_device:s0
 
-#rawdump partition
-/dev/block/platform/soc/7c4000.sdhci/by-name/rawdump                            u:object_r:vendor_rawdump_block_device:s0

@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_automotive_vehicle_qti, domain;
 
@@ -37,4 +41,3 @@ allowxperm vendor_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock
 allow vendor_hal_automotive_vehicle_qti input_device:chr_file r_file_perms;
 allow vendor_hal_automotive_vehicle_qti input_device:dir r_dir_perms;
 allow vendor_hal_automotive_vehicle_qti vendor_sysfs_kpi:file w_file_perms;
-get_prop(vendor_hal_automotive_vehicle_qti, vendor_car_service_prop);

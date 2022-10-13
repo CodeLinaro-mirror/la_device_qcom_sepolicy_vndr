@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_iop_default, domain, mlstrustedsubject;
 hal_server_domain(vendor_hal_iop_default, vendor_hal_iop)
@@ -48,4 +52,5 @@ allow vendor_hal_iop_default proc:file r_file_perms;
 #Allow Access for /data/vendor/iop
 allow vendor_hal_iop vendor_iop_data_file:dir rw_dir_perms;
 allow vendor_hal_iop vendor_iop_data_file:file create_file_perms;
+allow vendor_hal_iop proc_meminfo:file r_file_perms;
 hal_client_domain(vendor_hal_iop_default, vendor_hal_perf)

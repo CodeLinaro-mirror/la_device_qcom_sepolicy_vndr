@@ -24,19 +24,28 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # CTS test case  CtsSecurityHostTestCases#testNoBugreportDenials
 # tries to check the if there are any denials from
 # dumpstate. As per the b/131578979 discussion
 # adding dontaudit for now.
-
 allow dumpstate adsprpcd_file:dir getattr;
 allow dumpstate bt_firmware_file:dir getattr;
 allow dumpstate bt_firmware_file:filesystem getattr;
 allow dumpstate firmware_file:dir getattr;
 allow dumpstate firmware_file:filesystem getattr;
+allow dumpstate vendor_vm_system_file:dir getattr;
+allow dumpstate vendor_vm_system_file:filesystem getattr;
 dontaudit dumpstate sysfs:file *;
 allow dumpstate debugfs_mmc:dir search;
 
+binder_call(dumpstate, hal_light_default)
+binder_call(dumpstate, hal_power_default)
+binder_call(dumpstate, hal_dumpstate_default)
+binder_call(dumpstate, vendor_qms)
+binder_call(dumpstate, hal_bluetooth_default)
 dump_hal(hal_audiocontrol)

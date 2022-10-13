@@ -24,10 +24,15 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
+type vendor_nwmgr_service,vndservice_manager_type;
 type vendor_esepmdaemon_service, vndservice_manager_type;
 type vendor_wfdnativemm_service, vndservice_manager_type;
 type vendor_wfdhdcpvndservice_service, vndservice_manager_type;
-
+type vendor_qtrsdkservice_service, vndservice_manager_type;
 type vendor_audio_hal_plugin_service_service, vndservice_manager_type;
 type vendor_acdb_loader_service_service, vndservice_manager_type;

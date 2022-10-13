@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ##for perf-hal/iop-hal call
 hal_client_domain(system_server, vendor_hal_perf)
@@ -32,7 +36,16 @@ hal_client_domain(system_server, vendor_hal_srvctracker)
 
 binder_call(system_server, vendor_hal_srvctracker_default)
 
+# vendor_location modules
+binder_call(system_server, vendor_location_engine_service);
+binder_call(system_server, vendor_location_edgnss_daemon);
+binder_call(system_server, vendor_location_slim_daemon);
+binder_call(system_server, vendor_location_xtwifi_client);
+binder_call(system_server, vendor_location_xtwifi_inetagent);
+
 allow system_server vendor_proc_audiod:file r_file_perms;
+
+get_prop(system_server, vendor_confqmaa)
 
 # allow system_server to access IOP HAL service
 hal_client_domain(system_server, vendor_hal_iop)
@@ -62,7 +75,6 @@ hal_client_domain(system_server, vendor_hal_wifilearner);
 hal_client_domain(system_server, vendor_hal_qspmhal);
 
 get_prop(system_server, vendor_qspm_prop)
-
 get_prop(system_server, vendor_xlat_prop)
 
 # allow system_server to access wifi prop
