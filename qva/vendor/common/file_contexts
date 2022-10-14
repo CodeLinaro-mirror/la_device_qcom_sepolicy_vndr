@@ -351,5 +351,8 @@
 
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0
 
+#acdb_rtac
+/dev/msm_rtac     u:object_r:vendor_msm_rtac_device:s0
+
 #vendor_hvdcp
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device1/name u:object_r:sysfs_hvdcp:s0
