@@ -52,3 +52,7 @@ hal_client_domain(system_app, vendor_hal_qspmhal);
 
 # allow system_app to interact with pasr hal
 hal_client_domain(system_app, vendor_hal_pasrmanager)
+
+#allow system_app to interact with vehicle hal
+allow system_app vehicle_hal_prop:file { getattr map open read };
+allow system_app vendor_hal_automotive_vehicle_qti:binder { call transfer };

@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,15 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-dontaudit domain vendor_persist_dpm_prop:file r_file_perms;
-neverallow {
-   coredomain
-   -init
-   -ueventd
-   -vendor_spdaemon
-   -vendor_hal_authsecret_qti
-} vendor_spunvm_file_type: { dir file } *;
+type vendor_hal_audiocontrol_qti, domain;
+hal_server_domain(vendor_hal_audiocontrol_qti, hal_audiocontrol)
 
-userdebug_or_eng(`
- allow {domain -appdomain} vendor_sysfs_kpi:file rw_file_perms;
-')
+type vendor_hal_audiocontrol_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_audiocontrol_qti)

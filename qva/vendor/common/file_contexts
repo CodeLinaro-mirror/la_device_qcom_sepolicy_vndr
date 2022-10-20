@@ -252,3 +252,7 @@
 #wificfr daemon
 /(vendor|system/vendor)/bin/wificfrtool    u:object_r:wificfrsvc_exec:s0
 
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:vendor_hal_automotive_vehicle_qti_exec:s0
+
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:vendor_hal_audiocontrol_qti_exec:s0
+

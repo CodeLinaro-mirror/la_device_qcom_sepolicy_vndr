@@ -139,3 +139,5 @@ ro.vendor.pasr.                              u:object_r:vendor_pasr_prop:s0
 
 #MWQEM
 persist.vendor.mwqem.                        u:object_r:vendor_mwqem_prop:s0
+# Car service property
+persist.vendor.car.                          u:object_r:vendor_car_service_prop:s0
