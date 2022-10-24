@@ -58,6 +58,8 @@
 /dev/wcd-spi-ac-client                          u:object_r:audio_device:s0
 /dev/msm_audio_ion                              u:object_r:vendor_agm_device:s0
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
+/dev/aud_pasthru_modem                          u:object_r:vendor_agm_device:s0
+/dev/aud_pasthru_adsp_ams                       u:object_r:vendor_agm_device:s0
 /dev/virt_sndcard_ctl                           u:object_r:vendor_agm_device:s0
 /dev/msm_.*                                     u:object_r:audio_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
@@ -514,3 +516,5 @@
 #EMAC
 /(vendor|system/vendor)/bin/emac_rps_settings\.sh        u:object_r:vendor_qti_init_shell_exec:s0
 /sys/devices/platform/soc/20000\.qcom,ethernet/net/eth0/queues/rx-[0-9]/rps_cpus u:object_r:vendor_sysfs_rx_config:s0
+#AMS
+/(vendor|system/vendor)/bin/init\.qti\.AMSIPC\.sh        u:object_r:vendor_init-qti-AMSIPC-sh_exec:s0

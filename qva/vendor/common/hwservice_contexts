@@ -78,3 +78,4 @@ vendor.qti.hardware.qccvndhal::IQccvndhal                     u:object_r:vendor_
 vendor.qti.spu::ISPUManager                                  u:object_r:vendor_hal_spu_hwservice:s0
 vendor.qti.automotive.qcarcam::IQcarCamera                   u:object_r:vendor_hal_ais_hwservice:s0
 vendor.qti.hardware.automotive.vehicle::IQtiVehicle          u:object_r:hal_vehicle_hwservice:s0
+vendor.qti.hardware.AMSIPC::IAMS                             u:object_r:vendor_ams_hwservice:s0

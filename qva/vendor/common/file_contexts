@@ -208,6 +208,7 @@
 /(vendor|system/vendor)/bin/audio_chime                                            u:object_r:vendor_audio_chime_exec:s0
 /(vendor|system/vendor)/bin/hsi2s_early_boot\.sh                                   u:object_r:vendor_hsi2s_exec:s0
 /(vendor|system/vendor)/bin/smq_app                                                u:object_r:vendor_smq_app_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AMSIPC@1\.0-service          u:object_r:vendor_ams_service_qti_exec:s0
 
 #### Context for location features
 ## location daemons and binaries

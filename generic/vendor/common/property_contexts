@@ -181,3 +181,6 @@ vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0
 
 # AGMIPC
 ctl.vendor.agm-1-0               u:object_r:vendor_AGMIPC_service_prop:s0
+
+# AMSIPC
+ctl.vendor.ams-1-0               u:object_r:vendor_AMSIPC_service_prop:s0
