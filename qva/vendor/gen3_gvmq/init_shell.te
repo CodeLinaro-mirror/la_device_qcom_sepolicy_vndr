@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_qti_init_shell configfs:dir write;
+allow vendor_qti_init_shell vendor_sysfs_eth0:file rw_file_perms;

@@ -58,3 +58,6 @@
 
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0
+
+# rps_cpu related to etho
+/sys/devices/platform/vdevs/1c0c0000.virtio_net/virtio19/net/eth0/queues/rx-0/rps_cpus   u:object_r:vendor_sysfs_eth0:s0
