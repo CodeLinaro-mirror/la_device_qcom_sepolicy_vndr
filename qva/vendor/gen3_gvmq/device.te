@@ -25,5 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_hab_device, dev_type, mlstrustedobject;
-type vendor_hgsl_device, dev_type, mlstrustedobject;
+type vendor_hab_device, dev_type;
