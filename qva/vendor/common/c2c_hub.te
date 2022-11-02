@@ -1,0 +1,23 @@
+#Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Policy for /system/bin/pm-proxy
+type vendor_c2c_hub, domain;
+type vendor_c2c_hub_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_c2c_hub)
+
+# Allow to write conf
+
+allow vendor_c2c_hub dnsproxyd_socket:sock_file write;
+allow vendor_c2c_hub fwmarkd_socket:sock_file write;
+allow vendor_c2c_hub mnt_vendor_file:dir search;
+allow vendor_c2c_hub netd:unix_stream_socket connectto;
+allow vendor_c2c_hub port:tcp_socket name_connect;
+allow vendor_c2c_hub proc_version:file { getattr open read };
+allow vendor_c2c_hub self:tcp_socket { connect create getopt read write shutdown };
+allow vendor_c2c_hub vendor_persist_data_file:dir search;
+allow vendor_c2c_hub vendor_persist_data_file:file { getattr open read write };
+allow vendor_c2c_hub self:udp_socket create;
+allow netd vendor_c2c_hub:fd use;
+allow netd vendor_c2c_hub:tcp_socket { getopt read setopt write };

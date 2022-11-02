@@ -1,0 +1,23 @@
+#Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Policy for /system/bin/pm-proxy
+type vendor_dm, domain;
+type vendor_dm_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_dm)
+
+# Allow to write conf
+
+allow vendor_dm dnsproxyd_socket:sock_file write;
+allow vendor_dm fwmarkd_socket:sock_file write;
+allow vendor_dm mnt_vendor_file:dir search;
+allow vendor_dm netd:unix_stream_socket connectto;
+allow vendor_dm port:tcp_socket name_connect;
+allow vendor_dm proc_version:file { getattr open read };
+allow vendor_dm self:tcp_socket { connect create getopt read write shutdown };
+allow vendor_dm vendor_persist_data_file:dir { search add_name write };
+allow vendor_dm vendor_persist_data_file:file { getattr open read create write };
+allow vendor_dm self:udp_socket create;
+allow netd vendor_dm:fd use;
+allow netd vendor_dm:tcp_socket { getopt read setopt write };

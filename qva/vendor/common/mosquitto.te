@@ -1,0 +1,22 @@
+#Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Policy for /system/bin/pm-proxy
+type vendor_mosquitto, domain;
+type vendor_mosquitto_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_mosquitto)
+
+# Allow to write conf
+
+allow vendor_mosquitto fwmarkd_socket:sock_file write;
+allow vendor_mosquitto mnt_vendor_file:dir search;
+allow vendor_mosquitto netd:unix_stream_socket connectto;
+allow vendor_mosquitto node:tcp_socket node_bind;
+allow vendor_mosquitto port:tcp_socket name_bind;
+allow vendor_mosquitto self:tcp_socket { accept bind create getattr getopt listen read setopt write };
+allow vendor_mosquitto self:udp_socket create;
+allow vendor_mosquitto vendor_persist_data_file:dir search;
+allow vendor_mosquitto vendor_persist_data_file:file { getattr open read };
+allow netd vendor_mosquitto:fd use;
+allow netd vendor_mosquitto:tcp_socket { getopt read setopt write };
