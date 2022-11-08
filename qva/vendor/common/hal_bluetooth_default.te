@@ -31,4 +31,5 @@ hal_client_domain(hal_bluetooth_default, hal_vehicle)
 # hal_bluetooth_default needes  open read on fm_radio_device
 allow hal_bluetooth_default vendor_fm_radio_device:chr_file r_file_perms;
 get_prop(hal_bluetooth_default, vehicle_hal_prop)
-get_prop(hal_bluetooth_default, vendor_wifi_prop)
+get_prop(hal_bluetooth_default, vendor_qcom_wlan_prop)
+get_prop(hal_bluetooth_default, boot_status_prop)
