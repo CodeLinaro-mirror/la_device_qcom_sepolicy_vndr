@@ -58,6 +58,7 @@
 /dev/wcd-spi-ac-client                          u:object_r:audio_device:s0
 /dev/msm_audio_ion                              u:object_r:vendor_agm_device:s0
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
+/dev/virt_sndcard_ctl                           u:object_r:vendor_agm_device:s0
 /dev/msm_.*                                     u:object_r:audio_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
@@ -97,6 +98,7 @@
 /dev/socket/pps                                 u:object_r:vendor_pps_socket:s0
 /dev/nq-nci                                     u:object_r:nfc_device:s0
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
+/dev/ttyHS2                                     u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:vendor_wlan_device:s0
 /dev/socket/qmux_radio(/.*)?                    u:object_r:vendor_qmuxd_socket:s0
 /data/vendor/modem_config(/.*)?                 u:object_r:vendor_mbn_data_file:s0
@@ -505,6 +507,9 @@
 
 #Light AIDL HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.qti   u:object_r:hal_light_default_exec:s0
+
+#Thermal HAL
+/vendor/bin/hw/android.hardware.thermal@2.0-service.qti   u:object_r:hal_thermal_default_exec:s0
 
 #EMAC
 /(vendor|system/vendor)/bin/emac_rps_settings\.sh        u:object_r:vendor_qti_init_shell_exec:s0

@@ -33,3 +33,6 @@ hal_client_domain(bluetooth, vendor_hal_perf);
 
 #allow bluetooth to access bluetooth_dun hal
 hal_client_domain(bluetooth, vendor_hal_bluetooth_dun);
+
+#allow bluetooth to access vehicle hal property
+get_prop(bluetooth, vehicle_hal_prop)
