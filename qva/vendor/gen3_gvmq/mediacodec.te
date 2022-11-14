@@ -26,4 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow mediacodec vendor_hab_device:chr_file rw_file_perms;
-allow mediacodec vendor_hgsl_device:chr_file rw_file_perms;
