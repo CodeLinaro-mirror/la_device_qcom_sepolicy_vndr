@@ -1,4 +1,6 @@
 # Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-allow vendor_qti_init_shell proc_drop_caches:file rw_file_perms;
+userdebug_or_eng(`
+    allow vendor_qti_init_shell proc_drop_caches:file rw_file_perms;
+')

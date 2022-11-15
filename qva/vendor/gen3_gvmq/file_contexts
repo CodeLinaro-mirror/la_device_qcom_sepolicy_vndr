@@ -41,7 +41,7 @@
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
-/dev/hgsl                                                           u:object_r:vendor_hgsl_device:s0
+/dev/hgsl                                                           u:object_r:gpu_device:s0
 
 /vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
 
