@@ -51,4 +51,7 @@ get_prop(system_server, vendor_display_prop)
 # allow system_server to read/acess peripheral manager.
 get_prop(system_server, vendor_per_mgr_state_prop);
 
+# allow system_server to access vendor bluetooth property.
+get_prop(system_server, vendor_bluetooth_prop)
+
 hal_client_domain(system_server, vendor_hal_dataconnection_qti)
