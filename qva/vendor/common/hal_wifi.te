@@ -30,3 +30,4 @@ allowxperm hal_wifi_default self:udp_socket ioctl { SIOCBRADDBR SIOCBRDELBR SIOC
 
 # allow access vendor prop
 get_prop(hal_wifi_default, vendor_qcom_wlan_prop)
+allow hal_wifi_default self:capability sys_module;
