@@ -38,3 +38,5 @@ hal_client_domain(mediacodec, vendor_hal_vpp)
 hal_client_domain(mediacodec, vendor_hal_qconfig)
 allow mediacodec vendor_xdsp_device:chr_file r_file_perms;
 allow mediacodec vendor_qdsp_device:chr_file r_file_perms;
+
+allow mediacodec system_data_file:file read;

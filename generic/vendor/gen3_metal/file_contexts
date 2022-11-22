@@ -232,6 +232,8 @@
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-04/c440000\.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8150@0:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
 
+/sys/devices/platform/soc/7c4000.sdhci/mmc_host/mmc[0-9]/mmc[0-9]:0001/block/mmcblk0/mmcblk0boot[0-1]/queue/read_ahead_kb                        u:object_r:vendor_sysfs_mmc_host:s0
+
 #Primary storage device nodes
 /dev/block/mmcblk0rpmb                                                          u:object_r:vendor_rpmb_device:s0
 /dev/mmcblk0rpmb                                                                u:object_r:vendor_rpmb_device:s0
