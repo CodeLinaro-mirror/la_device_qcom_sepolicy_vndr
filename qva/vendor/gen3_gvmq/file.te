@@ -28,3 +28,6 @@
 # DVR
 type vendor_dvr_pipe_file, file_type;
 type vendor_dvr_mux_file, file_type;
+
+# rsp_cp
+type vendor_sysfs_eth0, fs_type, sysfs_type;
