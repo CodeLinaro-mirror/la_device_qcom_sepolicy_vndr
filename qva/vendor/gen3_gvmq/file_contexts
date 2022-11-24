@@ -44,7 +44,7 @@
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
-/dev/hgsl                                                           u:object_r:vendor_hgsl_device:s0
+/dev/hgsl                                                           u:object_r:gpu_device:s0
 
 /vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
 
@@ -56,5 +56,3 @@
 /mnt/vendor/dvr_ctl(/.*)?                                           u:object_r:vendor_dvr_pipe_file:s0
 /mnt/vendor/dvr_mux(/.*)?                                           u:object_r:vendor_dvr_mux_file:s0
 
-/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0
