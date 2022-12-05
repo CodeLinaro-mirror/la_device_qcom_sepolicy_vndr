@@ -60,7 +60,6 @@
 /dev/mmcblk0rpmb                                                u:object_r:vendor_rpmb_device:s0
 /dev/block/mmcblk0                                              u:object_r:root_block_device:s0
 
-
 #for eMMC
 /dev/block/platform/soc/4744000.sdhci/by-name/system                            u:object_r:system_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/metadata                          u:object_r:metadata_block_device:s0
@@ -86,11 +85,12 @@
 #
 /dev/block/platform/soc/4744000.sdhci/by-name/sensorstore       u:object_r:vendor_sensorstore_block_device:s0
 
-
-
 # same process HAL libs
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.wristorientation@1\.0-service u:object_r:vendor_hal_wristorientation_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.healthservices@1\.0-service u:object_r:vendor_hal_healthservices_qti_exec:s0
+
+# Bluetooth LAZY HAL
+/vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti-lazy        u:object_r:hal_bluetooth_default_exec:s0
 
 #SSR nodes
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
