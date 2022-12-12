@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_dun_service,                 service_manager_type;
@@ -40,6 +40,7 @@ type vendor_hal_qccvndhal_service,       hal_service_type, protected_service, se
 type vendor_hal_qms_service,             hal_service_type, protected_service, service_manager_type;
 type vendor_hal_factory_service,         hal_service_type, protected_service, service_manager_type;
 type vendor_hal_bttpi_service,           hal_service_type, protected_service, service_manager_type;
+type vendor_hal_qtiwifi_service,         hal_service_type, protected_service, service_manager_type;
 type vendor_hal_xpanprovider_service,    hal_service_type, protected_service, service_manager_type;
 type vendor_hal_qesdhalaidl_service,     hal_service_type, service_manager_type;
 type vendor_hal_sensorscalibrateaidl_service, hal_service_type, protected_service, service_manager_type;

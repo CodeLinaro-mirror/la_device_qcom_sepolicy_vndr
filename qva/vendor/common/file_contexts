@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ###################################
@@ -303,6 +303,9 @@
 
 #wificfr daemon
 /(vendor|system/vendor)/bin/wificfrtool    u:object_r:wificfrsvc_exec:s0
+
+#qtiwifi daemon
+/(vendor|system/vendor)/bin/qtiwifi    u:object_r:qtiwifi_exec:s0
 
 #tsa_hdcp_service daemon
 /(vendor|system/vendor)/bin/tsa_hdcp_service           u:object_r:vendor_tsa_hdcpservice_exec:s0
