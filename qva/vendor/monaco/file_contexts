@@ -116,6 +116,8 @@
 # dev node
 /dev/gpr_channel                                u:object_r:vendor_agm_device:s0
 /dev/nongpr_channel                             u:object_r:vendor_agm_device:s0
+/dev/glink_pkt_ss_bt_ctrl                       u:object_r:vendor_glink_slate_bt:s0
+/dev/glink_pkt_ss_bt_data                       u:object_r:vendor_glink_slate_bt:s0
 
 ###power_state dev node
 /dev/power_state                      u:object_r:vendor_power_state_device:s0
