@@ -180,3 +180,6 @@ vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0
 
 # AGMIPC
 ctl.vendor.agm-1-0               u:object_r:vendor_AGMIPC_service_prop:s0
+
+# camera_provider-restart
+vendor.camera_provider.restart             u:object_r:vendor_camera_provider_restart_prop:s0

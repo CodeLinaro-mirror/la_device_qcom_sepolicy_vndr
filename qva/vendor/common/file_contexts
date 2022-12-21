@@ -279,6 +279,7 @@
 /data/vendor/sensing(/.*)?                                          u:object_r:vendor_sensing_vendor_data_file:s0
 /data/vendor/gaming(/.*)?                                           u:object_r:vendor_qspmhal_data_file:s0
 /data/vendor/smq_app(/.*)?                                          u:object_r:vendor_smq_app_data_file:s0
+/data/vendor/gsi(/.*)?                                              u:object_r:vendor_gsi_data_file:s0
 
 ###################################
 # persist files
@@ -316,6 +317,7 @@
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
 /(vendor|system/vendor)/bin/ais_server_late                         u:object_r:vendor_ais_server_exec:s0
 /dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
+/dev/socket/camera/gsi                                              u:object_r:vendor_camera_socket:s0
 /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
 # Qcarcam HAL
