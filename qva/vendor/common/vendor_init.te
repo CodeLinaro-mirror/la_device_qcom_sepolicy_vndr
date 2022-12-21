@@ -63,3 +63,5 @@ get_prop(vendor_init, vendor_sysboot_completed_prop)
 get_prop(vendor_init, vendor_initsvc_bootanim_prop)
 
 dontaudit vendor_init persist_debug_prop:file r_file_perms;
+
+get_prop(vendor_init, vendor_soc_model_prop);
