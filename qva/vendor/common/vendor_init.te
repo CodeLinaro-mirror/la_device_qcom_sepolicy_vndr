@@ -64,3 +64,11 @@ get_prop(vendor_init, vendor_initsvc_bootanim_prop)
 
 dontaudit vendor_init persist_debug_prop:file r_file_perms;
 set_prop(vendor_init, qemu_sf_lcd_density_prop)
+
+get_prop(vendor_init, bootanim_system_prop)
+allow vendor_init vendor_ipa_dev:file rw_file_perms;
+allow vendor_init vendor_ipa_dev:file create;
+
+set_prop(vendor_init, vendor_board_suffix_prop)
+
+get_prop(vendor_init, vendor_soc_model_prop);
