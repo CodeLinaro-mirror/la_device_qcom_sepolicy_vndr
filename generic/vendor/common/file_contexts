@@ -154,6 +154,9 @@
 # Block device for ZRAM
 /dev/block/zram0                                u:object_r:swap_block_device:s0
 
+#senors glink dev node
+/dev/glinkpkt_slate_ssc_hal                     u:object_r:vendor_glink_slate_ssc_hal_device:s0
+
 # Vendor DMA-BUF Heaps
 /dev/dma_heap/qcom,system               u:object_r:vendor_dmabuf_system_heap_device:s0
 /dev/dma_heap/qcom,secure-pixel         u:object_r:vendor_dmabuf_secure_pixel:s0
