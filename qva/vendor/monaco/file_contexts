@@ -69,5 +69,7 @@
 
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]+/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/ab00000.qcom,slate/subsys[0-9]+/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices(/platform)?/soc/soc:qcom,rproc-slate/remoteproc/remoteproc[0-2]+/name                            u:object_r:vendor_sysfs_ssr:s0
+/sys/devices(/platform)?/soc/soc:qcom,rproc-slate/remoteproc/remoteproc[0-2]+/state                           u:object_r:vendor_sysfs_ssr:s0
 
 /dev/glinkpkt_slate_sso_hal                     u:object_r:vendor_glink_slate_sso_hal_device:s0
