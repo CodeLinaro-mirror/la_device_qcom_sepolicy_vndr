@@ -36,6 +36,9 @@ binder_call(vendor_agmservice_qti, hal_audio_default)
 #Allow for transition from init domain to agmservice
 init_daemon_domain(vendor_agmservice_qti)
 
+#To-Do, need to move agmservice to enforcing.
+permissive vendor_agmservice_qti;
+
 # Add hwservice related rules
 hal_attribute_hwservice(hal_audio, vendor_agm_hwservice)
 

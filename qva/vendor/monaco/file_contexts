@@ -56,8 +56,37 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/dev/block/mmcblk0rpmb                                          u:object_r:vendor_rpmb_device:s0
+/dev/mmcblk0rpmb                                                u:object_r:vendor_rpmb_device:s0
+/dev/block/mmcblk0                                              u:object_r:root_block_device:s0
+
+
 #for eMMC
+/dev/block/platform/soc/4744000.sdhci/by-name/system                            u:object_r:system_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/metadata                          u:object_r:metadata_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/userdata                          u:object_r:userdata_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/boot                              u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/logdump                           u:object_r:vendor_logdump_partition:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/fsc                               u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/fsg                               u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/modemst1                          u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/modemst2                          u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/ssd                               u:object_r:vendor_ssd_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/misc                              u:object_r:misc_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/rpm                               u:object_r:vendor_rpmb_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/msadp                             u:object_r:vendor_mba_debug_dev:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/recovery                          u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/cache                             u:object_r:cache_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/frp                               u:object_r:frp_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/mdtp                              u:object_r:vendor_mdtp_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/dip                               u:object_r:vendor_dip_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/storsec                           u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/persist                           u:object_r:vendor_persist_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/super                             u:object_r:super_block_device:s0
+#
 /dev/block/platform/soc/4744000.sdhci/by-name/sensorstore       u:object_r:vendor_sensorstore_block_device:s0
+
+
 
 # same process HAL libs
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.wristorientation@1\.0-service u:object_r:vendor_hal_wristorientation_qti_exec:s0
@@ -66,6 +95,8 @@
 #SSR nodes
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,slate/subsys[0-9]+/name       u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/ab00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
+
 
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]+/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/ab00000.qcom,slate/subsys[0-9]+/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -73,3 +104,9 @@
 /sys/devices(/platform)?/soc/soc:qcom,rproc-slate/remoteproc/remoteproc[0-2]+/state                           u:object_r:vendor_sysfs_ssr:s0
 
 /dev/glinkpkt_slate_sso_hal                     u:object_r:vendor_glink_slate_sso_hal_device:s0
+
+
+
+
+### need to move to genfs??
+/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
