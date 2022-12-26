@@ -1,0 +1,42 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type init_cancfg_sh, domain, mlstrustedsubject;
+type init_cancfg_sh_exec, exec_type, system_file_type, file_type;
+
+allow init_cancfg_sh rootfs:dir { open read };
+allow init_cancfg_sh self:capability net_admin;
+allow init_cancfg_sh self:netlink_route_socket { bind create getattr nlmsg_readpriv nlmsg_write read setopt write };
+allow init_cancfg_sh self:udp_socket { create ioctl };
+
+allow init_cancfg_sh self:tcp_socket create_stream_socket_perms;
+allow init_cancfg_sh port:tcp_socket name_bind;
+allow init_cancfg_sh node:tcp_socket node_bind;
+# Connect to ports.
+allow init_cancfg_sh port_type:tcp_socket name_connect;
+
+allow init_cancfg_sh self:can_socket { bind create read write ioctl setopt };
+allowxperm init_cancfg_sh self:can_socket ioctl {
+    SIOCGIFINDEX
+};
+
+allow init_cancfg_sh servicemanager:binder call;
+allow init_cancfg_sh system_server:binder { call transfer };
+
+# allow shell access to services
+allow init_cancfg_sh servicemanager:service_manager list;
+
+# Allow shell to start up vendor shell
+allow init_cancfg_sh vendor_shell_exec:file rx_file_perms;
+allow init_cancfg_sh vendor_toolbox_exec:file rx_file_perms;
+allow init_cancfg_sh vendor_file:file {read open map execute getattr execute_no_trans execute };
+r_dir_file(init_cancfg_sh, vendor_file)
+# Read files in /proc
+allow init_cancfg_sh {
+	proc_version
+}:file r_file_perms;
+allow init_cancfg_sh dnsproxyd_socket:sock_file write;
+allow init_cancfg_sh fwmarkd_socket:sock_file write;
+allow init_cancfg_sh netd:unix_stream_socket connectto;
+allow netd init_cancfg_sh:fd use;
+allow netd init_cancfg_sh:tcp_socket { getopt read setopt write };
