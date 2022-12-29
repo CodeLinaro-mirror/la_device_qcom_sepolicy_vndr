@@ -60,3 +60,6 @@ type vendor_qvr_hidraw_device, dev_type;
 #define location SiRFStarV device
 type vendor_location_device, dev_type;
 type vendor_msm_rtac_device, dev_type;
+
+#define msm_lsm char device
+type vendor_msm_lsm_cdev_device, dev_type;

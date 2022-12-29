@@ -126,6 +126,8 @@ allow $1 system_file:dir r_dir_perms;
 get_prop($1, hwservicemanager_prop)
 typeattribute $1 $2_server;
 typeattribute $1 $2;
+typeattribute $1 vendor_halserverdomain;
+neverallow { vendor_halserverdomain - netdomain userdebug_or_eng(` -vendor_qtiloopback_native') - vendor_wigignpt - vendor_qms } hwservicemanager:binder { call transfer };
 ')
 
 #####################################
@@ -190,10 +192,25 @@ hal_client_domain($1, vendor_qccsyshal);
 #####################################
 # qesdk_access(clientdomain)
 define(`qesdk_access', `
-hal_client_domain($1, vendor_hal_qesdhal)
 unix_socket_connect($1, vendor_qesd, vendor_hal_qesdhal)
+allow $1 vendor_hal_qesdhal_default:file read;
+allow $1 vendor_hal_qesdhal_default:lnk_file read;
+allow $1 vendor_hal_qesdhal_default:dir search;
+allow $1 self:netlink_generic_socket create_socket_perms_no_ioctl;
 userdebug_or_eng(`
   unix_socket_connect($1, vendor_qesd_one, vendor_hal_qesdonehal_default);
   get_prop($1, vendor_qesdk_one_prop);
   allow $1 vendor_qesd_one_socket:dir r_dir_perms; ')
+')
+
+#####################################
+# tlpd_socket(clientdomain)
+# Allow client domain to connecto and send
+# via a local socket to the tlpd domain.
+# Also allow the client domain to remove
+# its own socket.
+define(`tlpd_socket', `
+allow $1 vendor_tlpd_socket:dir r_dir_perms;
+unix_socket_connect($1, vendor_tlpd, vendor_tlpd)
+allow $1 vendor_tlpd_socket:sock_file { read write };
 ')

@@ -50,6 +50,3 @@
 #DRV
 /sys/firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc7/regulator-pm8150-2-l7/phandle u:object_r:vendor_sysfs_drv:s0
 /sys/firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc8/compatible                    u:object_r:vendor_sysfs_drv:s0
-
-#Drop cache
-/vendor/bin/drop_caches.sh                                          u:object_r:vendor_qti_init_shell_exec:s0
