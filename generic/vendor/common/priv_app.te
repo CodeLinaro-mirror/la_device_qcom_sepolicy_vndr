@@ -24,9 +24,15 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 hal_client_domain(priv_app, vendor_hal_perf)
 
 # TODO(b/123050471): this grants renderscript exec permissions to the
 # priv_app domain
 allow priv_app rs_exec:file rx_file_perms;
+allow priv_app metadata_file:dir r_dir_perms;

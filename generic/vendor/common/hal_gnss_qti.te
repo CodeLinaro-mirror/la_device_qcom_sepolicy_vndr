@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # generic/vendor_hal_gnss_qti.te - generic sepolicy rules for vendor_location hidl
 
@@ -40,6 +45,9 @@ use_vendor_per_mgr(vendor_hal_gnss_qti)
 allow vendor_hal_gnss_qti vendor_location_data_file:fifo_file { open read setattr write };
 allow vendor_hal_gnss_qti vendor_location_data_file:dir create_dir_perms;
 allow vendor_hal_gnss_qti vendor_location_data_file:file create_file_perms;
+allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager { find };
+allow vendor_hal_gnss_qti boot_status_prop:file { read };
+binder_call(vendor_hal_gnss_qti, carpowerpolicyd);
 
 # /dev/socket/vendor_location
 allow vendor_hal_gnss_qti vendor_location_socket:sock_file create_file_perms;

@@ -24,6 +24,12 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 allow init {
     adsprpcd_file
     cache_file
@@ -55,6 +61,8 @@ dontaudit init kernel:system module_request;
 allow init sysfs_leds:lnk_file r_file_perms;
 
 allow init socket_device:sock_file create_file_perms;
+allow init nativetest_data_file:dir r_dir_perms;
+
 
 #Needed for restorecon. Init already has these permissions
 #for generic block devices, but is unable to access those
