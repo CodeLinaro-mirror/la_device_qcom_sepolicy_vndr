@@ -35,6 +35,8 @@ type vendor_glink_slate_sso_hal_device,  dev_type;
 type vendor_logdump_partition, dev_type;
 type vendor_dip_device, dev_type;
 type vendor_mba_debug_dev, dev_type;
+type vendor_glink_slate_display_ctrl_device, dev_type;
+type vendor_glink_slate_display_data_device, dev_type;
 
 #define qbg char device
 type vendor_qbg_device, dev_type;

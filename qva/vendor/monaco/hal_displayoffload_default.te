@@ -1,4 +1,5 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -28,8 +29,36 @@
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_sysfs_fps_attr, fs_type, sysfs_type;
+# Define domain
+type vendor_hal_displayoffload_default, domain;
 
-#System power-disk file type
-type sysfs_power_disk, sysfs_type, fs_type;
-type vendor_sysfs_drm, sysfs_type, fs_type;
+hal_server_domain(vendor_hal_displayoffload_default, vendor_hal_displayoffload)
+
+type vendor_hal_displayoffload_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_displayoffload_default)
+
+allow vendor_hal_displayoffload vendor_glink_slate_display_ctrl_device:chr_file rw_file_perms;
+allow vendor_hal_displayoffload vendor_glink_slate_display_data_device:chr_file rw_file_perms;
+
+allow vendor_hal_displayoffload_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# Rules for display HAL communication
+vndbinder_use(vendor_hal_displayoffload_default);
+binder_call(vendor_hal_displayoffload_default, hal_graphics_composer)
+allow vendor_hal_displayoffload_default vendor_qdisplay_service:service_manager find;
+
+r_dir_file(vendor_hal_displayoffload, vendor_sysfs_drm)
+allow vendor_hal_displayoffload_default vendor_sysfs_drm:file r_file_perms;
+
+set_prop(vendor_hal_displayoffload_default, vendor_slate_boot_complete_prop)
+get_prop(vendor_hal_displayoffload_default, vendor_uioffload_logging_prop)
+
+set_prop(vendor_hal_displayoffload_default, vendor_lefty_prop)
+
+get_prop(vendor_hal_displayoffload_default, wrist_orientation_prop)
+hal_client_domain(vendor_hal_displayoffload_default, hal_wristorientation)
+
+get_prop(vendor_hal_displayoffload_default, vendor_qc_aon_prop)
+
+#wakelock policy
+wakelock_use(vendor_hal_displayoffload_default);

@@ -48,3 +48,8 @@ attribute vendor_hal_powerstateservice_server;
 attribute vendor_hal_powerstateutility;
 attribute vendor_hal_powerstateutility_client;
 attribute vendor_hal_powerstateutility_server;
+
+# Display offload HAL
+attribute vendor_hal_displayoffload;
+attribute vendor_hal_displayoffload_client;
+attribute vendor_hal_displayoffload_server;

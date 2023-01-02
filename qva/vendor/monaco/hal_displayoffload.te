@@ -1,4 +1,5 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -28,8 +29,9 @@
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_sysfs_fps_attr, fs_type, sysfs_type;
+# HwBinder IPC from clients into server, and callbacks
+binder_call(vendor_hal_displayoffload_client, vendor_hal_displayoffload_server)
+binder_call(vendor_hal_displayoffload_server, vendor_hal_displayoffload_client)
 
-#System power-disk file type
-type sysfs_power_disk, sysfs_type, fs_type;
-type vendor_sysfs_drm, sysfs_type, fs_type;
+add_hwservice(vendor_hal_displayoffload_server, vendor_hal_displayoffload_hwservice)
+allow vendor_hal_displayoffload_client vendor_hal_displayoffload_hwservice:hwservice_manager find;
