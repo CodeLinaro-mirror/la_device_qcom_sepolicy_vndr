@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -26,11 +26,17 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-vendor.qti.hardware.aonutility::IAONUtility                        u:object_r:vendor_hal_aonutility_hwservice:s0
-vendor.google_clockwork.displayoffload::IDisplayOffload            u:object_r:vendor_hal_displayoffload_hwservice:s0
-vendor.google_clockwork.healthservices::IHealthServices            u:object_r:hal_healthservices_hwservice:s0
-vendor.qti.hardware.powerstateservice::IPowerStateService          u:object_r:vendor_hal_powerstateservice_hwservice:s0
-vendor.qti.hardware.powerstateservice::IPowerStateUtility          u:object_r:vendor_hal_powerstateutility_hwservice:s0
+type vendor_aonutility_service, domain;
+
+# Domain to run AONUtility Service (com.qualcomm.qti.aonutility)
+app_domain(vendor_aonutility_service)
+
+# Allow AONUtility Service to access certain system services.
+allow vendor_aonutility_service activity_service:service_manager find;
+allow vendor_aonutility_service surfaceflinger_service:service_manager find;
+
+# Allow AONUtility Service to be the client AONUtility HAL
+hal_client_domain(vendor_aonutility_service, vendor_hal_aonutility);

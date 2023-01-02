@@ -1,5 +1,5 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
-# Redistribution and use in source and binary forms, with or without
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+
 # modification, are permitted provided that the following conditions are
 # met:
 #    * Redistributions of source code must retain the above copyright
@@ -28,9 +28,32 @@
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_sysfs_fps_attr, fs_type, sysfs_type;
+# Define domain
+type vendor_hal_aonutility_default, domain;
 
-#System power-disk file type
-type sysfs_power_disk, sysfs_type, fs_type;
-type vendor_sysfs_drm, sysfs_type, fs_type;
-type vendor_sysfs_twm, sysfs_type, fs_type;
+hal_server_domain(vendor_hal_aonutility_default, vendor_hal_aonutility)
+
+type vendor_hal_aonutility_default_exec, exec_type, vendor_file_type, file_type;
+allow vendor_hal_aonutility_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+init_daemon_domain(vendor_hal_aonutility_default);
+allow vendor_hal_aonutility vendor_slate_daemon_device:chr_file rw_file_perms;
+r_dir_file(vendor_hal_aonutility, vendor_sysfs_twm)
+allow vendor_hal_aonutility_default vendor_sysfs_twm:file w_file_perms;
+r_dir_file(vendor_hal_aonutility, vendor_sysfs_drm)
+allow vendor_hal_aonutility_default vendor_sysfs_drm:file w_file_perms;
+allow vendor_hal_aonutility_default vendor_glink_slate_ux_ctl_device:chr_file rw_file_perms;
+
+get_prop(vendor_hal_aonutility_default, wrist_orientation_prop)
+hal_client_domain(vendor_hal_aonutility_default, hal_wristorientation)
+
+get_prop(vendor_hal_aonutility_default, vendor_watch_orientation_prop)
+hal_client_domain(vendor_hal_aonutility_default, vendor_hal_watchorientation)
+
+#Allow qipcrtr socket permisison
+allow vendor_hal_aonutility_default self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+#wakelock policy
+wakelock_use(vendor_hal_aonutility_default);
+allow vendor_hal_aonutility_default sysfs_rtc:dir search;
+allow vendor_hal_aonutility_default sysfs_rtc:file r_file_perms;
+get_prop(vendor_hal_aonutility_default, vendor_slate_boot_complete_prop);

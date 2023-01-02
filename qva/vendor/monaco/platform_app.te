@@ -32,3 +32,5 @@
 # allow platform_app to interact with displayoffload hal
 hal_client_domain(platform_app, vendor_hal_displayoffload)
 
+# allow platform_app to interact with aonutility hal
+hal_client_domain(platform_app, vendor_hal_aonutility)

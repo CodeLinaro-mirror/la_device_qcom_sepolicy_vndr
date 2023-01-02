@@ -29,6 +29,9 @@
 # Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+# allow system_server to access AONUtility hal
+hal_client_domain(system_server, vendor_hal_aonutility);
+
 # allow system_server to access Display offload hal
 hal_client_domain(system_server, vendor_hal_displayoffload);
 
