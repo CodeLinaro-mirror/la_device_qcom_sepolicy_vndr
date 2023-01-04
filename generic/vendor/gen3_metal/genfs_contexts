@@ -86,3 +86,6 @@ genfscon sysfs /devices/platform/soc/18321110.qcom,cpu4-cpu-l3-lat/devfreq u:obj
 genfscon sysfs /devices/platform/soc/18321110.qcom,cpu6-cpu-l3-lat/devfreq u:object_r:vendor_sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/18321110.qcom,cpu7-cpu-l3-lat/devfreq u:object_r:vendor_sysfs_devfreq:s0
 
+#sysfs wakeup
+genfscon sysfs /kernel/tracing/instances/usb/events/migrate/mm_numa_migrate_ratelimit/trigger  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /kernel/debug/tracing/instances/usb/events/migrate/mm_numa_migrate_ratelimit/trigger  u:object_r:sysfs_wakeup:s0
