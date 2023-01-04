@@ -34,3 +34,4 @@ type vendor_sysfs_fps_attr, fs_type, sysfs_type;
 type sysfs_power_disk, sysfs_type, fs_type;
 type vendor_sysfs_drm, sysfs_type, fs_type;
 type vendor_sysfs_twm, sysfs_type, fs_type;
+type vendor_sysfs_slate_rsb, fs_type, sysfs_type;

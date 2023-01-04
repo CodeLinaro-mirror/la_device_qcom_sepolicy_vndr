@@ -308,7 +308,6 @@
 
 /sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:vendor_sysfs_spss:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/sku_version       u:object_r:vendor_sysfs_sku:s0
-/sys/devices(/platform)?/soc/soc:qcom,slate-rsb/enable             u:object_r:vendor_sysfs_slate_rsb:s0
 
 ###################################
 # data files
