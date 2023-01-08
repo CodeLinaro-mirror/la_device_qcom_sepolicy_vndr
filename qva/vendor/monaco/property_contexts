@@ -33,3 +33,4 @@ persist.vendor.qbg.                          u:object_r:vendor_hvdcp_opti_prop:s
 persist.vendor.uioffload.logs.level          u:object_r:vendor_uioffload_logging_prop:s0
 ro.boot.vendor.lefty                         u:object_r:vendor_lefty_prop:s0
 ro.vendor.qc_aon_presence                    u:object_r:vendor_qc_aon_prop:s0
+persist.vendor.watch_orientation             u:object_r:vendor_watch_orientation_prop:s0

@@ -58,3 +58,8 @@ attribute vendor_hal_displayoffload_server;
 attribute vendor_hal_aonutility;
 attribute vendor_hal_aonutility_client;
 attribute vendor_hal_aonutility_server;
+
+# Watch Orientation HAL
+attribute vendor_hal_watchorientation;
+attribute vendor_hal_watchorientation_client;
+attribute vendor_hal_watchorientation_server;
