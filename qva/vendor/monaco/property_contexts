@@ -30,6 +30,8 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 persist.vendor.qbg.                          u:object_r:vendor_hvdcp_opti_prop:s0
+vendor.slate_reset                           u:object_r:vendor_slate_daemon_prop:s0
+vendor.slate.boot_complete                   u:object_r:vendor_slate_boot_complete_prop:s0
 persist.vendor.uioffload.logs.level          u:object_r:vendor_uioffload_logging_prop:s0
 ro.boot.vendor.lefty                         u:object_r:vendor_lefty_prop:s0
 ro.vendor.qc_aon_presence                    u:object_r:vendor_qc_aon_prop:s0

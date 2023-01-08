@@ -227,5 +227,6 @@ type vendor_dpm_vndr_data_file, file_type, data_file_type ;
 type vendor_qesd_socket, file_type;
 
 type vendor_sysfs_usb_node, fs_type, sysfs_type;
+type vendor_debugfs_ipc, debugfs_type, fs_type;
 #rsb
 type vendor_sysfs_slate_rsb, fs_type, sysfs_type;

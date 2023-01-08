@@ -152,7 +152,6 @@
 /dev/qvr_external_sensor_ioctl        u:object_r:vendor_qvr_external_sensor_device:s0
 /dev/hidraw[0-5]                      u:object_r:vendor_qvr_hidraw_device:s0
 /dev/st54spi_gpio                     u:object_r:vendor_ese_gpio_device:s0
-/dev/slate_com_dev                    u:object_r:vendor_slate_daemon_device:s0
 
 ###################################
 # Dev socket nodes
@@ -370,4 +369,3 @@
 
 #wificfr daemon
 /(vendor|system/vendor)/bin/wificfrtool    u:object_r:wificfrsvc_exec:s0
-/(vendor|system/vendor)/bin/slatedaemon    u:object_r:vendor_slate_daemon_exec:s0
