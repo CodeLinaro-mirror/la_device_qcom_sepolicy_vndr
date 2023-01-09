@@ -26,6 +26,12 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_qti_init_shell vendor_sysfs_npu:file rw_file_perms;
+
+#fastcv
+allow vendor_qti_init_shell vendor_data_file:dir { add_name remove_name write };
+allow vendor_qti_init_shell vendor_data_file:file { unlink rw_file_perms };
+allow vendor_qti_init_shell vendor_data_file:lnk_file { create rename };
+
 set_prop(vendor_qti_init_shell, vendor_mdm_helper_prop)
 set_prop(vendor_qti_init_shell, vendor_mmi_prop)
 
