@@ -104,6 +104,9 @@
 /sys/class/drm/sde-conn-0-DSI-1/panel_power_state                        u:object_r:vendor_sysfs_drm:s0
 /sys/class/pmic-lpm/pmic_twm_enable                                      u:object_r:vendor_sysfs_twm:s0
 
+#Vibrator offload glink dev node
+/dev/glinkpkt_slate_haptics_offload             u:object_r:vendor_glink_slate_haptics_offload_device:s0
+
 /dev/slate_com_dev                              u:object_r:vendor_slate_daemon_device:s0
 /dev/glink_pkt_slate_display_ctrl               u:object_r:vendor_glink_slate_display_ctrl_device:s0
 /dev/glink_pkt_slate_display_data               u:object_r:vendor_glink_slate_display_data_device:s0
