@@ -149,3 +149,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/wakeup u:object_r:sysfs_w
 
 genfscon sysfs /devices/platform/soc/1610000.qcom,msm-eud/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ab00000.qcom,lpass/wakeup u:object_r:sysfs_wakeup:s0
+
+#Power-Disk sysfs node
+genfscon sysfs /power/disk  u:object_r:sysfs_power_disk:s0
