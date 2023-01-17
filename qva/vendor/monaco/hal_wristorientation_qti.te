@@ -37,6 +37,10 @@ init_daemon_domain(vendor_hal_wristorientation_qti);
 
 hal_server_domain(vendor_hal_wristorientation_qti, hal_wristorientation)
 
+hal_client_domain(vendor_hal_wristorientation_qti, vendor_hal_displayoffload)
+
+hal_client_domain(vendor_hal_wristorientation_qti, vendor_hal_aonutility)
+
 allow vendor_hal_wristorientation_qti self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 get_prop(vendor_hal_wristorientation_qti, wrist_orientation_prop)
