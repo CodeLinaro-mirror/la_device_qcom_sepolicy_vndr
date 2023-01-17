@@ -311,3 +311,13 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/persist                            u:object_r:vendor_persist_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/super                              u:object_r:super_block_device:s0
 
+#Early Services
+/vendor_early_services(/.*)?                                                  u:object_r:vendor_early_services:s0
+/vendor_early_services                                                        u:object_r:vendor_early_services:s0
+/vendor_early_services/bin/early_services_init                                u:object_r:vendor_init_exec:s0
+/vendor_early_services/bin/init_early_test                                    u:object_r:vendor_init_early_test_exec:s0
+/vendor_early_services/system/bin/init_early_test                             u:object_r:vendor_init_early_test_exec:s0
+/vendor_early_services/system/lib(64)?(/.*)?                                  u:object_r:system_lib_file:s0
+/vendor_early_services/vendor/lib/modules(/.*)?                               u:object_r:vendor_file:s0
+/vendor_early_services/system/bin/bootstrap/linker(64)?                       u:object_r:system_linker_exec:s0
+/vendor_early_services/vendor/firmware_mnt(/.*)?                               u:object_r:firmware_file:s0
