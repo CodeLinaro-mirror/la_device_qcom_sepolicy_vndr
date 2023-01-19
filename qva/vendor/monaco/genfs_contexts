@@ -88,6 +88,7 @@ genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,
 
 #AONUHAL
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-00/1c40000.qcom,spmi:qcom,pm5100@0:rtc@6400/rtc/rtc0/rtc_us_val u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm5100@0:rtc@6400/rtc/rtc0/rtc_us_val     u:object_r:sysfs_rtc:s0
 
 #qdss sysfs-node
 genfscon sysfs /devices/platform/soc/8047000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
