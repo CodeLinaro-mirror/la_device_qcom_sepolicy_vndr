@@ -1,0 +1,4 @@
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved. 
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow fsck vendor_dsp_block_device:blk_file rw_file_perms;
