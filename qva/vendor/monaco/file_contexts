@@ -61,6 +61,31 @@
 /dev/qbg                              u:object_r:vendor_qbg_device:s0
 /dev/qbg_battery                      u:object_r:vendor_qbg_device:s0
 
+# A/B partitions.
+/dev/block/platform/soc/4744000.sdhci/by-name/abl_[ab]              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/bluetooth_[ab]        u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/boot_[ab]             u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/init_boot_[ab]        u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/vendor_boot_[ab]      u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/devcfg_[ab]           u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/dsp_[ab]              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/dtbo_[ab]             u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/hyp_[ab]              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/keymaster_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/mdtp_[ab]             u:object_r:vendor_mdtp_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/modem_[ab]            u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/qupfw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/rpm_[ab]              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/tz_[ab]               u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/vbmeta_[ab]           u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/xbl_[ab]              u:object_r:vendor_xbl_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/xbl_config_[ab]       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/imagefv_[ab]          u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/multiimgoem_[ab]      u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/uefisecapp_[ab]       u:object_r:vendor_uefi_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/recovery_[ab]         u:object_r:recovery_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/vbmeta_system_[ab]    u:object_r:vendor_custom_ab_block_device:s0
+
 # same process HAL libs
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.wristorientation@1\.0-service u:object_r:vendor_hal_wristorientation_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.healthservices@1\.0-service u:object_r:vendor_hal_healthservices_qti_exec:s0
