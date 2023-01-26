@@ -238,6 +238,7 @@
 
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
+/(vendor|system/vendor)/bin/ais_server_late                         u:object_r:vendor_ais_server_exec:s0
 /dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
 /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:ais_v4l2_proxy_exec:s0
@@ -249,6 +250,7 @@
 # EVS and Qcarcam HAL
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais     u:object_r:vendor_hal_evs_driver_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service    u:object_r:vendor_hal_ais_qti_exec:s0
+/system/bin/android\.automotive\.evs\.manager@1\.1         u:object_r:evs_manager_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0
