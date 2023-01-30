@@ -38,6 +38,7 @@ init_daemon_domain(vendor_slate_daemon)
 #Needed to slate communication
 allow vendor_slate_daemon vendor_slate_daemon_device:chr_file rw_file_perms;
 allow vendor_slate_daemon vendor_sysfs_ssr:chr_file r_file_perms;
+allow vendor_slate_daemon vendor_glink_slate_dfu_device:chr_file rw_file_perms;
 
 #Needed to pil loading
 allow vendor_slate_daemon vendor_ssr_device:chr_file r_file_perms;
@@ -45,3 +46,6 @@ allow vendor_slate_daemon self:netlink_kobject_uevent_socket create_socket_perms
 set_prop(vendor_slate_daemon, vendor_slate_daemon_prop)
 set_prop(vendor_slate_daemon, vendor_slate_boot_complete_prop)
 get_prop(vendor_slate_daemon, vendor_qc_aon_prop)
+
+#wakelock policy
+wakelock_use(vendor_slate_daemon);
