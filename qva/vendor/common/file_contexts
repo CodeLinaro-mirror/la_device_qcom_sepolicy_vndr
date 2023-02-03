@@ -305,6 +305,9 @@
 /vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.2\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.3\.so    u:object_r:same_process_hal_file:s0
 
+#vehicle HAL
+/vendor/lib(64)?/VehicleHardware\.so       u:object_r:vendor_aidl_hal_automotive_vehicle:s0
+
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:vendor_wifilearnersvc_exec:s0
 
