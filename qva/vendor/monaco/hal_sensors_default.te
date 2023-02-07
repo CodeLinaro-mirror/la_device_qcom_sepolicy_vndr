@@ -36,3 +36,5 @@
 #Allow sensors hal to access sensorstore
 allow hal_sensors_default block_device:dir search;
 allow hal_sensors_default vendor_sensorstore_block_device:blk_file rw_file_perms;
+
+get_prop(hal_sensors_default, vendor_qc_aon_prop)

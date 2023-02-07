@@ -41,3 +41,5 @@ allow vendor_sensors_qti vendor_persist_sensors_file:file create_file_perms;
 hal_client_domain(vendor_sensors_qti, hal_wristorientation)
 set_prop(vendor_sensors_qti, vendor_sensors_prop)
 get_prop(vendor_sensors_qti, wrist_orientation_prop)
+
+get_prop(vendor_sensors_qti, vendor_qc_aon_prop)
