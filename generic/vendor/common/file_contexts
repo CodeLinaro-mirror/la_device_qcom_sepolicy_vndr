@@ -560,3 +560,6 @@
 /es_tmpfs(/.*)?                                                        u:object_r:vendor_early_services:s0
 /aes_tmpfs(/.*)?                                                       u:object_r:vendor_early_services:s0
 /early_services/vendor/firmware_mnt(/.*)? u:object_r:firmware_file:s0
+
+#MSM-DRM
+/sys/devices/platform/soc/ae00000\.qcom,mdss_mdp/init_complete         u:object_r:vendor_sysfs_display:s0
