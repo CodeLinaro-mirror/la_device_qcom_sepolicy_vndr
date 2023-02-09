@@ -259,3 +259,5 @@
 /(vendor|system/vendor)/bin/c2c_hub             u:object_r:vendor_c2c_hub_exec:s0
 /(vendor|system/vendor)/bin/dm                  u:object_r:vendor_dm_exec:s0
 /(vendor|system/vendor)/bin/mosquitto           u:object_r:vendor_mosquitto_exec:s0
+
+/(vendor|system/vendor)/bin/canflasher    u:object_r:vendor_canflasher_exec:s0

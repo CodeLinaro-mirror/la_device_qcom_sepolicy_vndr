@@ -1,0 +1,15 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_canflasher, domain;
+type vendor_canflasher_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_canflasher)
+allow vendor_canflasher vendor_canflasher_exec:file execute_no_trans;
+allow vendor_canflasher self:can_socket { bind create read write ioctl setopt };
+allow vendor_canflasher vendor_file:file execute_no_trans;
+allow vendor_canflasher vendor_toolbox_exec:file execute_no_trans;
+allowxperm vendor_canflasher self:can_socket ioctl {
+    SIOCGIFINDEX
+};
+allowxperm vendor_canflasher self:can_socket ioctl priv_sock_ioctls;
