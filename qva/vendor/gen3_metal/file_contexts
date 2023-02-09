@@ -37,8 +37,6 @@
 /dev/spidev10.0                                                                             u:object_r:audio_device:s0
 /dev/i2c-7                                                                                 u:object_r:audio_device:s0
 
-/(vendor|system/vendor)/bin/audiod                                  u:object_r:vendor_audiod_exec:s0
-
 # Block device for hal_bootctl
 /dev/block/sdf                                                      u:object_r:boot_block_device:s0
 

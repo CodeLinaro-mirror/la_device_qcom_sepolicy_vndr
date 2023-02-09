@@ -77,6 +77,7 @@ allow vendor_cnd vendor_netmgrd:fd use;
 allow vendor_cnd vendor_netmgrd:udp_socket { read write };
 
 # To register vendor_cnd to hwbinder
+hal_server_domain_bypass(vendor_cnd, vendor_hal_datafactory_qti)
 binder_call(vendor_hal_datafactory_qti_client, vendor_hal_datafactory_qti_server)
 binder_call(vendor_hal_datafactory_qti_server, vendor_hal_datafactory_qti_client)
 hal_attribute_hwservice(vendor_hal_datafactory_qti, vendor_hal_datafactory_hwservice)

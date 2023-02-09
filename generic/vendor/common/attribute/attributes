@@ -30,3 +30,5 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 attribute vendor_qmcs_file_type;
+# vendor halserver
+attribute vendor_halserverdomain;

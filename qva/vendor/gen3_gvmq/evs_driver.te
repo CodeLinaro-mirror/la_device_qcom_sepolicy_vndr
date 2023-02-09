@@ -26,4 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_hal_evs_driver vendor_hab_device:chr_file rw_file_perms;
-allow vendor_hal_evs_driver vendor_hgsl_device:chr_file rw_file_perms;

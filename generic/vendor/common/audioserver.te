@@ -26,6 +26,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 binder_call(audioserver, bootanim)
 
+# allow access to ALSA MMAP FDs for AAudio API
+allow audioserver audio_device:chr_file rw_file_perms;
+allow audioserver audio_service:service_manager find;
+
 # audio properties
 get_prop(audioserver, vendor_audio_prop)
 

@@ -26,6 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
+#
 # Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
@@ -250,6 +251,15 @@ type vendor_sysfs_rmnet, fs_type, sysfs_type;
 # display boot param files
 type vendor_sysfs_disp_boot_param, fs_type, sysfs_type;
 
+# TLPD service
+type vendor_dlsc_socket, file_type;
+
+type vendor_tlpd_socket, file_type;
+
+type vendor_tlpd_data_file, file_type, data_file_type;
+
+type vendor_dlsc_data_file, file_type, data_file_type;
+
 # SKU settings
 type vendor_sysfs_aop_freq_message, fs_type, sysfs_type;
 
@@ -264,3 +274,6 @@ type vendor_audio_device, dev_type;
 
 #Power device
 type vendor_sysfs_power, fs_type, sysfs_type;
+
+# kernel silent boot
+type vendor_sysfs_sb, fs_type, sysfs_type;

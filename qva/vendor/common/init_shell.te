@@ -49,6 +49,7 @@ allow vendor_qti_init_shell vendor_mpctl_data_file:file { write getattr unlink }
 allow vendor_qti_init_shell vendor_sysfs_vmpressure:file w_file_perms;
 
 allow vendor_qti_init_shell vendor_sysfs_bootguestvm:file w_file_perms;
+allow vendor_qti_init_shell proc_watermark_scale_factor:file { open append write };
 
 userdebug_or_eng(`
 # Needed for starting console in userdebug mode
@@ -62,9 +63,16 @@ allow vendor_qti_init_shell vendor_sysfs_slab_zspage_storeuser:file w_file_perms
 allow vendor_qti_init_shell {
     vendor_sysfs_mmc_host
     sysfs_dm
+    vendor_sysfs_sd
 }:file w_file_perms;
 
 # Allow init shell to access vendor pasr properties
 set_prop(vendor_qti_init_shell, vendor_pasr_prop)
+set_prop(vendor_qti_init_shell, ctl_start_prop)
+dontaudit vendor_qti_init_shell default_prop:file read;
+
+# Allow init shell to access NFC device file
+allow vendor_qti_init_shell nfc_device:chr_file { getattr };
+set_prop(vendor_qti_init_shell, vendor_ese_strongbox_prop)
 
 allow vendor_qti_init_shell vendor_sysfs_usb_device:file w_file_perms;

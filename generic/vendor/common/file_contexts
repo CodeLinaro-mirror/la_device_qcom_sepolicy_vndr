@@ -31,6 +31,7 @@
 
 # dev nodes
 /dev/btpower                                    u:object_r:vendor_bt_device:s0
+/dev/btfmslim                                   u:object_r:vendor_bt_device:s0
 /dev/diag                                       u:object_r:vendor_diag_device:s0
 /dev/kgsl-3d0                                   u:object_r:gpu_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
@@ -71,6 +72,7 @@
 /dev/sg[0-9]+                                   u:object_r:vendor_sg_device:s0
 /dev/ufs-bsg.*                                   u:object_r:vendor_bsg_device:s0
 /dev/0:0:0:49476                                u:object_r:vendor_bsg_device:s0
+/dev/0:0:0:4                                    u:object_r:vendor_ufs_lun4_bsg_device:s0
 /dev/sensors                                    u:object_r:sensors_device:s0
 /dev/mnh_sm                                     u:object_r:vendor_easel_device:s0
 /dev/easelcomm-client                           u:object_r:vendor_easel_device:s0
@@ -97,6 +99,7 @@
 /dev/socket/netmgr(/.*)?                        u:object_r:vendor_netmgrd_socket:s0
 /dev/socket/shsusrd(/.*)?                       u:object_r:vendor_shsusrd_socket:s0
 /dev/socket/port-bridge(/.*)?                   u:object_r:vendor_port-bridge_socket:s0
+/dev/socket/tlpd(/.*)?                          u:object_r:vendor_tlpd_socket:s0
 /dev/socket/qti_dpm_uds_file                    u:object_r:vendor_dataqti_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:vendor_location_socket:s0
 /dev/socket/qsap_location(/.*)?                 u:object_r:vendor_qsap_location_socket:s0
@@ -107,6 +110,7 @@
 /dev/nq-nci                                     u:object_r:nfc_device:s0
 /dev/st21nfc                                     u:object_r:nfc_device:s0
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
+/dev/bt_cp_ctrl                                 u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:vendor_wlan_device:s0
 /dev/socket/qmux_radio(/.*)?                    u:object_r:vendor_qmuxd_socket:s0
 /dev/socket/qcrild(/.*)?                        u:object_r:vendor_rild_socket:s0
@@ -127,6 +131,7 @@
 
 # Vendor DMA-BUF Heaps
 /dev/dma_heap/qcom,system               u:object_r:vendor_dmabuf_system_heap_device:s0
+/dev/dma_heap/qcom,system-uncached      u:object_r:vendor_dmabuf_system_uncached_heap_device:s0
 /dev/dma_heap/qcom,secure-pixel         u:object_r:vendor_dmabuf_secure_pixel:s0
 /dev/dma_heap/qcom,secure-non-pixel     u:object_r:vendor_dmabuf_secure_non_pixel:s0
 /dev/dma_heap/qcom,adsp                 u:object_r:vendor_dmabuf_adsp_heap_device:s0
@@ -201,6 +206,8 @@
 /vendor/bin/qmipriod            u:object_r:vendor_qmipriod_exec:s0
 /vendor/bin/shsusrd             u:object_r:vendor_shsusrd_exec:s0
 /vendor/bin/port-bridge         u:object_r:vendor_port-bridge_exec:s0
+/vendor/bin/tlpd                u:object_r:vendor_tlpd_exec:s0
+/vendor/bin/dlsc                u:object_r:vendor_dlsc_exec:s0
 /vendor/bin/qti                 u:object_r:vendor_qti_exec:s0
 /vendor/bin/qsap_voiceui        u:object_r:vendor_vui_dmgr_exec:s0
 ## Context for location features - start
@@ -268,6 +275,9 @@
 /vendor/bin/feature_enabler_client          u:object_r:vendor_feature_enabler_client_exec:s0
 /(vendor|system/vendor)/bin/qdcmss              u:object_r:vendor_qdcm-ss_exec:s0
 /vendor/bin/qsap_qapeservice        u:object_r:vendor_perf_qesdk_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
+
 
 ###############################################
 # same-process HAL files and their dependencies
@@ -389,6 +399,8 @@
 /data/vendor/ipa(/.*)?                 u:object_r:vendor_ipa_vendor_data_file:s0
 /data/vendor/sensors(/.*)?             u:object_r:vendor_sensors_vendor_data_file:s0
 /data/vendor/port_bridge(/.*)?         u:object_r:vendor_port_bridge_data_file:s0
+/data/vendor/tlpd(/.*)?                u:object_r:vendor_tlpd_data_file:s0
+/data/vendor/dlsc(/.*)?                u:object_r:vendor_dlsc_data_file:s0
 /data/vendor/tloc(/.*)?                u:object_r:vendor_tlocd_data_file:s0
 /data/vendor/connectivity(/.*)?        u:object_r:vendor_cnd_data_file:s0
 /data/vendor/misc/qsee(/.*)?           u:object_r:vendor_data_qsee_file:s0
@@ -430,6 +442,9 @@
 # graphics device
 /dev/mdss_rotator                               u:object_r:graphics_device:s0
 /dev/dri/card0                                  u:object_r:graphics_device:s0
+/dev/dri/card1                                  u:object_r:graphics_device:s0
+/dev/dri/card2                                  u:object_r:graphics_device:s0
+/dev/dri/card3                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
@@ -607,9 +622,8 @@
 # Microdump collector parameters
 /sys/module/microdump_collector/parameters/.*  u:object_r:vendor_sysfs_microdump:s0
 
-#Silent boot node
-/sys/power/pm_silentmode_kernel_state                   u:object_r:vendor_sysfs_power:s0
-/sys/power/pm_silentmode_hw_state                       u:object_r:vendor_sysfs_power:s0
+# CHRE
+/vendor/bin/hw/android\.hardware\.contexthub-service\.qmi                             u:object_r:hal_contexthub_default_exec:s0
 
 #EMAC
 /(vendor|system/vendor)/bin/emac_rps_settings\.sh        u:object_r:vendor_qti_init_shell_exec:s0

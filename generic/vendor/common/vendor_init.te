@@ -122,6 +122,9 @@ get_prop(vendor_init, vendor_pcie_prop);
 #Access rcs service
 set_prop(vendor_init, vendor_persist_rcs_prop)
 
+# Access vendor dynamic sensor properties
+set_prop(vendor_init, vendor_dynamic_sensor_prop)
+
 allow vendor_init vendor_sysfs_kpi:file w_file_perms;
 get_prop(vendor_init, bootanim_system_prop);
 allow vendor_init vendor_ipa_dev:file rw_file_perms;
