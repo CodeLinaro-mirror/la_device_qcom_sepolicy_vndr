@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -54,7 +54,7 @@ allow vendor_hal_healthservices_qti vendor_persist_sensors_file:dir rw_dir_perms
 allow vendor_hal_healthservices_qti vendor_persist_sensors_file:file create_file_perms;
 
 #Allow WHS hal to interact with powerStateService
-#hal_client_domain(vendor_hal_healthservices_qti, vendor_hal_powerstateservice);
+hal_client_domain(vendor_hal_healthservices_qti, vendor_hal_powerstateservice);
 
 #Allow WHS hal to access sensorstore
 allow vendor_hal_healthservices_qti block_device:dir search;
