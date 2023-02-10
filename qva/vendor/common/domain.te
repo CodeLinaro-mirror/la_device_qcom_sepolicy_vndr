@@ -34,6 +34,4 @@ neverallow {
    -vendor_hal_authsecret_qti
 } vendor_spunvm_file_type: { dir file } *;
 
-userdebug_or_eng(`
  allow {domain -appdomain} vendor_sysfs_kpi:file rw_file_perms;
-')
