@@ -64,6 +64,7 @@
 /dev/btpower                                    u:object_r:vendor_bt_device:s0
 /dev/btfmslim                                   u:object_r:vendor_bt_device:s0
 /dev/diag                                       u:object_r:vendor_diag_device:s0
+/dev/slate_.*                                   u:object_r:vendor_glinkpkt_slate_chr_device:s0
 /dev/kgsl-3d0                                   u:object_r:gpu_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0
 /dev/smd.*                                      u:object_r:vendor_smd_device:s0
