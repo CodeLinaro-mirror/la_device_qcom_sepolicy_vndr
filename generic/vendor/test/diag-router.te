@@ -47,5 +47,6 @@ userdebug_or_eng(`
   allow vendor_diag-router su:process signal;
   allow vendor_diag-router  vendor_sysfs_soc:file w_file_perms;
   allow vendor_diag-router  vendor_sysfs_qdss_dev:file w_file_perms;
+  allow vendor_diag-router vendor_glinkpkt_slate_chr_device:chr_file { open read write };
   allow { domain -coredomain -hal_configstore -vendor_init} vendor_diag-router:unix_stream_socket connectto;
 ')
