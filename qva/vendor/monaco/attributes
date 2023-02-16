@@ -63,3 +63,7 @@ attribute vendor_hal_aonutility_server;
 attribute vendor_hal_watchorientation;
 attribute vendor_hal_watchorientation_client;
 attribute vendor_hal_watchorientation_server;
+
+attribute vendor_hal_bluetooth_offload;
+attribute vendor_hal_bluetooth_offload_client;
+attribute vendor_hal_bluetooth_offload_server;

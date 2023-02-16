@@ -35,3 +35,5 @@ vendor.google_clockwork.displayoffload::IDisplayOffload            u:object_r:ve
 vendor.google_clockwork.healthservices::IHealthServices            u:object_r:hal_healthservices_hwservice:s0
 vendor.qti.hardware.powerstateservice::IPowerStateService          u:object_r:vendor_hal_powerstateservice_hwservice:s0
 vendor.qti.hardware.powerstateservice::IPowerStateUtility          u:object_r:vendor_hal_powerstateutility_hwservice:s0
+vendor.qti.hardware.bluetooth_offload::IBluetoothOffload           u:object_r:vendor_hal_bluetooth_offload_hwservice:s0
+vendor.qti.hardware.bluetooth_offload::IBluetoothOffloadService    u:object_r:vendor_hal_bluetooth_offload_hwservice:s0

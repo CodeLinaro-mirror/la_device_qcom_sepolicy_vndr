@@ -163,3 +163,6 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk[0-9]boot[0-9]/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/block/dm-[0-9]+/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
+
+#bluetooth
+/vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_offload@1\.0-service-qti           u:object_r:vendor_hal_bluetooth_offload_qti_exec:s0
