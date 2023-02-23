@@ -48,7 +48,10 @@ binder_call(vendor_hal_displayoffload_default, hal_graphics_composer)
 allow vendor_hal_displayoffload_default vendor_qdisplay_service:service_manager find;
 
 r_dir_file(vendor_hal_displayoffload, vendor_sysfs_drm)
-allow vendor_hal_displayoffload_default vendor_sysfs_drm:file r_file_perms;
+allow vendor_hal_displayoffload_default vendor_sysfs_drm:file w_file_perms;
+
+r_dir_file(vendor_hal_displayoffload, vendor_sysfs_touch_offload)
+allow vendor_hal_displayoffload_default vendor_sysfs_touch_offload:file w_file_perms;
 
 set_prop(vendor_hal_displayoffload_default, vendor_slate_boot_complete_prop)
 get_prop(vendor_hal_displayoffload_default, vendor_uioffload_logging_prop)
@@ -62,6 +65,8 @@ get_prop(vendor_hal_displayoffload_default, vendor_qc_aon_prop)
 
 #allow access to hal_allocator
 hal_client_domain(vendor_hal_displayoffload_default, hal_allocator)
+
+get_prop(vendor_hal_displayoffload_default, vendor_touch_offload_prop)
 
 #wakelock policy
 wakelock_use(vendor_hal_displayoffload_default);
