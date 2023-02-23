@@ -149,6 +149,9 @@
 ###wrist ssr
 /vendor/bin/sns_wrist_ssr       u:object_r:vendor_wrist_ssr_exec:s0
 
+#senors glink dev node
+/dev/glinkpkt_slate_ssc_usta                    u:object_r:vendor_glink_slate_ssc_usta_device:s0
+
 # read ahead
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/bdi/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
