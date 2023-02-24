@@ -3,4 +3,4 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 domain_auto_trans(init, vendor_init_early_test_exec, vendor_init_early_test)
-
+allow init vfat:dir search;
