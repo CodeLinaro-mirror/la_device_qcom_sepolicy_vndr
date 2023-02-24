@@ -60,5 +60,8 @@ hal_client_domain(vendor_hal_displayoffload_default, hal_wristorientation)
 
 get_prop(vendor_hal_displayoffload_default, vendor_qc_aon_prop)
 
+#allow access to hal_allocator
+hal_client_domain(vendor_hal_displayoffload_default, hal_allocator)
+
 #wakelock policy
 wakelock_use(vendor_hal_displayoffload_default);
