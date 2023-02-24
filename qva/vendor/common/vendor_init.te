@@ -67,3 +67,4 @@ dontaudit vendor_init persist_debug_prop:file r_file_perms;
 set_prop(vendor_init, qemu_sf_lcd_density_prop)
 
 get_prop(vendor_init, vendor_soc_model_prop);
+set_prop(vendor_init, vendor_ota_update_prop);

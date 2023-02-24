@@ -130,3 +130,6 @@ vendor.sys.boot_completed                        u:object_r:vendor_sysboot_compl
 vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0
 
 ro.vendor.qti.soc_model      u:object_r:vendor_soc_model_prop:s0
+
+#Q to S OTA  property context
+ro.vendor.ota.update                     u:object_r:vendor_ota_update_prop:s0
