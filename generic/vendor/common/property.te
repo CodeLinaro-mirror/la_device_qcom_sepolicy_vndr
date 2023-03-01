@@ -74,6 +74,9 @@ vendor_internal_prop(vendor_time_service_prop);
 vendor_restricted_prop(vendor_audio_prop);
 vendor_internal_prop(vendor_audio_ssr_prop);
 
+# AGMIPC props
+vendor_internal_prop(vendor_AGMIPC_service_prop);
+
 # kernel modprobe prop
 vendor_restricted_prop(vendor_modprobe_prop);
 

@@ -40,6 +40,8 @@ allow hal_audio vendor_adsp_sleepmon_device:chr_file rw_file_perms;
 hal_client_domain(hal_audio_default, vendor_hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
 
+binder_call(hal_audio_default, vendor_agmservice_qti)
+
 # read-only permission to obtain the calibration data
 r_dir_file(hal_audio_default, vendor_persist_audio_file);
 allow hal_audio_default mnt_vendor_file:dir search;
@@ -103,3 +105,10 @@ set_prop(hal_audio, vendor_audio_ssr_prop)
 
 #to read bluetooth prop
 get_prop(hal_audio, vendor_bluetooth_prop)
+
+#Allow access to msm_audio_cal & msm_rtac
+allow hal_audio_default vendor_audio_device:chr_file rw_file_perms;
+allow hal_audio_default vendor_msm_rtac_device:chr_file rw_file_perms;
+
+
+
