@@ -59,3 +59,9 @@ hal_client_domain(vendor_hal_healthservices_qti, vendor_hal_powerstateservice);
 #Allow WHS hal to access sensorstore
 allow vendor_hal_healthservices_qti block_device:dir search;
 allow vendor_hal_healthservices_qti vendor_sensorstore_block_device:blk_file rw_file_perms;
+
+#allow access to aon presence property
+get_prop(vendor_hal_healthservices_qti, vendor_qc_aon_prop)
+
+#allow access to whs property
+get_prop(vendor_hal_healthservices_qti, vendor_whs_prop)
