@@ -98,6 +98,7 @@ allow kernel vendor_debugfs_wlan:dir search;
 allow kernel vendor_sysfs_kpi:file { open write };
 allow kernel vendor_early_services:file relabelto;
 allow kernel vendor_esplash_exec:file relabelto;
+allow kernel vendor_earlyVideo_exec:file relabelto;
 allow kernel audio_device:dir create_dir_perms;
 allow kernel audio_device:chr_file { create setattr };
 

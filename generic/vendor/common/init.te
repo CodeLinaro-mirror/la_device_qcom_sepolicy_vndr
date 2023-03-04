@@ -122,6 +122,8 @@ allow init vendor_sysfs_usb_device:file w_file_perms;
 
 allow init vendor_esplash_exec:file {r_file_perms execute};
 domain_auto_trans(init, vendor_esplash_exec, vendor_esplash)
+allow init vendor_earlyVideo_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_earlyVideo_exec, vendor_earlyVideo)
 
 #Allow early init to read early_service directory
 #To be removed once early_init is moved to its context
