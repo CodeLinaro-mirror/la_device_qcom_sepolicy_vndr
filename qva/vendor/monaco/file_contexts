@@ -98,6 +98,7 @@
 /sys/devices/platform/soc/soc:qcom,slate/subsys[0-9]+/name       u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/ab00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery   u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/ab00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery   u:object_r:vendor_sysfs_ssr:s0
 
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]+/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
