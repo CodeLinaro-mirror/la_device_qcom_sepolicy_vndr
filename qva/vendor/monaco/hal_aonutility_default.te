@@ -44,6 +44,7 @@ allow vendor_hal_aonutility_default vendor_sysfs_drm:file w_file_perms;
 allow vendor_hal_aonutility_default vendor_glink_slate_ux_ctl_device:chr_file rw_file_perms;
 
 get_prop(vendor_hal_aonutility_default, wrist_orientation_prop)
+get_prop(vendor_hal_aonutility_default, vendor_qc_aon_prop)
 hal_client_domain(vendor_hal_aonutility_default, hal_wristorientation)
 
 get_prop(vendor_hal_aonutility_default, vendor_watch_orientation_prop)
