@@ -45,4 +45,7 @@ allow vendor_hal_drm_playready_qti vendor_qdisplay_service:service_manager { fin
 
 allow vendor_hal_drm_playready_qti vendor_mediadrm_vendor_data_file:dir create_dir_perms;
 allow vendor_hal_drm_playready_qti vendor_mediadrm_vendor_data_file:file create_file_perms;
+
+#DMA-BUF
 allow vendor_hal_drm_playready_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow vendor_hal_drm_playready_qti vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
