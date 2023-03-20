@@ -52,9 +52,9 @@ allowxperm vendor_ims self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
 allow vendor_ims self:tipc_socket { create_socket_perms_no_ioctl };
 
 #diag
-userdebug_or_eng(`
+#userdebug_or_eng(`
     diag_use(vendor_ims)
-')
+#')
 
 hwbinder_use(vendor_ims)
 allow vendor_ims vendor_hal_cne_hwservice:hwservice_manager find;

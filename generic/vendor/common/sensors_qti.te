@@ -31,10 +31,12 @@ type vendor_sensors_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_sensors_qti)
 get_prop(vendor_sensors_qti, vendor_sensors_prop)
 
-
+# these changes are workaround to fix 5000+ Diag access errors
+# seen in USER build. Ideally all components must never try to user
+# DIAG in USER build
+diag_use(vendor_sensors_qti)
 # Access to tests from userdebug/eng builds
 userdebug_or_eng(`
-  diag_use(vendor_sensors_qti)
   get_prop(vendor_sensors_qti, vendor_sensors_dbg_prop)
 
   #allow starting of diag_mdlog

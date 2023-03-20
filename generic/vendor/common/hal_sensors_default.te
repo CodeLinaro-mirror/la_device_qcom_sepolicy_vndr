@@ -29,9 +29,12 @@ allow hal_sensors_default mnt_vendor_file:dir search;
 r_dir_file(hal_sensors_default, vendor_persist_sensors_file)
 get_prop(hal_sensors_default, vendor_sensors_prop)
 
+# these changes are workaround to fix 5000+ Diag access errors
+# seen in USER build. Ideally all components must never try to use
+# DIAG in USER build
+diag_use(hal_sensors_default)
 # Access to tests from userdebug/eng builds
 userdebug_or_eng(`
-  diag_use(hal_sensors_default)
   get_prop(hal_sensors_default, vendor_sensors_dbg_prop)
   # allow to trigger force crash to collect ramdump
   allow hal_sensors_default proc_sysrq:file rw_file_perms;
