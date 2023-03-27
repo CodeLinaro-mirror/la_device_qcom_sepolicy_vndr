@@ -336,3 +336,6 @@
 
 /early_services/vendor/bin/early_chime                              u:object_r:early_chime_exec:s0
 /early_services/vendor/bin/audio-nxp-auto                           u:object_r:early_chime_exec:s0
+
+#fastcv
+/vendor/bin/fastcv.sh                                               u:object_r:vendor_qti_init_shell_exec:s0
