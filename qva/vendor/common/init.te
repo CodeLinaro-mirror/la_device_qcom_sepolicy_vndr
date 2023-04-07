@@ -24,9 +24,9 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 allow init vendor_sysfs_graphics:file setattr;
-
+allow init nativetest_data_file:file r_file_perms;
+allow init nativetest_data_file:dir r_dir_perms;
 # allow init to mount spunvm partition
 allow init vendor_spunvm_file:dir mounton;
 allow init vendor_spunvm_file:filesystem { relabelto relabelfrom mount };
