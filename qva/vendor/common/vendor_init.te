@@ -37,7 +37,7 @@ get_prop(vendor_init, vendor_boot_mode_prop)
 get_prop(vendor_init, vendor_mmi_prop)
 
 set_prop(vendor_init, vendor_usb_prop)
-
+set_prop(vendor_init, vendor_mm_parser_prop)
 get_prop(vendor_init, vendor_video_prop)
 set_prop(vendor_init, vendor_sys_video_prop)
 
