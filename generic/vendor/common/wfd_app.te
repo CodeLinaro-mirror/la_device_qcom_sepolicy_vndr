@@ -1,0 +1,6 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#Access to MM-OSAL debug prop for parser debugging on WFD sink
+get_prop(vendor_wfd_app, vendor_mm_osal_prop);
+

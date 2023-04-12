@@ -91,6 +91,7 @@ get_prop(vendor_qti_init_shell, radio_control_prop)
 set_prop(vendor_qti_init_shell, vendor_gpu_prop)
 set_prop(vendor_qti_init_shell, vendor_sensors_prop)
 set_prop(vendor_qti_init_shell, vendor_adsprpc_prop)
+set_prop(vendor_qti_init_shell, vendor_ril_daemon_prop)
 
 allow vendor_qti_init_shell {
     sysfs_devices_system_cpu
@@ -133,8 +134,9 @@ allow vendor_qti_init_shell swap_block_device:blk_file rw_file_perms;
 allow vendor_qti_init_shell sysfs_transparent_hugepage:file rw_file_perms;
 
 #For configfs permission
-allow vendor_qti_init_shell configfs:dir r_dir_perms;
-allow vendor_qti_init_shell configfs:file rw_file_perms;
+allow vendor_qti_init_shell configfs:dir { create rw_dir_perms };
+allow vendor_qti_init_shell configfs:file { create rw_file_perms };
+allow vendor_qti_init_shell configfs:lnk_file { create };
 
 #Allow /sys access to write zram disksize
 allow vendor_qti_init_shell sysfs_zram:dir r_dir_perms;
@@ -215,3 +217,4 @@ allow vendor_qti_init_shell proc:file { write };
 allow vendor_qti_init_shell vendor_file:file { execute_no_trans };
 allow vendor_qti_init_shell proc_interrupts:file { open read };
 allow vendor_qti_init_shell vendor_sysfs_rx_config:file w_file_perms;
+allow vendor_qti_init_shell proc_page_cluster:file w_file_perms;

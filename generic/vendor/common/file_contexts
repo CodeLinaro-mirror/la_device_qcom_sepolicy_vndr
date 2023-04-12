@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # dev nodes
@@ -62,6 +62,7 @@
 
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
 /dev/msm_audio_ion_cma                          u:object_r:audio_device:s0
+/dev/aud_pasthru_modem                          u:object_r:vendor_agm_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
 /dev/remoteproc.*                               u:object_r:vendor_ssr_device:s0
@@ -194,6 +195,7 @@
 /vendor/bin/subsystem_ramdump   u:object_r:vendor_subsystem_ramdump_exec:s0
 /vendor/bin/adsprpcd            u:object_r:vendor_adsprpcd_exec:s0
 /vendor/bin/cdsprpcd            u:object_r:vendor_cdsprpcd_exec:s0
+/vendor/bin/mdsprpcd            u:object_r:vendor_mdsprpcd_exec:s0
 /vendor/bin/audioadsprpcd       u:object_r:vendor_audioadsprpcd_exec:s0
 /vendor/bin/dspservice          u:object_r:vendor_dspservice_exec:s0
 /vendor/bin/irsc_util           u:object_r:vendor_irsc_util_exec:s0
@@ -277,7 +279,7 @@
 /vendor/bin/qsap_qapeservice        u:object_r:vendor_perf_qesdk_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
-
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AMSIPC@1\.0-service          u:object_r:vendor_ams_service_qti_exec:s0
 
 ###############################################
 # same-process HAL files and their dependencies
@@ -445,6 +447,7 @@
 /dev/dri/card1                                  u:object_r:graphics_device:s0
 /dev/dri/card2                                  u:object_r:graphics_device:s0
 /dev/dri/card3                                  u:object_r:graphics_device:s0
+/dev/dri/card4                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0

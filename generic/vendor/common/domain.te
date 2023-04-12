@@ -82,6 +82,7 @@ neverallow { domain
 - shell
 - vendor_adsprpcd
 - vendor_cdsprpcd
+- vendor_mdsprpcd
 - vendor_sensors
 - vendor_lowirpcd_service
 - vendor_audioadsprpcd
@@ -105,6 +106,7 @@ neverallow { domain
 - mediacodec
 - vendor_adsprpcd
 - vendor_cdsprpcd
+- vendor_mdsprpcd
 - vendor_audioadsprpcd
 - hal_camera_default
 - vendor_chre

@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -30,17 +30,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-type vendor_aidl_hal_automotive_vehicle_qti, domain;
-type vendor_aidl_hal_automotive_vehicle_qti_exec, exec_type, file_type, vendor_file_type;
 
-init_daemon_domain(vendor_aidl_hal_automotive_vehicle_qti)
+type vendor_aidl_hal_automotive_vehicle, file_type, vendor_file_type;
 
-binder_call(vendor_aidl_hal_automotive_vehicle_qti, servicemanager)
-binder_call(vendor_aidl_hal_automotive_vehicle_qti, carservice_app)
-allow vendor_aidl_hal_automotive_vehicle_qti input_device:chr_file r_file_perms;
-allow vendor_aidl_hal_automotive_vehicle_qti input_device:dir r_dir_perms;
-hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle);
-allow vendor_aidl_hal_automotive_vehicle_qti self:can_socket create_socket_perms;
-allowxperm vendor_aidl_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
-allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_kpi:file w_file_perms;
-hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle)
+allow vendor_aidl_hal_automotive_vehicle input_device:dir read;

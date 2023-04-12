@@ -1,3 +1,6 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -13,7 +16,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,28 +27,5 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Changes from Qualcomm Innovation Center are provided under the following license:
 
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
-
-type vendor_hal_drm_playready_qti, domain;
-hal_server_domain(vendor_hal_drm_playready_qti, hal_drm)
-
-type vendor_hal_drm_playready_qti_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(vendor_hal_drm_playready_qti)
-
-allow vendor_hal_drm_playready_qti mediacodec:fd use;
-allow vendor_hal_drm_playready_qti { appdomain -isolated_app }:fd use;
-
-vndbinder_use(vendor_hal_drm_playready_qti);
-
-allow vendor_hal_drm_playready_qti vendor_qdisplay_service:service_manager { find };
-
-allow vendor_hal_drm_playready_qti vendor_mediadrm_vendor_data_file:dir create_dir_perms;
-allow vendor_hal_drm_playready_qti vendor_mediadrm_vendor_data_file:file create_file_perms;
-
-#DMA-BUF
-allow vendor_hal_drm_playready_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
-allow vendor_hal_drm_playready_qti vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+get_prop(hal_bootctl_default, vendor_board_suffix_prop);

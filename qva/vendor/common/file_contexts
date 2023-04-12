@@ -27,7 +27,7 @@
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -305,6 +305,9 @@
 /vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.2\.so    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.3\.so    u:object_r:same_process_hal_file:s0
 
+#vehicle HAL
+/vendor/lib(64)?/VehicleHardware\.so       u:object_r:vendor_aidl_hal_automotive_vehicle:s0
+
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:vendor_wifilearnersvc_exec:s0
 
@@ -316,10 +319,14 @@
 /dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
 /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy_qcc6                     u:object_r:vendor_ais_v4l2_proxy_exec:s0
 
+#aidl camera provider
+/(vendor|system/vendor)/bin/hw/android.hardware.camera.provider@V1-qti-service   u:object_r:vendor_aidl_camera_provider_qti_exec:s0
 # Qcarcam HAL
-/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service    u:object_r:vendor_hal_ais_qti_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service    u:object_r:vendor_hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0
@@ -337,7 +344,8 @@
 /(vendor|system/vendor)/bin/carpowerusbservice                      u:object_r:vendor_carpowerusbservice_exec:s0
 
 # EVS and Qcarcam HAL
-/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais     u:object_r:vendor_hal_evs_driver_exec:s0
+/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais          u:object_r:vendor_hal_evs_driver_exec:s0
+/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais-qcc6     u:object_r:vendor_hal_evs_driver_exec:s0
 
 # DRM HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service.playready-qti   u:object_r:vendor_hal_drm_playready_qti_exec:s0
@@ -350,6 +358,8 @@
 /(vendor|system/vendor)/bin/hsi2s_early_boot\.sh                                   u:object_r:vendor_hsi2s_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol-service  u:object_r:vendor_hal_audiocontrol_qti_aidl_exec:s0
 /(vendor|system/vendor)/bin/audiod                                                 u:object_r:vendor_audiod_exec:s0
+/(vendor|system/vendor)/bin/audio-nxp-auto                                          u:object_r:vendor_audionxp_exec:s0
+/(vendor|system/vendor)/bin/agmplay                                                 u:object_r:vendor_agmplay_exec:s0
 
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0
 
