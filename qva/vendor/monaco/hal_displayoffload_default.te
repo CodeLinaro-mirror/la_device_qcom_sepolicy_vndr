@@ -70,3 +70,8 @@ get_prop(vendor_hal_displayoffload_default, vendor_touch_offload_prop)
 
 #wakelock policy
 wakelock_use(vendor_hal_displayoffload_default);
+
+# Allow reading/writing to '/data/vendor/displayoffload/*'
+allow vendor_hal_displayoffload_default vendor_display_offload_data_file:dir create_dir_perms;
+allow vendor_hal_displayoffload_default vendor_display_offload_data_file:file create_file_perms;
+
