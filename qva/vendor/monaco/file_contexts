@@ -141,6 +141,7 @@
 /dev/slate_com_dev                              u:object_r:vendor_slate_daemon_device:s0
 /dev/glink_pkt_slate_display_ctrl               u:object_r:vendor_glink_slate_display_ctrl_device:s0
 /dev/glink_pkt_slate_display_data               u:object_r:vendor_glink_slate_display_data_device:s0
+/dev/glink_pkt_slate_touch_ctrl                 u:object_r:vendor_glink_slate_touch_ctrl_device:s0
 /dev/glink_pkt_slate_ux_ctl                     u:object_r:vendor_glink_slate_ux_ctl_device:s0
 /dev/glink_pkt_slate_dfu                        u:object_r:vendor_glink_slate_dfu_device:s0
 

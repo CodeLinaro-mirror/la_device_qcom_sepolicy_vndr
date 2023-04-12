@@ -39,6 +39,7 @@ init_daemon_domain(vendor_hal_displayoffload_default)
 
 allow vendor_hal_displayoffload vendor_glink_slate_display_ctrl_device:chr_file rw_file_perms;
 allow vendor_hal_displayoffload vendor_glink_slate_display_data_device:chr_file rw_file_perms;
+allow vendor_hal_displayoffload vendor_glink_slate_touch_ctrl_device:chr_file rw_file_perms;
 
 allow vendor_hal_displayoffload_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
