@@ -1,7 +1,4 @@
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
-
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,17 +25,28 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_agmplay, domain;
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_agmplay_exec, exec_type, vendor_file_type, file_type;
+type early_chime, domain;
+type early_chime_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(early_chime)
 
-init_daemon_domain(vendor_agmplay)
-
-r_dir_file(vendor_agmplay, proc_asound)
-binder_call(vendor_agmplay, vendor_agmservice_qti)
-allow vendor_agmplay audio_device:dir r_dir_perms;
-allow vendor_agmplay audio_device:chr_file rw_file_perms;
-get_prop(vendor_agmplay, vendor_audio_prop)
-get_prop(vendor_agmplay, hwservicemanager_prop)
-hal_client_domain(vendor_agmplay, hal_audio)
-
+allow early_chime audio_device:dir search;
+allow early_chime audio_device:dir {read write};
+allow early_chime audio_device:chr_file {read write};
+allow early_chime audio_device:chr_file {map ioctl};
+allow early_chime kmsg_device:chr_file rw_file_perms;
+allow early_chime system_bootstrap_lib_file:dir {search};
+allow early_chime vendor_early_services:dir {search};
+allow early_chime vendor_sysfs_kpi:file {open write};
+allow early_chime vendor_early_services:dir r_dir_perms;
+allow early_chime vendor_early_services:file r_file_perms;
+allow early_chime early_chime:capability {sys_module fowner fsetid};
+allow early_chime vendor_acdb_loader_service:binder call;
+allow early_chime vendor_acdb_loader_service_service:service_manager find;
+allow early_chime vendor_audio_hal_plugin_service:binder call;
+allow early_chime vendor_audio_hal_plugin_service_service:service_manager find;
+allow early_chime audio_device:chr_file setattr;
+allow early_chime audio_device:chr_file {open};

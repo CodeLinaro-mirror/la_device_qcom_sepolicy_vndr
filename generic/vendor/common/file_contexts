@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # dev nodes
@@ -62,6 +62,7 @@
 
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
 /dev/msm_audio_ion_cma                          u:object_r:audio_device:s0
+/dev/aud_pasthru_modem                          u:object_r:vendor_agm_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
 /dev/remoteproc.*                               u:object_r:vendor_ssr_device:s0
@@ -278,7 +279,7 @@
 /vendor/bin/qsap_qapeservice        u:object_r:vendor_perf_qesdk_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
-
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AMSIPC@1\.0-service          u:object_r:vendor_ams_service_qti_exec:s0
 
 ###############################################
 # same-process HAL files and their dependencies
@@ -446,6 +447,7 @@
 /dev/dri/card1                                  u:object_r:graphics_device:s0
 /dev/dri/card2                                  u:object_r:graphics_device:s0
 /dev/dri/card3                                  u:object_r:graphics_device:s0
+/dev/dri/card4                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
@@ -465,12 +467,6 @@
 
 /(vendor|system/vendor)/bin/sscrpcd                                 u:object_r:vendor_sensors_exec:s0
 /(vendor|system/vendor)/bin/lowirpcd                                u:object_r:vendor_lowirpcd_service_exec:s0
-
-# wall power
-/sys/devices/platform/power.0/power_supply                          u:object_r:vendor_sysfs_power_supply:s0
-/sys/devices/platform/power.0/power_supply/Ac/*                     u:object_r:vendor_sysfs_power_supply:s0
-/sys/devices/platform/power.0/power_supply/Ac/online                     u:object_r:vendor_sysfs_power_supply:s0
-/sys/devices/platform/power.0/power_supply/Ac/type                     u:object_r:vendor_sysfs_power_supply:s0
 
 # vendor_sysfs_graphics
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:vendor_sysfs_graphics:s0

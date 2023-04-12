@@ -2,7 +2,7 @@
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_init_early_test, domain;
+type vendor_init_early_test, domain, mlstrustedsubject;
 type vendor_init_early_test_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_init_early_test)
 
@@ -12,3 +12,4 @@ allow vendor_init_early_test kmsg_device:chr_file rw_file_perms;
 allow vendor_init_early_test tmpfs:dir r_dir_perms;
 allow vendor_init_early_test tmpfs:file rw_file_perms;
 allow vendor_init_early_test tmpfs:chr_file rw_file_perms;
+allow vendor_init_early_test vendor_sysfs_kpi:file {open write};

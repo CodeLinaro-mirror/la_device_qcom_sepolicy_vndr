@@ -4,3 +4,11 @@
 
 domain_auto_trans(init, vendor_init_early_test_exec, vendor_init_early_test)
 allow init vfat:dir search;
+
+domain_auto_trans(init, early_chime_exec, early_chime)
+
+# allowing audio-nxp-auto to access spidev
+allow init audio_device:chr_file { open read write };
+allow init audio_device:chr_file { ioctl };
+allow init vendor_earlyVideo_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_earlyVideo_exec, vendor_earlyVideo)

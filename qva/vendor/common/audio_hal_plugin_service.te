@@ -34,3 +34,4 @@ allow vendor_audio_hal_plugin_service audio_device:dir search;
 allow vendor_audio_hal_plugin_service audio_device:chr_file rw_file_perms;
 vndbinder_use(vendor_audio_hal_plugin_service)
 add_service(vendor_audio_hal_plugin_service, vendor_audio_hal_plugin_service_service)
+allow vendor_audio_hal_plugin_service audio_device:chr_file  { setattr };

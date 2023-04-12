@@ -53,6 +53,7 @@ allow vendor_agmservice_qti vendor_dmabuf_audio_ml_heap_device:chr_file rw_file_
 
 #Allow access to uncached dmabuf
 allow vendor_agmservice_qti vendor_dmabuf_system_uncached_heap_device:chr_file rw_file_perms;
+allow vendor_agmservice_qti vendor_dmabuf_system_uncached_heap_device:chr_file { getattr ioctl open };
 
 #allow access to agm crash notificaiton sysfs node
 allow vendor_agmservice_qti vendor_sysfs_agm:file rw_file_perms;
