@@ -50,4 +50,5 @@ genfscon sysfs /devices/platform/vdevs/1c0c0000.virtio_net/virtio2/net u:object_
 genfscon sysfs /devices/platform/soc/soc:qcom,veth-ipa/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/300581000.virtio-net/virtio1/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/800581000.virtio-net/virtio1/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/gadget/net u:object_r:sysfs_net:s0
