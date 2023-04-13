@@ -121,6 +121,9 @@
 /dev/glink_pkt_ss_bt_data                       u:object_r:vendor_glink_slate_bt:s0
 /dev/glink_pkt_ss_bt_le_data                       u:object_r:vendor_glink_slate_bt:s0
 
+#vendor_sysfs_boot_concurrenct_mode
+/sys/class/qcom-smb/boost_concurrent_mode  u:object_r:vendor_sysfs_boost_concurrent_mode:s0
+
 ###power_state dev node
 /dev/power_state                      u:object_r:vendor_power_state_device:s0
 ###swap partition node

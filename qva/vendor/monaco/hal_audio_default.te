@@ -1,16 +1,17 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2021, The Linux Foundation. All rights reserved.
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
-#    * Redistributions of source code must retain the above copyright
-#      notice, this list of conditions and the following disclaimer.
-#    * Redistributions in binary form must reproduce the above
-#      copyright notice, this list of conditions and the following
-#      disclaimer in the documentation and/or other materials provided
-#      with the distribution.
-#    * Neither the name of The Linux Foundation nor the names of its
-#      contributors may be used to endorse or promote products derived
-#      from this software without specific prior written permission.
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
 #
 # THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
@@ -23,18 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
 # Changes from Qualcomm Innovation Center are provided under the following license:
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_sysfs_fps_attr, fs_type, sysfs_type;
-type vendor_sysfs_boost_concurrent_mode, sysfs_type, fs_type;
+#allow access to uevent_socket
+allow hal_audio_default self:netlink_kobject_uevent_socket { create_socket_perms_no_ioctl };
 
-#System power-disk file type
-type sysfs_power_disk, sysfs_type, fs_type;
-type vendor_sysfs_drm, sysfs_type, fs_type;
-type vendor_sysfs_twm, sysfs_type, fs_type;
-type vendor_sysfs_slate_rsb, fs_type, sysfs_type;
-type vendor_sysfs_touch_offload, sysfs_type, fs_type;
-type vendor_display_offload_data_file, file_type, data_file_type;
+#Allow hal audio to read/write for concurrent node sysfs
+allow hal_audio_default vendor_sysfs_boost_concurrent_mode:file rw_file_perms;
+
+#Allow hal audio to read usb_supply sysfs
+allow hal_audio_default vendor_sysfs_battery_supply:dir r_dir_perms;
+allow hal_audio_default vendor_sysfs_battery_supply:file r_file_perms;
