@@ -169,3 +169,6 @@ genfscon sysfs /power/disk  u:object_r:sysfs_power_disk:s0
 #read_ahead_kb
 genfscon sysfs /block/mmcblk0/bdi/read_ahead_kb          u:object_r:vendor_sysfs_mmc_host:s0
 genfscon sysfs /block/mmcblk0rpmb/bdi/read_ahead_kb      u:object_r:vendor_sysfs_mmc_host:s0
+
+#Bluetooth sysfs node
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a94000.qcom,qup_uart/hs_uart_operation u:object_r:vendor_sysfs_bt_uart:s0

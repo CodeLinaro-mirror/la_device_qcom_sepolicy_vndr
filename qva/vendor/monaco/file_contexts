@@ -139,6 +139,9 @@
 /sys/class/pmic-lpm/pmic_twm_exit                                        u:object_r:vendor_sysfs_twm:s0
 /sys/bus/i2c/devices/1-0024/pt_touch_offload                             u:object_r:vendor_sysfs_touch_offload:s0
 
+#bluetooth
+/sys/class/tty/ttyHS0/device/hs_uart_operation                           u:object_r:vendor_sysfs_bt:s0
+
 #Vibrator offload glink dev node
 /dev/glinkpkt_slate_haptics_offload             u:object_r:vendor_glink_slate_haptics_offload_device:s0
 
