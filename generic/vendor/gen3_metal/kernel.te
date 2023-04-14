@@ -36,3 +36,31 @@ allow kernel audio_device:chr_file { create setattr };
 
 #!!!! This avc is allowed in the current policy
 allow kernel vendor_file:file read;
+
+allow kernel firmware_file:filesystem  { relabelto relabelfrom  mount };
+allow kernel vendor_early_services:dir r_dir_perms;
+allow kernel tmpfs:chr_file rw_file_perms;
+allow kernel tmpfs:dir r_dir_perms;
+allow kernel proc_cmdline:file r_file_perms;
+allow kernel sepolicy_file:file r_file_perms;
+allow kernel device:dir create_dir_perms;
+allow kernel vendor_debugfs_ipc:dir search;
+allow kernel vendor_debugfs_wlan:dir search;
+allow kernel vendor_sysfs_kpi:file { open write };
+allow kernel vendor_early_services:file relabelto;
+allow kernel vendor_esplash_exec:file relabelto;
+allow kernel audio_device:dir create_dir_perms;
+allow kernel audio_device:chr_file { create setattr };
+allow kernel early_chime_exec:file relabelto;
+allow kernel rootfs:dir { create relabelfrom add_name write mounton };
+allow kernel vendor_early_services:dir relabelto;
+allow kernel sysfs:dir mounton;
+allow kernel sysfs:filesystem mount;
+allow kernel vendor_file:dir r_dir_perms;
+allow kernel vendor_file:dir { relabelto };
+allow kernel vendor_file:file { relabelto };
+allow kernel system_linker_exec:file { relabelto };
+allow kernel vendor_early_services:lnk_file { relabelto };
+allow kernel vendor_init_early_test_exec:file { relabelto };
+allow kernel rootfs:lnk_file { relabelfrom };
+allow kernel vendor_init_exec:file { relabelto };
