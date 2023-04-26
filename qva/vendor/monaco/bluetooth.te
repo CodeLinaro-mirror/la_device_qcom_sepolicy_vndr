@@ -6,3 +6,6 @@ allow bluetooth vendor_glink_slate_bt:chr_file rw_file_perms;
 
 #allow bluetooth to access bluetooth_offload
 hal_client_domain(bluetooth, vendor_hal_bluetooth_offload)
+
+#bluetooth needs uevent socket permissions
+allow bluetooth self:netlink_kobject_uevent_socket { create bind read getopt setopt };
