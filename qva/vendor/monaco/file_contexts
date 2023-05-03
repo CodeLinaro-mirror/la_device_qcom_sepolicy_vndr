@@ -119,7 +119,8 @@
 /dev/nongpr_channel                             u:object_r:vendor_agm_device:s0
 /dev/glink_pkt_ss_bt_ctrl                       u:object_r:vendor_glink_slate_bt:s0
 /dev/glink_pkt_ss_bt_data                       u:object_r:vendor_glink_slate_bt:s0
-/dev/glink_pkt_ss_bt_le_data                       u:object_r:vendor_glink_slate_bt:s0
+/dev/glink_pkt_ss_bt_le_data                    u:object_r:vendor_glink_slate_bt:s0
+/dev/glink_pkt_ss_bt_ssr_data                   u:object_r:vendor_glink_slate_bt:s0
 
 #vendor_sysfs_boot_concurrenct_mode
 /sys/class/qcom-smb/boost_concurrent_mode  u:object_r:vendor_sysfs_boost_concurrent_mode:s0
