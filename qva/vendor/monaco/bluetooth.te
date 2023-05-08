@@ -4,6 +4,9 @@
 #allow bluetooth to call glink api's
 allow bluetooth vendor_glink_slate_bt:chr_file rw_file_perms;
 
+#allow bluetooth to read btss status
+allow bluetooth btss_sysfs_bt:file r_file_perms;
+
 #allow bluetooth to access bluetooth_offload
 hal_client_domain(bluetooth, vendor_hal_bluetooth_offload)
 

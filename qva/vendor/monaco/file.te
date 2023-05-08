@@ -42,3 +42,4 @@ type vendor_display_offload_data_file, file_type, data_file_type;
 #Bluetooth
 type vendor_sysfs_bt_uart, sysfs_type, fs_type;
 type vendor_sysfs_bt, sysfs_type, fs_type;
+type btss_sysfs_bt, sysfs_type, fs_type;
