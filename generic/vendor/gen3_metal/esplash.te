@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019,2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,19 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_camera self:qipcrtr_socket create_socket_perms;
-allowxperm hal_camera self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-hal_client_domain(hal_camera_default, vendor_hal_vpp)
-
-allow hal_camera gpu_device:chr_file rw_file_perms;
-
-allow hal_camera vendor_sysfs_jpeg:file r_file_perms;
-
-allow hal_camera vendor_sysfs_ddr:file r_file_perms;
-
-allow hal_camera vendor_qdisplay_service:service_manager find;
-allow hal_camera_default vendor_ais_v4l2_proxy:fd use;
-allow hal_camera_default vendor_ais_server:unix_stream_socket connectto;
-allow hal_camera_default vendor_camera_socket:sock_file w_file_perms;
-allow hal_camera_default vendor_camera_socket:dir search;
+# early Splash Service
+allow vendor_esplash vendor_early_services:dir rw_dir_perms;
+allow vendor_esplash vendor_early_services:file rw_file_perms;
+allow vendor_esplash kmsg_device:chr_file rw_file_perms;

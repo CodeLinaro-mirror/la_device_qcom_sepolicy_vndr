@@ -41,7 +41,11 @@ allow vendor_ais_server su:unix_dgram_socket sendto;
 hal_client_domain(vendor_ais_server, hal_graphics_allocator)
 allow vendor_ais_server vendor_camera_socket:dir w_dir_perms;
 allow vendor_ais_server vendor_camera_socket:sock_file create_file_perms;
+allow vendor_ais_server vendor_camera_socket:dir rw_dir_perms;
+allow vendor_ais_server vendor_camera_socket:file rw_file_perms;
 allow vendor_ais_server video_device:chr_file rw_file_perms;
+allow vendor_ais_server video_device:dir rw_file_perms;
+allow vendor_ais_server video_device:chr_file setattr;
 allow vendor_ais_server hal_tv_input_default:unix_dgram_socket sendto;
 allow vendor_ais_server vendor_qcarcam_edrm_rvc:fd use;
 # gpu resources
@@ -61,3 +65,4 @@ allow vendor_ais_server self:qipcrtr_socket create;
 allow vendor_ais_server ab_update_gki_prop:file { getattr map open };
 allow vendor_ais_server adbd_config_prop:file { getattr map open };
 allow vendor_ais_server vendor_sysfs_devicetree_cpu:file rw_file_perms;
+allow vendor_ais_server kmsg_device:chr_file rw_file_perms;
