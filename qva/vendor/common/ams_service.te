@@ -1,4 +1,7 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,30 +27,28 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-domain_trans(init, vendor_modinstall-sh_exec, vendor_modprobe)
-allow vendor_modprobe vendor_shell_exec:file rx_file_perms;
-allow vendor_modprobe vendor_toolbox_exec:file rx_file_perms;
-allow vendor_modprobe proc_cmdline:file r_file_perms;
-allow vendor_modprobe proc_version:file r_file_perms;
-allow vendor_modprobe system_dlkm_file:system module_load;
-r_dir_file(vendor_modprobe, { system_dlkm_file });
-# Allow the below search permission for modprobe only in user builds too.
-allow vendor_modprobe { debugfs_tracing_instances }:dir search;
-set_prop(vendor_modprobe, vendor_modprobe_prop)
-userdebug_or_eng(`
-  allow vendor_modprobe kmsg_debug_device:chr_file { w_file_perms getattr ioctl };
-  allow vendor_modprobe { vendor_debugfs_kgsl_fence_tracing }:dir search;
-  allow vendor_modprobe vendor_debugfs_ipc:file rw_file_perms;
-  allow vendor_modprobe vendor_debugfs_ipc:dir rw_dir_perms;
-')
-allow vendor_modprobe vendor_init-qcom-wifi-sh:fd use;
-allow vendor_modprobe self:capability2 perfmon;
-allow vendor_modprobe self:key write;
-allow vendor_modprobe self:perf_event cpu;
-dontaudit vendor_modprobe self:capability sys_admin;
-allow vendor_modprobe self:capability net_admin;
+#Define Domain
+type vendor_ams_service_qti, domain;
+type vendor_ams_service_qti_exec, exec_type, vendor_file_type, file_type;
+
+#Make ams_service part of the same domain as hal_audio
+hal_server_domain(vendor_ams_service_qti, hal_audio)
+binder_call(vendor_ams_service_qti, hal_audio_default)
+#Allow for transition from init domain to ams_service
+init_daemon_domain(vendor_ams_service_qti)
+
+# Add hwservice related rules
+hal_attribute_hwservice(hal_audio, hal_ams_hwservice)
+
+#Allow access to ams device nodes
+allow vendor_ams_service_qti vendor_agm_device:chr_file rw_file_perms;
+
+#Allow qipc socket access for servreg communication
+allow vendor_ams_service_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+binder_call(vendor_ams_service_qti vendor_agmservice_qti)
+
+# Allocate DMA-BUF Heap memory
+allow vendor_ams_service_qti dmabuf_system_heap_device:chr_file rw_file_perms;
+allow vendor_ams_service_qti vendor_dmabuf_system_heap_device:chr_file rw_file_perms;
+allow vendor_ams_service_qti vendor_dmabuf_audio_ml_heap_device:chr_file rw_file_perms;

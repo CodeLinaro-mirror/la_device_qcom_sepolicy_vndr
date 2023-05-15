@@ -38,3 +38,6 @@ allow hal_camera vendor_sysfs_ddr:file r_file_perms;
 
 allow hal_camera vendor_qdisplay_service:service_manager find;
 allow hal_camera_default vendor_ais_v4l2_proxy:fd use;
+allow hal_camera_default vendor_ais_server:unix_stream_socket connectto;
+allow hal_camera_default vendor_camera_socket:sock_file w_file_perms;
+allow hal_camera_default vendor_camera_socket:dir search;

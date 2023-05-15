@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 persist.vendor.service.bdroid.       u:object_r:vendor_bluetooth_prop:s0
@@ -167,3 +167,12 @@ persist.vendor.pcie. u:object_r:vendor_pcie_prop:s0
 
 #Dynamic sensor
 vendor.dynamic_sensor. u:object_r:vendor_dynamic_sensor_prop:s0
+
+#mm-parser
+vendor.mm.enable.qcom_parser       u:object_r:vendor_mm_parser_prop:s0
+vendor.qcom_parser.                u:object_r:vendor_mm_parser_prop:s0
+#mm-osal
+vendor.debug.mmosal.config         u:object_r:vendor_mm_osal_prop:s0
+
+# AMSIPC
+ctl.vendor.ams-1-0               u:object_r:vendor_AMSIPC_service_prop:s0

@@ -277,3 +277,6 @@ type vendor_sysfs_power, fs_type, sysfs_type;
 
 # kernel silent boot
 type vendor_sysfs_sb, fs_type, sysfs_type;
+
+# wall
+type vendor_sysfs_power_supply, sysfs_type, fs_type;

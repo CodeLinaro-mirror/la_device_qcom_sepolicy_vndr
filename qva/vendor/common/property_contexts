@@ -26,8 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
+
 
 ctl.vendor.cnd                    u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cne.               u:object_r:vendor_cnd_vendor_prop:s0
@@ -36,6 +37,7 @@ persist.vendor.cnd.               u:object_r:vendor_cnd_vendor_prop:s0
 ctl.vendor.dataadpl                          u:object_r:vendor_dataadpl_prop:s0
 vendor.spcom.                                u:object_r:vendor_spcomlib_prop:s0
 persist.vendor.bt.soc.scram_freqs            u:object_r:vendor_bluetooth_prop:s0
+vendor.bt.                                   u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s0
 
 # qcc property
@@ -175,3 +177,6 @@ vendor.sys.boot_completed                        u:object_r:vendor_sysboot_compl
 
 # Boot Animation start
 vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0
+
+#Board suffix property context
+ro.vendor.board.suffix                              u:object_r:vendor_board_suffix_prop:s0

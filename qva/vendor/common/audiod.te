@@ -39,7 +39,7 @@ hal_client_domain(vendor_audiod, hal_audio)
 hal_client_domain(vendor_audiod, hal_vehicle)
 
 allow vendor_audiod proc_asound:dir search;
-allow vendor_audiod proc_asound:file read;
+allow vendor_audiod proc_asound:file r_file_perms;
 allow vendor_audiod vendor_proc_audiod:file r_file_perms;
 allow vendor_audiod audio_device:dir r_dir_perms;
 allow vendor_audiod audio_device:chr_file rw_file_perms;
@@ -57,3 +57,5 @@ allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;
 allow vendor_audiod vendor_sysfs_sndcard:file r_file_perms;
 carpowerpolicy_callback_domain(vendor_audiod)
 allow vendor_audiod carpowerpolicyd_service:service_manager find;
+allow vendor_audiod property_socket:sock_file write;
+get_prop(vendor_audiod, vendor_audio_prop)

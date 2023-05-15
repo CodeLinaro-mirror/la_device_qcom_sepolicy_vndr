@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 com.qualcomm.qti.wifidisplayhal::IHDCPSession                u:object_r:vendor_wifidisplayhalservice_hwservice:s0
@@ -91,3 +91,4 @@ vendor.qti.hardware.dpmservice::IDpmService                  u:object_r:vendor_h
 vendor.qti.hardware.wifi.wificfr::IWificfr                   u:object_r:hal_wificfr_hwservice:s0
 vendor.qti.automotive.qcarcam::IQcarCamera                   u:object_r:vendor_hal_ais_hwservice:s0
 vendor.qti.hardware.automotive.vehicle::IQtiVehicle          u:object_r:hal_vehicle_hwservice:s0
+vendor.qti.hardware.AMSIPC::IAMS                             u:object_r:hal_ams_hwservice:s0
