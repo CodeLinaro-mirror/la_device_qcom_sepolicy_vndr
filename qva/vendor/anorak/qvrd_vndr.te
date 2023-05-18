@@ -9,9 +9,8 @@ allow vendor_qvrd_vndr self:qipcrtr_socket { create getattr write read setopt };
 #
 # Camera
 #
-allow vendor_qvrd_vndr vendor_camera_data_file:dir { search r_dir_perms write add_name create };
-allow vendor_qvrd_vndr vendor_camera_data_file:file { rw_file_perms create };
-allow vendor_qvrd_vndr vendor_synx_device:chr_file rw_file_perms;
+allow vendor_qvrd_vndr vendor_camera_data_file:dir create_dir_perms;
+allow vendor_qvrd_vndr vendor_camera_data_file:file create_file_perms;
 
 # Allow access thermal
-allow vendor_qvrd_vndr vendor_thermal_socket:sock_file rw_file_perms;
+unix_socket_connect(vendor_qvrd_vndr, vendor_thermal, vendor_thermal-engine)
