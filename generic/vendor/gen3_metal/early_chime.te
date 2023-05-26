@@ -50,3 +50,4 @@ allow early_chime vendor_audio_hal_plugin_service:binder call;
 allow early_chime vendor_audio_hal_plugin_service_service:service_manager find;
 allow early_chime audio_device:chr_file setattr;
 allow early_chime audio_device:chr_file {open};
+allow audio_device device:filesystem associate;

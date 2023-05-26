@@ -180,3 +180,6 @@ vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_boot
 
 #Board suffix property context
 ro.vendor.board.suffix                              u:object_r:vendor_board_suffix_prop:s0
+
+# LPM  properties
+vendor.vehicle.lpm                          u:object_r:vendor_lpm_prop:s0

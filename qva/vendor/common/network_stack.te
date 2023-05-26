@@ -4,3 +4,4 @@
 allow network_stack vendor_dpmd:unix_stream_socket connectto;
 allow network_stack vendor_dpmtcm_socket:sock_file write;
 hal_client_domain(network_stack, vendor_hal_perf);
+allow network_stack proc_net:file r_file_perms;

@@ -1,0 +1,10 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow vendor_qcarcam_edrm_rvc vendor_early_services:dir r_dir_perms;
+allow vendor_qcarcam_edrm_rvc vendor_early_services:file r_file_perms;
+allow vendor_qcarcam_edrm_rvc vendor_early_services:sock_file write;
+allow vendor_qcarcam_edrm_rvc vendor_dmabuf_display_heap_device:chr_file rw_file_perms;
+allow vendor_qcarcam_edrm_rvc vendor_early_services:file rw_file_perms;
+allow vendor_qcarcam_edrm_rvc self:capability sys_admin;
+allow vendor_qcarcam_edrm_rvc kmsg_device:chr_file rw_file_perms;

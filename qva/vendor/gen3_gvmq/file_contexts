@@ -28,6 +28,7 @@
 
 #New partitions
 /dev/block/bluetooth_[ab]                                           u:object_r:vendor_modem_block_device:s0
+/dev/block/boot_[ab]                                                u:object_r:boot_block_device:s0
 /dev/block/metadata                                                 u:object_r:metadata_block_device:s0
 /dev/block/modem_[ab]                                               u:object_r:vendor_modem_block_device:s0
 /dev/block/system                                                   u:object_r:system_block_device:s0

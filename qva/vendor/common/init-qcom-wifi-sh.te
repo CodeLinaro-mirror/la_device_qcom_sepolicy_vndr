@@ -35,6 +35,7 @@ init_daemon_domain(vendor_init-qcom-wifi-sh)
 # - set wlan prop
 allow vendor_init-qcom-wifi-sh vendor_toolbox_exec:file rx_file_perms;
 allow vendor_init-qcom-wifi-sh self:process setexec;
+allow vendor_init-qcom-wifi-sh sysfs:file { write };
 
 # To change domain to vendor_modprobe once it is executed from the script
 domain_trans(vendor_init-qcom-wifi-sh, vendor_toolbox_exec, vendor_modprobe)
