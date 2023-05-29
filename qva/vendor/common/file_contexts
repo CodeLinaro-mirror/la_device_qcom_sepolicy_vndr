@@ -307,12 +307,16 @@
 
 #vehicle HAL
 /vendor/lib(64)?/VehicleHardware\.so       u:object_r:vendor_aidl_hal_automotive_vehicle:s0
+/vendor/lib(64)?/qtilibpowerpolicy.so     u:object_r:vendor_power_policy:s0
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:vendor_wifilearnersvc_exec:s0
 
 #wificfr daemon
 /(vendor|system/vendor)/bin/wificfrtool    u:object_r:wificfrsvc_exec:s0
+
+#qtiwifi daemon
+/(vendor|system/vendor)/bin/qtiwifi    u:object_r:qtiwifi_exec:s0
 
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
@@ -374,3 +378,6 @@
 
 #vendor_hvdcp
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device1/name u:object_r:sysfs_hvdcp:s0
+
+# Power state of deep sleep
+/dev/power_state   u:object_r:vendor_power_state_device:s0

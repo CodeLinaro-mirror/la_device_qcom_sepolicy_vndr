@@ -1,0 +1,7 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow Gnss HAL to register callback with car power policy
+carpowerpolicy_callback_domain(vendor_hal_gnss_qti)
+allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
+binder_call(vendor_hal_gnss_qti, carpowerpolicyd)
