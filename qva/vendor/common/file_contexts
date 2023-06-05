@@ -261,3 +261,6 @@
 /(vendor|system/vendor)/bin/mosquitto           u:object_r:vendor_mosquitto_exec:s0
 
 /(vendor|system/vendor)/bin/canflasher    u:object_r:vendor_canflasher_exec:s0
+
+#Car Power Daemon
+/(vendor|system/vendor)/bin/car_power_daemon                        u:object_r:vendor_carpowerd_exec:s0
