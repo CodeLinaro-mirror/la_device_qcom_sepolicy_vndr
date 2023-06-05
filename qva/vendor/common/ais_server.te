@@ -99,3 +99,6 @@ get_prop(vendor_ais_server, build_vendor_prop)
 allow vendor_ais_server vendor_gsi_data_file:dir r_dir_perms;
 allow vendor_ais_server vendor_sys_kernel_bgsi:dir r_dir_perms;
 allow vendor_ais_server vendor_sys_kernel_bgsi:file rw_file_perms;
+
+allow vendor_ais_server aac_drc_prop:file { getattr map open };
+allow vendor_ais_server ab_update_gki_prop:file { getattr open };
