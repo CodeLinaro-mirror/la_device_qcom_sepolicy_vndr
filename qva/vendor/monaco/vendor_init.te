@@ -4,3 +4,6 @@
 
 # Allow vendor_init to get vendor_pasr_prop
 get_prop(vendor_init, persist_debug_prop)
+
+#Allow vendor_init to set whs property
+set_prop(vendor_init, vendor_whs_prop)
