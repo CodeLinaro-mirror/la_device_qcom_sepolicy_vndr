@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022, 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_mdsprpcd, domain;
@@ -7,6 +7,7 @@ type vendor_mdsprpcd_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_mdsprpcd)
 
 allow vendor_mdsprpcd vendor_dmabuf_adsp_heap_device:chr_file rw_file_perms;
+allow vendor_mdsprpcd dmabuf_system_heap_device:chr_file rw_file_perms;
 allow vendor_mdsprpcd ion_device:chr_file r_file_perms;
 allow vendor_mdsprpcd vendor_qdsp_device:chr_file r_file_perms;
 allow vendor_mdsprpcd vendor_xdsp_device:chr_file r_file_perms;

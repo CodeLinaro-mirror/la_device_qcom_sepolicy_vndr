@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022, 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Copyright (c) 2020 The Linux Foundation. All rights reserved.
@@ -79,4 +79,5 @@ userdebug_or_eng(`
 #allow proc_sysrq access for crash dump
   allow vendor_agmservice_qti proc_sysrq:file rw_file_perms;
   allow vendor_agmservice_qti vendor_sysfs_kpi:file w_file_perms;
+  allow vendor_agmservice_qti debugfs:dir r_dir_perms;
 ')
