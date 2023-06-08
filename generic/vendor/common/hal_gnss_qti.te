@@ -74,3 +74,6 @@ allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
 # libqdi and have all its clients use netlink route
 # sockets.
 dontaudit vendor_hal_gnss_qti self:udp_socket create;
+
+set_prop(vendor_hal_gnss_qti, vendor_gnss_fw_state)
+set_prop(vendor_hal_gnss_qti, vendor_gnss_fw_version)
