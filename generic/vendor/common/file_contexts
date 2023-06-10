@@ -643,3 +643,7 @@
 
 #Early Dynamic Splash
 /vendor_early_services/vendor/bin/esplash               u:object_r:vendor_esplash_exec:s0
+
+# power related path which need context
+/sys/power/resume                                                    u:object_r:vendor_sysfs_power:s0
+/sys/power/image_size                                                u:object_r:vendor_sysfs_power_image:s0

@@ -1,0 +1,20 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_qtiwifi_app, domain;
+app_domain(vendor_qtiwifi_app);
+hal_client_domain(vendor_qtiwifi_app, vendor_hal_qtiwifi)
+typeattribute vendor_qtiwifi_app hal_wifi_supplicant_client;
+typeattribute vendor_qtiwifi_app hal_wifi_hostapd_client;
+
+#ensure QtiWifiService/QtiWifiSettings to work
+allow vendor_qtiwifi_app activity_service:service_manager find;
+allow vendor_qtiwifi_app netstats_service:service_manager find;
+allow vendor_qtiwifi_app surfaceflinger_service:service_manager find;
+allow vendor_qtiwifi_app gpu_service:service_manager find;
+allow vendor_qtiwifi_app autofill_service:service_manager find;
+allow vendor_qtiwifi_app wifi_service:service_manager find;
+allow vendor_qtiwifi_app audio_service:service_manager find;
+allow vendor_qtiwifi_app content_capture_service:service_manager find;
+allow vendor_qtiwifi_app textservices_service:service_manager find;
+

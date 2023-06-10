@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 allow automotive_display_service_server hal_graphics_allocator_default:fd use;
 allow automotive_display_service_server ion_device:chr_file read;
@@ -31,3 +35,4 @@ allow automotive_display_service_server same_process_hal_file:file { execute get
 allow automotive_display_service_server vendor_hal_evs_driver:fd use;
 allow automotive_display_service_server hal_graphics_allocator_default:binder call;
 allow automotive_display_service_server ion_device:chr_file open;
+allow automotive_display_service_server vendor_aidl_automotive_evs_ais:fd use;

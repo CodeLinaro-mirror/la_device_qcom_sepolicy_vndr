@@ -42,6 +42,8 @@
 
 /sys/devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name      u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery  u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc[0-9]/state      u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/8300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]/state       u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/8300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name       u:object_r:vendor_sysfs_ssr:s0
 
 #PMIC devices wakeup nodes

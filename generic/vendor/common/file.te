@@ -280,3 +280,7 @@ type vendor_sysfs_sb, fs_type, sysfs_type;
 
 # wall
 type vendor_sysfs_power_supply, sysfs_type, fs_type;
+
+# swap partition nodes
+type vendor_sysfs_power_image, fs_type, sysfs_type;
+type vendor_proc_swappiness, proc_type, fs_type;

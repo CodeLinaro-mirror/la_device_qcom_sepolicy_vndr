@@ -60,6 +60,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/mdm1m9kefs3           u:object_r:vendor_efs_boot_dev:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/mdmddr                u:object_r:vendor_efs_boot_dev:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/super                 u:object_r:super_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/swap              u:object_r:vendor_custom_ab_block_device:s0
 
 #rawdump partition
 /dev/block/platform/soc/1d84000.ufshc/by-name/rawdump               u:object_r:vendor_rawdump_block_device:s0
@@ -102,6 +103,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/multiimgoem_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/init_boot_[ab]        u:object_r:boot_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/vendor_dlkm_[ab]      u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/swap_[ab]              u:object_r:vendor_custom_ab_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                       u:object_r:vendor_gpt_block_device:s0
