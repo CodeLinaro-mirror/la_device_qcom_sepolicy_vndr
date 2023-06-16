@@ -32,6 +32,9 @@ userdebug_or_eng(`
 #Allow mediacodec to access vendor_media_data_file files
 allow mediacodec vendor_media_data_file:dir create_dir_perms;
 allow mediacodec vendor_media_data_file:file create_file_perms;
+allow mediacodec vendor_hal_display_config_hwservice:hwservice_manager find;
+binder_call(mediacodec,hal_graphics_composer_default )
+
 
 #Allow mediacodec to access configstore
 hal_client_domain(mediacodec, vendor_hal_capabilityconfigstore_qti)
