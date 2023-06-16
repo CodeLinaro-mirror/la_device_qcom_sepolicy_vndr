@@ -21,3 +21,7 @@ allow vendor_c2c_hub vendor_persist_data_file:file { getattr open read write };
 allow vendor_c2c_hub self:udp_socket create;
 allow netd vendor_c2c_hub:fd use;
 allow netd vendor_c2c_hub:tcp_socket { getopt read setopt write };
+
+#allow vendor_c2c_hub to access vehicle hal
+hal_client_domain(vendor_c2c_hub, hal_vehicle)
+
