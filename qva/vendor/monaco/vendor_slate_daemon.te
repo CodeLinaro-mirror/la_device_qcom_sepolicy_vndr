@@ -51,3 +51,7 @@ r_dir_file(vendor_slate_daemon, vendor_sysfs_twm)
 allow vendor_slate_daemon vendor_sysfs_twm:file r_file_perms;
 #wakelock policy
 wakelock_use(vendor_slate_daemon);
+
+# Read dload_mode
+allow vendor_slate_daemon vendor_sysfs_dload_mode:file r_file_perms;
+
