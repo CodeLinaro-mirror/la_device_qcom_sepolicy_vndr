@@ -44,3 +44,6 @@ allow vendor_aidl_hal_automotive_vehicle_qti self:can_socket create_socket_perms
 allowxperm vendor_aidl_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
 allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_kpi:file w_file_perms;
 hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle)
+get_prop(vendor_aidl_hal_automotive_vehicle_qti,vendor_lpm_prop)
+set_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_lpm_prop)
+allow vendor_aidl_hal_automotive_vehicle_qti vendor_power_state_device:chr_file rw_file_perms;

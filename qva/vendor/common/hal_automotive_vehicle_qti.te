@@ -41,3 +41,4 @@ allowxperm vendor_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock
 allow vendor_hal_automotive_vehicle_qti input_device:chr_file r_file_perms;
 allow vendor_hal_automotive_vehicle_qti input_device:dir r_dir_perms;
 allow vendor_hal_automotive_vehicle_qti vendor_sysfs_kpi:file w_file_perms;
+set_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_hiber_prop)

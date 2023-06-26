@@ -1,0 +1,10 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved. 	1
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_qti_hiber_restore,domain;
+type vendor_qti_hiber_restore_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_qti_hiber_restore)
+
+allow vendor_qti_hiber_restore vendor_toolbox_exec:file rx_file_perms;
+allow vendor_qti_hiber_restore vendor_adsprpcd:file w_file_perms;
+allow vendor_qti_hiber_restore vendor_sysfs_ssr:file w_file_perms;

@@ -1,0 +1,42 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# evs_mock mock hardware driver service
+type vendor_aidl_automotive_evs_ais, domain;
+
+
+# Allow init to launch processes in this context
+type vendor_aidl_automotive_evs_ais_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_aidl_automotive_evs_ais)
+
+binder_call(automotive_display_service_server, hal_evs_default)
+hal_server_domain(vendor_aidl_automotive_evs_ais, hal_evs)
+allow vendor_aidl_automotive_evs_ais vendor_camera_socket:sock_file write;
+allow vendor_aidl_automotive_evs_ais vendor_camera_socket:dir search;
+allow vendor_aidl_automotive_evs_ais gpu_device:chr_file rw_file_perms;
+hal_client_domain(vendor_aidl_automotive_evs_ais, hal_evs)
+binder_use(vendor_aidl_automotive_evs_ais)
+binder_call(vendor_aidl_automotive_evs_ais, servicemanager)
+binder_call(vendor_aidl_automotive_evs_ais, evsmanagerd)
+
+# Allow use of gralloc buffers, and surface flinger
+allow vendor_aidl_automotive_evs_ais video_device:chr_file rw_file_perms;
+hal_client_domain(vendor_aidl_automotive_evs_ais, hal_graphics_allocator);
+hal_client_domain(vendor_aidl_automotive_evs_ais, hal_configstore);
+hal_client_domain(vendor_aidl_automotive_evs_ais, hal_graphics_composer);
+allow vendor_aidl_automotive_evs_ais hal_graphics_allocator_default_tmpfs:file rw_file_perms;
+allow vendor_aidl_automotive_evs_ais surfaceflinger:fd use;
+allow vendor_aidl_automotive_evs_ais hal_graphics_mapper_hwservice:hwservice_manager find;
+
+# removed typeattribute hal_evs_driver binder_in_vendor_violators
+allow vendor_aidl_automotive_evs_ais vendor_ais_server:unix_stream_socket connectto;
+
+# Allow to access automotive proxy display
+binder_call(vendor_aidl_automotive_evs_ais, automotive_display_service_server);
+allow vendor_aidl_automotive_evs_ais fwk_automotive_display_hwservice:hwservice_manager find;
+allow vendor_aidl_automotive_evs_ais fwk_automotive_display_service:service_manager find;
+
+allow vendor_aidl_automotive_evs_ais vendor_sysfs_kpi:file write;
+allow vendor_aidl_automotive_evs_ais hidl_token_hwservice:hwservice_manager find;
+allow vendor_aidl_automotive_evs_ais vendor_sysfs_kpi:file w_file_perms;

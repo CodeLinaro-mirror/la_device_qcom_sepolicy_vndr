@@ -1,0 +1,13 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+attribute vendor_hal_qtiwifi;
+attribute vendor_hal_qtiwifi_client;
+attribute vendor_hal_qtiwifi_server;
+
+binder_call(vendor_hal_qtiwifi_client, vendor_hal_qtiwifi_server)
+binder_call(vendor_hal_qtiwifi_server, vendor_hal_qtiwifi_client)
+binder_use(vendor_hal_qtiwifi_server)
+
+hal_attribute_service(vendor_hal_qtiwifi, vendor_hal_qtiwifi_service)
+

@@ -63,3 +63,6 @@ type vendor_msm_rtac_device, dev_type;
 
 #define msm_lsm char device
 type vendor_msm_lsm_cdev_device, dev_type;
+
+# Define power state device
+type vendor_power_state_device, dev_type;
