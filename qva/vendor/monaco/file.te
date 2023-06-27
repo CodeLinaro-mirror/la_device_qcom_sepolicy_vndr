@@ -46,3 +46,6 @@ type vendor_sysfs_dload_mode, sysfs_type, fs_type;
 type vendor_sysfs_bt_uart, sysfs_type, fs_type;
 type vendor_sysfs_bt, sysfs_type, fs_type;
 type btss_sysfs_bt, sysfs_type, fs_type;
+
+#dsqb sysfs
+type sysfs_dsqb, fs_type, sysfs_type;

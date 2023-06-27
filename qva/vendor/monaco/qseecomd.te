@@ -9,3 +9,6 @@ set_prop(tee, vendor_tee_km_quickboot)
 set_prop(tee, vendor_tee_gk_quickboot)
 # allow tee access set vendor.keymint.quickboot property
 set_prop(tee, vendor_tee_keymint_quickboot)
+
+#allow tee to read/write in sysfs_dsqb
+allow tee sysfs_dsqb:file rw_file_perms;

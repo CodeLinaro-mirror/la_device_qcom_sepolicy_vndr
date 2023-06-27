@@ -183,3 +183,6 @@ genfscon sysfs /kernel/dload/dload_mode u:object_r:vendor_sysfs_dload_mode:s0
 
 #SLATERSB_ENABLE_PATH
 genfscon sysfs /devices/platform/soc/soc:qcom,slate-rsb/wakeup u:object_r:sysfs_wakeup:s0
+
+#DeepSleep-QuickBoot sysfs node
+genfscon sysfs /kernel/etx_sysfs/dsqb_status                            u:object_r:sysfs_dsqb:s0
