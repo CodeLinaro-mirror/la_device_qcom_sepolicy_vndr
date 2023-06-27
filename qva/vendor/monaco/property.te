@@ -39,3 +39,12 @@ vendor_internal_prop(vendor_qc_aon_prop);
 vendor_internal_prop(vendor_qc_aon_dfu_update_prop);
 vendor_internal_prop(vendor_watch_orientation_prop);
 vendor_internal_prop(vendor_whs_prop);
+
+#keymaster quickboot prop
+vendor_restricted_prop(vendor_tee_km_quickboot);
+
+#keymint quickboot prop
+vendor_restricted_prop(vendor_tee_keymint_quickboot);
+
+#Gatekeper quickboot prop
+vendor_restricted_prop(vendor_tee_gk_quickboot);

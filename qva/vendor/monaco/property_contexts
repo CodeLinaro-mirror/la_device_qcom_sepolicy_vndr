@@ -39,3 +39,12 @@ ro.vendor.qc_aon_presence                    u:object_r:vendor_qc_aon_prop:s0
 persist.vendor.qc_aon.dfu_update             u:object_r:vendor_qc_aon_dfu_update_prop:s0
 persist.vendor.watch_orientation             u:object_r:vendor_watch_orientation_prop:s0
 persist.vendor.whs.                          u:object_r:vendor_whs_prop:s0
+
+#keymaster quickboot prop
+vendor.keymaster.quickboot   u:object_r:vendor_tee_km_quickboot:s0
+
+#keymint quickboot prop
+vendor.keymint.quickboot     u:object_r:vendor_tee_keymint_quickboot:s0
+
+#Gatekeeper quickboot prop
+vendor.gatekeeper.quickboot  u:object_r:vendor_tee_gk_quickboot:s0
