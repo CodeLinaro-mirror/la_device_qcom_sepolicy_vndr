@@ -176,3 +176,6 @@ vendor.debug.mmosal.config         u:object_r:vendor_mm_osal_prop:s0
 
 # AMSIPC
 ctl.vendor.ams-1-0               u:object_r:vendor_AMSIPC_service_prop:s0
+
+# Audio boot
+ro.boot.audio                    u:object_r:vendor_audio_boot_prop:s0
