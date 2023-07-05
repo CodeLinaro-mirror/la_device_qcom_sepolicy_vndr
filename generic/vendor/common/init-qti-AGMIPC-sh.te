@@ -39,6 +39,7 @@ init_daemon_domain(vendor_init-qti-AGMIPC-sh)
 set_prop(vendor_init-qti-AGMIPC-sh, vendor_AGMIPC_service_prop)
 set_prop(vendor_init-qti-AGMIPC-sh, vendor_audio_prop)
 set_prop(vendor_init-qti-AGMIPC-sh, ctl_start_prop)
+get_prop(vendor_init-qti-AGMIPC-sh, vendor_audio_boot_prop)
 # TODO: remove the following line as it's only for
 #       testing if the init.qti.AGMIPC.sh is read
 #set_prop(vendor_init-qti-AGMIPC-sh, vendor_disable_spu_prop)
