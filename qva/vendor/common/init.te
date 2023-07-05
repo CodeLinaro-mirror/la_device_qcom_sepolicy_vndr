@@ -38,3 +38,6 @@ allow init vendor_spunvm_file:filesystem { relabelto relabelfrom mount };
 
 allow init nativetest_data_file:dir { getattr open read search };
 allow init nativetest_data_file:file { getattr };
+
+allow init self:qipcrtr_socket {read write};
+allow init vendor_audiod:unix_stream_socket {connectto};

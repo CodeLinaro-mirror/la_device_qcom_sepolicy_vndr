@@ -59,3 +59,5 @@ carpowerpolicy_callback_domain(vendor_audiod)
 allow vendor_audiod carpowerpolicyd_service:service_manager find;
 allow vendor_audiod property_socket:sock_file write;
 get_prop(vendor_audiod, vendor_audio_prop)
+set_prop(vendor_audiod, vendor_audio_prop)
+

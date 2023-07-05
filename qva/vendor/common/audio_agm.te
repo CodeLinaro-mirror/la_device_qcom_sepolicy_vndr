@@ -42,3 +42,4 @@ get_prop(vendor_agmplay, vendor_audio_prop)
 get_prop(vendor_agmplay, hwservicemanager_prop)
 hal_client_domain(vendor_agmplay, hal_audio)
 
+userdebug_or_eng(` allow vendor_agmplay vendor_sysfs_kpi:file w_file_perms');
