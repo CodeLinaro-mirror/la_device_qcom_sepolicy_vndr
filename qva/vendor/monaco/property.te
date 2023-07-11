@@ -48,3 +48,4 @@ vendor_restricted_prop(vendor_tee_keymint_quickboot);
 
 #Gatekeper quickboot prop
 vendor_restricted_prop(vendor_tee_gk_quickboot);
+system_restricted_prop(wrist_orientation_prop);

@@ -67,3 +67,14 @@ attribute vendor_hal_watchorientation_server;
 attribute vendor_hal_bluetooth_offload;
 attribute vendor_hal_bluetooth_offload_client;
 attribute vendor_hal_bluetooth_offload_server;
+
+attribute hal_wristorientation_client;
+attribute hal_wristorientation;
+attribute hal_healthservices_server;
+attribute hal_healthservices;
+attribute hal_wristorientation_server;
+attribute hal_healthservices_client;
+attribute hal_lefty_server;
+attribute hal_lefty_client;
+attribute hal_lefty;
+attribute vendor_persist_type;

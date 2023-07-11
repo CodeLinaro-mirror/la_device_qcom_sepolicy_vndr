@@ -37,3 +37,7 @@ type vendor_hal_displayoffload_hwservice, hwservice_manager_type, protected_hwse
 type vendor_hal_aonutility_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_watchorientation_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_bluetooth_offload_hwservice, hwservice_manager_type, protected_hwservice;
+
+type hal_lefty_hwservice, hwservice_manager_type;
+type hal_wristorientation_hwservice, hwservice_manager_type;
+type hal_healthservices_hwservice, hwservice_manager_type;
