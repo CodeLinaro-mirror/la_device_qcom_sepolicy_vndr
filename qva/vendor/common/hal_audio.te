@@ -40,3 +40,9 @@ get_prop(hal_audio, vendor_bluetooth_prop)
 
 # Allow audio HAL to get updates from health hal
 hal_client_domain(hal_audio_default, hal_health)
+
+# Allow audio HAL to communicate with car power policy service
+allow hal_audio_default carpowerpolicyd_service:service_manager find;
+binder_call(hal_audio_default, carpowerpolicyd)
+binder_call(carpowerpolicyd, hal_audio_default)
+get_prop(hal_audio_default, boot_status_prop)

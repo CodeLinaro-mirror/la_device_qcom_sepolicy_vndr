@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, 2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,8 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_dun_service,                 service_manager_type;
-type vendor_imsrcs_service,              service_manager_type;
-type vendor_hal_qvrd_service,            vendor_service,service_manager_type;
-type vendor_hal_sxrd_service,            vendor_service,service_manager_type;
-type carpowerpolicyd_service, service_manager_type;
+# Changes from Qualcomm Innovation Center are provided under the following license:
+
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow hal_audiocontrol_default carpowerpolicyd_service:service_manager find;
+binder_call(hal_audiocontrol_default, carpowerpolicyd)
+binder_call(carpowerpolicyd, hal_audiocontrol_default)
+get_prop(hal_audiocontrol_default, boot_status_prop)

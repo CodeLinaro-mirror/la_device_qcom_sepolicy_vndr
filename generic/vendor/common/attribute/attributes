@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 attribute vendor_qmcs_file_type;
+# All car power policy callbacks
+attribute carpowerpolicycallback_domain;
+expandattribute carpowerpolicycallback_domain true;
