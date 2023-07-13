@@ -13,5 +13,6 @@ allow vendor_carpowerusbservice vendor_sysfs_usb_device:file rw_file_perms;
 allow vendor_carpowerusbservice boot_status_prop:file {open read};
 allow vendor_carpowerusbservice carpowerpolicyd_service:service_manager find;
 
+get_prop(vendor_carpowerusbservice, vendor_lpm_prop)
 binder_call(vendor_carpowerusbservice, servicemanager)
 binder_call(carpowerpolicyd, vendor_carpowerusbservice)

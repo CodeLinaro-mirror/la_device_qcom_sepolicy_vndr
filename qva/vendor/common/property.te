@@ -128,5 +128,5 @@ vendor_internal_prop(vendor_sysboot_completed_prop);
 
 #Boot Animation property
 vendor_internal_prop(vendor_initsvc_bootanim_prop);
-
+vendor_internal_prop(vendor_lpm_prop);
 vendor_internal_prop(vendor_hiber_prop);

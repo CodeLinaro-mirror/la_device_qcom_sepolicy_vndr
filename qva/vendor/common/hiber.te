@@ -19,3 +19,5 @@ allow vendor_qti_hiber vendor_file:file rx_file_perms;
 allow vendor_qti_hiber block_device:dir { getattr search };
 allow vendor_qti_hiber vendor_sysfs_ssr:file rw_file_perms;
 allow vendor_qti_hiber vendor_sysfs_power:file rw_file_perms;
+allow vendor_qti_hiber proc_drop_caches:file rw_file_perms;
+allow vendor_qti_hiber self:capability sys_admin;

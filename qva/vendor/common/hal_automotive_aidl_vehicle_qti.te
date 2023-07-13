@@ -18,3 +18,5 @@ allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_kpi:file w_file_perms;
 hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle)
 set_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_hiber_prop)
 get_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_hiber_prop)
+get_prop(vendor_aidl_hal_automotive_vehicle_qti,vendor_lpm_prop)
+set_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_lpm_prop)

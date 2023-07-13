@@ -178,5 +178,6 @@ vendor.sys.boot_completed                        u:object_r:vendor_sysboot_compl
 # Boot Animation start
 vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0
 
-vendor.car.hiber                                  u:object_r:vendor_hiber_prop:s0
-
+vendor.vehicle.lpm                          u:object_r:vendor_lpm_prop:s0
+persist.vendor.vehicle.lpm                  u:object_r:vendor_lpm_prop:s0
+vendor.car.hiber                            u:object_r:vendor_hiber_prop:s0

@@ -6,3 +6,10 @@ type vendor_qti_hiber_restore_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_qti_hiber_restore)
 
 allow vendor_qti_hiber_restore vendor_adsprpcd:file rw_file_perms;
+
+allow vendor_qti_hiber_restore vendor_gpt_block_device:blk_file rw_file_perms;
+allow vendor_qti_hiber_restore vendor_sysfs_ssr:file w_file_perms;
+allow vendor_qti_hiber_restore block_device:dir { getattr search };
+allow vendor_qti_hiber_restore vendor_toolbox_exec:file rx_file_perms;
+
+allow vendor_qti_hiber_restore self:capability sys_admin;
