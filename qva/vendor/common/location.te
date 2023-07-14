@@ -44,3 +44,4 @@ allow vendor_location vendor_location_device:chr_file rw_file_perms;
 ## xtra-daemon
 ##############
 hal_client_domain(vendor_location, vendor_qccsyshal);
+set_prop(vendor_location, vendor_gnss_firmaware_prop)

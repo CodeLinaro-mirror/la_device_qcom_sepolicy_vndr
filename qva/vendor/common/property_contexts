@@ -109,10 +109,10 @@ persist.vendor.soh.                          u:object_r:vendor_hvdcp_opti_prop:s
 # XLAT property
 persist.vendor.net.doxlat                    u:object_r:vendor_xlat_prop:s0
 
-ro.vendor.qspm.enable            u:object_r:vendor_qspm_prop:s0 exact bool
+ro.vendor.qspm.enable                        u:object_r:vendor_qspm_prop:s0 exact bool
 
 #qvr properties
-vendor.qvr                       u:object_r:vendor_qvr_prop:s0
+vendor.qvr                                   u:object_r:vendor_qvr_prop:s0
 
 #qmuxd property
 ctl.start$vendor.qmuxd                       u:object_r:vendor_ctl_qmuxd_prop:s0
@@ -121,12 +121,15 @@ ctl.start$vendor.qmuxd                       u:object_r:vendor_ctl_qmuxd_prop:s0
 ro.vendor.bt.enablelazyhal                   u:object_r:vendor_bluetooth_prop:s0 exact bool
 
 # WLAN dynamic detect
-ro.vendor.wlan.                         u:object_r:vendor_qcom_wlan_prop:s0
+ro.vendor.wlan.                              u:object_r:vendor_qcom_wlan_prop:s0
 
 # Boot Completed
-vendor.sys.boot_completed                        u:object_r:vendor_sysboot_completed_prop:s0
+vendor.sys.boot_completed                    u:object_r:vendor_sysboot_completed_prop:s0
 
 # Boot Animation start
-vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0
+vendor.init.svc.bootanim                     u:object_r:vendor_initsvc_bootanim_prop:s0
 
-ro.vendor.qti.soc_model      u:object_r:vendor_soc_model_prop:s0
+ro.vendor.qti.soc_model                      u:object_r:vendor_soc_model_prop:s0
+
+#gnss firmware
+vendor.gnss.firmware.                        u:object_r:vendor_gnss_firmaware_prop:s0

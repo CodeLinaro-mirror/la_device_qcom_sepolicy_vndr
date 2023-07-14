@@ -38,4 +38,5 @@ allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow vendor_hal_gnss_qti vendor_location_device:chr_file rw_file_perms;
 allow vendor_hal_gnss_qti vendor_location_data_file:file getattr;
 
-hal_client_domain(vendor_hal_gnss_qti, hal_vehicle);
+hal_client_domain(vendor_hal_gnss_qti, hal_vehicle)
+set_prop(vendor_hal_gnss_qti,  vendor_gnss_firmaware_prop)
