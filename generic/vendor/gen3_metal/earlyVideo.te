@@ -45,3 +45,4 @@ allow vendor_earlyVideo vendor_sysfs_kpi:file w_file_perms;
 allow vendor_earlyVideo self:capability { chown setgid setuid sys_admin };
 allow vendor_earlyVideo dmabuf_system_heap_device:chr_file r_file_perms;
 allow vendor_earlyVideo vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow video_device device:filesystem associate;

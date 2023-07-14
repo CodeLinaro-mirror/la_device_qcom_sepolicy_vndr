@@ -63,6 +63,7 @@
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
 /dev/msm_audio_ion_cma                          u:object_r:audio_device:s0
 /dev/aud_pasthru_modem                          u:object_r:vendor_agm_device:s0
+/dev/virt_sndcard_ctl                           u:object_r:vendor_agm_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
 /dev/remoteproc.*                               u:object_r:vendor_ssr_device:s0
@@ -610,6 +611,8 @@
 /(vendor|system/vendor)/bin/init\.qti\.write\.sh       u:object_r:vendor_qti_init_shell_bg_exec:s0
 /(vendor|system/vendor)/bin/init\.kernel\.post_boot\.sh       u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.qcv\.sh          u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.cam\.sh          u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.soc-model\.sh    u:object_r:vendor_qti_init_shell_exec:s0
 
 #Limits sysfs node
 /sys/module/msm_isense_cdsp/data                        u:object_r:sysfs_thermal:s0
@@ -637,3 +640,6 @@
 
 #Thermal HAl
 /vendor/bin/hw/android\.hardware\.thermal@2\.0-service.mock                        u:object_r:hal_thermal_default_exec:s0
+
+#Early Dynamic Splash
+/vendor_early_services/vendor/bin/esplash               u:object_r:vendor_esplash_exec:s0
