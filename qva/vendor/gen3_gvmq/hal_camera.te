@@ -25,4 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_camera_default vendor_hab_device:chr_file rw_file_perms;
+allow hal_camera_default gpu_device:chr_file rw_file_perms;
