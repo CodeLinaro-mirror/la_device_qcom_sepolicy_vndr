@@ -69,6 +69,10 @@ allow vendor_agmservice_qti vendor_audio_data_file:file create_file_perms;
 # agm audio thread needs RT scheduling for LL/ULL audio, allow sys_nice
 allow vendor_agmservice_qti self:global_capability_class_set sys_nice;
 
+allow vendor_agmservice_qti vendor_sysfs_kpi:file w_file_perms;
+
+set_prop(vendor_agmservice_qti,vendor_audio_prop)
+
 userdebug_or_eng(`
 #Allow for property access
   get_prop(vendor_agmservice_qti,vendor_audio_debug_prop)
@@ -78,6 +82,5 @@ userdebug_or_eng(`
   allow vendor_agmservice_qti vendor_data_file:file r_file_perms;
 #allow proc_sysrq access for crash dump
   allow vendor_agmservice_qti proc_sysrq:file rw_file_perms;
-  allow vendor_agmservice_qti vendor_sysfs_kpi:file w_file_perms;
   allow vendor_agmservice_qti debugfs:dir r_dir_perms;
 ')

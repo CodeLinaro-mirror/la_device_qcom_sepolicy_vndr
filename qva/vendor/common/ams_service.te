@@ -53,8 +53,9 @@ allow vendor_ams_service_qti dmabuf_system_heap_device:chr_file rw_file_perms;
 allow vendor_ams_service_qti vendor_dmabuf_system_heap_device:chr_file rw_file_perms;
 allow vendor_ams_service_qti vendor_dmabuf_audio_ml_heap_device:chr_file rw_file_perms;
 
+allow vendor_ams_service_qti vendor_sysfs_kpi:file w_file_perms;
+
 userdebug_or_eng(`
-  allow vendor_ams_service_qti vendor_sysfs_kpi:file w_file_perms;
 
 #Allow for pd_locater service access
   get_prop(vendor_ams_service_qti, vendor_pd_locater_dbg_prop)
