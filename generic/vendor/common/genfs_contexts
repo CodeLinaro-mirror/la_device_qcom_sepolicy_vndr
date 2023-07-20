@@ -200,3 +200,6 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,
 
 # swappiness
 genfscon proc  /sys/vm/swappiness                                              u:object_r:vendor_proc_swappiness:s0
+
+# display
+genfscon sysfs /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp  u:object_r:vendor_sysfs_display:s0
