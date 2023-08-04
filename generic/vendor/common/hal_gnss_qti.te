@@ -52,7 +52,7 @@ hal_client_domain(vendor_hal_gnss_qti, hal_health)
 
 # Allow Gnss HAL to register callback with car power policy
 carpowerpolicy_callback_domain(vendor_hal_gnss_qti)
-allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
+allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find
 
 # Most HALs are not allowed to use network sockets. QTI library
 # libqdi is used across multiple processes which are clients of
