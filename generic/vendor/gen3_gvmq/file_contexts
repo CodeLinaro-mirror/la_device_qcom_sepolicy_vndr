@@ -110,6 +110,7 @@
 
 /sys/devices/platform/soc/1c800000\.virtio-spmi/virtio[0-9]+/spmi-0/spmi0-00/1c800000\.virtio-spmi:qcom,pm8150@0:qcom,pm8150_rtc/wakeup(/.*)?                   u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1c800000\.virtio-spmi/virtio[0-9]+/spmi-0/spmi0-00/1c800000\.virtio-spmi:qcom,pm8150@0:qcom,pm8150_rtc/rtc/rtc0/wakeup[0-9]*(/.*)?    u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/998000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 
 /sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                                                     u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                                                    u:object_r:vendor_sysfs_mmc_host:s0
