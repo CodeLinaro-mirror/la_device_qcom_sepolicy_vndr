@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ###################################
+#Changes from Qualcomm Innovation Center are provided under the following license:
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # Dev block nodes
 
 # UFS Devices
@@ -136,6 +140,7 @@
 # msmsteppe counterparts
 /vendor/lib(64)?/hw/gralloc\.sm6150\.so                               u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.sm6150\.so                                u:object_r:same_process_hal_file:s0
+/vendor/bin/init\.qti\.cam\.sh                                       u:object_r:vendor_init-qti-cam-sh_exec:s0
 
 # subsys nodes
 /sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]/name                 u:object_r:vendor_sysfs_ssr:s0
@@ -309,3 +314,4 @@
 
 #vendor partition
 /vendor/bin/mdsprpcd            u:object_r:vendor_mdsprpcd_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.cam\.sh          u:object_r:vendor_qti_init_shell_exec:s0

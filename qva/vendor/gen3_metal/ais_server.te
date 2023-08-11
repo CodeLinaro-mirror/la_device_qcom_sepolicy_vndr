@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,23 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-###################################
+
 #Changes from Qualcomm Innovation Center are provided under the following license:
 #Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
-# Dev nodes
-#
-/dev/spidev2.0                                                                             u:object_r:audio_device:s0
-/dev/spidev22.0                                                                             u:object_r:audio_device:s0
-/dev/spidev10.0                                                                             u:object_r:audio_device:s0
-/dev/i2c-7                                                                                 u:object_r:audio_device:s0
 
-/(vendor|system/vendor)/bin/audiod                                  u:object_r:vendor_audiod_exec:s0
-
-# Block device for hal_bootctl
-/dev/block/sdf                                                      u:object_r:boot_block_device:s0
-#GSI
-/data/vendor/gsi(/.*)?                                              u:object_r:vendor_gsi_data_file:s0
-/dev/socket/camera/gsi                                              u:object_r:vendor_camera_socket:s0
-# ais camera
-/(vendor|system/vendor)/bin/ais_server_late                         u:object_r:vendor_ais_server_exec:s0
+# ais_server service
+allow vendor_ais_server vendor_camera_socket:dir r_dir_perms;
+allow vendor_ais_server vendor_camera_socket:file r_file_perms;
+allow vendor_ais_server kmsg_device:chr_file w_file_perms;
+get_prop(vendor_ais_server, vendor_sysboot_completed_prop)
+get_prop(vendor_ais_server, build_vendor_prop)
+allow vendor_ais_server vendor_gsi_data_file:dir r_dir_perms;
+allow vendor_ais_server vendor_sys_kernel_bgsi:dir r_dir_perms;
+allow vendor_ais_server vendor_sys_kernel_bgsi:file rw_file_perms;
