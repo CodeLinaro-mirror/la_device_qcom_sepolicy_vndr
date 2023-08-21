@@ -60,6 +60,7 @@ allow vendor_wcnss_service firmware_file:file r_file_perms;
 
 allow vendor_wcnss_service sysfs_net:dir search;
 allow vendor_wcnss_service sysfs_net:file { write getattr open };
+allow vendor_wcnss_service debugfs_wifi_tracing:file read;
 
 allow vendor_wcnss_service wpa_data_file:dir create_dir_perms;
 allow vendor_wcnss_service wpa_data_file:file create_file_perms;
