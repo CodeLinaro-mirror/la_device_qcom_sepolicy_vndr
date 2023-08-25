@@ -103,3 +103,5 @@ get_prop(system_server, vendor_qspm_prop)
 
 get_prop(system_server, vendor_xlat_prop)
 
+allow system_server hal_audiocontrol_default:process signal;
+allow system_server vendor_hal_automotive_vehicle_qti:process signal;

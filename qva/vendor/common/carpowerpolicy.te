@@ -1,0 +1,11 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Car power policy server
+type carpowerpolicyd, domain;
+
+binder_call(carpowerpolicycallback_domain, carpowerpolicyd)
+binder_call(carpowerpolicyd, carpowerpolicycallback_domain)
+
+# Configuration for system_server
+allow system_server carpowerpolicyd_service:service_manager find;

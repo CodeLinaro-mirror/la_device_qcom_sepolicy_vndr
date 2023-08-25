@@ -102,3 +102,4 @@ vendor_restricted_prop(vendor_mwqem_prop);
 
 # Car service property
 vendor_internal_prop(vendor_car_service_prop);
+system_restricted_prop(boot_status_prop);
