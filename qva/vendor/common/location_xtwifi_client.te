@@ -59,6 +59,7 @@ binder_call(vendor_location_xtwifi_client, system_server)
 # allows shell execute xtwifi-client in userdebug mode.
 userdebug_or_eng(`
   allow shell vendor_location_xtwifi_client_exec:file rx_file_perms;
+  get_prop(vendor_location_xtwifi_client, vendor_mink_trace_prop)
 ')
 
 set_prop(vendor_location_xtwifi_client, vendor_location_prop);

@@ -93,6 +93,7 @@
 /vendor/bin/hw/android\.hardware\.keymaster@4\.1-javacard.service                  u:object_r:hal_keymaster_default_exec:s0
 /vendor/bin/init\.qti\.ese\.strongbox\.sh                                          u:object_r:vendor_init-qti-ese-strongbox-sh_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service-spu-qti                u:object_r:vendor_hal_keymint_spu_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.weaver-service-spu-qti                           u:object_r:vendor_hal_weaver_spu_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox-nxp         u:object_r:vendor_hal_keymint_strongbox_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox-thales      u:object_r:vendor_hal_keymint_strongbox_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.nxp              u:object_r:vendor_hal_weaver_default_exec:s0
@@ -169,6 +170,7 @@
 /vendor/bin/usbsecure                                                              u:object_r:vendor_usb_qti_exec:s0
 /vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:vendor_hal_qspmhal_default_exec:s0
 /vendor/bin/vendor\.qti\.qspmhal-service                                           u:object_r:vendor_hal_qspmhal_default_exec:s0
+/vendor/bin/vendor\.qti\.qspa-service                                              u:object_r:vendor_hal_qspa_default_exec:s0
 /vendor/bin/qesdk-manager                                                          u:object_r:vendor_hal_qesdhal_default_exec:s0
 /vendor/bin/qesdk-oem-svc                                                          u:object_r:vendor_qesdoem_default_exec:s0
 /vendor/bin/qesdk-secmanager                                                       u:object_r:vendor_qesdsect_exec:s0
