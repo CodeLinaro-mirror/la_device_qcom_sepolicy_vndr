@@ -32,7 +32,6 @@ allow audioserver audio_service:service_manager find;
 
 # audio properties
 get_prop(audioserver, vendor_audio_prop)
-get_prop(audioserver, vendor_audio_boot_prop)
 
 userdebug_or_eng(`
     diag_use(audioserver)
