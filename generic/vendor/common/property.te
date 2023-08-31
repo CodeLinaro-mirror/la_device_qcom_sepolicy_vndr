@@ -141,8 +141,6 @@ vendor_internal_prop(vendor_pcie_prop)
 #Dynamic sensor
 vendor_internal_prop(vendor_dynamic_sensor_prop)
 
-vendor_restricted_prop(vendor_mm_parser_prop)
-vendor_restricted_prop(vendor_mm_osal_prop)
 
 # AMSIPC props
 vendor_internal_prop(vendor_AMSIPC_service_prop);

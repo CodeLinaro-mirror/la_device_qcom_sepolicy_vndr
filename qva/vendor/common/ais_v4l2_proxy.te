@@ -35,6 +35,7 @@ userdebug_or_eng(`
 allow vendor_ais_v4l2_proxy su:unix_dgram_socket sendto;
 ')
 hal_client_domain(vendor_ais_v4l2_proxy, hal_graphics_allocator)
+set_prop(vendor_ais_v4l2_proxy, vendor_camera_prop)
 allow vendor_ais_v4l2_proxy video_device:chr_file rw_file_perms;
 allow vendor_ais_v4l2_proxy ion_device:chr_file r_file_perms;
 allow vendor_ais_v4l2_proxy audio_device:chr_file { rw_file_perms };

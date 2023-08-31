@@ -40,7 +40,12 @@ allow early_chime audio_device:chr_file {map ioctl};
 allow early_chime kmsg_device:chr_file rw_file_perms;
 allow early_chime system_bootstrap_lib_file:dir {search};
 allow early_chime vendor_early_services:dir {search};
-allow early_chime vendor_sysfs_kpi:file {open write};
+
+# allows early_chime to open and write sysfs kpi file in userdebug mode only
+userdebug_or_eng(`
+  allow early_chime vendor_sysfs_kpi:file rw_file_perms;
+')
+
 allow early_chime vendor_early_services:dir r_dir_perms;
 allow early_chime vendor_early_services:file r_file_perms;
 allow early_chime early_chime:capability {sys_module fowner fsetid};

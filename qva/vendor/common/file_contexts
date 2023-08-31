@@ -369,6 +369,7 @@
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol-service  u:object_r:vendor_hal_audiocontrol_qti_aidl_exec:s0
 /(vendor|system/vendor)/bin/audiod                                                 u:object_r:vendor_audiod_exec:s0
 /(vendor|system/vendor)/bin/audio-nxp-auto                                          u:object_r:vendor_audionxp_exec:s0
+/(vendor|system/vendor)/bin/exp_dac_test                                            u:object_r:vendor_audioexp_exec:s0
 /(vendor|system/vendor)/bin/agmplay                                                 u:object_r:vendor_agmplay_exec:s0
 
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0

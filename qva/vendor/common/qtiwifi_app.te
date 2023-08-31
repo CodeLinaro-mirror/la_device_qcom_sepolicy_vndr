@@ -17,4 +17,8 @@ allow vendor_qtiwifi_app wifi_service:service_manager find;
 allow vendor_qtiwifi_app audio_service:service_manager find;
 allow vendor_qtiwifi_app content_capture_service:service_manager find;
 allow vendor_qtiwifi_app textservices_service:service_manager find;
+allow vendor_qtiwifi_app hint_service:service_manager find;
+allow vendor_qtiwifi_app activity_task_service:service_manager find;
+allow vendor_qtiwifi_app game_service:service_manager find;
+allow vendor_qtiwifi_app voiceinteraction_service:service_manager find;
 

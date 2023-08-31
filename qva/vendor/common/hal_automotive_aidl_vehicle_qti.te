@@ -47,3 +47,4 @@ hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle)
 get_prop(vendor_aidl_hal_automotive_vehicle_qti,vendor_lpm_prop)
 set_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_lpm_prop)
 allow vendor_aidl_hal_automotive_vehicle_qti vendor_power_state_device:chr_file rw_file_perms;
+allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_suspend:file rw_file_perms;

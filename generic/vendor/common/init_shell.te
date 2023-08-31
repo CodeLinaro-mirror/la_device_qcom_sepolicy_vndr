@@ -147,6 +147,7 @@ allow vendor_qti_init_shell vendor_sysfs_kgsl:file { r_file_perms setattr };
 
 allow vendor_qti_init_shell proc:file r_file_perms;
 allow vendor_qti_init_shell rootfs:file r_file_perms;
+allow vendor_qti_init_shell rootfs:dir r_dir_perms;
 
 allow vendor_qti_init_shell vendor_radio_vendor_data_file:dir create_dir_perms;
 allow vendor_qti_init_shell vendor_radio_vendor_data_file:file create_file_perms;
