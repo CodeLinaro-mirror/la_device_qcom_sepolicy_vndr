@@ -207,3 +207,5 @@ genfscon sysfs /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp  u:object_r:ven
 #net sysfs
 genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio26/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0004:00/0004:00:00.0/0004:01:00.0/net u:object_r:sysfs_net:s0
+
+genfscon tracefs /instances/wifi/events/cfg80211/cfg80211_cqm_rssi_notify/trigger u:object_r:vendor_debugfs_wifi_tracing:s0
