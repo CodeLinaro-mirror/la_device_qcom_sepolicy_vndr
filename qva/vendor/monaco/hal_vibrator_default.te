@@ -1,0 +1,11 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#read/write permissions to offload haptics patterns
+r_dir_file(hal_vibrator_default, vendor_glink_slate_haptics_offload_device)
+allow hal_vibrator_default vendor_glink_slate_haptics_offload_device:chr_file rw_file_perms;
+
+#permissions for netlink_uevent_socket
+allow hal_vibrator_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+get_prop(hal_vibrator_default, vendor_qc_aon_prop)

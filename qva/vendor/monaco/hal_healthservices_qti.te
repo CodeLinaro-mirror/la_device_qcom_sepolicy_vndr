@@ -1,0 +1,67 @@
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted (subject to the limitations in the
+# disclaimer below) provided that the following conditions are met:
+
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+
+#    * Redistributions in binary form must reproduce the above
+#      copyright notice, this list of conditions and the following
+#      disclaimer in the documentation and/or other materials provided
+#      with the distribution.
+
+#    * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
+#      contributors may be used to endorse or promote products derived
+#      from this software without specific prior written permission.
+
+# NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Define domain
+type vendor_hal_healthservices_qti, domain;
+type vendor_hal_healthservices_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_healthservices_qti);
+
+hal_server_domain(vendor_hal_healthservices_qti, hal_healthservices);
+allow vendor_hal_healthservices_qti self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
+
+# HwBinder IPC from clients into server, and callbacks
+binder_call(hal_healthservices_client, hal_healthservices_server)
+binder_call(hal_healthservices_server, hal_healthservices_client)
+hal_attribute_hwservice(hal_healthservices, hal_healthservices_hwservice)
+
+# wakelock policy
+wakelock_use(vendor_hal_healthservices_qti);
+
+# add glink channel access permissions
+allow vendor_hal_healthservices_qti vendor_glink_slate_sso_hal_device:chr_file rw_file_perms;
+
+allow vendor_hal_healthservices_qti mnt_vendor_file:dir search;
+allow vendor_hal_healthservices_qti vendor_persist_sensors_file:dir rw_dir_perms;
+allow vendor_hal_healthservices_qti vendor_persist_sensors_file:file create_file_perms;
+
+#Allow WHS hal to interact with powerStateService
+hal_client_domain(vendor_hal_healthservices_qti, vendor_hal_powerstateservice);
+
+#Allow WHS hal to access sensorstore
+allow vendor_hal_healthservices_qti block_device:dir search;
+allow vendor_hal_healthservices_qti vendor_sensorstore_block_device:blk_file rw_file_perms;
+
+#allow access to aon presence property
+get_prop(vendor_hal_healthservices_qti, vendor_qc_aon_prop)
+
+#allow access to whs property
+get_prop(vendor_hal_healthservices_qti, vendor_whs_prop)
