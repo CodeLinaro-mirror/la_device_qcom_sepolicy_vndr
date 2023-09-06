@@ -258,6 +258,8 @@
 
 /sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:vendor_sysfs_spss:s0
 
+/sys/devices/platform/soc/soc:qcom,cnss-qca-converged0/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
+
 ###################################
 # data files
 #
