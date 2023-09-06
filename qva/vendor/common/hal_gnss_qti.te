@@ -33,3 +33,7 @@ userdebug_or_eng(`
 ')
 
 allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
+# Allow Gnss HAL to register callback with car power policy
+allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
+binder_call(vendor_hal_gnss_qti, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_hal_gnss_qti)
