@@ -1,0 +1,36 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+domain_auto_trans(init, vendor_init_early_test_exec, vendor_init_early_test)
+allow init vfat:dir search;
+
+# allowing audio-nxp-auto to access spidev
+allow init audio_device:chr_file { open read write };
+allow init audio_device:chr_file { ioctl };
+
+allow init gpu_device:chr_file rw_file_perms;
+allow init graphics_device:chr_file r_file_perms;
+domain_auto_trans(init, vendor_esplash_exec, vendor_esplash)
+allow init vendor_esplash_exec:file { r_file_perms execute };
+
+#Required by early-init
+allow init kernel:process share;
+userdebug_or_eng(`
+  allow init vendor_sysfs_kpi:file { open write };
+')
+allow init self:capability {sys_module};
+allow init vendor_file:system module_load;
+allow init audio_device:dir relabelto;
+allow init audio_device:dir relabelfrom;
+allow init audio_device:chr_file relabelto;
+allow init audio_device:chr_file relabelfrom;
+
+#Relabing SE labels permission
+allow init graphics_device:chr_file relabelto;
+allow init graphics_device:chr_file relabelfrom;
+allow init random_device:chr_file relabelto;
+allow init video_device:chr_file relabelto;
+allow init video_device:chr_file relabelfrom;
+allow init vendor_camera_socket:dir relabelto;
+
+allow init firmware_file:filesystem unmount;

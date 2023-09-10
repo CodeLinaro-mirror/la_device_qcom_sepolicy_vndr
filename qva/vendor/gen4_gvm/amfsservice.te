@@ -1,0 +1,16 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+
+# amfsservice daemon
+type vendor_amfsservice, domain;
+type vendor_amfsservice_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(vendor_amfsservice)
+
+# For reading files under /vendor
+allow vendor_amfsservice vendor_file:dir r_dir_perms;
+allow vendor_amfsservice vendor_configs_file:dir r_dir_perms;
+allow vendor_amfsservice audio_device:chr_file rw_file_perms;
+allow vendor_amfsservice vendor_hab_device:chr_file rw_file_perms;

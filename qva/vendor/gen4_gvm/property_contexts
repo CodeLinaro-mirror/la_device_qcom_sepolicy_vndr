@@ -1,6 +1,6 @@
 #Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
-#
-# EarlyServices
-type vendor_early_services, file_type;
+
+# bootctrl HAL property
+ro.vendor.bootctrl.enable                         u:object_r:vendor_bootctrl_prop:s0 exact bool

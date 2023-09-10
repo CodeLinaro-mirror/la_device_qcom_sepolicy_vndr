@@ -1,0 +1,10 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+
+allow automotive_display_service_server hal_graphics_allocator_default:fd use;
+allow automotive_display_service_server ion_device:chr_file read;
+allow automotive_display_service_server same_process_hal_file:file rx_file_perms;
+allow automotive_display_service_server vendor_hal_evs_driver:fd use;
+allow automotive_display_service_server ion_device:chr_file r_file_perms;
+allow automotive_display_service_server vendor_hab_device:chr_file rw_file_perms;

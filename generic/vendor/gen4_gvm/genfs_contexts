@@ -1,0 +1,22 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:vendor_sysfs_usb_controller:s0
+
+genfscon sysfs /devices/platform/soc/soc:bt_qca6174/extldo u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+
+genfscon sysfs /devices/platform/soc/soc:bt-qca-auto-converged/extldo u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/soc/soc:bt-qca-auto-converged/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+
+# subsys nodes
+genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/subsys0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca-converged/subsys2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/name u:object_r:vendor_sysfs_ssr:s0
+
+#restart level
+genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca-converged/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0

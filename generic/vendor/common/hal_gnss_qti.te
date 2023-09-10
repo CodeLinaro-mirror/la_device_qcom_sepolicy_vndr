@@ -86,7 +86,9 @@ unix_socket_connect(vendor_hal_gnss_qti, vendor_rild, rild)
 # sockets.
 dontaudit vendor_hal_gnss_qti self:udp_socket create;
 
-# Allow Gnss HAL to register callback with car power policy 
+set_prop(vendor_hal_gnss_qti, vendor_gnss_fw_state)
+
+# Allow Gnss HAL to register callback with car power policy
 carpowerpolicy_callback_domain(vendor_hal_gnss_qti)
 allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
 

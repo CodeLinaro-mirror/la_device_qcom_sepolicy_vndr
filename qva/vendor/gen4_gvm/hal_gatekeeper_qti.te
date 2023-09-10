@@ -1,6 +1,5 @@
 #Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
-#
-#
-# EarlyServices
-type vendor_early_services, file_type;
+
+
+allow vendor_hal_gatekeeper_qti vendor_hab_device:chr_file rw_file_perms;

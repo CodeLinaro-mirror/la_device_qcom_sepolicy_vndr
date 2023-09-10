@@ -1,6 +1,5 @@
 #Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
-#
-# EarlyServices
-type vendor_early_services, file_type;
+
+allow system_server hal_light_default:process signal;

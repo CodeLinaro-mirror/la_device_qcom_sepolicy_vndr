@@ -34,3 +34,10 @@ allow vendor_ais_server self:qipcrtr_socket create;
 allow vendor_ais_server ab_update_gki_prop:file { getattr map open };
 allow vendor_ais_server adbd_config_prop:file { getattr map open };
 allow vendor_ais_server vendor_sysfs_devicetree_cpu:file rw_file_perms;
+
+get_prop(vendor_ais_server,camera2_extensions_prop);
+get_prop(vendor_ais_server,camera_config_prop);
+get_prop(vendor_ais_server,camerax_extensions_prop);
+get_prop(vendor_ais_server,device_config_camera_native_prop);
+get_prop(vendor_ais_server,vendor_camera_prop);
+get_prop(vendor_ais_server,vendor_persist_camera_prop);

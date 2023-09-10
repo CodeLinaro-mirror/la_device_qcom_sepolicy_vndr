@@ -9,3 +9,12 @@ genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0
 
 # spdaemon sysfs
 genfscon sysfs /devices/platform/soc/soc:qcom,spss_utils/firmware_name u:object_r:vendor_sysfs_spdaemon:s0
+
+# device/oem specific selinux genfscon rules for suspend.
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8195@0:qcom,pm8195_1_rtc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8195@0:qcom,pm8195_1_rtc/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8195@0:qcom,power-on@800/c440000.qcom,spmi:qcom,pm8195@0:qcom,power-on@800:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8195@0:qcom,power-on@800/c440000.qcom,spmi:qcom,pm8195@0:qcom,power-on@800:resin/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca-converged/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/power.0/power_supply/Ac/wakeup9 u:object_r:sysfs_wakeup:s0

@@ -1,0 +1,29 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+###################################
+
+#New partitions
+/dev/block/bluetooth_[ab]                                           u:object_r:vendor_modem_block_device:s0
+/dev/block/metadata                                                 u:object_r:metadata_block_device:s0
+/dev/block/modem_[ab]                                               u:object_r:vendor_modem_block_device:s0
+/dev/block/system                                                   u:object_r:system_block_device:s0
+/dev/block/userdata                                                 u:object_r:userdata_block_device:s0
+/dev/block/vendor                                                   u:object_r:system_block_device:s0
+/dev/block/persist                                                  u:object_r:vendor_persist_block_device:s0
+/dev/block/misc                                                     u:object_r:misc_block_device:s0
+/dev/block/by-name/super                                            u:object_r:super_block_device:s0
+/dev/block/vbmeta_[ab]                                              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/vbmeta_system_[ab]                                       u:object_r:vendor_custom_ab_block_device:s0
+
+/dev/ttyAMA0                                                        u:object_r:tty_device:s0
+/dev/hab                                                            u:object_r:vendor_hab_device:s0
+/dev/hgsl                                                           u:object_r:gpu_device:s0
+
+/vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
+
+# amfs service
+/(vendor|system/vendor)/bin/amfsservice                             u:object_r:vendor_amfsservice_exec:s0
+
+/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0

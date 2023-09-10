@@ -651,3 +651,8 @@
 
 #Thermal HAl
 /vendor/bin/hw/android\.hardware\.thermal@2\.0-service.mock                        u:object_r:hal_thermal_default_exec:s0
+
+#Usb Device
+/sys/bus/platform/drivers/xhci-hcd/bind                 u:object_r:vendor_sysfs_usb_node:s0
+/sys/bus/platform/drivers/xhci-hcd/unbind               u:object_r:vendor_sysfs_usb_node:s0
+/sys/bus/platform/drivers/xhci-hcd                      u:object_r:vendor_sysfs_usb_node:s0
