@@ -54,6 +54,9 @@ allow hal_audio_default vendor_audio_hal_plugin_service_service:service_manager 
 # Allow audio HAL to communicate with ACDB Loader Service
 allow hal_audio_default vendor_acdb_loader_service_service:service_manager find;
 
+# Allow audio HAL to communicate with vendor_sysfs_kpi
+userdebug_or_eng(`allow hal_audio_default vendor_sysfs_kpi:file write;')
+
 binder_call(hal_audio_default,vendor_acdb_loader_service)
 binder_call(hal_audio_default,vendor_audio_hal_plugin_service)
 
