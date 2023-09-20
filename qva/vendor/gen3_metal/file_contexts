@@ -36,6 +36,7 @@
 /dev/spidev22.0                                                                             u:object_r:audio_device:s0
 /dev/spidev16.0                                                                             u:object_r:audio_device:s0
 /dev/spidev10.0                                                                             u:object_r:audio_device:s0
+/dev/gpiochip0                                                                             u:object_r:audio_device:s0
 /dev/i2c-7                                                                                 u:object_r:audio_device:s0
 /dev/i2c-4                                                                                 u:object_r:audio_device:s0
 /dev/i2c-6                                                                                 u:object_r:audio_device:s0
