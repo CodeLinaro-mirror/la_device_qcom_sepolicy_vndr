@@ -42,3 +42,23 @@ userdebug_or_eng(`
   allow vendor_esplash vendor_sysfs_kpi:file w_file_perms;
 ')
 get_prop(vendor_esplash, boot_status_prop)
+
+#============= CAN Related ==============
+allow vendor_esplash self:capability net_admin;
+allow vendor_esplash self:netlink_route_socket { bind create getattr nlmsg_readpriv nlmsg_write read setopt write };
+allow vendor_esplash self:udp_socket { create ioctl };
+
+allow vendor_esplash self:tcp_socket create_stream_socket_perms;
+allow vendor_esplash port:tcp_socket name_bind;
+# Connect to ports.
+allow vendor_esplash port_type:tcp_socket name_connect;
+
+allow vendor_esplash self:can_socket { bind create read write ioctl setopt };
+allowxperm vendor_esplash self:can_socket ioctl {
+    SIOCGIFINDEX
+};
+allow vendor_esplash dnsproxyd_socket:sock_file write;
+allow vendor_esplash fwmarkd_socket:sock_file write;
+allow vendor_esplash netd:unix_stream_socket connectto;
+allow netd vendor_esplash:fd use;
+allow netd vendor_esplash:tcp_socket { getopt read setopt write };
