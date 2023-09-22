@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # dev nodes
 /dev/btpower                                    u:object_r:vendor_bt_device:s0
 /dev/btfmslim                                   u:object_r:vendor_bt_device:s0
@@ -356,8 +361,11 @@
 # graphics device
 /dev/mdss_rotator                               u:object_r:graphics_device:s0
 /dev/dri/card0                                  u:object_r:graphics_device:s0
+/dev/dri/card1                                  u:object_r:graphics_device:s0
+/dev/dri/card2                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
+
 
 #TODO: move this to genfs_context or target based file_context
 # sysfs_leds
@@ -403,6 +411,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/hist_event                 u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/vsync_event                u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/lineptr_event              u:object_r:vendor_sysfs_graphics:s0
+/sys/class/drm/sde-crtc-([0-9])+/lineptr_value                      u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/idle_notify                u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_thermal_level       u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/idle_power_collapse        u:object_r:vendor_sysfs_graphics:s0

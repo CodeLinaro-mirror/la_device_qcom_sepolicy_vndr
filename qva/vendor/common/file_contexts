@@ -270,3 +270,6 @@
 /(vendor|system/vendor)/bin/earlycan    u:object_r:vendor_earlycan_exec:s0
 #Car Power Daemon
 /(vendor|system/vendor)/bin/car_power_daemon                        u:object_r:vendor_carpowerd_exec:s0
+
+# Dynamic splash
+/(vendor|system/vendor)/bin/esplash                                 u:object_r:vendor_esplash_exec:s0
