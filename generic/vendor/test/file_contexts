@@ -155,3 +155,5 @@
 # for ipc logging char device - debug feature
 /dev/ipc_logging                          u:object_r:vendor_ipc_logging_device:s0
 
+#fan_service
+/(vendor|system/vendor)/bin/fan_service u:object_r:vendor_fan_service_exec:s0

@@ -37,8 +37,8 @@ hal_attribute_service(hal_fingerprint, vendor_hal_qfpextendedfingerprint_service
 allow vendor_qfp-daemon init:unix_stream_socket connectto;
 allow vendor_qfp-daemon vndbinder_device:chr_file { read write ioctl open map };
 
-allow vendor_qfp-daemon vendor_qfp-daemon_data_file:dir { rw_dir_perms setattr };
-allow vendor_qfp-daemon vendor_qfp-daemon_data_file:file create_file_perms;
+allow vendor_qfp-daemon vendor_qfp-daemon_data_file:dir { create_dir_perms };
+allow vendor_qfp-daemon vendor_qfp-daemon_data_file:file { create_file_perms };
 
 allow vendor_qfp-daemon vendor_sysfs_touch_aoi:dir r_dir_perms;
 allow vendor_qfp-daemon vendor_sysfs_touch_aoi:file rw_file_perms;

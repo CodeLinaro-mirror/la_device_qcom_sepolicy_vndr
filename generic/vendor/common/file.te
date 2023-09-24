@@ -285,3 +285,5 @@ type vendor_nicm_data_file, file_type, data_file_type;
 
 #CPSK service
 type vendor_sysfs_cpsk_power, sysfs_type, fs_type;
+
+type vendor_sysfs_sd, fs_type, sysfs_type;

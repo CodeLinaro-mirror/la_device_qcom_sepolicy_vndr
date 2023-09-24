@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 ctl.vendor.cnd                    u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cne.               u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cnd.               u:object_r:vendor_cnd_vendor_prop:s0
@@ -151,3 +155,9 @@ vendor.qesdk.ready                           u:object_r:vendor_qesdk_ready_prop:
 
 #qms
 persist.vendor.data.qms.                     u:object_r:vendor_qms_prop:s0
+
+#AON
+ro.vendor.qc_aon_presence                    u:object_r:vendor_qc_aon_prop:s0
+
+#UWB
+persist.vendor.qti.uwb.                      u:object_r:vendor_uwb_prop:s0

@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2021, 2023, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -57,7 +57,7 @@
 /dev/st54spi_gpio                     u:object_r:vendor_ese_gpio_device:s0
 /dev/qmc_dma                          u:object_r:vendor_qmc_dma_device:s0
 /dev/qmc_cma                          u:object_r:vendor_qmc_cma_device:s0
-
+/dev/q2spiuwb                         u:object_r:vendor_q2spiuwb_device:s0
 
 ###################################
 # Dev socket nodes
@@ -155,9 +155,8 @@
 /(vendor|system/vendor)/bin/mmi                                                    u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.[0-1]-service     u:object_r:vendor_hal_factory_qti_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory-service              u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.[0-2]-service u:object_r:vendor_hal_srvctracker_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetrackeraidl-service   u:object_r:vendor_hal_srvctracker_default_exec:s0 
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetrackeraidl-service   u:object_r:vendor_hal_srvctracker_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor@1\.0         u:object_r:vendor_hal_secureprocessor_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor              u:object_r:vendor_hal_secureprocessor_qti_exec:s0
@@ -296,3 +295,11 @@
 
 #tsa_hdcp_service daemon
 /(vendor|system/vendor)/bin/tsa_hdcp_service           u:object_r:vendor_tsa_hdcpservice_exec:s0
+#UWB HAL service
+/(vendor|system/vendor)/bin/hw/android\.hardware\.uwb@service-qti u:object_r:hal_uwb_default_exec:s0
+
+#UWB data files
+/data/vendor/uwb(/.*)?           u:object_r:vendor_uwb_data_file:s0
+
+#UWB persist files
+/mnt/vendor/persist/uwb(/.*)?    u:object_r:vendor_persist_uwb_file:s0

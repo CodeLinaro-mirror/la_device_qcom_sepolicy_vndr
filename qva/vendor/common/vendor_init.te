@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 type vendor_init_exec, exec_type, vendor_file_type, file_type;
 
 set_prop(vendor_init, vendor_bluetooth_prop)
@@ -66,3 +70,6 @@ set_prop(vendor_init, vendor_persist_dpm_prop)
 set_prop(vendor_init, vendor_pasr_prop)
 get_prop(vendor_init, persist_debug_prop)
 allow vendor_init vendor_ipa_dev:file create_file_perms;
+
+# UWB
+set_prop(vendor_init, vendor_uwb_prop)
