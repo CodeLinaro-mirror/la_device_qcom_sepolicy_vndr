@@ -8,6 +8,9 @@ allow init vfat:dir search;
 allow init audio_device:chr_file { open read write };
 allow init audio_device:chr_file { ioctl };
 
+domain_auto_trans(init, vendor_ais_server_exec, vendor_ais_server)
+domain_auto_trans(init, vendor_qcarcam_edrm_rvc_exec, vendor_qcarcam_edrm_rvc)
+allow init video_device:chr_file rw_file_perms;
 allow init gpu_device:chr_file rw_file_perms;
 allow init graphics_device:chr_file r_file_perms;
 domain_auto_trans(init, vendor_esplash_exec, vendor_esplash)

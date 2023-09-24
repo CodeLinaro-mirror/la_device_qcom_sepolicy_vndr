@@ -39,6 +39,8 @@ allow kernel vendor_file:file read;
 
 allow kernel firmware_file:filesystem  { relabelto relabelfrom  mount };
 allow kernel vendor_early_services:dir r_dir_perms;
+allow kernel tmpfs:chr_file rw_file_perms;
+allow kernel tmpfs:dir r_dir_perms;
 allow kernel proc_cmdline:file r_file_perms;
 allow kernel sepolicy_file:file r_file_perms;
 allow kernel device:dir create_dir_perms;
@@ -58,6 +60,8 @@ allow kernel vendor_early_services:lnk_file { relabelto };
 allow kernel vendor_init_early_test_exec:file { relabelto };
 allow kernel rootfs:lnk_file { relabelfrom };
 allow kernel vendor_init_exec:file { relabelto read open };
+allow kernel vendor_ais_server_exec:file relabelto;
+allow kernel vendor_qcarcam_edrm_rvc_exec:file relabelto;
 allow kernel selinuxfs:filesystem mount;
 allow kernel self:capability sys_chroot;
 userdebug_or_eng(`
