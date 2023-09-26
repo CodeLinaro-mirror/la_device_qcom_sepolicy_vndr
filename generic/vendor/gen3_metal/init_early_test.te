@@ -13,3 +13,5 @@ allow vendor_init_early_test tmpfs:dir r_dir_perms;
 allow vendor_init_early_test tmpfs:file rw_file_perms;
 allow vendor_init_early_test tmpfs:chr_file rw_file_perms;
 allow vendor_init_early_test vendor_sysfs_kpi:file {open write};
+
+allow vendor_init_early_test vendor_early_services:dir rw_dir_perms;
