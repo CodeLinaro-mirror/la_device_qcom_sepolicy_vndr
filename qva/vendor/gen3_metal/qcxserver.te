@@ -37,3 +37,17 @@ allow vendor_qcxserver ab_update_gki_prop:file { getattr map open };
 allow vendor_qcxserver adbd_config_prop:file { getattr map open };
 allow vendor_qcxserver vendor_sysfs_devicetree_cpu:file rw_file_perms;
 allow vendor_qcxserver kmsg_device:chr_file rw_file_perms;
+allow vendor_qcxserver hal_camera_default:unix_stream_socket connectto;
+allow vendor_qcxserver vendor_hal_evs_driver:unix_stream_socket connectto;
+allow vendor_qcxserver vendor_hal_evs_driver:fd use;
+allow vendor_qcxserver vendor_camera_data_file:dir { read search };
+
+allow vendor_qcxserver hal_camera_default:fd use;
+allow vendor_qcxserver vendor_hal_ais_qti:fd use;
+allow vendor_qcxserver vendor_hal_ais_qti:unix_stream_socket connectto;
+
+get_prop(vendor_qcxserver,camera2_extensions_prop);
+get_prop(vendor_qcxserver,camera_config_prop);
+get_prop(vendor_qcxserver,camerax_extensions_prop);
+get_prop(vendor_qcxserver,vendor_camera_prop);
+get_prop(vendor_qcxserver,vendor_persist_camera_prop);

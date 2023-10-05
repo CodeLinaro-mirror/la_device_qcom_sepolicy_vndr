@@ -2,3 +2,9 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 allow hal_camera_default vendor_qcxserver:unix_stream_socket connectto;
+allow hal_camera_default vendor_camera_socket:dir { add_name write };
+allow hal_camera_default vendor_camera_socket:sock_file create;
+allow hal_camera_default vendor_dmabuf_system_uncached_heap_device:chr_file { open read };
+allow hal_camera_default vendor_dmabuf_system_uncached_heap_device:chr_file ioctl;
+allow hal_camera_default vendor_camera_socket:dir remove_name;
+allow hal_camera_default vendor_camera_socket:sock_file unlink;
