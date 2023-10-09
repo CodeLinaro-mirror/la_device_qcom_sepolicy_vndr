@@ -1,0 +1,6 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+get_prop(vendor_init, debug_prop);
+allow vendor_init vendor_ipa_dev:file w_file_perms;
+set_prop(vendor_init, vendor_bootctrl_prop);
