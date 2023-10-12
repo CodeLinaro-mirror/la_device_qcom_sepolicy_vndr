@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019,2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -25,10 +25,21 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-genfscon sysfs /devices/platform/soc/18800000.qcom,icnss/net u:object_r:sysfs_net:s0
-genfscon sysfs /devices/platform/soc/880000.spi/spi_master/spi23/spi23.0/net u:object_r:sysfs_net:s0
-genfscon sysfs /devices/platform/soc/20000.qcom,ethernet/net u:object_r:sysfs_net:s0
-genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net u:object_r:sysfs_net:s0
+#Changes from Qualcomm Innovation Center are provided under the following license:
+#Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# spdaemon sysfs
-genfscon sysfs /devices/platform/soc/soc:qcom,spss_utils/firmware_name u:object_r:vendor_sysfs_spdaemon:s0
+# early Video Service
+type vendor_earlyVideo, domain;
+type vendor_earlyVideo_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_earlyVideo)
+allow vendor_earlyVideo graphics_device:chr_file rw_file_perms;
+allow vendor_earlyVideo video_device:chr_file rw_file_perms;
+allow vendor_earlyVideo gpu_device:chr_file rw_file_perms;
+allow vendor_earlyVideo sysfs_power:file r_file_perms;
+allow vendor_earlyVideo vendor_early_services:dir rw_dir_perms;
+allow vendor_earlyVideo vendor_early_services:file rw_file_perms;
+userdebug_or_eng(`
+allow vendor_earlyVideo vendor_sysfs_kpi:file w_file_perms;
+')
