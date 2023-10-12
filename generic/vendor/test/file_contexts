@@ -166,3 +166,5 @@
 
 # Sensors scripts for test app
 /data/sensors/scripts(/.*)?                                     u:object_r:vendor_sensors_data_file:s0
+
+/vendor/lib(64)?/libdisplaydebug\.so         u:object_r:same_process_hal_file:s0
