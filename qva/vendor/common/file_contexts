@@ -312,6 +312,7 @@
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam2@V1-service         u:object_r:vendor_hal_ais_qti_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0

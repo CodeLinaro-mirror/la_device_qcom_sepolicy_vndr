@@ -8,6 +8,7 @@ genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:objec
 
 genfscon sysfs /devices/platform/soc/soc:bt-qca-auto-converged/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/soc/soc:bt-qca-auto-converged/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/soc/a400000.hsusb/a400000.dwc3/xhci-hcd.1.auto/usb3/3-1/3-1:1.0/0003:0EEF:C000.0001/country   u:object_r:vendor_sysfs_country:s0
 
 # subsys nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/subsys0/name u:object_r:vendor_sysfs_ssr:s0
