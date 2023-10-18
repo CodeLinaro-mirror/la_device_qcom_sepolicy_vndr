@@ -123,3 +123,6 @@ set_prop(vendor_init, vendor_persist_rcs_prop)
 set_prop(vendor_qti_init_shell, vendor_console_prop)
 
 get_prop(vendor_init, persist_debug_prop)
+
+# Access vendor dynamic sensor properties
+set_prop(vendor_init, vendor_dynamic_sensor_prop)
