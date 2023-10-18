@@ -52,4 +52,3 @@
 
 # qcxserver
 /(vendor|system/vendor)/bin/qcxserver                            u:object_r:vendor_qcxserver_exec:s0
-/vendor_early_services/vendor/bin/qcxserver                      u:object_r:vendor_qcxserver_exec:s0
