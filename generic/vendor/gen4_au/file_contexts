@@ -153,3 +153,6 @@
 /dev/snd                                                                      u:object_r:audio_device:s0
 /dev/snd/controlC0                                                            u:object_r:audio_device:s0
 /vendor_early_services/vendor/bin/earlyVideo                                  u:object_r:vendor_earlyVideo_exec:s0
+
+# MTU label
+/sys/class/net/*/mtu                                                          u:object_r:sysfs_net:s0
