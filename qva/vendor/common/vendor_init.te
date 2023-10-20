@@ -84,3 +84,4 @@ set_prop(vendor_init, qemu_sf_lcd_density_prop)
 get_prop(vendor_init, bootanim_system_prop)
 allow vendor_init vendor_ipa_dev:file rw_file_perms;
 allow vendor_init vendor_ipa_dev:file create;
+set_prop(vendor_init, vendor_cnd_prop)
