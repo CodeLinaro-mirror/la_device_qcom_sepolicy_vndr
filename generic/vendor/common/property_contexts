@@ -155,6 +155,9 @@ persist.vendor.qteeconnector.           u:object_r:vendor_qteeconnector_opti_pro
 
 vendor.dcvs.prop                 u:object_r:vendor_dcvs_prop:s0
 
+# Memory properties
+vendor.memory.min_free_kbytes u:object_r:vendor_memory_min_free_kbytes:s0
+
 #pcie property
 persist.vendor.pcie. u:object_r:vendor_pcie_prop:s0
 

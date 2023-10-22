@@ -67,6 +67,7 @@ allow vendor_qti_init_shell vendor_sysfs_kgsl:file w_file_perms;
 # Allow init shell to access vendor pasr properties
 set_prop(vendor_qti_init_shell, vendor_pasr_prop)
 set_prop(vendor_qti_init_shell, ctl_start_prop)
+set_prop(vendor_qti_init_shell, vendor_memory_min_free_kbytes)
 dontaudit vendor_qti_init_shell default_prop:file read;
 
 # Allow init shell to access NFC device file

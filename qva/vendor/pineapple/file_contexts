@@ -76,4 +76,3 @@
 #memory
 /(vendor|system/vendor)/bin/hw/pasrknob                                            u:object_r:vendor_pasrknob_exec:s0
 
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@1\.0-service\.face    u:object_r:vendor_face_exec:s0

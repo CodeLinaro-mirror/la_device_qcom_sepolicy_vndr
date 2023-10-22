@@ -68,6 +68,9 @@ allow vendor_init {
 
 allow vendor_init rootfs:dir read;
 
+# Memory, for THP-related actions
+get_prop(vendor_init, vendor_memory_min_free_kbytes)
+
 #Access persist.sys.usb.config
 set_prop(vendor_init, system_prop)
 set_prop(vendor_init, vendor_usb_prop)

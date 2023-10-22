@@ -35,6 +35,9 @@ vendor.fda.property.              u:object_r:vendor_fda_prop:s0
 # QESDK ONE
 vendor.qesdk.one.                            u:object_r:vendor_qesdk_one_prop:s0
 
+# SANITY QSAP
+vendor.qsap.sanity.               u:object_r:vendor_qsap_sanity_prop:s0
+
 #minksocket trace property
 vendor.minksocketFullLog                     u:object_r:vendor_mink_trace_prop:s0
 #episteme prop

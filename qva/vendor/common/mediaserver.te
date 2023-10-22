@@ -31,3 +31,4 @@ hal_client_domain(mediaserver, hal_audio)
 get_prop(mediaserver, vendor_audio_prop)
 
 dontaudit mediaserver vendor_hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit mediaserver vendor_hal_qspmhal_service:service_manager find;

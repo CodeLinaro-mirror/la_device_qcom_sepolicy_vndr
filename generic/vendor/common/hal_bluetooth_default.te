@@ -54,6 +54,8 @@ allow hal_bluetooth_default self:{ socket } create_socket_perms_no_ioctl;
 allow hal_bluetooth_default vendor_debugfs_bt_tracing:dir r_dir_perms;
 allow hal_bluetooth_default vendor_debugfs_bt_tracing:file r_file_perms;
 allow hal_bluetooth_default debugfs_tracing_instances:dir search;
+# Allow read access to mink socket log files
+get_prop(hal_bluetooth_default, vendor_mink_trace_prop)
 ')
 
 r_dir_file(hal_bluetooth_default, mnt_vendor_file)
