@@ -52,7 +52,4 @@ genfscon sysfs /kernel/slab/zs_handle/store_user u:object_r:vendor_sysfs_slab_zs
 genfscon sysfs /kernel/slab/zspage/store_user u:object_r:vendor_sysfs_slab_zspage_storeuser:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged0/subsys0/wakeup/wakeup9    u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged0/wakeup/wakeup7            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c20000.qcom,pcie/wakeup/wakeup5                        u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged0/wakeup/wakeup8            u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/998000.qcom,qup_uart/wakeup/wakeup1                    u:object_r:sysfs_wakeup:s0
