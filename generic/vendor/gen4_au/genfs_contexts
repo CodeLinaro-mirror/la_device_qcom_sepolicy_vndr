@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,46 +24,19 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-userdebug_or_eng(`
-  diag_use(hal_audio)
-')
+genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:vendor_sysfs_usb_controller:s0
 
-#Split A2dp specific
-binder_call(hal_audio,bluetooth)
+genfscon sysfs /devices/platform/soc/soc:bt-qca-auto-converged/extldo u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/soc/soc:bt-qca-auto-converged/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
 
-#to read bt props
-get_prop(hal_audio, vendor_bluetooth_prop)
-
-# Allow audio HAL to get updates from health hal
-hal_client_domain(hal_audio_default, hal_health)
-
-#Allow callbacks into QC2 audio service
-hal_client_domain(hal_audio_default, hal_codec2)
-
-#Allow audio PAL/HAL to talk with SOCPeripherals API's
-unix_socket_connect(hal_audio_default, vendor_ssgtzd, vendor_ssgtzd)
-
-# Allow audio HAL to communicate with Audio HAL Plugin Service
-allow hal_audio_default vendor_audio_hal_plugin_service_service:service_manager find;
-
-# Allow audio HAL to communicate with ACDB Loader Service
-allow hal_audio_default vendor_acdb_loader_service_service:service_manager find;
-
-# Allow audio HAL to communicate with vendor_sysfs_kpi
-userdebug_or_eng(`allow hal_audio_default vendor_sysfs_kpi:file write;')
-
-binder_call(hal_audio_default,vendor_acdb_loader_service)
-binder_call(hal_audio_default,vendor_audio_hal_plugin_service)
-
-# Allow audio HAL to communicate with car power policy service
-allow hal_audio_default carpowerpolicyd_service:service_manager find;
-binder_call(hal_audio_default, carpowerpolicyd)
-binder_call(carpowerpolicyd, hal_audio_default)
-
-# Allow audio hal to communicate with msm_lsm char dev
-allow hal_audio_default vendor_msm_lsm_cdev_device:chr_file rw_file_perms;
+genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c10000.qcom,pcie/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a800000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/wakeup/wakeup u:object_r:sysfs_wakeup:s0

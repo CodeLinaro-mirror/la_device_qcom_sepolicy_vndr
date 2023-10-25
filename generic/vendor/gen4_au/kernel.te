@@ -12,7 +12,7 @@
 #    * Neither the name of The Linux Foundation nor the names of its
 #      contributors may be used to endorse or promote products derived
 #      from this software without specific prior written permission.
-#
+
 # THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -26,44 +26,15 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-userdebug_or_eng(`
-  diag_use(hal_audio)
-')
+#!!!! This avc is allowed in the current policy
+allow kernel vendor_file:file read;
 
-#Split A2dp specific
-binder_call(hal_audio,bluetooth)
-
-#to read bt props
-get_prop(hal_audio, vendor_bluetooth_prop)
-
-# Allow audio HAL to get updates from health hal
-hal_client_domain(hal_audio_default, hal_health)
-
-#Allow callbacks into QC2 audio service
-hal_client_domain(hal_audio_default, hal_codec2)
-
-#Allow audio PAL/HAL to talk with SOCPeripherals API's
-unix_socket_connect(hal_audio_default, vendor_ssgtzd, vendor_ssgtzd)
-
-# Allow audio HAL to communicate with Audio HAL Plugin Service
-allow hal_audio_default vendor_audio_hal_plugin_service_service:service_manager find;
-
-# Allow audio HAL to communicate with ACDB Loader Service
-allow hal_audio_default vendor_acdb_loader_service_service:service_manager find;
-
-# Allow audio HAL to communicate with vendor_sysfs_kpi
-userdebug_or_eng(`allow hal_audio_default vendor_sysfs_kpi:file write;')
-
-binder_call(hal_audio_default,vendor_acdb_loader_service)
-binder_call(hal_audio_default,vendor_audio_hal_plugin_service)
-
-# Allow audio HAL to communicate with car power policy service
-allow hal_audio_default carpowerpolicyd_service:service_manager find;
-binder_call(hal_audio_default, carpowerpolicyd)
-binder_call(carpowerpolicyd, hal_audio_default)
-
-# Allow audio hal to communicate with msm_lsm char dev
-allow hal_audio_default vendor_msm_lsm_cdev_device:chr_file rw_file_perms;
+allow kernel vendor_early_services:dir { r_dir_perms relabelto };
+allow kernel sepolicy_file:file r_file_perms;
+allow kernel vendor_early_services:file relabelto;
+allow kernel vendor_esplash_exec:file relabelto;
+allow kernel vendor_early_services:lnk_file { relabelto };
+allow kernel vendor_qcxserver_exec:file relabelto;

@@ -1,0 +1,4 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow vendor_aidl_automotive_evs_ais vendor_qcxserver:unix_stream_socket connectto;
