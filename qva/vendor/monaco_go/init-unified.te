@@ -1,0 +1,20 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# init-unified service
+type init-unified, domain, coredomain;
+type init-unified_exec, exec_type, file_type, system_file_type;
+
+# read, write and create files and directories at /data/oem
+# TODO: Cleanup;Need to check if the following permission are required for LAW.
+#allow init-unified persist_file:dir r_dir_perms;
+#allow init-unified oem_data_file:dir create_dir_perms;
+#allow init-unified oem_data_file:file create_file_perms;
+#allow init-unified oem_data_file:lnk_file create_file_perms;
+allow init-unified unlabeled:dir r_dir_perms;
+allow init-unified unlabeled:file r_file_perms;
+
+# read files and directories at /oem
+allow init-unified oemfs:dir r_dir_perms;
+allow init-unified oemfs:file r_file_perms;
+allow init-unified oemfs:lnk_file r_file_perms;

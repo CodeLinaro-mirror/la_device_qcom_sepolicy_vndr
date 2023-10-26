@@ -38,10 +38,14 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/$(TARGET_SEPOLICY_DIR)
     endif
 
+    ifneq ($(TARGET_SUPPORTS_WEAR_OS),true)
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/monaco_go
+    endif
+
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
     endif
 endif
 
