@@ -1,0 +1,37 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# early CAN Service
+type vendor_earlycan, domain;
+type vendor_earlycan_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_earlycan)
+userdebug_or_eng(`
+  allow vendor_earlycan vendor_sysfs_kpi:file w_file_perms;
+')
+
+type earlycan, domain, mlstrustedsubject;
+type earlycan_exec, exec_type, system_file_type, file_type;
+
+allow earlycan self:capability net_admin;
+allow earlycan self:netlink_route_socket { bind create getattr nlmsg_readpriv nlmsg_write read setopt write };
+allow earlycan self:udp_socket { create ioctl };
+
+allow earlycan self:tcp_socket create_stream_socket_perms;
+allow earlycan port:tcp_socket name_bind;
+# Connect to ports.
+allow earlycan port_type:tcp_socket name_connect;
+
+allow vendor_earlycan self:can_socket { bind create read write ioctl setopt };
+allowxperm vendor_earlycan self:can_socket ioctl {
+    SIOCGIFINDEX
+};
+
+allow earlycan dnsproxyd_socket:sock_file write;
+allow earlycan fwmarkd_socket:sock_file write;
+allow earlycan netd:unix_stream_socket connectto;
+allow netd earlycan:fd use;
+allow netd earlycan:tcp_socket { getopt read setopt write };
+
+# allow access to boot status property
+get_prop(vendor_earlycan, boot_status_prop)
