@@ -277,3 +277,5 @@
 /sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
 /sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
 /sys/devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+
+/sys/kernel/mm/lru_gen/enabled u:object_r:vendor_sysfs_lru_gen:s0
