@@ -32,3 +32,9 @@ genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0
 
 # spdaemon sysfs
 genfscon sysfs /devices/platform/soc/soc:qcom,spss_utils/firmware_name u:object_r:vendor_sysfs_spdaemon:s0
+
+genfscon sysfs /devices/platform/soc/4080000.remoteproc-modem/remoteproc/remoteproc2/name       u:object_r:vendor_sysfs_ssr:s0
+
+#DRV
+genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc7/regulator-pm8150-2-l7/phandle u:object_r:vendor_sysfs_drv:s0
+genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc8/compatible                    u:object_r:vendor_sysfs_drv:s0
