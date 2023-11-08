@@ -252,6 +252,7 @@
 /vendor/bin/hw/android\.hardware\.security\.keymint-service-qti		     u:object_r:vendor_hal_keymint_qti_exec:s0
 /vendor/bin/init\.qti\.keymaster\.sh                                 u:object_r:vendor_init-qti-keymaster-sh_exec:s0
 /vendor/bin/hw/android\.hardware\.gatekeeper-service-qti       u:object_r:vendor_hal_gatekeeper_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software  u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss.*-service-qti u:object_r:vendor_hal_gnss_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti         u:object_r:hal_bluetooth_default_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.1-service-qti         u:object_r:hal_bluetooth_default_exec:s0
@@ -430,6 +431,11 @@
 # audio_data_file
 /data/vendor/audio(/.*)? u:object_r:vendor_audio_data_file:s0
 /data/vendor/audio_dsp(/.*)? u:object_r:vendor_audio_dsp_data_file:s0
+
+# someip
+/data/vendor/someip(/.*)?            u:object_r:vendor_someip_data_file:s0
+/storage/vendor/someip(/.*)?         u:object_r:vendor_someip_data_file:s0
+/vendor/etc/someip(/.*)?             u:object_r:vendor_someip_cfg_file:s0
 
 # /
 /tombstones                          u:object_r:rootfs:s0
@@ -612,7 +618,6 @@
 /(vendor|system/vendor)/bin/init\.qcom\.debug-sdm670\.sh    u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.efs\.sync\.sh   u:object_r:vendor_qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh   u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.dcvs\.sh        u:object_r:vendor_init-qti-dcvs-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sdio\.sh        u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:vendor_init-qcom-sensors-sh_exec:s0
