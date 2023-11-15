@@ -1,0 +1,7 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#============= vendor_aidl_camera_provider_qti ==============
+allow vendor_aidl_camera_provider_qti vendor_hab_device:chr_file { ioctl map open read write };
+allow vendor_aidl_camera_provider_qti vendor_dmabuf_system_heap_device:chr_file read;
+allow vendor_aidl_camera_provider_qti vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };

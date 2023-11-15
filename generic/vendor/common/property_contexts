@@ -46,6 +46,7 @@ vendor.audio.ssr.trigger   u:object_r:vendor_audio_ssr_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
+ro.boot.audio              u:object_r:vendor_audio_prop:s0 exact string
 persist.vendor.audio.spkr.cal.duration  u:object_r:vendor_audio_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0

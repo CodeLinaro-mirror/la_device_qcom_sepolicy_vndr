@@ -1,5 +1,4 @@
-# Copyright (c) 2019, 2021, The Linux Foundation. All rights reserved.
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2019,2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,28 +24,26 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-domain_trans(init, vendor_modinstall-sh_exec, vendor_modprobe)
-allow vendor_modprobe vendor_shell_exec:file rx_file_perms;
-allow vendor_modprobe vendor_toolbox_exec:file rx_file_perms;
-allow vendor_modprobe proc_cmdline:file r_file_perms;
-allow vendor_modprobe proc_version:file r_file_perms;
-allow vendor_modprobe system_dlkm_file:system module_load;
-r_dir_file(vendor_modprobe, { system_dlkm_file });
-# Allow the below search permission for modprobe only in user builds too.
-allow vendor_modprobe { debugfs_tracing_instances }:dir search;
-set_prop(vendor_modprobe, vendor_modprobe_prop)
-set_prop(vendor_modprobe, vendor_audio_prop)
+#Changes from Qualcomm Innovation Center are provided under the following license:
+#Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# early Video Service
+type vendor_earlyVideo, domain;
+type vendor_earlyVideo_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_earlyVideo)
+allow vendor_earlyVideo graphics_device:chr_file rw_file_perms;
+allow vendor_earlyVideo video_device:chr_file rw_file_perms;
+allow vendor_earlyVideo gpu_device:chr_file rw_file_perms;
+allow vendor_earlyVideo sysfs_power:file r_file_perms;
+allow vendor_earlyVideo kmsg_device:chr_file rw_file_perms;
+allow vendor_earlyVideo vendor_early_services:dir rw_dir_perms;
+allow vendor_earlyVideo vendor_early_services:file rw_file_perms;
 userdebug_or_eng(`
-  allow vendor_modprobe kmsg_debug_device:chr_file { w_file_perms getattr ioctl };
-  allow vendor_modprobe { vendor_debugfs_kgsl_fence_tracing }:dir search;
+      allow vendor_earlyVideo vendor_sysfs_kpi:file w_file_perms;
 ')
-allow vendor_modprobe vendor_init-qcom-wifi-sh:fd use;
-allow vendor_modprobe self:capability2 perfmon;
-allow vendor_modprobe self:key write;
-allow vendor_modprobe self:perf_event cpu;
-dontaudit vendor_modprobe self:capability sys_admin;
+allow vendor_earlyVideo self:capability { chown setgid setuid sys_admin };
+allow vendor_earlyVideo dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_earlyVideo vendor_dmabuf_system_heap_device:chr_file r_file_perms;

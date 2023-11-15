@@ -1,3 +1,4 @@
 #Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
+type vendor_sysfs_country, fs_type, sysfs_type;

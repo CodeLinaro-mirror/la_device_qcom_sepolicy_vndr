@@ -86,5 +86,4 @@ vendor.qti.hardware.perf::IPerfCallback                      u:object_r:vendor_h
 vendor.qti.hardware.mwqemadapter::IMwqemAdapter              u:object_r:vendor_hal_mwqemadapter_hwservice:s0
 vendor.qti.hardware.dpmservice::IDpmService                  u:object_r:vendor_hal_dpmapi_hwservice:s0
 vendor.qti.hardware.wifi.wificfr::IWificfr                   u:object_r:hal_wificfr_hwservice:s0
-vendor.qti.automotive.qcarcam::IQcarCamera                   u:object_r:vendor_hal_ais_hwservice:s0
 vendor.qti.hardware.automotive.vehicle::IQtiVehicle          u:object_r:hal_vehicle_hwservice:s0

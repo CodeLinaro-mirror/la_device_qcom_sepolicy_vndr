@@ -1,0 +1,4 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow hal_graphics_allocator_default vendor_dmabuf_secure_pixel:chr_file r_file_perms;
