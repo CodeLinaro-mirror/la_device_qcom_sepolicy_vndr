@@ -665,3 +665,6 @@
 
 #Early Dynamic Splash
 /vendor_early_services/vendor/bin/esplash               u:object_r:vendor_esplash_exec:s0
+
+#MSM-DRM
+/sys/devices/platform/soc/ae00000\.qcom,mdss_mdp/init_complete	     u:object_r:vendor_sysfs_display:s0

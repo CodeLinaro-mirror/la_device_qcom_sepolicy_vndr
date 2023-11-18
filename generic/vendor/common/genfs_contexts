@@ -216,3 +216,6 @@ genfscon sysfs   /fs/ext4/sde[0-11]+/lifetime_write_kbytes   u:object_r:vendor_s
 genfscon sysfs /devices/platform/power.0/power_supply            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/power\.0/power_supply/Ac(/.*)?   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi0/wakeup u:object_r:sysfs_wakeup:s0
+
+# display
+genfscon sysfs /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp  u:object_r:vendor_sysfs_display:s0
