@@ -32,6 +32,12 @@ hal_client_domain(system_server, vendor_hal_srvctracker)
 
 binder_call(system_server, vendor_hal_srvctracker_default)
 
+# vendor_location modules
+binder_call(system_server, vendor_location_engine_service);
+binder_call(system_server, vendor_location_edgnss_daemon);
+binder_call(system_server, vendor_location_slim_daemon);
+binder_call(system_server, vendor_location_xtwifi_client);
+
 allow system_server vendor_proc_audiod:file r_file_perms;
 
 get_prop(system_server, vendor_confqmaa)
@@ -64,3 +70,6 @@ hal_client_domain(system_server, vendor_hal_wifilearner);
 hal_client_domain(system_server, vendor_hal_qspmhal);
 
 get_prop(system_server, vendor_qspm_prop)
+
+#allow system server to get vendor_audio_prop
+get_prop(system_server, vendor_audio_prop)

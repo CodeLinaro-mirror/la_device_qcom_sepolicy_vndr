@@ -25,10 +25,15 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 vendor_internal_prop(vendor_dataadpl_prop);
 vendor_internal_prop(vendor_cnd_vendor_prop);
 vendor_internal_prop(vendor_spcomlib_prop);
 vendor_public_prop(vendor_qcc_prop);
+vendor_internal_prop(vendor_qtr_prop);
 vendor_internal_prop(vendor_mdm_helper_prop);
 vendor_internal_prop(vendor_disable_spu_prop);
 
@@ -40,6 +45,7 @@ vendor_internal_prop(vendor_boot_mode_prop);
 #mpctl
 vendor_restricted_prop(vendor_mpctl_prop);
 vendor_internal_prop(vendor_freq_prop);
+vendor_internal_prop(vendor_procomp_prop);
 #service opts
 vendor_restricted_prop(vendor_bservice_prop);
 vendor_restricted_prop(vendor_reschedule_service_prop);
@@ -52,6 +58,9 @@ vendor_restricted_prop(vendor_iop_prop);
 
 #properties for nfc
 vendor_restricted_prop(vendor_nfc_nq_prop);
+
+#properties for eSE
+vendor_internal_prop(vendor_ese_prop);
 
 # properties for eSE-StrongBox
 vendor_internal_prop(vendor_ese_strongbox_prop);
@@ -104,3 +113,14 @@ vendor_restricted_prop(vendor_mwqem_prop);
 
 #pasr property
 vendor_internal_prop(vendor_pasr_prop);
+
+#qesdk property
+vendor_internal_prop(vendor_qesdk_ready_prop)
+
+#qms property
+vendor_internal_prop(vendor_qms_prop)
+
+vendor_internal_prop(vendor_nfc_prop)
+
+#AON
+vendor_internal_prop(vendor_qc_aon_prop);

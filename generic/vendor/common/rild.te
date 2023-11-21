@@ -67,9 +67,11 @@ allow rild vendor_rild_socket:sock_file create_file_perms;
 
 r_dir_file(rild, vendor_mbn_data_file)
 allow rild self:qipcrtr_socket create_socket_perms_no_ioctl;
-
+unix_socket_connect(rild, vendor_ssgtzd, vendor_ssgtzd)
 # rild would be a client for ims factory hal
 hal_client_domain(rild, vendor_hal_imsfactory)
 
 # Fallback for seccomp
 crash_dump_fallback(rild)
+#CTS failure
+binder_service(rild)
