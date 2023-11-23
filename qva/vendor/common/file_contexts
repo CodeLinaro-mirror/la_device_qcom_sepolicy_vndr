@@ -394,3 +394,6 @@
 
 #USB node which need context in case of multiple input ports
 /sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.0.auto/usb1(/.*)/power/control  u:object_r:vendor_sysfs_usb_node:s0
+
+#FastCV
+/vendor/bin/fastcv.sh                                                            u:object_r:vendor_qti_fastcv_exec:s0
