@@ -74,6 +74,8 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/vendor_boot_[ab]      u:object_r:boot_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/cmnlib_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/cmnlib64_[ab]         u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/core_nhlos_[ab]       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/cpucp_[ab]            u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/devcfg_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dsp_[ab]              u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dtbo_[ab]             u:object_r:vendor_custom_ab_block_device:s0
@@ -87,6 +89,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/pmic_[ab]             u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/qupfw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/rpm_[ab]              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/shrm_[ab]             u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/system_[ab]           u:object_r:system_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/tz_[ab]               u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/vbmeta_[ab]           u:object_r:vendor_custom_ab_block_device:s0
@@ -236,6 +239,7 @@
 /sys/devices/platform/soc/62400000\.qcom,lpass/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00\.0/0000:01:00\.0/1101_00\.01\.00/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00\.0/0000:01:00\.0/1102_00\.01\.00/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a800000\.ssusb/a800000.dwc3/xhci-hcd.2.auto/usb[1-6]/wakeup                                                            u:object_r:sysfs_wakeup:s0
 
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-04/c440000\.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
 /sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8150@0:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
@@ -327,3 +331,5 @@
 /dev/snd                                                                      u:object_r:audio_device:s0
 /dev/snd/controlC0                                                            u:object_r:audio_device:s0
 /vendor_early_services/vendor/bin/earlyVideo                                  u:object_r:vendor_earlyVideo_exec:s0
+/vendor_early_services/vendor/bin/audio-nxp-auto                              u:object_r:vendor_audionxp_exec:s0
+/vendor_early_services/vendor/bin/pd-mapper                                   u:object_r:vendor_pd_mapper_exec:s0

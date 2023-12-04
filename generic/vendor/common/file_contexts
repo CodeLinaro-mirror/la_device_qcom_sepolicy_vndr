@@ -451,6 +451,7 @@
 /dev/dri/card2                                  u:object_r:graphics_device:s0
 /dev/dri/card3                                  u:object_r:graphics_device:s0
 /dev/dri/card4                                  u:object_r:graphics_device:s0
+/dev/dri/card5                           	u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
@@ -621,6 +622,7 @@
 
 /(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 /(vendor|system/vendor)/bin/system_dlkm_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
+/(vendor|system/vendor)/bin/load_dlkm        u:object_r:vendor_modinstall-sh_exec:s0
 
 /vendor/bin/embmsslServer       u:object_r:vendor_hal_embmssl_qti_exec:s0
 
@@ -655,3 +657,22 @@
 /sys/bus/platform/drivers/xhci-hcd/bind                 u:object_r:vendor_sysfs_usb_node:s0
 /sys/bus/platform/drivers/xhci-hcd/unbind               u:object_r:vendor_sysfs_usb_node:s0
 /sys/bus/platform/drivers/xhci-hcd                      u:object_r:vendor_sysfs_usb_node:s0
+
+# sysfs wakeup
+/sys/devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.1.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.0.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.1.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.2.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.3.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000.hsusb/a400000.dwc3/xhci-hcd.0.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000.hsusb/a400000.dwc3/xhci-hcd.1.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000.hsusb/a400000.dwc3/xhci-hcd.2.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000.hsusb/a400000.dwc3/xhci-hcd.3.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/fastrpc/adsprpc-smd(/.*)?                                                       u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/fastrpc/adsprpc-smd-secure(/.*)?                                                u:object_r:sysfs_wakeup:s0
+
+#iio devices
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8150@0:vadc@3100/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a88000.i2c/i2c-8/8-006a/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0

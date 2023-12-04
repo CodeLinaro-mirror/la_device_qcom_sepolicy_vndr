@@ -332,6 +332,7 @@
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam2@V1-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0
@@ -393,3 +394,6 @@
 
 #USB node which need context in case of multiple input ports
 /sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.0.auto/usb1(/.*)/power/control  u:object_r:vendor_sysfs_usb_node:s0
+
+#FastCV
+/vendor/bin/fastcv.sh                                                            u:object_r:vendor_qti_fastcv_exec:s0

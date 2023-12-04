@@ -41,6 +41,7 @@ type vendor_sysfs_camera, sysfs_type, fs_type;
 type vendor_sysfs_cpu_boost, fs_type, sysfs_type;
 type vendor_sysfs_devcd, fs_type, sysfs_type;
 type vendor_sysfs_devfreq, fs_type, sysfs_type;
+type vendor_sysfs_display, fs_type, sysfs_type;
 type vendor_sysfs_easel, sysfs_type, fs_type;
 type vendor_sysfs_esoc, sysfs_type, fs_type;
 type vendor_sysfs_fingerprint, sysfs_type, fs_type;
@@ -284,3 +285,7 @@ type vendor_sysfs_power_supply, sysfs_type, fs_type;
 # swap partition nodes
 type vendor_sysfs_power_image, fs_type, sysfs_type;
 type vendor_proc_swappiness, proc_type, fs_type;
+
+type vendor_debugfs_wifi_tracing, fs_type, debugfs_type, tracefs_type;
+
+type vendor_sysfs_net, sysfs_type, fs_type;

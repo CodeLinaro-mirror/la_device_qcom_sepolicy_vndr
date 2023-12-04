@@ -1,0 +1,59 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qcxserver service
+type vendor_qcxserver, domain;
+type vendor_qcxserver_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_qcxserver)
+
+userdebug_or_eng(`
+allow vendor_qcxserver su:unix_dgram_socket sendto;
+allow vendor_qcxserver vendor_sysfs_kpi:file w_file_perms;
+')
+hal_client_domain(vendor_qcxserver, hal_graphics_allocator)
+allow vendor_qcxserver vendor_camera_socket:sock_file create_file_perms;
+allow vendor_qcxserver vendor_camera_socket:dir rw_dir_perms;
+allow vendor_qcxserver vendor_camera_socket:file rw_file_perms;
+allow vendor_qcxserver video_device:chr_file rw_file_perms;
+allow vendor_qcxserver video_device:dir rw_file_perms;
+allow vendor_qcxserver video_device:chr_file setattr;
+allow vendor_qcxserver hal_tv_input_default:unix_dgram_socket sendto;
+allow vendor_qcxserver vendor_qcarcam_edrm_rvc:fd use;
+# gpu resources
+allow vendor_qcxserver gpu_device:chr_file rw_file_perms;
+allow vendor_qcxserver graphics_device:chr_file { ioctl open read write };
+allow vendor_qcxserver ion_device:chr_file r_file_perms;
+# To create and delete singleton lock
+allow vendor_qcxserver vendor_camera_socket:file create;
+allow vendor_qcxserver vendor_camera_socket:file unlink;
+# To access ais_v4l2_proxy
+allow vendor_qcxserver vendor_ais_v4l2_proxy:unix_stream_socket { read write };
+allow vendor_qcxserver vendor_ais_v4l2_proxy:fd use;
+allow vendor_qcxserver aac_drc_prop:file { getattr map open };
+allow vendor_qcxserver dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_qcxserver self:qipcrtr_socket create;
+allow vendor_qcxserver ab_update_gki_prop:file { getattr map open };
+allow vendor_qcxserver adbd_config_prop:file { getattr map open };
+allow vendor_qcxserver vendor_sysfs_devicetree_cpu:file rw_file_perms;
+allow vendor_qcxserver kmsg_device:chr_file rw_file_perms;
+allow vendor_qcxserver hal_camera_default:unix_stream_socket connectto;
+allow vendor_qcxserver vendor_hal_evs_driver:unix_stream_socket connectto;
+allow vendor_qcxserver vendor_hal_evs_driver:fd use;
+allow vendor_qcxserver vendor_camera_data_file:dir { read search };
+
+allow vendor_qcxserver hal_camera_default:fd use;
+allow vendor_qcxserver vendor_hal_ais_qti:fd use;
+allow vendor_qcxserver vendor_hal_ais_qti:unix_stream_socket connectto;
+
+get_prop(vendor_qcxserver,camera2_extensions_prop);
+get_prop(vendor_qcxserver,camera_config_prop);
+get_prop(vendor_qcxserver,camerax_extensions_prop);
+get_prop(vendor_qcxserver,vendor_camera_prop);
+get_prop(vendor_qcxserver,vendor_persist_camera_prop);
+
+# Allow qcxserver to communicate with car power policy service
+allow vendor_qcxserver carpowerpolicyd_service:service_manager find;
+binder_call(vendor_qcxserver, servicemanager)
+binder_call(vendor_qcxserver, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_qcxserver)

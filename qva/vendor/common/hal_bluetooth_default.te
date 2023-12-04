@@ -43,3 +43,6 @@ unix_socket_connect(hal_bluetooth_default, vendor_ssgtzd, vendor_ssgtzd)
 hal_attribute_service(hal_bluetooth, vendor_hal_bttpi_service)
 binder_call(hal_bluetooth, servicemanager)
 hal_client_domain(hal_bluetooth_default, hal_vehicle)
+
+# allow BT transport HAL to read boot_status_prop
+get_prop(hal_bluetooth_default, boot_status_prop)
