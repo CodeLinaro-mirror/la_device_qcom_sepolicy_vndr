@@ -15,3 +15,6 @@ allow vendor_hal_ais_qti vendor_ais_server:unix_stream_socket connectto;
 allow vendor_hal_ais_qti vendor_sysfs_kpi:file w_file_perms;
 
 add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
+add_service(vendor_hal_ais_qti, vendor_hal_ais_service)
+allow vendor_hal_ais_qti vndbinder_device:chr_file rw_file_perms;
+binder_call(vendor_hal_ais_qti, servicemanager)

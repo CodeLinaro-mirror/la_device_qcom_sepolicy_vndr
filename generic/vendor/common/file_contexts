@@ -290,6 +290,7 @@
 /vendor/bin/qsap_qapeservice        u:object_r:vendor_perf_qesdk_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.soc-model\.sh                               u:object_r:vendor_qti_init_shell_exec:s0
 
 ###############################################
 # same-process HAL files and their dependencies
