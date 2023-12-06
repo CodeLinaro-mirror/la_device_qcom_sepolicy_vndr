@@ -33,6 +33,11 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(SEPOLICY_PATH)/qva/vendor/common \
        $(SEPOLICY_PATH)/generic/vendor/common/attribute \
 
+    ifeq (,$(filter $(TARGET_BOARD_DERIVATIVE_SUFFIX), _tb))
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/car_common
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/car_common
+    endif
+
     ifeq ($(TARGET_SEPOLICY_DIR),)
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/$(TARGET_BOARD_PLATFORM)
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/$(TARGET_BOARD_PLATFORM)
