@@ -664,6 +664,8 @@
 /sys/bus/platform/drivers/xhci-hcd/bind                 u:object_r:vendor_sysfs_usb_node:s0
 /sys/bus/platform/drivers/xhci-hcd/unbind               u:object_r:vendor_sysfs_usb_node:s0
 /sys/bus/platform/drivers/xhci-hcd                      u:object_r:vendor_sysfs_usb_node:s0
+/sys/bus/platform/devices/a600000.ssusb/mode            u:object_r:vendor_sysfs_usb_device:s0
+/sys/bus/platform/devices/a800000.hsusb/mode            u:object_r:vendor_sysfs_usb_device:s0
 
 #Early Dynamic Splash
 /vendor_early_services/vendor/bin/esplash               u:object_r:vendor_esplash_exec:s0
