@@ -69,9 +69,3 @@ set_prop(vendor_qti_init_shell, vendor_pasr_prop)
 
 # Allow init shell to access /sys/class/kgsl/kgsl/ nodes
 allow vendor_qti_init_shell vendor_sysfs_kgsl:file w_file_perms;
-
-# Allow init shell to acces configfs
-allow vendor_qti_init_shell configfs:dir rw_dir_perms;
-allow vendor_qti_init_shell configfs:dir create_dir_perms;
-allow vendor_qti_init_shell configfs:file rw_file_perms;
-allow vendor_qti_init_shell configfs:file create_file_perms;
