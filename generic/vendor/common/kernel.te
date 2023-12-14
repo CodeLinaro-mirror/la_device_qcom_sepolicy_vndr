@@ -106,3 +106,6 @@ allow kernel rootfs:dir relabelfrom;
 allow kernel vendor_early_services:dir relabelto;
 #allow kernel vendor_file:dir { open read relabelto };
 #allow kernel vendor_file:file relabelto;
+userdebug_or_eng('
+  allow kernel debugfs_mmc:dir search;
+')
