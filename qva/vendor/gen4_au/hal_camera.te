@@ -3,5 +3,10 @@
 
 allow hal_camera_default vendor_qcxserver:unix_stream_socket connectto;
 allow hal_camera_default vendor_camera_socket:dir { add_name remove_name write };
-allow hal_camera_default vendor_camera_socket:sock_file { create unlink };
+allow hal_camera_default vendor_camera_socket:sock_file { create unlink setattr };
 allow hal_camera_default vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
+allow hal_camera_default vendor_early_services:dir search;
+allow hal_camera_default vendor_early_services:sock_file write;
+userdebug_or_eng(`
+allow hal_camera_default vendor_sysfs_kpi:file w_file_perms;
+')
