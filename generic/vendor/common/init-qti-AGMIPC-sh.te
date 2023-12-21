@@ -37,6 +37,7 @@ init_daemon_domain(vendor_init-qti-AGMIPC-sh)
 
 set_prop(vendor_init-qti-AGMIPC-sh, vendor_AGMIPC_service_prop)
 set_prop(vendor_init-qti-AGMIPC-sh, vendor_audio_prop)
+set_prop(vendor_init-qti-AGMIPC-sh, ctl_start_prop)
 
 allow vendor_init-qti-AGMIPC-sh vendor_shell_exec:file rx_file_perms;
 allow vendor_init-qti-AGMIPC-sh vendor_toolbox_exec:file rx_file_perms;
