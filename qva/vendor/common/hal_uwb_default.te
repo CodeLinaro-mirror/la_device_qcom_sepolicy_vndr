@@ -5,6 +5,7 @@
 
 allow hal_uwb vendor_bt_device:chr_file rw_file_perms;
 allow hal_uwb vendor_q2spiuwb_device:chr_file rw_file_perms;
+allow hal_uwb vendor_spiuwb_device:chr_file rw_file_perms;
 
 wakelock_use(hal_uwb_default)
 

@@ -61,6 +61,8 @@ type vendor_qmc_cma_device, dev_type;
 
 # Q2SPI uwb device
 type vendor_q2spiuwb_device, dev_type;
+# SPI uwb device
+type vendor_spiuwb_device, dev_type;
 
 #IPA event type
 type vendor_ipaevents_device, dev_type;

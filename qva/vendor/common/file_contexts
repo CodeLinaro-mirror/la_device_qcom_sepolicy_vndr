@@ -57,6 +57,7 @@
 /dev/qmc_dma                          u:object_r:vendor_qmc_dma_device:s0
 /dev/qmc_cma                          u:object_r:vendor_qmc_cma_device:s0
 /dev/q2spiuwb                         u:object_r:vendor_q2spiuwb_device:s0
+/dev/spiuwb                           u:object_r:vendor_spiuwb_device:s0
 /dev/ipa_events                       u:object_r:vendor_ipaevents_device:s0
 
 ###################################
