@@ -16,3 +16,5 @@ binder_call(vendor_hal_qspa_qti_client, vendor_hal_qspa_qti_server);
 binder_use(vendor_hal_qspa_qti_client);
 
 allow vendor_hal_qspa_default vendor_sysfs_devicetree_cpu:dir { open read search };
+
+allow vendor_hal_qspa_default { vendor_sys_nonsp_comp vendor_sys_sp_comp }: file  { open read  getattr };

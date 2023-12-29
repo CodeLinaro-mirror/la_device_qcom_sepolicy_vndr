@@ -59,33 +59,14 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_qtidataservices_app, domain;
-app_domain(vendor_qtidataservices_app);
+type vendor_cacertservice_app, domain;
+app_domain(vendor_cacertservice_app);
 
-hal_server_domain_bypass(vendor_qtidataservices_app, vendor_hal_cacertservice_qti)
-binder_call(vendor_hal_cacertservice_qti_client, vendor_hal_cacertservice_qti_server)
-binder_call(vendor_hal_cacertservice_qti_server, vendor_hal_cacertservice_qti_client)
-hal_attribute_hwservice(vendor_hal_cacertservice_qti, vendor_hal_cacert_hwservice)
+hal_server_domain_bypass(vendor_cacertservice_app, vendor_hal_cacert_qti)
+hal_attribute_service(vendor_hal_cacert_qti, vendor_hal_cacert_aidlservice)
+binder_use(vendor_cacertservice_app)
 
-get_prop(vendor_qtidataservices_app, vendor_cnd_prop)
-set_prop(vendor_qtidataservices_app,telephony_status_prop)
+allow vendor_cacertservice_app { app_api_service }:service_manager find;
+allow vendor_cacertservice_app self:qipcrtr_socket create_socket_perms_no_ioctl;
+hal_client_domain(vendor_cacertservice_app, vendor_hal_perf)
 
-allow vendor_qtidataservices_app { app_api_service activity_service }:service_manager find;
-allow vendor_qtidataservices_app self:qipcrtr_socket create_socket_perms_no_ioctl;
-allow vendor_qtidataservices_app vendor_radio_data_file:dir r_dir_perms;
-
-hal_client_domain(vendor_qtidataservices_app , vendor_hal_datafactory_qti)
-
-hal_client_domain(vendor_qtidataservices_app , vendor_hal_iwlanservice_qti)
-
-allow vendor_qtidataservices_app radio_service:service_manager find;
-
-allow vendor_qtidataservices_app vendor_sysfs_data:file r_file_perms;
-
-net_domain(vendor_qtidataservices_app)
-hal_client_domain(vendor_qtidataservices_app, vendor_hal_perf)
-
-binder_use(vendor_qtidataservices_app)
-
-allow vendor_qtidataservices_app vendor_nicmd:fd use;
-allow vendor_qtidataservices_app vendor_nicmd:udp_socket { getattr getopt read write };

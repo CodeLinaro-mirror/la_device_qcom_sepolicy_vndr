@@ -134,6 +134,10 @@ allow vendor_qms_0 vendor_qms:fd use;
 allow vendor_qms_0 vendor_qms:unix_dgram_socket write;
 allow vendor_qms_0 vendor_qms:unix_stream_socket { read write };
 allow vendor_qms_0 vendor_qms_exec:file execute_no_trans;
+allow vendor_qms_0 vendor_qms_other_data_file:dir create_dir_perms;
+allow vendor_qms_0 vendor_qms_other_data_file:file create_file_perms;
+allow vendor_qms_0 vendor_qms_config_data_file:dir r_dir_perms;
+allow vendor_qms_0 vendor_qms_config_data_file:file r_file_perms;
 crash_dump_fallback(vendor_qms_0);
 allow vendor_qms_0 self:{
     qipcrtr_socket
@@ -147,6 +151,10 @@ allow vendor_qms_1 vendor_qms:fd use;
 allow vendor_qms_1 vendor_qms:unix_dgram_socket write;
 allow vendor_qms_1 vendor_qms:unix_stream_socket { read write };
 allow vendor_qms_1 vendor_qms_exec:file execute_no_trans;
+allow vendor_qms_1 vendor_qms_other_data_file:dir create_dir_perms;
+allow vendor_qms_1 vendor_qms_other_data_file:file create_file_perms;
+allow vendor_qms_1 vendor_qms_config_data_file:dir r_dir_perms;
+allow vendor_qms_1 vendor_qms_config_data_file:file r_file_perms;
 allow vendor_qms_1 self:{
     qipcrtr_socket
 }create_socket_perms_no_ioctl;
@@ -160,6 +168,10 @@ allow vendor_qms_2 vendor_qms:fd use;
 allow vendor_qms_2 vendor_qms:unix_dgram_socket write;
 allow vendor_qms_2 vendor_qms:unix_stream_socket { read write };
 allow vendor_qms_2 vendor_qms_exec:file execute_no_trans;
+allow vendor_qms_2 vendor_qms_other_data_file:dir create_dir_perms;
+allow vendor_qms_2 vendor_qms_other_data_file:file create_file_perms;
+allow vendor_qms_2 vendor_qms_config_data_file:dir r_dir_perms;
+allow vendor_qms_2 vendor_qms_config_data_file:file r_file_perms;
 allow vendor_qms_2 self:{
     qipcrtr_socket
 }create_socket_perms_no_ioctl;
@@ -198,14 +210,41 @@ wakelock_use(vendor_qms)
 
 allow vendor_qms vendor_qms_vndr_data_file:dir create_dir_perms;
 allow vendor_qms vendor_qms_vndr_data_file:file create_file_perms;
+allow vendor_qms vendor_qms_main_data_file:dir create_dir_perms;
+allow vendor_qms vendor_qms_main_data_file:file create_file_perms;
+allow vendor_qms vendor_qms_config_data_file:dir r_dir_perms;
+allow vendor_qms vendor_qms_config_data_file:file r_file_perms;
 get_prop(vendor_qms, vendor_qms_prop)
 allow vendor_qms vendor_qms_app:udp_socket { read write };
 allow vendor_qms vendor_qms_app:tcp_socket { connect getopt read write };
 
 use_shsusrd_socket(vendor_qms)
 
+
 # Policies needed for QMS
 allow vendor_qms vendor_xtra_service:service_manager find;
 binder_call(vendor_qms, vendor_location_xtra_daemon)
 allow vendor_qms vendor_sysfs_battery_supply:dir search;
 allow vendor_qms vendor_sysfs_battery_supply:file { open read };
+
+
+#neverallow other  to write to main folders
+neverallow {
+ vendor_qms_0
+ vendor_qms_1
+ vendor_qms_2
+} vendor_qms_vndr_data_file :{file } *;
+
+neverallow {
+ vendor_qms_0
+ vendor_qms_1
+ vendor_qms_2
+} vendor_qms_main_data_file :{file } *;
+
+#Allow only read to be shared between Main and other. Do not allow create or write.
+neverallow {
+  vendor_qms
+  vendor_qms_0
+  vendor_qms_1
+  vendor_qms_2
+} vendor_qms_config_data_file:{file }  { create write } ;

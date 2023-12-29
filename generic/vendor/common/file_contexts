@@ -486,6 +486,9 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
 
+#Gfx
+/(vendor|system/vendor)/bin/init\.qti\.graphics\.sh  u:object_r:vendor_qti_graphics_boot_exec:s0
+
 # vendor_sysfs_devfreq
 /sys/devices(/platform)?/soc/soc:qcom,l3-cpu[0-9]/devfreq/soc:qcom,l3-cpu[0-9](/.*)? u:object_r:vendor_sysfs_devfreq:s0
 

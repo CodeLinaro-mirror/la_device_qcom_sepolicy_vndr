@@ -270,6 +270,9 @@ type vendor_sysfs_rmnet, fs_type, sysfs_type;
 # display boot param files
 type vendor_sysfs_disp_boot_param, fs_type, sysfs_type;
 
+type vendor_sys_nonsp_comp, fs_type, sysfs_type;
+type vendor_sys_sp_comp, fs_type, sysfs_type;
+
 # TLPD service
 type vendor_dlsc_socket, file_type;
 

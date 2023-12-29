@@ -25,3 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 vndbinder_use(hal_camera_default);
+allow hal_camera_default { vendor_sys_sp_comp vendor_sys_nonsp_comp }:file r_file_perms;

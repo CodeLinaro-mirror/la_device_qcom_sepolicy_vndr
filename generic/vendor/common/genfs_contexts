@@ -201,3 +201,23 @@ genfscon sysfs /kernel/qts/secondary/trusted_touch_enable u:object_r:vendor_sysf
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-adsp/power/wakeup     u:object_r:vendor_sysfs_cpsk_power:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-cdsp/power/wakeup     u:object_r:vendor_sysfs_cpsk_power:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-modem/power/wakeup     u:object_r:vendor_sysfs_cpsk_power:s0
+
+genfscon sysfs /devices/soc0/audio u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/comp1 u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/video  u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/camera u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/display u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/modem u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/sensors u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/wlan u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/comp u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/display1 u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/nav u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/spss u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/nsp u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/eva u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/subset_parts u:object_r:vendor_sys_nonsp_comp:s0
+genfscon sysfs /devices/soc0/subset_cores u:object_r:vendor_sys_nonsp_comp:s0
+
+genfscon sysfs /devices/soc0/gpu u:object_r:vendor_sys_sp_comp:s0
+genfscon sysfs /devices/soc0/npu u:object_r:vendor_sys_sp_comp:s0

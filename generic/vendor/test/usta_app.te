@@ -64,3 +64,5 @@ dontaudit vendor_usta_app default_prop:file read;
 userdebug_or_eng(`
   dontaudit vendor_usta_app vendor_diag-router:unix_stream_socket connectto;
 ')
+
+allow crash_dump vendor_usta_app_data_file:dir search;

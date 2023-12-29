@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # vendor_ssgtzd - SSG TZ Daemon
 type vendor_ssgtzd, domain, mlstrustedsubject;
@@ -51,3 +55,10 @@ allowxperm vendor_ssgtzd self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctl
 #Allow access to qseecom DMABUF device
 allow vendor_ssgtzd vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
 vndbinder_use(vendor_ssgtzd)
+
+# Allow to set capability to block suspend and resume from suspend/sleep to wake up
+# state using wake_alarm.
+allow vendor_ssgtzd self:capability2 { block_suspend wake_alarm };
+
+# Allow access to write to wake_lock file under /sys/power/
+allow vendor_ssgtzd sysfs_wake_lock:file { append open };
