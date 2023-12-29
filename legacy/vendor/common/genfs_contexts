@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#Changes from Qualcomm Innovation Center are provided under the following license:
+#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
 genfscon proc /debug/fwdump                           u:object_r:proc_wifi_dbg:s0
 genfscon proc /debugdriver/driverdump                 u:object_r:proc_wifi_dbg:s0
 genfscon proc /ath_pktlog/cld                         u:object_r:proc_wifi_dbg:s0
@@ -64,6 +68,7 @@ genfscon sysfs /devices/platform/cam_sync/video4linux/video0/name u:object_r:sys
 genfscon sysfs /devices/virtual/npu/msm_npu/pwr u:object_r:sysfs_npu:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/name u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/cable.0/ u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/cable.1/ u:object_r:sysfs_graphics:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,mdm3/esoc0 u:object_r:sysfs_esoc:s0
 genfscon sysfs /devices/soc0/soc_id                                     u:object_r:vendor_sysfs_public:s0
@@ -72,6 +77,7 @@ genfscon sysfs /devices/soc0/family                                     u:object
 
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/name u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/cable.0/ u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/cable.1/ u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/system/memory/ u:object_r:sysfs_memory_offline:s0
 
 genfscon sysfs /kernel/qvr_external_sensor u:object_r:sysfs_qvr_external_sensor:s0
