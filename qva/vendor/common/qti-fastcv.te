@@ -1,0 +1,12 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_qti_fastcv, domain;
+type vendor_qti_fastcv_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_qti_fastcv)
+
+allow vendor_qti_fastcv vendor_toolbox_exec:file execute_no_trans;
+allow vendor_qti_fastcv vendor_data_file:dir { add_name remove_name write };
+allow vendor_qti_fastcv vendor_data_file:file { create unlink rw_file_perms };
+allow vendor_qti_fastcv vendor_data_file:lnk_file { create rename read unlink};
