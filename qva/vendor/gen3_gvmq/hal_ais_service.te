@@ -27,3 +27,8 @@
 
 allow vendor_hal_ais_qti vendor_hab_device:chr_file rw_file_perms;
 
+allow vendor_hal_ais_qti boot_status_prop:file read;
+allow vendor_hal_ais_qti carpowerpolicyd_service:service_manager find;
+allow vendor_hal_ais_qti servicemanager:binder call;
+binder_call(vendor_hal_ais_qti, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_hal_ais_qti)

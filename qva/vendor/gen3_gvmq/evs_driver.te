@@ -27,3 +27,9 @@
 
 allow vendor_hal_evs_driver vendor_hab_device:chr_file rw_file_perms;
 allow vendor_hal_evs_driver vendor_hgsl_device:chr_file rw_file_perms;
+
+allow vendor_hal_evs_driver boot_status_prop:file read;
+allow vendor_hal_evs_driver carpowerpolicyd_service:service_manager find;
+allow vendor_hal_evs_driver servicemanager:binder call;
+binder_call(vendor_hal_evs_driver, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_hal_evs_driver)

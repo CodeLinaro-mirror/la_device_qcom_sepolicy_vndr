@@ -27,3 +27,9 @@
 
 allow hal_camera_default vendor_hab_device:chr_file rw_file_perms;
 allow hal_camera_default vendor_hgsl_device:chr_file rw_file_perms;
+
+allow hal_camera_default boot_status_prop:file read;
+allow hal_camera_default carpowerpolicyd_service:service_manager find;
+allow hal_camera_default servicemanager:binder call;
+binder_call(hal_camera_default, carpowerpolicyd)
+binder_call(carpowerpolicyd, hal_camera_default)
