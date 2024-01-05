@@ -138,6 +138,7 @@
 /dev/dma_heap/qcom,secure-pixel         u:object_r:vendor_dmabuf_secure_pixel:s0
 /dev/dma_heap/qcom,secure-non-pixel     u:object_r:vendor_dmabuf_secure_non_pixel:s0
 /dev/dma_heap/qcom,adsp                 u:object_r:vendor_dmabuf_adsp_heap_device:s0
+/dev/dma_heap/qcom,mdsp                 u:object_r:vendor_dmabuf_mdsp_heap_device:s0
 /dev/dma_heap/qcom,secure-cdsp          u:object_r:vendor_dmabuf_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,cma-secure-cdsp      u:object_r:vendor_dmabuf_cma_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,sp-hlos              u:object_r:vendor_dmabuf_sp_hlos_heap_device:s0
