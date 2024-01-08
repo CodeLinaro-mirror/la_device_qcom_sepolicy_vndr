@@ -5,8 +5,8 @@
 # Dev block nodes
 
 # Same process file
-/vendor/lib(64)?/hw/gralloc\.msmnile\.so                            u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.msmnile\.so                             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/gralloc\.gen4\.so                            u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.gen4\.so                             u:object_r:same_process_hal_file:s0
 
 /sys/devices/platform/soc/a88000.i2c/i2c-8/8-006a/iio:device[0-9]+(/.*)?                 u:object_r:vendor_sysfs_sensors:s0
 
@@ -84,6 +84,9 @@
 /sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]+/wakeup(/.*)?                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]+/wakeup(/.*)?                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a400000\.hsusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/8c0000\.qcom,qupv3_2_geni_se/88c000\.qcom,qup_uart/wakeup(/.*)?                                                        u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00\.0/0000:01:00\.0/mhi_1103_00\.01\.00/wakeup(/.*)?                             u:object_r:sysfs_wakeup:s0
 
 /sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                                                     u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                                                    u:object_r:vendor_sysfs_mmc_host:s0

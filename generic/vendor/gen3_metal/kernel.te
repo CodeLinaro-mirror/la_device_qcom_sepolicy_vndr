@@ -58,6 +58,8 @@ allow kernel vendor_early_services:lnk_file { relabelto };
 allow kernel vendor_init_early_test_exec:file { relabelto };
 allow kernel rootfs:lnk_file { relabelfrom };
 allow kernel vendor_init_exec:file { relabelto read open };
+allow kernel vendor_ais_server_exec:file relabelto;
+allow kernel vendor_qcarcam_edrm_rvc_exec:file relabelto;
 allow kernel selinuxfs:filesystem mount;
 allow kernel self:capability sys_chroot;
 userdebug_or_eng(`

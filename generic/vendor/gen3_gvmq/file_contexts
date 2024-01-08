@@ -80,15 +80,15 @@
 /sys/devices/platform/soc/1c00000\.qcom,pcie/pci0004:00/0004:00:00\.0/0004:01:00\.0/1101_04\.01\.00/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/dummy_hcd\.0/usb1/wakeup(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/power/wakeup_last_time_ms                u:object_r:sysfs_wakeup:s0
-
 /sys/devices/platform/soc/88e0000\.qcom,msm-eud/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/20000\.qcom,emac/wakeup(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/diag/diag/wakeup[0-9]*(/.*)?                                                                                                u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:gpio_keys/wakeup(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
-
 /sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]+/wakeup(/.*)?                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]+/wakeup(/.*)?                                                                            u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/9c0000\.qcom,qupv3_0_geni_se/988000\.qcom,qup_uart/wakeup(/.*)?                                                        u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/1c20000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
 
 /sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                                                     u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                                                    u:object_r:vendor_sysfs_mmc_host:s0
