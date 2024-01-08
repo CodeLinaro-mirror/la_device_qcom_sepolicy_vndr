@@ -1,0 +1,38 @@
+# Copyright (c) 2023,2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Define domain
+type vendor_hal_aonfwloader_default, domain;
+
+hal_server_domain(vendor_hal_aonfwloader_default, vendor_hal_aonfwloader)
+
+type vendor_hal_aonfwloader_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_aonfwloader_default);
+
+#Needed to slate communication
+allow vendor_hal_aonfwloader_default vendor_slate_daemon_device:chr_file rw_file_perms;
+allow vendor_hal_aonfwloader_default vendor_sysfs_ssr:chr_file r_file_perms;
+allow vendor_hal_aonfwloader_default vendor_glink_slate_dfu_device:chr_file rw_file_perms;
+
+#Needed to pil loading
+allow vendor_hal_aonfwloader_default vendor_ssr_device:chr_file r_file_perms;
+allow vendor_hal_aonfwloader_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+set_prop(vendor_hal_aonfwloader_default, vendor_slate_daemon_prop)
+set_prop(vendor_hal_aonfwloader_default, vendor_slate_boot_complete_prop)
+set_prop(vendor_hal_aonfwloader_default, vendor_qc_aon_dfu_update_prop)
+get_prop(vendor_hal_aonfwloader_default, vendor_qc_aon_prop)
+get_prop(vendor_hal_aonfwloader_default, wrist_orientation_prop)
+get_prop(vendor_hal_aonfwloader_default, vendor_watch_orientation_prop)
+set_prop(vendor_hal_aonfwloader_default, vendor_ssr_enable_ramdump_prop)
+r_dir_file(vendor_hal_aonfwloader_default, vendor_sysfs_twm)
+allow vendor_hal_aonfwloader_default vendor_sysfs_twm:file r_file_perms;
+#wakelock policy
+wakelock_use(vendor_hal_aonfwloader_default);
+
+# Read dload_mode
+allow vendor_hal_aonfwloader_default vendor_sysfs_dload_mode:file r_file_perms;
+
+binder_call(vendor_hal_aonfwloader_default, hwservicemanager)
+allow vendor_hal_aonfwloader_default vendor_hal_aonutility_hwservice:hwservice_manager find;
+binder_call(vendor_hal_aonfwloader_default, vendor_hal_aonutility_default)

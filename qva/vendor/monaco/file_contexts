@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 /dev/block/mmcblk0rpmb                                          u:object_r:vendor_rpmb_device:s0
@@ -160,6 +160,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.1-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@2\.0-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonutility@1\.0-service          u:object_r:vendor_hal_aonutility_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonfwloader@1\.0-service          u:object_r:vendor_hal_aonfwloader_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.watchorientation@1\.0-service    u:object_r:vendor_hal_watchorientation_default_exec:s0
 /(vendor|system/vendor)/bin/slatedaemon                                                u:object_r:vendor_slate_daemon_exec:s0
 /(vendor|system/vendor)/bin/hw/qcli_daemon                                             u:object_r:vendor_qcli_daemon_exec:s0
