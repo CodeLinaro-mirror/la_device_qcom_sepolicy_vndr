@@ -1,5 +1,2 @@
 # copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
-
-genfscon sysfs /devices/platform/vdevs/1c0e0000.virtio_blk/virtio4/block/userdata/queue/zoned     u:object_r:vendor_sysfs_zoned:s0
-genfscon sysfs /devices/platform/vdevs/1c0f0000.virtio_blk/virtio5/block/metadata/queue/zoned     u:object_r:vendor_sysfs_zoned:s0

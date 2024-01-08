@@ -306,16 +306,12 @@
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy_qcc6                     u:object_r:vendor_ais_v4l2_proxy_exec:s0
 
-#AIDL camera provider
+#aidl camera provider
 /(vendor|system/vendor)/bin/hw/android.hardware.camera.provider@V1-qti-service   u:object_r:vendor_aidl_camera_provider_qti_exec:s0
-
-# Qcarcam HIDL HAL
+# Qcarcam HAL
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
-
-# Qcarcam AIDL HAL
-/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@V1-service          u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam2@V1-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam2@V1-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
 
@@ -344,6 +340,8 @@
 
 #AIDL EVS HAL
 /(vendor|system/vendor)/bin/android.hardware.automotive.evs-ais     u:object_r:vendor_aidl_automotive_evs_ais_exec:s0
+/(vendor|system/vendor)/bin/android.hardware.automotive.evs-qcx     u:object_r:vendor_aidl_automotive_evs_ais_exec:s0
+/(vendor|system/vendor)/bin/android.hardware.automotive.evs-ais-qcc6 u:object_r:vendor_aidl_automotive_evs_ais_exec:s0
 
 # DRM HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service.playready-qti   u:object_r:vendor_hal_drm_playready_qti_exec:s0
@@ -374,3 +372,6 @@
 /vendor/bin/hiber_restore.sh                                                     u:object_r:vendor_qti_hiber_restore_exec:s0
 /dev/block/sda13                                                                 u:object_r:vendor_swap_block_device:s0
 /sys/power/image_size                                                            u:object_r:vendor_sysfs_power_image:s0
+
+#FastCV
+/vendor/bin/fastcv.sh                                                            u:object_r:vendor_qti_fastcv_exec:s0

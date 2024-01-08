@@ -24,3 +24,5 @@ genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/restart_level u:obj
 
 # system suspend
 genfscon sysfs /devices/platform/soc/9c0000.qcom,qupv3_0_geni_se/988000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c800000.virtio-spmi/virtio2/spmi-0/0-00/1c800000.virtio-spmi:virt_spmi:qcom,pm8775@0:qcom,pm8775_1_rtc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c800000.virtio-spmi/virtio2/spmi-0/0-00/1c800000.virtio-spmi:virt_spmi:qcom,pm8775@0:qcom,pm8775_1_rtc/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0

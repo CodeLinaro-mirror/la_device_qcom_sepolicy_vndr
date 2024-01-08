@@ -41,3 +41,5 @@ get_prop(vendor_ais_server,camerax_extensions_prop);
 get_prop(vendor_ais_server,device_config_camera_native_prop);
 get_prop(vendor_ais_server,vendor_camera_prop);
 get_prop(vendor_ais_server,vendor_persist_camera_prop);
+
+allow vendor_ais_server vendor_sysfs_devicetree_soc:chr_file rw_file_perms;
