@@ -451,6 +451,7 @@
 /dev/dri/card2                                  u:object_r:graphics_device:s0
 /dev/dri/card3                                  u:object_r:graphics_device:s0
 /dev/dri/card4                                  u:object_r:graphics_device:s0
+/dev/dri/card5                           	u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/spec_sync                                  u:object_r:graphics_device:s0
@@ -670,3 +671,8 @@
 /sys/devices/platform/soc/a400000.hsusb/a400000.dwc3/xhci-hcd.3.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/fastrpc/adsprpc-smd(/.*)?                                                       u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/fastrpc/adsprpc-smd-secure(/.*)?                                                u:object_r:sysfs_wakeup:s0
+
+#iio devices
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8150@0:vadc@3100/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a88000.i2c/i2c-8/8-006a/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
