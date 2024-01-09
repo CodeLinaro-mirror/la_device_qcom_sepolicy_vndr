@@ -68,6 +68,8 @@ allow hal_secure_element_default vendor_secure_element_vendor_data_file:file cre
 get_prop(hal_secure_element_default, vendor_ese_prop)
 set_prop(hal_secure_element_default, vendor_ese_prop)
 
+get_prop(hal_secure_element_default, vendor_gptee_path_prop)
+
 # Allow secure-element HAL to interract with smcinvoke
 allow hal_secure_element_default tee_device:chr_file rw_file_perms;
 
