@@ -73,3 +73,5 @@ allow vendor_init vendor_ipa_dev:file create_file_perms;
 
 # UWB
 set_prop(vendor_init, vendor_uwb_prop)
+
+set_prop(vendor_init, vendor_gptee_path_prop)
