@@ -188,3 +188,6 @@
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_offload@1\.0-service-qti           u:object_r:vendor_hal_bluetooth_offload_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service.software     u:object_r:hal_gatekeeper_default_exec:s0
+
+#senors glink dev node
+/dev/glinkpkt_slate_ssc_hal                       u:object_r:vendor_glink_slate_ssc_hal_device:s0
