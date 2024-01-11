@@ -155,6 +155,7 @@
 /dev/glink_pkt_slate_touch_ctrl                 u:object_r:vendor_glink_slate_touch_ctrl_device:s0
 /dev/glink_pkt_slate_ux_ctl                     u:object_r:vendor_glink_slate_ux_ctl_device:s0
 /dev/glink_pkt_slate_dfu                        u:object_r:vendor_glink_slate_dfu_device:s0
+/dev/glink_pkt_slate_custom_data                u:object_r:vendor_glink_slate_custom_data_device:s0
 /dev/glink_pkt_slate_qcli                       u:object_r:vendor_glink_slate_qcli_device:s0
 
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.0-service      u:object_r:vendor_hal_displayoffload_default_exec:s0

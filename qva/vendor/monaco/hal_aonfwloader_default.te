@@ -13,6 +13,7 @@ init_daemon_domain(vendor_hal_aonfwloader_default);
 allow vendor_hal_aonfwloader_default vendor_slate_daemon_device:chr_file rw_file_perms;
 allow vendor_hal_aonfwloader_default vendor_sysfs_ssr:chr_file r_file_perms;
 allow vendor_hal_aonfwloader_default vendor_glink_slate_dfu_device:chr_file rw_file_perms;
+allow vendor_hal_aonfwloader_default vendor_glink_slate_custom_data_device:chr_file rw_file_perms;
 
 #Needed to pil loading
 allow vendor_hal_aonfwloader_default vendor_ssr_device:chr_file r_file_perms;
