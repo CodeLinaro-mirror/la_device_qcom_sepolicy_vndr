@@ -58,6 +58,9 @@ vendor_restricted_prop(vendor_nfc_nq_prop);
 #properties for eSE
 vendor_internal_prop(vendor_ese_prop);
 
+#properties for GPTEE
+vendor_internal_prop(vendor_gptee_path_prop);
+
 # properties for eSE-StrongBox
 vendor_internal_prop(vendor_ese_strongbox_prop);
 
