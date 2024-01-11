@@ -48,4 +48,16 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     endif
 endif
 
+#Include sepolicy if ES enabled
+ifeq ($(BOARD_SUPPORTS_RAMDISK_EARLY_INIT),true)
+    #Include early services polcies
+    ifneq ($(TARGET_ES_SEPOLICY_DIR),)
+    ifneq ($(TARGET_SEPOLICY_DIR),)
+    #folder path generic/vendor/early_services/gen3_metal or gen4_au
+    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/$(TARGET_ES_SEPOLICY_DIR)/$(TARGET_SEPOLICY_DIR)
+    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/$(TARGET_ES_SEPOLICY_DIR)/$(TARGET_SEPOLICY_DIR)
+    endif #End TARGET_SEPOLICY_DIR (gen3_metal or gen4_au)
+    endif #End TARGET_ES_SEPOLICY_DIR
+endif #End BOARD_SUPPORTS_RAMDISK_EARLY_INIT
+
 endif

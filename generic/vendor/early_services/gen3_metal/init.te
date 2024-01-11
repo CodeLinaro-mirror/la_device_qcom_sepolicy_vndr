@@ -1,0 +1,16 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+domain_auto_trans(init, vendor_init_early_test_exec, vendor_init_early_test)
+domain_auto_trans(init, early_chime_exec, early_chime)
+
+# allowing audio-nxp-auto to access spidev
+allow init vendor_earlyVideo_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_earlyVideo_exec, vendor_earlyVideo)
+
+domain_auto_trans(init, vendor_ais_server_exec, vendor_ais_server)
+domain_auto_trans(init, vendor_qcxserver_exec, vendor_qcxserver)
+domain_auto_trans(init, vendor_qcarcam_edrm_rvc_exec, vendor_qcarcam_edrm_rvc)
+domain_auto_trans(init, vendor_esplash_exec, vendor_esplash)
+allow init vendor_esplash_exec:file { r_file_perms execute };
+

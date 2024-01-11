@@ -1,0 +1,25 @@
+# # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type early_chime, domain;
+type early_chime_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(early_chime)
+
+allow early_chime audio_device:dir rw_dir_perms;
+allow early_chime audio_device:chr_file rw_file_perms;
+allow early_chime kmsg_device:chr_file rw_file_perms;
+allow early_chime system_bootstrap_lib_file:dir {search};
+
+# allows early_chime to open and write sysfs kpi file in userdebug mode only
+userdebug_or_eng(`
+  allow early_chime vendor_sysfs_kpi:file rw_file_perms;
+')
+
+allow early_chime vendor_early_services:dir r_dir_perms;
+allow early_chime vendor_early_services:file r_file_perms;
+allow early_chime early_chime:capability {sys_module fowner fsetid};
+binder_call(early_chime, vendor_acdb_loader_service)
+allow early_chime vendor_acdb_loader_service_service:service_manager find;
+binder_call(early_chime, vendor_audio_hal_plugin_service)
+allow early_chime vendor_audio_hal_plugin_service_service:service_manager find;
+allow early_chime audio_device:chr_file setattr;
