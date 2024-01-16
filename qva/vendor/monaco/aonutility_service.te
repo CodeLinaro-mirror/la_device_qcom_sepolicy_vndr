@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023,2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_aonutility_service, domain;
@@ -37,6 +37,10 @@ app_domain(vendor_aonutility_service)
 # Allow AONUtility Service to access certain system services.
 allow vendor_aonutility_service activity_service:service_manager find;
 allow vendor_aonutility_service surfaceflinger_service:service_manager find;
+allow vendor_aonutility_service thermal_service:service_manager find;
 
 # Allow AONUtility Service to be the client AONUtility HAL
 hal_client_domain(vendor_aonutility_service, vendor_hal_aonutility);
+
+# Allow AONUtility Service to be the client AONfwloader HAL
+hal_client_domain(vendor_aonutility_service, vendor_hal_aonfwloader);
