@@ -41,3 +41,6 @@ allow vendor_sensors_qesdk self:qipcrtr_socket create_socket_perms_no_ioctl;
 #allow access to use wakelock
 wakelock_use(vendor_sensors_qesdk)
 
+# allow to read aon related properties
+get_prop(vendor_sensors_qesdk, vendor_qc_aon_prop)
+

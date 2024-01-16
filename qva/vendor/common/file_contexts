@@ -96,7 +96,7 @@
 /vendor/bin/hw/android\.hardware\.weaver-service-spu-qti                           u:object_r:vendor_hal_weaver_spu_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox-nxp         u:object_r:vendor_hal_keymint_strongbox_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox-thales      u:object_r:vendor_hal_keymint_strongbox_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.nxp              u:object_r:vendor_hal_weaver_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.nxp-qti          u:object_r:vendor_hal_weaver_default_exec:s0
 /vendor/bin/hw/android\.hardware\.authsecret-service\.nxp                          u:object_r:hal_authsecret_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti                   u:object_r:vendor_hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.authsecret\.qti\.spu-service     u:object_r:vendor_hal_authsecret_qti_exec:s0
@@ -135,6 +135,7 @@
 /(vendor|system/vendor)/bin/qcom-system-daemon                                     u:object_r:vendor_qcomsysd_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.media\.sh                                   u:object_r:vendor_qti_media_exec:s0
 /(vendor|system/vendor)/bin/vppservice                                             u:object_r:vendor_vppservice_exec:s0
+/(vendor|system/vendor)/bin/hexlpservice                                           u:object_r:vendor_hexlpservice_exec:s0
 /(vendor|system/vendor)/bin/hw/qconfigservice                                      u:object_r:vendor_qconfigservice_exec:s0
 /(vendor|system/vendor)/bin/wifidisplayhalservice                                  u:object_r:vendor_wifidisplayhalservice_qti_exec:s0
 /(vendor|system/vendor)/bin/wfdhdcphalservice                                      u:object_r:vendor_wfdhdcphalservice_qti_exec:s0
@@ -156,7 +157,6 @@
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.[0-1]-service     u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory-service              u:object_r:vendor_hal_factory_qti_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.[0-2]-service u:object_r:vendor_hal_srvctracker_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetrackeraidl-service   u:object_r:vendor_hal_srvctracker_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor@1\.0         u:object_r:vendor_hal_secureprocessor_qti_exec:s0
@@ -247,6 +247,7 @@
 /data/vendor/(qcc|qdma)(/.*)?                                       u:object_r:vendor_qccvendor_data_file:s0
 /data/vendor/qwes(/.*)?                                             u:object_r:vendor_qwes_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
+/data/vendor/hexlp(/.*)?                                            u:object_r:vendor_hexlp_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:vendor_wigig_hostapd_socket:s0
 /data/vendor/lm(/.*)?                                               u:object_r:vendor_lm_data_file:s0
 /data/vendor/secure_element(/.*)?                                   u:object_r:vendor_secure_element_vendor_data_file:s0
@@ -254,8 +255,10 @@
 /data/vendor/gaming(/.*)?                                           u:object_r:vendor_qspmhal_data_file:s0
 /data/vendor/qvr(/.*)?                                              u:object_r:vendor_qvrd_vndr_data_file:s0
 /data/vendor/sxr(/.*)?                                              u:object_r:vendor_sxrd_vndr_data_file:s0
-/data/vendor/qms(/.*)?                                         u:object_r:vendor_qms_vndr_data_file:s0
-
+/data/vendor/qms(/.*)?                                              u:object_r:vendor_qms_vndr_data_file:s0
+/data/vendor/qms_logs/main(/.*)?                                    u:object_r:vendor_qms_main_data_file:s0
+/data/vendor/qms_logs/other(/.*)?                                    u:object_r:vendor_qms_other_data_file:s0
+/data/vendor/qms_logs/config(/.*)?                                  u:object_r:vendor_qms_config_data_file:s0
 ###################################
 # persist files
 #
@@ -264,6 +267,7 @@
 /mnt/vendor/persist/qti_fp(/.*)?      u:object_r:vendor_persist_qti_fp_file:s0
 /mnt/vendor/persist/FTM_AP(/.*)?      u:object_r:vendor_persist_mmi_file:s0
 /mnt/vendor/persist/vpp(/.*)?         u:object_r:vendor_persist_vpp_file:s0
+/mnt/vendor/persist/hexlp(/.*)?       u:object_r:vendor_persist_hexlp_file:s0
 /mnt/vendor/persist/hvdcp_opti(/.*)?  u:object_r:vendor_persist_hvdcp_file:s0
 /mnt/vendor/persist/spudc(/.*)?       u:object_r:vendor_persist_spudc_file:s0
 

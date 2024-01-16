@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,24 +24,5 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# For the camera app
-get_prop(appdomain, vendor_camera_prop)
-
-#Allow all apps to have read access to vendor_adsprpc_prop
-get_prop(appdomain, vendor_adsprpc_prop)
-
-#Allow all apps to have read access to vendor_display_prop
-get_prop(appdomain, vendor_display_prop)
-
-# Allow all apps to open and send ioctl to npu device
-allow appdomain vendor_npu_device:chr_file r_file_perms;
-
-# Allow all apps to access /dev/dma_heap/qcom,system
-allow { appdomain -isolated_app_all -coredomain } vendor_dmabuf_system_heap_device:chr_file r_file_perms;
-
-dontaudit appdomain vendor_hal_qspmhal_hwservice:hwservice_manager find;
+allow vendor_hal_perf_default {appdomain}:process sigkill;

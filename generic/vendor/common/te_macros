@@ -152,6 +152,7 @@ neverallow {
   - vendor_wigignpt
   - vendor_qms
   - vendor_ims_dcservice
+  - vendor_cacertservice_app
   userdebug_or_eng(` -vendor_wifimyftmsvc')
 } hwservicemanager:binder { call transfer };
 ')

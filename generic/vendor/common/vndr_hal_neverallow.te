@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -30,10 +30,6 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-#
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 neverallow {
   vendor_halserverdomain
@@ -61,6 +57,7 @@ neverallow {
   -vendor_hal_dpmQmiMgr
   -vendor_qms
   -vendor_hal_imsrtp
+  -vendor_cacertservice_app
   userdebug_or_eng(` -vendor_hal_diaghal')
   userdebug_or_eng(` -vendor_qtiloopback_native')
   userdebug_or_eng(` -vendor_wifimyftmsvc')
@@ -69,7 +66,8 @@ neverallow {
 neverallow {
   vendor_halserverdomain
   - vendor_qtidataservices_app
+  - vendor_cacertservice_app
   userdebug_or_eng(` -vendor_wifimyftmsvc')
 } { file_type fs_type }:file execute_no_trans;
 neverallow { domain -init } vendor_halserverdomain:process transition;
-neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app }:process dyntransition;
+neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app - vendor_cacertservice_app }:process dyntransition;

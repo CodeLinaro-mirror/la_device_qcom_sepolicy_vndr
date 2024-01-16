@@ -38,3 +38,5 @@ init_daemon_domain(vendor_qesdk_sanity_qsap)
 # Should provide all policies for QESDK
 qesdk_access(vendor_qesdk_sanity_qsap)
 
+#setprop rule
+set_prop(vendor_qesdk_sanity_qsap, vendor_qsap_sanity_prop)

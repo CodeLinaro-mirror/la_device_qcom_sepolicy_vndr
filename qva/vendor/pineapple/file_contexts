@@ -72,3 +72,4 @@
 
 #memory
 /(vendor|system/vendor)/bin/hw/pasrknob                                            u:object_r:vendor_pasrknob_exec:s0
+

@@ -27,7 +27,7 @@
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # A fallback in case tango_core is missing something critical that untrusted_app provides
@@ -38,6 +38,9 @@ user=_app seinfo=platform name=com.qualcomm.timeservice domain=vendor_timeservic
 
 #add new domain for qtidataservices
 user=_app seinfo=platform name=.qtidataservices domain=vendor_qtidataservices_app type=app_data_file levelFrom=all
+
+#add new domain for cacertservice
+user=oem_2918 seinfo=platform name=.cacertservice domain=vendor_cacertservice_app type=app_data_file levelFrom=all
 
 #Add new domain for imshelper service
 user=radio seinfo=platform name=.imshelperservice domain=vendor_imshelper_app type=radio_data_file
