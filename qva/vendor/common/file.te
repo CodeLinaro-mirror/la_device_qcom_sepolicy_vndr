@@ -155,6 +155,8 @@ type vendor_dpm_vndr_data_file, file_type, data_file_type ;
 
 #qesdk
 type vendor_qesd_socket, file_type;
+type vendor_qesdsec_socket, file_type;
+type vendor_qesdoem_socket, file_type;
 
 type vendor_sysfs_usb_node, fs_type, sysfs_type;
 
