@@ -1,0 +1,34 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# vendor_sysfs_graphics nodes
+genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.2/name  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.0/name  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.1/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /class/extcon/extcon2/cable.1/name  u:object_r:vendor_sysfs_graphics:s0
+
+# sysfs_wakeup nodes
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,power-on@800/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-02/c440000.qcom,spmi:qcom,pm660l@2:qcom,power-on@800/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/62400000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8300000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:gpio_keys/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup u:object_r:sysfs_wakeup:s0
+
+#vendor_sysfs_graphics nodes
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/blue/brightness  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/green/brightness  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/red/brightness  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/red/trigger  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/blue/trigger  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/green/trigger  u:object_r:vendor_sysfs_graphics:s0
+
+#vendor_sysfs_ssr nodes
+genfscon sysfs /devices/platform/soc/62400000.remoteproc-adsp/remoteproc/remoteproc0/name  u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8300000.remoteproc-cdsp/remoteproc/remoteproc1/name  u:object_r:vendor_sysfs_ssr:s0
+
+#qdss sysfs-node
+genfscon sysfs /devices/platform/soc/14066f0.hwevent/coresight-hwevent u:object_r:vendor_sysfs_qdss_dev:s0
