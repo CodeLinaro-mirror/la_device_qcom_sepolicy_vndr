@@ -28,6 +28,7 @@ hal_client_domain(vendor_aidl_automotive_evs_ais, hal_graphics_composer);
 allow vendor_aidl_automotive_evs_ais hal_graphics_allocator_default_tmpfs:file rw_file_perms;
 allow vendor_aidl_automotive_evs_ais surfaceflinger:fd use;
 allow vendor_aidl_automotive_evs_ais hal_graphics_mapper_hwservice:hwservice_manager find;
+binder_call(vendor_aidl_automotive_evs_ais, hal_graphics_composer_default)
 
 # removed typeattribute hal_evs_driver binder_in_vendor_violators
 allow vendor_aidl_automotive_evs_ais vendor_ais_server:unix_stream_socket connectto;
@@ -39,6 +40,12 @@ allow vendor_aidl_automotive_evs_ais fwk_automotive_display_service:service_mana
 
 allow vendor_aidl_automotive_evs_ais vendor_sysfs_kpi:file write;
 allow vendor_aidl_automotive_evs_ais hidl_token_hwservice:hwservice_manager find;
+allow vendor_aidl_automotive_evs_ais vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_aidl_automotive_evs_ais vendor_dmabuf_system_uncached_heap_device:chr_file r_file_perms;
+allow vendor_aidl_automotive_evs_ais self:capability sys_nice;
+
+get_prop(vendor_aidl_automotive_evs_ais, graphics_config_writable_prop)
+get_prop(vendor_aidl_automotive_evs_ais, graphics_config_prop)
 
 userdebug_or_eng(`allow vendor_aidl_automotive_evs_ais vendor_sysfs_kpi:file w_file_perms;')
 allow vendor_aidl_automotive_evs_ais vendor_hab_device:chr_file rw_file_perms;

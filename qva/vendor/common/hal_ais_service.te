@@ -13,6 +13,9 @@ allow vendor_hal_ais_qti vendor_camera_socket:sock_file write;
 allow vendor_hal_ais_qti hal_graphics_allocator_default:fd use;
 allow vendor_hal_ais_qti vendor_ais_server:unix_stream_socket connectto;
 allow vendor_hal_ais_qti vendor_sysfs_kpi:file w_file_perms;
+allow vendor_hal_ais_qti self:capability sys_nice;
+allow vendor_hal_ais_qti vendor_dmabuf_system_heap_device:chr_file { read open };
+allow vendor_hal_ais_qti vendor_dmabuf_system_uncached_heap_device:chr_file { read open ioctl };
 
 add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
 add_service(vendor_hal_ais_qti, vendor_hal_ais_service)
