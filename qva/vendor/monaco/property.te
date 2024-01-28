@@ -27,7 +27,7 @@
 #
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 vendor_internal_prop(vendor_slate_daemon_prop);
@@ -37,7 +37,7 @@ vendor_internal_prop(vendor_uioffload_logging_prop);
 vendor_internal_prop(vendor_lefty_prop);
 vendor_internal_prop(vendor_qc_aon_prop);
 vendor_internal_prop(vendor_qc_aon_dfu_update_prop);
-vendor_internal_prop(vendor_watch_orientation_prop);
+system_restricted_prop(vendor_watch_orientation_prop);
 vendor_internal_prop(vendor_whs_prop);
 vendor_internal_prop(vendor_ssr_enable_ramdump_prop);
 
