@@ -16,6 +16,7 @@
 /dev/block/by-name/super                                            u:object_r:super_block_device:s0
 /dev/block/vbmeta_[ab]                                              u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/vbmeta_system_[ab]                                       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/dtbo_[ab]                                                u:object_r:vendor_custom_ab_block_device:s0
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
@@ -28,3 +29,6 @@
 
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/vdevs/1c0e0000.virtio_blk/virtio[0-99]+/block/userdata/queue/zoned  u:object_r:vendor_sysfs_zoned:s0
+/sys/devices/platform/vdevs/1c0f0000.virtio_blk/virtio[0-99]+/block/metadata/queue/zoned  u:object_r:vendor_sysfs_zoned:s0

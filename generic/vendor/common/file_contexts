@@ -86,6 +86,7 @@
 /dev/byte-cntr1                                 u:object_r:vendor_qdss_device:s0
 /dev/msm_adsp_sleepmon                          u:object_r:vendor_adsp_sleepmon_device:s0
 /dev/ubwcp                                      u:object_r:vendor_ubwcp_device:s0
+/dev/virt_sndcard_ctl                           u:object_r:vendor_agm_device:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:vendor_chre_socket:s0
@@ -639,6 +640,7 @@
 
 /(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 /(vendor|system/vendor)/bin/system_dlkm_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
+/(vendor|system/vendor)/bin/load_dlkm        u:object_r:vendor_modinstall-sh_exec:s0
 
 /vendor/bin/embmsslServer       u:object_r:vendor_hal_embmssl_qti_exec:s0
 
@@ -667,9 +669,6 @@
 /sys/bus/platform/drivers/xhci-hcd                      u:object_r:vendor_sysfs_usb_node:s0
 /sys/bus/platform/devices/a600000.ssusb/mode            u:object_r:vendor_sysfs_usb_device:s0
 /sys/bus/platform/devices/a800000.hsusb/mode            u:object_r:vendor_sysfs_usb_device:s0
-
-#Early Dynamic Splash
-/vendor_early_services/vendor/bin/esplash               u:object_r:vendor_esplash_exec:s0
 
 #MSM-DRM
 /sys/devices/platform/soc/ae00000\.qcom,mdss_mdp/init_complete	     u:object_r:vendor_sysfs_display:s0
