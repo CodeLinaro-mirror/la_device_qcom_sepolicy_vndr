@@ -39,6 +39,12 @@ allow vendor_aonutility_service activity_service:service_manager find;
 allow vendor_aonutility_service surfaceflinger_service:service_manager find;
 allow vendor_aonutility_service thermal_service:service_manager find;
 
+# Allow AONUtility Service to access certain resources.
+allow vendor_aonutility_service content_capture_service:service_manager find;
+allow vendor_aonutility_service game_service:service_manager find;
+allow vendor_aonutility_service netstats_service:service_manager find;
+allow vendor_aonutility_service virtual_device_service:service_manager find;
+
 # Allow AONUtility Service to be the client AONUtility HAL
 hal_client_domain(vendor_aonutility_service, vendor_hal_aonutility);
 
