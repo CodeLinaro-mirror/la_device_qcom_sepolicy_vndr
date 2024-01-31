@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023,2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 userdebug_or_eng(`
@@ -110,3 +110,9 @@ set_prop(hal_audio, vendor_audio_ssr_prop)
 
 #to read bluetooth prop
 get_prop(hal_audio, vendor_bluetooth_prop)
+
+#Allow access to msm_audio_cal
+allow hal_audio_default vendor_audio_device:chr_file rw_file_perms;
+
+#Allow access to msm_rtac
+allow hal_audio_default vendor_msm_rtac_device:chr_file rw_file_perms;
