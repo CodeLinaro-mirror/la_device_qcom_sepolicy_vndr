@@ -33,6 +33,7 @@ allow vendor_qcxserver vendor_ais_v4l2_proxy:fd use;
 allow vendor_qcxserver aac_drc_prop:file { getattr map open };
 allow vendor_qcxserver dmabuf_system_heap_device:chr_file r_file_perms;
 allow vendor_qcxserver self:qipcrtr_socket create;
+allow vendor_qcxserver self:process setcurrent;
 allow vendor_qcxserver ab_update_gki_prop:file { getattr map open };
 allow vendor_qcxserver adbd_config_prop:file { getattr map open };
 allow vendor_qcxserver vendor_sysfs_devicetree_cpu:file rw_file_perms;
