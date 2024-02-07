@@ -54,6 +54,11 @@ attribute vendor_hal_displayoffload;
 attribute vendor_hal_displayoffload_client;
 attribute vendor_hal_displayoffload_server;
 
+# UI offload HAL
+attribute vendor_hal_uioffload;
+attribute vendor_hal_uioffload_client;
+attribute vendor_hal_uioffload_server;
+
 # AONUtility HAL
 attribute vendor_hal_aonutility;
 attribute vendor_hal_aonutility_client;
