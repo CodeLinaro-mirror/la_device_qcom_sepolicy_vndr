@@ -61,3 +61,8 @@ get_prop(vendor_hal_sidekickmetrics_default, vendor_sensors_prop)
 #Allow sidekickmetrics hal to access sensorstore
 allow vendor_hal_sidekickmetrics_default block_device:dir search;
 allow vendor_hal_sidekickmetrics_default vendor_sensorstore_block_device:blk_file rw_file_perms;
+
+add_hwservice(vendor_hal_sidekickmetrics_default, vendor_hal_sidekickmetrics_hwservice)
+allow vendor_hal_sidekickmetrics_default vendor_hal_sidekickmetrics_hwservice:hwservice_manager find;
+binder_call(vendor_hal_sidekickmetrics_default, platform_app)
+hal_client_domain(vendor_hal_sidekickmetrics_default, vendor_hal_powerstateservice)
