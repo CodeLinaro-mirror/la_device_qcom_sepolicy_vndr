@@ -35,3 +35,4 @@ allow kernel vendor_file:file read;
 allow kernel sepolicy_file:file r_file_perms;
 allow kernel vendor_esplash_exec:file relabelto;
 allow kernel vendor_qcxserver_exec:file relabelto;
+allow kernel vendor_qcarcam_edrm_rvc_exec:file relabelto;

@@ -54,6 +54,7 @@ get_prop(vendor_qcxserver,camera_config_prop);
 get_prop(vendor_qcxserver,camerax_extensions_prop);
 get_prop(vendor_qcxserver,vendor_camera_prop);
 get_prop(vendor_qcxserver,vendor_persist_camera_prop);
+get_prop(vendor_qcxserver, vendor_sysboot_completed_prop);
 
 # Allow qcxserver to communicate with car power policy service
 allow vendor_qcxserver carpowerpolicyd_service:service_manager find;

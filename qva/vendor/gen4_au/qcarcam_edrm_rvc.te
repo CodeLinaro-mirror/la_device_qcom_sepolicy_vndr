@@ -2,3 +2,10 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 allow vendor_qcarcam_edrm_rvc vendor_qcxserver:unix_stream_socket connectto;
+allow vendor_qcarcam_edrm_rvc kmsg_device:chr_file { getattr ioctl open write };
+allow vendor_qcarcam_edrm_rvc self:capability sys_nice;
+allow vendor_qcarcam_edrm_rvc vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
+
+allow vendor_qcarcam_edrm_rvc self:capability sys_admin;
+allow vendor_qcarcam_edrm_rvc vendor_camera_socket:dir { add_name remove_name write };
+allow vendor_qcarcam_edrm_rvc vendor_camera_socket:sock_file { create unlink setattr };

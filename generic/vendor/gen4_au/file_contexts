@@ -141,6 +141,3 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/storsec                            u:object_r:boot_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/persist                            u:object_r:vendor_persist_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/super                              u:object_r:super_block_device:s0
-
-# MTU label
-/sys/class/net/*/mtu                                                          u:object_r:sysfs_net:s0

@@ -3,3 +3,6 @@
 
 # qcxserver
 /vendor_early_services/vendor/bin/qcxserver                      u:object_r:vendor_qcxserver_exec:s0
+
+#qcarcam RVC
+/vendor_early_services/vendor/bin/qcarcam_edrm_rvc                  u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
