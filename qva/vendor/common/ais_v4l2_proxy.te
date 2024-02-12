@@ -20,3 +20,4 @@ allow vendor_ais_v4l2_proxy vendor_camera_socket:dir search;
 allow vendor_ais_v4l2_proxy vendor_camera_socket:sock_file create_file_perms;
 allow vendor_ais_v4l2_proxy vendor_ais_server:unix_stream_socket connectto;
 allow vendor_ais_v4l2_proxy vendor_sysfs_kpi:file w_file_perms;
+allow vendor_ais_v4l2_proxy kmsg_device:chr_file write;
