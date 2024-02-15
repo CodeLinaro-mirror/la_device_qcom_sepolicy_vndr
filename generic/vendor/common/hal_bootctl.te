@@ -74,3 +74,12 @@ allow hal_bootctl vendor_xbl_block_device:blk_file rw_file_perms;
 
 # Read dir permission for dt_firmware
 allow hal_bootctl sysfs_dt_firmware_android:dir r_dir_perms;
+
+#kalpeni_bringup
+permissive hal_bootctl_default;
+permissive tee;
+permissive fsck;
+permissive vendor_rmt_storage;
+permissive system_server;
+
+allow hal_graphics_composer_default sysfs:file write;
