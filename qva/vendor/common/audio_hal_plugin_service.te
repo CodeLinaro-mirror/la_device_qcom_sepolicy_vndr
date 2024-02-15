@@ -1,4 +1,4 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_audio_hal_plugin_service, domain;
@@ -10,3 +10,4 @@ allow vendor_audio_hal_plugin_service audio_device:dir search;
 allow vendor_audio_hal_plugin_service audio_device:chr_file rw_file_perms;
 vndbinder_use(vendor_audio_hal_plugin_service)
 add_service(vendor_audio_hal_plugin_service, vendor_audio_hal_plugin_service_service)
+get_prop(vendor_audio_hal_plugin_service, vendor_lpm_prop)
