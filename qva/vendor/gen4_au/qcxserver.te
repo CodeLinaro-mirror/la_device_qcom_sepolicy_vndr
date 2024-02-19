@@ -59,6 +59,12 @@ get_prop(vendor_qcxserver, vendor_sysboot_completed_prop);
 
 # Allow qcxserver to communicate with car power policy service
 allow vendor_qcxserver carpowerpolicyd_service:service_manager find;
+
+# Allow qcxserver dump to get generated if crashed
+userdebug_or_eng(`
+allow crash_dump vendor_early_services:dir search;
+')
+
 binder_call(vendor_qcxserver, servicemanager)
 binder_call(vendor_qcxserver, carpowerpolicyd)
 binder_call(carpowerpolicyd, vendor_qcxserver)
