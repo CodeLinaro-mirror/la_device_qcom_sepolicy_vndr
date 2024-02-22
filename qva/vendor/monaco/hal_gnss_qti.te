@@ -34,5 +34,8 @@
 # location hidl
 allow vendor_hal_gnss_qti vendor_glink_slate_location_ctrl_device:chr_file rw_file_perms;
 
+# read property ro.vendor.qc_aon_presence
+get_prop(vendor_hal_gnss_qti, vendor_qc_aon_prop)
+
 #Allow gnss service intract with powerStateService
 hal_client_domain(vendor_hal_gnss_qti, vendor_hal_powerstateservice);
