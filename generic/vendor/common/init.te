@@ -61,6 +61,8 @@ allow init sysfs_leds:lnk_file r_file_perms;
 
 allow init socket_device:sock_file create_file_perms;
 
+allow init { vendor_sys_sp_comp vendor_sys_nonsp_comp }:file r_file_perms;
+
 #Needed for restorecon. Init already has these permissions
 #for generic block devices, but is unable to access those
 #which have a custom lable added by us.

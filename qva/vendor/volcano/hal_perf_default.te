@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,11 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow init vendor_sysfs_graphics:file setattr;
-allow init vendor_sysfs_qvr_external_sensor:file setattr;
-
-# allow init to mount spunvm partition
-allow init vendor_spunvm_file:dir mounton;
-allow init vendor_spunvm_file:filesystem { relabelto relabelfrom mount };
-
-allow vendor_init block_device:lnk_file setattr;
+allow vendor_hal_perf_default {appdomain}:process sigkill;

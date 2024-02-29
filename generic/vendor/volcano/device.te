@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,12 +24,17 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-allow init vendor_sysfs_graphics:file setattr;
-allow init vendor_sysfs_qvr_external_sensor:file setattr;
 
-# allow init to mount spunvm partition
-allow init vendor_spunvm_file:dir mounton;
-allow init vendor_spunvm_file:filesystem { relabelto relabelfrom mount };
-
-allow vendor_init block_device:lnk_file setattr;
+type vendor_logdump_partition, dev_type;
+type vendor_mba_debug_dev, dev_type;
+type vendor_dip_device, dev_type;
+type vendor_rawdump_block_device, dev_type;
+type vendor_virtio_chr_device, dev_type;
+type vendor_gunyah_chr_device, dev_type;
+type vendor_shm_chr_device, dev_type;
