@@ -37,3 +37,6 @@ hal_client_domain(platform_app, vendor_hal_aonutility)
 
 # allow platform_app to interact with uioffload  hal
 hal_client_domain(platform_app, vendor_hal_uioffload)
+
+allow platform_app vendor_hal_sidekickmetrics_hwservice:hwservice_manager find;
+binder_call(platform_app, vendor_hal_sidekickmetrics_default)
