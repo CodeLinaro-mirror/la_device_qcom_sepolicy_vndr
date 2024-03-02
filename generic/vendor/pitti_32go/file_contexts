@@ -195,6 +195,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/limits                             u:object_r:vendor_limits_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/limits-cdsp                        u:object_r:vendor_limits_block_device:s0
 
+
 # hypervisor node
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 /dev/gh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0

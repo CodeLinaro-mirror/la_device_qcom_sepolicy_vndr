@@ -76,3 +76,6 @@ allow vendor_hal_weaver_spu_qti tee_device:chr_file rw_file_perms;
 
 # Allow read vendor TEE listener ready property
 get_prop(vendor_hal_weaver_spu_qti, vendor_tee_listener_prop)
+
+# Access to wakelock sysfs
+wakelock_use(vendor_hal_weaver_spu_qti)

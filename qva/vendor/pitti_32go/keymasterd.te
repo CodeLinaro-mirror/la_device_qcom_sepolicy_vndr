@@ -25,32 +25,20 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# qva/vendor/common/location_engine_service.te - sepolicy rules for qti value added location module engine-service
+get_prop(vendor_keymasterd, vendor_tee_listener_prop)
+allow vendor_keymasterd tee_device:chr_file rw_file_perms;
 
-type vendor_location_engine_service, domain;
-type vendor_location_engine_service_exec, exec_type, vendor_file_type, file_type;
+# Allow access to /dev/spcom
+allow vendor_keymasterd vendor_spcom_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_sp_keymaster_ssr_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_spss_utils_device:chr_file rw_file_perms;
 
-# allows loc_launcher to launch engine-service
-domain_auto_trans(vendor_location, vendor_location_engine_service_exec, vendor_location_engine_service)
-allow vendor_location_engine_service vendor_location:fd use;
+# Allow access to skp
+allow vendor_keymasterd vendor_skp_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_sp_keymaster_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_sp_ssr_device:chr_file rw_file_perms;
+get_prop(vendor_keymasterd, vendor_spcomlib_prop)
 
-# allows file access in /data/vendor/location
-allow vendor_location_engine_service vendor_location_data_file:dir create_dir_perms;
-allow vendor_location_engine_service vendor_location_data_file:file create_file_perms;
+# Allow access to DMA Buf
+allow vendor_keymasterd vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
 
-# allows socket access in /dev/socket/location
-allow vendor_location_engine_service vendor_location_socket:lnk_file r_file_perms;
-allow vendor_location_engine_service vendor_location_socket:sock_file create_file_perms;
-allow vendor_location_engine_service vendor_location_socket:dir rw_dir_perms;
-allow vendor_location_engine_service vendor_location:unix_dgram_socket { read write sendto };
-
-# allow socket communication with gnss hal
-allow vendor_location_engine_service vendor_hal_gnss_qti:unix_dgram_socket sendto;
-
-# allows shell execute engine-service in userdebug mode.
-userdebug_or_eng(`
-  allow shell vendor_location_engine_service_exec:file rx_file_perms;
-')
-
-# IPC Router
-allow vendor_location_engine_service self:qipcrtr_socket create_socket_perms_no_ioctl;

@@ -86,14 +86,14 @@ genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys4/restart_level u:
 genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys5/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/aab0000.qcom,venus/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys3/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys5/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys5/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys6/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/6080000.qcom,mss/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys0/name  u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -152,11 +152,10 @@ genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/name u:
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/restart_level u:object_r:vendor_sysfs_ssr:s0
 
 #qdss sysfs-node
-genfscon sysfs /devices/platform/soc/10b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/1004f000.tmc/coresight-tmc-etr1 u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10b11000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8047000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8a03000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:modem_diag/coresight-modem-diag u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /bus/coresight/reset_source_sink u:object_r:vendor_sysfs_qdss_dev:s0
 
@@ -166,19 +165,9 @@ genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qco
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/wireless u:object_r:vendor_sysfs_usb_supply:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1 u:object_r:vendor_sysfs_usb_supply:s0
 
-# LED device nodes
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,leds@ef00/leds/red u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,leds@ef00/leds/green u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,leds@ef00/leds/blue u:object_r:vendor_sysfs_graphics:s0
-
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pmxr2230@1:qcom,leds@ef00/leds/blue u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pmxr2230@1:qcom,leds@ef00/leds/green u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pmxr2230@1:qcom,leds@ef00/leds/red u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-07/c42d000.qcom,spmi:qcom,pm7550ba@7:qcom,vibrator@df00/leds/vibrator u:object_r:sysfs_leds:s0
-
 # PMIC devices wakeup nodes
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:rtc@6100/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:rtc@6100/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm6125@0:qcom,pm6125_rtc/rtc u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm6125@0:qcom,pm6125_rtc/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/wakeup u:object_r:sysfs_wakeup:s0
@@ -188,6 +177,12 @@ genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qco
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,power-on@800/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm6125@0:qcom,power-on@800/1c40000.qcom,spmi:qcom,pm6125@0:qcom,power-on@800:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm6125@0:qcom,power-on@800/1c40000.qcom,spmi:qcom,pm6125@0:qcom,power-on@800:resin/wakeup u:object_r:sysfs_wakeup:s0
+
+#PMIC UI peripherals
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-03/1c40000.qcom,spmi:qcom,pm7250b@3:qcom,vibrator@5300/leds/vibrator u:object_r:sysfs_leds:s0
 
 # USB device wakeup nodes
 genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
@@ -217,22 +212,22 @@ genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-llcc-ddr-lat/devfreq u:object
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu4-cpu-ddr-qoslat/devfreq u:object_r:vendor_sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu7-cpu-ddr-qoslatfloor/devfreq u:object_r:vendor_sysfs_devfreq:s0
 
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps         u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/measured_fps         u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/measured_fps         u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/fps_periodicity_ms   u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/fps_periodicity_ms   u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/fps_periodicity_ms   u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/power/control                             u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps         u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/measured_fps         u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/measured_fps         u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/fps_periodicity_ms   u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-1/fps_periodicity_ms   u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/fps_periodicity_ms   u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/power/control                             u:object_r:vendor_sysfs_graphics:s0
 
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:6/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:7/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:0/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:1/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:2/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:3/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:4/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:5/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:6/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:7/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 
 #MDM Helper
 genfscon sysfs /devices/platform/soc/soc:qcom,remoteproc-esoc0/esoc0 u:object_r:vendor_sysfs_esoc:s0
@@ -290,6 +285,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-modem/wakeup u:object_r:sysf
 genfscon sysfs /devices/platform/dummy_hcd.0/usb1/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/898000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/888000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_1_geni_se/4a88000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/884000.i2c/i2c-2/2-0028/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-2/2-0028/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0
