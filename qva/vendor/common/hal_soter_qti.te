@@ -53,3 +53,6 @@ allow vendor_hal_soter_qti vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_
 
 #Allow soter HAL to interract with DMABUF
 allow vendor_hal_soter_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+
+hal_attribute_service(vendor_hal_soter, vendor_hal_soteraidl_service)
+binder_call(vendor_hal_soter_qti, servicemanager);

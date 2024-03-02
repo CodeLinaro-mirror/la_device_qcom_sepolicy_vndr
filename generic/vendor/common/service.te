@@ -1,4 +1,4 @@
-# Copyright (c) 2021-2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2021-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # #
 # # Redistribution and use in source and binary forms, with or without
 # # modification, are permitted (subject to the limitations in the
@@ -29,5 +29,27 @@
 # # IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 # # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_hal_telephony_service2, vendor_service, protected_service, service_manager_type;
+type vendor_hal_factory_aidlservice, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_cacert_aidlservice,hal_service_type,protected_service,service_manager_type;
+type vendor_hal_vnddisplayconfig_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_alarm_qti_aidl_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_telephony_service2, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_display_color_aidl_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_display_demura_aidl_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_offlinecamera_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_camera_aon_service, hal_service_type, protected_service, service_manager_type;
+# IAtFwd Stable AIDL
+type vendor_hal_atfwd_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_imsdc_service,         hal_service_type, protected_service, service_manager_type;
+type vendor_hal_imsrtp_service,       hal_service_type, protected_service, service_manager_type;
+type vendor_hal_embmsslaidl_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_dataconnection_aidl_service, hal_service_type, protected_service, service_manager_type;
+type vendor_aidl_imsfactory_service,   hal_service_type, protected_service, service_manager_type;
+type vendor_hal_iwlan_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_trustedui_aidl_service, hal_service_type, protected_service, service_manager_type;

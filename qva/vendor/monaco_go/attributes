@@ -1,0 +1,20 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+attribute hal_wristorientation;
+expandattribute hal_wristorientation true;
+attribute hal_wristorientation_client;
+expandattribute hal_wristorientation_client true;
+attribute hal_wristorientation_server;
+expandattribute hal_wristorientation_server false;
+
+# HealthServices HAL.
+# Ideally we'd use hal_attribute here, but it currently introduces a neverallow
+# policy violation.
+attribute hal_healthservices;
+expandattribute hal_healthservices true;
+attribute hal_healthservices_client;
+expandattribute hal_healthservices_client true;
+attribute hal_healthservices_server;
+expandattribute hal_healthservices_server false;
+attribute vendor_persist_type;

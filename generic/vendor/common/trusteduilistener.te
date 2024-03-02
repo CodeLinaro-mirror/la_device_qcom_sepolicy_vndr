@@ -54,3 +54,8 @@ allow vendor_trusteduilistener sysfs:dir { open read };
 allow vendor_trusteduilistener vendor_sysfs_trusted_touch_enable:file rw_file_perms;
 allow vendor_trusteduilistener vendor_sysfs_trusted_touch_event:file rw_file_perms;
 allow vendor_trusteduilistener vendor_sysfs_trusted_touch_type:file rw_file_perms;
+
+# Allow read access to mink socket log files
+userdebug_or_eng(`
+  get_prop(vendor_trusteduilistener, vendor_mink_trace_prop)
+')

@@ -30,4 +30,4 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #allow access to debug fs
-userdebug_or_eng(`allow vendor_agmservice_qti debugfs:dir r_dir_perms;')
+#userdebug_or_eng(`allow vendor_agmservice_qti debugfs:dir r_dir_perms;')

@@ -1,15 +1,16 @@
 # Board specific SELinux policy variable definitions
 ifeq ($(call is-vendor-board-platform,QCOM),true)
-SEPOLICY_PATH:= device/qcom/sepolicy_vndr
-QSSI_SEPOLICY_PATH:= device/qcom/sepolicy
-SYS_ATTR_PROJECT_PATH := $(TOP)/device/qcom/sepolicy/generic/public/attribute
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
-    $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
+BOARD_VSEPOLICY_DIR ?= device/qcom/sepolicy_vndr
+SEPOLICY_PATH:= $(BOARD_VSEPOLICY_DIR)
+QSSI_SEPOLICY_PATH:= $(BOARD_SEPOLICY_DIR)
+SYS_ATTR_PROJECT_PATH := $(TOP)/$(QSSI_SEPOLICY_PATH)/generic/public/attribute
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS:= \
+    $(SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS) \
     $(QSSI_SEPOLICY_PATH)/generic/public \
     $(QSSI_SEPOLICY_PATH)/generic/public/attribute
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
-    $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS:= \
+    $(SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS) \
     $(QSSI_SEPOLICY_PATH)/generic/private
 
 #once all the services are moved to Product /ODM above lines will be removed.
@@ -38,10 +39,14 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/$(TARGET_SEPOLICY_DIR)
     endif
 
+    ifneq ($(TARGET_SUPPORTS_WEAR_OS),true)
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/monaco_go
+    endif
+
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
     endif
 endif
 

@@ -32,6 +32,11 @@ type vendor_qfp-daemon_exec, exec_type, vendor_file_type, file_type;
 hal_server_domain(vendor_qfp-daemon, hal_fingerprint)
 init_daemon_domain(vendor_qfp-daemon)
 
+# Support for vendor AIDL
+hal_attribute_service(hal_fingerprint, vendor_hal_qfpextendedfingerprint_service)
+allow vendor_qfp-daemon init:unix_stream_socket connectto;
+allow vendor_qfp-daemon vndbinder_device:chr_file { read write ioctl open map };
+
 allow vendor_qfp-daemon vendor_qfp-daemon_data_file:dir { rw_dir_perms setattr };
 allow vendor_qfp-daemon vendor_qfp-daemon_data_file:file create_file_perms;
 

@@ -36,6 +36,9 @@ allow mediacodec vendor_media_data_file:file create_file_perms;
 allow mediacodec dmabuf_system_heap_device:chr_file r_file_perms;
 allow mediacodec vendor_dmabuf_system_heap_device:chr_file r_file_perms;
 
+dontaudit mediacodec vendor_hal_qspmhal_hwservice:hwservice_manager find;
+dontaudit mediacodec vendor_hal_qspmhal_service:service_manager find;
+
 #Allow mediacodec to access configstore
 hal_client_domain(mediacodec, vendor_hal_capabilityconfigstore_qti)
 #allow mediacodec to read adsprpc_prop

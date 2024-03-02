@@ -67,7 +67,6 @@ allow vendor_qti_init_shell self:capability {
     sys_admin
 };
 
-set_prop(vendor_qti_init_shell, vendor_ctl_netmgrd_prop)
 set_prop(vendor_qti_init_shell, vendor_ctl_port-bridge_prop)
 set_prop(vendor_qti_init_shell, vendor_ctl_qcrild_prop)
 set_prop(vendor_qti_init_shell, vendor_ipacm-diag_prop)
@@ -199,4 +198,4 @@ set_prop(vendor_qti_init_shell,vendor_dcvs_prop)
 
 allow vendor_qti_init_shell proc_sched:file w_file_perms;
 
-dontaudit vendor_qti_init_shell self:capability dac_read_search; 
+dontaudit vendor_qti_init_shell self:capability dac_read_search;

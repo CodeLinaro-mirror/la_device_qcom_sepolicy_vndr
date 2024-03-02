@@ -39,7 +39,12 @@ allow vendor_sensors_qti vendor_persist_sensors_file:file create_file_perms;
 
 # Add wrist orientation permissions
 hal_client_domain(vendor_sensors_qti, hal_wristorientation)
+
+binder_call(vendor_sensors_qti, hwservicemanager)
+allow vendor_sensors_qti vendor_hal_aonutility_hwservice:hwservice_manager find;
+binder_call(vendor_sensors_qti, vendor_hal_aonutility_default)
+
+get_prop(vendor_sensors_qti, hwservicemanager_prop)
 set_prop(vendor_sensors_qti, vendor_sensors_prop)
 get_prop(vendor_sensors_qti, wrist_orientation_prop)
-
 get_prop(vendor_sensors_qti, vendor_qc_aon_prop)

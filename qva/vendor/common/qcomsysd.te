@@ -37,6 +37,9 @@ allow vendor_qcomsysd vendor_smem_log_device:chr_file rw_file_perms;
 #Needed to read/write cookies to the misc partition
 allow vendor_qcomsysd block_device:dir r_dir_perms;
 
+#add rules to get tombstone files
+crash_dump_fallback(vendor_qcomsysd)
+
 #Needed to get image info from socinfo
 r_dir_file(vendor_qcomsysd, vendor_sysfs_soc)
 allow vendor_qcomsysd vendor_sysfs_soc:file w_file_perms;

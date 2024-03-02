@@ -56,3 +56,6 @@ allow vendor_hal_powerstateutility_qti vendor_sysfs_cpu_sleep_disabled:file rw_f
 allow vendor_hal_powerstateutility_qti block_device:dir { search };
 allow vendor_hal_powerstateutility_qti vendor_hibernate_swap:blk_file { getattr ioctl open read write };
 allow vendor_hal_powerstateutility_qti self:capability sys_admin;
+
+allow vendor_hal_powerstateutility_qti vendor_sysfs_mmc_host:dir r_dir_perms;
+allow vendor_hal_powerstateutility_qti vendor_sysfs_mmc_host:file rw_file_perms;

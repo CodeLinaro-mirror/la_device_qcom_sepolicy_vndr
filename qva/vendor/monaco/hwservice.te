@@ -26,18 +26,15 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_sidekickmetrics_hwservice, hwservice_manager_type;
-#type hal_healthservices_hwservice, hwservice_manager_type;
 type vendor_hal_powerstateservice_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_powerstateutility_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_displayoffload_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_uioffload_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_aonutility_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_watchorientation_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_bluetooth_offload_hwservice, hwservice_manager_type, protected_hwservice;
-
-type hal_lefty_hwservice, hwservice_manager_type;
-type hal_wristorientation_hwservice, hwservice_manager_type;
-type hal_healthservices_hwservice, hwservice_manager_type;
+type vendor_hal_aonfwloader_hwservice, hwservice_manager_type, protected_hwservice;

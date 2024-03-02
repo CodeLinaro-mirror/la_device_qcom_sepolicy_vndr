@@ -25,6 +25,11 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#Changes from Qualcomm Innovation Center are provided under the following license:
+
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
 #Define Domain
 type vendor_hal_debugutils_default, domain;
 type vendor_hal_debugutils_default_exec, exec_type, vendor_file_type, file_type;
@@ -34,4 +39,8 @@ init_daemon_domain(vendor_hal_debugutils_default)
 permissive vendor_hal_debugutils_default;
 binder_call(vendor_hal_debugutils_server, vendor_hal_debugutils_client);
 binder_call(vendor_hal_debugutils_client, vendor_hal_debugutils_server);
-hal_attribute_hwservice(vendor_hal_debugutils,hal_debugutils_hwservice);
+binder_call(vendor_hal_debugutils_server, servicemanager);
+hal_attribute_service(vendor_hal_debugutils,hal_debugutils_aidlservice);
+
+allow domain vendor_hal_debugutils_default:fd use;
+allow domain vendor_hal_debugutils_default:fifo_file write;

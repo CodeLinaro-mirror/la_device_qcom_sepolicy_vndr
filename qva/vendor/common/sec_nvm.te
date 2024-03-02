@@ -31,12 +31,19 @@ type vendor_sec_nvm, domain;
 type vendor_sec_nvm_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_sec_nvm)
+binder_call(vendor_sec_nvm, servicemanager)
+hal_client_domain(vendor_sec_nvm, vendor_hal_qms_qti)
 allow vendor_sec_nvm ion_device:chr_file rw_file_perms;
 allow vendor_sec_nvm vendor_skp_device:chr_file { getattr rw_file_perms };
 
 allow vendor_sec_nvm mnt_vendor_file:dir search;
 allow vendor_sec_nvm vendor_persist_secnvm_file:dir rw_dir_perms;
 allow vendor_sec_nvm vendor_persist_secnvm_file:file create_file_perms;
+
+#Allow to access SPU-DC at /mnt/vendor/persist/spudc
+allow vendor_sec_nvm vendor_persist_spudc_file:dir rw_dir_perms;
+allow vendor_sec_nvm vendor_persist_spudc_file:file create_file_perms;
+get_prop(vendor_sec_nvm, vendor_disable_spu_prop)
 
 # UFS
 allow vendor_sec_nvm vendor_sysfs_scsi_host:file rw_file_perms;
@@ -57,3 +64,5 @@ allow vendor_sec_nvm vendor_sp_ssr_device:chr_file rw_file_perms;
 set_prop(vendor_sec_nvm, vendor_spcomlib_prop)
 allow vendor_sec_nvm vendor_sec_nvm_device:chr_file rw_file_perms;
 allow vendor_sec_nvm vendor_spss_utils_device:chr_file rw_file_perms;
+
+get_prop(vendor_sec_nvm, boot_status_prop)

@@ -34,6 +34,8 @@ init_daemon_domain(vendor_psiservice)
 
 # Allow PSI Service to be a client of PASR HAL
 hal_client_domain(vendor_psiservice, vendor_hal_mem_pasrmanager)
+# Allow interactions with the servicemanager
+binder_call(vendor_psiservice, servicemanager)
 
 # Read /proc/zoneinfo
 allow vendor_psiservice proc_zoneinfo:file r_file_perms;

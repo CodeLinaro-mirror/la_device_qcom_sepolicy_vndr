@@ -37,7 +37,6 @@ binder_call(system_server, vendor_location_engine_service);
 binder_call(system_server, vendor_location_edgnss_daemon);
 binder_call(system_server, vendor_location_slim_daemon);
 binder_call(system_server, vendor_location_xtwifi_client);
-binder_call(system_server, vendor_location_xtwifi_inetagent);
 
 allow system_server vendor_proc_audiod:file r_file_perms;
 
@@ -67,7 +66,13 @@ allow system_server vendor_sysfs_wigig:file rw_file_perms;
 # allow system_server to access IWifiStats HAL service
 hal_client_domain(system_server, vendor_hal_wifilearner);
 
+# allow system_server to access IWificfr HAL service
+hal_client_domain(system_server, hal_wificfr);
+
 # allow system_server to access Qspmhal
 hal_client_domain(system_server, vendor_hal_qspmhal);
 
 get_prop(system_server, vendor_qspm_prop)
+
+# allow system_server to access USB devices
+r_dir_file(system_server, vendor_sysfs_usb_node);

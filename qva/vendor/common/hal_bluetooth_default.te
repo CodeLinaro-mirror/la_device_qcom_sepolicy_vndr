@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 hal_server_domain(hal_bluetooth_default, vendor_hal_fm)
 hal_server_domain(hal_bluetooth_default, vendor_hal_btconfigstore)
@@ -36,6 +40,9 @@ unix_socket_connect(hal_bluetooth_default, vendor_ssgtzd, vendor_ssgtzd)
 # BT Tpi service
 hal_attribute_service(hal_bluetooth, vendor_hal_bttpi_service)
 binder_call(hal_bluetooth, servicemanager)
+
+# for Xpan Provider Service
+hal_attribute_service(hal_bluetooth, vendor_hal_xpanprovider_service)
 
 #hal_bluetooth_default needs uevent socket permissions
 allow hal_bluetooth_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;

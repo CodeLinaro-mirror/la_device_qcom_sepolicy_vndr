@@ -1,0 +1,5 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow system_server to set aon system properties
+set_prop(system_server, vendor_watch_orientation_prop)

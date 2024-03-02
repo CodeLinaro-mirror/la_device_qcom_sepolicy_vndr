@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_secureprocessor_qti, domain;
 hal_server_domain(vendor_hal_secureprocessor_qti, vendor_hal_secureprocessor)
@@ -40,4 +45,14 @@ allow vendor_hal_secureprocessor_qti tee_device:chr_file rw_file_perms;
 allow vendor_hal_secureprocessor_qti vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
 allow vendor_hal_secureprocessor_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
 
+allow vendor_hal_secureprocessor_qti vendor_dmabuf_display_heap_device:chr_file {r_file_perms};
+allow vendor_hal_secureprocessor_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_hal_secureprocessor_qti vendor_membuf_dev:chr_file r_file_perms;
+allow vendor_hal_secureprocessor_qti vendor_vm_trusted_device:chr_file r_file_perms;
+allow vendor_hal_secureprocessor_qti vendor_vm_self_device:chr_file r_file_perms;
+allow vendor_hal_secureprocessor_qti vendor_vm_oem_device:chr_file r_file_perms;
+
 hal_client_domain(vendor_hal_secureprocessor_qti, hal_graphics_allocator);
+
+# For AIDL Service
+hal_attribute_service(vendor_hal_secureprocessor, vendor_hal_secureprocessor_aidl_service)

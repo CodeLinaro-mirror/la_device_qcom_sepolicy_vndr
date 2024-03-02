@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # SideKickMetrics HAL
@@ -54,6 +54,11 @@ attribute vendor_hal_displayoffload;
 attribute vendor_hal_displayoffload_client;
 attribute vendor_hal_displayoffload_server;
 
+# UI offload HAL
+attribute vendor_hal_uioffload;
+attribute vendor_hal_uioffload_client;
+attribute vendor_hal_uioffload_server;
+
 # AONUtility HAL
 attribute vendor_hal_aonutility;
 attribute vendor_hal_aonutility_client;
@@ -68,13 +73,7 @@ attribute vendor_hal_bluetooth_offload;
 attribute vendor_hal_bluetooth_offload_client;
 attribute vendor_hal_bluetooth_offload_server;
 
-attribute hal_wristorientation_client;
-attribute hal_wristorientation;
-attribute hal_healthservices_server;
-attribute hal_healthservices;
-attribute hal_wristorientation_server;
-attribute hal_healthservices_client;
-attribute hal_lefty_server;
-attribute hal_lefty_client;
-attribute hal_lefty;
-attribute vendor_persist_type;
+# AONfwloader HAL
+attribute vendor_hal_aonfwloader;
+attribute vendor_hal_aonfwloader_client;
+attribute vendor_hal_aonfwloader_server;

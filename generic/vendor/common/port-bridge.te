@@ -30,8 +30,6 @@ type vendor_port-bridge_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_port-bridge)
 
 userdebug_or_eng(`
-  domain_auto_trans(shell, vendor_port-bridge_exec, vendor_netmgrd)
-  #domain_auto_trans(adbd, vendor_port-bridge_exec, netmgrd)
   diag_use(vendor_port-bridge)
 ')
 

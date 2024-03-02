@@ -30,10 +30,10 @@ userdebug_or_eng(`
 
 get_prop(domain, vendor_gralloc_prop)
 
-r_dir_file({domain - isolated_app - untrusted_app_all }, vendor_sysfs_soc);
-r_dir_file({domain - isolated_app - untrusted_app_all }, vendor_sysfs_esoc);
-r_dir_file({domain - isolated_app - untrusted_app_all }, vendor_sysfs_ssr);
-r_dir_file({domain - isolated_app}, sysfs_thermal);
+r_dir_file({domain - isolated_app_all - untrusted_app_all }, vendor_sysfs_soc);
+r_dir_file({domain - isolated_app_all - untrusted_app_all }, vendor_sysfs_esoc);
+r_dir_file({domain - isolated_app_all - untrusted_app_all }, vendor_sysfs_ssr);
+r_dir_file({domain - isolated_app_all}, sysfs_thermal);
 
 #Reding of standard chip details need this
 allow untrusted_app_all {
@@ -41,7 +41,7 @@ allow untrusted_app_all {
         vendor_sysfs_esoc
         vendor_sysfs_ssr
         }:dir search ;
-r_dir_file({domain - isolated_app }, vendor_sysfs_public);
+r_dir_file({domain - isolated_app_all }, vendor_sysfs_public);
 
 
 get_prop(domain, vendor_public_vendor_default_prop)
@@ -56,12 +56,13 @@ neverallow {
      -init
      -ueventd
      -vold
+     -init-unified
      } vendor_persist_type: { dir file } *;
 
-allow { domain - isolated_app } vendor_sysfs_kgsl:dir search;
+allow { domain - isolated_app_all } vendor_sysfs_kgsl:dir search;
 # Allow all context to read gpu model
-allow { domain - isolated_app } vendor_sysfs_kgsl_gpu_model:file r_file_perms;
-allow { domain - isolated_app } vendor_sysfs_kgsl_gpubusy:file r_file_perms;
+allow { domain - isolated_app_all } vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+allow { domain - isolated_app_all } vendor_sysfs_kgsl_gpubusy:file r_file_perms;
 
 neverallow {
     coredomain
@@ -82,6 +83,7 @@ neverallow { domain
 - vendor_audioadsprpcd
 - vendor_chre
 - vendor_dspservice
+- hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default
 userdebug_or_eng(` -vendor_usta_app')
@@ -101,7 +103,6 @@ neverallow { domain
 - vendor_cdsprpcd
 - vendor_audioadsprpcd
 - hal_camera_default
-- vendor_chre
 - vendor_qvrd_vndr
 - vendor_vppservice
 - vendor_thermal-engine

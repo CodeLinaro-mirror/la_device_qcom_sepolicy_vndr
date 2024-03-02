@@ -29,6 +29,11 @@
 # IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+#
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 neverallow {
   vendor_halserverdomain
@@ -38,6 +43,7 @@ neverallow {
   -vendor_cnd
   -vendor_qms
   userdebug_or_eng(` -vendor_hal_diaghal')
+  userdebug_or_eng(` -vendor_wifimyftmsvc')
 } self:global_capability_class_set { net_admin net_raw };
 
 neverallow {
@@ -45,20 +51,25 @@ neverallow {
   -vendor_cnd
   -vendor_hal_datafactory_qti
   -vendor_hal_sxrservice_qti
+  -vendor_hal_qvrservice_qti
   -vendor_hal_fstman
   -vendor_wifidisplayhalservice_qti
   -vendor_ims_service
+  -vendor_ims_dcservice
   -vendor_dpmd_vndr
   -vendor_qtidataservices_app
   -vendor_hal_dpmQmiMgr
   -vendor_qms
+  -vendor_hal_imsrtp
   userdebug_or_eng(` -vendor_hal_diaghal')
   userdebug_or_eng(` -vendor_qtiloopback_native')
+  userdebug_or_eng(` -vendor_wifimyftmsvc')
 } domain:{ tcp_socket udp_socket rawip_socket } *;
 
 neverallow {
   vendor_halserverdomain
   - vendor_qtidataservices_app
+  userdebug_or_eng(` -vendor_wifimyftmsvc')
 } { file_type fs_type }:file execute_no_trans;
 neverallow { domain -init } vendor_halserverdomain:process transition;
 neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app }:process dyntransition;

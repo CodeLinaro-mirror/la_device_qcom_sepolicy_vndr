@@ -89,6 +89,7 @@
 # same process HAL libs
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.wristorientation@1\.0-service u:object_r:vendor_hal_wristorientation_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.healthservices@1\.0-service u:object_r:vendor_hal_healthservices_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.healthservices@1-service u:object_r:vendor_hal_healthservices_qti_exec:s0
 
 # Bluetooth LAZY HAL
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti-lazy        u:object_r:hal_bluetooth_default_exec:s0
@@ -121,6 +122,7 @@
 /dev/glink_pkt_ss_bt_data                       u:object_r:vendor_glink_slate_bt:s0
 /dev/glink_pkt_ss_bt_le_data                    u:object_r:vendor_glink_slate_bt:s0
 /dev/glink_pkt_ss_bt_ssr_data                   u:object_r:vendor_glink_slate_bt:s0
+/dev/glink_pkt_ss_bt_obex_data                  u:object_r:vendor_glink_slate_bt:s0
 
 #vendor_sysfs_boot_concurrenct_mode
 /sys/class/qcom-smb/boost_concurrent_mode  u:object_r:vendor_sysfs_boost_concurrent_mode:s0
@@ -139,6 +141,7 @@
 /sys/class/pmic-lpm/pmic_twm_enable                                      u:object_r:vendor_sysfs_twm:s0
 /sys/class/pmic-lpm/pmic_twm_exit                                        u:object_r:vendor_sysfs_twm:s0
 /sys/bus/i2c/devices/1-0024/pt_touch_offload                             u:object_r:vendor_sysfs_touch_offload:s0
+/sys/bus/i2c/devices/0-0039/raydium_touch_offload                        u:object_r:vendor_sysfs_touch_offload:s0
 
 #bluetooth
 /sys/class/tty/ttyHS0/device/hs_uart_operation                           u:object_r:vendor_sysfs_bt:s0
@@ -152,13 +155,14 @@
 /dev/glink_pkt_slate_touch_ctrl                 u:object_r:vendor_glink_slate_touch_ctrl_device:s0
 /dev/glink_pkt_slate_ux_ctl                     u:object_r:vendor_glink_slate_ux_ctl_device:s0
 /dev/glink_pkt_slate_dfu                        u:object_r:vendor_glink_slate_dfu_device:s0
-/dev/glink_pkt_slate_custom_data                u:object_r:vendor_glink_slate_custom_data_device:s0
 /dev/glink_pkt_slate_qcli                       u:object_r:vendor_glink_slate_qcli_device:s0
 
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.0-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.1-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@2\.0-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.uioffload@1\.0-service           u:object_r:vendor_hal_uioffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonutility@1\.0-service          u:object_r:vendor_hal_aonutility_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonfwloader@1\.0-service          u:object_r:vendor_hal_aonfwloader_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.watchorientation@1\.0-service    u:object_r:vendor_hal_watchorientation_default_exec:s0
 /(vendor|system/vendor)/bin/slatedaemon                                                u:object_r:vendor_slate_daemon_exec:s0
 /(vendor|system/vendor)/bin/hw/qcli_daemon                                             u:object_r:vendor_qcli_daemon_exec:s0
@@ -172,6 +176,9 @@
 #senors glink dev node
 /dev/glinkpkt_slate_ssc_usta                    u:object_r:vendor_glink_slate_ssc_usta_device:s0
 
+#location glink dev node
+/dev/glink_pkt_slate_location_ctrl              u:object_r:vendor_glink_slate_location_ctrl_device:s0
+
 # read ahead
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/bdi/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
@@ -183,3 +190,7 @@
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_offload@1\.0-service-qti           u:object_r:vendor_hal_bluetooth_offload_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service.software     u:object_r:hal_gatekeeper_default_exec:s0
+
+#senors glink dev node
+/dev/glinkpkt_slate_ssc_hal                       u:object_r:vendor_glink_slate_ssc_hal_device:s0

@@ -92,11 +92,16 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#Changes from Qualcomm Innovation Center are provided under the following license:
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
 #QTI file types
 type vendor_qti_data_file, file_type, data_file_type;
 
 type vendor_persist_secnvm_file, file_type , vendor_persist_type;
 type vendor_persist_iar_db_file, file_type , vendor_persist_type;
+type vendor_persist_spudc_file, file_type , vendor_persist_type;
 
 #mink-lowi-interface-daemon (mlid) socket
 type vendor_mlid_socket, file_type, mlstrustedobject;
@@ -225,6 +230,10 @@ type vendor_dpm_vndr_data_file, file_type, data_file_type ;
 
 #qesdk
 type vendor_qesd_socket, file_type;
+type vendor_qesdoem_socket, file_type;
+type vendor_qesdsec_socket, file_type;
 
 type vendor_sysfs_usb_node, fs_type, sysfs_type;
-type vendor_debugfs_ipc, debugfs_type, fs_type;
+
+#qms
+type vendor_qms_vndr_data_file, file_type, data_file_type;

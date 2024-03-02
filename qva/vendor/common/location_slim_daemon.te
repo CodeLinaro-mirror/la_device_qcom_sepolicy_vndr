@@ -49,12 +49,16 @@ allow vendor_location_slim_daemon vendor_location_socket:sock_file create_file_p
 allow vendor_location_slim_daemon vendor_location_socket:dir rw_dir_perms;
 allow vendor_location_slim_daemon vendor_location:unix_dgram_socket { read write sendto };
 
+get_prop(vendor_location_slim_daemon, vendor_qms_prop)
+
 # allow socket communication with gnss hal
 allow vendor_location_slim_daemon vendor_hal_gnss_qti:unix_dgram_socket sendto;
 
 hwbinder_use(vendor_location_slim_daemon)
 get_prop(vendor_location_slim_daemon, hwservicemanager_prop)
 binder_call(vendor_location_slim_daemon, system_server)
+
+binder_use(vendor_location_slim_daemon)
 
 # allows shell execute slim_daemon in userdebug mode.
 userdebug_or_eng(`
@@ -66,11 +70,11 @@ allow vendor_location_slim_daemon self:qipcrtr_socket create_socket_perms_no_ioc
 
 allow vendor_location_slim_daemon fwk_sensor_hwservice:hwservice_manager find;
 
-## send to /dev/socket/location/mq/ - inet-agent-tdp-dl, inet-agent-cs
-allow vendor_location_slim_daemon vendor_location_xtwifi_inetagent:unix_dgram_socket sendto;
-
 ## send to /dev/socket/location/mq/MODEM-CS
 allow vendor_location_slim_daemon vendor_location_xtwifi_client:unix_dgram_socket sendto;
 
 ## send to /dev/socket/location/mq/LOWI-SERVER
 allow vendor_location_slim_daemon vendor_location_lowi_server:unix_dgram_socket sendto;
+
+binder_call(vendor_location_slim_daemon, servicemanager)
+allow vendor_location_slim_daemon fwk_sensor_service:service_manager find;

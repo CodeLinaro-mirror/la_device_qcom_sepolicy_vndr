@@ -37,7 +37,6 @@ binder_call(vendor_qtiloopback_client,vendor_qtiloopback_server)
 binder_call(vendor_qtiloopback_server,vendor_qtiloopback_client)
 hal_attribute_hwservice(vendor_qtiloopback, vendor_qtiloopback_hwservice)
 
-netmgr_socket(vendor_qtiloopback_native)
 allow vendor_qtiloopback_native self:{
     # Allow receiving NETLINK responses from WLAN driver.
     netlink_socket

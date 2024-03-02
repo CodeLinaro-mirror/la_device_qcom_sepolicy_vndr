@@ -31,9 +31,7 @@ allow system_app vendor_elabel_data_file:file r_file_perms;
 # Allow hbtp hal Service to be found
 hal_client_domain(system_app, vendor_hal_hbtp)
 
-#secureUI
 hal_client_domain(system_app, vendor_hal_qdutils_disp);
-hal_client_domain(system_app, vendor_hal_tui_comm);
 
 get_prop(system_app, vendor_radio_prop)
 hal_client_domain(system_app, vendor_hal_capabilityconfigstore_qti);

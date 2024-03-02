@@ -206,6 +206,7 @@
 # sysfs files
 #
 /sys/devices/platform/soc/1b40000.qfprom/qfprom0/feat_conf1[0-1]            u:object_r:vendor_sysfs_qfprom:s0
+/sys/devices/platform/soc/soc:qfprom@0/feat_conf10                          u:object_r:vendor_sysfs_qfprom:s0
 /sys/devices/platform/soc/4744000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb                                              u:object_r:vendor_sysfs_mmc_host:s0
 
@@ -238,3 +239,6 @@
 
 #Graphics
 /sys/devices/platform/soc/5900000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpubusy u:object_r:vendor_sysfs_kgsl_gpubusy:s0
+
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/ab00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0

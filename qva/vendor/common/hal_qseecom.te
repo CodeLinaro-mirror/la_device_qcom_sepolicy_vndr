@@ -24,6 +24,9 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2022-2023, Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #define the domain
 type vendor_hal_qseecom_default, domain;
@@ -36,8 +39,9 @@ init_daemon_domain(vendor_hal_qseecom_default)
 binder_call(vendor_hal_qseecom_client, vendor_hal_qseecom_server)
 binder_call(vendor_hal_qseecom_server, vendor_hal_qseecom_client)
 
-#allow the service to be added to hwservice list
-hal_attribute_hwservice(vendor_hal_qseecom, vendor_hal_qseecom_hwservice)
+#Allow aidl based qseecom_hal communication
+hal_attribute_service(vendor_hal_qseecom, vendor_hal_qseecom_service)
+binder_call(vendor_hal_qseecom_server, servicemanager)
 
 #allow access to hal_allocator
 hal_client_domain(vendor_hal_qseecom_default, hal_allocator)
@@ -53,3 +57,4 @@ allow vendor_hal_qseecom_default tee_device:chr_file rw_file_perms;
 
 # Read file perms for vendor_dmabuf_qseecom
 allow vendor_hal_qseecom_default vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow vendor_hal_qseecom_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;

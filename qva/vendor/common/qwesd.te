@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -45,3 +45,7 @@ allow vendor_qwesd self:{ qipcrtr_socket } create_socket_perms_no_ioctl;
 allow vendor_qwesd vendor_qwes_data_file:dir rw_dir_perms;
 allow vendor_qwesd vendor_qwes_data_file:file create_file_perms;
 
+#Allow qwesd to read mink trace log in userdebug/eng builds and as it enabled in mink side code.
+userdebug_or_eng(`
+  get_prop(vendor_qwesd, vendor_mink_trace_prop)
+')

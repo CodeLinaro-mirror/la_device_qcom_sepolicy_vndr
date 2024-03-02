@@ -24,12 +24,21 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#Changes from Qualcomm Innovation Center are provided under the following license:
+
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
 
 /vendor/bin/Loopback_native 	                                    u:object_r:vendor_qtiloopback_native_exec:s0
 /vendor/bin/qttestservice                                           u:object_r:vendor_qttestservice_exec:s0
 /vendor/bin/init.fda.script.sh                                      u:object_r:vendor-qti-testscripts_exec:s0
 /vendor/bin/init.fda.am.sh                                          u:object_r:vendor-qti-testscripts_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.debugutils@1\.0-service        u:object_r:vendor_hal_debugutils_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.debugutils-service        u:object_r:vendor_hal_debugutils_default_exec:s0
 
 #wifimyftm daemon
 /(vendor|system/vendor)/bin/wifimyftm    u:object_r:vendor_wifimyftmsvc_exec:s0
@@ -39,5 +48,13 @@
 /vendor/bin/qesdk-one                           u:object_r:vendor_hal_qesdonehal_default_exec:s0
 /data/vendor/qesdk_token(/.*)?                  u:object_r:vendor_qesd_one_token_data_file:s0
 
-# QESDK SAMPLE CLIENT
+# QESDK SAMPLE CLIENTS
 /vendor/bin/qsap_sampleclient                   u:object_r:vendor_qesdk_sampleclient_exec:s0
+/vendor/bin/qsap_sanity                         u:object_r:vendor_qesdk_sanity_qsap_exec:s0
+
+#QVIRTSERVICE SAMPLE CLIENT
+/vendor/bin/qvirt-testclient                    u:object_r:vendor_qvirt_testclient_exec:s0
+
+# ppat_stats files
+/vendor/bin/ppat_stats           u:object_r:vendor_ppat_stats_exec:s0
+/data/vendor/ppat_stats(/.*)?    u:object_r:vendor_ppat_stats_data_file:s0
