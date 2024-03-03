@@ -307,7 +307,6 @@
 /vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.3\.so    u:object_r:same_process_hal_file:s0
 
 #vehicle HAL
-/vendor/lib(64)?/VehicleHardware\.so       u:object_r:vendor_aidl_hal_automotive_vehicle:s0
 /vendor/lib(64)?/qtilibpowerpolicy.so     u:object_r:vendor_power_policy:s0
 
 #wifilearner daemon
@@ -339,19 +338,6 @@
 
 # Dynamic splash
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:vendor_esplash_exec:s0
-
-#HIDL Vehicle HAL
-/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service  u:object_r:vendor_hal_automotive_vehicle_qti_exec:s0
-
-# AIDL vehicle VHAL
-/vendor/bin/hw/android.hardware.automotive.vehicle@V1-qti-service   u:object_r:vendor_aidl_hal_automotive_vehicle_qti_exec:s0
-
-# Car power usb service
-/(vendor|system/vendor)/bin/carpowerusbservice                      u:object_r:vendor_carpowerusbservice_exec:s0
-
-# EVS and Qcarcam HAL
-/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais          u:object_r:vendor_hal_evs_driver_exec:s0
-/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais-qcc6     u:object_r:vendor_hal_evs_driver_exec:s0
 
 #AIDL EVS HAL
 /(vendor|system/vendor)/bin/android.hardware.automotive.evs-ais     u:object_r:vendor_aidl_automotive_evs_ais_exec:s0
