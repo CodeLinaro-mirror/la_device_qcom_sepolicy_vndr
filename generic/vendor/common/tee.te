@@ -72,3 +72,8 @@ allow tee graphics_device:chr_file rw_file_perms;
 #OPS Listener
 allow tee vendor_sysfs_graphics:dir r_dir_perms;
 allow tee vendor_sysfs_graphics:file rw_file_perms;
+
+allow tee vendor_gpt_block_device:blk_file r_file_perms;
+
+allow tee boot_block_device:blk_file { open read };
+allow tee vendor_xbl_block_device:blk_file { open read };

@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_dun_service,                 service_manager_type;
@@ -37,3 +37,7 @@ type vendor_hal_dataconnection_service,  vendor_service, protected_service, serv
 type vendor_hal_qms_service,             vendor_service, protected_service, service_manager_type;
 type vendor_hal_bttpi_service,           vendor_service, protected_service, service_manager_type;
 type vendor_hal_qtiwifi_service,         vendor_service, protected_service, service_manager_type, hal_service_type;
+type vendor_hal_ais_service,             vendor_service, protected_service, service_manager_type, hal_service_type;
+type vendor_hal_vpp_service,             vendor_service, protected_service, service_manager_type, hal_service_type;
+type vendor_hal_qconfig_service,         vendor_service, protected_service, service_manager_type, hal_service_type;
+

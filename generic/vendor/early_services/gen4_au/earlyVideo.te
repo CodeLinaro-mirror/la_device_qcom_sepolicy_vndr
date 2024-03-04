@@ -1,0 +1,6 @@
+#Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# early Video Service
+allow vendor_earlyVideo vendor_early_services:dir rw_dir_perms;
+allow vendor_earlyVideo vendor_early_services:file rw_file_perms;

@@ -2,6 +2,4 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # ais_server service
-allow vendor_ais_server vendor_early_services:dir r_dir_perms;
-allow vendor_ais_server vendor_early_services:file rw_file_perms;
 allow vendor_camera_socket device:filesystem associate;

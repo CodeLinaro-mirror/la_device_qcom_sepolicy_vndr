@@ -34,6 +34,7 @@ persist.vendor.bluetooth.            u:object_r:vendor_bluetooth_prop:s0
 ro.vendor.bluetooth.                 u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.bluetooth.a2dp.       u:object_r:vendor_bluetooth_prop:s0
 persist.vendor.qcom.bluetooth.       u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.bt.                   u:object_r:vendor_bluetooth_prop:s0
 vendor.qcom.bluetooth.               u:object_r:vendor_bluetooth_prop:s0
 vendor.wc_transport.       u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.msm_irqbalance  u:object_r:vendor_msm_irqbalance_prop:s0
@@ -52,6 +53,7 @@ vendor.audio.ssr.trigger   u:object_r:vendor_audio_ssr_prop:s0
 vendor.voice.              u:object_r:vendor_audio_prop:s0
 persist.vendor.audio.      u:object_r:vendor_audio_prop:s0
 ro.vendor.audio.           u:object_r:vendor_audio_prop:s0
+ro.boot.audio              u:object_r:vendor_audio_prop:s0 exact string
 persist.vendor.audio.spkr.cal.duration  u:object_r:vendor_audio_prop:s0
 ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0
@@ -170,3 +172,6 @@ vendor.dynamic_sensor. u:object_r:vendor_dynamic_sensor_prop:s0
 
 # AMSIPC
 ctl.vendor.ams-1-0               u:object_r:vendor_AMSIPC_service_prop:s0
+
+#av
+persist.vendor.debug.                        u:object_r:vendor_audio_prop:s0

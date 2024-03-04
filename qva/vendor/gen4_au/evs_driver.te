@@ -1,0 +1,9 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow vendor_hal_evs_driver vendor_qcxserver:unix_stream_socket connectto;
+allow vendor_hal_evs_driver vendor_camera_socket:dir { add_name remove_name write };
+allow vendor_hal_evs_driver vendor_camera_socket:sock_file { create unlink setattr };
+allow vendor_hal_evs_driver vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
+allow vendor_hal_evs_driver vendor_early_services:dir search;
+allow vendor_hal_evs_driver vendor_early_services:sock_file write;

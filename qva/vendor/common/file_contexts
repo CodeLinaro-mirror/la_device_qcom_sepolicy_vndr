@@ -210,6 +210,7 @@
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti[0-9]                  u:object_r:hal_bluetooth_default_exec:s0
 
 #hvdcp
 /vendor/bin/hvdcp_opti                                                             u:object_r:vendor_hvdcp_exec:s0
@@ -331,15 +332,13 @@
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@2.0-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam2@V1-service-qcc6    u:object_r:vendor_hal_ais_qti_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0
 
 # Dynamic splash
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:vendor_esplash_exec:s0
-
-/vendor_early_services/vendor/bin/ais_server                        u:object_r:vendor_ais_server_exec:s0
-/vendor_early_services/vendor/bin/qcarcam_edrm_rvc                  u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
 
 #HIDL Vehicle HAL
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service  u:object_r:vendor_hal_automotive_vehicle_qti_exec:s0
@@ -392,3 +391,6 @@
 
 #USB node which need context in case of multiple input ports
 /sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.0.auto/usb1(/.*)/power/control  u:object_r:vendor_sysfs_usb_node:s0
+
+#FastCV
+/vendor/bin/fastcv.sh                                                            u:object_r:vendor_qti_fastcv_exec:s0

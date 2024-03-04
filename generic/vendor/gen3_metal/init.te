@@ -2,24 +2,15 @@
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-domain_auto_trans(init, vendor_init_early_test_exec, vendor_init_early_test)
 allow init vfat:dir search;
-
-domain_auto_trans(init, early_chime_exec, early_chime)
 
 # allowing audio-nxp-auto to access spidev
 allow init audio_device:chr_file { open read write };
 allow init audio_device:chr_file { ioctl };
-allow init vendor_earlyVideo_exec:file {r_file_perms execute};
-domain_auto_trans(init, vendor_earlyVideo_exec, vendor_earlyVideo)
 
-domain_auto_trans(init, vendor_ais_server_exec, vendor_ais_server)
-domain_auto_trans(init, vendor_qcarcam_edrm_rvc_exec, vendor_qcarcam_edrm_rvc)
 allow init video_device:chr_file rw_file_perms;
 allow init gpu_device:chr_file rw_file_perms;
 allow init graphics_device:chr_file r_file_perms;
-domain_auto_trans(init, vendor_esplash_exec, vendor_esplash)
-allow init vendor_esplash_exec:file { r_file_perms execute };
 
 #Required by early-init
 allow init kernel:process share;

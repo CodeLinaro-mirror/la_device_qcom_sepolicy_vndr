@@ -31,6 +31,4 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # early Splash Service
-allow vendor_esplash vendor_early_services:dir rw_dir_perms;
-allow vendor_esplash vendor_early_services:file rw_file_perms;
 allow vendor_esplash kmsg_device:chr_file rw_file_perms;

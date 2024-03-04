@@ -1,0 +1,8 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qcxserver
+/vendor_early_services/vendor/bin/qcxserver                      u:object_r:vendor_qcxserver_exec:s0
+
+#qcarcam RVC
+/vendor_early_services/vendor/bin/qcarcam_edrm_rvc                  u:object_r:vendor_qcarcam_edrm_rvc_exec:s0

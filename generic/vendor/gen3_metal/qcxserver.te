@@ -1,0 +1,5 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# This is needed to get priority for qcxserver process
+allow vendor_qcxserver self:capability sys_nice;
