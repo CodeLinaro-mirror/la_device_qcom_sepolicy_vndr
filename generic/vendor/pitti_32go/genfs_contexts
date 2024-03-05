@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license: 
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 # Redistribution and use in source and binary forms, with or without
@@ -152,11 +152,10 @@ genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/name u:
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/restart_level u:object_r:vendor_sysfs_ssr:s0
 
 #qdss sysfs-node
-genfscon sysfs /devices/platform/soc/10b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/1004f000.tmc/coresight-tmc-etr1 u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10b11000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8047000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/8a03000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:modem_diag/coresight-modem-diag u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /bus/coresight/reset_source_sink u:object_r:vendor_sysfs_qdss_dev:s0
 
@@ -263,7 +262,6 @@ genfscon sysfs /kernel/load_guestvm_oemvm/boot_guestvm u:object_r:vendor_sysfs_g
 #wakeup sysfs nodes listed by SuspendSepolicyTests.sh
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/880000.i3c-master/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-0/0-0028/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-1/1-000e/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,qbt_handler/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p_sleepstate/wakeup u:object_r:sysfs_wakeup:s0
