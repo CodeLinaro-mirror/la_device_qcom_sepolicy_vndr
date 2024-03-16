@@ -1,0 +1,20 @@
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Define domain
+type vendor_hal_dumpstate_qti, domain;
+type vendor_hal_dumpstate_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_dumpstate_qti)
+
+userdebug_or_eng(`
+    hal_server_domain(vendor_hal_dumpstate_qti, hal_dumpstate)
+    allow vendor_hal_dumpstate_qti { vendor_shell_exec vendor_toolbox_exec }:file rx_file_perms;
+
+    allow vendor_hal_dumpstate_qti vendor_modem_dump_file:dir create_dir_perms;
+    allow vendor_hal_dumpstate_qti vendor_modem_dump_file:file create_file_perms;
+
+    allow vendor_hal_dumpstate_qti vendor_display_offload_data_file:dir r_dir_perms;
+    allow vendor_hal_dumpstate_qti vendor_display_offload_data_file:file r_file_perms;
+')
+
