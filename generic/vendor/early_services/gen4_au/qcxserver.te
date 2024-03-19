@@ -1,0 +1,14 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qcxserver service
+allow vendor_qcxserver vendor_early_services:file rw_file_perms;
+allow vendor_qcxserver vendor_camera_data_file:dir { read search };
+allow vendor_qcxserver vendor_early_services:dir { add_name read write };
+allow vendor_qcxserver vendor_early_services:sock_file create;
+allow vendor_qcxserver vendor_early_services:sock_file w_file_perms;
+allow vendor_qcxserver vendor_qcarcam_edrm_rvc:unix_stream_socket connectto;
+allow vendor_qcxserver vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+
+# This is needed to get priority for qcxserver process
+allow vendor_qcxserver self:capability sys_nice;

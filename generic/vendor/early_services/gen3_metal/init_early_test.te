@@ -1,4 +1,3 @@
-# Changes from Qualcomm Innovation Center are provided under the following license:
 # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
@@ -15,3 +14,4 @@ allow vendor_init_early_test tmpfs:chr_file rw_file_perms;
 allow vendor_init_early_test vendor_sysfs_kpi:file {open write};
 
 allow vendor_init_early_test vendor_early_services:dir rw_dir_perms;
+allow vendor_init_early_test vendor_early_services:file rw_file_perms;

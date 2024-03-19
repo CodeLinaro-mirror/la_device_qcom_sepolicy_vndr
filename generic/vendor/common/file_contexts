@@ -138,6 +138,7 @@
 /dev/dma_heap/qcom,secure-pixel         u:object_r:vendor_dmabuf_secure_pixel:s0
 /dev/dma_heap/qcom,secure-non-pixel     u:object_r:vendor_dmabuf_secure_non_pixel:s0
 /dev/dma_heap/qcom,adsp                 u:object_r:vendor_dmabuf_adsp_heap_device:s0
+/dev/dma_heap/qcom,mdsp                 u:object_r:vendor_dmabuf_mdsp_heap_device:s0
 /dev/dma_heap/qcom,secure-cdsp          u:object_r:vendor_dmabuf_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,cma-secure-cdsp      u:object_r:vendor_dmabuf_cma_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,sp-hlos              u:object_r:vendor_dmabuf_sp_hlos_heap_device:s0
@@ -645,9 +646,6 @@
 #Thermal HAl
 /vendor/bin/hw/android\.hardware\.thermal@2\.0-service.mock                        u:object_r:hal_thermal_default_exec:s0
 
-#Early Dynamic Splash
-/vendor_early_services/vendor/bin/esplash               u:object_r:vendor_esplash_exec:s0
-
 # power related path which need context
 /sys/power/resume                                                    u:object_r:vendor_sysfs_power:s0
 /sys/power/image_size                                                u:object_r:vendor_sysfs_power_image:s0
@@ -661,6 +659,7 @@
 # sysfs wakeup
 /sys/devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.1.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.3.auto/usb[1-9]+/wakeup                u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.0.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.1.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3/xhci-hcd.2.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
@@ -676,3 +675,6 @@
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pm8150@0:vadc@3100/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
 /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a88000.i2c/i2c-8/8-006a/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/0-04/c440000.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device[0-9]/name u:object_r:vendor_sysfs_sensors:s0
+
+# MTU
+/sys/devices/virtual/net/[^/]+/mtu                      u:object_r:sysfs_net:s0

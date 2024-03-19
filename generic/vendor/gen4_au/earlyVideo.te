@@ -38,8 +38,6 @@ allow vendor_earlyVideo graphics_device:chr_file rw_file_perms;
 allow vendor_earlyVideo video_device:chr_file rw_file_perms;
 allow vendor_earlyVideo gpu_device:chr_file rw_file_perms;
 allow vendor_earlyVideo sysfs_power:file r_file_perms;
-allow vendor_earlyVideo vendor_early_services:dir rw_dir_perms;
-allow vendor_earlyVideo vendor_early_services:file rw_file_perms;
 userdebug_or_eng(`
 allow vendor_earlyVideo vendor_sysfs_kpi:file w_file_perms;
 ')

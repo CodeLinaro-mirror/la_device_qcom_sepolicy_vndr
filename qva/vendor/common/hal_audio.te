@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+# Copyright (c) 2022, 2024, Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 userdebug_or_eng(`
@@ -67,3 +67,4 @@ binder_call(carpowerpolicyd, hal_audio_default)
 
 # Allow audio hal to communicate with msm_lsm char dev
 allow hal_audio_default vendor_msm_lsm_cdev_device:chr_file rw_file_perms;
+get_prop(hal_audio_default, vendor_lpm_prop)

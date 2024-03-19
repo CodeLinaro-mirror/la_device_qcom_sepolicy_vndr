@@ -1,0 +1,21 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#Early Services
+/vendor_early_services(/.*)?                                                  u:object_r:vendor_early_services:s0
+/vendor_early_services/bin/early_services_init                                u:object_r:vendor_init_exec:s0
+/vendor_early_services/bin/init_early_test                                    u:object_r:vendor_init_early_test_exec:s0
+/vendor_early_services/system/bin/init_early_test                             u:object_r:vendor_init_early_test_exec:s0
+/vendor_early_services/system/lib(64)?(/.*)?                                  u:object_r:system_lib_file:s0
+/vendor_early_services/vendor/lib/modules(/.*)?                               u:object_r:vendor_file:s0
+/vendor_early_services/system/bin/bootstrap/linker(64)?                       u:object_r:system_linker_exec:s0
+/vendor_early_services/vendor/firmware_mnt                                    u:object_r:firmware_file:s0
+/vendor_early_services/vendor/firmware_mnt(/.*)?                              u:object_r:firmware_file:s0
+/vendor_early_services/vendor/bin/early_chime                                 u:object_r:early_chime_exec:s0
+/dev/snd                                                                      u:object_r:audio_device:s0
+/dev/snd/controlC0                                                            u:object_r:audio_device:s0
+/vendor_early_services/vendor/bin/earlyVideo                                  u:object_r:vendor_earlyVideo_exec:s0
+
+#Early Dynamic Splash
+/vendor_early_services/vendor/bin/esplash                                     u:object_r:vendor_esplash_exec:s0
+

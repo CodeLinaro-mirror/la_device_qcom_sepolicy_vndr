@@ -143,7 +143,7 @@ allow vendor_qti_init_shell sysfs_zram:dir r_dir_perms;
 allow vendor_qti_init_shell sysfs_zram:file rw_file_perms;
 
 # To get GPU frequencies  and set attributes
-allow vendor_qti_init_shell vendor_sysfs_kgsl:file { r_file_perms setattr };
+allow vendor_qti_init_shell vendor_sysfs_kgsl:file { rw_file_perms setattr };
 
 allow vendor_qti_init_shell proc:file r_file_perms;
 allow vendor_qti_init_shell rootfs:file r_file_perms;
