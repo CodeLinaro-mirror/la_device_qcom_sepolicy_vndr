@@ -86,29 +86,6 @@
 /vendor/lib(64)?/hw/gralloc\.msmnile\.so                            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.msmnile\.so                             u:object_r:same_process_hal_file:s0
 
-/sys/devices/platform/soc/a88000.i2c/i2c-8/8-006a/iio:device[0-9](/.*)?                 u:object_r:vendor_sysfs_sensors:s0
-
-# subsys nodes
-/sys/devices/platform/soc/8300000\.qcom,turing/subsys[0-9]/name                 u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/9800000\.qcom,npu/subsys[0-9]/name                    u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/17300000\.qcom,lpass/subsys[0-9]/name                 u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/188101c\.qcom,spss/subsys[0-9]/name                   u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/name                    u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/aae0000\.qcom,venus/subsys[0-9]/name                  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/5c00000\.qcom,ssc/subsys[0-9]/name                    u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]/name          u:object_r:vendor_sysfs_ssr:s0
-
-/sys/devices/platform/soc/8300000\.qcom,turing/subsys[0-9]/restart_level        u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/9800000\.qcom,npu/subsys[0-9]/restart_level           u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/17300000\.qcom,lpass/subsys[0-9]/restart_level        u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/188101c\.qcom,spss/subsys[0-9]/restart_level          u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/restart_level           u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/aae0000\.qcom,venus/subsys[0-9]/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/5c00000\.qcom,ssc/subsys[0-9]/restart_level           u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/[a-f0-9]+\.sdhci/mmc_host/mmc[0-9]+/mmc[0-9]+:[a-f0-9]+/block/mmcblk[0-9]+/queue/read_ahead_kb                         u:object_r:vendor_sysfs_mmc_host:s0
-
 # sdmshrike counterparts
 /vendor/lib(64)?/hw/gralloc\.sdmshrike\.so                            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.sdmshrike\.so                             u:object_r:same_process_hal_file:s0
@@ -117,115 +94,10 @@
 /vendor/lib(64)?/hw/gralloc\.sm6150\.so                               u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.sm6150\.so                                u:object_r:same_process_hal_file:s0
 
-# subsys nodes
-/sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]/name                 u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]/name                    u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]/name                     u:object_r:vendor_sysfs_ssr:s0
-
-/sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]/restart_level        u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]/restart_level           u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]/restart_level            u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8150@0:qcom,power-on@800/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-04/c440000\.qcom,spmi:qcom,pm8150@4:qcom,power-on@800/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8195@0:qcom,power-on@800/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-04/c440000\.qcom,spmi:qcom,pm8195@4:qcom,power-on@800/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-08/c440000\.qcom,spmi:qcom,pm8195@8:qcom,power-on@800/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-modem@1799000c/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-adsp@1799000c/wakeup(/.*)?                                                                              u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-dsps@1799000c/wakeup(/.*)?                                                                              u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-cdsp@1799000c/wakeup(/.*)?                                                                              u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-modem/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-adsp/wakeup(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-dsps/wakeup(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p-cdsp/wakeup(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,smp2p_sleepstate/wakeup(/.*)?                                                                                 u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/fastrpc/adsprpc-smd/wakeup[0-9]*(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/fastrpc/adsprpc-smd-secure/wakeup[0-9]*(/.*)?                                                                               u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm6155@0:qcom,pm6155_1_rtc/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm6155@0:qcom,pm6155_1_rtc/rtc/rtc0/wakeup[0-9]*(/.*)?      u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/wakeup(/.*)?                       u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/0-00/c440000\.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/wakeup/wakeup0(/.*)?                   u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/rtc/rtc0/wakeup[0-9]*(/.*)?        u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8195@0:qcom,pm8195_1_rtc/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8195@0:qcom,pm8195_1_rtc/rtc/rtc0/wakeup[0-9]*(/.*)?      u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]/wakeup(/.*)?                                                                   u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/1c00000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/1c10000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/wakeup(/.*)?                                                                               u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/a600000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/a800000\.ssusb/wakeup(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/17300000\.qcom,lpass/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/17300000\.qcom,lpass/subsys[0-9]/wakeup(/.*)?                                                                          u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/5c00000\.qcom,ssc/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/5c00000\.qcom,ssc/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/8300000\.qcom,turing/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/8300000\.qcom,turing/subsys[0-9]/wakeup(/.*)?                                                                          u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/a800000\.ssusb/a800000\.dwc3/xhci-hcd\.[0-9]*\.auto/usb[0-9]*/wakeup(/.*)?                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/1c08000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/1c18000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c8c000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/a8c000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/aae0000\.qcom,venus/wakeup(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/aae0000\.qcom,venus/subsys[0-9]/wakeup(/.*)?                                                                           u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_aac/wakeup[0-9]*(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_alac/wakeup[0-9]*(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_amrnb/wakeup[0-9]*(/.*)?                                                                                           u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_amrwb/wakeup[0-9]*(/.*)?                                                                                           u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_amrwbplus/wakeup[0-9]*(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/188101c\.qcom,spss/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_ape/wakeup[0-9]*(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_evrc/wakeup[0-9]*(/.*)?                                                                                            u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_g711alaw/wakeup[0-9]*(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_g711mlaw/wakeup[0-9]*(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_mp3/wakeup[0-9]*(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_multi_aac/wakeup[0-9]*(/.*)?                                                                                       u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_qcelp/wakeup[0-9]*(/.*)?                                                                                           u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_wma/wakeup[0-9]*(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/misc/msm_wmapro/wakeup[0-9]*(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/wakeup(/.*)?                                                                                                                u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/188101c\.qcom,spss/subsys[0-9]/wakeup(/.*)?                                                                            u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/9800000\.qcom,npu/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/20000\.qcom,ethernet/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/9800000\.qcom,npu/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/a84000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/89c000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/c94000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
-
-/sys/devices/platform/soc/88e0000\.qcom,msm-eud/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/20000\.qcom,emac/wakeup(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
-/sys/devices/virtual/diag/diag/wakeup[0-9]*(/.*)?                                                                                                u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:gpio_keys/wakeup(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
-
-/sys/devices/platform/soc/62400000\.qcom,lpass/subsys[0-9]/wakeup(/.*)?                                                                          u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/4080000\.qcom,mss/subsys[0-9]/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]/wakeup(/.*)?                                                                              u:object_r:sysfs_wakeup:s0
-
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm6155@0:qcom,power-on@800/wakeup(/.*)?                     u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/62400000\.qcom,lpass/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00\.0/0000:01:00\.0/1101_00\.01\.00/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00\.0/0000:01:00\.0/1102_00\.01\.00/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
-
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-04/c440000\.qcom,spmi:qcom,pm8150@4:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8150@0:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-00/c440000\.qcom,spmi:qcom,pm8195@0:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-04/c440000\.qcom,spmi:qcom,pm8195@4:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
-/sys/devices/platform/soc/c440000\.qcom,spmi/spmi-0/spmi0-08/c440000\.qcom,spmi:qcom,pm8195@8:vadc@3100/iio:device[0-9]+(/.*)?                   u:object_r:vendor_sysfs_sensors:s0
-
 #Primary storage device nodes
 /dev/block/mmcblk0rpmb                                                          u:object_r:vendor_rpmb_device:s0
 /dev/mmcblk0rpmb                                                                u:object_r:vendor_rpmb_device:s0
 /dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
-
-/sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                     u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                    u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/platform/soc/8804000\.sdhci/mmc_host/mmc0/mmc0:aaaa/block/mmcblk0/queue/read_ahead_kb               u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/platform/soc/8804000\.sdhci/mmc_host/mmc2/mmc2:aaaa/block/mmcblk2/queue/read_ahead_kb               u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/platform/soc/7c4000\.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/queue/read_ahead_kb                u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/platform/soc/7c4000\.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0boot0/queue/read_ahead_kb   u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/platform/soc/7c4000\.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0boot1/queue/read_ahead_kb   u:object_r:vendor_sysfs_mmc_host:s0
 
 #for eMMC
 /dev/block/platform/soc/7c4000.sdhci/by-name/abl_[ab]          u:object_r:vendor_custom_ab_block_device:s0
