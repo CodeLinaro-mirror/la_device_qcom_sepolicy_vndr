@@ -66,10 +66,5 @@ neverallow {
   userdebug_or_eng(` -vendor_wifimyftmsvc')
 } domain:{ tcp_socket udp_socket rawip_socket } *;
 
-neverallow {
-  vendor_halserverdomain
-  - vendor_qtidataservices_app
-  userdebug_or_eng(` -vendor_wifimyftmsvc')
-} { file_type fs_type }:file execute_no_trans;
 neverallow { domain -init } vendor_halserverdomain:process transition;
 neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app }:process dyntransition;
