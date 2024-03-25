@@ -44,7 +44,6 @@ type vendor_slate_daemon_device, dev_type;
 type vendor_glink_slate_dfu_device, dev_type;
 type vendor_glink_slate_custom_data_device, dev_type;
 type vendor_glink_slate_qcli_device, dev_type;
-type vendor_glink_slate_custom_data_device, dev_type;
 type vendor_glink_slate_ssc_hal_device, dev_type;
 
 #define qbg char device
