@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -39,6 +39,8 @@ init_daemon_domain(vendor_aidl_camera_provider_qti)
 vndbinder_use(vendor_aidl_camera_provider_qti)
 hal_client_domain(vendor_aidl_camera_provider_qti, hal_graphics_allocator)
 binder_call(vendor_aidl_camera_provider_qti, servicemanager)
+allow vendor_aidl_camera_provider_qti vendor_dmabuf_system_heap_device:chr_file { open ioctl };
+allow vendor_aidl_camera_provider_qti hal_graphics_composer_default:fd use;
 allow vendor_aidl_camera_provider_qti vndbinder_device:chr_file rw_file_perms;
 allow  vendor_aidl_camera_provider_qti vendor_camera_socket:dir search;
 allow  vendor_aidl_camera_provider_qti vendor_camera_socket:sock_file create_file_perms;
