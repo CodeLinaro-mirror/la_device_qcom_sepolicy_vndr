@@ -70,3 +70,10 @@ genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/scs
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
+#qdss sysfs-node
+userdebug_or_eng(`
+genfscon sysfs /devices/platform/soc/4048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/404f000.tmc/coresight-tmc-etr1 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/4b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/4002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
+')
