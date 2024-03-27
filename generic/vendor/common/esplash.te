@@ -75,4 +75,3 @@ allow vendor_esplash vendor_early_services:file r_file_perms;
 get_prop(vendor_esplash, vendor_initsvc_bootanim_prop)
 get_prop(vendor_esplash, vendor_sysboot_completed_prop)
 allow vendor_esplash vendor_sysfs_kpi:file w_file_perms;
-allow vendor_esplash vendor_sysfs_mdss_mdp_init_complete:file r_file_perms;
