@@ -51,6 +51,7 @@ allow vendor_hal_gnss_qti vendor_location:unix_stream_socket connectto;
 allow vendor_hal_gnss_qti vendor_location:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_xtra_daemon:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_lowi_server:unix_dgram_socket sendto;
+allow vendor_hal_gnss_qti vendor_location_locIdlClient_daemon:unix_dgram_socket sendto;
 
 # /dev/socket/qsap_location
 allow vendor_hal_gnss_qti vendor_qsap_location_socket:sock_file create_file_perms;
