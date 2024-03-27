@@ -114,6 +114,7 @@ vendor_internal_prop(vendor_pasr_prop);
 
 #qesdk property
 vendor_internal_prop(vendor_qesdk_ready_prop)
+vendor_internal_prop(vendor_qesdk_mgr_prop);
 
 #qms property
 vendor_internal_prop(vendor_qms_prop)
