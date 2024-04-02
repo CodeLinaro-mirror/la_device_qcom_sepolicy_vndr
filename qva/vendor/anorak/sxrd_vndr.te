@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,13 +24,16 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-# Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-###################################
-#Dev nodes
-#
-/dev/st54spi_gpio                     u:object_r:vendor_ese_gpio_device:s0
+#Allow /dev/dma_heap file access
+allow vendor_sxrd_vndr dmabuf_system_heap_device:chr_file { getattr read open ioctl };
+
+#Allow access to video files
+set_prop(vendor_sxrd_vndr, vendor_video_prop)
+
+#Allow access to codec2 config
+get_prop(vendor_sxrd_vndr, codec2_config_prop)
