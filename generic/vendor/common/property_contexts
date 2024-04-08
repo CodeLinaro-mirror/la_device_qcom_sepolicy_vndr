@@ -132,6 +132,7 @@ persist.vendor.data.qmipriod_load u:object_r:vendor_data_qmipriod_prop:s0
 
 #vendor-wlan
 vendor.wlan.  u:object_r:vendor_wifi_prop:s0
+persist.vendor.wlan.    u:object_r:vendor_wifi_prop:s0
 
 #qdcm socket service
 vendor.display.qdcm_socket_service u:object_r:vendor_qdcmss_prop:s0
