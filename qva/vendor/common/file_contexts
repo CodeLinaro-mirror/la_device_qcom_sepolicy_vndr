@@ -364,6 +364,7 @@
 /vendor/bin/hiber.sh                                                             u:object_r:vendor_qti_hiber_exec:s0
 /vendor/bin/hiber_restore.sh                                                     u:object_r:vendor_qti_hiber_restore_exec:s0
 /dev/block/sda13                                                                 u:object_r:vendor_swap_block_device:s0
+/dev/block/mmcblk0p84                                                            u:object_r:vendor_swap_block_device:s0
 /sys/power/image_size                                                            u:object_r:vendor_sysfs_power_image:s0
 
 #FastCV
