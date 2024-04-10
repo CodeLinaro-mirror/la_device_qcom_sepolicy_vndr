@@ -38,6 +38,7 @@ type vendor_sysfs_twm, sysfs_type, fs_type;
 type vendor_sysfs_slate_rsb, fs_type, sysfs_type;
 type vendor_sysfs_touch_offload, sysfs_type, fs_type;
 type vendor_display_offload_data_file, file_type, data_file_type;
+type vendor_aon_data_file, file_type, data_file_type;
 type vendor_sysfs_cpu_sleep_disabled, sysfs_type, fs_type;
 
 type vendor_sysfs_dload_mode, sysfs_type, fs_type;

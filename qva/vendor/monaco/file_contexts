@@ -154,6 +154,7 @@
 /dev/glink_pkt_slate_display_data               u:object_r:vendor_glink_slate_display_data_device:s0
 /dev/glink_pkt_slate_touch_ctrl                 u:object_r:vendor_glink_slate_touch_ctrl_device:s0
 /dev/glink_pkt_slate_ux_ctl                     u:object_r:vendor_glink_slate_ux_ctl_device:s0
+/dev/glink_pkt_slate_rma                        u:object_r:vendor_glink_slate_rma_device:s0
 /dev/glink_pkt_slate_dfu                        u:object_r:vendor_glink_slate_dfu_device:s0
 /dev/glink_pkt_slate_custom_data                u:object_r:vendor_glink_slate_custom_data_device:s0
 /dev/glink_pkt_slate_qcli                       u:object_r:vendor_glink_slate_qcli_device:s0
@@ -174,6 +175,9 @@
 
 # data files
 /data/vendor/displayoffload(/.*)?             u:object_r:vendor_display_offload_data_file:s0
+
+# data files
+/data/vendor/aon(/.*)?                        u:object_r:vendor_aon_data_file:s0
 
 #senors glink dev node
 /dev/glinkpkt_slate_ssc_usta                    u:object_r:vendor_glink_slate_ssc_usta_device:s0
