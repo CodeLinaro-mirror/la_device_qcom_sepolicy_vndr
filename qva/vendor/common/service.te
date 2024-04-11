@@ -55,3 +55,4 @@ type vendor_tsa_hdcpvndservice,          service_manager_type;
 type hal_wificfr_service,                hal_service_type, protected_service, service_manager_type;
 type vendor_hal_qteeconnector_service,   hal_service_type, protected_service, service_manager_type;
 type vendor_hal_ais_service,             hal_service_type, protected_service, service_manager_type;
+type vendor_hal_bt_hfaudio_service,      hal_service_type, protected_service, service_manager_type;
