@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 dontaudit netd kernel:system module_request;
 dontaudit netd self:capability sys_module;
+
+allow netd hal_bluetooth_default:udp_socket { read write getopt setopt};
+allow netd hal_bluetooth_default:fd use;
