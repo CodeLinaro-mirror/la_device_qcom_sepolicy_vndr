@@ -134,6 +134,7 @@ ro.vendor.qspm.enable            u:object_r:vendor_qspm_prop:s0 exact bool
 vendor.qvr.                                   u:object_r:vendor_qvr_prop:s0
 vendor.sxr.                                   u:object_r:vendor_sxr_prop:s0
 vendor.qvrd.                                  u:object_r:vendor_qvrd_prop:s0
+vendor.qvrd.set_mtu_usb                       u:object_r:vendor_qvrd_prop:s0
 persist.vendor.qvr.                           u:object_r:vendor_qvr_persist_prop:s0
 persist.vendor.qvrd.                          u:object_r:vendor_qvrd_persist_prop:s0
 

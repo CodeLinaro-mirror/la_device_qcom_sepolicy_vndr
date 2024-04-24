@@ -187,6 +187,7 @@ genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-1/1-0064/leds/blue u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-1/1-0064/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-03/1c40000.qcom,spmi:qcom,pm7250b@3:qcom,vibrator@5300/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-08/1c40000.qcom,spmi:qcom,pmiv0104@8:qcom,vibrator@df00/leds/vibrator u:object_r:sysfs_leds:s0
 
 # USB device wakeup nodes
 genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
@@ -322,3 +323,4 @@ genfscon sysfs /devices/platform/soc/4e00000.ssusb/wakeup u:object_r:sysfs_wakeu
 
 # sys net
 genfscon sysfs /devices/platform/soc/17110040.qcom,wcn6750/net/ u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc/c800000.qcom,icnss/net/ u:object_r:sysfs_net:s0
