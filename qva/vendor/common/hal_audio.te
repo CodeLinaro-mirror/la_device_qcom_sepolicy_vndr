@@ -66,3 +66,4 @@ binder_call(carpowerpolicyd, hal_audio_default)
 # Allow audio hal to communicate with msm_lsm char dev
 allow hal_audio_default vendor_msm_lsm_cdev_device:chr_file rw_file_perms;
 get_prop(hal_audio_default, vendor_lpm_prop)
+get_prop(hal_audio_default, vendor_hiber_prop)
