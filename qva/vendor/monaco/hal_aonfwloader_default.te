@@ -14,6 +14,7 @@ allow vendor_hal_aonfwloader_default vendor_slate_daemon_device:chr_file rw_file
 allow vendor_hal_aonfwloader_default vendor_sysfs_ssr:chr_file r_file_perms;
 allow vendor_hal_aonfwloader_default vendor_glink_slate_dfu_device:chr_file rw_file_perms;
 allow vendor_hal_aonfwloader_default vendor_glink_slate_custom_data_device:chr_file rw_file_perms;
+allow vendor_hal_aonfwloader_default vendor_glink_slate_rma_device:chr_file rw_file_perms;
 
 #Needed to pil loading
 allow vendor_hal_aonfwloader_default vendor_ssr_device:chr_file r_file_perms;
@@ -37,3 +38,7 @@ allow vendor_hal_aonfwloader_default vendor_sysfs_dload_mode:file r_file_perms;
 binder_call(vendor_hal_aonfwloader_default, hwservicemanager)
 allow vendor_hal_aonfwloader_default vendor_hal_aonutility_hwservice:hwservice_manager find;
 binder_call(vendor_hal_aonfwloader_default, vendor_hal_aonutility_default)
+
+# Allow reading/writing to '/data/vendor/aon/*'
+allow vendor_hal_aonfwloader_default vendor_aon_data_file:dir create_dir_perms;
+allow vendor_hal_aonfwloader_default vendor_aon_data_file:file create_file_perms;
