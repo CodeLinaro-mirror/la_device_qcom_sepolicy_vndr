@@ -2,4 +2,19 @@
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hab_device, dev_type;
+type vendor_hab_aud_device, dev_type;
+type vendor_hab_cam_device, dev_type;
+type vendor_hab_disp_device, dev_type;
+type vendor_hab_ogles_device, dev_type;
+type vendor_hab_vid_device, dev_type;
+type vendor_hab_misc_device, dev_type;
+type vendor_hab_qcpe_device, dev_type;
+type vendor_hab_clock_device, dev_type;
 type vendor_hab_fde_device, dev_type;
+type vendor_hab_bufferq_device, dev_type;
+type vendor_hab_network_device, dev_type;
+type vendor_hab_hsi2s_device, dev_type;
+type vendor_hab_xvm_device, dev_type;
+type vendor_hab_vnw_device, dev_type;
+type vendor_hab_ext_device, dev_type;
+type vendor_hab_gpce_device, dev_type;

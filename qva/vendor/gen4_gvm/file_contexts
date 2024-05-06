@@ -21,8 +21,25 @@
 /dev/block/vendor_boot_[ab]                                         u:object_r:vendor_custom_ab_block_device:s0
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
+
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
+/dev/hab-aud                                                        u:object_r:vendor_hab_aud_device:s0
+/dev/hab-cam                                                        u:object_r:vendor_hab_cam_device:s0
+/dev/hab-disp                                                       u:object_r:vendor_hab_disp_device:s0
+/dev/hab-ogles                                                      u:object_r:vendor_hab_ogles_device:s0
+/dev/hab-vid                                                        u:object_r:vendor_hab_vid_device:s0
+/dev/hab-misc                                                       u:object_r:vendor_hab_misc_device:s0
+/dev/hab-qcpe                                                       u:object_r:vendor_hab_qcpe_device:s0
+/dev/hab-clock                                                      u:object_r:vendor_hab_clock_device:s0
 /dev/hab-fde                                                        u:object_r:vendor_hab_fde_device:s0
+/dev/hab-bufferq                                                    u:object_r:vendor_hab_bufferq_device:s0
+/dev/hab-network                                                    u:object_r:vendor_hab_network_device:s0
+/dev/hab-hsi2s                                                      u:object_r:vendor_hab_hsi2s_device:s0
+/dev/hab-xvm                                                        u:object_r:vendor_hab_xvm_device:s0
+/dev/hab-vnw                                                        u:object_r:vendor_hab_vnw_device:s0
+/dev/hab-ext                                                        u:object_r:vendor_hab_ext_device:s0
+/dev/hab-gpce                                                       u:object_r:vendor_hab_gpce_device:s0
+
 /dev/hgsl                                                           u:object_r:gpu_device:s0
 
 /vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
