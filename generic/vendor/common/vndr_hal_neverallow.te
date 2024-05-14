@@ -66,6 +66,13 @@ neverallow {
 neverallow {
   vendor_halserverdomain
   - vendor_qtidataservices_app
-} { file_type fs_type }:file execute_no_trans;
+} {
+file_type
+fs_type
+-shell_exec
+-toolbox_exec
+}:file execute_no_trans;
+
+
 neverallow { domain -init } vendor_halserverdomain:process transition;
 neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app }:process dyntransition;
