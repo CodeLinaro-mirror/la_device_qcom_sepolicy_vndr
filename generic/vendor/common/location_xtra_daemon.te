@@ -88,3 +88,6 @@ hal_client_domain(vendor_location_xtra_daemon , vendor_qccsyshal);
 
 crash_dump_fallback(vendor_location_xtra_daemon)
 allow vendor_location_xtra_daemon vendor_location:unix_stream_socket { read write };
+
+#GNSS Firmware
+set_prop(vendor_location_xtra_daemon, vendor_gnss_fw_state)
