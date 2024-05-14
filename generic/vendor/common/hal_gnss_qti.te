@@ -77,9 +77,3 @@ unix_socket_connect(vendor_hal_gnss_qti, vendor_ssgtzd, vendor_ssgtzd)
 # libqdi and have all its clients use netlink route
 # sockets.
 dontaudit vendor_hal_gnss_qti self:udp_socket create;
-
-# Allow Gnss HAL to register callback with car power policy 
-carpowerpolicy_callback_domain(vendor_hal_gnss_qti)
-allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
-
-allow vendor_hal_gnss_qti vendor_location_device:chr_file rw_file_perms;

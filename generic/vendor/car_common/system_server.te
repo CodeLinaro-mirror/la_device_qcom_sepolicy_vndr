@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -26,37 +26,8 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# audio daemon
-type vendor_audiod, domain;
-type vendor_audiod_exec, exec_type, vendor_file_type, file_type;
-
-init_daemon_domain(vendor_audiod)
-
-hal_client_domain(vendor_audiod, hal_audio)
-hal_client_domain(vendor_audiod, hal_vehicle)
-
-allow vendor_audiod proc_asound:dir search;
-allow vendor_audiod proc_asound:file r_file_perms;
-allow vendor_audiod vendor_proc_audiod:file r_file_perms;
-allow vendor_audiod audio_device:dir r_dir_perms;
-allow vendor_audiod audio_device:chr_file rw_file_perms;
-
-# Allow vendor_audiod to read silent mode node
-allow vendor_audiod sysfs_power:file r_file_perms;
-
-# Allow vendor_audiod to communicate with Audio HAL Plugin Service
-allow vendor_audiod vendor_audio_hal_plugin_service_service:service_manager find;
-binder_call(vendor_audiod, vendor_audio_hal_plugin_service)
-vndbinder_use(vendor_audiod)
-
-wakelock_use(vendor_audiod);
-allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;
-allow vendor_audiod vendor_sysfs_sndcard:file r_file_perms;
-allow vendor_audiod property_socket:sock_file write;
-allow vendor_audiod init:unix_stream_socket connectto;
-get_prop(vendor_audiod, vendor_audio_prop)
-set_prop(vendor_audiod, vendor_audio_prop)
-
+allow system_server hal_audiocontrol_default:process signal;
+allow system_server hal_vehicle_server:process signal;
