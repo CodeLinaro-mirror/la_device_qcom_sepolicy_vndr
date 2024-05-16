@@ -95,3 +95,5 @@ crash_dump_fallback(vendor_location_xtwifi_client)
 # allows xtwifi-client to access ssgtzd socket
 unix_socket_connect(vendor_location_xtwifi_client, vendor_ssgtzd, vendor_ssgtzd)
 
+# allows xtwifi-client to access qdata
+hal_client_domain(vendor_location_xtwifi_client, vendor_hal_qms_qti)

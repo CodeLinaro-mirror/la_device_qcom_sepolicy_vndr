@@ -63,6 +63,9 @@ get_prop(vendor_hal_qesdhal_default, boot_status_prop)
 #allow qesdhal to get/set qesdk_ready_prop
 set_prop(vendor_hal_qesdhal_default, vendor_qesdk_ready_prop)
 
+#allow qesdhal to get/set qesdk_mgr_prop
+set_prop(vendor_hal_qesdhal_default, vendor_qesdk_mgr_prop)
+
 userdebug_or_eng(`
 unix_socket_connect(vendor_hal_qesdhal_default, logdr, logd);
 ')

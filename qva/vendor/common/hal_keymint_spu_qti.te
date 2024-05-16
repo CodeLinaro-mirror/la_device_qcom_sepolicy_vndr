@@ -76,3 +76,6 @@ get_prop(vendor_hal_keymint_spu_qti, vendor_tee_listener_prop)
 
 # Allow read SPU disable/enable RKP property
 get_prop(vendor_hal_keymint_spu_qti, vendor_disable_spu_prop)
+
+# Access to wakelock sysfs
+wakelock_use(vendor_hal_keymint_spu_qti)

@@ -112,3 +112,9 @@ binder_call(vendor_ppat_stats, servicemanager)
 # ppat_stats: type=1400 audit(0.0:2483): avc:  denied  { read } for  name="u:object_r:default_prop:s0" dev="tmpfs" ino=170 scontext=u:r:vendor_ppat_stats:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
 # allow vendor_ppat_stats default_prop:file read;
 
+# 03-04 05:56:28.558   808   808 E SELinux : avc:  denied { find } for pid=14165 uid=1000 
+# name=vendor.qti.hardware.perf2.IPerf/default 
+# scontext=u:r:vendor_ppat_stats:s0 tcontext=u:object_r:vendor_hal_perf2_service:s0 
+# tclass=service_manager permissive=0
+hal_client_domain(vendor_ppat_stats, vendor_hal_perf)
+

@@ -25,9 +25,9 @@ userdebug_or_eng(`
 
   allow hal_uwb proc_sysrq:file rw_file_perms;
 
-  allow hal_uwb vendor_uwb_data_file:dir ra_dir_perms;
+  allow hal_uwb vendor_uwb_data_file:dir rw_dir_perms;
   allow hal_uwb vendor_uwb_data_file:file create_file_perms;
-  allow hal_uwb vendor_bt_data_file:dir ra_dir_perms;
+  allow hal_uwb vendor_bt_data_file:dir rw_dir_perms;
   allow hal_uwb vendor_bt_data_file:file create_file_perms;
   allow hal_uwb self:{ socket } create_socket_perms_no_ioctl;
   allow hal_uwb vendor_debugfs_uwb_tracing:dir r_dir_perms;

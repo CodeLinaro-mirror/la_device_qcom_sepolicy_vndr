@@ -134,6 +134,7 @@ ro.vendor.qspm.enable            u:object_r:vendor_qspm_prop:s0 exact bool
 vendor.qvr.                                   u:object_r:vendor_qvr_prop:s0
 vendor.sxr.                                   u:object_r:vendor_sxr_prop:s0
 vendor.qvrd.                                  u:object_r:vendor_qvrd_prop:s0
+vendor.qvrd.set_mtu_usb                       u:object_r:vendor_qvrd_prop:s0
 persist.vendor.qvr.                           u:object_r:vendor_qvr_persist_prop:s0
 persist.vendor.qvrd.                          u:object_r:vendor_qvrd_persist_prop:s0
 
@@ -153,8 +154,9 @@ persist.vendor.mwqem.                        u:object_r:vendor_mwqem_prop:s0
 vendor.pasr.                                 u:object_r:vendor_pasr_prop:s0
 ro.vendor.pasr.                              u:object_r:vendor_pasr_prop:s0
 
-#qesdk ready property
+#qesdk properties
 vendor.qesdk.ready                           u:object_r:vendor_qesdk_ready_prop:s0
+vendor.qesdk.mgr                             u:object_r:vendor_qesdk_mgr_prop:s0
 
 #qms
 persist.vendor.data.qms.                     u:object_r:vendor_qms_prop:s0

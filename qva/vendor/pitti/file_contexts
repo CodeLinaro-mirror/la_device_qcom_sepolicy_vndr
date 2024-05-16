@@ -47,3 +47,5 @@
 #memory
 /(vendor|system/vendor)/bin/hw/pasrknob                                            u:object_r:vendor_pasrknob_exec:s0
 
+#bluetooth
+/sys/class/tty/ttyHS0/device/hs_uart_operation                           u:object_r:vendor_sysfs_bt:s0

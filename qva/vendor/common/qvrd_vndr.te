@@ -165,6 +165,7 @@ allow vendor_qvrd_vndr vendor_qvr_external_sensor_device:chr_file rw_file_perms;
 get_prop(vendor_qvrd_vndr, vendor_qvr_prop)
 get_prop(vendor_qvrd_vndr, vendor_sxr_prop)
 get_prop(vendor_qvrd_vndr, vendor_qvrd_prop)
+set_prop(vendor_qvrd_vndr, vendor_qvrd_prop)
 get_prop(vendor_qvrd_vndr, vendor_qvr_persist_prop)
 get_prop(vendor_qvrd_vndr, vendor_qvrd_persist_prop)
 allow vendor_qvrd_vndr video_device:chr_file w_file_perms;
@@ -199,3 +200,6 @@ dontaudit vendor_qvrd_vndr vendor_xdsp_device:chr_file r_file_perms;
 #tsf node permission
 allow vendor_qvrd_vndr sysfs_net:dir r_dir_perms;
 allow vendor_qvrd_vndr sysfs_net:file r_file_perms;
+
+#Allow audio hal permission
+hal_client_domain(vendor_qvrd_vndr, hal_audio);

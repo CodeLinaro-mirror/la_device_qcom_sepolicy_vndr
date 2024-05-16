@@ -61,3 +61,6 @@ get_prop(vendor_hal_gatekeeper_spu_qti, vendor_tee_listener_prop)
 # As each dma buf is seperate device, need to allow access to those devices
 allow vendor_hal_gatekeeper_spu_qti vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
 allow vendor_hal_gatekeeper_spu_qti vendor_dmabuf_secure_sp_tz_heap_device:chr_file r_file_perms;
+
+# Access to wakelock sysfs
+wakelock_use(vendor_hal_gatekeeper_spu_qti)
