@@ -47,4 +47,10 @@ allow vendor_aidl_automotive_evs_ais self:capability sys_nice;
 get_prop(vendor_aidl_automotive_evs_ais, graphics_config_writable_prop)
 get_prop(vendor_aidl_automotive_evs_ais, graphics_config_prop)
 
+get_prop(vendor_aidl_automotive_evs_ais, boot_status_prop)
+allow vendor_aidl_automotive_evs_ais carpowerpolicyd_service:service_manager find;
+allow vendor_aidl_automotive_evs_ais servicemanager:binder call;
+binder_call(vendor_aidl_automotive_evs_ais, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_aidl_automotive_evs_ais)
+
 userdebug_or_eng(`allow vendor_aidl_automotive_evs_ais vendor_sysfs_kpi:file w_file_perms;')
