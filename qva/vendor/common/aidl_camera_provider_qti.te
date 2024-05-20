@@ -52,4 +52,11 @@ allow vendor_aidl_camera_provider_qti hal_graphics_allocator_default:fd use;
 hal_server_domain(vendor_aidl_camera_provider_qti,hal_camera)
 get_prop(vendor_aidl_camera_provider_qti,hwservicemanager_prop)
 allow vendor_aidl_camera_provider_qti video_device:chr_file rw_file_perms;
+
+get_prop(vendor_aidl_camera_provider_qti, boot_status_prop)
+allow vendor_aidl_camera_provider_qti carpowerpolicyd_service:service_manager find;
+allow vendor_aidl_camera_provider_qti servicemanager:binder call;
+binder_call(vendor_aidl_camera_provider_qti, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_aidl_camera_provider_qti)
+
 userdebug_or_eng(`allow  vendor_aidl_camera_provider_qti vendor_sysfs_kpi:file w_file_perms;')
