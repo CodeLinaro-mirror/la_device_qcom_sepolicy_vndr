@@ -53,6 +53,12 @@ allow vendor_hal_gnss_qti vendor_location_lowi_server:unix_dgram_socket sendto;
 # time offset between local and remote for dual SoC architectures
 allow vendor_hal_gnss_qti vendor_sysfs_mhi:file r_file_perms;
 
+# Allow Diag
+userdebug_or_eng(`
+  diag_use(vendor_hal_gnss_qti)
+  r_dir_file(vendor_hal_gnss_qti, vendor_sysfs_diag)
+')
+
 # Allow Gnss HAL to get updates from health hal
 hal_client_domain(vendor_hal_gnss_qti, hal_health)
 

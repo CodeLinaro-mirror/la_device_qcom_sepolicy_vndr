@@ -55,5 +55,15 @@ userdebug_or_eng(`
   allow shell vendor_location_engine_service_exec:file rx_file_perms;
 ')
 
+#diag
+userdebug_or_eng(`
+    diag_use(vendor_location_engine_service)
+    allow vendor_qcomsysd vendor_location_engine_service:dir r_dir_perms;
+    allow vendor_qcomsysd vendor_location_engine_service:file rw_file_perms;
+    allow vendor_qcomsysd vendor_location_engine_service:file r_file_perms;
+    hal_client_domain(vendor_location_engine_service, vendor_hal_diaghal)
+    hal_client_domain(vendor_location_engine_service, hal_allocator)
+')
+
 # IPC Router
 allow vendor_location_engine_service self:qipcrtr_socket create_socket_perms_no_ioctl;

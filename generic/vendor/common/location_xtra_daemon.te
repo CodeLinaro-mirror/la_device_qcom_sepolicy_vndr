@@ -70,8 +70,6 @@ net_domain(vendor_location_xtra_daemon)
 #xtra-daemon access to qcc properties
 get_prop(vendor_location_xtra_daemon, vendor_qcc_prop)
 
-hal_client_domain(vendor_location_xtra_daemon , vendor_hal_datafactory_qti)
-hal_client_domain(vendor_location_xtra_daemon , vendor_hal_cacertservice_qti)
 hal_client_domain(vendor_location_xtra_daemon , vendor_qccsyshal);
 
 crash_dump_fallback(vendor_location_xtra_daemon)
