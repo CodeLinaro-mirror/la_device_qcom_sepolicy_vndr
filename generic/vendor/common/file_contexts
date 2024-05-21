@@ -296,6 +296,7 @@
 /(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.soc-model\.sh                               u:object_r:vendor_qti_init_shell_exec:s0
 
+/vendor/bin/routing_manager_daemon                  u:object_r:vendor_routing_manager_default_exec:s0
 ###############################################
 # same-process HAL files and their dependencies
 #
