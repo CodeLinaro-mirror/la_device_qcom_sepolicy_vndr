@@ -56,6 +56,7 @@ neverallow {
      -init
      -ueventd
      -vold
+     -init-unified
      } vendor_persist_type: { dir file } *;
 
 allow { domain - isolated_app_all } vendor_sysfs_kgsl:dir search;
