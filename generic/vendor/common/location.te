@@ -43,6 +43,13 @@ allow vendor_location self:capability { setgid setuid };
 
 hwbinder_use(vendor_location)
 
+allow vendor_location self:udp_socket create_socket_perms;
+
+allow vendor_location self:{
+qipcrtr_socket
+netlink_route_socket
+} create_socket_perms_no_ioctl;
+
 get_prop(vendor_location, hwservicemanager_prop)
 get_prop(vendor_location, vendor_cnd_prop)
 #xtra-daemon access to qcc properties

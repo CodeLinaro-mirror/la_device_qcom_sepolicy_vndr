@@ -13,7 +13,6 @@ hal_attribute_service(vendor_hal_qvrcamservice_qti, vendor_hal_qvrd_camservice)
 
 allow vendor_qvrd_vndr_cam vendor_hal_qvrcamservice_qti_socket_client:unix_stream_socket { getopt read setopt shutdown write };
 allow vendor_hal_qvrcamservice_qti_socket_fd_use_client vendor_qvrd_vndr_cam: fd use;
-allow vendor_qvrd_vndr_cam vendor_hal_qvrcamservice_qti_socket_fd_use_client:process setsched;
 
 binder_use(vendor_qvrd_vndr_cam);
 
