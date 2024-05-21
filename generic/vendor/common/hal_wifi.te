@@ -25,6 +25,11 @@
 #OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+#Changes from Qualcomm Innovation Center, Inc. are provided under the
+#following license:
+#
+#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
 # allow hal_wifi to write into /proc/debugdriver/driverdump
@@ -67,7 +72,7 @@ allowxperm hal_wifi_default self:udp_socket ioctl { SIOCBRADDBR
                                                     SIOCBRADDIF
                                                     SIOCBRDELIF };
 
-#someip
+# someip
 allow hal_wifi_default vendor_someip_data_file:dir rw_dir_perms;
 allow hal_wifi_default vendor_someip_data_file:file create_file_perms;
 allow hal_wifi_default vendor_someip_cfg_file:file r_file_perms;
@@ -81,3 +86,6 @@ allow hal_wifi_default netd:unix_stream_socket connectto;
 allow hal_wifi_default self:netlink_route_socket { nlmsg_read nlmsg_readpriv create_socket_perms_no_ioctl };
 
 get_prop(hal_wifi_default, vendor_wifi_prop)
+
+# allow hal_wifi_default connect to routing manager socket file
+allow hal_wifi_default vendor_routing_manager_default:unix_stream_socket { connectto };
