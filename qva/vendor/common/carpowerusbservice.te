@@ -19,3 +19,10 @@ binder_call(carpowerpolicyd, vendor_carpowerusbservice)
 allow vendor_carpowerusbservice vendor_sysfs_usb_node:dir r_dir_perms;
 allow vendor_carpowerusbservice vendor_sysfs_usb_node:file rw_file_perms;
 dontaudit vendor_carpowerusbservice self:capability dac_override;
+
+# Allow carpowerusbservice to set sys.powerctl
+set_prop(vendor_carpowerusbservice, powerctl_prop)
+
+# Allow carpowerusbservice to read /dev/input/event* nodes
+allow vendor_carpowerusbservice input_device:chr_file r_file_perms;
+allow vendor_carpowerusbservice input_device:dir r_dir_perms;
