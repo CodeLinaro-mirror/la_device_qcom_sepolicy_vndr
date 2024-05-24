@@ -33,3 +33,4 @@
 #Add till AOSP fixes these
 allow carservice_app { content_capture_service media_communication_service }:service_manager find;
 allow carservice_app vendor_sysfs_sb:file rw_file_perms;
+get_prop(carservice_app, vendor_audio_prop)
