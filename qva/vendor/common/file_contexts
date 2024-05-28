@@ -61,6 +61,7 @@
 ###################################
 # Dev socket nodes
 #
+/dev/socket/iop                                 u:object_r:vendor_iop_socket:s0
 /dev/socket/mlid                                u:object_r:vendor_mlid_socket:s0
 /dev/socket/qwes_ipc                            u:object_r:vendor_qwesd_socket:s0
 /dev/socket/ssgqmig                             u:object_r:vendor_ssgqmig_socket:s0
@@ -106,7 +107,7 @@
 /vendor/bin/hw/android\.hardware\.nfc-service-st                                   u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:vendor_hal_alarm_qti_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.alarm-service                                u:object_r:vendor_hal_alarm_qti_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.MemHal-service                         u:object_r:vendor_hal_MemHal_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:vendor_hal_iop_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:vendor_hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service                         u:object_r:vendor_hal_qseecom_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.minkipcbinder@1\.0-service                   u:object_r:vendor_hal_minkipcbinder_default_exec:s0
@@ -240,6 +241,7 @@
 # data files
 #
 /data/vendor/dpm_vndr(/.*)?                                         u:object_r:vendor_dpm_vndr_data_file:s0
+/data/vendor/iop(/.*)?                                              u:object_r:vendor_iop_data_file:s0
 /data/vendor/misc/qti_fp(/.*)?                                      u:object_r:vendor_qfp-daemon_data_file:s0
 /data/vendor/wifi(/.*)?                                             u:object_r:vendor_wifi_vendor_data_file:s0
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:vendor_wifi_vendor_wpa_socket:s0

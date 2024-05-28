@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-##for perf-hal/MemHal call
+##for perf-hal/iop-hal call
 hal_client_domain(system_server, vendor_hal_perf)
-hal_client_domain(system_server, vendor_hal_MemHal)
+hal_client_domain(system_server, vendor_hal_iop)
 hal_client_domain(system_server, vendor_hal_srvctracker)
 
 binder_call(system_server, vendor_hal_srvctracker_default)
@@ -41,6 +41,9 @@ binder_call(system_server, vendor_location_xtwifi_client);
 allow system_server vendor_proc_audiod:file r_file_perms;
 
 get_prop(system_server, vendor_confqmaa)
+
+# allow system_server to access IOP HAL service
+hal_client_domain(system_server, vendor_hal_iop)
 
 # allow system_server to access vendor perf properties
 get_prop(system_server, vendor_iop_prop)

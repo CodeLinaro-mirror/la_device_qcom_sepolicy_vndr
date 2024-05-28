@@ -70,4 +70,3 @@ type hal_wifidisplayimage_service,     hal_service_type, service_manager_type;
 type vendor_hal_qspa_service,            hal_service_type, protected_service, service_manager_type;
 type vendor_hal_wifilearner_service,     hal_service_type, protected_service, service_manager_type;
 type vendor_syshealthmon_service,        hal_service_type, protected_service, service_manager_type;
-type vendor_hal_MemHal_service,           hal_service_type, protected_service, service_manager_type;
