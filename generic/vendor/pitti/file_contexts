@@ -276,3 +276,6 @@
 
 # VM Specific
 /vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
+
+# Dev node for rpmb
+/dev/mmcblk0rpmb		u:object_r:vendor_rpmb_device:s0
