@@ -46,5 +46,6 @@ allow vendor_aidl_automotive_evs_ais self:capability sys_nice;
 
 get_prop(vendor_aidl_automotive_evs_ais, graphics_config_writable_prop)
 get_prop(vendor_aidl_automotive_evs_ais, graphics_config_prop)
+set_prop(vendor_aidl_automotive_evs_ais, vendor_camera_prop)
 
 userdebug_or_eng(`allow vendor_aidl_automotive_evs_ais vendor_sysfs_kpi:file w_file_perms;')
