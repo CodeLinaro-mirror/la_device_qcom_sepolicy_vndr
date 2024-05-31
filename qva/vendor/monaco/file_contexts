@@ -200,3 +200,6 @@
 
 #senors glink dev node
 /dev/glinkpkt_slate_ssc_hal                       u:object_r:vendor_glink_slate_ssc_hal_device:s0
+
+#camera
+/sys/firmware/devicetree/base/memory/ddr_device_type            u:object_r:vendor_sysfs_ddr:s0
