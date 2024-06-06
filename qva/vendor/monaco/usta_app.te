@@ -1,0 +1,12 @@
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+## vendor_usta_app
+##
+## This file defines the permissions that vendor_usta_apps can carry
+
+userdebug_or_eng(`
+  dontaudit vendor_usta_app default_prop:file { getattr open map };
+  allow vendor_usta_app vendor_glink_slate_ssc_usta_device:chr_file rw_file_perms;
+  get_prop(vendor_usta_app, vendor_qc_aon_prop)
+')

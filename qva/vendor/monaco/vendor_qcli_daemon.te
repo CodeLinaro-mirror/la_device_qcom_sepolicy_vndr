@@ -1,0 +1,11 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#sepolicy for qcli daemon
+type vendor_qcli_daemon, domain;
+type vendor_qcli_daemon_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_qcli_daemon)
+
+#Needed to qcli over adb communication
+allow vendor_qcli_daemon vendor_glink_slate_qcli_device:chr_file rw_file_perms;
