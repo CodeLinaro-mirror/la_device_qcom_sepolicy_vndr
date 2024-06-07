@@ -141,7 +141,7 @@
 /sys/class/pmic-lpm/pmic_twm_enable                                      u:object_r:vendor_sysfs_twm:s0
 /sys/class/pmic-lpm/pmic_twm_exit                                        u:object_r:vendor_sysfs_twm:s0
 /sys/bus/i2c/devices/1-0024/pt_touch_offload                             u:object_r:vendor_sysfs_touch_offload:s0
-/sys/bus/i2c/devices/0-0039/raydium_touch_offload                        u:object_r:vendor_sysfs_touch_offload:s0
+/sys/bus/i2c/devices/1-0039/raydium_touch_offload                        u:object_r:vendor_sysfs_touch_offload:s0
 
 #bluetooth
 /sys/class/tty/ttyHS0/device/hs_uart_operation                           u:object_r:vendor_sysfs_bt:s0
