@@ -23,7 +23,7 @@ hal_client_domain(vendor_xrcommd, hal_graphics_allocator);
 hal_client_domain(vendor_xrcommd, hal_graphics_composer);
 
 #Access to xrcomm properties
-get_prop(vendor_xrcommd, vendor_xrcomm_prop);
+set_prop(vendor_xrcommd, vendor_xrcomm_prop);
 
 #tsf node permission
 allow vendor_xrcommd sysfs_net:dir r_dir_perms;

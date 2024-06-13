@@ -59,8 +59,4 @@ userdebug_or_eng(`
   r_dir_file(vendor_dlsc, vendor_sysfs_diag)
 ')
 
-#Allow ifconfig execution
-allow vendor_dlsc { vendor_shell_exec vendor_toolbox_exec }:file execute_no_trans;
-dontaudit vendor_dlsc vendor_sysfs_usb_node:dir { search };
-
 allow vendor_dlsc self:netlink_generic_socket create_socket_perms_no_ioctl;

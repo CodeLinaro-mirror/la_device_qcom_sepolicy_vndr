@@ -675,3 +675,6 @@
 #C2PA
 /vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti u:object_r:vendor_hal_c2pa_qti_exec:s0
 /vendor/bin/C2PAInternetService u:object_r:vendor_c2painternetservice_exec:s0
+
+#vendor_remoteproc_adsp_ssr
+/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-5]+/state        u:object_r:vendor_remoteproc_adsp_ssr:s0

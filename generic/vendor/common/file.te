@@ -108,6 +108,7 @@ type vendor_sysfs_usbpd_device, sysfs_type, fs_type;
 type vendor_sysfs_vadc_dev, sysfs_type, fs_type;
 type vendor_sysfs_lcd, sysfs_type, fs_type;
 type vendor_sysfs_adsp_ssr, sysfs_type, fs_type;
+type vendor_remoteproc_adsp_ssr, sysfs_type, fs_type;
 type vendor_sysfs_svm_neuron, sysfs_type, fs_type;
 type vendor_sysfs_trusted_touch_enable, sysfs_type, fs_type;
 type vendor_sysfs_trusted_touch_event, sysfs_type, fs_type;
