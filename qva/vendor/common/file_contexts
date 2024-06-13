@@ -192,6 +192,7 @@
 /vendor/bin/trusteduilistener                                                      u:object_r:vendor_trusteduilistener_exec:s0
 /vendor/bin/modemManager                                                           u:object_r:vendor_modem_manager_exec:s0
 /vendor/bin/qsap_dcfd                                                              u:object_r:vendor_dcfd_exec:s0
+/vendor/bin/vendor\.qti\.qvirtvendor-service                                       u:object_r:vendor_hal_qvirtvendor_default_exec:s0
 
 #### Context for location features
 ## location daemons and binaries

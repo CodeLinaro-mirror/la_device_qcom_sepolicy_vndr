@@ -125,3 +125,6 @@ vendor_restricted_prop(vendor_uwb_prop);
 
 # DCF props
 vendor_internal_prop(vendor_dcf_prop);
+
+#VM Shutdown toggle
+vendor_restricted_prop(vendor_vm_ssrenable_prop);
