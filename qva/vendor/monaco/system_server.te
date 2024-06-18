@@ -43,3 +43,6 @@ hal_client_domain(system_server, vendor_hal_uioffload);
 
 # allow system_server to access Health Services
 hal_client_domain(system_server, hal_healthservices);
+
+# allow system_server to access power state service hal
+hal_client_domain(system_server, vendor_hal_powerstateservice);

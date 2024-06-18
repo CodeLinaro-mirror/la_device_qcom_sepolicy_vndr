@@ -38,6 +38,7 @@ type vendor_dip_device, dev_type;
 type vendor_mba_debug_dev, dev_type;
 type vendor_glink_slate_display_ctrl_device, dev_type;
 type vendor_glink_slate_display_data_device, dev_type;
+type vendor_glink_slate_rma_device, dev_type;
 type vendor_glink_slate_touch_ctrl_device, dev_type;
 type vendor_glink_slate_ux_ctl_device, dev_type;
 type vendor_slate_daemon_device, dev_type;

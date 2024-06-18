@@ -90,7 +90,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.wristorientation@1\.0-service u:object_r:vendor_hal_wristorientation_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.healthservices@1\.0-service u:object_r:vendor_hal_healthservices_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.healthservices@1-service u:object_r:vendor_hal_healthservices_qti_exec:s0
-
+/(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate-service\.wear-qti u:object_r:vendor_hal_dumpstate_qti_exec:s0
 # Bluetooth LAZY HAL
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti-lazy        u:object_r:hal_bluetooth_default_exec:s0
 
@@ -141,7 +141,7 @@
 /sys/class/pmic-lpm/pmic_twm_enable                                      u:object_r:vendor_sysfs_twm:s0
 /sys/class/pmic-lpm/pmic_twm_exit                                        u:object_r:vendor_sysfs_twm:s0
 /sys/bus/i2c/devices/1-0024/pt_touch_offload                             u:object_r:vendor_sysfs_touch_offload:s0
-/sys/bus/i2c/devices/0-0039/raydium_touch_offload                        u:object_r:vendor_sysfs_touch_offload:s0
+/sys/bus/i2c/devices/1-0039/raydium_touch_offload                        u:object_r:vendor_sysfs_touch_offload:s0
 
 #bluetooth
 /sys/class/tty/ttyHS0/device/hs_uart_operation                           u:object_r:vendor_sysfs_bt:s0
@@ -154,6 +154,7 @@
 /dev/glink_pkt_slate_display_data               u:object_r:vendor_glink_slate_display_data_device:s0
 /dev/glink_pkt_slate_touch_ctrl                 u:object_r:vendor_glink_slate_touch_ctrl_device:s0
 /dev/glink_pkt_slate_ux_ctl                     u:object_r:vendor_glink_slate_ux_ctl_device:s0
+/dev/glink_pkt_slate_rma                        u:object_r:vendor_glink_slate_rma_device:s0
 /dev/glink_pkt_slate_dfu                        u:object_r:vendor_glink_slate_dfu_device:s0
 /dev/glink_pkt_slate_custom_data                u:object_r:vendor_glink_slate_custom_data_device:s0
 /dev/glink_pkt_slate_qcli                       u:object_r:vendor_glink_slate_qcli_device:s0
@@ -174,6 +175,9 @@
 
 # data files
 /data/vendor/displayoffload(/.*)?             u:object_r:vendor_display_offload_data_file:s0
+
+# data files
+/data/vendor/aon(/.*)?                        u:object_r:vendor_aon_data_file:s0
 
 #senors glink dev node
 /dev/glinkpkt_slate_ssc_usta                    u:object_r:vendor_glink_slate_ssc_usta_device:s0
@@ -196,3 +200,6 @@
 
 #senors glink dev node
 /dev/glinkpkt_slate_ssc_hal                       u:object_r:vendor_glink_slate_ssc_hal_device:s0
+
+#camera
+/sys/firmware/devicetree/base/memory/ddr_device_type            u:object_r:vendor_sysfs_ddr:s0
