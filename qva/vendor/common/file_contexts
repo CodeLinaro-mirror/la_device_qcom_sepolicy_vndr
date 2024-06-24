@@ -100,6 +100,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.nxp-qti          u:object_r:vendor_hal_weaver_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.thales           u:object_r:vendor_hal_weaver_default_exec:s0
 /vendor/bin/hw/android\.hardware\.authsecret-service\.nxp-qti                      u:object_r:hal_authsecret_default_exec:s0
+/vendor/bin/hw/android\.hardware\.authsecret-service\.thales-qti                   u:object_r:hal_authsecret_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti                   u:object_r:vendor_hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.authsecret\.qti\.spu-service     u:object_r:vendor_hal_authsecret_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@[0-9]+\.[0-9]+-service\.clearkey             u:object_r:vendor_hal_drm_clearkey_exec:s0
@@ -127,6 +128,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.2-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element-service\.qti      u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element-service\.qti\.spu      u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.[0-2]-service        u:object_r:vendor_hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf-hal-service             u:object_r:vendor_hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf2-hal-service            u:object_r:vendor_hal_perf_default_exec:s0
@@ -184,6 +186,7 @@
 /(vendor|system/vendor)/bin/hw/qvrservice                                          u:object_r:vendor_qvrd_vndr_exec:s0
 /(vendor|system/vendor)/bin/hw/sxrservice                                          u:object_r:vendor_sxrd_vndr_exec:s0
 /(vendor|system/vendor)/bin/hw/xrcommservice                                       u:object_r:vendor_xrcommd_exec:s0
+/(vendor|system/vendor)/bin/init\.xrcommd\.usb_mtu_set\.sh                         u:object_r:vendor_init_xrcommd_shell_exec:s0
 /vendor/bin/trusteduilistener                                                      u:object_r:vendor_trusteduilistener_exec:s0
 /vendor/bin/modemManager                                                           u:object_r:vendor_modem_manager_exec:s0
 /vendor/bin/qsap_dcfd                                                              u:object_r:vendor_dcfd_exec:s0

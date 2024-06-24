@@ -51,3 +51,10 @@ get_prop(vendor_hal_gnss_qti, vendor_qms_prop)
 qhdc_sdk_use(vendor_hal_gnss_qti)
 
 allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
+
+# Allow to set capability to block suspend and resume from suspend/sleep to wake up
+# state using wake_alarm.
+allow vendor_hal_gnss_qti self:capability2 { block_suspend wake_alarm };
+
+# Allow access to write to wake_lock file under /sys/power/
+allow vendor_hal_gnss_qti sysfs_wake_lock:file { append open };

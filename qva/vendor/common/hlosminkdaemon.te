@@ -39,3 +39,8 @@ init_daemon_domain(vendor_hlosminkdaemon)
 # Remove this when QMI service moves to pfmd
 allow vendor_hlosminkdaemon self:{ socket qipcrtr_socket } create_socket_perms;
 allowxperm vendor_hlosminkdaemon self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+# Allow hlosminkdaemon access to vendor_mink_trace_prop
+userdebug_or_eng(`
+  get_prop(vendor_hlosminkdaemon, vendor_mink_trace_prop)
+')
