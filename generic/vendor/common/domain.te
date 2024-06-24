@@ -83,12 +83,14 @@ neverallow { domain
 - vendor_chre
 - vendor_dspservice
 - vendor_vppservice
+- vendor_qvrd_vndr
 - hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default
 userdebug_or_eng(` -vendor_usta_app')
 userdebug_or_eng(` -vendor_ustaservice_app')
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
+userdebug_or_eng(` -vendor_snapcam_app')
 }vendor_xdsp_device:chr_file *;
 
 neverallow { domain -init -vendor_init - ueventd } vendor_xdsp_device:chr_file ~{r_file_perms};

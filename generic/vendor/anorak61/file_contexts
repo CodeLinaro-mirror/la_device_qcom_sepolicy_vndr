@@ -27,7 +27,7 @@
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -87,7 +87,6 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/mdmddr                u:object_r:vendor_efs_boot_dev:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/vm-data               u:object_r:vendor_vm_data_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/qmcs                  u:object_r:vendor_qmcs_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/spunvm                u:object_r:vendor_spunvm_block_device:s0
 
 # A/B partitions.
 /dev/block/platform/soc/1d84000.ufshc/by-name/abl_[ab]              u:object_r:vendor_custom_ab_block_device:s0
@@ -100,7 +99,6 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/cmnlib64_[ab]         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/core_nhlos_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/cpucp_[ab]            u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/cpucp_dtb_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/devcfg_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dsp_[ab]              u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dtbo_[ab]             u:object_r:vendor_custom_ab_block_device:s0
@@ -138,13 +136,6 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/aop_config_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/vendor_dlkm_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/xbl_ramdump_[ab]      u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/init_boot_[ab]        u:object_r:boot_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/pvmfw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/spuservice_[ab]       u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/soccp_debug_[ab]      u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/soccp_dcd_[ab]        u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/ipafw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
-
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                       u:object_r:vendor_gpt_block_device:s0
@@ -186,22 +177,14 @@
 /sys/devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
-
-/sys/devices/platform/soc/a1f80000.remoteproc-soccp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/a1f80000.remoteproc-soccp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
 /sys/devices/platform/soc/soc:qcom,remoteproc-esoc0/esoc0/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,remoteproc-esoc0/esoc0/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
-/sys/devices/platform/soc/a3380000.remoteproc-soccp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/a3380000.remoteproc-soccp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-#Display nodes
 #Display nodes
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-2/enabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-Virtual-1/enabled u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/a800000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/15600000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
 
 #poweropt-service
 /(vendor|system/vendor)/bin/poweropt-service u:object_r:vendor_hal_poweroptservice_qti_exec:s0
@@ -220,7 +203,7 @@
 /sys/devices/platform/soc/780000.qfprom/qfprom0/feat_conf* u:object_r:vendor_sysfs_qfprom:s0
 
 # mmc device type
-/sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc[0-1]/mmc[0-1]:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
+/sys/devices/platform/soc/1c10000.qcom,pcie/pci[0-9]+:[0-9]+/[0-9]+:[0-9]+:[0-9]+.[0-9]+/[0-9]+:[0-9]+:[0-9]+.[0-9]+/nvme/nvme0/transport u:object_r:vendor_sysfs_mmc_device_type:s0
 
 /vendor/bin/hw/vendor\.qti\.hardware\.display\.demura@1\.0-service u:object_r:hal_display_demura_default_exec:s0
 
@@ -231,8 +214,3 @@
 
 # VM Specific
 /vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
-
-#same-process HAL files
-/vendor/lib(64)?/vendor\.qti\.hardware\.display\.snapalloc-impl\.so         u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/mapper\.qti\.so        u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libmapperutils\.so       u:object_r:same_process_hal_file:s0

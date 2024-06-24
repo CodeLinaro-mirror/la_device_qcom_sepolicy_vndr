@@ -79,3 +79,6 @@ get_prop(system_server, vendor_qspm_prop)
 
 # allow system_server to access USB devices
 r_dir_file(system_server, vendor_sysfs_usb_node);
+
+# allow system_server to access vendor pasr property
+get_prop(system_server, vendor_pasr_prop)
