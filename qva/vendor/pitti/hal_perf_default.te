@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_hal_perf_default {appdomain}:process sigkill;
+
+allow vendor_hal_perf_default sysfs_zram:dir   { search };
+allow vendor_hal_perf_default sysfs_zram:file  rw_file_perms;
