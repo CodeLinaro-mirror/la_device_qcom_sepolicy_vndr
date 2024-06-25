@@ -424,3 +424,6 @@
 
 #automs file
 /data/vendor/automs(/.*)?                                                        u:object_r:vendor_automs_vndr_data_file:s0
+
+#DRM_SMMU
+/vendor/bin/init.drm.smmu.sh                                                     u:object_r:vendor_qti_drm_smmu_exec:s0
