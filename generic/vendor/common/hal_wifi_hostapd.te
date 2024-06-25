@@ -36,5 +36,20 @@ userdebug_or_eng(`
 allow hal_wifi_hostapd vendor_wifi_vendor_log_data_file:dir search;
 ')
 
+# someip
+allow hal_wifi_hostapd_default vendor_someip_data_file:dir rw_dir_perms;
+allow hal_wifi_hostapd_default vendor_someip_data_file:file create_file_perms;
+allow hal_wifi_hostapd_default vendor_someip_cfg_file:file r_file_perms;
+allow hal_wifi_hostapd_default vendor_someip_data_file:sock_file create_file_perms;
+
+allow hal_wifi_hostapd_default self:udp_socket create_socket_perms;
+allow hal_wifi_hostapd_default port:udp_socket name_bind;
+allow hal_wifi_hostapd_default node:udp_socket node_bind;
+allow hal_wifi_hostapd_default fwmarkd_socket:sock_file write;
+allow hal_wifi_hostapd_default netd:unix_stream_socket connectto;
+allow hal_wifi_hostapd_default self:netlink_route_socket { nlmsg_read nlmsg_readpriv create_socket_perms_no_ioctl };
+
+get_prop(hal_wifi_hostapd_default, vendor_wifi_prop)
+
 # allow hostapd connect someip routing manager socket file
 allow hal_wifi_hostapd_default vendor_routing_manager_default:unix_stream_socket { connectto };
