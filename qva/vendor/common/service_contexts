@@ -39,6 +39,7 @@ vendor.qti.hardware.qxr.IQXRAudioService/default        u:object_r:vendor_hal_sx
 vendor.qti.hardware.data.connectionfactory.IFactory/slot0 u:object_r:vendor_hal_dataconnection_service:s0
 vendor.qti.hardware.data.connectionfactory.IFactory/slot1 u:object_r:vendor_hal_dataconnection_service:s0
 vendor.qti.data.txpwrservice.ITxPwrService/default     u:object_r:vendor_hal_qms_service:s0
+vendor.qti.data.ntn.IQmsSatelliteService/default       u:object_r:vendor_hal_qms_service:s0
 vendor.qti.hardware.bttpi.IBtTpi/default               u:object_r:vendor_hal_bttpi_service:s0
 vendor.qti.hardware.alarm.IAlarm/default               u:object_r:vendor_hal_alarm_qti_aidl_service:s0
 vendor.qti.hardware.spu.ISPUManager/default            u:object_r:vendor_hal_spu_service:s0
