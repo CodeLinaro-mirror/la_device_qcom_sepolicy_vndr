@@ -1,0 +1,7 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#C2C_SERVICES
+/vendor/bin/mosquitto           u:object_r:vendor_mosquitto_exec:s0
+/vendor/bin/c2c_hub             u:object_r:vendor_c2c_hub_exec:s0
+/vendor/bin/dm                  u:object_r:vendor_dm_exec:s0
