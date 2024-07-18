@@ -4,4 +4,4 @@
 vendor.qti.hardware.qteeconnector.IAppConnector/default                   u:object_r:vendor_hal_qteeconnector_service:s0
 vendor.qti.hardware.qteeconnector.IGPAppConnector/default                 u:object_r:vendor_hal_qteeconnector_service:s0
 vendor.qti.hardware.aonutility.IAONUtility/default                        u:object_r:vendor_hal_aonutility_service:s0
-
+android.media.audio.IHalAdapterVendorExtension/default                    u:object_r:hal_audio_service:s0
