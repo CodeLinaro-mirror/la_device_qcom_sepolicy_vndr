@@ -102,7 +102,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink_log/wakeup u:object_r:s
 
 # USB device wakeup nodes
 genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/a800000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a400000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 
 # DCVS nodes
 genfscon sysfs /devices/platform/soc/18590100.qcom,cpu0-cpu-l3-lat/devfreq u:object_r:vendor_sysfs_devfreq:s0
@@ -207,7 +207,6 @@ genfscon sysfs /devices/platform/soc/soc:gpio_keys/wakeup u:object_r:sysfs_wakeu
 genfscon sysfs /devices/platform/soc/32300000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/2400000.remoteproc-slpi/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/a1f80000.remoteproc-soccp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/3e00000.qcom,ipa/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-adsp/wakeup u:object_r:sysfs_wakeup:s0
@@ -240,5 +239,3 @@ genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup u:object_r:sysfs_wakeup
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc2/3000000.remoteproc-adsp:glink-edge/3000000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
-
-genfscon sysfs /devices/platform/soc/988000.i2c/i2c-0/0-0010/ipd_distance u:object_r:vendor_sysfs_ipd_distance:s0

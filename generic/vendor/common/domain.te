@@ -83,7 +83,6 @@ neverallow { domain
 - vendor_chre
 - vendor_dspservice
 - vendor_vppservice
-- vendor_qvrd_vndr
 - hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default

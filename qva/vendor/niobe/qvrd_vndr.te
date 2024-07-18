@@ -4,7 +4,6 @@
 #
 # Sensors
 #
-allow vendor_qvrd_vndr vendor_xdsp_device:chr_file r_file_perms;
 allow vendor_qvrd_vndr self:qipcrtr_socket { create getattr write read setopt };
 
 #
@@ -22,18 +21,3 @@ allow vendor_qvrd_vndr vendor_calib_file:file rw_file_perms;
 
 neverallow { coredomain -init -ueventd } vendor_calib_file:dir *;
 neverallow { coredomain -init -ueventd } vendor_calib_file:file *;
-
-get_prop(vendor_qvrd_vndr, vendor_camera_prop)
-dontaudit vendor_qvrd_vndr vendor_hal_camera_postproc_hwservice:hwservice_manager *;
-
-allow vendor_qvrd_vndr vendor_sysfs_ipd_distance:file rw_file_perms;
-
-# Allow to access qvr_vndr_cam
-allow vendor_qvrd_vndr vendor_qvrd_vndr_camera_socket:sock_file rw_file_perms;
-allow vendor_qvrd_vndr vendor_qvrd_vndr_cam:unix_stream_socket connectto;
-allow vendor_qvrd_vndr vendor_qvrd_vndr_cam:fd use;
-
-hal_server_domain_bypass(vendor_qvrd_vndr, vendor_hal_qvrcamservice_qti)
-
-# Allow to access heap
-allow vendor_qvrd_vndr vendor_dmabuf_system_heap_device:chr_file r_file_perms;
