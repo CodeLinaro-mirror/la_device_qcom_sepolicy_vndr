@@ -262,4 +262,11 @@ binder_call($1, vendor_qms)
 binder_call(vendor_qms, $1)
 ')
 
-
+# Allow binder call between snapx client and its brokered binder service
+# syntax: vendor_snapx_use(vendordomain)
+define(`vendor_snapx_use', `
+binder_call($1, untrusted_app)
+binder_call(untrusted_app, $1)
+binder_call($1, untrusted_app_32)
+binder_call(untrusted_app_32, $1)
+')

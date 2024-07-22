@@ -111,3 +111,10 @@ get_prop(vendor_sxrd_vndr, vendor_sxr_prop)
 userdebug_or_eng(`
   crash_dump_fallback(vendor_sxrd_vndr);
 ')
+
+#Adding access for sxr to qvr for audio record callback notification service
+allow vendor_sxrd_vndr vendor_qvrd_vndr_socket:sock_file { write };
+get_prop(vendor_sxrd_vndr, vendor_qvr_prop)
+get_prop(vendor_sxrd_vndr, vendor_qvr_persist_prop)
+allow vendor_sxrd_vndr vendor_qvrd_vndr:unix_stream_socket { connectto };
+allow vendor_sxrd_vndr vendor_qvrd_vndr:fd { use };

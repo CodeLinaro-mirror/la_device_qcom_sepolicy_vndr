@@ -40,3 +40,6 @@ type vendor_qesd_one_token_data_file, file_type, data_file_type;
 
 # UWB related traces
 type vendor_debugfs_uwb_tracing, tracefs_type, debugfs_type, fs_type;
+
+# ppat_stats
+type vendor_ppat_stats_data_file, file_type, data_file_type;

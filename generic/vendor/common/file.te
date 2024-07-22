@@ -210,6 +210,9 @@ type vendor_sysfs_data, fs_type, sysfs_type;
 #haptics sysfs files
 type vendor_sysfs_haptics, fs_type, sysfs_type;
 
+#wifi max chipset log size sysfs files
+type vendor_sysfs_max_chipset_log_size, fs_type, sysfs_type;
+
 #diag sysfs files
 type vendor_sysfs_diag, fs_type, sysfs_type;
 

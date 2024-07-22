@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
 # Copyright (c) 2023 - 2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
@@ -70,3 +70,5 @@ type hal_wifidisplayimage_service,     hal_service_type, service_manager_type;
 type vendor_hal_qspa_service,            hal_service_type, protected_service, service_manager_type;
 type vendor_hal_wifilearner_service,     hal_service_type, protected_service, service_manager_type;
 type vendor_syshealthmon_service,        hal_service_type, protected_service, service_manager_type;
+type vendor_hal_MemHal_service,           hal_service_type, protected_service, service_manager_type;
+type vendor_hal_snapx_service,           hal_service_type, service_manager_type;

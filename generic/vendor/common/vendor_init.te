@@ -123,3 +123,8 @@ get_prop(vendor_init, vendor_pcie_prop);
 
 #Access rcs service
 set_prop(vendor_init, vendor_persist_rcs_prop)
+
+dontaudit vendor_init block_device:lnk_file setattr;
+
+#googleclientidbase properties
+dontaudit vendor_init default_prop:property_service set;

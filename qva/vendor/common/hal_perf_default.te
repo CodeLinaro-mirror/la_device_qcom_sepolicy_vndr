@@ -140,6 +140,9 @@ qhdc_sdk_use(vendor_hal_perf_default);
 # Allow connecting to thermal_socket
 unix_socket_connect(vendor_hal_perf_default, vendor_thermal, vendor_thermal-engine)
 
+# Allow connecting to qlm socket
+unix_socket_connect(vendor_hal_perf_default, vendor_qlm, vendor_qlm_service)
+
 #Allow display driver access
 allow vendor_hal_perf_default graphics_device:chr_file rw_file_perms;
 
@@ -159,6 +162,12 @@ allow vendor_hal_perf vendor_qdisplay_service:service_manager find;
 vndbinder_use(vendor_hal_perf);
 
 hal_client_domain(vendor_hal_perf_default, hal_thermal);
+
+# Allow access to snapdragon services aidl
+hal_client_domain(vendor_hal_perf_default, vendor_hal_snapx_service_qti);
+
+# Allow perf hal and 3-pty app binder call each other
+vendor_snapx_use(vendor_hal_perf_default)
 
 allow vendor_hal_perf_default surfaceflinger:process setsched;
 allow vendor_hal_perf_default hal_graphics_composer_default:process setsched;

@@ -232,6 +232,7 @@
 /vendor/bin/hw/vendor.qti.hardware.limits@1.1-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/hw/vendor.qti.hardware.limits@1.2-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/qlm-service         u:object_r:vendor_qlm_service_exec:s0
+/vendor/bin/qt-service          u:object_r:vendor_qt_service_exec:s0
 /vendor/bin/sensors.qti         u:object_r:vendor_sensors_qti_exec:s0
 /vendor/bin/qsap_sensors        u:object_r:vendor_sensors_qesdk_exec:s0
 /vendor/bin/ssr_setup           u:object_r:vendor_ssr_setup_exec:s0
@@ -260,6 +261,7 @@
 /vendor/bin/nicmd               u:object_r:vendor_nicmd_exec:s0
 /vendor/bin/qti                 u:object_r:vendor_qti_exec:s0
 /vendor/bin/qsap_voiceui        u:object_r:vendor_vui_dmgr_exec:s0
+/vendor/bin/wifi_qos_daemon     u:object_r:vendor_wifi_qos_daemon_exec:s0
 ## Context for location features - start
 /vendor/bin/loc_launcher        u:object_r:vendor_location_exec:s0
 /vendor/bin/lowi-server         u:object_r:vendor_location_lowi_server_exec:s0

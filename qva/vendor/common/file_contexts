@@ -182,6 +182,7 @@
 /vendor/bin/qesdk-manager                                                          u:object_r:vendor_hal_qesdhal_default_exec:s0
 /vendor/bin/qesdk-oem-svc                                                          u:object_r:vendor_qesdoem_default_exec:s0
 /vendor/bin/qesdk-secmanager                                                       u:object_r:vendor_qesdsect_exec:s0
+/vendor/bin/snapdragon_services                                                    u:object_r:vendor_hal_snapx_default_exec:s0
 /(vendor|system/vendor)/bin/qms                                                    u:object_r:vendor_qms_exec:s0
 /(vendor|system/vendor)/bin/hw/qvrservice                                          u:object_r:vendor_qvrd_vndr_exec:s0
 /(vendor|system/vendor)/bin/hw/sxrservice                                          u:object_r:vendor_sxrd_vndr_exec:s0

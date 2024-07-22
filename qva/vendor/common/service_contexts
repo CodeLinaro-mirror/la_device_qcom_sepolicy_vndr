@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
 # Copyright (c) 2023 - 2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
@@ -39,6 +39,7 @@ vendor.qti.hardware.qxr.IQXRAudioService/default        u:object_r:vendor_hal_sx
 vendor.qti.hardware.data.connectionfactory.IFactory/slot0 u:object_r:vendor_hal_dataconnection_service:s0
 vendor.qti.hardware.data.connectionfactory.IFactory/slot1 u:object_r:vendor_hal_dataconnection_service:s0
 vendor.qti.data.txpwrservice.ITxPwrService/default     u:object_r:vendor_hal_qms_service:s0
+vendor.qti.data.dmapconsent.IService/default           u:object_r:vendor_hal_qms_service:s0
 vendor.qti.data.ntn.IQmsSatelliteService/default       u:object_r:vendor_hal_qms_service:s0
 vendor.qti.hardware.bttpi.IBtTpi/default               u:object_r:vendor_hal_bttpi_service:s0
 vendor.qti.hardware.alarm.IAlarm/default               u:object_r:vendor_hal_alarm_qti_aidl_service:s0
@@ -84,3 +85,4 @@ vendor.qti.hardware.fingerprint.IQfpExtendedFingerprint/default u:object_r:vendo
 vendor.qti.hardware.qspa.IQspa/default                 u:object_r:vendor_hal_qspa_service:s0
 vendor.qti.hardware.wifi.wifilearner.IWifiStats/default  u:object_r:vendor_hal_wifilearner_service:s0
 vendor.qti.syshealthmon.ISysHealthMon/default          u:object_r:vendor_syshealthmon_service:s0
+vendor.qti.snapdragonServices.ISnapdragonServices/default           u:object_r:vendor_hal_snapx_service:s0
