@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # dev nodes
@@ -132,12 +132,18 @@
 # Block device for ZRAM
 /dev/block/zram0                                u:object_r:swap_block_device:s0
 
+
+
+/dev/block/platform/soc/1d84000.ufshc/by-name/softsku             u:object_r:vendor_softsku_block_device:s0
+/(vendor|system/vendor)/bin/softsku_daemon        u:object_r:vendor_softsku_qti_exec:s0
+
 # Vendor DMA-BUF Heaps
 /dev/dma_heap/qcom,system               u:object_r:vendor_dmabuf_system_heap_device:s0
 /dev/dma_heap/qcom,system-uncached      u:object_r:vendor_dmabuf_system_uncached_heap_device:s0
 /dev/dma_heap/qcom,secure-pixel         u:object_r:vendor_dmabuf_secure_pixel:s0
 /dev/dma_heap/qcom,secure-non-pixel     u:object_r:vendor_dmabuf_secure_non_pixel:s0
 /dev/dma_heap/qcom,adsp                 u:object_r:vendor_dmabuf_adsp_heap_device:s0
+/dev/dma_heap/qcom,mdsp                 u:object_r:vendor_dmabuf_mdsp_heap_device:s0
 /dev/dma_heap/qcom,secure-cdsp          u:object_r:vendor_dmabuf_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,cma-secure-cdsp      u:object_r:vendor_dmabuf_cma_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,sp-hlos              u:object_r:vendor_dmabuf_sp_hlos_heap_device:s0
