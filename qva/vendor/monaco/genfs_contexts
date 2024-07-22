@@ -192,3 +192,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,slate-rsb/wakeup u:object_r:sysfs_
 
 #DeepSleep-QuickBoot sysfs node
 genfscon sysfs /kernel/etx_sysfs/dsqb_status                            u:object_r:sysfs_dsqb:s0
+
+#WLAN con mode sysfs node
+genfscon sysfs /module/wlan/parameters/con_mode u:object_r:vendor_sysfs_con_mode:s0
