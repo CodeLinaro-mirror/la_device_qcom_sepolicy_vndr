@@ -128,3 +128,6 @@ genfscon sysfs /devices/platform/soc/4080000.remoteproc-modem/wakeup u:object_r:
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi_1101_00.01.00/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0004:00/0004:00:00.0/0004:01:00.0/mhi_1101_04.01.00/wakeup/wakeup10  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0004:00/0004:00:00.0/0004:01:00.0/mhi_1101_04.01.00/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/soc/1da4000.ufshc2/qcom/ufs_pm_mode u:object_r:vendor_sysfs_ufs_pm_mode:s0
+
