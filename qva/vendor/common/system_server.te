@@ -42,6 +42,7 @@ binder_call(system_server, vendor_location_edgnss_daemon);
 binder_call(system_server, vendor_location_slim_daemon);
 binder_call(system_server, vendor_location_xtwifi_client);
 binder_call(system_server, vendor_location_xtwifi_inetagent);
+binder_call(system_server, vendor_location_locIdlClient_daemon);
 
 allow system_server vendor_proc_audiod:file r_file_perms;
 

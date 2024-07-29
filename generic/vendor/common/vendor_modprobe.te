@@ -1,5 +1,4 @@
 # Copyright (c) 2019, 2021, The Linux Foundation. All rights reserved.
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 domain_trans(init, vendor_modinstall-sh_exec, vendor_modprobe)
@@ -50,4 +49,9 @@ allow vendor_modprobe self:capability2 perfmon;
 allow vendor_modprobe self:key write;
 allow vendor_modprobe self:perf_event cpu;
 allow vendor_modprobe proc_bootconfig:file r_file_perms;
+allow vendor_modprobe self:capability sys_nice;
 dontaudit vendor_modprobe self:capability sys_admin;
+
+
+
+

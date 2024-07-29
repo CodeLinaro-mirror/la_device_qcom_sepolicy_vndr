@@ -253,3 +253,6 @@ type vendor_sysfs_drv, sysfs_type, fs_type;
 type sysfs_hvdcp, fs_type, sysfs_type;
 type vendor_proc_swappiness, proc_type, fs_type;
 type vendor_sysfs_power_image, fs_type, sysfs_type;
+
+#automs
+type vendor_automs_vndr_data_file, file_type, data_file_type;
