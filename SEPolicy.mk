@@ -13,6 +13,11 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS := \
     $(QSSI_SEPOLICY_PATH)/generic/private \
     $(QSSI_SEPOLICY_PATH)/qva/private
 
+ifeq (,$(filter $(TARGET_BOARD_DERIVATIVE_SUFFIX), _tb))
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    $(QSSI_SEPOLICY_PATH)/generic/car_private
+endif
+
 #once all the services are moved to Product /ODM above lines will be removed.
 # sepolicy rules for product images
 PRODUCT_PUBLIC_SEPOLICY_DIRS := \
@@ -32,6 +37,11 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(SEPOLICY_PATH)/generic/vendor/common \
        $(SEPOLICY_PATH)/qva/vendor/common \
        $(SEPOLICY_PATH)/generic/vendor/common/attribute \
+
+    ifeq (,$(filter $(TARGET_BOARD_DERIVATIVE_SUFFIX), _tb))
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/car_common
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/car_common
+    endif
 
     ifeq ($(TARGET_SEPOLICY_DIR),)
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/$(TARGET_BOARD_PLATFORM)

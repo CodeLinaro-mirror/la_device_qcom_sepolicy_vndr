@@ -30,6 +30,3 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 r_dir_file(surfaceflinger, vendor_sysfs_qfprom)
-allow surfaceflinger automotive_display_service_server:binder call;
-allow surfaceflinger vendor_hal_evs_driver:fd use;
-allow surfaceflinger vendor_aidl_automotive_evs_ais:fd use;
