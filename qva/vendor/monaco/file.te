@@ -50,3 +50,6 @@ type btss_sysfs_bt, sysfs_type, fs_type;
 
 #dsqb sysfs
 type sysfs_dsqb, fs_type, sysfs_type;
+
+#WLAN
+type vendor_sysfs_con_mode, fs_type, sysfs_type;
