@@ -46,3 +46,6 @@ hal_client_domain(hal_bluetooth_default, hal_vehicle)
 
 # for Xpan Provider Service
 hal_attribute_service(hal_bluetooth, vendor_hal_xpanprovider_service)
+
+# BT handsfree audio service
+hal_attribute_service(hal_bluetooth, vendor_hal_bt_hfaudio_service)

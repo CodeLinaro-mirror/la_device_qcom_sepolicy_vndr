@@ -21,3 +21,9 @@ add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
 add_service(vendor_hal_ais_qti, vendor_hal_ais_service)
 allow vendor_hal_ais_qti vndbinder_device:chr_file rw_file_perms;
 binder_call(vendor_hal_ais_qti, servicemanager)
+
+get_prop(vendor_hal_ais_qti, boot_status_prop)
+allow vendor_hal_ais_qti carpowerpolicyd_service:service_manager find;
+allow vendor_hal_ais_qti servicemanager:binder call;
+binder_call(vendor_hal_ais_qti, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_hal_ais_qti)

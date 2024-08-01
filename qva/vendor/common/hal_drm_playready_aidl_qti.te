@@ -15,6 +15,7 @@ binder_call(vendor_hal_drm_playready_aidl_qti, servicemanager);
 
 allow vendor_hal_drm_playready_aidl_qti mediacodec:fd use;
 allow vendor_hal_drm_playready_aidl_qti { appdomain -isolated_app }:fd use;
+allow vendor_hal_drm_playready_aidl_qti vendor_qce_device:chr_file rw_file_perms;
 
 allow vendor_hal_drm_playready_aidl_qti vendor_qdisplay_service:service_manager { find };
 
