@@ -228,6 +228,7 @@
 /vendor/bin/loc_launcher        u:object_r:vendor_location_exec:s0
 /vendor/bin/lowi-server         u:object_r:vendor_location_lowi_server_exec:s0
 /vendor/bin/xtra-daemon         u:object_r:vendor_location_xtra_daemon_exec:s0
+/vendor/bin/locIdlClient_daemon u:object_r:vendor_location_locIdlClient_daemon_exec:s0
 ## Context for location features - end
 /vendor/bin/pd-mapper           u:object_r:vendor_pd_mapper_exec:s0
 /vendor/bin/ims_rtp_daemon      u:object_r:vendor_hal_imsrtp_exec:s0
@@ -249,6 +250,7 @@
 
 /vendor/bin/hw/qcrild           u:object_r:rild_exec:s0
 /vendor/bin/hw/qcrilNrd         u:object_r:rild_exec:s0
+/vendor/bin/automs              u:object_r:rild_exec:s0
 /vendor/bin/hw/android\.hardware\.vibrator@1\.1-service.crosshatch        u:object_r:hal_vibrator_default_exec:s0
 /vendor/bin/hw/android\.hardware\.identity-service-qti       u:object_r:vendor_hal_identity_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.keymaster@3\.0-service-qti         u:object_r:vendor_hal_keymaster_qti_exec:s0

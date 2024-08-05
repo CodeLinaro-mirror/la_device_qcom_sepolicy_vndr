@@ -89,3 +89,7 @@ get_prop(hal_wifi_default, vendor_wifi_prop)
 
 # allow hal_wifi_default connect to routing manager socket file
 allow hal_wifi_default vendor_routing_manager_default:unix_stream_socket { connectto };
+
+# allow hal_wifi create virtual interface
+allow hal_wifi_default self:capability sys_module;
+allow hal_wifi_default self:netlink_route_socket nlmsg_write;

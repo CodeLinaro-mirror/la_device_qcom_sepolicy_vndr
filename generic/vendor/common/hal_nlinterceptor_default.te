@@ -27,3 +27,7 @@ allow hal_nlinterceptor_default self:netlink_route_socket nlmsg_read;
 
 # allow hal_nlinterceptor_default connect to routing manager socket file
 allow hal_nlinterceptor_default vendor_routing_manager_default:unix_stream_socket { connectto };
+
+# allow hal_nlinterceptor_default set ctl.start and ctl.stop property
+set_prop(hal_nlinterceptor_default, ctl_start_prop)
+set_prop(hal_nlinterceptor_default, ctl_stop_prop)
