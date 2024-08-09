@@ -26,3 +26,20 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 set_prop(rild, vendor_xlat_prop)
+
+allow rild self:capability {
+    net_raw
+    net_admin
+};
+allow rild self:capability2 {
+    block_suspend
+};
+allow rild rild:{
+    netlink_socket
+    netlink_route_socket
+}create_socket_perms_no_ioctl;
+
+allow rild self:netlink_route_socket nlmsg_readpriv;
+allow rild self:netlink_route_socket nlmsg_write;
+allow rild vendor_automs_vndr_data_file:dir create_dir_perms;
+allow rild vendor_automs_vndr_data_file:file create_file_perms;

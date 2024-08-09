@@ -218,3 +218,10 @@ allow vendor_qti_init_shell vendor_sysfs_rx_config:file w_file_perms;
 
 #GNSS Frimware
 set_prop(vendor_qti_init_shell, vendor_gnss_fw_state)
+
+# To enable debug tracing
+# Userdebug/eng variant
+userdebug_or_eng(`
+allow vendor_qti_init_shell debugfs_tracing_debug:file { open write };
+allow vendor_qti_init_shell debugfs_tracing:file { open write };
+')
