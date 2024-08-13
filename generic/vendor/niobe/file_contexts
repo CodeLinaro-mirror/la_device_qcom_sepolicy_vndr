@@ -226,8 +226,6 @@
 /sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc[0-1]/mmc[0-1]:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
 /sys/devices/platform/soc/1c08000.qcom,pcie/pci0002:00/0002:00:00.0/0002:01:00.0/nvme/nvme0/transport u:object_r:vendor_sysfs_mmc_device_type:s0
 
-/vendor/bin/hw/vendor\.qti\.hardware\.display\.demura@1\.0-service u:object_r:hal_display_demura_default_exec:s0
-
 #powermodule database
 /data/vendor/pwr(/.*)? u:object_r:vendor_pm_data_file:s0
 
