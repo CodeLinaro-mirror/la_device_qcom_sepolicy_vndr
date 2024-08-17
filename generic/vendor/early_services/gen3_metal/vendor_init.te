@@ -8,3 +8,8 @@ domain_auto_trans(vendor_init, vendor_ais_server_exec, vendor_ais_server)
 domain_auto_trans(vendor_init, vendor_qcxserver_exec, vendor_qcxserver)
 domain_auto_trans(vendor_init, vendor_qcarcam_edrm_rvc_exec, vendor_qcarcam_edrm_rvc)
 domain_auto_trans(vendor_init, vendor_esplash_exec, vendor_esplash)
+
+allow vendor_init rootfs:file { r_file_perms getattr };
+allow vendor_init proc_cmdline:file getattr;
+allow vendor_init proc_bootconfig:file getattr;
+allow vendor_init rootfs:system module_load;

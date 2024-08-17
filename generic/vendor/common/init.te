@@ -83,7 +83,7 @@ allow init sysfs_zram:file r_file_perms;
 allow init vendor_sysfs_boot_adsp:file w_file_perms;
 
 allow init bt_firmware_file:filesystem getattr;
-allow init firmware_file:filesystem getattr;
+allow init firmware_file:filesystem { getattr unmount };
 
 # Search and write access for vendor_sysfs_graphics for backlight in recovery
 recovery_only(`
@@ -99,3 +99,9 @@ allow init vendor_sysfs_graphics:file w_file_perms;
 allow init vendor_sysfs_display:file open;
 allow init vendor_sysfs_kgsl:file { open write };
 allow init vendor_sysfs_kpi:file write;
+allow init vendor_init_exec:file execute;
+allow init self:capability sys_nice;
+userdebug_or_eng(`
+allow init kmsg_device:chr_file ioctl;
+')
+allow init gpu_device:chr_file relabelto;
