@@ -42,6 +42,8 @@ userdebug_or_eng(`
   allowxperm vendor_usta_app self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
   allow vendor_usta_app self:{ socket qipcrtr_socket } create_socket_perms;
   allow vendor_usta_app vendor_xdsp_device:chr_file r_file_perms;
+  allow vendor_usta_app vendor_sensors_vendor_data_file:dir create_dir_perms;
+  allow vendor_usta_app vendor_sensors_vendor_data_file:file create_file_perms;
 ')
 
 allow vendor_usta_app {
@@ -51,9 +53,6 @@ allow vendor_usta_app {
 
 allow vendor_usta_app vendor_usta_app_data_file:dir create_dir_perms;
 allow vendor_usta_app vendor_usta_app_data_file:file create_file_perms;
-
-allow vendor_usta_app vendor_sensors_vendor_data_file:dir create_dir_perms;
-allow vendor_usta_app vendor_sensors_vendor_data_file:file create_file_perms;
 
 dontaudit vendor_usta_app system_data_file:file open;
 allow vendor_usta_app cgroup:file w_file_perms;

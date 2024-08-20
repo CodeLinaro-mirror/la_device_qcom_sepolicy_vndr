@@ -4,9 +4,11 @@
 # vendor_hal_c2pa_qti - C2PA AIDL Service
 type vendor_hal_c2pa_qti, domain;
 type vendor_hal_c2pa_qti_exec, exec_type, vendor_file_type, file_type;
+type vendor_hal_c2pa_qti_tmpfs, file_type;
 
 init_daemon_domain(vendor_hal_c2pa_qti)
 hal_server_domain(vendor_hal_c2pa_qti, vendor_hal_c2pa)
+tmpfs_domain(vendor_hal_c2pa_qti)
 
 binder_use(vendor_hal_c2pa_qti)
 hal_attribute_service(vendor_hal_c2pa, vendor_hal_c2pa_aidl_service)
@@ -19,8 +21,10 @@ allow vendor_hal_c2pa_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow vendor_hal_c2pa_qti vendor_membuf_dev:chr_file r_file_perms;
 allow vendor_hal_c2pa_qti vendor_vm_self_device:chr_file r_file_perms;
 allow vendor_hal_c2pa_qti vendor_vm_trusted_device:chr_file r_file_perms;
+allow vendor_hal_c2pa_client vendor_hal_c2pa_qti_tmpfs:file read;
 
 # Allow read access to mink socket log files
 userdebug_or_eng(`
   get_prop(vendor_hal_c2pa, vendor_mink_trace_prop)
 ')
+

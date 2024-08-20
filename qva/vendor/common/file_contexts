@@ -57,6 +57,7 @@
 /dev/qmc_dma                          u:object_r:vendor_qmc_dma_device:s0
 /dev/qmc_cma                          u:object_r:vendor_qmc_cma_device:s0
 /dev/q2spiuwb                         u:object_r:vendor_q2spiuwb_device:s0
+/dev/ipa_events                       u:object_r:vendor_ipaevents_device:s0
 
 ###################################
 # Dev socket nodes
@@ -188,6 +189,7 @@
 /(vendor|system/vendor)/bin/hw/sxrservice                                          u:object_r:vendor_sxrd_vndr_exec:s0
 /(vendor|system/vendor)/bin/hw/xrcommservice                                       u:object_r:vendor_xrcommd_exec:s0
 /(vendor|system/vendor)/bin/init\.xrcommd\.usb_mtu_set\.sh                         u:object_r:vendor_init_xrcommd_shell_exec:s0
+/(vendor|system/vendor)/bin/hw/xrcommservicehal                                    u:object_r:vendor_xrcommhald_exec:s0
 /vendor/bin/trusteduilistener                                                      u:object_r:vendor_trusteduilistener_exec:s0
 /vendor/bin/modemManager                                                           u:object_r:vendor_modem_manager_exec:s0
 /vendor/bin/qsap_dcfd                                                              u:object_r:vendor_dcfd_exec:s0

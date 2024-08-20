@@ -79,6 +79,7 @@ vendor.qti.hardware.trustedui.ITrustedInput/default                   u:object_r
 vendor.qti.hardware.agm.IAGM/default                                  u:object_r:hal_audio_service:s0
 vendor.qti.hardware.pal.IPAL/default                                  u:object_r:hal_audio_service:s0
 vendor.qti.hardware.qasr.IQasr/default                                 u:object_r:hal_audio_service:s0
+vendor.qti.hardware.paleventnotifier.IPALEventNotifier/default        u:object_r:hal_audio_service:s0
 vendor.qti.data.qmsservice.IQmsService                                u:object_r:vendor_qms_service:s0
 vendor.qti.hardware.capabilityconfigstore.ICapabilityConfigStore/default u:object_r:vendor_hal_capabilityconfigstore_service:s0
 vendor.qti.ims.uceaidlservice.IUceService/default                     u:object_r:vendor_aidl_rcsservice:s0
