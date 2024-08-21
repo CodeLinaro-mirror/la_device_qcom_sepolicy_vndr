@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 persist.vendor.qbg.                          u:object_r:vendor_hvdcp_opti_prop:s0
@@ -54,3 +54,6 @@ vendor.gatekeeper.quickboot     u:object_r:vendor_tee_gk_quickboot:s0
 
 #secure element quickboot prop
 vendor.secure_element.quickboot  u:object_r:vendor_se_quickboot:s0
+
+# Qseecomd hibernate prop
+vendor.qseecomd.hibernate    u:object_r:vendor_tee_km_quickboot:s0
