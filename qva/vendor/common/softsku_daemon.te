@@ -15,3 +15,6 @@ allow vendor_softsku_qti port:tcp_socket { name_bind };
 allow vendor_softsku_qti node:tcp_socket { node_bind };
 allow vendor_softsku_qti netd:unix_stream_socket {connectto};
 allow vendor_softsku_qti fwmarkd_socket:sock_file {write};
+allow vendor_softsku_qti vendor_dmabuf_qseecom_ta_heap_device:chr_file {read open ioctl};
+allow vendor_softsku_qti mnt_vendor_file:dir {search};
+allow vendor_softsku_qti vendor_persist_data_file:dir {search read open};

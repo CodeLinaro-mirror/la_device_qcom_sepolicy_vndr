@@ -60,11 +60,6 @@ userdebug_or_eng(`allow hal_audio_default vendor_sysfs_kpi:file write;')
 binder_call(hal_audio_default,vendor_acdb_loader_service)
 binder_call(hal_audio_default,vendor_audio_hal_plugin_service)
 
-# Allow audio HAL to communicate with car power policy service
-allow hal_audio_default carpowerpolicyd_service:service_manager find;
-binder_call(hal_audio_default, carpowerpolicyd)
-binder_call(carpowerpolicyd, hal_audio_default)
-
 # Allow audio hal to communicate with msm_lsm char dev
 allow hal_audio_default vendor_msm_lsm_cdev_device:chr_file rw_file_perms;
 get_prop(hal_audio_default, vendor_lpm_prop)

@@ -4,4 +4,4 @@
 # Allow Gnss HAL to register callback with car power policy
 carpowerpolicy_callback_domain(vendor_hal_gnss_qti)
 allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
-binder_call(vendor_hal_gnss_qti, carpowerpolicyd)
+allow vendor_hal_gnss_qti vendor_location_device:chr_file rw_file_perms;
