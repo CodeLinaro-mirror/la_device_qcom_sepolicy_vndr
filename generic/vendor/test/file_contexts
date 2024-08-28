@@ -159,4 +159,3 @@
 
 #fan_service
 /(vendor|system/vendor)/bin/fan_service u:object_r:vendor_fan_service_exec:s0
-/vendor/lib(64)?/libdisplaydebug\.so         u:object_r:same_process_hal_file:s0
