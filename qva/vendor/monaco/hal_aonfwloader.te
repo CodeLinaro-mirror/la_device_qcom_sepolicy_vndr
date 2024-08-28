@@ -7,4 +7,4 @@ binder_call(vendor_hal_aonfwloader_server, vendor_hal_aonfwloader_client)
 
 add_hwservice(vendor_hal_aonfwloader_server, vendor_hal_aonfwloader_hwservice);
 allow vendor_hal_aonfwloader_client vendor_hal_aonfwloader_hwservice:hwservice_manager find;
-
+hal_attribute_service(vendor_hal_aonfwloader,vendor_hal_aonfwloader_service)

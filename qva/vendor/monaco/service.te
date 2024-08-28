@@ -3,4 +3,5 @@
 
 type vendor_hal_qteeconnector_service,   hal_service_type, protected_service, service_manager_type;
 type vendor_hal_aonutility_service,      hal_service_type, protected_service, service_manager_type;
+type vendor_hal_aonfwloader_service,     hal_service_type, protected_service, service_manager_type;
 
