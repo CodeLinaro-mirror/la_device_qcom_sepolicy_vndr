@@ -20,3 +20,4 @@ allow vendor_routing_manager_default   hal_nlinterceptor_default:unix_stream_soc
 allow vendor_routing_manager_default   hal_wifi_supplicant_default:unix_stream_socket { connectto };
 allow vendor_routing_manager_default   hal_wifi_hostapd_default:unix_stream_socket { connectto };
 allow vendor_routing_manager_default   hal_bluetooth_default:unix_stream_socket { connectto };
+allow vendor_routing_manager_default   qtiwifi:unix_stream_socket { connectto };
