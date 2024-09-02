@@ -660,7 +660,7 @@
 /sys/bus/platform/drivers/xhci-hcd/bind                 u:object_r:vendor_sysfs_usb_node:s0
 /sys/bus/platform/drivers/xhci-hcd/unbind               u:object_r:vendor_sysfs_usb_node:s0
 /sys/bus/platform/drivers/xhci-hcd                      u:object_r:vendor_sysfs_usb_node:s0
-
+/sys/devices/platform/soc/a4f8800.ssusb/a400000.dwc3    u:object_r:vendor_sysfs_usb_node:s0
 # sysfs wakeup
 /sys/devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.1.auto/usb[1-9]+/wakeup(/.*)?          u:object_r:sysfs_wakeup:s0
