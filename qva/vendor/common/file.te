@@ -256,3 +256,6 @@ type vendor_sysfs_power_image, fs_type, sysfs_type;
 
 #automs
 type vendor_automs_vndr_data_file, file_type, data_file_type;
+
+type vendor_sysfs_ufs_pm_mode, fs_type, sysfs_type;
+
