@@ -158,3 +158,6 @@ vendor_internal_prop(vendor_gnss_fw_version)
 
 # Vendor chre property
 vendor_internal_prop(vendor_chre_prop)
+
+# Vendor sku property
+vendor_internal_prop(vendor_sku_prop)

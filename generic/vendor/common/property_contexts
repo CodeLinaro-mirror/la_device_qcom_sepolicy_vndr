@@ -186,3 +186,7 @@ ctl.vendor.agm-1-0               u:object_r:vendor_AGMIPC_service_prop:s0
 
 # Allow Vendor chre property
 vendor.chre.enabled              u:object_r:vendor_chre_prop:s0
+
+# Allow Vendor sku property
+vendor.sku_identified              u:object_r:vendor_sku_prop:s0
+vendor.sku_name                    u:object_r:vendor_sku_prop:s0
