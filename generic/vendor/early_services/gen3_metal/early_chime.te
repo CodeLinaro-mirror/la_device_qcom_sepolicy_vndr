@@ -1,4 +1,4 @@
-# # Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved
+# # Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type early_chime, domain;
@@ -23,3 +23,4 @@ allow early_chime vendor_acdb_loader_service_service:service_manager find;
 binder_call(early_chime, vendor_audio_hal_plugin_service)
 allow early_chime vendor_audio_hal_plugin_service_service:service_manager find;
 allow early_chime audio_device:chr_file setattr;
+allow early_chime proc_asound:dir search;
