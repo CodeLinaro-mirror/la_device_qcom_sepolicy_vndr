@@ -1,0 +1,22 @@
+# Copyright (c) 2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_mdsprpcd, domain;
+type vendor_mdsprpcd_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_mdsprpcd)
+
+allow vendor_mdsprpcd ion_device:chr_file r_file_perms;
+# Allocate DMA-BUF Heap memory through libmdsprpc
+allow vendor_mdsprpcd vendor_dmabuf_mdsp_heap_device:chr_file r_file_perms;
+allow vendor_mdsprpcd vendor_qdsp_device:chr_file r_file_perms;
+allow vendor_mdsprpcd vendor_xdsp_device:chr_file r_file_perms;
+
+userdebug_or_eng(`
+allow vendor_mdsprpcd system_file:dir r_dir_perms;
+')
+
+r_dir_file(vendor_mdsprpcd, adsprpcd_file)
+get_prop(vendor_mdsprpcd, vendor_adsprpc_prop)
+
+allow vendor_mdsprpcd mnt_vendor_file:dir r_dir_perms;
