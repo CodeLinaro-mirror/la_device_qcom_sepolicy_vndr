@@ -21,3 +21,6 @@ allow vendor_qvrd_vndr vendor_calib_file:file rw_file_perms;
 
 neverallow { coredomain -init -ueventd } vendor_calib_file:dir *;
 neverallow { coredomain -init -ueventd } vendor_calib_file:file *;
+
+#============= vendor_qvrd_vndr ==============
+allow vendor_qvrd_vndr sysfs:file { open read };
