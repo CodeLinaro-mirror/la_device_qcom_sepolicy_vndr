@@ -99,6 +99,8 @@ allow vendor_cnd vendor_nwmgr_service:service_manager find;
 
 hal_attribute_service(vendor_hal_mwqemadapter_qti, vendor_hal_mwqemadapter_aidlservice)
 
+qhdc_sdk_use(vendor_cnd)
+
 ##############################################################
 #for using public interface vendor.qti.data.factory
 #client should add their domain to vendor_cnd.te
