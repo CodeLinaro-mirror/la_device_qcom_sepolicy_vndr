@@ -166,6 +166,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonutility@1\.0-service          u:object_r:vendor_hal_aonutility_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonutility-aidl-service          u:object_r:vendor_hal_aonutility_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonfwloader@1\.0-service          u:object_r:vendor_hal_aonfwloader_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonfwloader-aidl-service          u:object_r:vendor_hal_aonfwloader_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.watchorientation@1\.0-service    u:object_r:vendor_hal_watchorientation_default_exec:s0
 /(vendor|system/vendor)/bin/slatedaemon                                                u:object_r:vendor_slate_daemon_exec:s0
 /(vendor|system/vendor)/bin/hw/qcli_daemon                                             u:object_r:vendor_qcli_daemon_exec:s0
