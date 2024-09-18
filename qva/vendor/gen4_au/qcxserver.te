@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # qcxserver service
@@ -33,7 +33,7 @@ allow vendor_qcxserver vendor_ais_v4l2_proxy:fd use;
 allow vendor_qcxserver aac_drc_prop:file { getattr map open };
 allow vendor_qcxserver dmabuf_system_heap_device:chr_file r_file_perms;
 allow vendor_qcxserver self:qipcrtr_socket create;
-allow vendor_qcxserver self:process setcurrent;
+allow vendor_qcxserver self:process { setcurrent dyntransition };
 allow vendor_qcxserver ab_update_gki_prop:file { getattr map open };
 allow vendor_qcxserver adbd_config_prop:file { getattr map open };
 allow vendor_qcxserver vendor_sysfs_devicetree_cpu:file rw_file_perms;
@@ -49,6 +49,11 @@ allow vendor_qcxserver vendor_camera_data_file:file { create getattr open write 
 allow vendor_qcxserver hal_camera_default:fd use;
 allow vendor_qcxserver vendor_hal_ais_qti:fd use;
 allow vendor_qcxserver vendor_hal_ais_qti:unix_stream_socket connectto;
+
+set_prop(vendor_qcxserver, vendor_camera_prop)
+allow vendor_qcxserver property_socket:sock_file write;
+allow vendor_qcxserver init:unix_stream_socket connectto;
+allow vendor_qcxserver vendor_early_services:dir search;
 
 get_prop(vendor_qcxserver,camera2_extensions_prop);
 get_prop(vendor_qcxserver,camera_config_prop);
