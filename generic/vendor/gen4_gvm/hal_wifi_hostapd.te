@@ -1,0 +1,7 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow hal_wifi_hostapd_default vendor_wifi_vendor_data_file:dir { rmdir };
+allow hal_wifi_hostapd_default vendor_wifi_vendor_data_file:sock_file create_file_perms;
+hal_attribute_service(hal_wifi_hostapd, vendor_hal_hostapd_cem_service);
+hal_attribute_service(hal_wifi_hostapd, vendor_hal_hostapdvendor_cem_service);
