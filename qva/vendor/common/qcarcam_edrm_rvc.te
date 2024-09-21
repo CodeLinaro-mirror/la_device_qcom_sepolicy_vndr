@@ -19,3 +19,5 @@ allow vendor_qcarcam_edrm_rvc hwservicemanager:binder call;
 allow vendor_qcarcam_edrm_rvc hwservicemanager_prop:file { getattr map open read };
 allow vendor_qcarcam_edrm_rvc vendor_sysfs_kgsl:file { getattr open read };
 allow vendor_qcarcam_edrm_rvc vendor_sysfs_kpi:file w_file_perms;
+# allows qcarcam_rvc access kmsg node in userdebug mode
+userdebug_or_eng(`allow vendor_qcarcam_edrm_rvc kmsg_device:chr_file rw_file_perms;')

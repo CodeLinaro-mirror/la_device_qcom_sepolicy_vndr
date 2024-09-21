@@ -14,3 +14,4 @@ allow vendor_amfsservice vendor_file:dir r_dir_perms;
 allow vendor_amfsservice vendor_configs_file:dir r_dir_perms;
 allow vendor_amfsservice audio_device:chr_file rw_file_perms;
 allow vendor_amfsservice vendor_hab_device:chr_file rw_file_perms;
+allow vendor_amfsservice vendor_hab_aud_device:chr_file rw_file_perms;
