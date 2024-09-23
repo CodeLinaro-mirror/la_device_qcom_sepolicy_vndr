@@ -88,7 +88,7 @@ binder_call(vendor_qvrd_vndr, system_server);
 
 #Allow access to xrcomm service
 allow vendor_qvrd_vndr vendor_xrcommd:fd use;
-allow vendor_qvrd_vndr vendor_xrcommd:fifo_file read;
+allow vendor_qvrd_vndr vendor_xrcommd:fifo_file { read write };
 unix_socket_connect(vendor_qvrd_vndr, vendor_xrcommd, vendor_xrcommd)
 get_prop(vendor_qvrd_vndr, vendor_xrcomm_prop)
 

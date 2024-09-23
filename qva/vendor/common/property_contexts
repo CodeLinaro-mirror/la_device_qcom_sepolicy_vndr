@@ -90,6 +90,8 @@ vendor.video.disable.ubwc                    u:object_r:vendor_video_prop:s0
 vendor.media.target_variant                  u:object_r:vendor_video_prop:s0
 vendor.media.target.qssi                     u:object_r:vendor_video_prop:s0
 vendor.mm.target.enable.qcom_parser          u:object_r:vendor_video_prop:s0
+vendor.media.system.build_codename           u:object_r:vendor_video_prop:s0
+vendor.netflix.bsp_rev                       u:object_r:vendor_video_prop:s0
 
 # factory properties
 ctl.vendor.mmid                              u:object_r:vendor_ctl_vendor_mmid_prop:s0
@@ -164,3 +166,6 @@ persist.vendor.qti.uwb.                      u:object_r:vendor_uwb_prop:s0
 
 #DCF
 ro.vendor.dcf.wake_lock.                     u:object_r:vendor_dcf_prop:s0 prefix
+
+#VM Shutdown feature enable flag
+ro.vendor.vm.ssr.enable                       u:object_r:vendor_vm_ssrenable_prop:s0

@@ -67,13 +67,8 @@ set_prop(vendor_location_xtwifi_client, vendor_location_prop);
 get_prop(vendor_location_xtwifi_client, vendor_qms_prop)
 
 wakelock_use(vendor_location_xtwifi_client)
-allow vendor_location_xtwifi_client self:capability2 wake_alarm;
 unix_socket_connect(vendor_location_xtwifi_client, property, init);
 allow vendor_location_xtwifi_client mnt_vendor_file:dir search;
-
-# access to /persist/hlos_rfs/shared
-allow vendor_location_xtwifi_client vendor_persist_rfs_shared_hlos_file:dir r_dir_perms;
-allow vendor_location_xtwifi_client vendor_persist_rfs_shared_hlos_file:file rw_file_perms;
 
 # Enable standard network access
 net_domain(vendor_location_xtwifi_client)

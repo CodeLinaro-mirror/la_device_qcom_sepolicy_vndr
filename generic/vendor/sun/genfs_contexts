@@ -298,3 +298,6 @@ genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup38 u:object_r:sysfs_wake
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup39 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup39 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup41 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup45 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup46 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup49 u:object_r:sysfs_wakeup:s0

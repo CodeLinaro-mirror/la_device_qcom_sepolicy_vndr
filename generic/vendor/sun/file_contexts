@@ -282,3 +282,9 @@
 
 # VM Specific
 /vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
+
+#fastrpc sysfs inodes
+/sys/devices/virtual/misc/fastrpc-adsp-secure/wakeup([0-9])+(/.*)?  u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/misc/fastrpc-cdsp-secure/wakeup([0-9])+(/.*)?  u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/misc/fastrpc-cdsp/wakeup([0-9])+(/.*)?              u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/misc/fastrpc-adsp/wakeup([0-9])+(/.*)?              u:object_r:sysfs_wakeup:s0

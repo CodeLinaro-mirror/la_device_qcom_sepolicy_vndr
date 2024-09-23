@@ -7,3 +7,7 @@ allow hal_wifi_hostapd_default vendor_qvrd_vndr:unix_dgram_socket sendto;
 allow hal_wifi_hostapd_default wpa_data_file:dir search;
 # Allow hostapd to attach to wpa socket
 allow hal_wifi_hostapd_default wpa_data_file:sock_file write;
+
+
+# Allow hostapd to connect to xrcomm using control socket
+allow hal_wifi_hostapd_default vendor_xrcommd:unix_dgram_socket sendto;

@@ -38,6 +38,8 @@ init_daemon_domain(vendor_hal_perf_default)
 # Allow hwbinder call from hal client to server
 binder_call(vendor_hal_perf_client, vendor_hal_perf_server)
 
+binder_use(vendor_hal_perf_default)
+
 #Allow AIDL base perf-hal communication
 hal_attribute_service(vendor_hal_perf, vendor_hal_perf2_service)
 binder_call(vendor_hal_perf_server, servicemanager)
@@ -176,6 +178,10 @@ hal_client_domain(vendor_hal_perf_default, vendor_hal_snapx_service_qti);
 # Allow perf hal and 3-pty app binder call each other
 vendor_snapx_use(vendor_hal_perf_default)
 
+allow vendor_hal_perf_default hal_graphics_composer_default:dir search;
+allow vendor_hal_perf_default hal_graphics_composer_default:file { open read };
+allow vendor_hal_perf_default surfaceflinger:dir search;
+allow vendor_hal_perf_default surfaceflinger:file { open read };
 allow vendor_hal_perf_default surfaceflinger:process setsched;
 allow vendor_hal_perf_default hal_graphics_composer_default:process setsched;
 allow vendor_hal_perf_default appdomain:process setsched;
