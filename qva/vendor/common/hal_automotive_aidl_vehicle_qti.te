@@ -21,3 +21,5 @@ get_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_hiber_prop)
 get_prop(vendor_aidl_hal_automotive_vehicle_qti,vendor_lpm_prop)
 set_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_lpm_prop)
 allow vendor_aidl_hal_automotive_vehicle_qti input_device:dir ioctl;
+allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_ufs_pm_mode:file rw_file_perms;
+allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_usb_device:file rw_file_perms;

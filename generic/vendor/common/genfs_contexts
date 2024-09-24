@@ -206,6 +206,10 @@ genfscon sysfs /kernel/qts/secondary/trusted_touch_enable u:object_r:vendor_sysf
 genfscon sysfs /devices/platform/soc/soc:aop-set-ddr-freq/set_ddr_capped_freq u:object_r:vendor_sysfs_aop_freq_message:s0
 genfscon sysfs /kernel/boot_kpi/kpi_values                  u:object_r:vendor_sysfs_kpi:s0
 
+#net nodes
+genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio25/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/vdevs/1b022000.virtio_net/virtio26/net u:object_r:sysfs_net:s0
+
 # Silent mode
 genfscon sysfs /kernel/silent_boot/pm_silentmode_kernel_state     u:object_r:vendor_sysfs_sb:s0
 genfscon sysfs /kernel/silent_boot/pm_silentmode_hw_state         u:object_r:vendor_sysfs_sb:s0
