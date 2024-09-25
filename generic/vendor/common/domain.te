@@ -83,6 +83,7 @@ neverallow { domain
 - vendor_chre
 - vendor_dspservice
 - vendor_vppservice
+- vendor_hexlpservice
 - hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default
@@ -105,7 +106,6 @@ neverallow { domain
 - vendor_audioadsprpcd
 - hal_camera_default
 - vendor_qvrd_vndr
-- vendor_hexlpservice
 - vendor_thermal-engine
 - vendor_dspservice
 userdebug_or_eng(` -vendor_sysmonapp_app_test')

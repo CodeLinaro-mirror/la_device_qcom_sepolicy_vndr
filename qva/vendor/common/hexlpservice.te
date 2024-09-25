@@ -29,18 +29,15 @@ allow vendor_hexlpservice vendor_hexlp_data_file:file create_file_perms;
 r_dir_file(vendor_hexlpservice, vendor_persist_hexlp_file)
 allow vendor_hexlpservice mnt_vendor_file:dir search;
 
-# allow hexlpservice to access ion, video device & qdsp_device
+# allow hexlpservice to access ion, video device & xdsp_device
 allow vendor_hexlpservice video_device:chr_file rw_file_perms;
-allow vendor_hexlpservice vendor_qdsp_device:chr_file r_file_perms;
+allow vendor_hexlpservice vendor_xdsp_device:chr_file r_file_perms;
 allow vendor_hexlpservice gpu_device:chr_file rw_file_perms;
 allow vendor_hexlpservice vendor_dmabuf_system_heap_device:chr_file r_file_perms;
 allow vendor_hexlpservice dmabuf_system_heap_device:chr_file r_file_perms;
 allow vendor_hexlpservice vendor_membuf_dev:chr_file r_file_perms;
 allow vendor_hexlpservice vendor_vm_cp_pixel_device:chr_file r_file_perms;
 allow vendor_hexlpservice vendor_synx_device:chr_file rw_file_perms;
-
-# suppress xdsp denial, since it is expected
-dontaudit vendor_hexlpservice vendor_xdsp_device:chr_file { open read ioctl };
 
 # allow hexlpservice to access dsp read_prop
 get_prop(vendor_hexlpservice, vendor_adsprpc_prop)
