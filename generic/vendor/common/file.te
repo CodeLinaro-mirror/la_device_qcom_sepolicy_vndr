@@ -255,3 +255,5 @@ type vendor_sysfs_rx_config, fs_type, sysfs_type;
 
 type vendor_early_services, file_type;
 type vendor_earlyinit_test_exec, exec_type, file_type, vendor_file_type;
+
+type vendor_system_cpu, fs_type, sysfs_type;

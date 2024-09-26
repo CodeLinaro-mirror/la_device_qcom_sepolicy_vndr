@@ -112,3 +112,5 @@ allow kernel vendor_file:dir { open read relabelto };
 allow kernel vendor_file:file relabelto;
 allow kernel system_lib_file:dir relabelto;
 allow kernel system_lib_file:file relabelto;
+allow kernel vendor_early_services:lnk_file read;
+allow kernel vendor_system_cpu:chr_file getattr;
