@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019,  The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -30,15 +30,12 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # nordic node file
-/(vendor|system/vendor)/bin/hw/vendor\.kineticsxr\.hardware\.nordic@1\.0-service u:object_r:vendor_hal_nordic_default_exec:s0
-/sys/devices/platform/soc/990000\.spi/spi_master/spi0/spi0\.0/jsrequest u:object_r:vendor_nordic_sysfs_node:s0
-/sys/devices/platform/soc/990000\.spi/spi_master/spi0/spi0\.0/jsmem u:object_r:vendor_nordic_sysfs_node:s0
+type vendor_nordic_sysfs_node, sysfs_type, fs_type;
+
 
 # kineticsxr file
-/etc/resources_ctrlr(/.*)?			u:object_r:vendor_kx_file:s0
+type vendor_kx_file, file_type, vendor_file_type;
 
-# calib partition
-/mnt/vendor/calib(/.*)?               u:object_r:vendor_calib_file:s0
-
-# qvrcamservice
-/(vendor|system/vendor)/bin/hw/qvrcamservice     u:object_r:vendor_qvrd_vndr_cam_exec:s0
+#calib file types
+type vendor_calib_file, file_type, vendor_calib_file_type;
+allow { vendor_calib_file }self:filesystem associate;
