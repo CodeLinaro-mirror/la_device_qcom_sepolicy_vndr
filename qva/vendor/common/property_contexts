@@ -164,3 +164,6 @@ persist.vendor.qti.uwb.                      u:object_r:vendor_uwb_prop:s0
 
 #DCF
 ro.vendor.dcf.wake_lock.                     u:object_r:vendor_dcf_prop:s0 prefix
+
+#VM Shutdown feature enable flag
+ro.vendor.vm.ssr.enable                       u:object_r:vendor_vm_ssrenable_prop:s0

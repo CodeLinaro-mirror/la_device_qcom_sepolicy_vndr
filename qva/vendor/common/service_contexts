@@ -88,3 +88,4 @@ vendor.qti.hardware.qspa.IQspa/default                 u:object_r:vendor_hal_qsp
 vendor.qti.hardware.wifi.wifilearner.IWifiStats/default  u:object_r:vendor_hal_wifilearner_service:s0
 vendor.qti.syshealthmon.ISysHealthMon/default          u:object_r:vendor_syshealthmon_service:s0
 vendor.qti.snapdragonServices.ISnapdragonServices/default           u:object_r:vendor_hal_snapx_service:s0
+vendor.qti.qvirtvendor.IVendorVM/default               u:object_r:vendor_hal_qvirtvendor_service:s0
