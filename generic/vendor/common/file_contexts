@@ -682,5 +682,5 @@
 /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-5]+/state        u:object_r:vendor_remoteproc_adsp_ssr:s0
 
 # Resource Manager
-/sys/devices/platform/hypervisor/hypervisor:qcom,resource-manager-rpc@[0-9a-f]+/wakeup   u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/hypervisor/hypervisor:qcom,resource-manager-rpc@[0-9a-f]+/wakeup(/.*)?  u:object_r:sysfs_wakeup:s0
 

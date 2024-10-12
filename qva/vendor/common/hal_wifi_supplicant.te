@@ -47,6 +47,9 @@ allow hal_wifi_supplicant_default vendor_log_wifi_data_file:dir search;
 allow hal_wifi_supplicant_default vendor_log_wifi_data_file:dir { add_name write };
 allow hal_wifi_supplicant_default vendor_log_wifi_data_file:file { create getattr open write };
 allow hal_wifi_supplicant_default vendor_log_wifi_data_file:dir write;
+allow hal_wifi_supplicant_default vendor_wcnss_service:unix_dgram_socket sendto;
+allow hal_wifi_supplicant_default vendor_wifihal_socket:dir search;
+allow hal_wifi_supplicant_default vendor_wifihal_socket:sock_file write;
 
 
 allow hal_wifi_supplicant vendor_fstman:unix_dgram_socket sendto;

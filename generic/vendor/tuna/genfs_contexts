@@ -1,0 +1,11 @@
+#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#qdss sysfs-node
+genfscon sysfs /devices/platform/soc/10b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/1004f000.tmc/coresight-tmc-etr1 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10b11000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/soc:modem_diag/coresight-modem-diag u:object_r:vendor_sysfs_qdss_dev:s0
+

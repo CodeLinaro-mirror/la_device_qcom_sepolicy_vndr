@@ -216,6 +216,9 @@ type vendor_sysfs_max_chipset_log_size, fs_type, sysfs_type;
 #diag sysfs files
 type vendor_sysfs_diag, fs_type, sysfs_type;
 
+#wifi dump in progress sysfs files
+type vendor_sysfs_dump_in_progress, fs_type, sysfs_type;
+
 type vendor_hexagon_halide_file, vendor_file_type, file_type;
 
 # vendor media files
