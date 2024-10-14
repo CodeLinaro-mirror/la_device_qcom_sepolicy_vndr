@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # vendor_ssgtzd - SSG TZ Daemon
@@ -62,3 +62,8 @@ allow vendor_ssgtzd self:capability2 { block_suspend wake_alarm };
 
 # Allow access to write to wake_lock file under /sys/power/
 allow vendor_ssgtzd sysfs_wake_lock:file { append open };
+
+#allow read access to mink socket log files
+userdebug_or_eng(`
+  get_prop(vendor_ssgtzd, vendor_mink_trace_prop)
+')
