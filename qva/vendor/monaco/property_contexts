@@ -37,6 +37,7 @@ persist.vendor.uioffload.logs.level          u:object_r:vendor_uioffload_logging
 ro.boot.vendor.lefty                         u:object_r:vendor_lefty_prop:s0
 ro.vendor.qc_aon_presence                    u:object_r:vendor_qc_aon_prop:s0
 persist.vendor.qc_aon.dfu_update             u:object_r:vendor_qc_aon_dfu_update_prop:s0
+persist.vendor.qc_aon.misc_update            u:object_r:vendor_qc_aon_misc_update_prop:s0
 persist.vendor.watch_orientation             u:object_r:vendor_watch_orientation_prop:s0
 persist.vendor.whs.                          u:object_r:vendor_whs_prop:s0
 vendor.sensors.                              u:object_r:vendor_sensors_prop:s0
