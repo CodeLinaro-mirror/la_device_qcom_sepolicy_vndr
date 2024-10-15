@@ -34,6 +34,8 @@ allow vendor_hal_gnss_qti vendor_location_edgnss_daemon:unix_dgram_socket sendto
 allow vendor_hal_gnss_qti vendor_location_slim_daemon:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_xtwifi_client:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_xtwifi_inetagent:unix_dgram_socket sendto;
+# Allow qwes_ipc socket
+allow vendor_hal_gnss_qti vendor_qwesd_socket:sock_file write;
 
 userdebug_or_eng(`
   get_prop(vendor_hal_gnss_qti, vendor_pd_locater_dbg_prop)

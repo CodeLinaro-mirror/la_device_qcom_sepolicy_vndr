@@ -50,6 +50,10 @@ allow vendor_location_engine_service vendor_location:unix_dgram_socket { read wr
 # allow socket communication with gnss hal
 allow vendor_location_engine_service vendor_hal_gnss_qti:unix_dgram_socket sendto;
 
+# allow QDR file access in /data/vendor/location-partner
+allow vendor_location_engine_service vendor_data_file:dir { write add_name };
+allow vendor_location_engine_service vendor_data_file:file { read write getattr open create setattr };
+
 # allows shell execute engine-service in userdebug mode.
 userdebug_or_eng(`
   allow shell vendor_location_engine_service_exec:file rx_file_perms;

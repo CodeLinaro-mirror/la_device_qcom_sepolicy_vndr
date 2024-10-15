@@ -65,3 +65,6 @@ userdebug_or_eng(`
 allow vendor_location_slim_daemon self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 allow vendor_location_slim_daemon fwk_sensor_hwservice:hwservice_manager find;
+
+# allow can socket create
+allow vendor_location_slim_daemon self:can_socket { bind create setopt };
