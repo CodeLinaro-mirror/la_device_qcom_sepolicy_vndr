@@ -220,3 +220,6 @@
 /dev/msm_wmapro  u:object_r:vendor_media_wmapro_device:s0
 
 /sys/devices/platform/soc/5900000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model               u:object_r:vendor_sysfs_kgsl_gpu_model:s0
+
+# WLAN dynamic detect
+/(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh               u:object_r:vendor_qti_init_shell_exec:s0
