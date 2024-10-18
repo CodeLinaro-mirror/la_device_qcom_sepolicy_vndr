@@ -244,42 +244,8 @@
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 /dev/gh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 
-#subsys nodes
-/sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-/sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
-
-/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-/sys/devices/platform/soc/soc:qcom,remoteproc-esoc0/esoc0/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/soc:qcom,remoteproc-esoc0/esoc0/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-#Display nodes
-/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-2/enabled u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-Virtual-1/enabled u:object_r:vendor_sysfs_graphics:s0
-
 #poweropt-service
 /(vendor|system/vendor)/bin/poweropt-service u:object_r:vendor_hal_poweroptservice_qti_exec:s0
-
-# Feature configs
-/sys/devices/platform/soc/780000.qfprom/qfprom0/feat_conf* u:object_r:vendor_sysfs_qfprom:s0
-
-# mmc device type
-/sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc[0-1]/mmc[0-1]:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
 
 /vendor/bin/hw/vendor\.qti\.hardware\.display\.demura@1\.0-service u:object_r:hal_display_demura_default_exec:s0
 
@@ -290,14 +256,4 @@
 
 # VM Specific
 /vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
-
-# ufs device type
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:6/block/sdg/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
-/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:7/block/sdh/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
 
