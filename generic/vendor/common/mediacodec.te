@@ -41,3 +41,6 @@ allow mediacodec dmabuf_system_secure_heap_device:chr_file { ioctl open read };
 hal_client_domain(mediacodec, vendor_hal_capabilityconfigstore_qti)
 #allow mediacodec to read adsprpc_prop
 get_prop(mediacodec, vendor_adsprpc_prop)
+
+#allow mediacodec to read drm_smmu_prop
+get_prop(mediacodec, vendor_drm_smmu_prop)

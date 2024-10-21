@@ -103,6 +103,7 @@ vendor.mm.target.enable.qcom_parser          u:object_r:vendor_video_prop:s0
 vendor.ais.v4l2.proxy.ready                  u:object_r:vendor_camera_prop:s0
 vendor.evs.qcx.hal.ready                     u:object_r:vendor_camera_prop:s0
 vendor.evs.qcc4.hal.ready                    u:object_r:vendor_camera_prop:s0
+vendor.evs.qcc6.hal.ready                    u:object_r:vendor_camera_prop:s0
 
 # factory properties
 ctl.vendor.mmid                              u:object_r:vendor_ctl_vendor_mmid_prop:s0
@@ -187,3 +188,6 @@ vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_boot
 vendor.vehicle.lpm                          u:object_r:vendor_lpm_prop:s0
 persist.vendor.vehicle.lpm                  u:object_r:vendor_lpm_prop:s0
 vendor.car.hiber                            u:object_r:vendor_hiber_prop:s0
+
+#drm_smmu Property
+persist.vendor.drm.smmu                     u:object_r:vendor_drm_smmu_prop:s0
