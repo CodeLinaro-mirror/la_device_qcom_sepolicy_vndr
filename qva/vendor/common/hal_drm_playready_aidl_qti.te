@@ -25,3 +25,6 @@ allow vendor_hal_drm_playready_aidl_qti vendor_dmabuf_qseecom_heap_device:chr_fi
 allow vendor_hal_drm_playready_aidl_qti vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
 allow vendor_hal_drm_playready_aidl_qti vendor_vm_cp_bitstream_device:chr_file r_file_perms;
 allow vendor_hal_drm_playready_aidl_qti vendor_membuf_dev:chr_file r_file_perms;
+
+# Required to read drm smmu property
+get_prop(vendor_hal_drm_playready_aidl_qti, vendor_drm_smmu_prop);
