@@ -31,5 +31,6 @@ app_domain(vendor_tzas_app)
 net_domain(vendor_tzas_app)
 
 unix_socket_connect(vendor_tzas_app, vendor_ssgtzd, vendor_ssgtzd)
+allow vendor_tzas_app vendor_hlosminkdaemon:unix_stream_socket connectto;
 allow vendor_tzas_app app_api_service:service_manager find;
 hal_client_domain(vendor_tzas_app, vendor_hal_perf)

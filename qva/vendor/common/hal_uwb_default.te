@@ -44,4 +44,4 @@ use_libsoc_helper(hal_uwb)
 
 #allow UWB transport HAL to connect, write ssgtzd socket
 unix_socket_connect(hal_uwb, vendor_ssgtzd, vendor_ssgtzd)
-
+allow hal_uwb vendor_hlosminkdaemon:unix_stream_socket connectto;
