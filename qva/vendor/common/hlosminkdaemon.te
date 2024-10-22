@@ -35,10 +35,37 @@ type vendor_hlosminkdaemon_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_hlosminkdaemon)
 
+#Allow access to smcinvoke device
+allow vendor_hlosminkdaemon tee_device:chr_file rw_file_perms;
+
+#Allow access to firmware/image
+allow vendor_hlosminkdaemon vendor_firmware_file:dir r_dir_perms;
+allow vendor_hlosminkdaemon vendor_firmware_file:file r_file_perms;
+
 # Allow access to qipcrtr_socket
 # Remove this when QMI service moves to pfmd
 allow vendor_hlosminkdaemon self:{ socket qipcrtr_socket } create_socket_perms;
 allowxperm vendor_hlosminkdaemon self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+# Allow access to DMABUF
+allow vendor_hlosminkdaemon vendor_membuf_dev:chr_file r_file_perms;
+allow vendor_hlosminkdaemon vendor_vm_self_device:chr_file r_file_perms;
+allow vendor_hlosminkdaemon vendor_vm_trusted_device:chr_file r_file_perms;
+allow vendor_hlosminkdaemon vendor_vm_oem_device:chr_file r_file_perms;
+
+#Allow access to qseecom DMABUF device
+allow vendor_hlosminkdaemon vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+vndbinder_use(vendor_hlosminkdaemon)
+
+# Allow access to qwes
+allow vendor_hlosminkdaemon vendor_qwes_data_file:dir { getattr setattr };
+
+# Allow to set capability to block suspend and resume from suspend/sleep to wake up
+# state using wake_alarm.
+allow vendor_hlosminkdaemon self:capability2 { block_suspend wake_alarm };
+
+# Allow access to write to wake_lock file under /sys/power/
+allow vendor_hlosminkdaemon sysfs_wake_lock:file { append open };
 
 # Allow hlosminkdaemon access to vendor_mink_trace_prop
 userdebug_or_eng(`

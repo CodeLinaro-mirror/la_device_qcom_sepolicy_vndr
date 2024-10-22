@@ -18,4 +18,4 @@ binder_call(vendor_hal_minkipcbinder_server, servicemanager)
 
 #Allow aidl service to connect and write to ssgtzd socket
 unix_socket_connect(vendor_hal_minkipcbinder_default, vendor_ssgtzd, vendor_ssgtzd)
-
+allow vendor_hal_minkipcbinder_default vendor_hlosminkdaemon:unix_stream_socket connectto;

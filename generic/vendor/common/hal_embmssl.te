@@ -57,3 +57,4 @@ userdebug_or_eng(`
 
 # allows eMBMSSL to access ssgtzd socket
 unix_socket_connect(vendor_hal_embmssl_qti, vendor_ssgtzd, vendor_ssgtzd)
+allow vendor_hal_embmssl_qti vendor_hlosminkdaemon:unix_stream_socket connectto;
