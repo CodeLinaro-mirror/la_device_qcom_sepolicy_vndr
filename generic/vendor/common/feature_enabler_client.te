@@ -32,7 +32,7 @@ init_daemon_domain(vendor_feature_enabler_client)
 allow vendor_feature_enabler_client tee_device:chr_file rw_file_perms;
 allow vendor_feature_enabler_client ion_device:chr_file rw_file_perms;
 unix_socket_connect(vendor_feature_enabler_client , vendor_ssgtzd, vendor_ssgtzd)
-
+allow vendor_feature_enabler_client vendor_hlosminkdaemon:unix_stream_socket connectto;
 
 # Allow read permission to /mnt/vendor/persist/vendor_feature_enabler_client/*
 allow vendor_feature_enabler_client mnt_vendor_file:dir search;

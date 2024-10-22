@@ -89,6 +89,7 @@ crash_dump_fallback(vendor_location_xtwifi_client)
 
 # allows xtwifi-client to access ssgtzd socket
 unix_socket_connect(vendor_location_xtwifi_client, vendor_ssgtzd, vendor_ssgtzd)
+allow vendor_location_xtwifi_client vendor_hlosminkdaemon:unix_stream_socket connectto;
 
 # allows xtwifi-client to access qhdc sdk
 qhdc_sdk_use(vendor_location_xtwifi_client)

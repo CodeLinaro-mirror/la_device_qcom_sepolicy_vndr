@@ -76,6 +76,7 @@ allow hal_secure_element_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r
 
 # Allow secure-element HAL to interract with secure peripheral services
 unix_socket_connect(hal_secure_element_default, vendor_ssgtzd, vendor_ssgtzd)
+allow hal_secure_element_default vendor_hlosminkdaemon:unix_stream_socket connectto;
 
 hal_client_domain(hal_secure_element_default, hal_allocator)
 
