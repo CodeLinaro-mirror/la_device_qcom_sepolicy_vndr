@@ -63,8 +63,6 @@
 
 type vendor_qms, domain;
 type vendor_qms_0, domain, bpfdomain;
-type vendor_qms_1, domain;
-type vendor_qms_2, domain;
 type vendor_qms_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_qms)
 
@@ -129,23 +127,17 @@ get_prop(vendor_qms, vendor_mink_trace_prop);
 allow vendor_qms self:process setcurrent;
 allow vendor_qms {
   vendor_qms_0
-  vendor_qms_1
-  vendor_qms_2
 }:process dyntransition;
 
 neverallow { domain - vendor_qms } {
   vendor_qms_0
-  vendor_qms_1
-  vendor_qms_2
 }:process dyntransition;
 
 neverallow vendor_qms ~{
   vendor_qms_0
-  vendor_qms_1
-  vendor_qms_2
 }:process dyntransition;
 
-neverallow { vendor_qms_0 vendor_qms_1 vendor_qms_2  } self:capability_class_set *;
+neverallow { vendor_qms_0 } self:capability_class_set *;
 neverallow vendor_qms_0 vendor_qesd_socket:sock_file write;
 
 allow vendor_qms_0 vendor_qms:fd use;
@@ -163,43 +155,6 @@ allow vendor_qms_0 self:{
 userdebug_or_eng(`
 get_prop(vendor_qms_0, vendor_qms_prop)
 ')
-
-allow vendor_qms_1 vendor_qms:fd use;
-allow vendor_qms_1 vendor_qms:unix_dgram_socket write;
-allow vendor_qms_1 vendor_qms:unix_stream_socket { read write };
-allow vendor_qms_1 vendor_qms_exec:file execute_no_trans;
-allow vendor_qms_1 vendor_qms_other_data_file:dir create_dir_perms;
-allow vendor_qms_1 vendor_qms_other_data_file:file create_file_perms;
-allow vendor_qms_1 vendor_qms_config_data_file:dir r_dir_perms;
-allow vendor_qms_1 vendor_qms_config_data_file:file r_file_perms;
-get_prop(vendor_qms_1, vendor_qesdk_mgr_prop);
-allow vendor_qms_1 self:{
-    qipcrtr_socket
-}create_socket_perms_no_ioctl;
-qesdk_access(vendor_qms_1)
-crash_dump_fallback(vendor_qms_1);
-userdebug_or_eng(`
-get_prop(vendor_qms_1, vendor_qms_prop)
-')
-
-allow vendor_qms_2 vendor_qms:fd use;
-allow vendor_qms_2 vendor_qms:unix_dgram_socket write;
-allow vendor_qms_2 vendor_qms:unix_stream_socket { read write };
-allow vendor_qms_2 vendor_qms_exec:file execute_no_trans;
-allow vendor_qms_2 vendor_qms_other_data_file:dir create_dir_perms;
-allow vendor_qms_2 vendor_qms_other_data_file:file create_file_perms;
-allow vendor_qms_2 vendor_qms_config_data_file:dir r_dir_perms;
-allow vendor_qms_2 vendor_qms_config_data_file:file r_file_perms;
-get_prop(vendor_qms_2, vendor_qesdk_mgr_prop);
-allow vendor_qms_2 self:{
-    qipcrtr_socket
-}create_socket_perms_no_ioctl;
-qesdk_access(vendor_qms_2)
-crash_dump_fallback(vendor_qms_2);
-userdebug_or_eng(`
-get_prop(vendor_qms_2, vendor_qms_prop)
-')
-
 
 # allow qms to access wpa_socket
 allow vendor_qms vendor_wifi_vendor_data_file:dir r_dir_perms;
@@ -252,22 +207,16 @@ unix_socket_connect(vendor_qms, vendor_ssgtzd, vendor_ssgtzd)
 #neverallow other  to write to main folders
 neverallow {
  vendor_qms_0
- vendor_qms_1
- vendor_qms_2
 } vendor_qms_vndr_data_file :{file } *;
 
 neverallow {
  vendor_qms_0
- vendor_qms_1
- vendor_qms_2
 } vendor_qms_main_data_file :{file } *;
 
 #Allow only read to be shared between Main and other. Do not allow create or write.
 neverallow {
   vendor_qms
   vendor_qms_0
-  vendor_qms_1
-  vendor_qms_2
 } vendor_qms_config_data_file:{file }  { create write } ;
 
 #Allow QMS to use ipa_events
