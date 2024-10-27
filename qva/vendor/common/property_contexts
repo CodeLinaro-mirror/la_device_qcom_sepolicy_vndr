@@ -195,3 +195,6 @@ vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_boot
 vendor.vehicle.lpm                          u:object_r:vendor_lpm_prop:s0
 persist.vendor.vehicle.lpm                  u:object_r:vendor_lpm_prop:s0
 vendor.car.hiber                            u:object_r:vendor_hiber_prop:s0
+
+#drm_smmu Property
+persist.vendor.drm.smmu                     u:object_r:vendor_drm_smmu_prop:s0

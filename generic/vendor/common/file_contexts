@@ -69,6 +69,7 @@
 /dev/msm_audio_ion                              u:object_r:vendor_agm_device:s0
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
 /dev/msm_audio_ion_cma                          u:object_r:audio_device:s0
+/dev/hab-aud                                    u:object_r:audio_device:s0
 /dev/avtimer                                    u:object_r:vendor_avtimer_device:s0
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
 /dev/remoteproc.*                               u:object_r:vendor_ssr_device:s0
@@ -477,6 +478,9 @@
 /data/vendor/someip(/.*)?            u:object_r:vendor_someip_data_file:s0
 /storage/vendor/someip(/.*)?         u:object_r:vendor_someip_data_file:s0
 /vendor/etc/someip(/.*)?             u:object_r:vendor_someip_cfg_file:s0
+
+# sensor hal config file
+/vendor/etc/hal_config               u:object_r:vendor_sensor_hal_config:s0
 
 # /
 /tombstones                          u:object_r:rootfs:s0

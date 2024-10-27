@@ -50,3 +50,7 @@ allow vendor_location_locIdlClient_daemon vendor_someip_data_file:file { create 
 allow vendor_location_locIdlClient_daemon vendor_someip_data_file:sock_file { create setattr write unlink };
 allow vendor_location_locIdlClient_daemon rild:unix_stream_socket connectto;
 allow vendor_location_locIdlClient_daemon hal_sensors_default:unix_stream_socket connectto;
+
+#PTP
+allow hal_sensors_default vendor_ipa_dev:file { map open read write };
+allow hal_sensors_default vendor_vnw_device:chr_file { open read write };

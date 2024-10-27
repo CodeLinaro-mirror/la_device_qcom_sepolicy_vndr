@@ -5,8 +5,26 @@ type vendor_audiohalservice_qti, domain;
 type vendor_audiohalservice_qti_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(vendor_audiohalservice_qti)
+hal_server_domain(vendor_audiohalservice_qti,hal_audio)
 
+vndbinder_use(vendor_audiohalservice_qti)
+binder_call(vendor_audiohalservice_qti,servicemanager)
+binder_call(vendor_audiohalservice_qti,audioserver)
+binder_call(vendor_audiohalservice_qti,vendor_audio_hal_plugin_service)
+binder_call(vendor_audiohalservice_qti,vendor_acdb_loader_service)
+binder_call(vendor_audiohalservice_qti, vendor_agmservice_qti)
+add_service(hal_audio_service, vendor_audiohalservice_qti)
+allow vendor_audiohalservice_qti vendor_acdb_loader_service_service:service_manager find;
+allow vendor_audiohalservice_qti vendor_audio_hal_plugin_service_service:service_manager find;
+carpowerpolicy_callback_domain(vendor_audiohalservice_qti)
+allow vendor_audiohalservice_qti carpowerpolicyd_service:service_manager find;
+allow vendor_audiohalservice_qti vendor_audio_data_file:dir search;
+allow vendor_audiohalservice_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow vendor_audiohalservice_qti audio_device:dir search;
 allow vendor_audiohalservice_qti audio_device:chr_file rw_file_perms;
 vndbinder_use(vendor_audiohalservice_qti)
 add_service(vendor_audiohalservice_qti, vendor_audiohalservice_qti_service)
+allow vendor_audiohalservice_qti audioserver:fifo_file write;
+allow vendor_audiohalservice_qti audio_device:chr_file { ioctl open read write };
+allow vendor_audiohalservice_qti vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
+get_prop(vendor_audiohalservice_qti, boot_status_prop)

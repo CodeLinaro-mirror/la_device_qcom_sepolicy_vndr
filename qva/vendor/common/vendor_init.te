@@ -93,3 +93,6 @@ set_prop(vendor_init, vendor_uwb_prop)
 
 # DCF
 set_prop(vendor_init, vendor_dcf_prop)
+
+# Allow vendor_init to set vendor_drm_smmu_prop
+set_prop(vendor_init, vendor_drm_smmu_prop);
