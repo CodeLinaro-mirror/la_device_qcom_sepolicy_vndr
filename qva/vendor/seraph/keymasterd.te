@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,21 +24,21 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# nordic node file
-/(vendor|system/vendor)/bin/hw/vendor\.kineticsxr\.hardware\.nordic@1\.0-service u:object_r:vendor_hal_nordic_default_exec:s0
-/sys/devices/platform/soc/990000\.spi/spi_master/spi0/spi0\.0/jsrequest u:object_r:vendor_nordic_sysfs_node:s0
-/sys/devices/platform/soc/990000\.spi/spi_master/spi0/spi0\.0/jsmem u:object_r:vendor_nordic_sysfs_node:s0
+get_prop(vendor_keymasterd, vendor_tee_listener_prop)
+allow vendor_keymasterd tee_device:chr_file rw_file_perms;
 
-# kineticsxr file
-/etc/resources_ctrlr(/.*)?			u:object_r:vendor_kx_file:s0
+# Allow access to /dev/spcom
+allow vendor_keymasterd vendor_spcom_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_sp_keymaster_ssr_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_spss_utils_device:chr_file rw_file_perms;
 
-# calib partition
-/mnt/vendor/calib(/.*)?               u:object_r:vendor_calib_file:s0
+# Allow access to skp
+allow vendor_keymasterd vendor_skp_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_sp_keymaster_device:chr_file rw_file_perms;
+allow vendor_keymasterd vendor_sp_ssr_device:chr_file rw_file_perms;
+get_prop(vendor_keymasterd, vendor_spcomlib_prop)
 
-# qvrcamservice
-/(vendor|system/vendor)/bin/hw/qvrcamservice     u:object_r:vendor_qvrd_vndr_cam_exec:s0
+# Allow access to DMA Buf
+allow vendor_keymasterd vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+
