@@ -70,4 +70,7 @@ userdebug_or_eng(`
   hal_client_domain(vendor_qguard, vendor_hal_perf)
   hal_client_domain(vendor_qguard, hal_graphics_allocator)
   hal_client_domain(vendor_qguard, hal_graphics_composer)
+
+  allow vendor_qguard vendor_shell_exec:file execute_no_trans;
+  allow vendor_qguard vendor_sysfs_heartbeat:file w_file_perms;
 ')
