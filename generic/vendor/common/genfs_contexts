@@ -225,3 +225,28 @@ genfscon sysfs /devices/platform/soc/1c00000\.qcom,pcie/pci0000:00/0000:00:00.0/
 
 # display
 genfscon sysfs /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp  u:object_r:vendor_sysfs_display:s0
+
+genfscon sysfs /power/disk                                        u:object_r:vendor_sysfs_power:s0
+genfscon sysfs /power/resume                                      u:object_r:vendor_sysfs_power:s0
+
+genfscon sysfs /class/graphics/fb0/mdp/caps                       u:object_r:vendor_sysfs_graphics:s0
+
+genfscon sysfs /devices/virtual/rotator/mdss_rotator/caps         u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/virtual/hdcp/msm_hdcp/min_level_change    u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /class/lcd_bias/secure_mode                        u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /class/leds/wled/secure_mode                       u:object_r:vendor_sysfs_graphics:s0
+
+#genfscon sysfs /module/drm/parameters/vblankoffdelay              u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,svm_neuron_block/soc:qcom,svm_neuron_block:application/blk_name  u:object_r:vendor_sysfs_svm_neuron:s0
+
+genfscon sysfs /devices/platform/soc/3d00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpubusy u:object_r:vendor_sysfs_kgsl_gpubusy:s0
+
+genfscon sysfs /sys/bus/platform/drivers/xhci-hcd/bind                 u:object_r:vendor_sysfs_usb_node:s0
+genfscon sysfs /sys/bus/platform/drivers/xhci-hcd/unbind               u:object_r:vendor_sysfs_usb_node:s0
+genfscon sysfs /sys/bus/platform/drivers/xhci-hcd                      u:object_r:vendor_sysfs_usb_node:s0
+#genfscon sysfs /sys/bus/platform/devices/a600000.ssusb/mode            u:object_r:vendor_sysfs_usb_device:s0
+#genfscon sysfs /sys/bus/platform/devices/a800000.hsusb/mode            u:object_r:vendor_sysfs_usb_device:s0
+
+genfscon sysfs /devices/platform/soc/ae00000\.qcom,mdss_mdp/init_complete             u:object_r:vendor_sysfs_display:s0
+
+genfscon sysfs /devices/platform/soc/c440000\.qcom,spmi/spmi-0/0-00/c440000\.qcom,spmi:qcom,pm8150@0:vadc@3100/iio:device0/name  u:object_r:vendor_sysfs_sensors:s0
