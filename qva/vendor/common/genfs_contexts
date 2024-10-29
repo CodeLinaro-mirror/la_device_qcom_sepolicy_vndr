@@ -131,3 +131,11 @@ genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0004:00/0004:00:00.0/0
 
 genfscon sysfs /devices/platform/soc/1da4000.ufshc2/qcom/ufs_pm_mode u:object_r:vendor_sysfs_ufs_pm_mode:s0
 
+
+#genfscon sysfs /devices/virtual/net/bond0/bonding/queue_id                     u:object_r:vendor_sysfs_bond0:s0
+#genfscon sysfs /devices/virtual/net/bond0/queues/rx-0/rps_cpus                 u:object_r:vendor_sysfs_bond0:s0
+genfscon sysfs /devices/virtual/net/bond0/statistics/rx_bytes                  u:object_r:vendor_sysfs_bond0:s0
+genfscon sysfs /devices/virtual/net/bond0/statistics/tx_bytes                  u:object_r:vendor_sysfs_bond0:s0
+
+genfscon sysfs /power/image_size                                               u:object_r:vendor_sysfs_power_image:s0
+
