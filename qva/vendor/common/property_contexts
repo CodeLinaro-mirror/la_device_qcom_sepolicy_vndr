@@ -185,5 +185,7 @@ ro.vendor.board.suffix                              u:object_r:vendor_board_suff
 
 # LPM  properties
 vendor.vehicle.lpm                          u:object_r:vendor_lpm_prop:s0
+vendor.vehicle.lpm.enable                   u:object_r:vendor_lpm_prop:s0  exact bool
+vendor.vehicle.dsqb.enable                  u:object_r:vendor_lpm_prop:s0  exact bool
 persist.vendor.vehicle.lpm                  u:object_r:vendor_lpm_prop:s0
 vendor.car.hiber                            u:object_r:vendor_hiber_prop:s0
