@@ -18,7 +18,8 @@ allow vendor_audiohalservice_qti vendor_acdb_loader_service_service:service_mana
 allow vendor_audiohalservice_qti vendor_audio_hal_plugin_service_service:service_manager find;
 carpowerpolicy_callback_domain(vendor_audiohalservice_qti)
 allow vendor_audiohalservice_qti carpowerpolicyd_service:service_manager find;
-allow vendor_audiohalservice_qti vendor_audio_data_file:dir search;
+allow vendor_audiohalservice_qti vendor_audio_data_file:dir rw_dir_perms;
+allow vendor_audiohalservice_qti vendor_audio_data_file:file create_file_perms;
 allow vendor_audiohalservice_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow vendor_audiohalservice_qti audio_device:dir search;
 allow vendor_audiohalservice_qti audio_device:chr_file rw_file_perms;
@@ -28,3 +29,8 @@ allow vendor_audiohalservice_qti audioserver:fifo_file write;
 allow vendor_audiohalservice_qti audio_device:chr_file { ioctl open read write };
 allow vendor_audiohalservice_qti vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
 get_prop(vendor_audiohalservice_qti, boot_status_prop)
+
+userdebug_or_eng(`
+  typeattribute vendor_audiohalservice_qti hal_automotive_socket_exemption;
+  net_domain(vendor_audiohalservice_qti)
+')
