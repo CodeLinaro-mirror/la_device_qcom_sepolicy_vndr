@@ -94,3 +94,4 @@ allow init vendor_sysfs_usb_device:file w_file_perms;
 allow init vendor_sysfs_usb_device:file w_file_perms;
 allow init firmware_file:filesystem getattr;
 allow init bt_firmware_file:filesystem getattr;
+userdebug_or_eng(`allow init debugfs_tracing_debug:dir mounton;')
