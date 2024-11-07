@@ -26,5 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hal_client_domain(vendor_perfservice, vendor_hal_perf)
-hal_client_domain(vendor_perfservice, vendor_hal_iop)
+hal_client_domain(vendor_perfservice, vendor_hal_MemHal)
 get_prop(vendor_perfservice, vendor_iop_prop)

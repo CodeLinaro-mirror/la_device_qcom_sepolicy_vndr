@@ -107,7 +107,7 @@ type vendor_mpctl_data_file, file_type, data_file_type;
 
 #IOP
 type vendor_iop_socket, file_type;
-type vendor_iop_data_file, file_type, data_file_type;
+
 
 #Define the files used by lm
 type vendor_lm_data_file, file_type, data_file_type;
