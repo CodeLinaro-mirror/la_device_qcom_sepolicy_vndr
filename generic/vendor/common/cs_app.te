@@ -40,6 +40,7 @@ hal_client_domain(vendor_cs_app, vendor_qccsyshal);
 unix_socket_connect(vendor_cs_app, vendor_mlid, vendor_mlid)
 unix_socket_connect(vendor_cs_app, vendor_ssgqmig, vendor_ssgqmigd)
 unix_socket_connect(vendor_cs_app, vendor_ssgtzd, vendor_ssgtzd)
+allow vendor_cs_app vendor_hlosminkdaemon:unix_stream_socket connectto;
 
 # Allow access to Android APK service IPCs
 allow vendor_cs_app radio_service:service_manager find;

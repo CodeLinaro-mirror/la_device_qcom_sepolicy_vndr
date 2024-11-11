@@ -44,3 +44,4 @@ hal_client_domain(hal_audio_default, hal_codec2)
 
 #Allow audio PAL/HAL to talk with SOCPeripherals API's
 unix_socket_connect(hal_audio_default, vendor_ssgtzd, vendor_ssgtzd)
+allow hal_audio_default vendor_hlosminkdaemon:unix_stream_socket connectto;
