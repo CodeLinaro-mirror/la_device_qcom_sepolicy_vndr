@@ -40,6 +40,10 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/$(TARGET_SEPOLICY_DIR)
     endif
 
+    ifeq ($(ENABLE_C2C_SUPPORT), true)
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/c2c
+    endif
+
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
     BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
