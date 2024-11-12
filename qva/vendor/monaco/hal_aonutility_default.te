@@ -59,3 +59,6 @@ allow vendor_hal_aonutility_default sysfs_rtc:dir search;
 allow vendor_hal_aonutility_default sysfs_rtc:file r_file_perms;
 get_prop(vendor_hal_aonutility_default, vendor_slate_boot_complete_prop);
 binder_call(vendor_hal_aonutility_default, hwservicemanager)
+
+hal_client_domain(vendor_hal_aonutility_default, vendor_hal_aonfwloader)
+
