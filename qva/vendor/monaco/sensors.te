@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, 2021 The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,32 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# Policy for sensor daemon
 #
+#Changes from Qualcomm Innovation Center are provided under the following license:
+#
+#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
-
-vendor_internal_prop(vendor_slate_daemon_prop);
-vendor_internal_prop(vendor_slate_boot_complete_prop);
-vendor_internal_prop(vendor_touch_offload_prop);
-vendor_internal_prop(vendor_uioffload_logging_prop);
-vendor_internal_prop(vendor_lefty_prop);
-vendor_internal_prop(vendor_qc_aon_prop);
-vendor_internal_prop(vendor_qc_aon_dfu_update_prop);
-vendor_internal_prop(vendor_qc_aon_misc_update_prop);
-system_restricted_prop(vendor_watch_orientation_prop);
-vendor_internal_prop(vendor_whs_prop);
-vendor_internal_prop(vendor_ssr_enable_ramdump_prop);
-
-#keymaster quickboot prop
-vendor_restricted_prop(vendor_tee_km_quickboot);
-
-#keymint quickboot prop
-vendor_restricted_prop(vendor_tee_keymint_quickboot);
-
-#Gatekeper quickboot prop
-vendor_restricted_prop(vendor_tee_gk_quickboot);
-
-#secure element quickboot prop
-vendor_restricted_prop(vendor_se_quickboot);
+allow vendor_sensors device:dir r_dir_perms;
