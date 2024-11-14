@@ -16,3 +16,8 @@ allow qtiwifi self:udp_socket create;
 allow qtiwifi self:udp_socket ioctl;
 allow qtiwifi self:global_capability_class_set { net_admin net_raw };
 
+#give necessary permission to qtiwifi to create rpc client
+get_prop(qtiwifi, vendor_wifi_prop)
+allow qtiwifi vendor_someip_data_file:dir { search write add_name remove_name };
+allow qtiwifi vendor_someip_data_file:sock_file { write create unlink setattr };
+allow qtiwifi vendor_routing_manager_default:unix_stream_socket connectto;
