@@ -1,0 +1,14 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# c2c_hub service
+type vendor_c2c_hub, domain;
+type vendor_c2c_hub_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_c2c_hub)
+
+allow vendor_c2c_hub vendor_persist_data_file:dir search;
+allow vendor_c2c_hub mnt_vendor_file:dir r_dir_perms;
+
+allow vendor_c2c_hub self:udp_socket create_socket_perms;
+allow vendor_c2c_hub self:tcp_socket { create read write connect getopt name_connect };
