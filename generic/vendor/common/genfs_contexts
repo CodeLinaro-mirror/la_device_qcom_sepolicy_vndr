@@ -188,6 +188,8 @@ genfscon sysfs /firmware/devicetree/base/soc  u:object_r:vendor_sysfs_devicetree
 
 genfscon sysfs /class/qcom-haptics/primitive_duration  u:object_r:vendor_sysfs_haptics:s0
 genfscon sysfs /class/qcom-haptics/visense_enabled     u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/v_gain_error     u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/i_gain_error     u:object_r:vendor_sysfs_haptics:s0
 
 genfscon sysfs /class/qcom-battery/soh        u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /class/qcom-battery/resistance u:object_r:vendor_sysfs_battery_supply:s0

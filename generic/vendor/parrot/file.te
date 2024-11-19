@@ -62,3 +62,5 @@
 #Define the files used by powermodule
 type vendor_pm_data_file, file_type, data_file_type;
 type vendor_sysfs_guestvm, fs_type, sysfs_type;;
+
+type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;

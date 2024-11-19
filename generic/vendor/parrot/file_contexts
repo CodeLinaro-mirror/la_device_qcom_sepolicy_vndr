@@ -243,6 +243,8 @@
 # hypervisor node
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 /dev/gh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
+/dev/gunyah                                                          u:object_r:vendor_gunyah_dev:s0
+/dev/qgunyah                                                         u:object_r:vendor_gunyah_chr_device:s0
 
 #poweropt-service
 /(vendor|system/vendor)/bin/poweropt-service u:object_r:vendor_hal_poweroptservice_qti_exec:s0

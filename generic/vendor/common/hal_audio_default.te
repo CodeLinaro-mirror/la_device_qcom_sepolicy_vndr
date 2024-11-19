@@ -41,6 +41,9 @@ allow hal_audio vendor_adsp_sleepmon_device:chr_file rw_file_perms;
 hal_client_domain(hal_audio_default, vendor_hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
 
+#Allow access to read Haptics sysnodes
+allow hal_audio_default vendor_sysfs_haptics:file r_file_perms;
+
 # read-only permission to obtain the calibration data
 r_dir_file(hal_audio_default, vendor_persist_audio_file);
 allow hal_audio_default mnt_vendor_file:dir search;
