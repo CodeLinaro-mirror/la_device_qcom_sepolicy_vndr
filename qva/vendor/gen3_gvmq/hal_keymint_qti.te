@@ -3,3 +3,5 @@
 #
 
 allow vendor_hal_keymint_qti vendor_hab_device:chr_file rw_file_perms;
+# allow access to hab-fde node
+allow vendor_hal_keymint_qti vendor_hab_fde_device:chr_file rw_file_perms;
