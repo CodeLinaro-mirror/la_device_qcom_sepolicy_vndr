@@ -203,6 +203,7 @@ allow vendor_qms vendor_sysfs_battery_supply:file { open read };
 
 # License Manager policies for QMS
 unix_socket_connect(vendor_qms, vendor_ssgtzd, vendor_ssgtzd)
+allow vendor_qms vendor_hlosminkdaemon:unix_stream_socket connectto;
 
 #neverallow other  to write to main folders
 neverallow {

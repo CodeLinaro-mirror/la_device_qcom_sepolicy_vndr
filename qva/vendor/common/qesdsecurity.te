@@ -14,6 +14,7 @@ allow vendor_qesdsect vendor_qesdk_service:service_manager find;
 binder_use(vendor_qesdsect);
 
 unix_socket_connect(vendor_qesdsect, vendor_ssgtzd, vendor_ssgtzd)
+allow vendor_qesdsect vendor_hlosminkdaemon:unix_stream_socket connectto;
 crash_dump_fallback(vendor_qesdsect);
 
 #allow qesdsec to read boot complete prop
