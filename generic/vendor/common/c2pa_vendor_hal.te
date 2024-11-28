@@ -28,3 +28,9 @@ userdebug_or_eng(`
   get_prop(vendor_hal_c2pa, vendor_mink_trace_prop)
 ')
 
+# Allow access to HLOS Mink Daemon socket
+unix_socket_connect(vendor_hal_c2pa_qti, vendor_hlos_minkd_opener, vendor_hlosminkdaemon)
+
+# Allow HLOS Mink Daemon to access fd passed by c2pa
+allow vendor_hlosminkdaemon vendor_hal_c2pa_qti:fd use;
+
