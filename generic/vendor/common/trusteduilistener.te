@@ -42,10 +42,8 @@ hal_client_domain(vendor_trusteduilistener, hal_graphics_composer);
 # System helper HAL
 hal_client_domain(vendor_trusteduilistener, vendor_hal_systemhelper);
 
-# Allow access to SSGTZD socket
-unix_socket_connect(vendor_trusteduilistener, vendor_ssgtzd, vendor_ssgtzd)
-allow vendor_trusteduilistener vendor_hlosminkdaemon:unix_stream_socket connectto;
-allow vendor_trusteduilistener vendor_ssgtzd_opener_socket:sock_file write;
+# Allow access to HLOS Mink Daemon socket
+unix_socket_connect(vendor_trusteduilistener, vendor_hlos_minkd_opener, vendor_hlosminkdaemon)
 
 # Allow CPU files
 allow vendor_trusteduilistener sysfs_devices_system_cpu:file rw_file_perms;
