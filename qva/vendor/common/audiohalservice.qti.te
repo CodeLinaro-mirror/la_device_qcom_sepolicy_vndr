@@ -17,6 +17,7 @@ add_service(hal_audio_service, vendor_audiohalservice_qti)
 allow vendor_audiohalservice_qti vendor_acdb_loader_service_service:service_manager find;
 allow vendor_audiohalservice_qti vendor_audio_hal_plugin_service_service:service_manager find;
 carpowerpolicy_callback_domain(vendor_audiohalservice_qti)
+hal_client_domain(vendor_audiohalservice_qti, hal_vehicle)
 allow vendor_audiohalservice_qti carpowerpolicyd_service:service_manager find;
 allow vendor_audiohalservice_qti vendor_audio_data_file:dir search;
 allow vendor_audiohalservice_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
