@@ -1,0 +1,20 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+userdebug_or_eng(`
+type vendor_btfmd_test_app, domain;
+
+app_domain(vendor_btfmd_test_app);
+
+# allow FMD Test App to interact with the vendor_hal_bluetooth_fmd
+hal_client_domain(vendor_btfmd_test_app, vendor_hal_bluetooth_fmd);
+
+# Allow invoking activity of vendor_btfmd_test_app
+allow vendor_btfmd_test_app activity_service:service_manager find;
+allow vendor_btfmd_test_app app_api_service:service_manager find;
+
+# allow FMD Test App  to interact with perf
+hal_client_domain(vendor_btfmd_test_app, vendor_hal_perf)
+
+dontaudit vendor_btfmd_test_app default_prop:file {read};
+')
