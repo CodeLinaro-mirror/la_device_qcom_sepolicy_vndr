@@ -537,3 +537,10 @@
 /(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 
 /vendor/bin/embmsslServer       u:object_r:vendor_hal_embmssl_qti_exec:s0
+
+#### Context for qguard
+/(vendor|system/vendor)/bin/qguard        u:object_r:vendor_qguard_exec:s0
+
+# Heartbeat driver node
+/sys/qti_heartbeat/sysstate_value       u:object_r:vendor_sysfs_heartbeat:s0
+
