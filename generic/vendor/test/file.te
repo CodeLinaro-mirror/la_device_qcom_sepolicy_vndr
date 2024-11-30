@@ -28,6 +28,9 @@
 # kgsl snapshot file type for sysfs access
 type vendor_sysfs_kgsl_snapshot, sysfs_type, fs_type;
 
+# heartbeat file type for sysfs access
+type vendor_sysfs_heartbeat, sysfs_type, fs_type;
+
 # path to debugfs. use this only in debug builds
 type vendor_qti_debugfs, fs_type, debugfs_type;
 
