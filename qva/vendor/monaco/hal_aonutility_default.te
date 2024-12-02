@@ -58,3 +58,5 @@ wakelock_use(vendor_hal_aonutility_default);
 allow vendor_hal_aonutility_default sysfs_rtc:dir search;
 allow vendor_hal_aonutility_default sysfs_rtc:file r_file_perms;
 get_prop(vendor_hal_aonutility_default, vendor_slate_boot_complete_prop);
+
+hal_client_domain(vendor_hal_aonutility_default, vendor_hal_aonfwloader)
