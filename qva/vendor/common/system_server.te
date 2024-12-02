@@ -73,3 +73,6 @@ get_prop(system_server, vendor_qspm_prop)
 
 #allow system server to get vendor_audio_prop
 get_prop(system_server, vendor_audio_prop)
+
+# allow system_server to read bluetooth vendor prop
+get_prop(system_server, vendor_bluetooth_prop)
