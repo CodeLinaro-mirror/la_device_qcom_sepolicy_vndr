@@ -37,3 +37,5 @@ userdebug_or_eng(`
 
 # allow shell users to control kgsl perfcounters
 allow shell vendor_sysfs_kgsl_shell:file rw_file_perms;
+
+dontaudit shell vendor_hal_perf_default:binder call;
