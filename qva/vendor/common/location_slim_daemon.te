@@ -68,3 +68,5 @@ allow vendor_location_slim_daemon fwk_sensor_hwservice:hwservice_manager find;
 
 # allow can socket create
 allow vendor_location_slim_daemon self:can_socket { bind create setopt };
+
+hal_client_domain(vendor_location_slim_daemon, hal_vehicle)
