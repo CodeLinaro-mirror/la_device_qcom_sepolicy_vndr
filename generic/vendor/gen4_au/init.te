@@ -31,6 +31,9 @@ allow init vendor_file:system module_load;
 allow init audio_device:dir { relabelto relabelfrom };
 allow init audio_device:chr_file { relabelto relabelfrom };
 
+allow  init vendor_qcarcam_edrm_rvc:process share;
+allow  init vendor_qcxserver:process share;
+
 #Relabing SE labels permission
 allow init graphics_device:chr_file { relabelto relabelfrom };
 allow init random_device:chr_file relabelto;
