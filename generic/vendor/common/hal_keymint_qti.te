@@ -35,6 +35,7 @@ dontaudit vendor_hal_keymint_qti firmware_file:dir search;
 
 get_prop(vendor_hal_keymint_qti, vendor_tee_listener_prop)
 get_prop(vendor_hal_keymint_qti, vendor_disable_spu_prop)
+get_prop(vendor_hal_keymint_qti, vendor_keymint_retry_timer_prop)
 
 allow vendor_hal_keymint_qti tee_device:chr_file rw_file_perms;
 
