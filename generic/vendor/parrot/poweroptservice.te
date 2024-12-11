@@ -70,8 +70,7 @@ init_daemon_domain(vendor_hal_poweroptservice_qti)
 binder_call(vendor_hal_poweroptservice_client, vendor_hal_poweroptservice_server)
 binder_call(vendor_hal_poweroptservice_server, vendor_hal_poweroptservice_client)
 
-#allow service to be added to hwservice list
-hal_attribute_hwservice(vendor_hal_poweroptservice, vendor_hal_poweroptservice_hwservice)
+#allow service to be added to service list
 hal_attribute_service(vendor_hal_poweroptservice, vendor_hal_poweroptservice_service)
 
 hal_client_domain(vendor_hal_poweroptservice_qti, vendor_hal_perf)
