@@ -76,3 +76,6 @@ get_prop(system_server, vendor_audio_prop)
 
 # allow system_server to read bluetooth vendor prop
 get_prop(system_server, vendor_bluetooth_prop)
+
+# allow system_server to read vendor_persist_camera_prop
+get_prop(system_server, vendor_persist_camera_prop)
