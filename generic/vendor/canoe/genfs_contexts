@@ -131,10 +131,10 @@ genfscon sysfs /devices/platform/soc/11311000.csr/swao_csr u:object_r:vendor_sys
 genfscon sysfs /devices/platform/soc/soc:modem_diag/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
 
 # Power supply device nodes
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/usb u:object_r:vendor_sysfs_usb_supply:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/wireless u:object_r:vendor_sysfs_usb_supply:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1 u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/usb u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/wireless u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink1 u:object_r:vendor_sysfs_usb_supply:s0
 
 # LED device nodes
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-01/c426000.spmi:pmh0101@1:led-controller/leds/red u:object_r:vendor_sysfs_graphics:s0
@@ -146,13 +146,13 @@ genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pm
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pmk8850@0:rtc@6100/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pmk8850@0:pon_hlos@1300/c426000.spmi:pmk8850@0:pon_hlos@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pmk8850@0:pon_hlos@1300/c426000.spmi:pmk8850@0:pon_hlos@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink_log/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink-log/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink1/wakeup u:object_r:sysfs_wakeup:s0
 
 # USB device wakeup nodes
 genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
