@@ -38,6 +38,7 @@ allow vendor_hal_gnss_qti vendor_location_edgnss_daemon:unix_dgram_socket sendto
 allow vendor_hal_gnss_qti vendor_qsap_location:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_slim_daemon:unix_dgram_socket sendto;
 allow vendor_hal_gnss_qti vendor_location_xtwifi_client:unix_dgram_socket sendto;
+allow vendor_hal_gnss_qti vendor_location_blp_svc:unix_dgram_socket sendto;
 
 binder_use(vendor_hal_gnss_qti)
 
