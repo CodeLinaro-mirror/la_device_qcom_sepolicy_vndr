@@ -193,6 +193,8 @@
 /(vendor|system/vendor)/bin/engine-service                                         u:object_r:vendor_location_engine_service_exec:s0
 /(vendor|system/vendor)/bin/edgnss-daemon                                          u:object_r:vendor_location_edgnss_daemon_exec:s0
 /(vendor|system/vendor)/bin/qsap_location                                          u:object_r:vendor_qsap_location_exec:s0
+/(vendor|system/vendor)/bin/blpsvc                                                 u:object_r:vendor_location_blp_svc_exec:s0
+/(vendor|system/vendor)/bin/blpctl                                                 u:object_r:vendor_location_blp_svc_exec:s0
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0
