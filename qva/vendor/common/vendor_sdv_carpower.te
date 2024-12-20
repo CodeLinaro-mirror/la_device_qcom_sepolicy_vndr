@@ -1,0 +1,7 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_sdv_carpower_client, domain;
+type vendor_sdv_carpower_client_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(vendor_sdv_carpower_client)
+binder_call(vendor_sdv_carpower_client, vendor_hal_sdv_carpower_qti)
