@@ -36,3 +36,11 @@ allow kernel sepolicy_file:file r_file_perms;
 allow kernel vendor_esplash_exec:file relabelto;
 allow kernel vendor_qcxserver_exec:file relabelto;
 allow kernel vendor_qcarcam_edrm_rvc_exec:file relabelto;
+
+allow kernel rootfs:dir relabelfrom;
+allow kernel rootfs:system module_load;
+allow kernel self:capability sys_module;
+allow kernel vendor_debugfs_wlan:dir search;
+allow kernel vendor_early_services:lnk_file read;
+allow kernel vendor_file:dir { open read relabelto };
+allow kernel vendor_init_exec:file relabelto;
