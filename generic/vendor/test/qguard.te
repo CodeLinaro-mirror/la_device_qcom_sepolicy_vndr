@@ -45,6 +45,8 @@ userdebug_or_eng(`
 
   # write into hung_task_enh
   allow vendor_qguard proc:file { write open };
+  # read proc_pid_max
+  allow vendor_qguard proc_pid_max:file r_file_perms;
 
   # write into sysrq
   allow vendor_qguard proc_sysrq:file w_file_perms;
@@ -70,4 +72,6 @@ userdebug_or_eng(`
   hal_client_domain(vendor_qguard, vendor_hal_perf)
   hal_client_domain(vendor_qguard, hal_graphics_allocator)
   hal_client_domain(vendor_qguard, hal_graphics_composer)
+
+  r_dir_file(vendor_qguard, cgroup_v2)
 ')
