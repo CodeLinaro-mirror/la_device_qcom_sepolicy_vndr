@@ -36,6 +36,7 @@ userdebug_or_eng(`
   allow vendor_subsystem_ramdump vendor_ramdump_microdump_modem_device:chr_file r_file_perms;
 
   allow vendor_subsystem_ramdump vendor_sysfs_devcd:file rw_file_perms;
+  allow vendor_subsystem_ramdump vendor_sysfs_qcom_ramdump:file rw_file_perms;
   allow vendor_subsystem_ramdump self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
   r_dir_file(vendor_subsystem_ramdump, sysfs_type);

@@ -88,6 +88,7 @@ type vendor_sysfs_msm_perf, fs_type, sysfs_type;
 type vendor_sysfs_msm_power, fs_type, sysfs_type;
 type vendor_sysfs_msm_stats, fs_type, sysfs_type;
 type vendor_sysfs_msm_subsys_restart, sysfs_type, fs_type;
+type vendor_sysfs_qcom_ramdump, sysfs_type, fs_type;
 type vendor_sysfs_sensors, sysfs_type, fs_type;
 type vendor_sysfs_sectouch, sysfs_type, fs_type;
 type vendor_sysfs_soc, sysfs_type, fs_type;
