@@ -34,3 +34,6 @@ unix_socket_connect(vendor_hal_c2pa_qti, vendor_hlos_minkd_opener, vendor_hlosmi
 # Allow HLOS Mink Daemon to access fd passed by c2pa
 allow vendor_hlosminkdaemon vendor_hal_c2pa_qti:fd use;
 
+# Allow following permission to access qvirt manager service
+get_prop(vendor_hal_c2pa_qti, vendor_vm_ssrenable_prop)
+hal_client_domain(vendor_hal_c2pa_qti, vendor_hal_qvirtservice)
