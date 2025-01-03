@@ -22,6 +22,7 @@ allow vendor_hal_c2pa_qti vendor_membuf_dev:chr_file r_file_perms;
 allow vendor_hal_c2pa_qti vendor_vm_self_device:chr_file r_file_perms;
 allow vendor_hal_c2pa_qti vendor_vm_trusted_device:chr_file r_file_perms;
 allow vendor_hal_c2pa_client vendor_hal_c2pa_qti_tmpfs:file read;
+allow vendor_hal_c2pa_qti hal_graphics_allocator_default:fd use;
 
 # Allow read access to mink socket log files
 userdebug_or_eng(`
