@@ -54,3 +54,5 @@ allow vendor_location_locIdlClient_daemon hal_sensors_default:unix_stream_socket
 #PTP
 allow hal_sensors_default vendor_ipa_dev:file { map open read write };
 allow hal_sensors_default vendor_vnw_device:chr_file { open read write };
+allow vendor_location_locIdlClient_daemon vendor_ipa_dev:file { map open read write };
+allow vendor_location_locIdlClient_daemon vendor_vnw_device:chr_file { open read write };
