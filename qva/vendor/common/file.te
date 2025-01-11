@@ -259,3 +259,4 @@ type vendor_automs_vndr_data_file, file_type, data_file_type;
 
 type vendor_sysfs_ufs_pm_mode, fs_type, sysfs_type;
 
+type vendor_sysfs_vdd, sysfs_type, fs_type;

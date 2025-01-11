@@ -131,3 +131,4 @@ genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0004:00/0004:00:00.0/0
 
 genfscon sysfs /devices/platform/soc/1da4000.ufshc2/qcom/ufs_pm_mode u:object_r:vendor_sysfs_ufs_pm_mode:s0
 
+genfscon sysfs /firmware/devicetree/base/soc/sdhci@8804000/vdd-io-supply                       u:object_r:vendor_sysfs_vdd:s0

@@ -1,0 +1,8 @@
+# Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow servicemanager vendor_early_services:dir search;
+userdebug_or_eng(`
+allow servicemanager debugfs_bootreceiver_tracing:file r_file_perms;
+')
+
