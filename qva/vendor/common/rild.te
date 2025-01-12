@@ -49,6 +49,6 @@ allow rild vendor_automs_vndr_data_file:file create_file_perms;
 allow rild vendor_someip_data_file:dir { search write add_name remove_name };
 allow rild vendor_someip_data_file:file { create write open lock setattr };
 allow rild vendor_someip_data_file:sock_file { create setattr write unlink };
-allow rild vendor_location_locIdlClient_daemon:unix_stream_socket connectto;
+allow rild vendor_vsomeip_daemon:unix_stream_socket connectto;
 
 hal_client_domain(rild, vendor_syshealthmon)
