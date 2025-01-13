@@ -27,7 +27,7 @@
 ###################################
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #TODO: As of lines are commented once testing is done we should be enabling
@@ -172,6 +172,9 @@ genfscon sysfs /devices/platform/soc/ab00000.qcom,lpass/wakeup u:object_r:sysfs_
 
 #Power-Disk sysfs node
 genfscon sysfs /power/disk  u:object_r:sysfs_power_disk:s0
+
+#Power-Resume sysfs node
+genfscon sysfs /power/resume  u:object_r:sysfs_power_resume:s0
 
 #Cpu Sleep disabled sysfs node
 genfscon sysfs /devices/system/cpu/qcom_lpm/parameters/sleep_disabled u:object_r:vendor_sysfs_cpu_sleep_disabled:s0

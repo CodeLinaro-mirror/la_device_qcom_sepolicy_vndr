@@ -25,7 +25,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2023, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_sysfs_fps_attr, fs_type, sysfs_type;
@@ -33,6 +33,7 @@ type vendor_sysfs_boost_concurrent_mode, sysfs_type, fs_type;
 
 #System power-disk file type
 type sysfs_power_disk, sysfs_type, fs_type;
+type sysfs_power_resume, sysfs_type, fs_type;
 type vendor_sysfs_drm, sysfs_type, fs_type;
 type vendor_sysfs_twm, sysfs_type, fs_type;
 type vendor_sysfs_slate_rsb, fs_type, sysfs_type;
