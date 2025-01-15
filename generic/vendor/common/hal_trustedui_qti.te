@@ -74,3 +74,13 @@ hal_attribute_service(vendor_hal_trustedui, vendor_hal_trustedui_aidl_service)
 userdebug_or_eng(`
   get_prop(vendor_hal_trustedui_qti, vendor_mink_trace_prop)
 ')
+
+# Allow access to HLOS Mink Daemon socket
+unix_socket_connect(vendor_hal_trustedui_qti, vendor_hlos_minkd_opener, vendor_hlosminkdaemon)
+
+# Allow HLOS Mink Daemon to access fd passed by Trusted UI hal
+allow vendor_hlosminkdaemon vendor_hal_trustedui_qti:fd use;
+
+# Allow following permission to access qvirt manager service
+get_prop(vendor_hal_trustedui_qti, vendor_vm_ssrenable_prop)
+hal_client_domain(vendor_hal_trustedui_qti, vendor_hal_qvirtservice)

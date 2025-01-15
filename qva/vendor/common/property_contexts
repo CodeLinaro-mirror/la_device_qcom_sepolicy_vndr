@@ -76,6 +76,9 @@ vendor.qti.ese.                              u:object_r:vendor_ese_prop:s0
 # eSE-StrongBox : Dynamic keymint and weaver HAL
 vendor.ese.strongbox                         u:object_r:vendor_ese_strongbox_prop:s0
 
+# Keymint retry timer property
+vendor.keymint.retry_timer                   u:object_r:vendor_keymint_retry_timer_prop:s0
+
 #Disable SPU property
 vendor.gatekeeper.disable_spu                u:object_r:vendor_disable_spu_prop:s0
 vendor.gatekeeper.is_security_level_spu      u:object_r:vendor_disable_spu_prop:s0

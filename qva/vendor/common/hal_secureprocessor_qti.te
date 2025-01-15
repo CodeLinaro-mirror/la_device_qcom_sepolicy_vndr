@@ -56,3 +56,12 @@ hal_client_domain(vendor_hal_secureprocessor_qti, hal_graphics_allocator);
 
 # For AIDL Service
 hal_attribute_service(vendor_hal_secureprocessor, vendor_hal_secureprocessor_aidl_service)
+
+# Allow access to HLOS Mink Daemon socket
+unix_socket_connect(vendor_hal_secureprocessor_qti, vendor_hlos_minkd_opener, vendor_hlosminkdaemon)
+allow vendor_hlosminkdaemon vendor_hal_secureprocessor_qti:fd use;
+
+# Allow following permission to access qvirt manager service
+get_prop(vendor_hal_secureprocessor_qti, vendor_vm_ssrenable_prop)
+hal_client_domain(vendor_hal_secureprocessor_qti, vendor_hal_qvirtservice)
+
