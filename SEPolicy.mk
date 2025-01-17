@@ -1,5 +1,5 @@
 # Board specific SELinux policy variable definitions
-ifeq ($(call is-vendor-board-platform,QCOM),true)
+ifneq (,$(call is-vendor-board-qcom))
 SEPOLICY_PATH:= device/qcom/sepolicy_vndr
 
 ifeq ($(TARGET_RELEASE_PLATFORM),bp4a)
