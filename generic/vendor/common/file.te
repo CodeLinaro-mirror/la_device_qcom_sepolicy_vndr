@@ -292,6 +292,7 @@ type vendor_someip_cfg_file, file_type, vendor_file_type;
 
 # vnw
 type vendor_emac_state, sysfs_type, fs_type;
+type vendor_gptp_socket, file_type;
 
 # Sensor Hal Config
 type vendor_sensor_hal_config, file_type, vendor_file_type;

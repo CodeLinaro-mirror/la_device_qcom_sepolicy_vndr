@@ -30,17 +30,18 @@
 
 type vendor_vnw, domain;
 type vendor_vnw_exec, exec_type, vendor_file_type, file_type;
-
 init_daemon_domain(vendor_vnw)
 net_domain(vendor_vnw)
-
 allow vendor_vnw self:capability { net_admin net_raw chown };
-allow vendor_vnw self:packet_socket { create bind read setopt write };
+allow vendor_vnw self:packet_socket create_socket_perms;
 allowxperm vendor_vnw self:packet_socket ioctl { SIOCGIFHWADDR SIOCGIFINDEX SIOCGIFNAME SIOCSHWTSTAMP };
 allowxperm vendor_vnw self:unix_dgram_socket ioctl { SIOCETHTOOL };
 allowxperm vendor_vnw self:tcp_socket ioctl { SIOCETHTOOL };
 allow vendor_vnw sysfs_net:dir { search };
 allow vendor_vnw vendor_emac_state:file { read open getattr create map setattr write };
+
+allow vendor_vnw vendor_gptp_socket:sock_file { create_file_perms };
+
 allow vendor_vnw vendor_vnw_device:file { create map open read setattr write };
 allow vendor_vnw vendor_vnw_device:dir { write add_name };
 allow vendor_vnw vendor_vnw_device:chr_file { open ioctl read write };
