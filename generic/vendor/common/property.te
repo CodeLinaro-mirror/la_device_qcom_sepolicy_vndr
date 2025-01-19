@@ -118,3 +118,9 @@ vendor_internal_prop(vendor_soc_model_prop);
 vendor_internal_prop(vendor_console_log_level_prop)
 vendor_internal_prop(vendor_dcvs_prop)
 vendor_restricted_prop(vendor_persist_rcs_qti_prop)
+
+#GNSS QDR properties
+vendor_internal_prop(vendor_gnss_qdr_calstate)
+vendor_internal_prop(vendor_gnss_qdr_confidence)
+vendor_internal_prop(vendor_gnss_qdr_solutionmask)
+vendor_internal_prop(vendor_gnss_qdr_calinfo_timestamp)

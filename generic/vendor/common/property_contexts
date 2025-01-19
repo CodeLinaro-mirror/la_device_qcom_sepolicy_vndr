@@ -81,6 +81,10 @@ persist.vendor.ims.        u:object_r:vendor_ims_prop:s0
 persist.vendor.qti.telephony.vt_cam_interface u:object_r:vendor_ims_prop:s0
 ctl.vendor.imsrcsservice   u:object_r:vendor_ctl_vendor_imsrcsservice_prop:s0
 vendor.opengles.version    u:object_r:vendor_opengles_prop:s0
+vendor.gnss.qdr.calstate         u:object_r:vendor_gnss_qdr_calstate:s0
+vendor.gnss.qdr.confidence       u:object_r:vendor_gnss_qdr_confidence:s0
+vendor.gnss.qdr.solutionmask     u:object_r:vendor_gnss_qdr_solutionmask:s0
+vendor.gnss.qdr.calinfotimestamp u:object_r:vendor_gnss_qdr_calinfo_timestamp:s0
 
 # HBTP
 ctl.vendor.hbtp u:object_r:vendor_ctl_vendor_hbtp_prop:s0

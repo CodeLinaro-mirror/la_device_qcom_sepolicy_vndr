@@ -74,3 +74,9 @@ hal_client_domain(vendor_hal_gnss_qti, hal_health)
 # libqdi and have all its clients use netlink route
 # sockets.
 dontaudit vendor_hal_gnss_qti self:udp_socket create;
+
+# Allow Gnss HAL to update QDR properties
+set_prop(vendor_hal_gnss_qti, vendor_gnss_qdr_calstate)
+set_prop(vendor_hal_gnss_qti, vendor_gnss_qdr_confidence)
+set_prop(vendor_hal_gnss_qti, vendor_gnss_qdr_solutionmask)
+set_prop(vendor_hal_gnss_qti, vendor_gnss_qdr_calinfo_timestamp)
