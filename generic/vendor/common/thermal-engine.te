@@ -104,3 +104,6 @@ allow vendor_thermal-engine vendor_sysfs_devfreq:lnk_file r_file_perms;
 #This is required to write into limits-cdsp partition
 allow vendor_thermal-engine block_device:dir r_dir_perms;
 allow vendor_thermal-engine vendor_limits_block_device:blk_file rw_file_perms;
+
+#This is required to read the DDR version
+allow vendor_thermal-engine vendor_sysfs_ddr:file r_file_perms;
