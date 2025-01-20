@@ -52,3 +52,5 @@
 
 /sys/devices/platform/vdevs/1c0e0000.virtio_blk/virtio[0-99]+/block/userdata/queue/zoned  u:object_r:vendor_sysfs_zoned:s0
 /sys/devices/platform/vdevs/1c0f0000.virtio_blk/virtio[0-99]+/block/metadata/queue/zoned  u:object_r:vendor_sysfs_zoned:s0
+/sys/devices/platform/70016000.virtio_blk_userdata/virtio[0-99]+/block/userdata/queue/zoned  u:object_r:vendor_sysfs_zoned:s0
+/sys/devices/platform/70015000.virtio_blk_metadata/virtio[0-99]+/block/metadata/queue/zoned  u:object_r:vendor_sysfs_zoned:s0

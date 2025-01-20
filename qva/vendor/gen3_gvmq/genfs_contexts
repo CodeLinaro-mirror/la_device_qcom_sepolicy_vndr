@@ -8,6 +8,7 @@ genfscon sysfs /devices/platform/soc/1c800000.virtio-spmi/virtio3/spmi-0/0-00/1c
 #net sysfs
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a88000.spi/spi_master/spi11/spi11.0/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/ne u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/vdevs/1c0c0000.virtio_net/virtio26/net u:object_r:sysfs_net:s0
 
 genfscon sysfs /devices/platform/soc/1c800000.virtio-spmi/virtio3/spmi-0/0-00/1c800000.virtio-spmi:virt_spmi:qcom,pm8195@0:qcom,pm8195_1_rtc/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c800000.virtio-spmi/virtio3/spmi-0/0-00/1c800000.virtio-spmi:virt_spmi:qcom,pm8195@0:qcom,pm8195_1_rtc/wakeup u:object_r:sysfs_wakeup:s0

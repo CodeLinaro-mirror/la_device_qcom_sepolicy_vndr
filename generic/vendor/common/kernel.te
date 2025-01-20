@@ -51,3 +51,5 @@ allow kernel device:chr_file { create setattr };
 allow kernel device:dir { add_name write };
 allow kernel self:capability mknod;
 allow kernel self:capability net_bind_service;
+net_domain(kernel);
+allow kernel netd:tcp_socket read;
