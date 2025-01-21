@@ -51,6 +51,7 @@ allow vendor_location_xtwifi_client vendor_location:unix_dgram_socket { read wri
 
 # allow socket communication with gnss hal
 allow vendor_location_xtwifi_client vendor_hal_gnss_qti:unix_dgram_socket sendto;
+allow vendor_location_xtwifi_client vendor_location_blp_svc:unix_dgram_socket sendto;
 
 hwbinder_use(vendor_location_xtwifi_client)
 get_prop(vendor_location_xtwifi_client, hwservicemanager_prop)

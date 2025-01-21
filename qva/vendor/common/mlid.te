@@ -41,3 +41,7 @@ allow vendor_mlid vendor_location_lowi_server:unix_dgram_socket sendto;
 allow vendor_mlid vendor_location_socket:dir rw_dir_perms;
 allow vendor_mlid vendor_location_socket:lnk_file read;
 allow vendor_mlid vendor_location_socket:sock_file create_file_perms;
+
+userdebug_or_eng(`
+  get_prop(vendor_mlid, vendor_mink_trace_prop)
+')

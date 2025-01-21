@@ -65,3 +65,5 @@ allow vendor_hal_poweroptservice_qti vendor_pm_data_file:file create_file_perms;
 
 allow vendor_hal_poweroptservice_qti proc_stat:file r_file_perms;
 allow vendor_hal_poweroptservice_qti proc:file r_file_perms;
+
+binder_use(vendor_hal_poweroptservice_qti)
