@@ -89,6 +89,7 @@
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/wakeup(/.*)?                                                                             u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/9c0000\.qcom,qupv3_0_geni_se/988000\.qcom,qup_uart/wakeup(/.*)?                                                        u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/1c20000\.qcom,pcie/wakeup(/.*)?                                                                                        u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/1c00000.qcom,pcie/pci0004:00/0004:00:00.0/0004:01:00.0/mhi_1103_04.01.00/wakeup(/.*)?                                  u:object_r:sysfs_wakeup:s0
 
 /sys/devices/virtual/bdi/179:0/read_ahead_kb                                                                                                     u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices/virtual/bdi/179:32/read_ahead_kb                                                                                                    u:object_r:vendor_sysfs_mmc_host:s0
