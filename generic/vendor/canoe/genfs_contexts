@@ -27,7 +27,7 @@
 #
 #Changes from Qualcomm Innovation Center are provided under the following license:
 #
-#Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) 2023-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #subsys nodes (varying hardware layouts; can optimize for specific hw variant)
@@ -191,7 +191,7 @@ genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-c
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-0/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-1/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-2/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/power/control                             u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/power/control                                   u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
