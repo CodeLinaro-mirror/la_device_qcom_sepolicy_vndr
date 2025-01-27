@@ -315,3 +315,5 @@ type vendor_sysfs_fs_ext4, fs_type, sysfs_type;
 # someip
 type vendor_someip_data_file, file_type, data_file_type;
 type vendor_someip_cfg_file, file_type, vendor_file_type;
+
+type vendor_usb_events, file_type, tracefs_type;

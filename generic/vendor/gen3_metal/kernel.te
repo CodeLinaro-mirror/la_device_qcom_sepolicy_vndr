@@ -42,7 +42,7 @@ allow kernel vendor_early_services:dir r_dir_perms;
 allow kernel proc_cmdline:file r_file_perms;
 allow kernel sepolicy_file:file r_file_perms;
 allow kernel device:dir create_dir_perms;
-allow kernel vendor_early_services:file relabelto;
+allow kernel vendor_early_services:file { relabelto r_file_perms };
 allow kernel vendor_esplash_exec:file relabelto;
 allow kernel audio_device:dir create_dir_perms;
 allow kernel audio_device:chr_file { create setattr };
@@ -52,16 +52,23 @@ allow kernel vendor_early_services:dir relabelto;
 #allow kernel sysfs:filesystem mount;
 allow kernel vendor_file:dir r_dir_perms;
 allow kernel vendor_file:dir { relabelto };
-allow kernel vendor_file:file { relabelto };
+allow kernel vendor_file:file { relabelto getattr };
 allow kernel system_linker_exec:file { relabelto };
-allow kernel vendor_early_services:lnk_file { relabelto };
+allow kernel vendor_early_services:lnk_file { relabelto r_file_perms };
 allow kernel vendor_init_early_test_exec:file { relabelto };
 allow kernel rootfs:lnk_file { relabelfrom };
 allow kernel vendor_init_exec:file { relabelto read open };
 allow kernel vendor_ais_server_exec:file relabelto;
 allow kernel vendor_qcarcam_edrm_rvc_exec:file relabelto;
 allow kernel selinuxfs:filesystem mount;
-allow kernel self:capability sys_chroot;
+allow kernel self:capability { sys_chroot sys_module net_admin };
+allow kernel rootfs:system module_load;
+allow kernel sysfs_dt_firmware_android:dir { search r_file_perms };
+allow kernel sysfs_dt_firmware_android:file { r_file_perms getattr };
+allow kernel sysfs_net:dir r_file_perms;
+allow kernel sysfs_net:file rw_file_perms;
+allow kernel sysfs_wakeup:dir { r_file_perms search };
+
 userdebug_or_eng(`
   allow kernel vendor_sysfs_kpi:file { open write };
 ')
