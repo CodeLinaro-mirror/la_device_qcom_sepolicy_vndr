@@ -48,8 +48,7 @@ crash_dump_fallback(vendor_location_locIdlClient_daemon)
 allow vendor_location_locIdlClient_daemon vendor_someip_data_file:dir { add_name search write remove_name };
 allow vendor_location_locIdlClient_daemon vendor_someip_data_file:file { create lock open write };
 allow vendor_location_locIdlClient_daemon vendor_someip_data_file:sock_file { create setattr write unlink };
-allow vendor_location_locIdlClient_daemon rild:unix_stream_socket connectto;
-allow vendor_location_locIdlClient_daemon hal_sensors_default:unix_stream_socket connectto;
+allow vendor_location_locIdlClient_daemon vendor_vsomeip_daemon:unix_stream_socket connectto;
 
 #PTP
 allow hal_sensors_default vendor_ipa_dev:file { map open read write };
