@@ -25,13 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
+type vendor_logdump_partition, dev_type;
+type vendor_mba_debug_dev, dev_type;
+type vendor_dip_device, dev_type;
+type vendor_rawdump_block_device, dev_type;
 
-# vendor biometricsface data file
-type vendor_biometricsface_data_file, file_type, data_file_type;
+#define HDMI-IN device
+type vendor_hdmi_bdg_irq_device, dev_type;
 
-#sec
-type vendor_sec_vndr_data_file, file_type, data_file_type;
-type vendor_persist_sec_file, file_type , vendor_persist_type;
+#define DP-IN device
+type vendor_dp_bdg_irq_device, dev_type;

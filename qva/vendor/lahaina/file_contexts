@@ -63,4 +63,19 @@
 
 /data/vendor/face3d_dir(/.*)?                                       u:object_r:vendor_biometricsface_data_file:s0
 
+#eID
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.eid@1\.0-service             u:object_r:vendor_hal_eid_qti_exec:s0
+
+#camera
+/sys/firmware/devicetree/base/memory/ddr_device_type                               u:object_r:vendor_sysfs_ddr:s0
+
+#aidirector
+/dev/snd/controlC0  u:object_r:vendor_aid_audio_device:s0
+
+# data files
+/data/vendor/secure-edge-control(/.*)?                              u:object_r:vendor_sec_vndr_data_file:s0
+
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/spm_lvl                u:object_r:vendor_sysfs_scsi_host:s0
+
+# persist files
+/mnt/vendor/persist/sec(/.*)?      u:object_r:vendor_persist_sec_file:s0

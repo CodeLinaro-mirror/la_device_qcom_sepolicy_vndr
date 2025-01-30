@@ -1,4 +1,4 @@
-# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,13 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
+allow hal_camera_default tee_device:chr_file rw_file_perms;
 
-# vendor biometricsface data file
-type vendor_biometricsface_data_file, file_type, data_file_type;
+#Allow camera to access hdmi bridge device
+allow hal_camera_default vendor_hdmi_bdg_irq_device:chr_file rw_file_perms;
 
-#sec
-type vendor_sec_vndr_data_file, file_type, data_file_type;
-type vendor_persist_sec_file, file_type , vendor_persist_type;
+#Allow camera to access dp bridge device
+allow hal_camera_default vendor_dp_bdg_irq_device:chr_file rw_file_perms;
