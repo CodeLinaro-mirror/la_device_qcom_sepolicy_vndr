@@ -1,0 +1,12 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_hb_sysnode_monitor, domain;
+type vendor_hb_sysnode_monitor_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_hb_sysnode_monitor)
+
+userdebug_or_eng(`
+    # read /sys/qti_heartbeat/sysstate_value
+    allow vendor_hb_sysnode_monitor vendor_sysfs_heartbeat:file r_file_perms;
+')
