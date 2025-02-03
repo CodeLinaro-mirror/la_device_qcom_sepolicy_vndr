@@ -7,3 +7,6 @@ get_prop(vendor_init, persist_debug_prop)
 
 #Allow vendor_init to set whs property
 set_prop(vendor_init, vendor_whs_prop)
+
+#Allow vendor_init to access sysfile
+allow vendor_init system_file:file { read getattr };
