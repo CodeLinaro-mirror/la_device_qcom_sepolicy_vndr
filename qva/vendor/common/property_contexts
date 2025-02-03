@@ -149,3 +149,4 @@ persist.vendor.mwqem.                        u:object_r:vendor_mwqem_prop:s0
 persist.vendor.car.                          u:object_r:vendor_car_service_prop:s0
 
 vendor.i2s.enable                            u:object_r:vendor_exported_system_prop:s0
+vendor.sku2.enable                           u:object_r:vendor_exported_system_prop:s0
