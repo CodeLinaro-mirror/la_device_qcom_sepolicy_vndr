@@ -544,3 +544,6 @@
 # Heartbeat driver node
 /sys/qti_heartbeat/sysstate_value       u:object_r:vendor_sysfs_heartbeat:s0
 
+#### Context for hb_sysnode_monitor
+/(vendor|system/vendor)/bin/hb_sysnode_monitor          u:object_r:vendor_hb_sysnode_monitor_exec:s0
+
