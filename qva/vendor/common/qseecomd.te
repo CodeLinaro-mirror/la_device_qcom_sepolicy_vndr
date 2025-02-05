@@ -60,5 +60,11 @@ allow tee vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
 allow tee vendor_dmabuf_user_contig_heap_device:chr_file r_file_perms;
 # Allow get prop  access for User space reboot property
 get_prop(tee, userspace_reboot_exported_prop);
+# Allow get prop access for lpm property
+get_prop(tee, vendor_lpm_prop)
 
 allow tee vendor_softsku_block_device:blk_file rw_file_perms;
+
+# Allow tee to subscribe to vHAL
+hal_client_domain(tee, hal_vehicle)
+binder_call(vendor_aidl_hal_automotive_vehicle_qti, tee)
