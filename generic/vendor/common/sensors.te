@@ -77,3 +77,5 @@ wakelock_use(vendor_sensors)
 allow vendor_sensors vendor_sensors_vendor_data_file:dir create_dir_perms;
 allow vendor_sensors vendor_sensors_vendor_data_file:file create_file_perms;
 allow vendor_sensors vendor_persist_sensors_file:fifo_file create_file_perms;
+
+r_dir_file(vendor_sensors, vendor_sysfs_public);
