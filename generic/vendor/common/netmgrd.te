@@ -75,6 +75,9 @@ hwbinder_use(vendor_netmgrd)
 binder_call(vendor_netmgrd, netd)
 allow vendor_netmgrd system_net_netd_hwservice:hwservice_manager find;
 
+binder_call(vendor_netmgrd, vendor_cnd)
+allow vendor_netmgrd vendor_hal_latency_hwservice:hwservice_manager find;
+
 # Allow netmgrd to use shsusrd properties
 set_prop(vendor_netmgrd, vendor_data_shsusr_prop)
 set_prop(vendor_netmgrd, vendor_data_qmipriod_prop)
