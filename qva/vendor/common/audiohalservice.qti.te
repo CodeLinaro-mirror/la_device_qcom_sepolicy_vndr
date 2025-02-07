@@ -32,6 +32,8 @@ allow vendor_audiohalservice_qti audio_device:chr_file { ioctl open read write }
 allow vendor_audiohalservice_qti vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
 get_prop(vendor_audiohalservice_qti, boot_status_prop)
 
+allow vendor_audiohalservice_qti vendor_agm_device:chr_file { ioctl open read write };
+
 userdebug_or_eng(`
   typeattribute vendor_audiohalservice_qti hal_automotive_socket_exemption;
   net_domain(vendor_audiohalservice_qti)
