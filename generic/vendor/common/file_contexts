@@ -96,6 +96,8 @@
 /dev/fastrpc-adsp-secure                        u:object_r:vendor_xdsp_device:s0
 /dev/fastrpc-cdsp-secure                        u:object_r:vendor_xdsp_device:s0
 /dev/fastrpc-sdsp-secure                        u:object_r:vendor_xdsp_device:s0
+/dev/fastrpc-lpass[0-9]+                        u:object_r:vendor_xdsp_device:s0
+/dev/fastrpc-nsp[0-9]+                          u:object_r:vendor_qdsp_device:s0
 /dev/sdsprpc-smd                                u:object_r:vendor_dsp_device:s0
 /dev/msm_audio_ion                              u:object_r:vendor_agm_device:s0
 /dev/aud_pasthru_adsp                           u:object_r:vendor_agm_device:s0
@@ -687,3 +689,19 @@
 # Resource Manager
 /sys/devices/platform/hypervisor/hypervisor:qcom,resource-manager-rpc@[0-9a-f]+/wakeup   u:object_r:sysfs_wakeup:s0
 
+# Fastrpc sysfs files for various dsp attributes
+/sys/kernel/fastrpc/nsp[0-9]+/name                                         u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/nsp[0-9]+/domain_id                                    u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/nsp[0-9]+/type                                         u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/nsp[0-9]+/instance_id                                  u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/nsp[0-9]+/status                                       u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/nsp[0-9]+/legacy_name                                  u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/nsp[0-9]+/legacy_id                                    u:object_r:vendor_sysfs_public:s0
+
+/sys/kernel/fastrpc/lpass[0-9]+/name                                         u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/lpass[0-9]+/domain_id                                    u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/lpass[0-9]+/type                                         u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/lpass[0-9]+/instance_id                                  u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/lpass[0-9]+/status                                       u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/lpass[0-9]+/legacy_name                                  u:object_r:vendor_sysfs_public:s0
+/sys/kernel/fastrpc/lpass[0-9]+/legacy_id                                    u:object_r:vendor_sysfs_public:s0
