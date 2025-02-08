@@ -42,3 +42,7 @@ allow vendor_qti_init_shell_bg vendor_sysfs_boot_cdsp:file { w_file_perms getatt
 allow vendor_qti_init_shell_bg vendor_sysfs_boot_cvp:file  { w_file_perms getattr };
 allow vendor_qti_init_shell_bg vendor_sysfs_slpi:dir search;
 allow vendor_qti_init_shell_bg vendor_sysfs_slpi:file  { w_file_perms getattr };
+allow vendor_qti_init_shell_bg vendor_usb_events:file { r_file_perms };
+userdebug_or_eng(`
+allow vendor_qti_init_shell_bg debugfs_bootreceiver_tracing:file { r_file_perms };
+')
