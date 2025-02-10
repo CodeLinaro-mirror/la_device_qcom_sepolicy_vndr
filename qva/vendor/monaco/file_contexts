@@ -157,6 +157,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.0-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@1\.1-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload@2\.0-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.displayoffload2-aidl-service      u:object_r:vendor_hal_displayoffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.uioffload@1\.0-service           u:object_r:vendor_hal_uioffload_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonutility@1\.0-service          u:object_r:vendor_hal_aonutility_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.aonutility-aidl-service          u:object_r:vendor_hal_aonutility_default_exec:s0
