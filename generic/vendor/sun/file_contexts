@@ -291,3 +291,12 @@
 /sys/devices/virtual/misc/fastrpc-cdsp-secure/wakeup([0-9])+(/.*)?  u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/fastrpc-cdsp/wakeup([0-9])+(/.*)?              u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/fastrpc-adsp/wakeup([0-9])+(/.*)?              u:object_r:sysfs_wakeup:s0
+
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:6/block/sdg/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
+/sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:7/block/sdh/queue/rq_affinity  u:object_r:vendor_sysfs_sd:s0
