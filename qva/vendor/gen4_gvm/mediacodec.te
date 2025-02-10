@@ -3,3 +3,4 @@
 #
 
 allow mediacodec vendor_hab_aud_device:chr_file rw_file_perms;
+allow mediacodec vendor_hab_vid_device:chr_file rw_file_perms;
