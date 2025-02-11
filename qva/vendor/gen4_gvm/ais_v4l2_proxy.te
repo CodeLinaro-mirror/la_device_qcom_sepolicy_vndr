@@ -1,6 +1,6 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
 # vendor_ais_v4l2_proxy service
-allow vendor_ais_v4l2_proxy vendor_hab_device:chr_file { ioctl map open read write };
+allow vendor_ais_v4l2_proxy vendor_hab_cam_device:chr_file { ioctl map open read write };
