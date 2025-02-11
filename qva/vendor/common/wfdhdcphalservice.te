@@ -51,3 +51,6 @@ allow vendor_wfdhdcphalservice_qti vendor_vm_cp_bitstream_device:chr_file r_file
 
 #Fallback for seccomp
 crash_dump_fallback(vendor_wfdhdcphalservice_qti)
+
+#Allow for property access
+set_prop(vendor_wfdhdcphalservice_qti,vendor_wfd_prop)
