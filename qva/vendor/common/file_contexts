@@ -261,9 +261,11 @@
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:vendor_hal_audiocontrol_qti_exec:s0
 
 #C2C_SERVICES
+/mnt/vendor/persist/c2c(/.*)?                   u:object_r:vendor_persist_c2c_file:s0
 /(vendor|system/vendor)/bin/c2c_hub             u:object_r:vendor_c2c_hub_exec:s0
 /(vendor|system/vendor)/bin/dm                  u:object_r:vendor_dm_exec:s0
 /(vendor|system/vendor)/bin/mosquitto           u:object_r:vendor_mosquitto_exec:s0
+/(vendor|system/vendor)/bin/cm_manager          u:object_r:vendor_cm_manager_exec:s0
 
 /(vendor|system/vendor)/bin/canflasher    u:object_r:vendor_canflasher_exec:s0
 #Early CAN service

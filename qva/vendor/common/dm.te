@@ -16,13 +16,36 @@ allow vendor_dm netd:unix_stream_socket connectto;
 allow vendor_dm port:tcp_socket name_connect;
 allow vendor_dm proc_version:file { getattr open read };
 allow vendor_dm self:tcp_socket { connect create getopt read write shutdown };
-allow vendor_dm vendor_persist_data_file:dir { search add_name write create open read remove_name};
-allow vendor_dm vendor_persist_data_file:file { getattr open read create write append rename unlink };
+allow vendor_dm vendor_persist_c2c_file:dir { search add_name write create open read remove_name};
+allow vendor_dm vendor_persist_c2c_file:file { getattr open read create write append rename unlink };
 allow vendor_dm self:udp_socket create;
 allow netd vendor_dm:fd use;
 allow netd vendor_dm:tcp_socket { getopt read setopt write };
+
 #allow vendor_dm to access gnss hal
 hal_client_domain(vendor_dm, hal_gnss)
-
 #allow vendor_dm to access vehicle hal
 hal_client_domain(vendor_dm, hal_vehicle)
+
+#allow dm service to acquire wakelock, use carpowerpolicy
+#and create a binder to carpowerpolicy
+wakelock_use(vendor_dm)
+allow vendor_dm carpowerpolicyd_service:service_manager find;
+binder_call(vendor_dm, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_dm)
+binder_call(vendor_dm, servicemanager)
+
+#Allow dm service to set rtc alarm
+allow vendor_dm vendor_hal_alarm_qti_hwservice:hwservice_manager find;
+allow vendor_dm rtc_device:chr_file r_file_perms;
+
+#allow vendor_dm to read and write c2c_service_properties
+set_prop(vendor_dm, vendor_c2c_service_prop)
+get_prop(vendor_dm, vendor_c2c_service_prop)
+
+#allow vendor_dm to access shell
+allow vendor_dm vendor_shell_exec:file execute_no_trans;
+allow vendor_dm vendor_toolbox_exec:file execute_no_trans;
+
+allow vendor_dm ion_device:chr_file { open read ioctl };
+allow vendor_dm tee_device:chr_file { ioctl open read write };

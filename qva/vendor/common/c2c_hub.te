@@ -16,8 +16,9 @@ allow vendor_c2c_hub netd:unix_stream_socket connectto;
 allow vendor_c2c_hub port:tcp_socket name_connect;
 allow vendor_c2c_hub proc_version:file { getattr open read };
 allow vendor_c2c_hub self:tcp_socket { connect create getopt read write shutdown };
-allow vendor_c2c_hub vendor_persist_data_file:dir search;
-allow vendor_c2c_hub vendor_persist_data_file:file { getattr open read write };
+allow vendor_c2c_hub vendor_persist_c2c_file:dir { search add_name write remove_name create open read };
+allow vendor_c2c_hub vendor_persist_c2c_file:file { getattr open read write create unlink append rename };
+allow vendor_c2c_hub tee_device:chr_file { ioctl open read write };
 allow vendor_c2c_hub self:udp_socket create;
 allow netd vendor_c2c_hub:fd use;
 allow netd vendor_c2c_hub:tcp_socket { getopt read setopt write };
@@ -25,3 +26,20 @@ allow netd vendor_c2c_hub:tcp_socket { getopt read setopt write };
 #allow vendor_c2c_hub to access vehicle hal
 hal_client_domain(vendor_c2c_hub, hal_vehicle)
 
+#acquire c2c_hub to acquire wakelock
+wakelock_use(vendor_c2c_hub)
+
+allow vendor_c2c_hub carpowerpolicyd_service:service_manager find;
+
+#Allow binder call between power policy and c2c_hub service.
+binder_call(vendor_c2c_hub, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_c2c_hub)
+binder_call(vendor_c2c_hub, servicemanager)
+
+#allow vendor_c2c_hub to read and write c2c_service_properties
+set_prop(vendor_c2c_hub, vendor_c2c_service_prop)
+get_prop(vendor_c2c_hub, vendor_c2c_service_prop)
+
+allow vendor_c2c_hub vendor_shell_exec:file execute_no_trans;
+allow vendor_c2c_hub vendor_toolbox_exec:file execute_no_trans;
+allow vendor_c2c_hub ion_device:chr_file { ioctl open read };

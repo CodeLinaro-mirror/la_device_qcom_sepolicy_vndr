@@ -29,6 +29,11 @@
 # Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+#Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+
+#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
 ctl.vendor.cnd                    u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cne.               u:object_r:vendor_cnd_vendor_prop:s0
 persist.vendor.cnd.               u:object_r:vendor_cnd_vendor_prop:s0
@@ -117,6 +122,10 @@ persist.vendor.tb.                           u:object_r:vendor_hvdcp_opti_prop:s
 persist.vendor.vin.                          u:object_r:vendor_hvdcp_opti_prop:s0
 persist.vendor.qg.                           u:object_r:vendor_hvdcp_opti_prop:s0
 persist.vendor.soh.                          u:object_r:vendor_hvdcp_opti_prop:s0
+
+#C2C
+vendor.c2c.hub.reliance                      u:object_r:vendor_c2c_service_prop:s0
+vendor.c2c.dm.reliance                       u:object_r:vendor_c2c_service_prop:s0
 
 # XLAT property
 persist.vendor.net.doxlat                    u:object_r:vendor_xlat_prop:s0
