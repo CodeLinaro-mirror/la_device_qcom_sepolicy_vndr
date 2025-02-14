@@ -53,3 +53,4 @@ type vendor_hal_dataconnection_aidl_service, hal_service_type, protected_service
 type vendor_aidl_imsfactory_service,   hal_service_type, protected_service, service_manager_type;
 type vendor_hal_iwlan_service, hal_service_type, protected_service, service_manager_type;
 type vendor_hal_trustedui_aidl_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_dspmanager_aidlservice, hal_service_type, service_manager_type;
