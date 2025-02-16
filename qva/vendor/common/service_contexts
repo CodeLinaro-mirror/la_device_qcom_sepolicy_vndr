@@ -89,3 +89,5 @@ vendor.qti.hardware.qteeconnector.IAppConnector/default                   u:obje
 vendor.qti.hardware.qteeconnector.IGPAppConnector/default                 u:object_r:vendor_hal_qteeconnector_service:s0
 vendor.qti.automotive.qcarcam2.IQcarCamera/default     u:object_r:vendor_hal_ais_service:s0
 vendor.qti.automotive.qcarcam.IQcarCamera/default     u:object_r:vendor_hal_ais_service:s0
+alliance.hardware.automotive.audiocontrol.internal.IAudioControlInternal/default u:object_r:vendor_hal_audiocontrol_qti_service:s0
+android.hardware.audio.focus.IAudioFocusService/default u:object_r:vendor_hal_focus_service:s0

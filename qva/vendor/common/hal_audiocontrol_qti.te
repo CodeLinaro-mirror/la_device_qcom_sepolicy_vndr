@@ -13,3 +13,5 @@ hal_server_domain(vendor_hal_audiocontrol_qti_aidl, hal_audiocontrol)
 type vendor_hal_audiocontrol_qti_aidl_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_hal_audiocontrol_qti_aidl)
 hal_client_domain(vendor_hal_audiocontrol_qti_aidl, hal_audio)
+get_prop(vendor_hal_audiocontrol_qti_aidl, boot_status_prop)
+allow vendor_hal_audiocontrol_qti_aidl vendor_hal_audiocontrol_qti_service:service_manager add;
