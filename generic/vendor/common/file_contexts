@@ -104,6 +104,7 @@
 /dev/gptp_shm                                   u:object_r:vendor_vnw_device:s0
 /dev/ptpshm                                     u:object_r:vendor_ipa_dev:s0
 /dev/sctptpshm                                  u:object_r:vendor_ipa_dev:s0
+/dev/socket/gptp_socket                         u:object_r:vendor_gptp_socket:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:vendor_chre_socket:s0
@@ -478,6 +479,7 @@
 /data/vendor/someip(/.*)?            u:object_r:vendor_someip_data_file:s0
 /storage/vendor/someip(/.*)?         u:object_r:vendor_someip_data_file:s0
 /vendor/etc/someip(/.*)?             u:object_r:vendor_someip_cfg_file:s0
+/data/vendor/vsomeip_daemon(/.*)?    u:object_r:vendor_someip_data_file:s0
 
 # sensor hal config file
 /vendor/etc/hal_config               u:object_r:vendor_sensor_hal_config:s0

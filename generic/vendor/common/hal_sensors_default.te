@@ -93,3 +93,6 @@ allow hal_sensors_default vendor_hidraw_device:chr_file rw_file_perms;
 allow hal_sensors_default sysfs_hvdcp:file r_file_perms;
 allow hal_sensors_default vendor_ipa_dev:file { map open read write };
 allow hal_sensors_default vendor_vnw_device:chr_file { open read write };
+
+allow hal_sensors_default vendor_gptp_socket:sock_file { write };
+allow hal_sensors_default vendor_vnw:unix_stream_socket { connectto };
