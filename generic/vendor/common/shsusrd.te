@@ -27,7 +27,7 @@
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -100,8 +100,8 @@ allow vendor_shsusrd self:capability { net_admin net_raw kill };
 allow vendor_shsusrd vendor_shsusrd_socket:dir w_dir_perms;
 allow vendor_shsusrd vendor_shsusrd_socket:sock_file create_file_perms;
 allow vendor_shsusrd self:netlink_route_socket { nlmsg_read nlmsg_write nlmsg_readpriv create_socket_perms_no_ioctl };
+allow vendor_shsusrd self:netlink_tcpdiag_socket { nlmsg_read create_socket_perms_no_ioctl };
 
 allow vendor_shsusrd vendor_sysfs_rmnet:dir r_dir_perms;
 allow vendor_shsusrd vendor_sysfs_rmnet:file r_file_perms;
-
 allow vendor_shsusrd gpu_device:chr_file rw_file_perms;

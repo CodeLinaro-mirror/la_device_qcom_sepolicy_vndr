@@ -52,6 +52,7 @@ allow vendor_hlosminkdaemon vendor_membuf_dev:chr_file r_file_perms;
 allow vendor_hlosminkdaemon vendor_vm_self_device:chr_file r_file_perms;
 allow vendor_hlosminkdaemon vendor_vm_trusted_device:chr_file r_file_perms;
 allow vendor_hlosminkdaemon vendor_vm_oem_device:chr_file r_file_perms;
+allow vendor_hlosminkdaemon hal_graphics_allocator_default:fd use;
 
 #Allow access to qseecom DMABUF device
 allow vendor_hlosminkdaemon vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;

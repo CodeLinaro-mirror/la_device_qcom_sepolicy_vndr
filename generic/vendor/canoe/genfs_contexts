@@ -27,7 +27,7 @@
 #
 #Changes from Qualcomm Innovation Center are provided under the following license:
 #
-#Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) 2023-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #subsys nodes (varying hardware layouts; can optimize for specific hw variant)
@@ -191,7 +191,7 @@ genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-c
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-0/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-1/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-2/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/power/control                             u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/power/control                                   u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
@@ -264,8 +264,9 @@ genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-dsps/wakeup u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-cdsp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-modem/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/dummy_hcd.0/usb1/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/898000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-2/2-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/19c0000.qcom,qupv3_3_geni_se/1994000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1ac0000.qcom,qupv3_4_geni_se/1a80000.i2c/i2c-19/19-0049/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1ac0000.qcom,qupv3_4_geni_se/1a88000.i3c-master/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-kiwi/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
