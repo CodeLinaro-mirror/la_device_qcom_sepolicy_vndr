@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022,2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Add new domain for perfdump app
@@ -38,6 +38,3 @@ user=_app seinfo=platform name=.pasr domain=vendor_powerservice_app type=app_dat
 #Add new domain for qtiwifi app
 user=_app seinfo=platform name=com.qualcomm.qti.server.qtiwifi domain=vendor_qtiwifi_app type=app_data_file levelFrom=all
 user=_app seinfo=platform name=vendor.qti.qtiwifisettings domain=vendor_qtiwifi_app type=app_data_file levelFrom=all
-
-#Add domain for QtiCarPowerService App
-user=_app  seinfo=platform isPrivApp=true name=com.qti.carpowerservice domain=qticarpower_app  type=app_data_file
