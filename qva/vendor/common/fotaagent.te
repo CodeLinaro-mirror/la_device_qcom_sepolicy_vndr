@@ -1,0 +1,11 @@
+#Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_fotaagent,domain, coredomain;
+app_domain(vendor_fotaagent);
+allow vendor_fotaagent activity_service:service_manager find;
+allow vendor_fotaagent content_capture_service:service_manager find;
+allow vendor_fotaagent ota_package_file:dir { open read search };
+allow vendor_fotaagent ota_package_file:file { getattr map open read };
+allow vendor_fotaagent update_engine:binder { call transfer };
+allow vendor_fotaagent update_engine_service:service_manager find;

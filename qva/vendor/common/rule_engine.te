@@ -1,0 +1,21 @@
+#Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Policy for /vendor/bin/c2c_rule_engine
+type vendor_c2c_rule_engine, domain;
+type vendor_c2c_rule_engine_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_c2c_rule_engine)
+
+# Allow to write conf
+allow vendor_c2c_rule_engine dnsproxyd_socket:sock_file write;
+allow vendor_c2c_rule_engine fwmarkd_socket:sock_file write;
+allow vendor_c2c_rule_engine netd:unix_stream_socket connectto;
+allow vendor_c2c_rule_engine port:tcp_socket name_connect;
+allow vendor_c2c_rule_engine proc_version:file { getattr open read };
+allow vendor_c2c_rule_engine self:tcp_socket { connect create getopt read write shutdown };
+allow vendor_c2c_rule_engine self:udp_socket create;
+allow vendor_c2c_rule_engine mnt_vendor_file:dir search;
+allow vendor_c2c_rule_engine vendor_persist_c2c_file:dir { search add_name write create open read};
+allow vendor_c2c_rule_engine vendor_persist_c2c_file:file { getattr open read create write };
+

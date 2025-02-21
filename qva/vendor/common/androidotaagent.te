@@ -1,0 +1,19 @@
+#Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_androidotaagent, domain, coredomain;
+app_domain(vendor_androidotaagent);
+
+allow vendor_androidotaagent activity_service:service_manager find;
+allow vendor_androidotaagent update_engine_service:service_manager find;
+allow vendor_androidotaagent update_engine:binder { call transfer };
+allow vendor_androidotaagent content_capture_service:service_manager find;
+allow vendor_androidotaagent thermal_service:service_manager find;
+allow vendor_androidotaagent dnsproxyd_socket:sock_file write;
+allow vendor_androidotaagent self:tcp_socket { create connect getattr getopt setopt bind read write accept listen };
+allow vendor_androidotaagent port:tcp_socket { name_connect name_bind };
+allow vendor_androidotaagent fwmarkd_socket:sock_file write;
+allow vendor_androidotaagent netd:unix_stream_socket connectto;
+allow vendor_androidotaagent node:tcp_socket node_bind;
+allow vendor_androidotaagent ota_package_file:dir { rw_dir_perms setattr };
+allow vendor_androidotaagent ota_package_file:file { create_file_perms create getattr map open read rename unlink write };

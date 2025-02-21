@@ -1,0 +1,26 @@
+#Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Policy for /vendor/bin/ota_manager
+type vendor_ota_manager, domain ;
+type vendor_ota_manager_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_ota_manager)
+
+# Allow to write conf
+allow vendor_ota_manager dnsproxyd_socket:sock_file write;
+allow vendor_ota_manager fwmarkd_socket:sock_file write;
+allow vendor_ota_manager mnt_vendor_file:dir search;
+allow vendor_ota_manager netd:unix_stream_socket connectto;
+allow vendor_ota_manager port:tcp_socket name_connect;
+allow vendor_ota_manager proc_version:file { getattr open read };
+allow vendor_ota_manager self:tcp_socket { connect create getopt read write shutdown };
+allow vendor_ota_manager self:udp_socket create;
+
+#allow vendor_ota_manager to access vehicle hal
+hal_client_domain(vendor_ota_manager, hal_vehicle)
+allow vendor_ota_manager vendor_persist_c2c_file:dir { search add_name remove_name write };
+allow vendor_ota_manager vendor_persist_c2c_file:file { create getattr open read write unlink };
+allow vendor_ota_manager property_socket:sock_file write;
+allow vendor_ota_manager init:unix_stream_socket connectto;
+set_prop(vendor_ota_manager, powerctl_prop)
