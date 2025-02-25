@@ -43,6 +43,9 @@ binder_call(vendor_hal_dspmanager_server, vendor_hal_dspmanager_client)
 # Add dspservice to hwservice_manager and allow it to be discovered
 hal_attribute_hwservice(vendor_hal_dspmanager, vendor_hal_dspmanager_hwservice)
 
+# Add AIDL dspservice and allow it to be discovered
+hal_attribute_service(vendor_hal_dspmanager, vendor_hal_dspmanager_aidlservice)
+
 # For reading dir/files on "/vendor/dsp"
 r_dir_file(vendor_dspservice, adsprpcd_file)
 
