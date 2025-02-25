@@ -1,0 +1,4 @@
+#Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+set_prop(vendor_audiohalservice_qti, vendor_audiohal_prop)
