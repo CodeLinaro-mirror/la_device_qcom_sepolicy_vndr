@@ -24,6 +24,11 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# Changes from Qualcomm Innovation Center, Inc. are provided under the
+# following license:
+#
+# Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 # Restricted domain for shell processes spawned by init.
 # Normally these are shell commands or scripts invoked via sh
 # from an init*.rc file.  No service should ever run in this domain.
@@ -86,6 +91,7 @@ get_prop(vendor_qti_init_shell, radio_control_prop)
 set_prop(vendor_qti_init_shell, vendor_gpu_prop)
 set_prop(vendor_qti_init_shell, vendor_sensors_prop)
 set_prop(vendor_qti_init_shell, vendor_adsprpc_prop)
+set_prop(vendor_qti_init_shell, vendor_bluetooth_prop)
 
 allow vendor_qti_init_shell {
     sysfs_devices_system_cpu
