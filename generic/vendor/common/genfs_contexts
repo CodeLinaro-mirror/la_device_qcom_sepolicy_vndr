@@ -97,6 +97,7 @@ genfscon sysfs /devices/platform/soc/c17a000.i2c/i2c-6/6-005a/leds              
 genfscon sysfs /devices/platform/soc/c1b5000.i2c/i2c-7/7-0030/leds               u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/c900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d000/leds u:object_r:sysfs_leds:s0
+genfscon sysfs /module/qcom_ramdump/parameters/enable_dump_collection   u:object_r:vendor_sysfs_qcom_ramdump:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws@1e08000                    u:object_r:vendor_sysfs_data:s0
 genfscon sysfs /devices/platform/soc/0.qcom,rmtfs_sharedmem/uio		u:object_r:vendor_sysfs_uio_file:s0
 genfscon sysfs /devices/platform/soc/soc:fp_fpc1020                              u:object_r:vendor_sysfs_fingerprint:s0
