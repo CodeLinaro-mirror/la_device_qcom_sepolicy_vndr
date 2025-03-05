@@ -672,3 +672,6 @@
 
 # CHRE
 /vendor/bin/hw/android\.hardware\.contexthub-service\.qmi                             u:object_r:hal_contexthub_default_exec:s0
+
+#fastrpc sysfs inodes
+/sys/devices/virtual/misc/fastrpc-adsp-secure/wakeup([0-9])+(/.*)?  u:object_r:sysfs_wakeup:s0
