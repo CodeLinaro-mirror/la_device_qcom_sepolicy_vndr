@@ -13,4 +13,3 @@ binder_call(vendor_hal_focus,servicemanager)
 
 allow vendor_hal_focus vendor_hal_focus_service:service_manager find;
 allow vendor_hal_focus vendor_hal_focus_service:service_manager add;
-allow vendor_hal_focus vendor_hal_audiocontrol_qti_service:service_manager find;

@@ -75,4 +75,3 @@ type vendor_hal_MemHal_service,           hal_service_type, protected_service, s
 type vendor_hal_qteeconnector_service,   hal_service_type, protected_service, service_manager_type;
 type vendor_hal_ais_service,             hal_service_type, protected_service, service_manager_type;
 type vendor_hal_focus_service,             hal_service_type, protected_service, service_manager_type;
-type vendor_hal_audiocontrol_qti_service,             hal_service_type, protected_service, service_manager_type;
