@@ -128,6 +128,9 @@ type vendor_persist_vpp_file, file_type, vendor_persist_type;
 type vendor_hexlp_data_file, file_type, data_file_type;
 type vendor_persist_hexlp_file, file_type, vendor_persist_type;
 
+# Unsigned Hexlp
+type vendor_unsignedhexlp_data_file, file_type, data_file_type;
+
 # Spdaemon file
 type vendor_sysfs_spdaemon, fs_type, sysfs_type;
 

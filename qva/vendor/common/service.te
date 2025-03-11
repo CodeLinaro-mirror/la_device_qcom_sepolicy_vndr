@@ -52,6 +52,7 @@ type vendor_hal_qconfig_service,         hal_service_type, protected_service, se
 type vendor_hal_perf2_service,           hal_service_type, protected_service, service_manager_type;
 type vendor_hal_vpp_service,             hal_service_type, protected_service, service_manager_type;
 type vendor_hal_hexlp_service,           hal_service_type, protected_service, service_manager_type;
+type vendor_hal_unsignedhexlp_service,   hal_service_type, service_manager_type;
 type vendor_hal_poweroptservice_service, hal_service_type, protected_service, service_manager_type;
 type vendor_hal_qseecom_service,         hal_service_type, protected_service, service_manager_type;
 type vendor_hal_minkipcbinder_service,         hal_service_type, protected_service, service_manager_type;
