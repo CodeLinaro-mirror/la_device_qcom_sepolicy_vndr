@@ -109,6 +109,7 @@ type vendor_ssd_block_device, dev_type;
 type vendor_ssr_device, dev_type;
 type vendor_synx_device, dev_type;
 type vendor_wlan_device, dev_type;
+type vendor_txpb_device, dev_type;
 type vendor_xbl_block_device, dev_type;
 type vendor_uefi_block_device, dev_type;
 type vendor_qce_device, dev_type;
