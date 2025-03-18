@@ -1,0 +1,37 @@
+# Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_hal_provisioningmanager_qti_exec, exec_type, vendor_file_type, file_type;
+
+#Allow for transition from init domain to vendor_hal_provisioningmanager_qti
+init_daemon_domain(vendor_hal_provisioningmanager_qti)
+
+#use bypass to allow netadmin, socket, etc permissions
+hal_server_domain_bypass(vendor_hal_provisioningmanager_qti, vendor_hal_provisioningmanager)
+
+# Allow vendor_hal_provisioningmanager_qti to use Binder IPC
+binder_use(vendor_hal_provisioningmanager_qti)
+hal_attribute_service(vendor_hal_provisioningmanager, vendor_hal_provisioningmanager_aidl_service)
+
+binder_call(vendor_hal_provisioningmanager_client, vendor_hal_provisioningmanager_server)
+binder_call(vendor_hal_provisioningmanager_server, vendor_hal_provisioningmanager_client)
+
+unix_socket_connect(vendor_hal_provisioningmanager_qti, vendor_ssgtzd, vendor_ssgtzd)
+
+allow vendor_hal_provisioningmanager_qti vendor_sec_vndr_data_file:dir { rw_dir_perms };
+allow vendor_hal_provisioningmanager_qti vendor_sec_vndr_data_file:file create_file_perms;
+
+allow vendor_hal_provisioningmanager_qti vendor_persist_sec_file:dir create_dir_perms;
+allow vendor_hal_provisioningmanager_qti vendor_persist_sec_file:file create_file_perms;
+neverallow {domain -init -vendor_init -vendor_hal_provisioningmanager_qti -vendor_hal_datamanager_qti} vendor_persist_sec_file:{dir file} *;
+neverallow {domain -init -vendor_init -vendor_hal_provisioningmanager_qti -vendor_hal_datamanager_qti -vendor_hal_cloudagent_qti -vendor_hal_featuremanager_qti} vendor_sec_vndr_data_file:{dir file} *;
+
+allow vendor_hal_provisioningmanager_qti mnt_vendor_file:dir search;
+
+get_prop(vendor_hal_provisioningmanager_qti, boot_status_prop)
+hal_client_domain(vendor_hal_provisioningmanager_qti, vendor_hal_cloudagent)
+hal_client_domain(vendor_hal_provisioningmanager_qti, vendor_hal_datamanager)
+hal_client_domain(vendor_hal_provisioningmanager_qti, vendor_hal_featuremanager)
+userdebug_or_eng(`
+get_prop(vendor_hal_provisioningmanager_qti, vendor_mink_trace_prop)
+')
