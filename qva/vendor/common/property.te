@@ -75,6 +75,9 @@ vendor_internal_prop(vendor_mmi_prop);
 #mm-video
 vendor_restricted_prop(vendor_video_prop);
 
+#WFD
+vendor_internal_prop(vendor_wfd_prop)
+
 # Audio debug props
 vendor_internal_prop(vendor_audio_debug_prop);
 

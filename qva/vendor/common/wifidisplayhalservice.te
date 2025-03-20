@@ -131,3 +131,6 @@ allow vendor_wifidisplayhalservice_qti vendor_tsa_hdcpvndservice:service_manager
 binder_use(vendor_wifidisplayhalservice_qti)
 
 binder_call(vendor_wifidisplayhalservice_qti, vendor_tsa_hdcpservice);
+
+#Allow for WFD vendor property access
+set_prop(vendor_wifidisplayhalservice_qti,vendor_wfd_prop)

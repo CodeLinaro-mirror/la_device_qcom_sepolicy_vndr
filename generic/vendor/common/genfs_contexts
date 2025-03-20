@@ -27,7 +27,7 @@
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -97,6 +97,7 @@ genfscon sysfs /devices/platform/soc/c17a000.i2c/i2c-6/6-005a/leds              
 genfscon sysfs /devices/platform/soc/c1b5000.i2c/i2c-7/7-0030/leds               u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/c900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d000/leds u:object_r:sysfs_leds:s0
+genfscon sysfs /module/qcom_ramdump/parameters/enable_dump_collection   u:object_r:vendor_sysfs_qcom_ramdump:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws@1e08000                    u:object_r:vendor_sysfs_data:s0
 genfscon sysfs /devices/platform/soc/0.qcom,rmtfs_sharedmem/uio		u:object_r:vendor_sysfs_uio_file:s0
 genfscon sysfs /devices/platform/soc/soc:fp_fpc1020                              u:object_r:vendor_sysfs_fingerprint:s0
@@ -184,6 +185,10 @@ genfscon sysfs /firmware/devicetree/base/soc  u:object_r:vendor_sysfs_devicetree
 
 genfscon sysfs /class/qcom-haptics/primitive_duration  u:object_r:vendor_sysfs_haptics:s0
 genfscon sysfs /class/qcom-haptics/visense_enabled     u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/v_gain_error     u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/i_gain_error     u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/lra_frequency_hz    u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/lra_f0_cal_in_play    u:object_r:vendor_sysfs_haptics:s0
 
 genfscon sysfs /class/qcom-battery/soh        u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /class/qcom-battery/resistance u:object_r:vendor_sysfs_battery_supply:s0
