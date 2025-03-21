@@ -1,5 +1,4 @@
 # Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -141,6 +140,7 @@
 /dev/st21nfc                                     u:object_r:nfc_device:s0
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
 /dev/ttyHS2                                     u:object_r:hci_attach_dev:s0
+/dev/ttyHS5                                     u:object_r:hci_attach_dev:s0
 /dev/bt_cp_ctrl                                 u:object_r:hci_attach_dev:s0
 /dev/btfmcodec_dev                              u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:vendor_wlan_device:s0
