@@ -65,3 +65,5 @@ allow vendor_hlosminkdaemon vendor_hal_secureprocessor_qti:fd use;
 get_prop(vendor_hal_secureprocessor_qti, vendor_vm_ssrenable_prop)
 hal_client_domain(vendor_hal_secureprocessor_qti, vendor_hal_qvirtservice)
 
+# Properties for configuring process startup
+get_prop(vendor_hal_secureprocessor_qti, vendor_secureprocessor_start_prop)
