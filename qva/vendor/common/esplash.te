@@ -62,3 +62,4 @@ allow vendor_esplash fwmarkd_socket:sock_file write;
 allow vendor_esplash netd:unix_stream_socket connectto;
 allow netd vendor_esplash:fd use;
 allow netd vendor_esplash:tcp_socket { getopt read setopt write };
+allow vendor_esplash vendor_sysfs_heartbeat:file { w_file_perms getattr };
