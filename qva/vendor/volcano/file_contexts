@@ -59,3 +59,7 @@
 
 #sec persist files
 /mnt/vendor/persist/sec(/.*)?      u:object_r:vendor_persist_sec_file:s0
+
+# Aware Agent
+/vendor/bin/aware_agent    u:object_r:vendor_awareagent_exec:s0
+/vendor/bin/wpa_cli    u:object_r:vendor_wpa_cli_exec:s0

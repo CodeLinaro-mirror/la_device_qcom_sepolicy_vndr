@@ -1,0 +1,20 @@
+# Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# # SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+type vendor_awareagent, domain;
+type vendor_awareagent_exec, exec_type, vendor_file_type, file_type;
+type vendor_wpa_cli_exec, exec_type, vendor_file_type, file_type;
+# # Allow for transition from init domain to vendor_hal_awareagent_qti
+init_daemon_domain(vendor_awareagent)
+
+#============= vendor_awareagent ==============
+allow vendor_awareagent vendor_wpa_cli_exec:file execute_no_trans;
+allow vendor_awareagent proc_meminfo:file getattr;
+allow vendor_awareagent proc_stat:file getattr;
+allow vendor_awareagent proc_meminfo:file { open read };
+allow vendor_awareagent proc_stat:file { open read };
+allow vendor_awareagent sysfs_net:dir { open read search };
+allow vendor_awareagent sysfs_net:file read;
+allow vendor_awareagent sysfs_net:file open;
+
+get_prop(vendor_awareagent, wifi_hal_prop);
