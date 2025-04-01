@@ -1,4 +1,4 @@
-# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,12 +24,16 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+
+# Changes from Qualcomm Innovation Center Inc. are provided under the following license:
+# Copyright (c) 2022, 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-vendor.qti.hardware.display.demura::IDemuraFileFinder           u:object_r:vendor_hal_display_demura_hwservice:s0
+# System power-disk file type
+type vendor_sysfs_power_disk, sysfs_type, fs_type;
 
-vendor.qti.hardware.powerstateservice::IPowerStateService u:object_r:vendor_hal_powerstateservice_hwservice:s0
-vendor.qti.hardware.powerstateservice::IPowerStateUtility u:object_r:vendor_hal_powerstateutility_hwservice:s0
+# System power-imagesize file type
+type vendor_sysfs_power_imagesize, sysfs_type, fs_type;
+
+# Proc sys-vm-swappiness file type
+type vendor_proc_swappiness, proc_type, fs_type;
