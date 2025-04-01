@@ -73,3 +73,6 @@ allow hal_wifi_supplicant_default wpa_data_file:file create_file_perms;
 allow hal_wifi_supplicant_default { vendor_cnd vendor_qms}:unix_dgram_socket sendto;
 # # Allow wpa_supplicant to send back wifi information to vendor_location_lowi_server
 allow hal_wifi_supplicant_default vendor_location_lowi_server:unix_dgram_socket sendto;
+
+# # Allow wpa_supplicant to send back wifi information to vendor_wifi_qos_daemon
+allow hal_wifi_supplicant_default vendor_wifi_qos_daemon:unix_dgram_socket sendto;

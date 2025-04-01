@@ -15,6 +15,14 @@ allow vendor_wifi_qos_daemon self:netlink_socket create_socket_perms_no_ioctl;
 # provide net_admin capability to wifi-qos daemon.
 allow vendor_wifi_qos_daemon self:capability { net_admin };
 
+# /data/vendor/wifi
+allow vendor_wifi_qos_daemon vendor_wifi_vendor_data_file:dir search;
+
+# /data/vendor/wifi/wpa
+allow vendor_wifi_qos_daemon wpa_data_file:dir rw_dir_perms;
+allow vendor_wifi_qos_daemon wpa_data_file:sock_file create_file_perms;
+allow vendor_wifi_qos_daemon hal_wifi_supplicant_default:unix_dgram_socket sendto;
+
 allow vendor_wifi_qos_daemon vendor_txpb_device:chr_file r_file_perms;
 dontaudit vendor_wifi_qos_daemon default_prop:file read;
 allow vendor_wifi_qos_daemon vendor_wifi_tx_powerboost_file:dir rw_dir_perms;
