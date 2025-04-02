@@ -14,7 +14,9 @@ binder_use(vendor_mpamsvc_qesdk)
 hal_client_domain(vendor_mpamsvc_qesdk, vendor_hal_perf)
 
 add_service(vendor_mpamsvc_qesdk, vendor_qsap_mpamsvc_service)
-allow vendor_mpamsvc_qesdk vendor_data_file:file {read write open getattr};
 
 allow vendor_mpamsvc_qesdk vendor_mpam_data_file:dir create_dir_perms;
 allow vendor_mpamsvc_qesdk vendor_mpam_data_file:file create_file_perms;
+
+allow vendor_mpamsvc_qesdk vendor_sysfs_mpam:dir {search};
+allow vendor_mpamsvc_qesdk vendor_sysfs_mpam:file rw_file_perms;
