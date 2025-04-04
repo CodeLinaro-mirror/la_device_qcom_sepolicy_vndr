@@ -84,4 +84,7 @@ r_dir_file(kernel, vendor_firmware_file)
 dontaudit kernel kernel:system module_request;
 allow kernel device:chr_file { create setattr };
 allow kernel device:dir { add_name write };
-allow kernel self:capability mknod;
+allow kernel self:capability { mknod net_bind_service };
+allow kernel sysfs_dt_firmware_android:dir search;
+allow kernel sysfs_dt_firmware_android:file r_file_perms;
+allow kernel rootfs:system module_load;

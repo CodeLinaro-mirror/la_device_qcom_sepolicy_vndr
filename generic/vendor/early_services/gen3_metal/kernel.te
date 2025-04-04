@@ -6,3 +6,4 @@ allow kernel vendor_early_services:file relabelto;
 allow kernel vendor_early_services:lnk_file { relabelto };
 allow kernel vendor_init_early_test_exec:file { relabelto };
 allow kernel early_chime_exec:file relabelto;
+allow kernel vendor_early_services:file { relabelto read };
