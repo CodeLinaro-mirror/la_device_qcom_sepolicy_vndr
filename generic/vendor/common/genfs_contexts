@@ -229,3 +229,5 @@ genfscon sysfs /devices/soc0/subset_cores u:object_r:vendor_sys_nonsp_comp:s0
 
 genfscon sysfs /devices/soc0/gpu u:object_r:vendor_sys_sp_comp:s0
 genfscon sysfs /devices/soc0/npu u:object_r:vendor_sys_sp_comp:s0
+
+genfscon sysfs /devices/platform/soc/soc:qcom,cache-allocation              u:object_r:vendor_sysfs_mpam:s0

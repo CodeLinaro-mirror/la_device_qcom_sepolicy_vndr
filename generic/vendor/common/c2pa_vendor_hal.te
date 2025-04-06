@@ -38,3 +38,8 @@ allow vendor_hlosminkdaemon vendor_hal_c2pa_qti:fd use;
 # Allow following permission to access qvirt manager service
 get_prop(vendor_hal_c2pa_qti, vendor_vm_ssrenable_prop)
 hal_client_domain(vendor_hal_c2pa_qti, vendor_hal_qvirtservice)
+
+# Properties for configuring process startup
+set_prop(vendor_hal_c2pa_qti, vendor_c2pa_listener_enabled_prop)
+get_prop(vendor_hal_c2pa_qti, vendor_c2pa_listener_start_prop)
+get_prop(vendor_hal_c2pa_qti, vendor_c2pa_start_prop)

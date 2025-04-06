@@ -32,3 +32,4 @@ use_libsoc_helper(hal_vibrator);
 hal_client_domain(hal_vibrator_default, hal_audio);
 #to read audio props
 get_prop(hal_vibrator_default, vendor_audio_prop)
+get_prop(hal_audio_default, vendor_sysfs_haptics)
