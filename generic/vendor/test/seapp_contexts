@@ -54,5 +54,8 @@ user=_app seinfo=platform name=com.qti.vtloopback domain=vtloopback_app type=app
 #Add new domain for snapcam app
 user=_app isPrivApp=true name=org.codeaurora.snapcam domain=vendor_snapcam_app type=app_data_file levelFrom=all
 
+#Add new domain for camera debug app
+user=_app isPrivApp=true name=org.codeaurora.snapcamdebug domain=vendor_snapcam_app type=app_data_file levelFrom=all
+
 #Add new domain for snapcamextension app
 user=_app isPrivApp=true name=org.codeaurora.snapcamextension domain=vendor_snapcamext_app type=app_data_file levelFrom=all
