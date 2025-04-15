@@ -60,7 +60,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 genfscon sysfs /devices/virtual/npu/msm_npu/pwr u:object_r:vendor_sysfs_npu:s0
@@ -132,3 +132,5 @@ genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0004:00/0004:00:00.0/0
 genfscon sysfs /devices/platform/soc/1da4000.ufshc2/qcom/ufs_pm_mode u:object_r:vendor_sysfs_ufs_pm_mode:s0
 
 genfscon sysfs /firmware/devicetree/base/soc/sdhci@8804000/vdd-io-supply                       u:object_r:vendor_sysfs_vdd:s0
+genfscon sysfs /devices/platform/soc/4080000.remoteproc-modem/remoteproc/remoteproc2/4080000.remoteproc-modem:glink-edge/4080000.remoteproc-modem:glink-edge.modem_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc0/17300000.remoteproc-adsp:glink-edge/17300000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
