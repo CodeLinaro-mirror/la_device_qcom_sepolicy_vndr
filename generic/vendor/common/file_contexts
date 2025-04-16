@@ -709,3 +709,6 @@
 # Mpam Service
 /vendor/bin/qsap_mpamsvc u:object_r:vendor_mpamsvc_qesdk_exec:s0
 /data/vendor/mpamsvc(/.*)? u:object_r:vendor_mpam_data_file:s0
+
+# Powerstats hal
+/vendor/bin/hw/android\.hardware\.powerstats-service.qti                   u:object_r:hal_power_stats_default_exec:s0
