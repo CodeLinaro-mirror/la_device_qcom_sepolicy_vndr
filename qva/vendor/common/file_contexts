@@ -277,3 +277,10 @@
 
 # Dynamic splash
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:vendor_esplash_exec:s0
+
+# Usb Device
+/sys/bus/platform/drivers/xhci-hcd                      u:object_r:vendor_sysfs_usb_node:s0
+/sys/bus/platform/drivers/xhci-hcd/bind                 u:object_r:vendor_sysfs_usb_node:s0
+/sys/bus/platform/drivers/xhci-hcd/unbind               u:object_r:vendor_sysfs_usb_node:s0
+/sys/bus/platform/devices/4e00000.ssusb/mode            u:object_r:vendor_sysfs_usb_device:s0
+
