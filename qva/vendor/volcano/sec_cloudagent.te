@@ -20,6 +20,9 @@ hal_attribute_service(vendor_hal_cloudagent, vendor_hal_cloudagent_aidl_service)
 allow vendor_hal_cloudagent_qti vendor_sec_vndr_data_file:file { create_file_perms };
 allow vendor_hal_cloudagent_qti vendor_sec_vndr_data_file:dir { rw_dir_perms };
 
+allow vendor_hal_cloudagent_qti vendor_aware_vndr_data_file:file { create_file_perms };
+allow vendor_hal_cloudagent_qti vendor_aware_vndr_data_file:dir { rw_dir_perms };
+
 set_prop(vendor_hal_cloudagent_qti, vendor_secca_prop);
 hal_client_domain(vendor_hal_cloudagent_qti, vendor_hal_datamanager)
 hal_client_domain(vendor_hal_cloudagent_qti, vendor_hal_featuremanager)
@@ -28,11 +31,9 @@ hal_client_domain(vendor_hal_cloudagent_qti, vendor_hal_provisioningmanager)
 allow vendor_hal_cloudagent_qti dnsproxyd_socket:sock_file write;
 allow vendor_hal_cloudagent_qti netd:unix_stream_socket connectto;
 allow vendor_hal_cloudagent_qti self:udp_socket {create bind setattr setopt getopt connect };
-#allow vendor_hal_cloudagent_qti self:tcp_socket {create bind setattr setopt getopt connect };
 allow vendor_hal_cloudagent_qti self:tcp_socket {create_stream_socket_perms };
 allow vendor_hal_cloudagent_qti fwmarkd_socket:sock_file write;
 allow vendor_hal_cloudagent_qti port:tcp_socket name_connect;
 allow netd vendor_hal_cloudagent_qti:fd use;
 allow netd vendor_hal_cloudagent_qti:tcp_socket { read write getopt setopt bind create setattr };
-get_prop(vendor_hal_cloudagent_qti, boot_status_prop)
 allow vendor_hal_cloudagent_qti proc_version:file getattr;

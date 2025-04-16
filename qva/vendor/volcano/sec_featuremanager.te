@@ -33,9 +33,6 @@ hal_client_domain(vendor_hal_featuremanager_qti, vendor_hal_datamanager)
 
 allow vendor_hal_featuremanager_qti dnsproxyd_socket:sock_file write;
 allow vendor_hal_featuremanager_qti self:udp_socket create;
-userdebug_or_eng(`
-get_prop(vendor_hal_featuremanager_qti, vendor_mink_trace_prop)
-')
 
 allow vendor_hal_featuremanager_qti netd:unix_stream_socket connectto;
 allow vendor_hal_featuremanager_qti self:udp_socket {create bind setattr setopt getopt connect };
@@ -44,4 +41,3 @@ allow vendor_hal_featuremanager_qti fwmarkd_socket:sock_file write;
 allow vendor_hal_featuremanager_qti port:tcp_socket name_connect;
 allow netd vendor_hal_featuremanager_qti:fd use;
 allow netd vendor_hal_featuremanager_qti:tcp_socket { read write getopt setopt bind create setattr };
-get_prop(vendor_hal_featuremanager_qti, boot_status_prop)

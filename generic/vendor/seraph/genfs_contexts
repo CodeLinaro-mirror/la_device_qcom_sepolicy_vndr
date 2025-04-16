@@ -102,7 +102,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink_log/wakeup u:object_r:s
 
 # USB device wakeup nodes
 genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/a400000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 
 # DCVS nodes
 genfscon sysfs /devices/platform/soc/18590100.qcom,cpu0-cpu-l3-lat/devfreq u:object_r:vendor_sysfs_devfreq:s0
