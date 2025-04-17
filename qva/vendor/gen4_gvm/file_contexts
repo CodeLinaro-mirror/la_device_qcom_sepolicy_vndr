@@ -19,6 +19,8 @@
 /dev/block/dtbo_[ab]                                                u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/init_boot_[ab]                                           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/vendor_boot_[ab]                                         u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/bootloader_[ab]                                          u:object_r:vendor_custom_ab_block_device:s0
+
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 
