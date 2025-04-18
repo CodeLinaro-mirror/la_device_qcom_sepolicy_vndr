@@ -88,6 +88,7 @@ var (
     "vendor.qti.hardware.soter.ISoter/default":                                          EXCEPTION_NO_FUZZER,
     "vendor.qti.memory.pasrmanager.IPasrManager/default":                                EXCEPTION_NO_FUZZER,
     "android.hardware.security.sharedsecret.ISharedSecret/gatekeeper":                   EXCEPTION_NO_FUZZER,
+    "vendor.qti.hardware.bluetooth.btavsprovider.IBtAVsProvider/default":                []string{"vendor.qti.hardware.bluetooth.btavsprovider-aidl_fuzzer"},
     "vendor.qti.hardware.data.connectionaidl.IDataConnection/slot1":                     []string{"qcrildata.aidl_fuzzer"},
     "vendor.qti.hardware.data.connectionaidl.IDataConnection/slot2":                     []string{"qcrildata.aidl_fuzzer"},
     "vendor.qti.qccvndhal_aidl.IQccvndhal/qccvndhal":                                    []string{"qccvndhal.aidl_fuzzer"},
