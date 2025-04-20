@@ -35,6 +35,7 @@ allow vendor_thermal-engine sysfs:dir r_dir_perms;
 allow vendor_thermal-engine self:capability {
     fsetid
     sys_boot
+    sys_admin
 };
 
 allow vendor_thermal-engine self:{ socket qipcrtr_socket } create_socket_perms;
@@ -107,3 +108,8 @@ allow vendor_thermal-engine vendor_limits_block_device:blk_file rw_file_perms;
 
 #This is required to read the DDR version
 allow vendor_thermal-engine vendor_sysfs_ddr:file r_file_perms;
+
+#This is required to read the UFS sysfs
+allow vendor_thermal-engine vendor_sysfs_scsi_host:dir r_dir_perms;
+allow vendor_thermal-engine vendor_sysfs_scsi_host:file rw_file_perms;
+allow vendor_thermal-engine vendor_sysfs_scsi_host:lnk_file r_file_perms;

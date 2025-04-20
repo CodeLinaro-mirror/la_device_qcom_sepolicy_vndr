@@ -27,6 +27,7 @@
 
 dontaudit domain vendor_persist_dpm_prop:file r_file_perms;
 dontaudit domain vendor_hal_perf_hwservice:hwservice_manager find;
+dontaudit domain vendor_hal_perf2_service:hwservice_manager find;
 neverallow {
    coredomain
    -init
