@@ -223,3 +223,6 @@
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh               u:object_r:vendor_qti_init_shell_exec:s0
+
+# BT dynamic detect
+/(vendor|system/vendor)/bin/init\.qcom\.bt\.sh               u:object_r:vendor_qti_init_shell_exec:s0
