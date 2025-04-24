@@ -1,4 +1,0 @@
-# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
-set_prop(vendor_init, vendor_qrsservice_enable_prop)
-get_prop(system_server, vendor_qrsservice_enable_prop)
