@@ -1,0 +1,66 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type qccdadevd, domain;
+type qccdadevd_exec, exec_type, vendor_file_type, file_type;
+type nvscmd_exec, exec_type, vendor_file_type, file_type;
+type coredump_exec, exec_type, vendor_file_type, file_type;
+
+
+init_daemon_domain(qccdadevd)
+
+# Allow qccdadevd to execute /vendor/bin/sh without a domain transition
+allow qccdadevd vendor_shell_exec:file execute_no_trans;
+
+# Allow qccdadevd to create and bind TCP sockets
+allow qccdadevd self:tcp_socket { create bind listen };
+allow qccdadevd port:tcp_socket name_bind;
+allow qccdadevd node:tcp_socket node_bind;
+
+# Allow qccdadevd to execute vendor toolbox
+allow qccdadevd vendor_toolbox_exec:file execute_no_trans;
+
+# Allow qccdadevd to read and open files from gatekeeperd
+allow qccdadevd gatekeeperd:file { read open };
+allow qccdadevd gatekeeperd:dir { getattr search };
+
+# Allow qccdadevd to get attributes of files in /proc
+allow qccdadevd proc:dir getattr;
+allow qccdadevd proc:file { read open getattr };
+
+# Allow qccdadevd to read from netlink_kobject_uevent_socket
+allow qccdadevd self:netlink_kobject_uevent_socket { read create setopt bind };
+
+# Allow qccdadevd to read the root directory
+allow qccdadevd device:dir { read open };
+
+# Allow qccdadevd to use the net_raw capability
+allow qccdadevd self:capability net_raw;
+
+# Allow qccdadevd to access sysfs directories
+allow qccdadevd sysfs:dir { open read search };
+
+allow qccdadevd sysfs:file { read open write};
+allow qccdadevd usb_device:dir search;
+allow qccdadevd usb_device:chr_file { read write open ioctl };
+allow qccdadevd property_socket:sock_file write;
+allow qccdadevd fwmarkd_socket:sock_file write;
+allow qccdadevd netd:unix_stream_socket connectto;
+allow qccdadevd self:tcp_socket { accept read write connect getopt};
+
+#============= netd ==============
+allow netd qccdadevd:fd use;
+allow netd qccdadevd:tcp_socket { getopt read setopt write };
+
+
+#============= qccdadevd ==============
+allow qccdadevd port:tcp_socket name_connect;
+allow qccdadevd vendor_data_file:dir { add_name remove_name write };
+allow qccdadevd vendor_data_file:file create;
+
+# Allow access to qccdadevd data file
+allow qccdadevd vendor_data_dualbt_file:dir create_dir_perms;
+allow qccdadevd vendor_data_dualbt_file:file create_file_perms;
+allow qccdadevd init:unix_stream_socket connectto;
+allow qccdadevd sysfs:file getattr;
+allow qccdadevd usb_device:dir { open read };

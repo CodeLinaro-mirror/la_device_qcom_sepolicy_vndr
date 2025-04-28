@@ -547,3 +547,8 @@
 #### Context for hb_sysnode_monitor
 /(vendor|system/vendor)/bin/hb_sysnode_monitor          u:object_r:vendor_hb_sysnode_monitor_exec:s0
 
+/vendor/bin/qccdadevd          u:object_r:qccdadevd_exec:s0
+/vendor/bin/nvscmd          u:object_r:qccdadevd_exec:s0
+/vendor/bin/coredump          u:object_r:qccdadevd_exec:s0
+/data/vendor/dualbt(/.*)?          u:object_r:vendor_data_dualbt_file:s0
+

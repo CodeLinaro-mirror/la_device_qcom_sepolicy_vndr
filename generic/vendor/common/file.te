@@ -241,3 +241,6 @@ type vendor_sysfs_qfprom, fs_type, sysfs_type;
 # heartbeat file type for sysfs access
 type vendor_sysfs_heartbeat, sysfs_type, fs_type;
 
+type vendor_data_dualbt_file, file_type, data_file_type;
+
+
