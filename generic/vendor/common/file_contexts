@@ -443,6 +443,9 @@
 /vendor/lib(64)?/libfastcvadsp_stub\.so     u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libfastcvopt\.so           u:object_r:same_process_hal_file:s0
 
+# Hexlp libs
+/vendor/lib(64)?/vendor\.qti\.hardware\.hexlp-V2-ndk\.so        u:object_r:same_process_hal_file:s0
+
 # data files
 /data/vendor/nicmd(/.*)?               u:object_r:vendor_nicm_data_file:s0
 /data/vendor/qmipriod(/.*)?            u:object_r:vendor_qmipriod_data_file:s0
