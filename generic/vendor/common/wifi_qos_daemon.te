@@ -12,6 +12,13 @@ allowxperm vendor_wifi_qos_daemon self:udp_socket ioctl { SIOCIWFIRSTPRIV_05 SIO
 allow vendor_wifi_qos_daemon self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow vendor_wifi_qos_daemon self:netlink_socket create_socket_perms_no_ioctl;
 
+unix_socket_connect(vendor_wifi_qos_daemon, vendor_ssgtzd, vendor_hlosminkdaemon)
+
+# Allow read access to mink socket log files
+userdebug_or_eng(`
+  get_prop(vendor_wifi_qos_daemon, vendor_mink_trace_prop)
+')
+
 # provide net_admin capability to wifi-qos daemon.
 allow vendor_wifi_qos_daemon self:capability { net_admin };
 
