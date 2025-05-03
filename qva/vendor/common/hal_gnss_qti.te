@@ -46,3 +46,4 @@ allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow vendor_hal_gnss_qti carpowerpolicyd_service:service_manager find;
 binder_call(vendor_hal_gnss_qti, carpowerpolicyd)
 binder_call(carpowerpolicyd, vendor_hal_gnss_qti)
+hal_client_domain(vendor_hal_gnss_qti, hal_vehicle);
