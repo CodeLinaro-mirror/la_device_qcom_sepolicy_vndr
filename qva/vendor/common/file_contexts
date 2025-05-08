@@ -326,3 +326,6 @@
 
 #UWB persist files
 /mnt/vendor/persist/uwb(/.*)?    u:object_r:vendor_persist_uwb_file:s0
+
+#Tx powerboost files
+/data/vendor/tx_powerboost(/.*)?       u:object_r:vendor_wifi_tx_powerboost_file:s0
