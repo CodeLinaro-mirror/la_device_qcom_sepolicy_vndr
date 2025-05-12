@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-#Changes from Qualcomm Innovation Center are provided under the following license:
-#Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # dev nodes
@@ -297,6 +297,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.soc-model\.sh                               u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AMSIPC@1\.0-service          u:object_r:vendor_ams_service_qti_exec:s0
 
 /vendor/bin/routing_manager_daemon                  u:object_r:vendor_routing_manager_default_exec:s0
 ###############################################
