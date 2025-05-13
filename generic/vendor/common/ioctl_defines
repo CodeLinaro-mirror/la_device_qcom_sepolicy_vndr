@@ -39,3 +39,6 @@ define(`IPC_ROUTER_IOCTL_CONFIG_SEC_RULES', `0x0000c305')
 define(`MMC_IOC_MULTI_CMD', `0xc008b301')
 #add DMA_HEA_ION_ALLOC ioctl
 define(`DMA_HEAP_IOCTL_ALLOC', `0x00004800')
+
+#ioctls defined in kernel in include/uapi/linux/input.h
+define(`EVIOCGNAME', `0x00004506')
