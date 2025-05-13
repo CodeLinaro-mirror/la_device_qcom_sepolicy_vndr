@@ -37,3 +37,6 @@ hal_client_domain(priv_app, vendor_hal_dspmanager)
 
 #allow priv_app to read UWB vendor hal property
 get_prop(priv_app, vendor_uwb_prop)
+
+# allow priv_app to read Proximity properties
+get_prop(priv_app, vendor_proximity_prop)
