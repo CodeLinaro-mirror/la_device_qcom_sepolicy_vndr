@@ -87,10 +87,51 @@ genfscon sysfs /kernel/msm_performance/notify/aggr_top_load u:object_r:vendor_sy
 genfscon sysfs /kernel/msm_performance/notify/curr_cap_cluster u:object_r:vendor_sysfs_msm_perf:s0
 genfscon sysfs /kernel/msm_performance/notify/gfx_evt u:object_r:vendor_sysfs_msm_perf:s0
 genfscon sysfs /kernel/msm_performance/notify/top_load_cluster u:object_r:vendor_sysfs_msm_perf:s0
-genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/usb u:object_r:vendor_sysfs_usb_node:s0
-genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.2.auto/usb u:object_r:vendor_sysfs_usb_node:s0
 
 genfscon proc /sys/vm/swappiness                     u:object_r:vendor_proc_swappiness:s0
 
 genfscon sysfs /devices/platform/soc/4080000.remoteproc-modem/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi_1101_00.01.00/wakeup u:object_r:sysfs_wakeup:s0
+
+
+dnl ------------------------------------------------------------
+dnl Define macro to generate a single genfscon entry
+dnl $1 = soc prefix
+dnl $2 = combined soc and usb type (e.g., a600000.ssusb)
+dnl $3 = controller name for dwc3 (e.g., a600000)
+dnl $4 = xhci-hcd number (0–3)
+dnl ------------------------------------------------------------
+pushdef(`cf_usb_genfscon', `
+genfscon sysfs $1/$2/$3.dwc3/xhci-hcd.$4.auto/usb u:object_r:vendor_sysfs_usb_node:s0
+')dnl
+
+dnl ------------------------------------------------------------
+dnl Define macro to generate genfscon entries for ports 0–3
+dnl $1 = soc prefix
+dnl $2 = combined soc and usb type
+dnl $3 = controller name
+dnl ------------------------------------------------------------
+define(`usb_range', `
+cf_usb_genfscon($1, $2, $3, `0')dnl
+cf_usb_genfscon($1, $2, $3, `1')dnl
+cf_usb_genfscon($1, $2, $3, `2')dnl
+cf_usb_genfscon($1, $2, $3, `3')dnl
+')dnl
+
+dnl ------------------------------------------------------------
+dnl Use usb_range for each USB controller path
+dnl Note: This covers all known USB controllers on supported platforms.
+dnl If adding support for new hardware, additional controllers may need to be added.
+dnl ------------------------------------------------------------
+usb_range(`/devices/platform/soc', `a200000.hsusb', `a200000')dnl
+usb_range(`/devices/platform/soc', `a400000.hsusb', `a400000')dnl
+usb_range(`/devices/platform/soc', `a400000.ssusb', `a400000')dnl
+usb_range(`/devices/platform/soc', `a4f8800.ssusb', `a400000')dnl
+usb_range(`/devices/platform/soc', `a600000.ssusb', `a600000')dnl
+usb_range(`/devices/platform/soc', `a800000.hsusb', `a800000')dnl
+usb_range(`/devices/platform/soc', `a800000.ssusb', `a800000')dnl
+
+dnl ------------------------------------------------------------
+dnl Clean up macro definitions
+dnl ------------------------------------------------------------
+popdef(`cf_usb_genfscon')dnl
