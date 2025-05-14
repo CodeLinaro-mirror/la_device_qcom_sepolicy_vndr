@@ -79,6 +79,7 @@ var (
     "vendor.qti.hardware.wifidisplaysession_aidl.IWifiDisplaySessionImageTrack/default":                                   EXCEPTION_NO_FUZZER,
     "vendor.qti.hardware.perf2.IPerf/default":                                           EXCEPTION_NO_FUZZER,
     "vendor.qti.hardware.hexlp.IHexlpService/default":                                   EXCEPTION_NO_FUZZER,
+    "vendor.qti.hardware.hexlp.IHexlpService/unsigned":                                  []string{"aidl_fuzzer_hexlp_service"},
     "vendor.qti.hardware.power.powermodule.IPowerModule/default":                        EXCEPTION_NO_FUZZER,
     "vendor.qti.qhcp.IQHDC/default":                                                     EXCEPTION_NO_FUZZER,
     "vendor.qti.hardware.minkipcbinder.IMinkServer/default":                             EXCEPTION_NO_FUZZER,
