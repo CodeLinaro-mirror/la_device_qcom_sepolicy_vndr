@@ -191,5 +191,6 @@ var (
     "android.hardware.audio.core.IModule/r_submix":                                         EXCEPTION_NO_FUZZER,
     "android.hardware.audio.core.IModule/usb":                                              EXCEPTION_NO_FUZZER,
     "android.hardware.audio.core.IConfig/default":                                          EXCEPTION_NO_FUZZER,
+    "vendor.qti.AvfQcvmManager.IAvfQcvmManager/default":                                    EXCEPTION_NO_FUZZER,
  }
 )
