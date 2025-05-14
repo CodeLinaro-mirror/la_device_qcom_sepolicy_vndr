@@ -313,4 +313,4 @@
 /sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:8/block/sdi/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
 
 # VM Specific
-/vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
+/vendor/vm-system(/.*)?              u:object_r:vendor_vm_system_file:s0
