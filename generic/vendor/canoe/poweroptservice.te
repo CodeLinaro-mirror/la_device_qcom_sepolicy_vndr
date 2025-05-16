@@ -69,3 +69,9 @@ allow vendor_hal_poweroptservice_qti vendor_pm_data_file:file create_file_perms;
 
 allow vendor_hal_poweroptservice_qti proc_stat:file r_file_perms;
 allow vendor_hal_poweroptservice_qti proc:file r_file_perms;
+
+#Add thermal&power control related rules
+unix_socket_connect(vendor_hal_poweroptservice_qti, vendor_qlm, vendor_qlm_service);
+allow vendor_hal_poweroptservice_qti vendor_sysfs_graphics:file rw_file_perms;
+allow vendor_hal_poweroptservice_qti vendor_sysfs_battery_supply:dir search;
+allow vendor_hal_poweroptservice_qti vendor_sysfs_battery_supply:file r_file_perms;
