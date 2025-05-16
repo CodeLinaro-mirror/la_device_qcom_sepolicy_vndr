@@ -2,6 +2,4 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_featuremanager_aidl_service,hal_service_type,protected_service, service_manager_type;
-type vendor_hal_provisioningmanager_aidl_service,hal_service_type,protected_service,service_manager_type;
 type vendor_hal_datamanager_aidl_service,hal_service_type,protected_service, service_manager_type;
-type vendor_hal_cloudagent_aidl_service,hal_service_type,protected_service, service_manager_type;

@@ -49,23 +49,23 @@
 
 #sec
 /vendor/bin/featuremanager    u:object_r:vendor_hal_featuremanager_qti_exec:s0
-/vendor/bin/cloudagent        u:object_r:vendor_hal_cloudagent_qti_exec:s0
-/vendor/bin/provisioningmanager    u:object_r:vendor_hal_provisioningmanager_qti_exec:s0
 /vendor/bin/datamanager       u:object_r:vendor_hal_datamanager_qti_exec:s0
 /vendor/bin/oras              u:object_r:vendor_sec_oras_exec:s0
 
 #aware data files
-/data/vendor/secure-edge-control(/.*)?                              u:object_r:vendor_sec_vndr_data_file:s0
 /data/vendor/aware(/.*)?                              u:object_r:vendor_aware_vndr_data_file:s0
 
 #aware persist files
 /mnt/vendor/persist/aware(/.*)?      u:object_r:vendor_persist_aware_file:s0
 
-# Aware Agent
+# Aware Agent and platform service
 /vendor/bin/aware_agent    u:object_r:vendor_awareagent_exec:s0
-
+/vendor/bin/aware_platform_service u:object_r:vendor_aware_platform_service_exec:s0
 ###################################
 ##Dev nodes
 #
 /dev/spiuwb                           u:object_r:vendor_spiuwb_device:s0
+
+#aware sockets
+/dev/socket/aware(/.*)?       u:object_r:vendor_aware_socket:s0
 
