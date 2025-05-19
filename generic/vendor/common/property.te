@@ -128,6 +128,7 @@ vendor_internal_prop(vendor_wifi_version);
 vendor_internal_prop(vendor_soc_id_prop);
 vendor_internal_prop(vendor_soc_name_prop);
 vendor_internal_prop(vendor_soc_model_prop);
+vendor_internal_prop(vendor_platform_prop);
 
 # Property to set media performance class
 vendor_internal_prop(vendor_media_performance_class);

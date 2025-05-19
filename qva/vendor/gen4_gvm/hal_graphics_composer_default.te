@@ -1,5 +1,5 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) 2023, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
-allow hal_graphics_composer_default vendor_hab_device:chr_file rw_file_perms;
+allow hal_graphics_composer_default vendor_hab_ogles_device:chr_file rw_file_perms;
