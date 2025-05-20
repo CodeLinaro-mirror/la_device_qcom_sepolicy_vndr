@@ -1,0 +1,29 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Policy for vendor_avf_qcvm_manager
+type vendor_avf_qcvm_manager, domain;
+type vendor_avf_qcvm_manager_exec, vendor_file_type, exec_type, file_type;
+type vendor_avf_qcvm_manager_tmpfs, file_type;
+
+# Define avf qcvm manager as a daemon managed by init in the vendor partition
+init_daemon_domain(vendor_avf_qcvm_manager);
+binder_use(vendor_avf_qcvm_manager);
+hal_server_domain(vendor_avf_qcvm_manager,vendor_hal_avf_qcvm_qti);
+
+#Allow aidl based avf_qcvm communication
+hal_attribute_service(vendor_hal_avf_qcvm_qti,vendor_hal_avf_qcvm_service);
+binder_call(vendor_hal_avf_qcvm_qti_server, servicemanager)
+
+#Allow avf_qcvm client domain apps to find service
+binder_call(vendor_hal_avf_qcvm_qti_server, vendor_hal_avf_qcvm_qti_client);
+binder_call(vendor_hal_avf_qcvm_qti_client, vendor_hal_avf_qcvm_qti_server);
+
+allow vendor_avf_qcvm_manager self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+#allow vendor_avf_qcvm_manager to read the VM SSR flag
+get_prop(vendor_avf_qcvm_manager, vendor_vm_ssrenable_prop)
+
+# Allow vendor_avf_qcvm_manager to inspect all hypervisor capabilities
+# and enable as an early virtmgr
+early_virtmgr_use(vendor_avf_qcvm_manager)

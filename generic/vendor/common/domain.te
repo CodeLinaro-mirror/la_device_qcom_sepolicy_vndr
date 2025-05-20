@@ -108,11 +108,13 @@ neverallow { domain
 - vendor_qvrd_vndr
 - vendor_thermal-engine
 - vendor_dspservice
+- vendor_unsignedhexlpservice
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 } vendor_qdsp_device:chr_file *;
 neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
 neverallow { appdomain - shell userdebug_or_eng(`-vendor_sysmonapp_app_test') } vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow mediacodec vendor_qdsp_device:chr_file ~{ioctl read};
+neverallow vendor_unsignedhexlpservice vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow { domain
 - init
 - vendor_init
