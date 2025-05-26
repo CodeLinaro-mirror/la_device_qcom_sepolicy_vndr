@@ -1,4 +1,4 @@
-# Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_sec_datamanager, domain;
@@ -19,8 +19,4 @@ allow vendor_sec_datamanager proc_net:file { r_file_perms };
 allow vendor_sec_datamanager proc_stat:file { r_file_perms };
 allow vendor_sec_datamanager system_data_root_file:dir { r_dir_perms };
 
-allow vendor_sec_datamanager vendor_aware_vndr_data_file:dir { rw_dir_perms };
-allow vendor_sec_datamanager vendor_aware_vndr_data_file:file { create_file_perms };
-
 net_domain(vendor_sec_datamanager);
-allow vendor_sec_datamanager mnt_vendor_file:dir search;
