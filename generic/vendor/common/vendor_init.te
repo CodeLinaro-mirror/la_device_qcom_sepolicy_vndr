@@ -75,6 +75,7 @@ get_prop(vendor_init, vendor_memory_min_free_kbytes)
 set_prop(vendor_init, system_prop)
 set_prop(vendor_init, vendor_usb_prop)
 set_prop(vendor_init, vendor_audio_prop)
+set_prop(vendor_init, vendor_audio_stub_prop)
 #Enable radio properties setting
 set_prop(vendor_init, vendor_radio_prop)
 
