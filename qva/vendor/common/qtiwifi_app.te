@@ -7,6 +7,9 @@ hal_client_domain(vendor_qtiwifi_app, vendor_hal_qtiwifi)
 typeattribute vendor_qtiwifi_app hal_wifi_supplicant_client;
 typeattribute vendor_qtiwifi_app hal_wifi_hostapd_client;
 
+#ensure QtiWifiService/QtiWifiSettings can access IWificfr
+hal_client_domain(vendor_qtiwifi_app, hal_wificfr)
+
 #ensure QtiWifiService/QtiWifiSettings to work
 allow vendor_qtiwifi_app activity_service:service_manager find;
 allow vendor_qtiwifi_app netstats_service:service_manager find;
