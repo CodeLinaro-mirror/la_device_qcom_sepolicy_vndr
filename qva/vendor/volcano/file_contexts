@@ -58,9 +58,9 @@
 #aware persist files
 /mnt/vendor/persist/aware(/.*)?      u:object_r:vendor_persist_aware_file:s0
 
-# Aware Agent
+# Aware Agent and platform service
 /vendor/bin/aware_agent    u:object_r:vendor_awareagent_exec:s0
-
+/vendor/bin/aware_platform_service u:object_r:vendor_aware_platform_service_exec:s0
 ###################################
 ##Dev nodes
 #
