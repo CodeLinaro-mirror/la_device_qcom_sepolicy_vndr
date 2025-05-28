@@ -56,6 +56,8 @@ neverallow {
      -init
      -ueventd
      -vold
+     -crosvm
+     -virtualizationmanager
      } vendor_persist_type: { dir file } *;
 
 allow { domain - isolated_app_all } vendor_sysfs_kgsl:dir search;
