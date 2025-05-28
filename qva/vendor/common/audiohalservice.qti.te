@@ -1,4 +1,4 @@
-#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_audiohalservice_qti, domain;
@@ -34,6 +34,9 @@ allow vendor_audiohalservice_qti vendor_dmabuf_system_heap_device:chr_file { ioc
 get_prop(vendor_audiohalservice_qti, boot_status_prop)
 
 allow vendor_audiohalservice_qti vendor_agm_device:chr_file { ioctl open read write };
+
+# to allow avc denials caused during SSR
+allow vendor_audiohalservice_qti vendor_agm_device:chr_file getattr;
 
 userdebug_or_eng(`
   typeattribute vendor_audiohalservice_qti hal_automotive_socket_exemption;
