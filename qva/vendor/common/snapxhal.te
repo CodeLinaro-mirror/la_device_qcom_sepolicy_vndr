@@ -13,3 +13,6 @@ binder_call(vendor_hal_snapx_service_qti_server, vendor_hal_snapx_service_qti_cl
 hal_attribute_service(vendor_hal_snapx_service_qti, vendor_hal_snapx_service)
 
 binder_call(vendor_hal_snapx_default, servicemanager)
+
+# allow access to FrameworksUtilsService
+hal_client_domain(vendor_hal_snapx_default, vendor_framework_utils_app)
