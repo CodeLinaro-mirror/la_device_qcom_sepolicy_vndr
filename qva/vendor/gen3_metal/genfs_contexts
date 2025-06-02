@@ -39,3 +39,30 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,
 
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca-converged/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/power.0/power_supply/Ac/wakeup9 u:object_r:sysfs_wakeup:s0
+
+# Update genfs context with new USB XHCI path
+dnl # $1 = soc prefix
+dnl # $2 = combined soc and usb type (e.g., a600000.ssusb)
+dnl # $3 = for controller dwc3
+dnl # $4 = xhci-hcd number (decimal)
+pushdef(`cf_usb_genfscon', `dnl
+genfscon sysfs $1/$2/$3.dwc3/xhci-hcd.$4.auto/usb u:object_r:vendor_sysfs_usb_node:s0
+')dnl
+
+cf_usb_genfscon(`/devices/platform/soc', `a600000.ssusb', `a600000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a600000.ssusb', `a600000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a600000.ssusb', `a600000', `3')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `2')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `3')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `2')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `3')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `2')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `3')dnl
+
+popdef(`cf_usb_genfscon')dnl

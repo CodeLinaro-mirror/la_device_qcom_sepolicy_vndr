@@ -84,3 +84,6 @@ get_prop(system_server, vendor_xlat_prop)
 # allow system_server to access wifi prop
 set_prop(system_server, wifi_prop)
 get_prop(system_server, vendor_qcom_wlan_prop)
+
+# allow system_server to access USB devices
+r_dir_file(system_server, vendor_sysfs_usb_node);
