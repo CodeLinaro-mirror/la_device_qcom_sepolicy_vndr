@@ -30,7 +30,6 @@ allow init {
     mnt_vendor_file
     storage_file
     vendor_vm_system_file
-    vendor_vm_file
     same_process_hal_file
     mnt_product_file
 }:dir mounton;
