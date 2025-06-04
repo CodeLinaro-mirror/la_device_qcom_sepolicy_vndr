@@ -165,8 +165,7 @@
 /data/vendor/modem_config(/.*)?                 u:object_r:vendor_mbn_data_file:s0
 /dev/socket/qdcmsocket                          u:object_r:vendor_qdcmsocket_socket:s0
 /dev/qce                                        u:object_r:vendor_qce_device:s0
-#AVF VM DTBO enablement
-/data/vendor/qtvm_dtbo(/.*)?                    u:object_r:vendor_vm_data_file:s0
+/data/vendor/qtvm_dtbo(/.*)?                    u:object_r:vendor_vm_data_file:s0  
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/sda                                  u:object_r:vendor_gpt_block_device:s0
 

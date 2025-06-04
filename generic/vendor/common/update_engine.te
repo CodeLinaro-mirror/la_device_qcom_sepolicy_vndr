@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Allow update_engine
+# Allow update_engine 
 allow update_engine storage_file:file r_file_perms;
 allow update_engine storage_file:dir r_dir_perms;
 allow update_engine fuse:dir r_dir_perms;
