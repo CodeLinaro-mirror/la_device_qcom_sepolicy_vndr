@@ -107,6 +107,7 @@ allow hal_audio vendor_sysfs_sndcard:file rw_file_perms;
 # audio properties
 get_prop(hal_audio, vendor_audio_prop)
 set_prop(hal_audio, vendor_audio_ssr_prop)
+set_prop(hal_audio, vendor_audio_stub_prop)
 
 #to read bluetooth prop
 get_prop(hal_audio, vendor_bluetooth_prop)
