@@ -23,17 +23,4 @@ allow vendor_hal_datamanager_qti proc_net:file { r_file_perms };
 allow vendor_hal_datamanager_qti proc_stat:file { r_file_perms };
 allow vendor_hal_datamanager_qti system_data_root_file:dir { r_dir_perms };
 
-allow vendor_hal_datamanager_qti vendor_sec_vndr_data_file:dir { rw_dir_perms };
-allow vendor_hal_datamanager_qti vendor_sec_vndr_data_file:file { create_file_perms };
-
-allow vendor_hal_datamanager_qti vendor_persist_sec_file:dir create_dir_perms;
-allow vendor_hal_datamanager_qti vendor_persist_sec_file:file create_file_perms;
-
-allow vendor_hal_datamanager_qti mnt_vendor_file:dir search;
-
 set_prop(vendor_hal_datamanager_qti, vendor_secdm_prop);
-
-hal_client_domain(vendor_hal_datamanager_qti, vendor_hal_cloudagent)
-userdebug_or_eng(`
-get_prop(vendor_hal_datamanager_qti, vendor_mink_trace_prop)
-')
