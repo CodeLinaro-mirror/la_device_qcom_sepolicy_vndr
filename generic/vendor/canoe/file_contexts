@@ -43,6 +43,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/fsg                   u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/modemst1              u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/modemst2              u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/fs_bkup               u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/ssd                   u:object_r:vendor_ssd_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/misc                  u:object_r:misc_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/rpm                   u:object_r:vendor_rpmb_device:s0
@@ -116,17 +117,15 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/pdp_cdb_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/xbl_ac_config_[ab]    u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/dcp_[ab]              u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/dcp_dtb_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/secretkeeper_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/soccp_[ab]            u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/soccp_dtb_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/tme_config_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/tme_fw_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/tme_seq_patch_[ab]    u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/tz_ac_config_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/tz_qti_config_[ab]    u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/hyp_ac_config_[ab]    u:object_r:vendor_custom_ab_block_device:s0
-/dev/block/platform/soc/1d84000.ufshc/by-name/efisp_[ab]            u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/qtvm_dtbo_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                       u:object_r:vendor_gpt_block_device:s0
@@ -192,6 +191,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/fsg                                u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/modemst1                           u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/modemst2                           u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/fs_bkup                            u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/ssd                                u:object_r:vendor_ssd_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/misc                               u:object_r:misc_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/rpm                                u:object_r:vendor_rpmb_device:s0
@@ -245,8 +245,14 @@
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
+/sys/devices/platform/soc/soc:remoteproc-adsp@06800000/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:remoteproc-adsp@06800000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
 /sys/devices/platform/soc/soc:remoteproc-cdsp@32300000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-cdsp@32300000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/soc:remoteproc-cdsp@26300000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:remoteproc-cdsp@26300000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
 /sys/devices/platform/soc/soc:remoteproc-slpi@2400000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-slpi@2400000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -264,8 +270,14 @@
 /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
+/sys/devices/platform/soc/6800000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/6800000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
 /sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/26300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/26300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
 /sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -281,6 +293,9 @@
 
 /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+
+/sys/devices/platform/soc/99f00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/99f00000.remoteproc-wpss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
 #Display nodes
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
@@ -313,4 +328,4 @@
 /sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:8/block/sdi/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
 
 # VM Specific
-/vendor/vm-system(/.*)?              u:object_r:vendor_vm_system_file:s0
+/vendor/vm-system(/.*)?              u:object_r:vendor_vm_file:s0

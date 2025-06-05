@@ -193,6 +193,7 @@ genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-c
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-1/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/drm/card0/card0-sde-crtc-2/retire_frame_event   u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/power/control                                   u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/wakeup                                          u:object_r:sysfs_wakeup:s0
 
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/scsi_generic  u:object_r:vendor_sysfs_scsi_target:s0
@@ -272,6 +273,8 @@ genfscon sysfs /devices/platform/soc/1ac0000.qcom,qupv3_4_geni_se/1a80000.i2c/i2
 genfscon sysfs /devices/platform/soc/1ac0000.qcom,qupv3_4_geni_se/1a88000.i3c-master/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-kiwi/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/99f00000.remoteproc-wpss/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/17010040.qcom,wcn7750/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/fastrpc-adsp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/fastrpc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
@@ -291,3 +294,6 @@ genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup38 u:object_r:sys
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup37 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup38 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup40 u:object_r:sysfs_wakeup:s0
+
+# sys net
+genfscon sysfs /devices/platform/soc/17010040.qcom,wcn7750/net/ u:object_r:sysfs_net:s0

@@ -120,3 +120,4 @@ type vendor_qdss_device, dev_type;
 type vendor_adsp_sleepmon_device, dev_type;
 type vendor_ubwcp_device, dev_type;
 type vendor_imsdc_device, dev_type;
+type vendor_qcvm_device, dev_type, mlstrustedobject, vm_manager_device_type;
