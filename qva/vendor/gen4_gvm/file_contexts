@@ -23,7 +23,6 @@
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
-/dev/hab-aud                                                        u:object_r:vendor_hab_aud_device:s0
 /dev/hab-cam                                                        u:object_r:vendor_hab_cam_device:s0
 /dev/hab-disp                                                       u:object_r:vendor_hab_disp_device:s0
 /dev/hab-ogles                                                      u:object_r:vendor_hab_ogles_device:s0
