@@ -262,6 +262,7 @@ binder_call($1, vendor_qms)
 binder_call(vendor_qms, $1)
 ')
 
+#######################################
 # Allow binder call between snapx client and its brokered binder service
 # syntax: vendor_snapx_use(vendordomain)
 define(`vendor_snapx_use', `
@@ -270,3 +271,21 @@ binder_call(untrusted_app, $1)
 binder_call($1, untrusted_app_32)
 binder_call(untrusted_app_32, $1)
 ')
+
+#######################################
+# Allow domains to use Gunyah CMA for Virtualization purpose
+# syntax:  gunyah_cma_use(domain)
+define(`gunyah_cma_use', `
+# Allow domain to create/use gunyah-cmafd.
+type $1_gunyah_cmafd;
+# Set up a type_transition to "gumyah-cmafd" named anonymous inode object.
+type_transition $1 $1:anon_inode $1_gunyah_cmafd "[gunyah-cma]";
+# Allow domain to create/use gunyah-cmafd anon_inode.
+allow $1 $1_gunyah_cmafd:anon_inode { create read getattr };
+# Allow virtualizationmaanger and crosvm access to the gunyah-cma node
+allow virtualizationmanager $1_gunyah_cmafd:anon_inode { getattr read write };
+allow crosvm $1_gunyah_cmafd:anon_inode { read write map };
+# This domain may not use gunyah-cmafd anon_inodes created by other domains.
+neverallow $1 ~$1_gunyah_cmafd:anon_inode *;
+')
+#######################################
