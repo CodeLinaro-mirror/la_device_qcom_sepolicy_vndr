@@ -184,3 +184,8 @@ allow gpu_device device:filesystem associate;
 allow init tmpfs:chr_file rw_file_perms;
 allow init tmpfs:dir r_dir_perms;
 #allow init rootfs:file { create };
+
+allow init vendor_sysfs_sda_block:file w_file_perms;
+userdebug_or_eng(`
+allow init debugfs_tracing_debug:dir mounton;
+')

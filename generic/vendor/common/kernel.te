@@ -114,3 +114,5 @@ allow kernel system_lib_file:dir relabelto;
 allow kernel system_lib_file:file relabelto;
 allow kernel vendor_early_services:lnk_file read;
 allow kernel vendor_system_cpu:chr_file getattr;
+allow kernel vendor_sysfs_pinctrl:blk_file setattr;
+allow kernel device:blk_file mounton;
