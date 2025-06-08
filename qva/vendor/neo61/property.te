@@ -1,4 +1,4 @@
-# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,22 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-# Changes from Qualcomm Technologies, Inc. are provided under the following license:
-# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#
+# Changes from Qualcomm Innovation Center are provided under the following license:
+# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-#face3d
-vendor_internal_prop(vendor_face3d_producer_prop);
-#sec property
-vendor_internal_prop(vendor_secfm_prop);
-neverallow {domain -init -vendor_init -vendor_hal_provisioningmanager_qti -vendor_hal_featuremanager_qti} {vendor_secfm_prop}:property_service set;
-vendor_internal_prop(vendor_secdm_prop);
-neverallow {domain -init -vendor_init  -vendor_hal_featuremanager_qti -vendor_hal_datamanager_qti } {vendor_secdm_prop}:property_service set;
-vendor_internal_prop(vendor_secca_prop);
-neverallow {domain -init -vendor_init -vendor_hal_cloudagent_qti -vendor_hal_datamanager_qti } {vendor_secca_prop}:property_service set;
-#awareagent property
-vendor_internal_prop(vendor_awareagent_prop);
-neverallow {domain -init -vendor_init -vendor_hal_cloudagent_qti -vendor_awareagent} {vendor_awareagent_prop}:property_service set;
-vendor_internal_prop(vendor_qrs_service_prop);
+#keymint quickboot prop
+vendor_restricted_prop(vendor_tee_keymint_quickboot);
 
+#Gatekeper quickboot prop
+vendor_restricted_prop(vendor_tee_gk_quickboot);
