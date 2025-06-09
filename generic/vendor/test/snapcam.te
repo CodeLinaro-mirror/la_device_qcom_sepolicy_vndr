@@ -34,6 +34,8 @@ get_prop(vendor_snapcam_app, vendor_persist_camera_prop)
 set_prop(vendor_snapcam_app, vendor_camera_prop)
 allow vendor_snapcam_app nfc_service:service_manager find;
 dontaudit vendor_snapcam_app default_prop:file {read};
+dontaudit vendor_snapcam_app vendor_hal_perf2_service:service_manager find;
+
 binder_call(vendor_snapcam_app, gpuservice)
 
 allow vendor_snapcam_app app_api_service:service_manager find;
