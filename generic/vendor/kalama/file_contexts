@@ -338,4 +338,4 @@
 /vendor_early_services/system/bin/bootstrap/linker(64)?                       u:object_r:system_linker_exec:s0
 /vendor_early_services/vendor/firmware_mnt                                    u:object_r:firmware_file:s0
 /vendor_early_services/vendor/firmware_mnt(/.*)?                              u:object_r:firmware_file:s0
-
+/vendor/bin/init.qcom.lxc.sh                                                  u:object_r:vendor_lxc_shell_exec:s0

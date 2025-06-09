@@ -1,0 +1,39 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_lxc_shell, domain;
+type vendor_lxc_shell_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_lxc_shell)
+
+domain_auto_trans(init, vendor_lxc_shell_exec, vendor_lxc_shell)
+
+permissive vendor_lxc_shell;
+
+dontaudit vendor_lxc_shell self:capability_class_set *;
+dontaudit vendor_lxc_shell kernel:security *;
+dontaudit vendor_lxc_shell kernel:system *;
+dontaudit vendor_lxc_shell self:memprotect *;
+dontaudit vendor_lxc_shell domain:process *;
+dontaudit vendor_lxc_shell domain:fd *;
+dontaudit vendor_lxc_shell domain:dir *;
+dontaudit vendor_lxc_shell domain:lnk_file *;
+dontaudit vendor_lxc_shell domain:{ fifo_file file } *;
+dontaudit vendor_lxc_shell domain:socket_class_set *;
+dontaudit vendor_lxc_shell domain:ipc_class_set *;
+dontaudit vendor_lxc_shell domain:key *;
+dontaudit vendor_lxc_shell fs_type:filesystem *;
+dontaudit vendor_lxc_shell {fs_type dev_type file_type}:dir_file_class_set *;
+dontaudit vendor_lxc_shell node_type:node *;
+dontaudit vendor_lxc_shell node_type:{ tcp_socket udp_socket rawip_socket } *;
+dontaudit vendor_lxc_shell netif_type:netif *;
+dontaudit vendor_lxc_shell port_type:socket_class_set *;
+dontaudit vendor_lxc_shell port_type:{ tcp_socket dccp_socket } *;
+dontaudit vendor_lxc_shell domain:peer *;
+dontaudit vendor_lxc_shell domain:binder *;
+dontaudit vendor_lxc_shell property_type:property_service *;
+dontaudit vendor_lxc_shell property_type:file *;
+dontaudit vendor_lxc_shell service_manager_type:service_manager *;
+dontaudit vendor_lxc_shell keystore:keystore_key *;
+dontaudit vendor_lxc_shell domain:drmservice *;
+dontaudit vendor_lxc_shell unlabeled:filesystem *;
