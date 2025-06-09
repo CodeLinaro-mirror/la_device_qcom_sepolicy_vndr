@@ -73,3 +73,7 @@ allow vendor_avf_qcvm_manager vendor_custom_ab_block_device:blk_file r_file_perm
 allow { vendor_avf_qcvm_manager crosvm virtualizationmanager } mnt_vendor_vm_file:file rw_file_perms;
 allow { vendor_avf_qcvm_manager } mnt_vendor_vm_file:dir search;
 allow { vendor_avf_qcvm_manager } mnt_vendor_file:dir search;
+
+# provide vsock_socket perms to vendor_avf_qcvm_manager
+typeattribute vendor_avf_qcvm_manager unconstrained_vsock_violators;
+allow vendor_avf_qcvm_manager self:vsock_socket { connect create bind accept read write listen setopt };
