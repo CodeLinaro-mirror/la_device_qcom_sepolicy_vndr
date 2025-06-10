@@ -36,6 +36,8 @@ hal_server_domain(vendor_hal_gnss_qti, hal_gnss)
 type vendor_hal_gnss_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_hal_gnss_qti)
 
+set_prop(vendor_hal_gnss_qti, vendor_location_prop)
+
 # vendor binder
 use_vendor_per_mgr(vendor_hal_gnss_qti)
 
