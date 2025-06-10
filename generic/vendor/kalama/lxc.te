@@ -8,7 +8,7 @@ init_daemon_domain(vendor_lxc_shell)
 
 domain_auto_trans(init, vendor_lxc_shell_exec, vendor_lxc_shell)
 
-permissive vendor_lxc_shell;
+#permissive vendor_lxc_shell;
 
 dontaudit vendor_lxc_shell self:capability_class_set *;
 dontaudit vendor_lxc_shell kernel:security *;
