@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+# Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 vendor.qti.hardware.watchorientation::IWatchOrientation            u:object_r:vendor_hal_watchorientation_hwservice:s0
@@ -40,3 +40,4 @@ vendor.qti.hardware.bluetooth_offload::IBluetoothOffload           u:object_r:ve
 vendor.qti.hardware.bluetooth_offload::IBluetoothOffloadService    u:object_r:vendor_hal_bluetooth_offload_hwservice:s0
 vendor.qti.hardware.aonfwloader::IAONFwLoader                        u:object_r:vendor_hal_aonfwloader_hwservice:s0
 vendor.qti.hardware.sidekickmetrics::ISidekickMetrics              u:object_r:vendor_hal_sidekickmetrics_hwservice:s0
+vendor.qti.hardware.uxoffload::IUXOffload                          u:object_r:vendor_hal_uxoffload_hwservice:s0

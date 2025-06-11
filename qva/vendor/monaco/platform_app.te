@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+# Copyright (c) 2023-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # allow platform_app to interact with displayoffload hal
@@ -38,5 +38,8 @@ hal_client_domain(platform_app, vendor_hal_aonutility)
 # allow platform_app to interact with uioffload  hal
 hal_client_domain(platform_app, vendor_hal_uioffload)
 
+# allow platform_app to interact with uxoffload  hal
+hal_client_domain(platform_app, vendor_hal_uxoffload)
+#get_prop(platform_app, vendor_slate_boot_complete_prop)
 allow platform_app vendor_hal_sidekickmetrics_hwservice:hwservice_manager find;
 binder_call(platform_app, vendor_hal_sidekickmetrics_default)
