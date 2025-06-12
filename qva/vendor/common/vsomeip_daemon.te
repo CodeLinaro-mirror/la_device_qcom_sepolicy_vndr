@@ -24,7 +24,7 @@ allow vendor_vsomeip_daemon vendor_location:unix_stream_socket { read write };
 
 # someip
 allow vendor_vsomeip_daemon vendor_someip_data_file:dir { add_name search write remove_name };
-allow vendor_vsomeip_daemon vendor_someip_data_file:file { create lock open write };
+allow vendor_vsomeip_daemon vendor_someip_data_file:file { create lock open write append getattr };
 allow vendor_vsomeip_daemon vendor_someip_data_file:sock_file { create setattr write unlink };
 
 #Allow connectto other hal daemon

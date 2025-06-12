@@ -4,3 +4,5 @@
 
 # bootctrl property
 vendor_restricted_prop(vendor_bootctrl_prop);
+# Audio HAL property
+vendor_restricted_prop(vendor_audiohal_prop);

@@ -51,3 +51,6 @@ allow vendor_modprobe self:key write;
 allow vendor_modprobe self:perf_event cpu;
 allow vendor_modprobe proc_bootconfig:file r_file_perms;
 dontaudit vendor_modprobe self:capability sys_admin;
+userdebug_or_eng(`
+  allow vendor_modprobe console_device:chr_file { append rw_file_perms w_file_perms getattr ioctl };
+')
