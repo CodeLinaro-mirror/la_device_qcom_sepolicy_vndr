@@ -15,3 +15,9 @@ allow vendor_qlm_service vendor_qlm_socket:sock_file rw_file_perms;
 # This is required for thermal sysfs access
 r_dir_file(vendor_qlm_service, sysfs_thermal)
 allow vendor_qlm_service sysfs_thermal:lnk_file r_file_perms;
+
+# This is required for power telemetry sysfs access
+until_board_api(202604, `
+	allow vendor_qlm_service vendor_sysfs_powercap:dir r_dir_perms;
+	allow vendor_qlm_service vendor_sysfs_powercap:file r_file_perms;
+')
