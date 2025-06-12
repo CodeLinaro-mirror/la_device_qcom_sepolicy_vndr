@@ -56,6 +56,8 @@ allow ueventd vendor_vm_system_file:dir { getattr search read };
 allow ueventd vendor_vm_system_file:file r_file_perms;
 allow ueventd vendor_vm_file:dir r_dir_perms;
 allow ueventd vendor_vm_file:file r_file_perms;
+allow ueventd mnt_vendor_vm_file:dir r_dir_perms;
+allow ueventd mnt_vendor_vm_file:file r_file_perms;
 
 # For wifi to access  mnt_vendor_file
 r_dir_file(ueventd, mnt_vendor_file)

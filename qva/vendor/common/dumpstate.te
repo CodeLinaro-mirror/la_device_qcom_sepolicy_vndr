@@ -44,7 +44,9 @@ allow dumpstate vendor_vm_system_file:filesystem getattr;
 allow dumpstate vendor_soccp_file:dir getattr;
 allow dumpstate vendor_soccp_file:filesystem getattr;
 allow dumpstate vendor_vm_file:dir getattr;
-allow dumpstate vendor_vm_file:filesystem getattr;
+allow dumpstate vendor_vm_file:dir getattr;
+allow dumpstate mnt_vendor_vm_file:filesystem getattr;
+allow dumpstate mnt_vendor_vm_file:filesystem getattr;
 dontaudit dumpstate sysfs:file *;
 allow dumpstate debugfs_mmc:dir search;
 
