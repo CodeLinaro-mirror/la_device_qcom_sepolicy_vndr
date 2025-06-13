@@ -26,3 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 hal_client_domain(untrusted_app_29, vendor_hal_qspmhal)
+
+# allow access to ALSA MMAP FDs for AAudio API
+allow untrusted_app_29 vendor_modprobe:fd use;
+userdebug_or_eng(`
+  auditallow untrusted_app_29 vendor_modprobe:fd use;
+')
