@@ -69,3 +69,7 @@ allow vendor_avf_qcvm_manager vendor_vm_data_file:file create_file_perms;
 
 allow vendor_avf_qcvm_manager block_device:dir search;
 allow vendor_avf_qcvm_manager vendor_custom_ab_block_device:blk_file r_file_perms;
+
+allow { vendor_avf_qcvm_manager crosvm virtualizationmanager } mnt_vendor_vm_file:file rw_file_perms;
+allow { vendor_avf_qcvm_manager } mnt_vendor_vm_file:dir search;
+allow { vendor_avf_qcvm_manager } mnt_vendor_file:dir search;

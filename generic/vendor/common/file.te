@@ -305,3 +305,6 @@ type vendor_sysfs_mpam, fs_type, sysfs_type;
 until_board_api(202604, `
     type vendor_sysfs_powercap, fs_type, sysfs_type;
 ')
+
+type mnt_vendor_vm_file, file_type;
+
