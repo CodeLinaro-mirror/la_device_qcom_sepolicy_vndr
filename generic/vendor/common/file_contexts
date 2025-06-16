@@ -621,6 +621,8 @@
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,gmu/dcvs(/.*)? u:object_r:vendor_sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,gmu/dcvs_tunables(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk u:object_r:vendor_sysfs_kgsl_gpuclk:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/perfcounter u:object_r:vendor_sysfs_kgsl_shell:s0
