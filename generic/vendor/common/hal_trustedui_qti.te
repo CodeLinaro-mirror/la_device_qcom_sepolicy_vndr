@@ -85,6 +85,9 @@ allow vendor_hlosminkdaemon vendor_hal_trustedui_qti:fd use;
 get_prop(vendor_hal_trustedui_qti, vendor_vm_ssrenable_prop)
 hal_client_domain(vendor_hal_trustedui_qti, vendor_hal_qvirtservice)
 
+# Allow following permission to access AVF qvirt manager service
+hal_client_domain(vendor_hal_trustedui_qti, vendor_hal_avf_qcvm_qti)
+
 # Properties for configuring process startup
 set_prop(vendor_hal_trustedui_qti, vendor_trustedui_listener_enabled_prop)
 get_prop(vendor_hal_trustedui_qti, vendor_trustedui_listener_start_prop)
