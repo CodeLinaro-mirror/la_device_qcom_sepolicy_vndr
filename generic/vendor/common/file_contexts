@@ -240,7 +240,6 @@
 /vendor/bin/hw/vendor.qti.hardware.limits@1.2-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/qlm-service         u:object_r:vendor_qlm_service_exec:s0
 /vendor/bin/qt-service          u:object_r:vendor_qt_service_exec:s0
-/vendor/bin/sensors.qti         u:object_r:vendor_sensors_qti_exec:s0
 /vendor/bin/qsap_sensors        u:object_r:vendor_sensors_qesdk_exec:s0
 /vendor/bin/ssr_setup           u:object_r:vendor_ssr_setup_exec:s0
 /vendor/bin/ssr_diag            u:object_r:vendor_ssr_diag_exec:s0
