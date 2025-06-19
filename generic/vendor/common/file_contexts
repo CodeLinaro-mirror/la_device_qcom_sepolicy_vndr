@@ -299,6 +299,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.soc-model\.sh                               u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AMSIPC@1\.0-service          u:object_r:vendor_ams_service_qti_exec:s0
 
 /vendor/bin/routing_manager_daemon                  u:object_r:vendor_routing_manager_default_exec:s0
 ###############################################
