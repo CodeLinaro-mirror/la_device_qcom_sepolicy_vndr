@@ -39,6 +39,10 @@ get_prop(vendor_unsignedhexlpservice, boot_status_prop)
 # Allow unsigned hexlpservice to access DSP read_prop
 get_prop(vendor_unsignedhexlpservice, vendor_adsprpc_prop)
 
+# Allow unsigned hexlpservice to use fallback crash dump mechanisms in case
+# standard crash_dump execution is blocked (e.g., due to seccomp restrictions).
+crash_dump_fallback(vendor_unsignedhexlpservice);
+
 # Allow unsigned hexlpservice to access DSP hal
 hal_client_domain(vendor_unsignedhexlpservice, vendor_hal_dspmanager);
 
@@ -48,3 +52,4 @@ hal_client_domain(vendor_unsignedhexlpservice, hal_graphics_allocator);
 # Do not audit following denials as they are expected.
 dontaudit vendor_unsignedhexlpservice vendor_xdsp_device:chr_file { getattr open read map };
 dontaudit vendor_unsignedhexlpservice vendor_qdsp_device:chr_file {open};
+

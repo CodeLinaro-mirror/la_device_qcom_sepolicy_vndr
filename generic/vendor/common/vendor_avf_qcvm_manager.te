@@ -53,9 +53,7 @@ allow virtualizationmanager vendor_avf_qcvm_manager:file read;
 allow virtualizationmanager vendor_avf_qcvm_manager:lnk_file read;
 
 #Provide access to the anon node
-allow vendor_avf_qcvm_manager vendor_avf_qcvm_manager:anon_inode { create getattr };
-allow virtualizationmanager vendor_avf_qcvm_manager:anon_inode { getattr read write };
-allow crosvm vendor_avf_qcvm_manager:anon_inode { read write map };
+gunyah_cma_use(vendor_avf_qcvm_manager)
 
 #Provide read access to the CMA FD nodes
 allow vendor_avf_qcvm_manager vendor_qcvm_device:chr_file r_file_perms;
@@ -71,3 +69,7 @@ allow vendor_avf_qcvm_manager vendor_vm_data_file:file create_file_perms;
 
 allow vendor_avf_qcvm_manager block_device:dir search;
 allow vendor_avf_qcvm_manager vendor_custom_ab_block_device:blk_file r_file_perms;
+
+allow { vendor_avf_qcvm_manager crosvm virtualizationmanager } mnt_vendor_vm_file:file rw_file_perms;
+allow { vendor_avf_qcvm_manager } mnt_vendor_vm_file:dir search;
+allow { vendor_avf_qcvm_manager } mnt_vendor_file:dir search;

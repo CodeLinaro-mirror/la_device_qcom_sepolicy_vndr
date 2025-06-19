@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,34 +25,39 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# CTS test case  CtsSecurityHostTestCases#testNoBugreportDenials
-# tries to check the if there are any denials from
-# dumpstate. As per the b/131578979 discussion
-# adding dontaudit for now.
+# Policy for sensor debug daemon
 
-allow dumpstate adsprpcd_file:dir getattr;
-allow dumpstate bt_firmware_file:dir getattr;
-allow dumpstate bt_firmware_file:filesystem getattr;
-allow dumpstate firmware_file:dir getattr;
-allow dumpstate firmware_file:filesystem getattr;
-allow dumpstate vendor_vm_system_file:dir getattr;
-allow dumpstate vendor_vm_system_file:filesystem getattr;
-allow dumpstate vendor_soccp_file:dir getattr;
-allow dumpstate vendor_soccp_file:filesystem getattr;
-allow dumpstate vendor_vm_file:dir getattr;
-allow dumpstate vendor_vm_file:dir getattr;
-allow dumpstate mnt_vendor_vm_file:filesystem getattr;
-allow dumpstate mnt_vendor_vm_file:filesystem getattr;
-dontaudit dumpstate sysfs:file *;
-allow dumpstate debugfs_mmc:dir search;
+type vendor_sensors_debug, domain;
+type vendor_sensors_debug_exec, exec_type, vendor_file_type, file_type;
 
-binder_call(dumpstate, hal_light_default)
-binder_call(dumpstate, hal_power_default)
-binder_call(dumpstate, hal_dumpstate_default)
-binder_call(dumpstate, vendor_qms)
-binder_call(dumpstate, hal_bluetooth_default)
-binder_call(dumpstate, hal_uwb)
+init_daemon_domain(vendor_sensors_debug)
+get_prop(vendor_sensors_debug, vendor_sensors_prop)
+
+
+# Access to tests from userdebug/eng builds
+userdebug_or_eng(`
+  diag_use(vendor_sensors_debug)
+  get_prop(vendor_sensors_debug, vendor_sensors_dbg_prop)
+
+  #allow starting of diag_mdlog
+  allow vendor_sensors_debug vendor_qlogd_exec:file rx_file_perms;
+  allow vendor_sensors_debug vendor_shell_exec:file rx_file_perms;
+
+  allow vendor_sensors_debug vendor_sensors_vendor_data_file:dir create_dir_perms;
+  allow vendor_sensors_debug vendor_sensors_vendor_data_file:file create_file_perms;
+  allow vendor_sensors_debug vendor_sensors_vendor_data_file:fifo_file create_file_perms;
+
+  allow vendor_sensors_debug self:{ socket qipcrtr_socket } create_socket_perms;
+  # ioctlcmd=c304
+  allowxperm vendor_sensors_debug self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+  allow vendor_sensors_debug mnt_vendor_file:dir r_dir_perms;
+
+  #Allow to search SSR node directory
+  allow vendor_sensors_debug vendor_sysfs_slpi:dir search;
+  allow vendor_sensors_debug vendor_sysfs_slpi:file getattr;
+')
