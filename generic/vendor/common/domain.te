@@ -112,6 +112,7 @@ neverallow { domain
 - vendor_thermal-engine
 - vendor_dspservice
 - vendor_qvrd_vndr_cam
+userdebug_or_eng(` -vendor_nativehaltestservice')
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 } vendor_qdsp_device:chr_file *;
 neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
