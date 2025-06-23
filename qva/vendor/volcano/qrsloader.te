@@ -34,6 +34,17 @@ allow vendor_qrsloader vendor_fas_persist_data_file:dir r_dir_perms;
 # Allow read/open/getattr access to FAS.json file under /mnt/vendor/persist/data/c2c
 allow vendor_qrsloader vendor_fas_persist_data_file:file r_file_perms;
 
-
 # Allow search, write, and add_name in /dev/socket/fas directory (needed for socket creation)
 allow vendor_qrsloader vendor_fas_socket:dir { search write add_name };
+
+# Access to /dev/socket/aware directory
+allow vendor_qrsloader vendor_aware_socket:dir { search write add_name remove_name };
+
+# Create and manage socket files in that directory
+allow vendor_qrsloader vendor_aware_socket:sock_file { create write unlink };
+
+# Allow vendor_qrsloader to send data to vendor_awareagent over Unix datagram socket
+allow vendor_qrsloader vendor_awareagent:unix_dgram_socket sendto;
+
+# Allow vendor_awareagent to send data to vendor_qrsloader over Unix datagram socket
+allow vendor_awareagent vendor_qrsloader:unix_dgram_socket sendto;
