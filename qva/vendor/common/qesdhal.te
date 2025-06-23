@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Technologies, Inc. are provided under the following license:
-# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
+#Changes from Qualcomm Innovation Center are provided under the following license:
+#Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_qesdhal_default, domain;
 type vendor_hal_qesdhal_default_exec, exec_type, vendor_file_type, file_type;
@@ -37,6 +37,8 @@ init_daemon_domain(vendor_hal_qesdhal_default)
 
 hal_server_domain(vendor_hal_qesdhal_default, vendor_hal_qesdhal)
 hal_client_domain(vendor_hal_qesdhal_default, hal_allocator)
+
+allow vendor_hal_qesdhal_default vendor_qesdk_service:service_manager find;
 
 allow vendor_hal_qesdhal_default vendor_qesdsect:file read;
 allow vendor_hal_qesdhal_default vendor_qesdsect:dir search;
@@ -70,5 +72,3 @@ set_prop(vendor_hal_qesdhal_default, vendor_qesdk_mgr_prop)
 userdebug_or_eng(`
 unix_socket_connect(vendor_hal_qesdhal_default, logdr, logd);
 ')
-
-hal_client_domain(vendor_hal_qesdhal_default, vendor_framework_utils_app)
