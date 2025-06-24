@@ -38,4 +38,10 @@ allow hal_camera vendor_sysfs_ddr:file r_file_perms;
 
 allow hal_camera vendor_qdisplay_service:service_manager find;
 
+allow hal_camera_default vendor_ais_v4l2_proxy:fd use;
+allow hal_camera_default vendor_qcx_server:unix_stream_socket connectto;
+allow hal_camera_default vendor_camera_socket:file rw_file_perms;
+allow hal_camera_default vendor_camera_socket:dir { add_name remove_name write search write rw_dir_perms };
+allow hal_camera_default vendor_camera_socket:sock_file { create unlink setattr read write open w_file_perms create };
+
 use_libsoc_helper(hal_camera);

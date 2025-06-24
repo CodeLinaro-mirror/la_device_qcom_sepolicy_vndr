@@ -1,0 +1,15 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_hal_ais_qti, domain;
+
+type vendor_hal_ais_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_ais_qti)
+
+allow vendor_hal_ais_qti vendor_camera_socket:dir search;
+allow vendor_hal_ais_qti vendor_camera_socket:sock_file write;
+allow vendor_hal_ais_qti hal_graphics_allocator_default:fd use;
+allow vendor_hal_ais_qti vendor_qcx_server:unix_stream_socket connectto;
+userdebug_or_eng(`
+allow vendor_hal_ais_qti vendor_sysfs_kpi:file w_file_perms;
+')

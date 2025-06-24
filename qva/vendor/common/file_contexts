@@ -260,6 +260,13 @@
 
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:vendor_hal_audiocontrol_qti_exec:s0
 
+#qcxserver
+/(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy_qcc6                     u:object_r:vendor_ais_v4l2_proxy_exec:s0
+/dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
+/(vendor|system/vendor)/bin/qcxserver                               u:object_r:vendor_qcx_server_exec:s0
+/(vendor|system/vendor)/bin/qcarcam_rvc                             u:object_r:vendor_qcarcam_rvc_exec:s0
+
 #C2C_SERVICES
 /mnt/vendor/persist/c2c(/.*)?                   u:object_r:vendor_persist_c2c_file:s0
 /(vendor|system/vendor)/bin/c2c_hub             u:object_r:vendor_c2c_hub_exec:s0

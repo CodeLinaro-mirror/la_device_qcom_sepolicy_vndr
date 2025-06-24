@@ -150,3 +150,5 @@ type vendor_sysfs_slab_zspage_storeuser, fs_type, sysfs_type;
 type vendor_sysfs_usb_node, fs_type, sysfs_type;
 #KPI file type
 type vendor_sysfs_kpi, sysfs_type, fs_type;
+
+type vendor_camera_socket, file_type;

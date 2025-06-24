@@ -1,0 +1,56 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qcxserver service
+type vendor_qcx_server, domain;
+type vendor_qcx_server_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_qcx_server)
+
+userdebug_or_eng(`
+allow vendor_qcx_server vendor_sysfs_kpi:file w_file_perms;
+')
+hal_client_domain(vendor_qcx_server, hal_graphics_allocator)
+allow vendor_qcx_server vendor_camera_socket:sock_file create_file_perms;
+allow vendor_qcx_server vendor_camera_socket:dir rw_dir_perms;
+allow vendor_qcx_server vendor_camera_socket:file { rw_file_perms create unlink };
+set_prop(vendor_qcx_server, vendor_camera_prop)
+allow vendor_qcx_server video_device:dir rw_file_perms;
+allow vendor_qcx_server video_device:chr_file { rw_file_perms setattr};
+allow vendor_qcx_server hal_tv_input_default:unix_dgram_socket sendto;
+allow vendor_qcx_server vendor_qcarcam_rvc:unix_stream_socket connectto;
+allow vendor_qcx_server vendor_qcarcam_rvc:fd use;
+allow vendor_qcx_server self:qipcrtr_socket { read write getattr create setopt };
+allow vendor_qcx_server vendor_sysfs_ddr:file { read open };
+# gpu resources
+allow vendor_qcx_server vendor_hal_perf_hwservice:hwservice_manager find;
+allow vendor_qcx_server vendor_thermal_socket:sock_file write;
+allow vendor_qcx_server gpu_device:chr_file rw_file_perms;
+allow vendor_qcx_server graphics_device:chr_file { ioctl open read write };
+allow vendor_qcx_server ion_device:chr_file r_file_perms;
+# To create and delete singleton lock
+allow vendor_qcx_server vendor_hal_display_config_hwservice:hwservice_manager find;
+allow vendor_qcx_server vendor_camera_data_file:file { read create getattr open write };
+allow vendor_qcx_server vendor_thermal-engine:unix_stream_socket connectto;
+# To access ais_v4l2_proxy
+allow vendor_qcx_server vendor_ais_v4l2_proxy:unix_stream_socket { read write };
+allow vendor_qcx_server vendor_ais_v4l2_proxy:fd use;
+allow vendor_qcx_server self:process { setcurrent dyntransition };
+allow vendor_qcx_server vendor_sysfs_devicetree_cpu:file rw_file_perms;
+allow vendor_qcx_server hal_camera_default:unix_stream_socket connectto;
+userdebug_or_eng(`
+allow vendor_qcx_server vendor_camera_data_file:dir { add_name create getattr open write read search };
+allow vendor_qcx_server kmsg_device:chr_file rw_file_perms;
+')
+allow vendor_qcx_server hal_camera_default:fd use;
+allow vendor_qcx_server property_socket:sock_file write;
+allow vendor_qcx_server init:unix_stream_socket connectto;
+
+# Allow qcxserver to communicate with car power policy service
+allow vendor_qcx_server carpowerpolicyd_service:service_manager find;
+
+binder_call(vendor_qcx_server, servicemanager)
+binder_call(vendor_qcx_server, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_qcx_server)
+binder_call(vendor_qcx_server, vendor_hal_perf_default)
+binder_call(vendor_qcx_server, hal_graphics_composer_default)
