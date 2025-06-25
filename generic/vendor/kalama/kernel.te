@@ -24,6 +24,7 @@ allow kernel vendor_early_services:file relabelto;
 allow kernel audio_device:dir create_dir_perms;
 allow kernel audio_device:chr_file { create setattr };
 allow kernel early_chime_exec:file relabelto;
+allow kernel vendor_earlyVideo_exec:file relabelto;
 allow kernel rootfs:dir { create relabelfrom add_name write mounton };
 allow kernel vendor_early_services:dir relabelto;
 allow kernel sysfs:dir mounton;
