@@ -173,3 +173,6 @@ ro.vendor.dcf.wake_lock.                     u:object_r:vendor_dcf_prop:s0 prefi
 
 #VM Shutdown feature enable flag
 ro.vendor.vm.ssr.enable                       u:object_r:vendor_vm_ssrenable_prop:s0
+
+# Proximity/BCS Soft SKU license
+persist.vendor.qti.proximity.                u:object_r:vendor_proximity_prop:s0
