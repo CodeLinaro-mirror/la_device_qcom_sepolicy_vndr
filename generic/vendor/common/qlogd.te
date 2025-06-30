@@ -37,5 +37,11 @@ userdebug_or_eng(`
   allow vendor_qlogd vendor_radio_vendor_data_file:file create_file_perms;
   allow vendor_qlogd vendor_radio_vendor_data_file:dir create_dir_perms;
 
+  allow vendor_qlogd mnt_media_rw_file:dir search;
+  allow vendor_qlogd mnt_user_file:dir search;
+
+  allow vendor_qlogd vfat:file create_file_perms;
+  allow vendor_qlogd vfat:dir create_dir_perms;
+
   set_prop(vendor_qlogd, vendor_modem_diag_prop)
 ')
