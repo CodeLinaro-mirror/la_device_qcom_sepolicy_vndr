@@ -21,3 +21,4 @@ allow vendor_qti_hiber vendor_sysfs_ssr:file rw_file_perms;
 allow vendor_qti_hiber vendor_sysfs_power:file rw_file_perms;
 allow vendor_qti_hiber proc_drop_caches:file rw_file_perms;
 allow vendor_qti_hiber self:capability sys_admin;
+allow vendor_qti_hiber vendor_custom_ab_block_device:blk_file rw_file_perms;
