@@ -26,7 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 /dev/block/mmcblk0rpmb                                          u:object_r:vendor_rpmb_device:s0
@@ -109,11 +109,6 @@
 /sys/devices(/platform)?/soc/soc:qcom,rproc-slate/remoteproc/remoteproc[0-2]+/state                           u:object_r:vendor_sysfs_ssr:s0
 
 /dev/glinkpkt_slate_sso_hal                     u:object_r:vendor_glink_slate_sso_hal_device:s0
-
-# IIO devices for Charger & QBG
-/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm5100@0:vadc@8000/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
-/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm5100@0:qcom,qpnp-smblite/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
-/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm5100@0:qpnp,qbg@4f00/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
 
 # dev node
 /dev/gpr_channel                                u:object_r:vendor_agm_device:s0
