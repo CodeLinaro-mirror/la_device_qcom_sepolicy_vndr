@@ -1,5 +1,5 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
-#SPDX-License-Identifier: BSD-3-Clause-Clear
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 ###################################
 
@@ -24,6 +24,7 @@
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
 /dev/hab-fde                                                        u:object_r:vendor_hab_fde_device:s0
 /dev/hgsl                                                           u:object_r:gpu_device:s0
+/dev/hab-aud                                                        u:object_r:vendor_hab_aud_device:s0
 
 /vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
 
