@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_qesdsect, domain;
@@ -8,8 +8,6 @@ init_daemon_domain(vendor_qesdsect)
 
 binder_call(vendor_qesdsect, vendor_hal_qesdhal_client)
 hal_client_domain(vendor_qesdsect, hal_allocator)
-
-allow vendor_qesdsect vendor_qesdk_service:service_manager find;
 
 binder_use(vendor_qesdsect);
 
@@ -24,3 +22,5 @@ get_prop(vendor_qesdsect, boot_status_prop)
 userdebug_or_eng(`
   get_prop(vendor_qesdsect, vendor_mink_trace_prop)
 ')
+
+hal_client_domain(vendor_qesdsect, vendor_framework_utils_app)
