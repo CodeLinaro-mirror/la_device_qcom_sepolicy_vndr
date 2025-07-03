@@ -1,4 +1,7 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,20 +27,34 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-#Changes from Qualcomm Innovation Center are provided under the following license:
-#Copyright (c) Qualcomm Innovation Center, Inc. All rights reserved.
-#SPDX-License-Identifier: BSD-3-Clause-Clear
 
-allow init vendor_sysfs_graphics:file setattr;
-allow init vendor_sysfs_qvr_external_sensor:file setattr;
+#Define Domain
+type vendor_ams_service_qti, domain;
+type vendor_ams_service_qti_exec, exec_type, vendor_file_type, file_type;
 
-# allow init to mount spunvm partition
-allow init vendor_spunvm_file:dir mounton;
-allow init vendor_spunvm_file:filesystem { relabelto relabelfrom mount };
+#Make ams_service part of the same domain as hal_audio
+hal_server_domain(vendor_ams_service_qti, hal_audio)
+binder_call(vendor_ams_service_qti, hal_audio_default)
+#Allow for transition from init domain to ams_service
+init_daemon_domain(vendor_ams_service_qti)
 
-allow init nativetest_data_file:dir { getattr open read search };
-allow init nativetest_data_file:file { getattr };
+# Add hwservice related rules
+hal_attribute_hwservice(hal_audio, hal_ams_hwservice)
 
-allow init self:qipcrtr_socket {read write};
-allow init vendor_audiod:unix_stream_socket {connectto};
+#Allow access to ams device nodes
+allow vendor_ams_service_qti vendor_agm_device:chr_file rw_file_perms;
+
+#Allow qipc socket access for servreg communication
+allow vendor_ams_service_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+binder_call(vendor_ams_service_qti vendor_agmservice_qti)
+
+# Allocate DMA-BUF Heap memory
+allow vendor_ams_service_qti dmabuf_system_heap_device:chr_file rw_file_perms;
+allow vendor_ams_service_qti vendor_dmabuf_system_heap_device:chr_file rw_file_perms;
+allow vendor_ams_service_qti vendor_dmabuf_audio_ml_heap_device:chr_file rw_file_perms;
+
+userdebug_or_eng(`
+#Allow for pd_locater service access
+  get_prop(vendor_ams_service_qti, vendor_pd_locater_dbg_prop)
+  allow vendor_ams_service_qti vendor_sysfs_kpi:file w_file_perms;
+')

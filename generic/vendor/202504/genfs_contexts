@@ -1,0 +1,7 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+until_board_api(202504, `
+     genfscon sysfs /power/mem_sleep u:object_r:vendor_sysfs_suspend:s0
+')
+
