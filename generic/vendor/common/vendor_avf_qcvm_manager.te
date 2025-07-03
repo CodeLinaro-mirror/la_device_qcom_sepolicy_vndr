@@ -4,6 +4,7 @@
 # Policy for vendor_avf_qcvm_manager
 type vendor_avf_qcvm_manager, domain;
 type vendor_avf_qcvm_manager_exec, vendor_file_type, exec_type, file_type;
+type vendor_avf_qcvm_manager_tmpfs, file_type;
 
 # Define avf qcvm manager as a daemon managed by init in the vendor partition
 init_daemon_domain(vendor_avf_qcvm_manager);
@@ -70,6 +71,14 @@ allow vendor_avf_qcvm_manager vendor_vm_data_file:file create_file_perms;
 allow vendor_avf_qcvm_manager block_device:dir search;
 allow vendor_avf_qcvm_manager vendor_custom_ab_block_device:blk_file r_file_perms;
 
-allow { vendor_avf_qcvm_manager crosvm virtualizationmanager } mnt_vendor_vm_file:file rw_file_perms;
+# Allow vendor_avf_qcvm_manager to inspect all hypervisor capabilities
+# and enable as an early virtmgr
+early_virtmgr_use(vendor_avf_qcvm_manager)
+
+allow { vendor_avf_qcvm_manager crosvm virtualizationmanager early_virtmgr } mnt_vendor_vm_file:file rw_file_perms;
 allow { vendor_avf_qcvm_manager } mnt_vendor_vm_file:dir search;
 allow { vendor_avf_qcvm_manager } mnt_vendor_file:dir search;
+
+# provide vsock_socket perms to vendor_avf_qcvm_manager
+typeattribute vendor_avf_qcvm_manager unconstrained_vsock_violators;
+allow vendor_avf_qcvm_manager self:vsock_socket { connect create bind accept read write listen setopt };

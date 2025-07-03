@@ -89,6 +89,7 @@ allow vendor_hal_perf {
      vendor_sysfs_battery_supply
      vendor_sysfs_process_reclaim
      vendor_sysfs_qfprom
+     vendor_sysfs_fdcvs
 }:dir r_dir_perms;
 
 allow vendor_hal_perf {
@@ -112,6 +113,7 @@ allow vendor_hal_perf {
      vendor_sysfs_qfprom
      vendor_sysfs_kgsl_proc
      sysfs_dm
+     vendor_sysfs_fdcvs
 }:file rw_file_perms;
 
 allow vendor_hal_perf {

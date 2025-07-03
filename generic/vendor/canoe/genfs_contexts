@@ -252,14 +252,6 @@ genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/wakeup u:object_r:s
 genfscon sysfs /devices/platform/soc/894000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup24 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-adsp/wakeup24 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-cdsp/wakeup24 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-sdsp/wakeup24 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup25 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-adsp-secure/wakeup25 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-cdsp-secure/wakeup25 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-sdsp-secure/wakeup25 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi_110e_00.01.00/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
@@ -283,30 +275,18 @@ genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wake
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-kiwi/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/99f00000.remoteproc-wpss/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/17010040.qcom,wcn7750/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-adsp/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-sdsp/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-adsp-secure/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-cdsp-secure/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/fastrpc-sdsp-secure/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc0/3000000.remoteproc-adsp:glink-edge/3000000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc1/3000000.remoteproc-adsp:glink-edge/3000000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:rtc@6100/rtc/rtc0/alarmtimer.1.auto/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-peach/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup35 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup36 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup38 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup37 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup38 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup40 u:object_r:sysfs_wakeup:s0
+
+# Fastrpc device wakeup nodes
+genfscon sysfs /devices/virtual/misc/fastrpc-nsp1000/wakeup45 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-lpass2000/wakeup47 u:object_r:sysfs_wakeup:s0
 
 # sys net
 genfscon sysfs /devices/platform/soc/17010040.qcom,wcn7750/net/ u:object_r:sysfs_net:s0
 
 #fdcvs nodes
-genfscon sysfs /devices/platform/soc/soc:qcom,fdcvs/profile_enable u:object_r:vendor_sysfs_fdcvs:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,fdcvs/profile_index u:object_r:vendor_sysfs_fdcvs:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,fdcvs/start_tuning u:object_r:vendor_sysfs_fdcvs:s0

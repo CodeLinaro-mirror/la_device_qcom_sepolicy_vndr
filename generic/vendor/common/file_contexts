@@ -240,7 +240,6 @@
 /vendor/bin/hw/vendor.qti.hardware.limits@1.2-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/qlm-service         u:object_r:vendor_qlm_service_exec:s0
 /vendor/bin/qt-service          u:object_r:vendor_qt_service_exec:s0
-/vendor/bin/sensors.qti         u:object_r:vendor_sensors_qti_exec:s0
 /vendor/bin/qsap_sensors        u:object_r:vendor_sensors_qesdk_exec:s0
 /vendor/bin/ssr_setup           u:object_r:vendor_ssr_setup_exec:s0
 /vendor/bin/ssr_diag            u:object_r:vendor_ssr_diag_exec:s0
@@ -621,6 +620,8 @@
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/devfreq/[a-f0-9]+.qcom,kgsl-3d0(/.*)? u:object_r:vendor_sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,gmu/dcvs(/.*)? u:object_r:vendor_sysfs_kgsl:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,gmu/dcvs_tunables(/.*)? u:object_r:vendor_sysfs_kgsl:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk u:object_r:vendor_sysfs_kgsl_gpuclk:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,kgsl-3d0/kgsl/kgsl-3d0/perfcounter u:object_r:vendor_sysfs_kgsl_shell:s0
@@ -724,6 +725,7 @@
 
 # AVF QCVM Manager
 /vendor/bin/avf_qcvm_manager_rs                                            u:object_r:vendor_avf_qcvm_manager_exec:s0
+/vendor/bin/avf_qcvm_manager                                            u:object_r:vendor_avf_qcvm_manager_exec:s0
 
 # VM file type management for persist
 /mnt/product/vm-persist(/.*)?                                              u:object_r:mnt_vendor_vm_file:s0

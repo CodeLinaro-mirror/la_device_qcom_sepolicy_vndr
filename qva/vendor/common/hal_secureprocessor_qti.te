@@ -65,5 +65,8 @@ allow vendor_hlosminkdaemon vendor_hal_secureprocessor_qti:fd use;
 get_prop(vendor_hal_secureprocessor_qti, vendor_vm_ssrenable_prop)
 hal_client_domain(vendor_hal_secureprocessor_qti, vendor_hal_qvirtservice)
 
+# Allow following permission to access AVF qvirt manager service
+hal_client_domain(vendor_hal_secureprocessor_qti, vendor_hal_avf_qcvm_qti)
+
 # Properties for configuring process startup
 get_prop(vendor_hal_secureprocessor_qti, vendor_secureprocessor_start_prop)
