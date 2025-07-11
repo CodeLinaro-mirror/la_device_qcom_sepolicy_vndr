@@ -725,7 +725,6 @@
 /vendor/bin/hw/android\.hardware\.powerstats-service.qti                   u:object_r:hal_power_stats_default_exec:s0
 
 # AVF QCVM Manager
-/vendor/bin/avf_qcvm_manager_rs                                            u:object_r:vendor_avf_qcvm_manager_exec:s0
 /vendor/bin/avf_qcvm_manager                                            u:object_r:vendor_avf_qcvm_manager_exec:s0
 
 # VM file type management for persist
