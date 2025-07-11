@@ -3,5 +3,5 @@
 
 #============= vendor_aidl_camera_provider_qti ==============
 allow vendor_aidl_camera_provider_qti vendor_hab_cam_device:chr_file { ioctl map open read write };
-allow vendor_aidl_camera_provider_qti vendor_dmabuf_system_heap_device:chr_file read;
+allow vendor_aidl_camera_provider_qti vendor_dmabuf_system_heap_device:chr_file { ioctl open read };
 allow vendor_aidl_camera_provider_qti vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
