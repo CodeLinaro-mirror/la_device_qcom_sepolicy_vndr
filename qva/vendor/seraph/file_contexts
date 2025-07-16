@@ -39,6 +39,7 @@
 
 # calib partition
 /mnt/vendor/calib(/.*)?               u:object_r:vendor_calib_file:s0
-# mink socket 
+# mink socket
 /dev/socket/hlos_mink_opener                    u:object_r:vendor_hlos_minkd_opener_socket:s0
 /(vendor|system/vendor)/bin/hlosminkdaemon      u:object_r:vendor_hlosminkdaemon_exec:s0
+/vendor/bin/vendor\.qti\.qvirtvendor-service    u:object_r:vendor_hal_qvirtvendor_default_exec:s0
