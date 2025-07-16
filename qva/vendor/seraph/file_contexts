@@ -53,3 +53,6 @@
 
 # hibernation resume device
 /sys/power/resume u:object_r:vendor_sysfs_hib_resume_device:s0
+
+#healthd properties
+persist.vendor.hal_health.                   u:object_r:vendor_hal_health_prop:s0
