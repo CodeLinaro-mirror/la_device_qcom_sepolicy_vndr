@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 ###################################
 # Dev block nodes
@@ -284,3 +284,13 @@
 
 # Dev node for rpmb
 /dev/mmcblk0rpmb                u:object_r:vendor_rpmb_device:s0
+
+/(vendor|system/vendor)/bin/FAS        u:object_r:vendor_fas_exec:s0
+/(vendor|system/vendor)/bin/c2c_hub        u:object_r:vendor_c2c_hub_exec:s0
+/(vendor|system/vendor)/bin/dm        u:object_r:vendor_dm_exec:s0
+/(vendor|system/vendor)/bin/mosquitto        u:object_r:vendor_mosquitto_exec:s0
+
+/mnt/vendor/persist/data/c2c(/.*)?    u:object_r:vendor_fas_persist_data_file:s0
+
+#fas sockets
+/dev/socket/fas(/.*)?       u:object_r:vendor_fas_socket:s0
