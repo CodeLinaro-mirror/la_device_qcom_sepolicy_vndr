@@ -100,6 +100,9 @@ vendor.netflix.bsp_rev                       u:object_r:vendor_video_prop:s0
 #mm-camera
 vendor.ais.v4l2.proxy.ready                  u:object_r:vendor_camera_prop:s0
 
+#mm-camera
+vendor.evs.hal.ready                         u:object_r:vendor_camera_prop:s0
+
 # factory properties
 ctl.vendor.mmid                              u:object_r:vendor_ctl_vendor_mmid_prop:s0
 
