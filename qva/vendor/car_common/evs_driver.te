@@ -92,3 +92,7 @@ allow vendor_hal_evs_driver fwk_automotive_display_hwservice:hwservice_manager f
 allow vendor_hal_evs_driver vendor_sysfs_kpi:file w_file_perms;
 
 allow vendor_hal_evs_driver vendor_early_services:dir search;
+
+#setprop
+set_prop(vendor_hal_evs_driver, vendor_camera_prop)
+
