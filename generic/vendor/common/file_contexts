@@ -479,6 +479,9 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:vendor_sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+/host0/scsi_host/host0(/.*)?  u:object_r:vendor_sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/host0/target0:0:0/0:0:0:[0-9]+/scsi_generic(/.*)?     u:object_r:vendor_sysfs_scsi_target:s0
+
+/sys/devices(/platform)?/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes  u:object_r:vendor_sysfs_sda_block:s0
+
 /data/vendor/media(/.*)?                                            u:object_r:vendor_media_data_file:s0
 /data/vendor/mediadrm(/.*)?                                         u:object_r:vendor_mediadrm_vendor_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:vendor_hal_neuralnetworks_data_file:s0

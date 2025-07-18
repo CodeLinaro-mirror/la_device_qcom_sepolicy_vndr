@@ -88,6 +88,7 @@ type vendor_sysfs_soc, sysfs_type, fs_type;
 type vendor_sysfs_public, sysfs_type, fs_type;
 type vendor_sysfs_scsi_host, fs_type, sysfs_type;
 type vendor_sysfs_scsi_target, fs_type, sysfs_type;
+type vendor_sysfs_sda_block, fs_type, sysfs_type;
 type vendor_sysfs_slpi, fs_type, sysfs_type;
 type vendor_sysfs_spmi_dev, sysfs_type, fs_type;
 type vendor_sysfs_ssr, sysfs_type, fs_type;
@@ -257,3 +258,4 @@ type vendor_early_services, file_type;
 type vendor_earlyinit_test_exec, exec_type, file_type, vendor_file_type;
 
 type vendor_system_cpu, fs_type, sysfs_type;
+type vendor_sysfs_pinctrl, fs_type, sysfs_type;

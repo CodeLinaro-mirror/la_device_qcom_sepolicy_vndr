@@ -27,7 +27,7 @@
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
 #
-# Copyright (c) 2021 - 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2021 - 2022, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -83,6 +83,7 @@
 /dev/qg                               u:object_r:vendor_qg_device:s0
 /dev/qg_battery                       u:object_r:vendor_qg_device:s0
 /dev/qvr_external_sensor_ioctl        u:object_r:vendor_qvr_external_sensor_device:s0
+/dev/smcinvoke                        u:object_r:vendor_smcinvoke_device:s0
 ###################################
 # Dev socket nodes
 #
