@@ -8,7 +8,7 @@ app_domain(qticarpower_app)
 allow qticarpower_app { activity_service }:service_manager find;
 allow qticarpower_app system_app_data_file:dir create_dir_perms;
 allow qticarpower_app system_app_data_file:file create_file_perms;
-
+allow qticarpower_app { content_capture_service netstats_service game_service virtual_device_service carservice_service }:service_manager find;
 # Grant usb node access
 allow qticarpower_app vendor_sysfs_usb_device:file rw_file_perms;
 allow qticarpower_app vendor_sysfs_usb_node:file rw_file_perms;
