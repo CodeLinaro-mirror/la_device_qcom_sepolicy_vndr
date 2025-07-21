@@ -225,3 +225,11 @@ allow vendor_qms vendor_ipaevents_device:chr_file r_file_perms;
 
 #Allow QMS to read restart level property
 allow vendor_qms vendor_ssr_prop:file { getattr map open read };
+
+#Microdump permissions
+allow vendor_qms vendor_sysfs_devicetree_soc:dir {search};
+allow vendor_qms vendor_sysfs_devicetree_soc:file {read open getattr};
+allow vendor_qms self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow vendor_qms vendor_sysfs_devcd:file rw_file_perms;
+allow vendor_qms vendor_sysfs_microdump:file rw_file_perms;
+dontaudit vendor_qms sysfs:file getattr;

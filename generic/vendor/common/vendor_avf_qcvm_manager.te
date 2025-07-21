@@ -80,5 +80,10 @@ allow { vendor_avf_qcvm_manager } mnt_vendor_vm_file:dir search;
 allow { vendor_avf_qcvm_manager } mnt_vendor_file:dir search;
 
 # provide vsock_socket perms to vendor_avf_qcvm_manager
+starting_at_board_api(202504, `
 typeattribute vendor_avf_qcvm_manager unconstrained_vsock_violators;
+')
 allow vendor_avf_qcvm_manager self:vsock_socket { connect create bind accept read write listen setopt };
+
+# Allow vendor_avf_qcvm_manager to talk to the HLOS Mink Daemon
+unix_socket_connect(vendor_avf_qcvm_manager,vendor_hlos_minkd_opener,vendor_hlosminkdaemon)

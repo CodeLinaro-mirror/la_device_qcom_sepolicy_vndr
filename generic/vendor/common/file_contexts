@@ -1,5 +1,4 @@
 # Copyright (c) 2018-2021, The Linux Foundation. All rights reserved.
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,8 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Innovation Center are provided under the following license:
-#
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -528,6 +526,7 @@
 
 /(vendor|system/vendor)/bin/sscrpcd                                 u:object_r:vendor_sensors_exec:s0
 /(vendor|system/vendor)/bin/lowirpcd                                u:object_r:vendor_lowirpcd_service_exec:s0
+/(vendor|system/vendor)/bin/sensors.qti                             u:object_r:vendor_sensors_exec:s0
 
 # vendor_sysfs_graphics
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:vendor_sysfs_graphics:s0
@@ -602,6 +601,7 @@
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,vidc/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,cci/[a-f0-9]+.qcom,cci:qcom,camera@[0-2]/video4linux/video[0-33]/name(/.*)?   u:object_r:vendor_sysfs_graphics:s0
 
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc1/mmc1:[a-f0-9]+/power/autosuspend_delay_ms u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc0/clk_scaling(/.*)? u:object_r:vendor_sysfs_mmc_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/clkscale_enable        u:object_r:vendor_sysfs_scsi_host:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/auto_hibern8           u:object_r:vendor_sysfs_scsi_host:s0
@@ -724,7 +724,6 @@
 /vendor/bin/hw/android\.hardware\.powerstats-service.qti                   u:object_r:hal_power_stats_default_exec:s0
 
 # AVF QCVM Manager
-/vendor/bin/avf_qcvm_manager_rs                                            u:object_r:vendor_avf_qcvm_manager_exec:s0
 /vendor/bin/avf_qcvm_manager                                            u:object_r:vendor_avf_qcvm_manager_exec:s0
 
 # VM file type management for persist
