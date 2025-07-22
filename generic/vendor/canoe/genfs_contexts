@@ -284,6 +284,8 @@ genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-peach/wakeup u:object_r:
 # Fastrpc device wakeup nodes
 genfscon sysfs /devices/virtual/misc/fastrpc-nsp1000/wakeup45 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-lpass2000/wakeup47 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-nsp1000/wakeup48 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-lpass2000/wakeup50 u:object_r:sysfs_wakeup:s0
 
 # sys net
 genfscon sysfs /devices/platform/soc/17010040.qcom,wcn7750/net/ u:object_r:sysfs_net:s0
