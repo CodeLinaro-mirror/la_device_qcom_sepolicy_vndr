@@ -45,4 +45,7 @@ userdebug_or_eng(`
   allow qtidiagservices_app system_app_data_file: dir create_dir_perms;
   allow qtidiagservices_app system_app_data_file: file create_file_perms;
   allow qtidiagservices_app system_data_file:dir search;
+
+  #dontaudit for U upgrade since AServiceManager_isDeclared internally does find
+  dontaudit qtidiagservices_app default_android_service:service_manager find;
 ')
