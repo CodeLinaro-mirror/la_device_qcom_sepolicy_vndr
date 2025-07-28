@@ -109,6 +109,7 @@ neverallow { domain
 - vendor_qvrd_vndr
 - vendor_thermal-engine
 - vendor_dspservice
+- vendor_hexlpservice
 - vendor_unsignedhexlpservice
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 } vendor_qdsp_device:chr_file *;
