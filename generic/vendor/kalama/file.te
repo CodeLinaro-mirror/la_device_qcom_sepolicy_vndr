@@ -35,3 +35,14 @@ type vendor_sysfs_guestvm, fs_type, sysfs_type;;
 
 # EarlyServices
 type vendor_early_services, file_type;
+
+#camera file
+type vendor_camera_socket, file_type;
+
+#KPI file type
+type vendor_sysfs_kpi, sysfs_type, fs_type;
+
+
+#GSI
+type vendor_gsi_data_file, file_type, data_file_type;
+type vendor_sys_kernel_bgsi, fs_type, sysfs_type;

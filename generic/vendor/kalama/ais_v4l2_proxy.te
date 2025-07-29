@@ -1,0 +1,26 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+
+# vendor_ais_v4l2_proxy service
+type vendor_ais_v4l2_proxy, domain;
+type vendor_ais_v4l2_proxy_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_ais_v4l2_proxy)
+
+userdebug_or_eng(`
+allow vendor_ais_v4l2_proxy su:unix_dgram_socket sendto;
+')
+hal_client_domain(vendor_ais_v4l2_proxy, hal_graphics_allocator)
+set_prop(vendor_ais_v4l2_proxy, vendor_camera_prop)
+allow vendor_ais_v4l2_proxy video_device:chr_file rw_file_perms;
+allow vendor_ais_v4l2_proxy ion_device:chr_file r_file_perms;
+allow vendor_ais_v4l2_proxy audio_device:chr_file { rw_file_perms };
+allow vendor_ais_v4l2_proxy vendor_camera_socket:dir search;
+allow vendor_ais_v4l2_proxy vendor_camera_socket:sock_file create_file_perms;
+allow vendor_ais_v4l2_proxy vendor_ais_server:unix_stream_socket connectto;
+allow vendor_ais_v4l2_proxy vendor_sysfs_kpi:file w_file_perms;
+allow vendor_ais_v4l2_proxy kmsg_device:chr_file write;
+allow vendor_ais_v4l2_proxy socket_device:sock_file write;
+
+

@@ -1,7 +1,53 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# ais_server service
-#allow vendor_ais_server vendor_early_services:dir r_dir_perms;
-#allow vendor_ais_server vendor_early_services:file r_file_perms;
-#allow vendor_camera_socket device:filesystem associate;
+type vendor_ais_server, domain;
+type vendor_ais_server_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_ais_server)
+
+userdebug_or_eng(`
+allow vendor_ais_server su:unix_dgram_socket sendto;
+')
+hal_client_domain(vendor_ais_server, hal_graphics_allocator)
+allow vendor_ais_server vendor_camera_socket:dir rw_dir_perms;
+allow vendor_ais_server vendor_camera_socket:file r_file_perms;
+allow vendor_ais_server vendor_camera_socket:sock_file create_file_perms;
+allow vendor_ais_server video_device:chr_file rw_file_perms;
+allow vendor_ais_server hal_tv_input_default:unix_dgram_socket sendto;
+allow vendor_ais_server self:qipcrtr_socket create;
+# gpu resources
+allow vendor_ais_server gpu_device:chr_file rw_file_perms;
+allow vendor_ais_server graphics_device:chr_file { ioctl open read write };
+allow vendor_ais_server ion_device:chr_file r_file_perms;
+# To create and delete singleton lock
+allow vendor_ais_server vendor_camera_socket:file create;
+allow vendor_ais_server vendor_camera_socket:file unlink;
+allow vendor_ais_server vendor_sysfs_kpi:file w_file_perms;
+# To access ais_v4l2_proxy
+allow vendor_ais_server vendor_ais_v4l2_proxy:unix_stream_socket { read write };
+allow vendor_ais_server vendor_ais_v4l2_proxy:fd use;
+allow vendor_ais_server self:qipcrtr_socket create;
+allow vendor_ais_server vendor_sysfs_camera:dir search;
+
+allow vendor_ais_server socket_device:dir write;
+allow vendor_ais_server socket_device:dir add_name;
+allow vendor_ais_server socket_device:file create;
+allow vendor_ais_server socket_device:dir remove_name;
+allow vendor_ais_server socket_device:file unlink;
+allow vendor_ais_server socket_device:sock_file create;
+
+
+
+allow vendor_ais_server vendor_early_services:dir r_dir_perms;
+allow vendor_ais_server vendor_early_services:file r_file_perms;
+allow vendor_ais_server device:dir r_dir_perms;
+allow vendor_ais_server device:file r_file_perms;
+allow vendor_ais_server kmsg_device:chr_file rw_file_perms;
+get_prop(vendor_ais_server, build_vendor_prop)
+allow vendor_ais_server vendor_gsi_data_file:dir r_dir_perms;
+allow vendor_ais_server vendor_sys_kernel_bgsi:dir r_dir_perms;
+allow vendor_ais_server vendor_sys_kernel_bgsi:file rw_file_perms;
+
+allow vendor_ais_server aac_drc_prop:file { getattr map open };
+allow vendor_ais_server ab_update_gki_prop:file { getattr open };
