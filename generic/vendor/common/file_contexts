@@ -700,6 +700,7 @@
 /sys/devices/platform/hypervisor/hypervisor:qcom,resource-manager-rpc@[0-9a-f]+/wakeup   u:object_r:sysfs_wakeup:s0
 
 # Fastrpc sysfs files for various dsp attributes
+/sys/kernel/fastrpc/nsp[0-9]+/pids_remote_sessions                          u:object_r:vendor_sysfs_npu_pids_remote_sessions:s0
 /sys/kernel/fastrpc/nsp[0-9]+/name                                         u:object_r:vendor_sysfs_public:s0
 /sys/kernel/fastrpc/nsp[0-9]+/domain_id                                    u:object_r:vendor_sysfs_public:s0
 /sys/kernel/fastrpc/nsp[0-9]+/type                                         u:object_r:vendor_sysfs_public:s0
@@ -708,6 +709,7 @@
 /sys/kernel/fastrpc/nsp[0-9]+/legacy_name                                  u:object_r:vendor_sysfs_public:s0
 /sys/kernel/fastrpc/nsp[0-9]+/legacy_id                                    u:object_r:vendor_sysfs_public:s0
 
+/sys/kernel/fastrpc/lpass[0-9]+/pids_remote_sessions                          u:object_r:vendor_sysfs_npu_pids_remote_sessions:s0
 /sys/kernel/fastrpc/lpass[0-9]+/name                                         u:object_r:vendor_sysfs_public:s0
 /sys/kernel/fastrpc/lpass[0-9]+/domain_id                                    u:object_r:vendor_sysfs_public:s0
 /sys/kernel/fastrpc/lpass[0-9]+/type                                         u:object_r:vendor_sysfs_public:s0
