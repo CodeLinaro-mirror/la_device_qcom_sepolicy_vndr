@@ -73,4 +73,5 @@
 
 # Aware Agent
 /vendor/bin/aware_agent    u:object_r:vendor_awareagent_exec:s0
+/vendor/bin/aware_platform_service    u:object_r:vendor_aware_platform_service_exec:s0
 
