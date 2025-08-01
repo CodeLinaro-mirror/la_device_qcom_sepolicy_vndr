@@ -62,7 +62,10 @@
 ###################################
 # Dev block nodes
 /dev/mmcblk0rpmb                                          u:object_r:vendor_rpmb_device:s0
-/dev/block/mmcblk0p46                                                u:object_r:vendor_rpmb_device:s0
+
+#Block device for hal_bootctl
+/dev/block/mmcblk0                                                  u:object_r:root_block_device:s0
+
 # UFS Devices
 /dev/block/platform/soc/1d84000.ufshc/by-name/system                u:object_r:system_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/vendor                u:object_r:system_block_device:s0
@@ -183,6 +186,26 @@
 /dev/block/platform/soc/b24000.sdhci/by-name/featenabler_[ab]  u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/b24000.sdhci/by-name/core_nhlos_[ab]   u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/b24000.sdhci/by-name/vbmeta_system_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/pvmfw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/cpucp_[ab]            u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/cpucp_dtb_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/multiimgqti_[ab]      u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/persist               u:object_r:vendor_persist_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/qweslicstore_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/shrm_[ab]             u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/vm-bootsys_[ab]       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/uefi_[ab]             u:object_r:vendor_uefi_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/aop_config_[ab]       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/xbl_ramdump_[ab]      u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/init_boot_[ab]        u:object_r:boot_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/ipafw_[ab]          u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/soccp_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/soccp_dtb_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/soccp_debug_[ab]      u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/soccp_dcd_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/dcp_[ab]           u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/dcp_dtb_[ab]           u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/hyp_ac_config_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 
 #non A/B
 /dev/block/platform/soc/b24000.sdhci/by-name/system                            u:object_r:system_block_device:s0
@@ -198,6 +221,7 @@
 /dev/block/platform/soc/b24000.sdhci/by-name/misc                               u:object_r:misc_block_device:s0
 /dev/block/platform/soc/b24000.sdhci/by-name/rpm                                u:object_r:vendor_rpmb_device:s0
 /dev/block/platform/soc/b24000.sdhci/by-name/frp                                u:object_r:frp_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/super                              u:object_r:super_block_device:s0
 /sys/devices/platform/soc/b24000.sdhci/mmc_host/mmc0/mmc0:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                       u:object_r:vendor_gpt_block_device:s0
@@ -215,6 +239,10 @@
 # limits Partitions
 /dev/block/platform/soc/4804000.ufshc/by-name/limits                u:object_r:vendor_limits_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/limits-cdsp           u:object_r:vendor_limits_block_device:s0
+
+# limits Partitions
+/dev/block/platform/soc/b24000.sdhci/by-name/limits                u:object_r:vendor_limits_block_device:s0
+/dev/block/platform/soc/b24000.sdhci/by-name/limits-cdsp           u:object_r:vendor_limits_block_device:s0
 
 # hypervisor node
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
@@ -257,7 +285,7 @@
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-2/enabled u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-Virtual-1/enabled u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/a800000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/platform/soc/9800000.qcom,mdss_mdp/backlight(/.*)?     u:object_r:vendor_sysfs_graphics:s0
 
 #poweropt-service
 /(vendor|system/vendor)/bin/poweropt-service u:object_r:vendor_hal_poweroptservice_qti_exec:s0

@@ -5,6 +5,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm-service\.playready-qti       u:object_r:vendor_hal_drm_playready_aidl_qti_exec:s0
 
+
 ###################################
 #Dev nodes
 #
