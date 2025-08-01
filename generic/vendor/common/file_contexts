@@ -156,6 +156,7 @@
 /dev/ttyHS0                                     u:object_r:hci_attach_dev:s0
 /dev/bt_cp_ctrl                                 u:object_r:hci_attach_dev:s0
 /dev/btfmcodec_dev                              u:object_r:hci_attach_dev:s0
+/dev/btspi                                      u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:vendor_wlan_device:s0
 /dev/txpb                                       u:object_r:vendor_txpb_device:s0
 /dev/socket/qmux_radio(/.*)?                    u:object_r:vendor_qmuxd_socket:s0
