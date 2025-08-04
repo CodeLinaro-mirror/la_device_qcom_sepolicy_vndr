@@ -104,6 +104,7 @@
 /dev/gptp_shm                                   u:object_r:vendor_vnw_device:s0
 /dev/ptpshm                                     u:object_r:vendor_ipa_dev:s0
 /dev/sctptpshm                                  u:object_r:vendor_ipa_dev:s0
+/dev/socket/gptp_socket                         u:object_r:vendor_gptp_socket:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:vendor_chre_socket:s0
