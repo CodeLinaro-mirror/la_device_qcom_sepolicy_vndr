@@ -39,6 +39,7 @@ init_daemon_domain(vendor_hal_keymint_strongbox)
 binder_call(vendor_hal_keymint_strongbox, secure_element);
 
 get_prop(vendor_hal_keymint_strongbox, vendor_security_patch_level_prop);
+get_prop(vendor_hal_keymint_strongbox, vendor_default_prop);
 
 # selinux rules for direct communication with ese hal
 hal_client_domain(vendor_hal_keymint_strongbox, hal_secure_element)
