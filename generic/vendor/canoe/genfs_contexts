@@ -153,8 +153,10 @@ genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pm
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pmk8850@0:rtc@6100/rtc/rtc0/alarmtimer.2.auto/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pmk8850@0:pon_hlos@1300/c426000.spmi:pmk8850@0:pon_hlos@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:pmk8850@0:pon_hlos@1300/c426000.spmi:pmk8850@0:pon_hlos@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:qcom,pmk8550@0:rtc@6100/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:qcom,pmk8550@0:rtc@6100/rtc/rtc0/alarmtimer.2.auto/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:qcom,pmk8550@0:pon_hlos@1300/c426000.spmi:qcom,pmk8550@0:pon_hlos@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:qcom,pmk8550@0:pon_hlos@1300/c426000.spmi:pmk8550@0:pon_hlos@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c400000.arbiter/spmi-0/0-00/c426000.spmi:qcom,pmk8550@0:pon_hlos@1300/c426000.spmi:qcom,pmk8550@0:pon_hlos@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:pmic-glink/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:pmic-glink-log/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/wakeup u:object_r:sysfs_wakeup:s0
