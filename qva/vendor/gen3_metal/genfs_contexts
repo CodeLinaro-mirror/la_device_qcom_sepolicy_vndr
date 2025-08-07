@@ -38,5 +38,8 @@ genfscon sysfs /devices/platform/soc/4080000.remoteproc-modem/remoteproc/remotep
 #DRV
 genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc7/regulator-pm8150-2-l7/phandle u:object_r:vendor_sysfs_drv:s0
 genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc8/compatible                    u:object_r:vendor_sysfs_drv:s0
-
+genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc5/regulator-pm8150-2-l5/name    u:object_r:vendor_sysfs_drv:s0
+genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-smpa4                               u:object_r:vendor_sysfs_drv:s0
+genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoa3/regulator-pm8150-1-l3/phandle u:object_r:vendor_sysfs_drv:s0
+genfscon sysfs /firmware/devicetree/base/soc/rsc@18200000/drv@2/rpmh-regulator-ldoc12/compatible                   u:object_r:vendor_sysfs_drv:s0
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes u:object_r:vendor_sysfs_graphics:s0

@@ -77,3 +77,5 @@ allow tee vendor_gpt_block_device:blk_file r_file_perms;
 
 allow tee boot_block_device:blk_file { open read };
 allow tee vendor_xbl_block_device:blk_file { open read };
+
+allow tee vendor_sysfs_drv:chr_file rw_file_perms;
