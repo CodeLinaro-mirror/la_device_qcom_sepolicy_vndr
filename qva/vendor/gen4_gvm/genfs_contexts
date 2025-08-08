@@ -6,4 +6,35 @@ genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio29/net u:object
 genfscon sysfs /devices/platform/soc/23049000.qcom,ethernet/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/23000000.qcom,ethernet/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio28/net u:object_r:sysfs_net:s0
 
+# Update genfs context with new USB XHCI path
+dnl # $1 = soc prefix
+dnl # $2 = combined soc and usb type (e.g., a600000.ssusb)
+dnl # $3 = for controller dwc3
+dnl # $4 = xhci-hcd number (decimal)
+pushdef(`cf_usb_genfscon', `dnl
+genfscon sysfs $1/$2/$3.dwc3/xhci-hcd.$4.auto/usb u:object_r:vendor_sysfs_usb_node:s0
+')dnl
+
+cf_usb_genfscon(`/devices/platform/soc', `a600000.ssusb', `a600000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a600000.ssusb', `a600000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a600000.ssusb', `a600000', `3')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `2')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.ssusb', `a800000', `3')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `2')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a800000.hsusb', `a800000', `3')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `2')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a4f8800.ssusb', `a400000', `3')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a400000.hsusb', `a400000', `0')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a400000.hsusb', `a400000', `1')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a400000.hsusb', `a400000', `2')dnl
+cf_usb_genfscon(`/devices/platform/soc', `a400000.hsusb', `a400000', `3')dnl
+
+popdef(`cf_usb_genfscon')dnl

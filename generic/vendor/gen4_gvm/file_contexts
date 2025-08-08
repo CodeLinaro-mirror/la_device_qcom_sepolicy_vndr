@@ -104,3 +104,5 @@
 /sys/devices/platform/soc:qcom,sde-cfg:qcom,sde-sub-cfg@([0-1]):qcom,sde_kms_hyp@[a-f0-9]+/drm/card[0-9]+/card[0-9]+-DSI-1/status                u:object_r:vendor_sysfs_graphics:s0
 
 /sys/devices/platform/soc/a400000.hsusb/a400000.dwc3/xhci-hcd.1.auto/usb[0-9]+/(.*)/(.*)/0003:0EEF:C000.0001/country                             u:object_r:vendor_sysfs_country:s0
+
+/dev/block/platform/vdevs/1c330000.virtio_blk/swap              u:object_r:vendor_custom_ab_block_device:s0
