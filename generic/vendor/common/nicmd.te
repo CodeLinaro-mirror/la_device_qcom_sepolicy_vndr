@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -102,5 +102,4 @@ use_shsusrd_socket(vendor_nicmd)
 # Allow nicmd to use the connectivity_native library
 get_prop(vendor_nicmd, boot_status_prop)
 allow vendor_nicmd connectivity_native_service:service_manager find;
-binder_call(vendor_nicmd, connectivity_native_service)
 binder_call(vendor_nicmd, system_server)
