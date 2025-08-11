@@ -42,3 +42,8 @@ allow { vendor_calib_file }self:filesystem associate;
 
 #hlos mink daemon socket
 type vendor_hlos_minkd_opener_socket, file_type, mlstrustedobject;
+
+#suspend/hibernate files
+type vendor_sysfs_mem_sleep, fs_type, sysfs_type;
+type vendor_sysfs_power_disk, sysfs_type, fs_type;
+type vendor_sysfs_cpu_sleep_disabled, sysfs_type, fs_type;
