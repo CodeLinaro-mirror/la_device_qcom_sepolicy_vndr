@@ -104,6 +104,8 @@
 /dev/gptp_shm                                   u:object_r:vendor_vnw_device:s0
 /dev/ptpshm                                     u:object_r:vendor_ipa_dev:s0
 /dev/sctptpshm                                  u:object_r:vendor_ipa_dev:s0
+/dev/utcshm                                     u:object_r:vendor_ipa_dev:s0
+/dev/timeinfo                                   u:object_r:vendor_ipa_dev:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:vendor_chre_socket:s0
@@ -273,6 +275,8 @@
 /vendor/bin/qgptp               u:object_r:vendor_vnw_exec:s0
 /vendor/bin/libgptp_test        u:object_r:vendor_vnw_exec:s0
 /vendor/bin/qavb_app            u:object_r:vendor_vnw_exec:s0
+/vendor/bin/utc_ts              u:object_r:vendor_vnw_exec:s0
+/vendor/bin/libutc_test         u:object_r:vendor_vnw_exec:s0
 
 /vendor/bin/hw/qcrild           u:object_r:rild_exec:s0
 /vendor/bin/hw/qcrilNrd         u:object_r:rild_exec:s0
