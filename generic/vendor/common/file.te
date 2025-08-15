@@ -293,6 +293,7 @@ type vendor_someip_data_file, file_type, data_file_type;
 
 # vnw
 type vendor_emac_state, sysfs_type, fs_type;
+type vendor_sysfs_vnw_type, sysfs_type, fs_type;
 
 # Sensor Hal Config
 type vendor_sensor_hal_config, file_type, vendor_file_type;
