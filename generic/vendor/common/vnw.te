@@ -44,6 +44,8 @@ allow vendor_vnw vendor_gptp_socket:sock_file { create_file_perms };
 
 allow vendor_vnw vendor_vnw_device:file { create map open read setattr write };
 allow vendor_vnw vendor_vnw_device:dir { write add_name };
-allow vendor_vnw vendor_vnw_device:chr_file { open ioctl read write };
+allow vendor_vnw vendor_vnw_device:chr_file { open ioctl read write map };
 allow vendor_vnw vendor_ipa_dev:file { create map open read setattr write };
 allow vendor_vnw vendor_location_locIdlClient_daemon:unix_stream_socket connectto;
+allow vendor_vnw self:capability { sys_time };
+allow vendor_vnw vendor_hab_vnw_device:chr_file { open ioctl read write };
