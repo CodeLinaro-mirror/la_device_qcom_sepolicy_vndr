@@ -200,3 +200,6 @@ type vendor_sysfs_rproc_state, fs_type, sysfs_type;
 
 #tx powerboost files
 type vendor_wifi_tx_powerboost_file, file_type, data_file_type;
+
+#eSE files
+type vendor_ese_gpio_proc, fs_type, proc_type;
