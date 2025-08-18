@@ -1,0 +1,28 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_hal_ais_service, domain;
+type vendor_hal_ais_service_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_hal_ais_service)
+
+
+userdebug_or_eng(`
+allow vendor_hal_ais_service su:unix_dgram_socket sendto;
+')
+allow vendor_hal_ais_service vendor_camera_socket:dir search;
+allow vendor_hal_ais_service vendor_camera_socket:sock_file write;
+allow vendor_hal_ais_service hal_graphics_allocator_default:fd use;
+allow vendor_hal_ais_service vendor_ais_server:unix_stream_socket connectto;
+allow vendor_hal_ais_service vendor_sysfs_kpi:file w_file_perms;
+allow vendor_hal_ais_service self:capability sys_nice;
+allow vendor_hal_ais_service vendor_dmabuf_system_heap_device:chr_file { read open ioctl};
+allow vendor_hal_ais_service vendor_dmabuf_system_uncached_heap_device:chr_file { read open ioctl };
+
+
+
+allow vendor_hal_ais_service vndbinder_device:chr_file rw_file_perms;
+binder_call(vendor_hal_ais_service, servicemanager)
+
+get_prop(vendor_hal_ais_service, boot_status_prop)
+allow vendor_hal_ais_service servicemanager:binder call;
