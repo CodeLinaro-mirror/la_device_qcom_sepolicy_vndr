@@ -13,3 +13,27 @@ binder_call(vendor_qrsloader, hwservicemanager)
 hal_server_domain(vendor_qrsloader, vendor_hal_qrsloader)
 allow vendor_qrsloader vendor_qms_service:service_manager find;
 get_prop(vendor_qrsloader, vendor_qrs_service_prop)
+
+# Allow directory search
+allow vendor_qrsloader vendor_fas_socket:dir search;
+
+# Allow directory write
+allow vendor_qrsloader vendor_fas_socket:dir write;
+
+# Allow adding a name to the directory
+allow vendor_qrsloader vendor_fas_socket:dir add_name;
+
+# Allow creating a socket file
+allow vendor_qrsloader vendor_fas_socket:sock_file create;
+
+# Allow writing to a socket file
+allow vendor_qrsloader vendor_fas_socket:sock_file write;
+
+# Allow removing a name from the directory
+allow vendor_qrsloader vendor_fas_socket:dir remove_name;
+
+# Allow unlinking a socket file
+allow vendor_qrsloader vendor_fas_socket:sock_file unlink;
+
+
+allow vendor_qrsloader vendor_fas:unix_dgram_socket sendto;
