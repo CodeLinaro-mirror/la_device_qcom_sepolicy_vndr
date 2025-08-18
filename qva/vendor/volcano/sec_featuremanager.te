@@ -22,14 +22,8 @@ unix_socket_connect(vendor_hal_featuremanager_qti, vendor_ssgtzd, vendor_ssgtzd)
 allow vendor_hal_featuremanager_qti vendor_shell_exec:file execute_no_trans;
 allow vendor_hal_featuremanager_qti vendor_sec_oras_exec:file execute_no_trans;
 
-allow vendor_hal_featuremanager_qti vendor_sec_vndr_data_file:dir create_dir_perms;
-allow vendor_hal_featuremanager_qti vendor_sec_vndr_data_file:file create_file_perms;
-
-
 set_prop(vendor_hal_featuremanager_qti, vendor_secfm_prop);
 # Allow access to find other services
-hal_client_domain(vendor_hal_featuremanager_qti, vendor_hal_cloudagent)
-hal_client_domain(vendor_hal_featuremanager_qti, vendor_hal_datamanager)
 
 allow vendor_hal_featuremanager_qti dnsproxyd_socket:sock_file write;
 allow vendor_hal_featuremanager_qti self:udp_socket create;
