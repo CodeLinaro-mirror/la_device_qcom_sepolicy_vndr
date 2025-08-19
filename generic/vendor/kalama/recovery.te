@@ -1,0 +1,9 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow recovery console_device:chr_file { read write ioctl getattr };
+allow recovery kmsg_device:chr_file { read };
+allow recovery boottime_prop:property_service { set };
+allow recovery kernel:system { syslog_mod };
+allow recovery aac_drc_prop:file { open getattr map};
+allow recovery adaptive_haptics_prop:file { open getattr };
