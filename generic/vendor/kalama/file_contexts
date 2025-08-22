@@ -260,6 +260,9 @@
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
 
+# Qcarcam HAL
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_service_exec:s0
+
 # Feature configs
 /sys/devices/platform/soc/780000.qfprom/qfprom0/feat_conf* u:object_r:vendor_sysfs_qfprom:s0
 
