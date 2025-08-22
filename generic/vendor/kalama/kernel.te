@@ -42,3 +42,4 @@ allow kernel vfat:file {open read};
 allow kernel vfat:dir { search };
 allow kernel kernel:capability { mknod sys_admin };
 allow kernel device:chr_file { create setattr unlink };
+dontaudit kernel self:capability dac_read_search;

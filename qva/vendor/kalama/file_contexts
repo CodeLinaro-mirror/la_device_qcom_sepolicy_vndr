@@ -25,9 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-#
-# Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@1\.0-service    u:object_r:vendor_biometricsface_exec:s0
@@ -41,6 +40,7 @@
 
 #uac
 /dev/snd/pcmC[1-9].*  u:object_r:vendor_pcm_device:s0
+/dev/pcmC[1-9].*      u:object_r:vendor_pcm_device:s0
 
 #aidirector
 /dev/snd/controlC0  u:object_r:vendor_aid_audio_device:s0
@@ -69,7 +69,8 @@
 #memory
 /(vendor|system/vendor)/bin/hw/pasrknob                                            u:object_r:vendor_pasrknob_exec:s0
 
-#lxc
-/(vendor|system/vendor)/bin/init\.qcom\.lxc\.sh u:object_r:vendor_qti_init_shell_exec:s0
 # CEC nodes
 /dev/cec[0-9]*        u:object_r:vendor_cec_device:s0
+
+# cpuset
+/dev/cpuset(/.*)?                                                   u:object_r:vendor_cpuset_device:s0

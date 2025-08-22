@@ -27,6 +27,10 @@
 # Restricted domain for shell processes spawned by init.
 # Normally these are shell commands or scripts invoked via sh
 # from an init*.rc file.  No service should ever run in this domain.
+
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 type vendor_qti_init_shell, domain;
 type vendor_qti_init_shell_exec, exec_type, vendor_file_type,file_type;
 
@@ -200,3 +204,4 @@ set_prop(vendor_qti_init_shell,vendor_dcvs_prop)
 allow vendor_qti_init_shell proc_sched:file w_file_perms;
 
 dontaudit vendor_qti_init_shell self:capability dac_read_search; 
+allow vendor_qti_init_shell vendor_cpuset_device:file { write open };

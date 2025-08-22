@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 allow bootanim hwservicemanager:binder call;
 
@@ -40,3 +40,9 @@ dontaudit bootanim vendor_hal_qspmhal_hwservice:hwservice_manager find;
 
 #Allow read access to vendor_display_prop
 get_prop(bootanim, vendor_display_prop)
+
+# To support android early init
+allow bootanim vendor_early_services:dir search;
+allow bootanim default_in_lxc:dir search;
+get_prop(bootanim, vendor_sys_gpp_prop)
+binder_call(bootanim, vendor_hal_qspmhal_default)

@@ -25,9 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-#
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 get_prop(vendor_dataservice_app, vendor_cnd_prop)
@@ -43,3 +42,5 @@ hal_client_domain(vendor_dataservice_app, vendor_hal_imsfactory)
 
 # dataservice_app is a client of ImsDataService stable AIDL
 hal_client_domain(vendor_dataservice_app, vendor_hal_dcservice_qti)
+
+dontaudit vendor_dataservice_app vendor_hal_performance_iperf_service:service_manager find;

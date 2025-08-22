@@ -3,37 +3,131 @@
 
 type vendor_lxc_shell, domain;
 type vendor_lxc_shell_exec, exec_type, vendor_file_type, file_type;
-
 init_daemon_domain(vendor_lxc_shell)
-
 domain_auto_trans(init, vendor_lxc_shell_exec, vendor_lxc_shell)
+
+type app_in_lxc, domain;
+type app_in_lxc_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(app_in_lxc)
+domain_auto_trans(init, app_in_lxc_exec, app_in_lxc)
+
+# generic context in lxc
+type default_in_lxc, vendor_file_type, file_type;
+
+allow app_in_lxc default_in_lxc:file { execute_no_trans };
+
+# Todo, only to clear up avc deny, perhaps affect function.
+dontaudit app_in_lxc self:capability { dac_read_search sys_ptrace };
+
+##################### systemd-udevd in lxc --start ###############################
+
+# systemd-udevd, systemd-journal in linux container
+allow app_in_lxc self:netlink_kobject_uevent_socket { read write create setopt bind getattr };
+allow app_in_lxc self:capability { net_admin sys_resource sys_admin };
+allow app_in_lxc self:process { setfscreate };
+allowxperm app_in_lxc self:file ioctl { TCGETS };
+allow app_in_lxc tmpfs:dir { read write open add_name remove_name create };
+allow app_in_lxc tmpfs:file { create write open getattr unlink read setattr rename map lock };
+allow app_in_lxc tmpfs:lnk_file { read getattr create rename unlink };
+allow app_in_lxc tmpfs:sock_file { write };
+allow app_in_lxc tmpfs:chr_file { write read open };
+allow app_in_lxc cgroup_v2:file { read getattr };
+
+# systemd-udevd to /sys/devices/virtual/wakeup/wakeup79/uevent
+allow app_in_lxc sysfs_wakeup:dir search;
+allow app_in_lxc sysfs_wakeup:file { read open getattr };
+
+# systemd-udevd to /sys/devices/virtual/block/dm-22/uevent
+allow app_in_lxc sysfs_dm:dir search;
+allow app_in_lxc sysfs_dm:file { read open getattr };
+
+# systemd-udevd to /sys/devices/virtual/android_usb/android0/uevent
+allow app_in_lxc sysfs_android_usb:dir search;
+allow app_in_lxc sysfs_android_usb:file { read open getattr };
+
+# systemd-udevd to /sys/devices/virtual/bdi/0:72/uevent
+allow app_in_lxc vendor_sysfs_mmc_host:dir search;
+allow app_in_lxc vendor_sysfs_mmc_host:file { read open getattr };
+
+# systemd-udevd to /sys/devices/fastrpc/fastrpc-2795-4-3/uevent
+allow app_in_lxc vendor_sysfs_fastrpc:dir search;
+allow app_in_lxc vendor_sysfs_fastrpc:file { read open getattr };
+
+# systemd-udevd to /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery/uevent
+allow app_in_lxc vendor_sysfs_battery_supply:dir search;
+allow app_in_lxc vendor_sysfs_battery_supply:file { read open getattr };
+
+# systemd-udevd to /sys/devices/virtual/workqueue/ipawq34/uevent
+allow app_in_lxc vendor_sysfs_ipawq:dir search;
+allow app_in_lxc vendor_sysfs_ipawq:file { read open getattr };
+
+# systemd-udevd to /sys/devices/virtual/workqueue/uevent
+allow app_in_lxc vendor_sysfs_wqueue:dir search;
+allow app_in_lxc vendor_sysfs_wqueue:file { read open getattr };
+
+# systemd-udevd to /sys/devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,spmi:qcom,pm8550@1:qcom,leds@ef00/leds/red/uevent
+allow app_in_lxc vendor_sysfs_graphics:dir search;
+allow app_in_lxc vendor_sysfs_graphics:file { read write open getattr };
+
+# systemd-udevd to /sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3/uevent
+allow app_in_lxc vendor_sysfs_usb:dir search;
+allow app_in_lxc vendor_sysfs_usb:file { read open getattr };
+
+# systemd-udevd to /sys/devices/system/memory/memory368/uevent
+allow app_in_lxc vendor_sysfs_system_memory:dir search;
+allow app_in_lxc vendor_sysfs_system_memory:file { read open getattr };
+
+# systemd-udevd to /sys/bus/rpmsg/drivers/spcom_rpmsg_drv_sp_keymaster/uevent
+allow app_in_lxc vendor_sysfs_rpmsg_keymaster:dir search;
+allow app_in_lxc vendor_sysfs_rpmsg_keymaster:file { read open getattr };
+
+# systemd-udevd to /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/usb/uevent
+allow app_in_lxc vendor_sysfs_usb_supply:dir search;
+allow app_in_lxc vendor_sysfs_usb_supply:file { read open getattr };
+
+##################### systemd-udevd in lxc --end ###############################
+
+# systemd-journal to weston
+allow app_in_lxc weston:process signull;
 
 #permissive vendor_lxc_shell;
 
-dontaudit vendor_lxc_shell self:capability_class_set *;
-dontaudit vendor_lxc_shell kernel:security *;
-dontaudit vendor_lxc_shell kernel:system *;
-dontaudit vendor_lxc_shell self:memprotect *;
-dontaudit vendor_lxc_shell domain:process *;
-dontaudit vendor_lxc_shell domain:fd *;
-dontaudit vendor_lxc_shell domain:dir *;
-dontaudit vendor_lxc_shell domain:lnk_file *;
-dontaudit vendor_lxc_shell domain:{ fifo_file file } *;
-dontaudit vendor_lxc_shell domain:socket_class_set *;
-dontaudit vendor_lxc_shell domain:ipc_class_set *;
-dontaudit vendor_lxc_shell domain:key *;
-dontaudit vendor_lxc_shell fs_type:filesystem *;
-dontaudit vendor_lxc_shell {fs_type dev_type file_type}:dir_file_class_set *;
-dontaudit vendor_lxc_shell node_type:node *;
-dontaudit vendor_lxc_shell node_type:{ tcp_socket udp_socket rawip_socket } *;
-dontaudit vendor_lxc_shell netif_type:netif *;
-dontaudit vendor_lxc_shell port_type:socket_class_set *;
-dontaudit vendor_lxc_shell port_type:{ tcp_socket dccp_socket } *;
-dontaudit vendor_lxc_shell domain:peer *;
-dontaudit vendor_lxc_shell domain:binder *;
-dontaudit vendor_lxc_shell property_type:property_service *;
-dontaudit vendor_lxc_shell property_type:file *;
-dontaudit vendor_lxc_shell service_manager_type:service_manager *;
-dontaudit vendor_lxc_shell keystore:keystore_key *;
-dontaudit vendor_lxc_shell domain:drmservice *;
-dontaudit vendor_lxc_shell unlabeled:filesystem *;
+#dontaudit vendor_lxc_shell self:capability_class_set *;
+#dontaudit vendor_lxc_shell kernel:security *;
+#dontaudit vendor_lxc_shell kernel:system *;
+#dontaudit vendor_lxc_shell self:memprotect *;
+#dontaudit vendor_lxc_shell domain:process *;
+#dontaudit vendor_lxc_shell domain:fd *;
+#dontaudit vendor_lxc_shell domain:dir *;
+#dontaudit vendor_lxc_shell domain:lnk_file *;
+#dontaudit vendor_lxc_shell domain:{ fifo_file file } *;
+#dontaudit vendor_lxc_shell domain:socket_class_set *;
+#dontaudit vendor_lxc_shell domain:ipc_class_set *;
+#dontaudit vendor_lxc_shell domain:key *;
+#dontaudit vendor_lxc_shell fs_type:filesystem *;
+#dontaudit vendor_lxc_shell {fs_type dev_type file_type}:dir_file_class_set *;
+#dontaudit vendor_lxc_shell node_type:node *;
+#dontaudit vendor_lxc_shell node_type:{ tcp_socket udp_socket rawip_socket } *;
+#dontaudit vendor_lxc_shell netif_type:netif *;
+#dontaudit vendor_lxc_shell port_type:socket_class_set *;
+#dontaudit vendor_lxc_shell port_type:{ tcp_socket dccp_socket } *;
+#dontaudit vendor_lxc_shell domain:peer *;
+#dontaudit vendor_lxc_shell domain:binder *;
+#dontaudit vendor_lxc_shell property_type:property_service *;
+#dontaudit vendor_lxc_shell property_type:file *;
+#dontaudit vendor_lxc_shell service_manager_type:service_manager *;
+#dontaudit vendor_lxc_shell keystore:keystore_key *;
+#dontaudit vendor_lxc_shell domain:drmservice *;
+
+################## weston in lxc -- start ####################
+
+type weston, domain;
+type weston_exec, exec_type, vendor_file_type, file_type;
+domain_auto_trans(app_in_lxc, weston_exec, weston)
+
+allow weston self:netlink_kobject_uevent_socket read;
+
+# /tmp/weston.log
+allow weston tmpfs:file append;
+
+################## weston in lxc -- end ####################

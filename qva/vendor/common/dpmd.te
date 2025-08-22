@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Add netutils support to install iptables
 use_netutils(vendor_dpmd)
@@ -42,3 +46,5 @@ userdebug_or_eng(`
 hal_client_domain(vendor_dpmd, vendor_hal_diaghal)
 hal_client_domain(vendor_dpmd, hal_allocator)
 ')
+
+dontaudit vendor_dpmd default_android_service:service_manager find;

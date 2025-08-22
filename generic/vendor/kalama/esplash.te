@@ -1,0 +1,8 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# early esplash
+type vendor_earlyesplash, domain;
+type vendor_earlyesplash_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_earlyesplash)

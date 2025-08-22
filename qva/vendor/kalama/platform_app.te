@@ -1,7 +1,9 @@
-# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #allow platform_app to read vendor_umd_prop
 get_prop(platform_app, vendor_umd_prop)
 
 hal_client_domain(platform_app, vendor_hal_umd)
+
+dontaudit platform_app vendor_hal_performance_iperf_service:service_manager find;

@@ -25,11 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-#Changes from Qualcomm Technologies, Inc. are provided under the following license:
-#
-#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
-#SPDX-License-Identifier: BSD-3-Clause-Clear
-###################################
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # Dev block nodes
 
 # UFS Devices
@@ -346,6 +345,11 @@
 /vendor_early_services/system/bin/bootstrap/linker(64)?                       u:object_r:system_linker_exec:s0
 /vendor_early_services/vendor/firmware_mnt                                    u:object_r:firmware_file:s0
 /vendor_early_services/vendor/firmware_mnt(/.*)?                              u:object_r:firmware_file:s0
-/vendor/bin/init.qcom.lxc.sh                                                  u:object_r:vendor_lxc_shell_exec:s0
-/vendor_early_services/vendor/vm-system                                       u:object_r:same_process_hal_file:s0
-/vendor_early_services/vendor/vm-system(/.*)?                                 u:object_r:same_process_hal_file:s0
+
+# for lxc
+/dev/dm-[0-9]+               u:object_r:dm_device:s0
+/sys/devices/virtual/workqueue/iparepwq[0-9]+(/.*)?                          u:object_r:vendor_sysfs_ipawq:s0
+/sys/devices/virtual/workqueue/ipawq[0-9]+(/.*)?                             u:object_r:vendor_sysfs_ipawq:s0
+/sys/devices/virtual/workqueue/ipataskletwq[0-9]+(/.*)?                      u:object_r:vendor_sysfs_ipawq:s0
+/sys/devices/platform/soc/4080000.remoteproc-mss/firmware/modem.b[0-9]+(/.*)?                   u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:sound/sound/card0(/.*)?   u:object_r:vendor_sysfs_graphics:s0

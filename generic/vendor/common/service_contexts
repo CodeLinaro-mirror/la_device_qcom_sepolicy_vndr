@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-#
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 android.hardware.neuralnetworks.IDevice/qti-default                   u:object_r:hal_neuralnetworks_service:s0
@@ -51,3 +51,7 @@ android.hardware.drm.IDrmFactory/widevine                             u:object_r
 vendor.qti.hardware.wifi.supplicant.ISupplicantVendor/default         u:object_r:hal_wifi_supplicant_service:s0
 vendor.qti.hardware.wifi.hostapd.IHostapdVendor/default               u:object_r:hal_wifi_hostapd_service:s0
 vendor.qti.ims.datachannelservice.IDataChannelService/default         u:object_r:vendor_hal_imsdc_service:s0
+
+# IPerf service
+vendor.qti.hardware.perf2.IPerf                 u:object_r:vendor_hal_performance_iperf_service:s0
+vendor.qti.hardware.perf2.IPerf/default         u:object_r:vendor_hal_performance_iperf_service:s0

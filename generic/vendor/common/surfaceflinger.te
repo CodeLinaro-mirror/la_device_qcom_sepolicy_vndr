@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 dontaudit surfaceflinger firmware_file:dir search;
 dontaudit surfaceflinger kernel:system module_request;
 
@@ -38,3 +42,6 @@ hal_client_domain(surfaceflinger, vendor_hal_perf)
 r_dir_file(surfaceflinger, vendor_sysfs_kgsl)
 
 dontaudit surfaceflinger vendor_hal_qspmhal_hwservice:hwservice_manager find;
+allow surfaceflinger vendor_hal_qspmhal_default:binder { call };
+allow surfaceflinger vendor_cpuset_device:dir search;
+get_prop(surfaceflinger, vendor_sys_gpp_prop)

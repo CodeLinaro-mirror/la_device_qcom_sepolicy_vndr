@@ -24,7 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #Define Domain
 type vendor_wfdvndservice, domain;
@@ -67,3 +70,5 @@ allow vendor_wfdvndservice vendor_qdisplay_service:service_manager find;
 
 #Fallback for seccomp
 crash_dump_fallback(vendor_wfdvndservice)
+
+allow vendor_wfdvndservice vendor_early_services:dir search;

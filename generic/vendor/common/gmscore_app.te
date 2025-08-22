@@ -25,8 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 dontaudit gmscore_app vendor_hal_qspmhal_default:binder {call};
 
 unix_socket_connect(gmscore_app, vendor_dpmtcm, vendor_dpmd);
 
 dontaudit gmscore_app vendor_hal_qspmhal_hwservice:hwservice_manager find;
+
+#allow gmscore_app vendor_default_prop:file { open getattr map };
