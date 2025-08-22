@@ -1,4 +1,8 @@
-# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,24 +29,33 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type vendor_qti_init_shell_bg, domain;
-type vendor_qti_init_shell_bg_exec, exec_type, vendor_file_type,file_type;
+#Define Domain
+type vendor_ams_service_qti, domain;
+type vendor_ams_service_qti_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(vendor_qti_init_shell_bg)
+#Make ams_service part of the same domain as hal_audio
+hal_server_domain(vendor_ams_service_qti, hal_audio)
+binder_call(vendor_ams_service_qti, hal_audio_default)
+#Allow for transition from init domain to ams_service
+init_daemon_domain(vendor_ams_service_qti)
 
-# For executing init shell scripts (init.qti.write.sh)
-allow vendor_qti_init_shell_bg vendor_qti_init_shell_bg_exec:file { rx_file_perms entrypoint };
+# Add hwservice related rules
+hal_attribute_hwservice(hal_audio, hal_ams_hwservice)
 
-# Execute init scripts
-allow vendor_qti_init_shell_bg vendor_toolbox_exec:file  rx_file_perms;
+#Allow access to ams device nodes
+allow vendor_ams_service_qti vendor_agm_device:chr_file rw_file_perms;
 
-# Allow access to adsp, cdsp, cvp boot nodes
-allow vendor_qti_init_shell_bg vendor_sysfs_boot_adsp:file { w_file_perms getattr };
-allow vendor_qti_init_shell_bg vendor_sysfs_boot_cdsp:file { w_file_perms getattr };
-allow vendor_qti_init_shell_bg vendor_sysfs_boot_cvp:file  { w_file_perms getattr };
-allow vendor_qti_init_shell_bg vendor_sysfs_slpi:dir search;
-allow vendor_qti_init_shell_bg vendor_sysfs_slpi:file  { w_file_perms getattr };
-allow vendor_qti_init_shell_bg vendor_usb_events:file { r_file_perms };
+#Allow qipc socket access for servreg communication
+allow vendor_ams_service_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+binder_call(vendor_ams_service_qti vendor_agmservice_qti)
+
+# Allocate DMA-BUF Heap memory
+allow vendor_ams_service_qti dmabuf_system_heap_device:chr_file rw_file_perms;
+allow vendor_ams_service_qti vendor_dmabuf_system_heap_device:chr_file rw_file_perms;
+allow vendor_ams_service_qti vendor_dmabuf_audio_ml_heap_device:chr_file rw_file_perms;
+
 userdebug_or_eng(`
-allow vendor_qti_init_shell_bg debugfs_bootreceiver_tracing:file { r_file_perms };
+#Allow for pd_locater service access
+  get_prop(vendor_ams_service_qti, vendor_pd_locater_dbg_prop)
+  allow vendor_ams_service_qti vendor_sysfs_kpi:file w_file_perms;
 ')

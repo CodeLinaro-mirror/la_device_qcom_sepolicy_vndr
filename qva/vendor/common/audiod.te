@@ -1,4 +1,4 @@
-#Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
@@ -30,6 +30,8 @@ allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;
 allow vendor_audiod vendor_sysfs_sndcard:file r_file_perms;
 carpowerpolicy_callback_domain(vendor_audiod)
 get_prop(vendor_audiod, vendor_audio_prop)
+set_prop(vendor_audiod, vendor_audio_prop)
 get_prop(vendor_audiod, boot_status_prop)
 allow vendor_audiod property_socket:sock_file write;
 allow vendor_audiod carpowerpolicyd_service:service_manager find;
+allow vendor_audiod property_socket:sock_file write;

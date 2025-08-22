@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-#Changes from Qualcomm Innovation Center are provided under the following license:
-#Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # dev nodes
@@ -145,6 +145,7 @@
 /dev/dma_heap/qcom,secure-pixel         u:object_r:vendor_dmabuf_secure_pixel:s0
 /dev/dma_heap/qcom,secure-non-pixel     u:object_r:vendor_dmabuf_secure_non_pixel:s0
 /dev/dma_heap/qcom,adsp                 u:object_r:vendor_dmabuf_adsp_heap_device:s0
+/dev/dma_heap/qcom,mdsp                 u:object_r:vendor_dmabuf_mdsp_heap_device:s0
 /dev/dma_heap/qcom,secure-cdsp          u:object_r:vendor_dmabuf_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,cma-secure-cdsp      u:object_r:vendor_dmabuf_cma_secure_cdsp_heap_device:s0
 /dev/dma_heap/qcom,sp-hlos              u:object_r:vendor_dmabuf_sp_hlos_heap_device:s0
@@ -206,6 +207,7 @@
 /vendor/bin/subsystem_ramdump   u:object_r:vendor_subsystem_ramdump_exec:s0
 /vendor/bin/adsprpcd            u:object_r:vendor_adsprpcd_exec:s0
 /vendor/bin/cdsprpcd            u:object_r:vendor_cdsprpcd_exec:s0
+/vendor/bin/mdsprpcd            u:object_r:vendor_mdsprpcd_exec:s0
 /vendor/bin/audioadsprpcd       u:object_r:vendor_audioadsprpcd_exec:s0
 /vendor/bin/dspservice          u:object_r:vendor_dspservice_exec:s0
 /vendor/bin/irsc_util           u:object_r:vendor_irsc_util_exec:s0
@@ -297,6 +299,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AGMIPC@1\.0-service          u:object_r:vendor_agmservice_qti_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.AGMIPC\.sh                                  u:object_r:vendor_init-qti-AGMIPC-sh_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.soc-model\.sh                               u:object_r:vendor_qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.AMSIPC@1\.0-service          u:object_r:vendor_ams_service_qti_exec:s0
 
 /vendor/bin/routing_manager_daemon                  u:object_r:vendor_routing_manager_default_exec:s0
 ###############################################
@@ -494,9 +497,10 @@
 /(vendor|system/vendor)/bin/lowirpcd                                u:object_r:vendor_lowirpcd_service_exec:s0
 
 /dev/block/platform/soc/1d84000.ufshc/by-name/swap_[ab]              u:object_r:vendor_custom_ab_block_device:s0
-/sys/fs/ext4/sda[0-11]+/lifetime_write_kbytes                        u:object_r:vendor_sysfs_fs_ext4:s0
-/sys/fs/ext4/dm-[0-10]+/lifetime_write_kbytes                        u:object_r:vendor_sysfs_fs_ext4:s0
-/sys/fs/ext4/sde[0-11]+/lifetime_write_kbytes                        u:object_r:vendor_sysfs_fs_ext4:s0
+/sys/fs/ext4/sda[0-9]+/lifetime_write_kbytes                        u:object_r:sysfs_fs_lifetime_write:s0
+/sys/fs/ext4/dm-[0-9]+/lifetime_write_kbytes                        u:object_r:sysfs_fs_lifetime_write:s0
+/sys/fs/ext4/sde[0-9]+/lifetime_write_kbytes                        u:object_r:sysfs_fs_lifetime_write:s0
+/sys/fs/ext4/loop[0-9]+/lifetime_write_kbytes                        u:object_r:sysfs_fs_lifetime_write:s0
 /sys/power/disk                                                      u:object_r:vendor_sysfs_power:s0
 /sys/power/resume                                                    u:object_r:vendor_sysfs_power:s0
 # vendor_sysfs_graphics
