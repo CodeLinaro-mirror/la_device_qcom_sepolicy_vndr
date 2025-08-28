@@ -30,6 +30,8 @@
 #Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
+get_prop(hal_camera_default, vendor_soc_name_prop)
+
 allow hal_camera_default tee_device:chr_file rw_file_perms;
 allow hal_camera_default vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
 allow hal_camera_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
