@@ -38,5 +38,7 @@ hal_attribute_hwservice(vendor_hal_secureprocessor, vendor_hal_secureprocessor_h
 
 allow vendor_hal_secureprocessor_qti tee_device:chr_file rw_file_perms;
 allow vendor_hal_secureprocessor_qti ion_device:chr_file r_file_perms;
+allow vendor_hal_secureprocessor_qti vendor_xdsp_device:chr_file {read open ioctl};
+allow vendor_hal_secureprocessor_qti vendor_adsprpc_prop:file {read open getattr map};
 
 hal_client_domain(vendor_hal_secureprocessor_qti, hal_graphics_allocator);

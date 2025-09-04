@@ -1,0 +1,18 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_sys_rgbircamera_app, domain;
+app_domain(vendor_sys_rgbircamera_app)
+net_domain(vendor_sys_rgbircamera_app)
+
+hal_client_domain(vendor_sys_rgbircamera_app, vendor_hal_secureprocessor);
+hal_client_domain(vendor_sys_rgbircamera_app, vendor_hal_perf);
+hal_client_domain(vendor_sys_rgbircamera_app, vendor_hal_qspmhal);
+
+allow vendor_sys_rgbircamera_app app_data_file:dir create_dir_perms;
+allow vendor_sys_rgbircamera_app app_data_file:file create_file_perms;
+allow vendor_sys_rgbircamera_app { app_api_service } :service_manager find;
+allow vendor_sys_rgbircamera_app cameraserver_service:service_manager find;
+
+binder_call(vendor_sys_rgbircamera_app, gpuservice);
+get_prop(vendor_sys_rgbircamera_app, vendor_persist_camera_prop)
