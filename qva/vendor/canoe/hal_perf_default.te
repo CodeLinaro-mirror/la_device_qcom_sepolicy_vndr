@@ -31,5 +31,4 @@
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 allow vendor_hal_perf_default {appdomain}:process sigkill;
-allow vendor_hal_perf_default vendor_sys_nonsp_comp:file r_file_perms;
-allow vendor_hal_perf_default vendor_sys_sp_comp:file r_file_perms;
+

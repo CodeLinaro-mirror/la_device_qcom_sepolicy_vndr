@@ -47,3 +47,6 @@ r_dir_file(surfaceflinger, vendor_sysfs_kgsl)
 
 dontaudit surfaceflinger vendor_hal_qspmhal_hwservice:hwservice_manager find;
 dontaudit surfaceflinger vendor_hal_qspmhal_service:service_manager find;
+
+#Allow surfaceflinger to read vendor.mpctl.init.complete
+get_prop(surfaceflinger, vendor_wlc_public_prop)

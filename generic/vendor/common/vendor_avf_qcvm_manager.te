@@ -87,3 +87,13 @@ allow vendor_avf_qcvm_manager self:vsock_socket { connect create bind accept rea
 
 # Allow vendor_avf_qcvm_manager to talk to the HLOS Mink Daemon
 unix_socket_connect(vendor_avf_qcvm_manager,vendor_hlos_minkd_opener,vendor_hlosminkdaemon)
+
+# Provide access to Mink Trace Properties
+userdebug_or_eng(`
+   get_prop(vendor_avf_qcvm_manager, vendor_mink_trace_prop)
+ ')
+
+# Provide access to kmsg_debug_device
+userdebug_or_eng(`
+  allow vendor_avf_qcvm_manager kmsg_debug_device:chr_file w_file_perms;
+ ')
