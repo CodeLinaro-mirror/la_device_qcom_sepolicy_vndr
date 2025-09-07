@@ -56,3 +56,25 @@ genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform
 genfscon sysfs /devices/platform/soc/soc:qcom,wpss@8a00000/subsys3/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/3700000.qcom,lpass/subsys5/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/990000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/alarmtimer.1.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a300000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:remoteproc-wpss@8a00000/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c00000.pcie/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a84000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c00000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi_1103_00.01.00/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c08000.pcie/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc0/3700000.remoteproc-adsp:glink-edge/3700000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc1/3700000.remoteproc-adsp:glink-edge/3700000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc2/3700000.remoteproc-adsp:glink-edge/3700000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/9c0000.qcom,qupv3_0_geni_se/99c000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:bolero-cdc/tx-macro/tx_swr_ctrl/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:rtc@6100/wakeup u:object_r:sysfs_wakeup:s0
