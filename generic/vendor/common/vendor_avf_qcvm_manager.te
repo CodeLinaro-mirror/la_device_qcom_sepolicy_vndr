@@ -95,5 +95,5 @@ userdebug_or_eng(`
 
 # Provide access to kmsg_debug_device
 userdebug_or_eng(`
-  allow vendor_avf_qcvm_manager kmsg_debug_device:chr_file w_file_perms;
+  allow vendor_avf_qcvm_manager kmsg_debug_device:chr_file { ioctl w_file_perms };
  ')
