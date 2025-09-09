@@ -1,0 +1,26 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type tinymix, domain;
+type tinymix_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(tinymix)
+
+allow tinymix audio_device:dir search;
+allow tinymix audio_device:dir {read write};
+allow tinymix audio_device:chr_file {read write map ioctl open setattr};
+allow tinymix kmsg_device:chr_file rw_file_perms;
+allow tinymix system_bootstrap_lib_file:dir {search};
+allow tinymix vendor_early_services:dir {search};
+#allow tinymix vendor_sysfs_kpi:file {open write};
+allow tinymix vendor_early_services:dir r_dir_perms;
+allow tinymix vendor_early_services:file r_file_perms;
+allow tinymix tinymix:capability {fowner fsetid};
+#allow tinymix vendor_acdb_loader_service:binder call;
+#allow tinymix vendor_acdb_loader_service_service:service_manager find;
+#allow tinymix vendor_audio_hal_plugin_service:binder call;
+#allow tinymix vendor_audio_hal_plugin_service_service:service_manager find;
+allow tinymix vendor_early_audio:fd use;
+allow tinymix tmpfs:chr_file { open write };
+allow tinymix vendor_early_services:file { write };
+allow tinymix proc_asound:dir search;
+allow tinymix proc_asound:file rw_file_perms;
