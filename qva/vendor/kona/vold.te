@@ -1,0 +1,6 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#Add for OTA from Android 10 to 15
+allow vold system_data_file:lnk_file unlink;
+allow vold system_data_file:lnk_file read;
