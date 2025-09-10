@@ -229,6 +229,7 @@ genfscon sysfs /class/qcom-haptics/v_gain_error     u:object_r:vendor_sysfs_hapt
 genfscon sysfs /class/qcom-haptics/i_gain_error     u:object_r:vendor_sysfs_haptics:s0
 genfscon sysfs /class/qcom-haptics/lra_frequency_hz    u:object_r:vendor_sysfs_haptics:s0
 genfscon sysfs /class/qcom-haptics/lra_f0_cal_in_play    u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/swr_play         u:object_r:vendor_sysfs_haptics:s0
 
 genfscon sysfs /class/qcom-battery/soh        u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /class/qcom-battery/resistance u:object_r:vendor_sysfs_battery_supply:s0
