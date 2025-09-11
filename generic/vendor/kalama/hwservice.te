@@ -32,4 +32,6 @@ type vendor_hal_display_demura_hwservice, hwservice_manager_type, protected_hwse
 
 type hal_gamepad_hwservice, hwservice_manager_type;
 
+type vendor_hal_ais_hwservice, hwservice_manager_type, protected_hwservice;
+
 #type vendor_hal_performance_iperf_hwservice, hwservice_manager_type;

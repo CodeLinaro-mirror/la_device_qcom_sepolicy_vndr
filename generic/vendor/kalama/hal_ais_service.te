@@ -18,6 +18,16 @@ allow vendor_hal_ais_service vendor_sysfs_kpi:file w_file_perms;
 allow vendor_hal_ais_service self:capability sys_nice;
 allow vendor_hal_ais_service vendor_dmabuf_system_heap_device:chr_file { read open ioctl};
 allow vendor_hal_ais_service vendor_dmabuf_system_uncached_heap_device:chr_file { read open ioctl };
+allow vendor_hal_ais_service hwservicemanager_prop:file { getattr map open read };
+allow vendor_hal_ais_service hidl_base_hwservice:hwservice_manager add;
+allow vendor_hal_ais_service hwservicemanager:binder transfer;
+allow vendor_hal_ais_service hwservicemanager:binder call;
+allow vendor_hal_ais_service sysfs:file read;
+allow vendor_hal_ais_service sysfs:file open;
+allow vendor_hal_ais_service sysfs:file write;
+allow vendor_hal_ais_service sysfs:file getattr;
+allow vendor_hal_ais_service socket_device:sock_file write;
+allow vendor_hal_ais_service init:unix_stream_socket connectto;
 
 
 
@@ -26,3 +36,5 @@ binder_call(vendor_hal_ais_service, servicemanager)
 
 get_prop(vendor_hal_ais_service, boot_status_prop)
 allow vendor_hal_ais_service servicemanager:binder call;
+
+add_hwservice(vendor_hal_ais_service, vendor_hal_ais_hwservice)

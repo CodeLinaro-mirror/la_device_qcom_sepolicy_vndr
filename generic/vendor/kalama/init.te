@@ -17,6 +17,9 @@ allow init graphics_device:chr_file r_file_perms;
 
 #Required by early-init
 allow init kernel:process share;
+allow init kmsg_device:chr_file append;
+allow init self:qipcrtr_socket read;
+allow init hal_graphics_allocator_default:fd use;
 #allow init vendor_sysfs_kpi:file { open write };
 allow init self:capability {sys_module};
 allow init vendor_file:system module_load;

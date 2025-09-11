@@ -36,3 +36,6 @@ vendor.aks.gamepad::IGamepad        u:object_r:hal_gamepad_hwservice:s0
 # IPerf service
 #vendor.qti.hardware.perf2.IPerf                 u:object_r:vendor_hal_performance_iperf_hwservice:s0
 #vendor.qti.hardware.perf2.IPerf/default         u:object_r:vendor_hal_performance_iperf_hwservice:s0
+
+# QCARCAM HAL service
+vendor.qti.automotive.qcarcam::IQcarCamera                   u:object_r:vendor_hal_ais_hwservice:s0
