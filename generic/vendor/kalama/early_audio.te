@@ -1,0 +1,40 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_early_audio, domain;
+type vendor_early_audio_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_early_audio)
+
+allow vendor_early_audio tinymix_exec:file { execute execute_no_trans };
+domain_auto_trans(vendor_early_audio, tinymix_exec, tinymix);
+
+allow vendor_early_audio audio_device:dir search;
+allow vendor_early_audio audio_device:dir {read write};
+allow vendor_early_audio audio_device:chr_file {read write};
+allow vendor_early_audio audio_device:chr_file {map ioctl};
+allow vendor_early_audio tmpfs:chr_file rw_file_perms;
+allow vendor_early_audio kmsg_device:chr_file rw_file_perms;
+allow vendor_early_audio system_bootstrap_lib_file:dir {search};
+allow vendor_early_audio vendor_early_services:dir {search};
+#allow vendor_early_audio vendor_sysfs_kpi:file {open write};
+allow vendor_early_audio vendor_early_services:dir r_dir_perms;
+allow vendor_early_audio vendor_early_services:file r_file_perms;
+allow vendor_early_audio vendor_early_services:file write;
+allow vendor_early_audio vendor_early_audio:capability {fowner fsetid};
+allow vendor_early_audio vendor_early_audio:qipcrtr_socket { create bind connect };
+#allow vendor_early_audio vendor_acdb_loader_service:binder call;
+#allow vendor_early_audio vendor_acdb_loader_service_service:service_manager find;
+#allow vendor_early_audio vendor_audio_hal_plugin_service:binder call;
+#allow vendor_early_audio vendor_audio_hal_plugin_service_service:service_manager find;
+allow vendor_early_audio audio_device:chr_file setattr;
+allow vendor_early_audio audio_device:chr_file {open};
+allow vendor_early_audio vendor_sysfs_sndcard:file { read write open };
+allow vendor_early_audio proc_asound:dir search;
+allow vendor_early_audio proc_asound:file { read open getattr };
+allow vendor_early_audio vendor_proc_audiod:file { read open getattr };
+allow vendor_early_audio vendor_agm_device:chr_file { read write open ioctl };
+allow vendor_early_audio self:capability sys_nice;
+allow vendor_early_audio self:qipcrtr_socket { read write getattr setopt };
+allow vendor_early_audio dmabuf_system_heap_device:chr_file { read open ioctl };
+allow vendor_early_audio vendor_agm_device:chr_file ioctl;
+allow audio_device device:filesystem associate;

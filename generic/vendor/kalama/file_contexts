@@ -353,3 +353,8 @@
 /sys/devices/virtual/workqueue/ipataskletwq[0-9]+(/.*)?                      u:object_r:vendor_sysfs_ipawq:s0
 /sys/devices/platform/soc/4080000.remoteproc-mss/firmware/modem.b[0-9]+(/.*)?                   u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:sound/sound/card0(/.*)?   u:object_r:vendor_sysfs_graphics:s0
+/dev/snd                                                                      u:object_r:audio_device:s0
+/dev/snd/controlC0                                                            u:object_r:audio_device:s0
+/vendor_early_services/vendor/bin/pd-mapper                                   u:object_r:vendor_pd_mapper_exec:s0
+/vendor_early_services/vendor/bin/early_audio                                 u:object_r:vendor_early_audio_exec:s0
+/vendor_early_services/system/bin/tinymix                                     u:object_r:tinymix_exec:s0

@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 userdebug_or_eng(`
@@ -104,6 +104,14 @@ set_prop(hal_audio, vendor_audio_ssr_prop)
 
 #to read bluetooth prop
 get_prop(hal_audio, vendor_bluetooth_prop)
+
+allow hal_audio_default hwservicemanager_prop:file {read open getattr map};
+allow hal_audio_default sysfs:file { open read getattr };
+allow hal_audio_default tmpfs:dir { add_name write search };
+allow hal_audio_default audio_device:dir { search };
+allow hal_audio_default proc_asound:dir { search };
+allow hal_audio_default socket_device:dir { write add_name remove_name };
+allow hal_audio_default socket_device:sock_file { create unlink };
 
 #Allow for property access
 userdebug_or_eng(`

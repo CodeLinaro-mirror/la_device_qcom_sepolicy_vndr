@@ -1,6 +1,11 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+allow init firmware_file:filesystem unmount;
+allow init dmabuf_heap_device:chr_file { create relabelfrom };
+allow init dmabuf_heap_device:dir relabelfrom;
+allow init proc_asound:file { getattr setattr };
+
 # allowing audio-nxp-auto to access spidev
 allow init audio_device:chr_file { open read write };
 allow init audio_device:chr_file { ioctl };
