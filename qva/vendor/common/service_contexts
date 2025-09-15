@@ -57,6 +57,7 @@ vendor.qti.hardware.wifi.qtiwifi.IQtiWifi/default u:object_r:vendor_hal_qtiwifi_
 vendor.qti.hardware.bluetooth.xpanprovider.IXpanProvider/default          u:object_r:vendor_hal_xpanprovider_service:s0
 vendor.qti.hardware.bluetooth_sar.IBluetoothSar/default          u:object_r:vendor_hal_bluetooth_sar_service:s0
 android.hardware.bluetooth.IBluetoothHci/hci1                    u:object_r:hal_bluetooth_service:s0
+android.hardware.bluetooth.audio.IBluetoothAudioProviderFactory/new u:object_r:hal_audio_service:s0
 vendor.qti.hardware.fm.IFmHci/default          u:object_r:vendor_hal_fm_aidl_service:s0
 vendor.qti.qesdhalaidl.IQesdhal/default                u:object_r:vendor_hal_qesdhalaidl_service:s0
 vendor.qti.hardware.sensorscalibrate.ISensorsCalibrate/default           u:object_r:vendor_hal_sensorscalibrateaidl_service:s0
