@@ -225,3 +225,10 @@ genfscon sysfs /devices/soc0/subset_cores u:object_r:vendor_sys_nonsp_comp:s0
 
 genfscon sysfs /devices/soc0/gpu u:object_r:vendor_sys_sp_comp:s0
 genfscon sysfs /devices/soc0/npu u:object_r:vendor_sys_sp_comp:s0
+
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/modes u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/status u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/aa00000.qcom,vidc/video4linux/video32/name   u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/aa00000.qcom,vidc/video4linux/video33/name   u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkscale_enable        u:object_r:vendor_sysfs_scsi_host:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/auto_hibern8           u:object_r:vendor_sysfs_scsi_host:s0
