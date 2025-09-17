@@ -32,6 +32,7 @@ allow init audio_device:dir relabelto;
 allow init audio_device:dir relabelfrom;
 allow init audio_device:chr_file relabelto;
 allow init audio_device:chr_file relabelfrom;
+allow init device:chr_file ioctl;
 
 #Relabing SE labels permission
 allow init graphics_device:chr_file relabelto;
