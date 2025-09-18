@@ -35,6 +35,9 @@ binder_call(audioserver, bootanim)
 allow audioserver audio_device:chr_file rw_file_perms;
 allow audioserver audio_service:service_manager find;
 
+# allow audioserver to use DMA-BUF file descriptors
+allow audioserver vendor_modprobe:fd use;
+
 # audio properties
 get_prop(audioserver, vendor_audio_prop)
 
