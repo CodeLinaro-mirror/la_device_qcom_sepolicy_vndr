@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # dev nodes
@@ -136,6 +136,7 @@
 /dev/bt_cp_ctrl                                 u:object_r:hci_attach_dev:s0
 /dev/btfmcodec_dev                              u:object_r:hci_attach_dev:s0
 /dev/wlan                                       u:object_r:vendor_wlan_device:s0
+/dev/wlan2                                      u:object_r:vendor_wlan_device:s0
 /dev/socket/qmux_radio(/.*)?                    u:object_r:vendor_qmuxd_socket:s0
 /dev/socket/qcrild(/.*)?                        u:object_r:vendor_rild_socket:s0
 /data/vendor/modem_config(/.*)?                 u:object_r:vendor_mbn_data_file:s0
@@ -478,9 +479,8 @@
 /data/vendor/audio_dsp(/.*)? u:object_r:vendor_audio_dsp_data_file:s0
 
 # someip
-/data/vendor/someip(/.*)?            u:object_r:vendor_someip_data_file:s0
-/storage/vendor/someip(/.*)?         u:object_r:vendor_someip_data_file:s0
-/vendor/etc/someip(/.*)?             u:object_r:vendor_someip_cfg_file:s0
+/dev/someip(/.*)?             u:object_r:vendor_someip_sock_file:s0
+/data/vendor/someip(/.*)?     u:object_r:vendor_someip_data_file:s0
 
 # sensor hal config file
 /vendor/etc/hal_config               u:object_r:vendor_sensor_hal_config:s0

@@ -13,10 +13,12 @@ binder_call(vendor_audiohalservice_qti,audioserver)
 binder_call(vendor_audiohalservice_qti,vendor_audio_hal_plugin_service)
 binder_call(vendor_audiohalservice_qti,vendor_acdb_loader_service)
 binder_call(vendor_audiohalservice_qti, vendor_agmservice_qti)
+binder_call(vendor_agmservice_qti, vendor_audiohalservice_qti)
 add_service(hal_audio_service, vendor_audiohalservice_qti)
 allow vendor_audiohalservice_qti vendor_acdb_loader_service_service:service_manager find;
 allow vendor_audiohalservice_qti vendor_audio_hal_plugin_service_service:service_manager find;
 carpowerpolicy_callback_domain(vendor_audiohalservice_qti)
+hal_client_domain(vendor_audiohalservice_qti, hal_vehicle)
 allow vendor_audiohalservice_qti carpowerpolicyd_service:service_manager find;
 allow vendor_audiohalservice_qti vendor_audio_data_file:dir rw_dir_perms;
 allow vendor_audiohalservice_qti vendor_audio_data_file:file create_file_perms;
@@ -30,6 +32,11 @@ allow vendor_audiohalservice_qti audio_device:chr_file { ioctl open read write }
 allow vendor_audiohalservice_qti vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
 allow vendor_audiohalservice_qti vendor_dmabuf_system_heap_device:chr_file { ioctl open read };
 get_prop(vendor_audiohalservice_qti, boot_status_prop)
+
+allow vendor_audiohalservice_qti vendor_agm_device:chr_file { ioctl open read write };
+
+# to allow avc denials caused during SSR
+allow vendor_audiohalservice_qti vendor_agm_device:chr_file getattr;
 
 userdebug_or_eng(`
   typeattribute vendor_audiohalservice_qti hal_automotive_socket_exemption;
