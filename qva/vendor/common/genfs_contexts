@@ -125,3 +125,5 @@ genfscon sysfs /devices/platform/soc/1d84000.ufshc/qcom/boost_min_threshold u:ob
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/qcom/boost_max_threshold u:object_r:vendor_sysfs_ufs:s0
 
 genfscon sysfs /devices/platform/soc/aa00000.qcom,vidc/sku_version       u:object_r:vendor_sysfs_sku:s0
+
+genfscon sysfs /class/kgsl/kgsl/proc                                    u:object_r:vendor_sysfs_kgsl_proc:s0
