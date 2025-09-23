@@ -40,3 +40,4 @@ dontaudit dumpstate sysfs:file *;
 allow dumpstate debugfs_mmc:dir search;
 
 dump_hal(hal_audiocontrol)
+allow dumpstate vendor_early_services:dir {getattr search};

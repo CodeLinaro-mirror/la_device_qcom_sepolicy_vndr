@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 genfscon proc /debug/fwdump                           u:object_r:vendor_proc_wifi_dbg:s0
 genfscon proc /debugdriver/driverdump                 u:object_r:vendor_proc_wifi_dbg:s0
 genfscon proc /ath_pktlog/cld                         u:object_r:vendor_proc_wifi_dbg:s0
@@ -99,6 +103,7 @@ genfscon sysfs /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb2 u:ob
 genfscon sysfs /devices/platform/soc/a400000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/platform/soc/a800000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
+genfscon sysfs /devices/platform/soc/a800000.hsusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 
 genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-02/800f000.qcom,spmi:qcom,pmi8998@2:qcom,usb-pdphy@1700/usbpd0/typec     u:object_r:vendor_sysfs_usb_c:s0
 genfscon sysfs /module/diagchar                                         u:object_r:vendor_sysfs_diag:s0
