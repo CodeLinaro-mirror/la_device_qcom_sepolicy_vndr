@@ -10,7 +10,11 @@ allow vendor_c2c_hub mnt_vendor_file:dir r_dir_perms;
 allow vendor_c2c_hub vendor_persist_data_file:dir r_dir_perms;
 allow vendor_c2c_hub vendor_fas_persist_data_file:file create_file_perms;
 allow vendor_c2c_hub vendor_fas_persist_data_file:dir rw_dir_perms;
-get_prop(vendor_c2c_hub,vendor_mink_trace_prop)
+
 unix_socket_connect(vendor_c2c_hub, vendor_ssgtzd, vendor_ssgtzd)
 allow vendor_c2c_hub proc_version:file r_file_perms;
 net_domain(vendor_c2c_hub);
+
+userdebug_or_eng(`
+    get_prop(vendor_c2c_hub,vendor_mink_trace_prop)
+')
