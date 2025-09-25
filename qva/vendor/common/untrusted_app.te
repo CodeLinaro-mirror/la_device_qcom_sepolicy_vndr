@@ -27,3 +27,7 @@
 
 hal_client_domain(untrusted_app, vendor_hal_qspmhal)
 
+# allow untrusted_app to use DMA-BUF file descriptors
+userdebug_or_eng(`
+  allow untrusted_app vendor_modprobe:fd use;
+')
