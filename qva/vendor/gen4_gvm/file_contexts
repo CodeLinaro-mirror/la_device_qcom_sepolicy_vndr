@@ -1,4 +1,4 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 ###################################
@@ -48,6 +48,8 @@
 
 # amfs service
 /(vendor|system/vendor)/bin/amfsservice                             u:object_r:vendor_amfsservice_exec:s0
+
+/vendor/bin/memory_hotplug\.sh                                      u:object_r:vendor_memory_hotplug_exec:s0
 
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0
