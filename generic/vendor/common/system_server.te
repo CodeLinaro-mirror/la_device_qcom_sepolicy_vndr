@@ -99,3 +99,5 @@ allow system_server vendor_nicmd:fd use;
 allow system_server vendor_nicmd:udp_socket { getattr getopt read write };
 
 dontaudit system_server vendor_proc_shs:dir search;
+
+dontaudit system_server vendor_default_prop:file read;
