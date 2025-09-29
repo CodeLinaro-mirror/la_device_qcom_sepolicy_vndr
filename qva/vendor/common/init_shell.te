@@ -64,6 +64,8 @@ allow vendor_qti_init_shell {
     vendor_sysfs_mmc_host
     sysfs_dm
     vendor_sysfs_sd
+    proc_page_cluster
+    vendor_proc_swappiness
 }:file w_file_perms;
 
 # Allow init shell to access /sys/class/kgsl/kgsl/ nodes
@@ -72,6 +74,7 @@ allow vendor_qti_init_shell vendor_sysfs_kgsl:file w_file_perms;
 # Allow init shell to access vendor pasr properties
 set_prop(vendor_qti_init_shell, vendor_pasr_prop)
 set_prop(vendor_qti_init_shell, ctl_start_prop)
+set_prop(vendor_qti_init_shell, ctl_stop_prop)
 set_prop(vendor_qti_init_shell, vendor_memory_min_free_kbytes)
 dontaudit vendor_qti_init_shell default_prop:file read;
 
@@ -80,10 +83,5 @@ allow vendor_qti_init_shell nfc_device:chr_file { getattr };
 set_prop(vendor_qti_init_shell, vendor_ese_strongbox_prop)
 
 allow vendor_qti_init_shell vendor_sysfs_usb_device:file w_file_perms;
-
-allow vendor_qti_init_shell {
-    vendor_sysfs_mmc_host
-    sysfs_dm
-}:file w_file_perms;
 
 set_prop(vendor_qti_init_shell, vendor_soc_model_prop);
