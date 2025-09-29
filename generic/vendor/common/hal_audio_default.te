@@ -116,3 +116,5 @@ get_prop(hal_audio, vendor_bluetooth_prop)
 allow hal_audio_default vendor_xdsp_device:chr_file r_file_perms;
 r_dir_file(hal_audio, adsprpcd_file);
 get_prop(hal_audio, vendor_adsprpc_prop)
+
+allow hal_audio_default sysfs:dir r_dir_perms;

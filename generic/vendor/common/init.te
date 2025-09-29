@@ -36,6 +36,7 @@ allow init {
     mnt_vendor_vm_file
 }:dir mounton;
 
+dontaudit init debugfs_tracing_debug:dir mounton;
 # symlink /sdcard to backing block
 allow init tmpfs:lnk_file create;
 
