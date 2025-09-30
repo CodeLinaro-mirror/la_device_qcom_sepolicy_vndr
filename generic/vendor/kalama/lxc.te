@@ -129,5 +129,9 @@ allow weston self:netlink_kobject_uevent_socket read;
 
 # /tmp/weston.log
 allow weston tmpfs:file append;
+allow weston tmpfs:chr_file { ioctl read };
+allow weston gpu_device:chr_file ioctl;
+allow weston gpu_device:chr_file map;
+allow weston gpu_device:chr_file { read write };
 
 ################## weston in lxc -- end ####################
