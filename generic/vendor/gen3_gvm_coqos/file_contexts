@@ -10,3 +10,5 @@
 /sys/devices/platform/odm/[0-9a-f]+\.virtio_mmio/virtio[0-9]+/virtio-ports/vport[0-9]+p[0-1]/name  u:object_r:vendor_sysfs_virtio_ports:s0
 
 /vendor/bin/vport_trigger  u:object_r:vport_trigger_exec:s0
+
+/dev/block/by-name/misc u:object_r:misc_block_device:s0
