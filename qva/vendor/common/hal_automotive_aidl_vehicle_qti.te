@@ -11,7 +11,6 @@ binder_call(vendor_aidl_hal_automotive_vehicle_qti, carservice_app)
 allow vendor_aidl_hal_automotive_vehicle_qti input_device:chr_file r_file_perms;
 allow vendor_aidl_hal_automotive_vehicle_qti input_device:dir r_dir_perms;
 
-hal_server_domain(vendor_aidl_hal_automotive_vehicle_qti, hal_vehicle);
 allow vendor_aidl_hal_automotive_vehicle_qti self:can_socket create_socket_perms;
 allowxperm vendor_aidl_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
 allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_kpi:file w_file_perms;
@@ -21,3 +20,4 @@ get_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_hiber_prop)
 get_prop(vendor_aidl_hal_automotive_vehicle_qti,vendor_lpm_prop)
 set_prop(vendor_aidl_hal_automotive_vehicle_qti, vendor_lpm_prop)
 allow vendor_aidl_hal_automotive_vehicle_qti vendor_sysfs_usb_device:file rw_file_perms;
+allow vendor_aidl_hal_automotive_vehicle_qti input_device:dir ioctl;
