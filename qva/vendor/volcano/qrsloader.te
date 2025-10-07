@@ -48,3 +48,5 @@ allow vendor_qrsloader vendor_awareagent:unix_dgram_socket sendto;
 
 # Allow vendor_awareagent to send data to vendor_qrsloader over Unix datagram socket
 allow vendor_awareagent vendor_qrsloader:unix_dgram_socket sendto;
+
+get_prop(vendor_qrsloader, vendor_qrs_enable_tag_resolver_prop)
