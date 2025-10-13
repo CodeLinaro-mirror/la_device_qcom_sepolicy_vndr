@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_sysfs_audio, fs_type, sysfs_type;
@@ -225,8 +225,9 @@ type vendor_sysfs_qdss_dev, sysfs_type, fs_type;
 #Define the qdcmss socket type
 type vendor_qdcmsocket_socket, file_type;
 type vendor_sysfs_mhi, sysfs_type, fs_type;
-
-type vendor_sysfs_suspend, fs_type, sysfs_type;
+until_board_api(202504, `
+    type vendor_sysfs_suspend, fs_type, sysfs_type;
+')
 
 # kgsl gpu model file type for sysfs access
 type vendor_sysfs_kgsl_gpu_model, sysfs_type, fs_type;
@@ -288,7 +289,6 @@ type vendor_sysfs_fs_ext4, fs_type, sysfs_type;
 
 # someip
 type vendor_someip_data_file, file_type, data_file_type;
-type vendor_someip_cfg_file, file_type, vendor_file_type;
 
 # vnw
 type vendor_emac_state, sysfs_type, fs_type;
