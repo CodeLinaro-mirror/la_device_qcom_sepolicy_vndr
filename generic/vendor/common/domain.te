@@ -111,6 +111,7 @@ neverallow { domain
 - vendor_dspservice
 - vendor_hexlpservice
 - vendor_unsignedhexlpservice
+- hal_audio_default
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 } vendor_qdsp_device:chr_file *;
 neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
