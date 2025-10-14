@@ -36,13 +36,14 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 neverallow {
-  vendor_halserverdomain
-  -vendor_hal_fstman
-  -vendor_hal_dpmapiservice_qti
-  -vendor_wigignpt
-  -vendor_cnd
+ vendor_halserverdomain
+ -vendor_hal_fstman
+ -vendor_hal_dpmapiservice_qti
+ -vendor_wigignpt
+ -vendor_cnd
   -vendor_qms
   userdebug_or_eng(` -vendor_hal_diaghal')
+  userdebug_or_eng(` -vendor_wifimyftmsvc')
 } self:global_capability_class_set { net_admin net_raw };
 
 neverallow {
@@ -50,6 +51,7 @@ neverallow {
   -vendor_cnd
   -vendor_hal_datafactory_qti
   -vendor_hal_sxrservice_qti
+  -vendor_hal_qvrservice_qti
   -vendor_hal_fstman
   -vendor_wifidisplayhalservice_qti
   -vendor_ims_service
@@ -61,11 +63,20 @@ neverallow {
   -vendor_hal_imsrtp
   userdebug_or_eng(` -vendor_hal_diaghal')
   userdebug_or_eng(` -vendor_qtiloopback_native')
+  userdebug_or_eng(` -vendor_wifimyftmsvc')
 } domain:{ tcp_socket udp_socket rawip_socket } *;
 
 neverallow {
   vendor_halserverdomain
   - vendor_qtidataservices_app
-} { file_type fs_type }:file execute_no_trans;
+  userdebug_or_eng(` -vendor_wifimyftmsvc')
+} {
+file_type
+fs_type
+-shell_exec
+-toolbox_exec
+}:file execute_no_trans;
+
 neverallow { domain -init } vendor_halserverdomain:process transition;
-neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app }:process dyntransition;
+neverallow *  { vendor_halserverdomain - vendor_qtidataservices_app  }:process dyntransition;
+
