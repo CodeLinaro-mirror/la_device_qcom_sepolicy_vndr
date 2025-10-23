@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ###################################
@@ -188,6 +188,9 @@
 /(vendor|system/vendor)/bin/edgnss-daemon                                          u:object_r:vendor_location_edgnss_daemon_exec:s0
 /(vendor|system/vendor)/bin/qsap_location                                          u:object_r:vendor_qsap_location_exec:s0
 /(vendor|system/vendor)/bin/locIdlClient_daemon                                    u:object_r:vendor_location_locIdlClient_daemon_exec:s0
+
+##Context for vsomeip daemon features
+/(vendor|system/vendor)/bin/vsomeip_daemon                                         u:object_r:vendor_vsomeip_daemon_exec:s0
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0

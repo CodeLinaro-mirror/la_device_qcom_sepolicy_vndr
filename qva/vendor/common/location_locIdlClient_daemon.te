@@ -1,4 +1,4 @@
-# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # qva/vendor/common/location_locIdlClient_daemon.te - sepolicy rules for qti value added location module locIdlClient_daemon
@@ -45,7 +45,12 @@ allow vendor_location_locIdlClient_daemon vendor_location:unix_stream_socket { r
 crash_dump_fallback(vendor_location_locIdlClient_daemon)
 
 # someip
-allow vendor_location_locIdlClient_daemon vendor_someip_data_file:dir { add_name search write remove_name };
-allow vendor_location_locIdlClient_daemon vendor_someip_data_file:file { create lock open write };
-allow vendor_location_locIdlClient_daemon vendor_someip_data_file:sock_file { create setattr write unlink };
+userdebug_or_eng(`
+allow vendor_location_locIdlClient_daemon vendor_someip_daemon_data_file:dir { add_name search write remove_name };
+allow vendor_location_locIdlClient_daemon vendor_someip_daemon_data_file:file { create lock open write append getattr };
+')
+allow vendor_location_locIdlClient_daemon vendor_someip_daemon_sock_file:dir { add_name search write remove_name };
+allow vendor_location_locIdlClient_daemon vendor_someip_daemon_sock_file:file { create lock open write };
+allow vendor_location_locIdlClient_daemon vendor_someip_daemon_sock_file:sock_file { create setattr write unlink };
+allow vendor_location_locIdlClient_daemon vendor_vsomeip_daemon:unix_stream_socket connectto;
 
