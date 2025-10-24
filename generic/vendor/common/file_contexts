@@ -162,6 +162,7 @@
 /dev/dma_heap/qcom,ubwcp                u:object_r:vendor_dmabuf_ubwcp_heap_device:s0
 /dev/dma_heap/qcom,system-movable       u:object_r:vendor_dmabuf_system_movable_heap_device:s0
 /dev/dma_heap/qcom,ubwcp-movable        u:object_r:vendor_dmabuf_ubwcp_movable_heap_device:s0
+/dev/dma_heap/qcom,sc-tcm               u:object_r:vendor_dmabuf_sc_tcm_heap_device:s0
 
 # mem-buf device used for inter-VM memory transactions
 /dev/membuf                                     u:object_r:vendor_membuf_dev:s0
@@ -201,6 +202,7 @@
 /vendor/bin/hw/vendor.qti.hardware.limits@1.1-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/hw/vendor.qti.hardware.limits@1.2-service    u:object_r:vendor_limits-hal_exec:s0
 /vendor/bin/qlm-service         u:object_r:vendor_qlm_service_exec:s0
+/vendor/bin/qt-service          u:object_r:vendor_qt_service_exec:s0
 /vendor/bin/sensors.qti         u:object_r:vendor_sensors_qti_exec:s0
 /vendor/bin/qsap_sensors        u:object_r:vendor_sensors_qesdk_exec:s0
 /vendor/bin/ssr_setup           u:object_r:vendor_ssr_setup_exec:s0
