@@ -35,3 +35,5 @@ genfscon sysfs /devices/platform/soc/9c0000.qcom,qupv3_0_geni_se/990000.qcom,qup
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a98000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a600000.hsusb/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/soc/a600000.hsusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
