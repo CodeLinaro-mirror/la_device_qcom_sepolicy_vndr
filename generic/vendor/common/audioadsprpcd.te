@@ -53,3 +53,5 @@ allow vendor_audioadsprpcd vendor_audio_dsp_data_file:dir r_dir_perms;
 allow vendor_audioadsprpcd vendor_audio_dsp_data_file:file r_file_perms;
 
 allow vendor_audioadsprpcd device:dir { read watch };
+
+r_dir_file(vendor_audioadsprpcd, vendor_sysfs_public);
