@@ -53,6 +53,13 @@ genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform
 genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:bolero-cdc/wcd937x-codec/extcon/extcon1/cable.2/name u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:bolero-cdc/wcd937x-codec/extcon/extcon1/cable.3/name u:object_r:vendor_sysfs_graphics:s0
 
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:bolero-cdc/wcd937x-codec/extcon/extcon3/cable.0/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:bolero-cdc/wcd937x-codec/extcon/extcon3/cable.1/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:bolero-cdc/wcd937x-codec/extcon/extcon3/cable.2/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:bolero-cdc/wcd937x-codec/extcon/extcon3/cable.3/name u:object_r:vendor_sysfs_graphics:s0
+
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/state u:object_r:vendor_sysfs_graphics:s0
+
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/spm_lvl         u:object_r:vendor_sysfs_scsi_host:s0
 
 #camera
