@@ -105,3 +105,5 @@ allow init self:capability sys_nice;
 userdebug_or_eng(`
 allow init kmsg_device:chr_file ioctl;
 ')
+
+userdebug_or_eng(`allow init debugfs_tracing_debug:dir mounton;');
