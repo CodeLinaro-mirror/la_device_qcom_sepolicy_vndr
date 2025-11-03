@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 domain_auto_trans(init, vendor_init_early_test_exec, vendor_init_early_test)
@@ -17,6 +17,10 @@ allow init gpu_device:chr_file rw_file_perms;
 allow init graphics_device:chr_file r_file_perms;
 domain_auto_trans(init, vendor_esplash_exec, vendor_esplash)
 allow init vendor_esplash_exec:file { r_file_perms execute };
+
+domain_auto_trans(init, vendor_agmplay_exec, vendor_agmplay)
+allow init vendor_agmplay_exec:file { r_file_perms execute };
+
 
 #Required by early-init
 allow init kernel:process share;

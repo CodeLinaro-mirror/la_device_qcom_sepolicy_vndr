@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ###################################
@@ -370,6 +370,7 @@
 /vendor/bin/hiber_restore.sh                                                     u:object_r:vendor_qti_hiber_restore_exec:s0
 /dev/block/sda13                                                                 u:object_r:vendor_swap_block_device:s0
 /dev/block/mmcblk0p84                                                            u:object_r:vendor_swap_block_device:s0
+/dev/block/mmcblk0p82                                                            u:object_r:vendor_swap_block_device:s0
 /sys/power/image_size                                                            u:object_r:vendor_sysfs_power_image:s0
 
 #FastCV
