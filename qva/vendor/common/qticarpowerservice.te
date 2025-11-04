@@ -5,7 +5,11 @@ type qticarpower_app, domain;
 app_domain(qticarpower_app)
 
 # Required for service start
-allow qticarpower_app { activity_service }:service_manager find;
+allow qticarpower_app {
+    activity_service
+    content_capture_service
+    netstats_service
+}:service_manager find;
 allow qticarpower_app system_app_data_file:dir create_dir_perms;
 allow qticarpower_app system_app_data_file:file create_file_perms;
 
