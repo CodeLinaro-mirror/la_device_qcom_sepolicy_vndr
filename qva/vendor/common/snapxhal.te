@@ -17,3 +17,5 @@ binder_call(vendor_hal_snapx_default, servicemanager)
 # allow access to FrameworksUtilsSysService
 binder_call(vendor_hal_snapx_default, vendor_hal_qesdhal_client)
 allow vendor_hal_snapx_default vendor_qesdk_service:service_manager find;
+
+binder_use(vendor_hal_snapx_default);

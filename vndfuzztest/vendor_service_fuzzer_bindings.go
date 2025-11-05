@@ -193,5 +193,6 @@ var (
     "android.hardware.audio.core.IConfig/default":                                          EXCEPTION_NO_FUZZER,
     "vendor_npu_monitor_observer":                                                          []string{"vendor_npu_monitor_observer_fuzzer"},
     "vendor.qti.AvfQcvmManager.IAvfQcvmManager/default":                                    EXCEPTION_NO_FUZZER,
+    "vendor.qti.hardware.display.snapallocext.ISnapAllocExt/default":                       []string{"aidl_fuzzer_display_gralloc"},
  }
 )

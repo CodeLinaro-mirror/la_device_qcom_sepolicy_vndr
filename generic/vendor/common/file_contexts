@@ -385,6 +385,7 @@
 
 /vendor/lib(64)?/libdrmutils\.so           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libdrm\.so                u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.display\.snapallocext-V1-ndk\.so       u:object_r:same_process_hal_file:s0
 
 # /vendor/app/TimeService/TimeService.apk
 /vendor/lib(64)?/libTimeService\.so        u:object_r:same_process_hal_file:s0
@@ -681,6 +682,8 @@
 
 /(vendor|system/vendor)/bin/vendor_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
 /(vendor|system/vendor)/bin/system_dlkm_modprobe\.sh        u:object_r:vendor_modinstall-sh_exec:s0
+
+/(vendor|system/vendor)/bin/start_subsys\.sh        u:object_r:vendor_qti_init_shell_exec:s0
 
 /vendor/bin/embmsslServer       u:object_r:vendor_hal_embmssl_qti_exec:s0
 
