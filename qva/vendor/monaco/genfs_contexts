@@ -172,6 +172,7 @@ genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup50 u:object_r:sys
 #remoteproc-adsp:glink sysfs wake_up node
 
 genfscon sysfs /devices/platform/soc/ab00000.remoteproc-adsp/remoteproc/remoteproc1/ab00000.remoteproc-adsp:glink-edge/ab00000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ab00000.remoteproc-adsp/remoteproc/remoteproc2/ab00000.remoteproc-adsp:glink-edge/ab00000.remoteproc-adsp:glink-edge.adsp_apps.-1.-1/wakeup u:object_r:sysfs_wakeup:s0
 
 #GFX sysfs-node
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/wakeup u:object_r:sysfs_wakeup:s0
