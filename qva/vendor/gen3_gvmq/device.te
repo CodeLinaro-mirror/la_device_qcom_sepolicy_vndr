@@ -4,3 +4,4 @@
 type vendor_hab_device, dev_type;
 type vendor_hab_fde_device, dev_type;
 type vendor_hab_aud_device, dev_type;
+type vendor_hab_vid_device, dev_type;
