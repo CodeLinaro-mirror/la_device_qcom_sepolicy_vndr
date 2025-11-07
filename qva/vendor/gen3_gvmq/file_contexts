@@ -25,6 +25,7 @@
 /dev/hab-fde                                                        u:object_r:vendor_hab_fde_device:s0
 /dev/hgsl                                                           u:object_r:gpu_device:s0
 /dev/hab-aud                                                        u:object_r:vendor_hab_aud_device:s0
+/dev/hab-vid                                                        u:object_r:vendor_hab_vid_device:s0
 
 /vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
 
