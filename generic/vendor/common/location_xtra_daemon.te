@@ -1,4 +1,4 @@
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -34,10 +34,7 @@
 
 type vendor_location_xtra_daemon, domain;
 type vendor_location_xtra_daemon_exec, exec_type, vendor_file_type, file_type;
-# allows loc_launcher to launch xtra-daemon
-domain_auto_trans(vendor_location, vendor_location_xtra_daemon_exec, vendor_location_xtra_daemon)
-allow vendor_location_xtra_daemon vendor_location:fd use;
-
+init_daemon_domain(vendor_location_xtra_daemon)
 add_service(vendor_location_xtra_daemon, vendor_xtra_service)
 vndbinder_use(vendor_location_xtra_daemon)
 

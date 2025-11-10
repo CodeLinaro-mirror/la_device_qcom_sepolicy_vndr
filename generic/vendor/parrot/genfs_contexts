@@ -96,6 +96,11 @@ genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-2/2-0064/leds/blue u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-2/2-0064/leds u:object_r:sysfs_leds:s0
 
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-1/1-0064/leds/red u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-1/1-0064/leds/green u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-1/1-0064/leds/blue u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-1/1-0064/leds u:object_r:sysfs_leds:s0
+
 #PMIC devices wakeup nodes
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300:pwrkey/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8350@0:pon_hlos@1300:resin/wakeup/wakeup u:object_r:sysfs_wakeup:s0
@@ -310,3 +315,5 @@ genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a94000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi_1103_00.01.00/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/9c0000.qcom,qupv3_0_geni_se/980000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0

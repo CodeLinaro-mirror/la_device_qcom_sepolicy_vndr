@@ -91,6 +91,7 @@ neverallow { domain
 userdebug_or_eng(` -vendor_usta_app')
 userdebug_or_eng(` -vendor_ustaservice_app')
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
+userdebug_or_eng(` -vendor_snapcam_app')
 }vendor_xdsp_device:chr_file *;
 
 neverallow { domain -init -vendor_init - ueventd } vendor_xdsp_device:chr_file ~{r_file_perms};
@@ -132,6 +133,7 @@ neverallow { domain
 - apexd
 - vendor_qti_init_shell
 - wpa_supplicant_macsec
+- vendor_hal_perf_default
 userdebug_or_eng(` -vendor_subsystem_ramdump')
 } { vendor_sys_nonsp_comp vendor_sys_sp_comp }: file *;
 
