@@ -166,7 +166,6 @@
 /dev/qce                                        u:object_r:vendor_qce_device:s0
 
 #AVF VM DTBO enablement
-/data/vendor/qtvm_dtbo(/.*)?                    u:object_r:vendor_vm_data_file:s0
 /mnt/vendor/qtvm_dtbo(/.*)?                     u:object_r:vendor_vm_data_file:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
