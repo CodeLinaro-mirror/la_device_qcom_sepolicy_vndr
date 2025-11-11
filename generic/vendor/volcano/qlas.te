@@ -24,3 +24,7 @@ userdebug_or_eng(`
 allow vendor_qlas vendor_mosquitto_socket:dir {search};
 allow vendor_qlas vendor_mosquitto_socket:sock_file { write };
 allow vendor_qlas vendor_mosquitto:unix_stream_socket {connectto};
+
+allow vendor_qlas init:unix_stream_socket {connectto};
+allow vendor_qlas property_socket:sock_file {write};
+set_prop(vendor_qlas, vendor_fas_signal_prop)

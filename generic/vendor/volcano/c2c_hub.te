@@ -22,3 +22,8 @@ userdebug_or_eng(`
 allow vendor_c2c_hub vendor_mosquitto_socket:dir {search};
 allow vendor_c2c_hub vendor_mosquitto_socket:sock_file { write };
 allow vendor_c2c_hub vendor_mosquitto:unix_stream_socket {connectto};
+
+allow vendor_c2c_hub init:unix_stream_socket {connectto};
+allow vendor_c2c_hub property_socket:sock_file {write};
+set_prop(vendor_c2c_hub, vendor_fas_signal_prop)
+
