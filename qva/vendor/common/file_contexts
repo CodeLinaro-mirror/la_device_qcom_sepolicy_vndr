@@ -276,6 +276,7 @@
 /data/vendor/qms_logs/other(/.*)?                                    u:object_r:vendor_qms_other_data_file:s0
 /data/vendor/qms_logs/config(/.*)?                                  u:object_r:vendor_qms_config_data_file:s0
 /data/vendor/xrcomm(/.*)?                                           u:object_r:vendor_xrcommd_vndr_data_file:s0
+/data/vendor/wifi/cfr(/.*)?                                         u:object_r:vendor_wifi_cfr_file:s0
 
 ###################################
 # persist files
