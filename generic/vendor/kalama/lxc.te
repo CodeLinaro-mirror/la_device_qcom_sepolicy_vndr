@@ -23,6 +23,7 @@ dontaudit app_in_lxc self:capability { dac_read_search sys_ptrace };
 
 # systemd-udevd, systemd-journal in linux container
 allow app_in_lxc self:netlink_kobject_uevent_socket { read write create setopt bind getattr };
+allow app_in_lxc self:netlink_route_socket { create getopt setopt bind getattr write nlmsg_write read };
 allow app_in_lxc self:capability { net_admin sys_resource sys_admin };
 allow app_in_lxc self:process { setfscreate };
 allowxperm app_in_lxc self:file ioctl { TCGETS };
@@ -31,6 +32,7 @@ allow app_in_lxc tmpfs:file { create write open getattr unlink read setattr rena
 allow app_in_lxc tmpfs:lnk_file { read getattr create rename unlink };
 allow app_in_lxc tmpfs:sock_file { write };
 allow app_in_lxc tmpfs:chr_file { write read open };
+#allow app_in_lxc tmpfs:filesystem { remount };
 allow app_in_lxc cgroup_v2:file { read getattr };
 
 # systemd-udevd to /sys/devices/virtual/wakeup/wakeup79/uevent

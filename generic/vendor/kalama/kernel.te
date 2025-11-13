@@ -12,7 +12,7 @@ allow kernel vendor_file:file read;
 allow kernel firmware_file:filesystem  { relabelto relabelfrom  mount };
 allow kernel vendor_early_services:dir r_dir_perms;
 allow kernel tmpfs:chr_file rw_file_perms;
-allow kernel tmpfs:dir r_dir_perms;
+allow kernel tmpfs:dir { write add_name r_dir_perms };
 allow kernel proc_cmdline:file r_file_perms;
 allow kernel sepolicy_file:file r_file_perms;
 allow kernel device:dir create_dir_perms;
@@ -43,3 +43,8 @@ allow kernel vfat:dir { search };
 allow kernel kernel:capability { mknod sys_admin };
 allow kernel device:chr_file { create setattr unlink };
 dontaudit kernel self:capability dac_read_search;
+
+allow kernel rootfs:system module_load;
+#allow kernel device:blk_file { create setattr };
+allow kernel vendor_sysfs_bootkpi:dir search;
+allow kernel vendor_sysfs_bootkpi:file { write open };
