@@ -1,2 +1,7 @@
 # copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
+genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio49/net/eth0 u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc/23000000.qcom,ethernet/net/eth1 u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p0 u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0 u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan1 u:object_r:sysfs_net:s0
