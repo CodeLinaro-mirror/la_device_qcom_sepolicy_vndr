@@ -4,3 +4,4 @@
 allow vendor_qti_init_shell self:udp_socket { create ioctl };
 allowxperm vendor_qti_init_shell self:udp_socket ioctl { SIOCSIFADDR SIOCSIFFLAGS };
 userdebug_or_eng(`allow vendor_qti_init_shell kmsg_device:chr_file { open write }');
+allow vendor_qti_init_shell vendor_custom_ab_block_device:blk_file { open write };
