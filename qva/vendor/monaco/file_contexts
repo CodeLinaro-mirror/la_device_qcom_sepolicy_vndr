@@ -88,6 +88,7 @@
 
 # same process HAL libs
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.wristorientation@1\.0-service u:object_r:vendor_hal_wristorientation_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.wristorientation-aidl-service u:object_r:vendor_hal_wristorientation_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.healthservices@2-service u:object_r:vendor_hal_healthservices_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate-service\.wear-qti u:object_r:vendor_hal_dumpstate_qti_exec:s0
 # Bluetooth LAZY HAL
