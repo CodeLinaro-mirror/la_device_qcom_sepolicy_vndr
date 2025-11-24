@@ -49,6 +49,9 @@ type vendor_modem_block_device, dev_type;
 type vendor_modem_efs_partition_device, dev_type;
 type vendor_mdtp_device, dev_type;
 type vendor_persist_block_device, dev_type;
+type vendor_audio_cal_device, dev_type;
+type vendor_msm_rtac_device, dev_type;
+type vendor_msm_lsm_cdev_device, dev_type;
 
 type vendor_dmabuf_system_heap_device, dmabuf_heap_device_type, dev_type, mlstrustedobject;
 type vendor_dmabuf_system_uncached_heap_device, dmabuf_heap_device_type, dev_type, mlstrustedobject;
