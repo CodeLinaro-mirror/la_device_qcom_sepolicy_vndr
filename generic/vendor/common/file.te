@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
 #
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# ​​​​Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -220,6 +220,9 @@ type vendor_sysfs_max_chipset_log_size, fs_type, sysfs_type;
 #diag sysfs files
 type vendor_sysfs_diag, fs_type, sysfs_type;
 
+#wifi dump in progress sysfs files
+type vendor_sysfs_dump_in_progress, fs_type, sysfs_type;
+
 type vendor_hexagon_halide_file, vendor_file_type, file_type;
 
 # vendor media files
@@ -309,3 +312,5 @@ until_board_api(202604, `
 
 type mnt_vendor_vm_file, file_type;
 
+# for NPU Observer
+type vendor_sysfs_npu_pids_remote_sessions, sysfs_type, fs_type;

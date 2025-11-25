@@ -32,3 +32,5 @@
 
 # vendor biometricsface data file
 type vendor_biometricsface_data_file, file_type, data_file_type;
+
+type vendor_sysfs_cache_alloc, fs_type, sysfs_type;

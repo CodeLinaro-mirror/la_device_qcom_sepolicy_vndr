@@ -161,6 +161,44 @@ genfscon sysfs /devices/virtual/workqueue/kgsl-events/nice                     u
 genfscon sysfs /devices/virtual/workqueue/kgsl-workqueue/cpumask               u:object_r:vendor_sysfs_kgsl:s0
 genfscon sysfs /devices/virtual/workqueue/kgsl-workqueue/nice                  u:object_r:vendor_sysfs_kgsl:s0
 
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/dcvs_mode                  u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/dcvs_profile_enabled       u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel           u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/force_bus_on               u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/force_clk_on               u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/force_no_nap               u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/force_rail_on              u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/freq_table_mhz             u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies  u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_busy_percentage        u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_clock_stats            u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpubusy                    u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk                     u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/idle_timer                 u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk                 u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel               u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_clock_mhz              u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel               u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/num_pwrlevels              u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/temp                       u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/touch_wake                 u:object_r:vendor_sysfs_kgsl:s0
+
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/bus_max_freq_mhz                u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/bus_min_freq_mhz                u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/first_step_down                 u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/max_freq_mhz                    u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/min_freq_mhz                    u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/mod_percent                     u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/non_linear_ramp_down            u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/non_linear_ramp_up              u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/num_samples_down                u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/num_samples_up                  u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/penalty_down                    u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/penalty_up                      u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/strict_frame                    u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/subsequent_step_down            u:object_r:vendor_sysfs_kgsl:s0
+genfscon sysfs /devices/platform/soc/3d37000.qcom,gmu/dcvs_tunables/target_fps                      u:object_r:vendor_sysfs_kgsl:s0
+
 genfscon sysfs /class/kgsl/kgsl-3d0/perfcounter                                u:object_r:vendor_sysfs_kgsl_shell:s0
 
 genfscon sysfs /module/drm/parameters/vblankoffdelay                           u:object_r:vendor_sysfs_graphics:s0
@@ -191,6 +229,7 @@ genfscon sysfs /class/qcom-haptics/v_gain_error     u:object_r:vendor_sysfs_hapt
 genfscon sysfs /class/qcom-haptics/i_gain_error     u:object_r:vendor_sysfs_haptics:s0
 genfscon sysfs /class/qcom-haptics/lra_frequency_hz    u:object_r:vendor_sysfs_haptics:s0
 genfscon sysfs /class/qcom-haptics/lra_f0_cal_in_play    u:object_r:vendor_sysfs_haptics:s0
+genfscon sysfs /class/qcom-haptics/swr_play         u:object_r:vendor_sysfs_haptics:s0
 
 genfscon sysfs /class/qcom-battery/soh        u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /class/qcom-battery/resistance u:object_r:vendor_sysfs_battery_supply:s0

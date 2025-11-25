@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 ###################################
 # Dev block nodes
@@ -244,15 +244,19 @@
 
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/soc:remoteproc-adsp@06800000/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-adsp@06800000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:remoteproc-adsp@06800000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/soc:remoteproc-cdsp@32300000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-cdsp@32300000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:remoteproc-cdsp@32300000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/soc:remoteproc-cdsp@26300000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-cdsp@26300000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:remoteproc-cdsp@26300000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/soc:remoteproc-slpi@2400000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-slpi@2400000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -262,6 +266,7 @@
 
 /sys/devices/platform/soc/soc:remoteproc-soccp@a3380000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-soccp@a3380000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:remoteproc-soccp@a3380000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -269,15 +274,19 @@
 
 /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/6800000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/6800000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/6800000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/26300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/26300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/26300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/2400000.remoteproc-slpi/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -287,6 +296,7 @@
 
 /sys/devices/platform/soc/a3380000.remoteproc-soccp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/a3380000.remoteproc-soccp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/a3380000.remoteproc-soccp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,trustedvm@d0800000/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0

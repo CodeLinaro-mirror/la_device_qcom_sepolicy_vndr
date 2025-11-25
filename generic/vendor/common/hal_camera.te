@@ -104,3 +104,24 @@ allow hal_camera_default vendor_hlosminkdaemon:unix_stream_socket connectto;
 
 # wakelock sysfs access
 wakelock_use(hal_camera_default)
+
+# display prop access
+get_prop(hal_camera_default, vendor_display_prop)
+
+# mink trace access
+# Allow read access to mink socket log files
+userdebug_or_eng(`
+   get_prop(hal_camera_default, vendor_mink_trace_prop)
+')
+
+# Allow access to read the VM SSR flag
+allow hal_camera_default vendor_vm_ssrenable_prop:file read;
+
+# Allow access to AVF qVirt manager interface
+hal_client_domain(hal_camera_default, vendor_hal_avf_qcvm_qti)
+
+# Allow access to HLOS Mink Daemon socket
+unix_socket_connect(hal_camera_default, vendor_hlos_minkd_opener, vendor_hlosminkdaemon)
+
+# Allow HLOS Mink Daemon to access fd passed by Camera HAL
+allow vendor_hlosminkdaemon hal_camera_default:fd use;

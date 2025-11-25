@@ -77,6 +77,11 @@ allow vendor_thermal-engine vendor_sysfs_battery_supply:dir r_dir_perms;
 allow vendor_thermal-engine vendor_sysfs_battery_supply:file rw_file_perms;
 allow vendor_thermal-engine vendor_sysfs_battery_supply:lnk_file r_file_perms;
 
+# This is required read usb power supply sysfs
+allow vendor_thermal-engine vendor_sysfs_usb_supply:dir r_dir_perms;
+allow vendor_thermal-engine vendor_sysfs_usb_supply:file r_file_perms;
+allow vendor_thermal-engine vendor_sysfs_usb_supply:lnk_file r_file_perms;
+
 # This is required to read and write lcd-backlight sysfs
 allow vendor_thermal-engine vendor_sysfs_graphics:dir r_dir_perms;
 allow vendor_thermal-engine vendor_sysfs_graphics:file rw_file_perms;
@@ -110,5 +115,5 @@ allow vendor_thermal-engine vendor_limits_block_device:blk_file rw_file_perms;
 # This is required for power telemetry sysfs access
 until_board_api(202604, `
 	allow vendor_thermal-engine vendor_sysfs_powercap:dir r_dir_perms;
-	allow vendor_thermal-engine vendor_sysfs_powercap:file r_file_perms;
+	allow vendor_thermal-engine vendor_sysfs_powercap:file rw_file_perms;
 ')

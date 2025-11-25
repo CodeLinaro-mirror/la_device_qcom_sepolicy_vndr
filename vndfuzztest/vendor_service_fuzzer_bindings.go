@@ -11,8 +11,8 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-// Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-// Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+// Changes from Qualcomm Technologies, Inc. are provided under the following license:
+// Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 // SPDX-License-Identifier: BSD-3-Clause-Clear
 
 package vendor_selinux
@@ -191,6 +191,8 @@ var (
     "android.hardware.audio.core.IModule/r_submix":                                         EXCEPTION_NO_FUZZER,
     "android.hardware.audio.core.IModule/usb":                                              EXCEPTION_NO_FUZZER,
     "android.hardware.audio.core.IConfig/default":                                          EXCEPTION_NO_FUZZER,
+    "vendor_npu_monitor_observer":                                                          []string{"vendor_npu_monitor_observer_fuzzer"},
     "vendor.qti.AvfQcvmManager.IAvfQcvmManager/default":                                    EXCEPTION_NO_FUZZER,
+    "vendor.qti.hardware.display.snapallocext.ISnapAllocExt/default":                       []string{"aidl_fuzzer_display_gralloc"},
  }
 )

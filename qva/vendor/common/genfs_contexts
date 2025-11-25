@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
 #
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -68,20 +68,29 @@ genfscon sysfs /module/msm_thermal/core_control/cpus_offlined           u:object
 genfscon sysfs /kernel/snd_card/card_state           u:object_r:vendor_sysfs_sndcard:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/state u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/cable.0/ u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon0/cable.1/ u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/state u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/cable.0/ u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon1/cable.1/ u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/state u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/cable.0/ u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/cable.1/ u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon3/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon3/state u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon3/cable.0/ u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon3/cable.1/ u:object_r:vendor_sysfs_graphics:s0
+
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd939x-codec/extcon/extcon3/cable.0/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd939x-codec/extcon/extcon3/cable.1/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd939x-codec/extcon/extcon3/cable.2/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd939x-codec/extcon/extcon3/cable.3/name u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /kernel/load_guestvm/boot_guestvm u:object_r:vendor_sysfs_bootguestvm:s0
 
@@ -111,6 +120,8 @@ genfscon sysfs /kernel/msm_performance/parameters/dplh_notif u:object_r:vendor_s
 genfscon sysfs /kernel/msm_performance/parameters/dplh_log_level u:object_r:vendor_sysfs_msm_perf:s0
 genfscon sysfs /kernel/msm_performance/events/cpu_hotplug u:object_r:vendor_sysfs_msm_perf:s0
 
+genfscon sysfs /wifi/dump_in_progress u:object_r:vendor_sysfs_dump_in_progress:s0
+
 genfscon sysfs /kernel/msm_performance/notify/aggr_big_nr u:object_r:vendor_sysfs_msm_perf:s0
 genfscon sysfs /kernel/msm_performance/notify/aggr_top_load u:object_r:vendor_sysfs_msm_perf:s0
 genfscon sysfs /kernel/msm_performance/notify/curr_cap_cluster u:object_r:vendor_sysfs_msm_perf:s0
@@ -119,3 +130,5 @@ genfscon sysfs /kernel/msm_performance/notify/top_load_cluster u:object_r:vendor
 genfscon sysfs /wifi/max_chipset_log_size u:object_r:vendor_sysfs_max_chipset_log_size:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/usb u:object_r:vendor_sysfs_usb_node:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.2.auto/usb u:object_r:vendor_sysfs_usb_node:s0
+
+genfscon proc /device-tree/soc/st54spi_gpio u:object_r:vendor_ese_gpio_proc:s0

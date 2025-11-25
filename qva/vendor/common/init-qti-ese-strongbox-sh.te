@@ -38,5 +38,11 @@ set_prop(vendor_init-qti-ese-strongbox-sh, vendor_ese_strongbox_prop)
 allow vendor_init-qti-ese-strongbox-sh vendor_shell_exec:file rx_file_perms;
 allow vendor_init-qti-ese-strongbox-sh vendor_toolbox_exec:file rx_file_perms;
 
-# Allow nfc device file execution on device
+# Allow device file execution on device
 allow vendor_init-qti-ese-strongbox-sh nfc_device:chr_file { open getattr map };
+allow vendor_init-qti-ese-strongbox-sh vendor_ese_gpio_device:chr_file { open getattr map };
+
+# Allow to access SoC and ese_gpio sysfs nodes
+allow vendor_init-qti-ese-strongbox-sh vendor_ese_gpio_proc:file { open read getattr };
+allow vendor_init-qti-ese-strongbox-sh vendor_sysfs_devicetree_soc:dir {search};
+allow vendor_init-qti-ese-strongbox-sh vendor_sysfs_devicetree_soc:file {read open getattr};
