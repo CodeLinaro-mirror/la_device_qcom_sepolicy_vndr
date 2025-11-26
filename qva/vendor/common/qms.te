@@ -223,7 +223,7 @@ neverallow {
 allow vendor_qms vendor_ipaevents_device:chr_file r_file_perms;
 
 #Allow QMS to read restart level property
-allow vendor_qms vendor_ssr_prop:file { getattr map open read };
+allow vendor_qms vendor_sysfs_ssr_toggle:file r_file_perms;
 
 #Microdump permissions
 allow vendor_qms vendor_sysfs_devicetree_soc:dir {search};
