@@ -36,6 +36,7 @@ net_domain(vendor_vnw)
 
 allow vendor_vnw self:capability { net_admin net_raw chown ipc_lock };
 allow vendor_vnw self:packet_socket { create bind read setopt write };
+allow vendor_vnw self:packet_socket create_socket_perms;
 allowxperm vendor_vnw self:packet_socket ioctl { SIOCGIFHWADDR SIOCGIFINDEX SIOCGIFNAME SIOCSHWTSTAMP };
 allowxperm vendor_vnw self:unix_dgram_socket ioctl { SIOCETHTOOL };
 allowxperm vendor_vnw self:tcp_socket ioctl { SIOCETHTOOL };
