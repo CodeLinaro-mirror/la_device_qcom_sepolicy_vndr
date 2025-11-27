@@ -109,3 +109,7 @@ allow system_server hal_vehicle_server:process signal;
 
 allow system_server vendor_hidraw_device:dir r_dir_perms;
 allow system_server vendor_hidraw_device:chr_file rw_file_perms;
+
+allow system_server vendor_hal_audiocontrol_qti_aidl:process signal;
+allow system_server evsmanagerd:process signal;
+allow system_server vendor_aidl_automotive_evs_ais:process signal;
