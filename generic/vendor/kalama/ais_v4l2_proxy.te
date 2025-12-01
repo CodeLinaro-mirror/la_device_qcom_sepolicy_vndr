@@ -22,5 +22,8 @@ allow vendor_ais_v4l2_proxy vendor_ais_server:unix_stream_socket connectto;
 allow vendor_ais_v4l2_proxy vendor_sysfs_kpi:file w_file_perms;
 allow vendor_ais_v4l2_proxy kmsg_device:chr_file write;
 allow vendor_ais_v4l2_proxy socket_device:sock_file write;
-
+allow vendor_ais_v4l2_proxy sysfs:file read;
+allow vendor_ais_v4l2_proxy vendor_init:unix_stream_socket connectto;
+allow vendor_ais_v4l2_proxy vendor_sysfs_bootkpi:dir search;
+allow vendor_ais_v4l2_proxy sysfs:file { getattr open };
 

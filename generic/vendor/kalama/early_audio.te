@@ -3,10 +3,11 @@
 
 type vendor_early_audio, domain;
 type vendor_early_audio_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(vendor_early_audio)
+#init_daemon_domain(vendor_early_audio)
+domain_auto_trans(vendor_init, vendor_early_audio_exec, vendor_early_audio)
 
 allow vendor_early_audio tinymix_exec:file { execute execute_no_trans };
-domain_auto_trans(vendor_early_audio, tinymix_exec, tinymix);
+domain_auto_trans(vendor_early_audio, tinymix_exec, tinymix)
 
 allow vendor_early_audio audio_device:dir search;
 allow vendor_early_audio audio_device:dir {read write};
@@ -38,3 +39,6 @@ allow vendor_early_audio self:qipcrtr_socket { read write getattr setopt };
 allow vendor_early_audio dmabuf_system_heap_device:chr_file { read open ioctl };
 allow vendor_early_audio vendor_agm_device:chr_file ioctl;
 allow audio_device device:filesystem associate;
+allow vendor_early_audio vendor_init:fd use;
+allow vendor_early_audio vendor_sysfs_bootkpi:dir search;
+allow vendor_early_audio vendor_sysfs_bootkpi:file { open write };

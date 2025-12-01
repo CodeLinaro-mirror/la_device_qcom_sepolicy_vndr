@@ -43,3 +43,4 @@ allow init video_device:chr_file relabelfrom;
 #allow init vendor_camera_socket:dir relabelto;
 
 allow init vendor_sysfs_bootkpi:file { open };
+allow init debugfs_tracing_debug:dir mounton;

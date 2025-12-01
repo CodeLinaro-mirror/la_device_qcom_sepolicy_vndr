@@ -66,3 +66,8 @@ userdebug_or_eng(`
   allow vendor_agmservice_qti proc_sysrq:file rw_file_perms;
   allow vendor_agmservice_qti debugfs:dir r_dir_perms;
 ')
+
+allow vendor_agmservice_qti kmsg_device:chr_file { append open getattr };
+allowxperm vendor_agmservice_qti kmsg_device:chr_file ioctl { 0x5401 };
+allow vendor_agmservice_qti vendor_sysfs_bootkpi:dir search;
+allow vendor_agmservice_qti kmsg_device:chr_file ioctl;
