@@ -3,3 +3,4 @@
 #
 #bt-uart
 vendor.ser.bt-uart  u:object_r:vendor_ser_property:s0
+vendor.ser.gnss-uart u:object_r:vendor_ser_gnss_uart_property:s0

@@ -11,3 +11,4 @@ init_daemon_domain(vport_trigger);
 r_dir_file(vport_trigger, vendor_sysfs_virtio_ports);
 
 set_prop(vport_trigger, vendor_ser_property);
+set_prop(vport_trigger, vendor_ser_gnss_uart_property);
