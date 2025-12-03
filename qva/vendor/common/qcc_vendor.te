@@ -77,3 +77,6 @@ allow vendor_qccvendor mnt_vendor_file:dir search;
 #Allow qcc-vendor to access ril socket
 allow vendor_qccvendor vendor_rild_socket:dir search;
 unix_socket_connect(vendor_qccvendor, vendor_rild, rild)
+
+# allow reading vendor_location_prop
+get_prop(vendor_qccvendor, vendor_location_prop)
