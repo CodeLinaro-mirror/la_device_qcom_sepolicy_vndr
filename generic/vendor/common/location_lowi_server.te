@@ -105,3 +105,7 @@ allow vendor_location_lowi_server self:capability { net_admin };
 
 # /proc/net/dev
 allow vendor_location_lowi_server proc_net:file { r_file_perms };
+
+# /sys/class/net
+allow vendor_location_lowi_server sysfs_net:dir { search };
+allow vendor_location_lowi_server sysfs_net:file { r_file_perms };
