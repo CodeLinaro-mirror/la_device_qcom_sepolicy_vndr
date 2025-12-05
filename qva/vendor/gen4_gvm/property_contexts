@@ -6,3 +6,5 @@
 ro.vendor.bootctrl.enable                         u:object_r:vendor_bootctrl_prop:s0 exact bool
 # Audio HAL property
 persist.vendor.max_vol_startup                    u:object_r:vendor_audio_prop:s0
+persist.vendor.default_ambiance                   u:object_r:vendor_audio_prop:s0
+persist.vendor.default_agc                        u:object_r:vendor_audio_prop:s0
