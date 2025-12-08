@@ -3,13 +3,15 @@
 
 type vendor_lxc_shell, domain;
 type vendor_lxc_shell_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(vendor_lxc_shell)
-domain_auto_trans(init, vendor_lxc_shell_exec, vendor_lxc_shell)
+#init_daemon_domain(vendor_lxc_shell)
+#domain_auto_trans(init, vendor_lxc_shell_exec, vendor_lxc_shell)
+domain_auto_trans(vendor_init, vendor_lxc_shell_exec, vendor_lxc_shell)
 
 type app_in_lxc, domain;
 type app_in_lxc_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(app_in_lxc)
-domain_auto_trans(init, app_in_lxc_exec, app_in_lxc)
+#domain_auto_trans(init, app_in_lxc_exec, app_in_lxc)
+#domain_auto_trans(vendor_init, app_in_lxc_exec, init)
 
 # generic context in lxc
 type default_in_lxc, vendor_file_type, file_type;
@@ -24,16 +26,28 @@ dontaudit app_in_lxc self:capability { dac_read_search sys_ptrace };
 # systemd-udevd, systemd-journal in linux container
 allow app_in_lxc self:netlink_kobject_uevent_socket { read write create setopt bind getattr };
 allow app_in_lxc self:netlink_route_socket { create getopt setopt bind getattr write nlmsg_write read };
-allow app_in_lxc self:capability { net_admin sys_resource sys_admin };
+allow app_in_lxc self:netlink_audit_socket { nlmsg_relay };
+allow app_in_lxc self:capability { net_admin sys_resource sys_admin audit_write };
+#allow app_in_lxc self:capability2 { checkpoint_restore };
 allow app_in_lxc self:process { setfscreate };
+allow app_in_lxc self:key { write search setattr };
 allowxperm app_in_lxc self:file ioctl { TCGETS };
 allow app_in_lxc tmpfs:dir { read write open add_name remove_name create };
 allow app_in_lxc tmpfs:file { create write open getattr unlink read setattr rename map lock };
 allow app_in_lxc tmpfs:lnk_file { read getattr create rename unlink };
 allow app_in_lxc tmpfs:sock_file { write };
 allow app_in_lxc tmpfs:chr_file { write read open };
+allowxperm app_in_lxc tmpfs:chr_file ioctl { 0x5401 };
 #allow app_in_lxc tmpfs:filesystem { remount };
+allow app_in_lxc cgroup_v2:dir { read rmdir };
 allow app_in_lxc cgroup_v2:file { read getattr };
+allow app_in_lxc sysfs:dir { read open };
+allow app_in_lxc sysfs:file { read open };
+allow app_in_lxc sysfs_loop:dir { search };
+allow app_in_lxc sysfs_loop:file { getattr };
+allow app_in_lxc vendor_sysfs_sd:file { getattr };
+allow app_in_lxc sysfs_devices_block:dir { search };
+allow app_in_lxc sysfs_devices_block:file { getattr };
 
 # systemd-udevd to /sys/devices/virtual/wakeup/wakeup79/uevent
 allow app_in_lxc sysfs_wakeup:dir search;
@@ -87,12 +101,23 @@ allow app_in_lxc vendor_sysfs_rpmsg_keymaster:file { read open getattr };
 allow app_in_lxc vendor_sysfs_usb_supply:dir search;
 allow app_in_lxc vendor_sysfs_usb_supply:file { read open getattr };
 
+allow app_in_lxc proc:file { read open getattr };
+allowxperm app_in_lxc proc:file ioctl { 0x5401 };
+allow app_in_lxc devpts:chr_file { write open read watch watch_reads };
+allowxperm app_in_lxc devpts:file ioctl { 0x5401 0x5437 0x540d 0x4b3a 0x4b45 0x4b44 0x5456 0x5457 };
+allow app_in_lxc proc_meminfo:file { read open };
+allow app_in_lxc vendor_sysfs_ddr:file { read open getattr };
+
 ##################### systemd-udevd in lxc --end ###############################
 
 # systemd-journal to weston
 allow app_in_lxc weston:process signull;
 
 #permissive vendor_lxc_shell;
+allow app_in_lxc devpts:chr_file ioctl;
+allow app_in_lxc self:netlink_audit_socket { read write };
+allow app_in_lxc tmpfs:chr_file ioctl;
+allow app_in_lxc tmpfs:file watch;
 
 #dontaudit vendor_lxc_shell self:capability_class_set *;
 #dontaudit vendor_lxc_shell kernel:security *;
@@ -125,16 +150,35 @@ allow app_in_lxc weston:process signull;
 
 type weston, domain;
 type weston_exec, exec_type, vendor_file_type, file_type;
-domain_auto_trans(app_in_lxc, weston_exec, weston)
+#domain_auto_trans(vendor_init, weston_exec, weston)
+allow vendor_init weston_exec:file execute_no_trans;
 
-allow weston self:netlink_kobject_uevent_socket read;
+allow vendor_init self:netlink_kobject_uevent_socket read;
 
-# /tmp/weston.log
-allow weston tmpfs:file append;
-allow weston tmpfs:chr_file { ioctl read };
-allow weston gpu_device:chr_file ioctl;
-allow weston gpu_device:chr_file map;
-allow weston gpu_device:chr_file { read write };
-allow weston appdomain_tmpfs:file { read write getattr map };
+# /tmpvendor_initn.log
+allow vendor_init tmpfs:file append;
+allow vendor_init tmpfs:chr_file { ioctl read };
+allow vendor_init gpu_device:chr_file ioctl;
+allow vendor_init gpu_device:chr_file map;
+allow vendor_init gpu_device:chr_file { read write };
+allow vendor_init appdomain_tmpfs:file { read write getattr map };
+allow vendor_init tmpfs:file { getattr map read write };
+allow vendor_init default_in_lxc:file execute_no_trans;
+allow vendor_init gpu_device:chr_file open;
+allow vendor_init self:capability { net_admin sys_nice };
+allow vendor_init self:file ioctl;
+allow vendor_init self:netlink_kobject_uevent_socket { bind create getattr setopt };
+allow vendor_init sysfs:dir { open read };
+allow vendor_init sysfs:file { getattr open read write };
+allow vendor_init tmpfs:chr_file { create getattr open write };
+allow vendor_init tmpfs:dir { add_name write };
+allow vendor_init tmpfs:file { create lock open };
+allow vendor_init tmpfs:sock_file create;
+allow vendor_init vendor_dmabuf_system_heap_device:chr_file { ioctl open read };
+allow vendor_init vendor_init:fd use;
+allow vendor_init vendor_init:unix_stream_socket { getattr read write };
+allow vendor_init vendor_sysfs_bootkpi:dir search;
+allow vendor_init vendor_sysfs_bootkpi:file write;
+allow vendor_init vendor_sysfs_graphics:file { getattr open read };
 
 ################## weston in lxc -- end ####################
