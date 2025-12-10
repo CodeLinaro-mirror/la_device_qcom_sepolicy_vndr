@@ -277,3 +277,5 @@ until_board_api(202604, `
     genfscon sysfs /devices/virtual/powercap u:object_r:vendor_sysfs_powercap:s0
     genfscon sysfs /class/powercap           u:object_r:vendor_sysfs_powercap:s0
 ')
+
+genfscon sysfs /devices/platform/firmware:qti,smmu-proxy/wakeup u:object_r:sysfs_wakeup:s0
