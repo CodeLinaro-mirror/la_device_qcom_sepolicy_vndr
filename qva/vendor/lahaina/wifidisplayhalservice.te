@@ -1,4 +1,4 @@
-# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -29,21 +29,5 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-#face3d
-persist.vendor.biometricsface.pr u:object_r:vendor_face3d_producer_prop:s0
-
-# eSE-StrongBox
-ctl.start$vendor.ese-strongbox_4_1           u:object_r:vendor_ese_strongbox_prop:s0
-ctl.stop$vendor.ese-strongbox_4_1            u:object_r:vendor_ese_strongbox_prop:s0
-
-#umd
-persist.vendor.umdadaptor.mode               u:object_r:vendor_umd_prop:s0
-persist.vendor.umd.                          u:object_r:vendor_umd_prop:s0
-
-#sec properties
-vendor.secfm.service                         u:object_r:vendor_secfm_prop:s0
-vendor.secdm.service                         u:object_r:vendor_secdm_prop:s0
-vendor.secca.service                         u:object_r:vendor_secca_prop:s0
-
-#WFD
-vendor.qti.wfd.                              u:object_r:vendor_wfd_prop:s0
+#Allow for WFD vendor property access
+set_prop(vendor_wifidisplayhalservice_qti,vendor_wfd_prop)
