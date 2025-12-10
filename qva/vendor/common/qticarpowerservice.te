@@ -1,4 +1,4 @@
-# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type qticarpower_app, domain;
@@ -6,6 +6,8 @@ app_domain(qticarpower_app)
 
 # Required for service start
 allow qticarpower_app { activity_service }:service_manager find;
+allow qticarpower_app content_capture_service:service_manager find;
+allow qticarpower_app netstats_service:service_manager find;
 allow qticarpower_app system_app_data_file:dir create_dir_perms;
 allow qticarpower_app system_app_data_file:file create_file_perms;
 
@@ -13,3 +15,7 @@ allow qticarpower_app system_app_data_file:file create_file_perms;
 allow qticarpower_app vendor_sysfs_usb_device:file rw_file_perms;
 allow qticarpower_app vendor_sysfs_usb_node:file rw_file_perms;
 allow qticarpower_app vendor_sysfs_usb_node:dir r_dir_perms;
+
+allow qticarpower_app carservice_service:service_manager find;
+
+
