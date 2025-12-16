@@ -1,11 +1,11 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type vendor_lxc_shell, domain;
-type vendor_lxc_shell_exec, exec_type, vendor_file_type, file_type;
-#init_daemon_domain(vendor_lxc_shell)
-#domain_auto_trans(init, vendor_lxc_shell_exec, vendor_lxc_shell)
-domain_auto_trans(vendor_init, vendor_lxc_shell_exec, vendor_lxc_shell)
+type vendor_early_lxc, domain;
+type vendor_early_lxc_exec, exec_type, vendor_file_type, file_type;
+#init_daemon_domain(vendor_early_lxc)
+#domain_auto_trans(init, vendor_early_lxc_exec, vendor_early_lxc)
+#domain_auto_trans(vendor_init, vendor_early_lxc_exec, vendor_early_lxc)
 
 type app_in_lxc, domain;
 type app_in_lxc_exec, exec_type, vendor_file_type, file_type;
@@ -182,3 +182,8 @@ allow vendor_init vendor_sysfs_bootkpi:file write;
 allow vendor_init vendor_sysfs_graphics:file { getattr open read };
 
 ################## weston in lxc -- end ####################
+
+#allow mk_loop device:dir { write };
+#allow mk_loop kmsg_device:chr_file { write };
+#allow mk_loop block_device:dir { search };
+#allow mk_loop sysfs:dir { read };

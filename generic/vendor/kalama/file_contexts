@@ -259,6 +259,7 @@
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
+/(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
 
 # Qcarcam HAL
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_service_exec:s0
@@ -340,7 +341,11 @@
 /vendor_early_services/bin/early_services_init                                u:object_r:vendor_init_exec:s0
 /vendor_early_services/bin/init_early_test                                    u:object_r:vendor_init_early_test_exec:s0
 /vendor_early_services/system/bin/init_early_test                             u:object_r:vendor_init_early_test_exec:s0
+/vendor_early_services/system/bin/init_early_lxc                              u:object_r:vendor_earlyesplash_exec:s0
 /vendor_early_services/vendor/bin/earlyVideo                                  u:object_r:vendor_earlyVideo_exec:s0
+/vendor_early_services/vendor/bin/ais_server                                  u:object_r:vendor_ais_server_exec:s0
+/vendor_early_services/vendor/bin/qcarcam_edrm_rvc                            u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
+/vendor_early_services/vendor/bin/esplash                                     u:object_r:vendor_earlyesplash_exec:s0
 /vendor_early_services/system/lib(64)?(/.*)?                                  u:object_r:system_lib_file:s0
 /vendor_early_services/vendor/lib/modules(/.*)?                               u:object_r:vendor_file:s0
 /vendor_early_services/system/bin/bootstrap/linker(64)?                       u:object_r:system_linker_exec:s0
@@ -358,4 +363,5 @@
 /dev/snd/controlC0                                                            u:object_r:audio_device:s0
 /vendor_early_services/vendor/bin/pd-mapper                                   u:object_r:vendor_pd_mapper_exec:s0
 /vendor_early_services/vendor/bin/early_audio                                 u:object_r:vendor_early_audio_exec:s0
+/vendor_early_services/vendor/bin/early_chime                                 u:object_r:vendor_early_audio_exec:s0
 /vendor_early_services/system/bin/tinymix                                     u:object_r:tinymix_exec:s0

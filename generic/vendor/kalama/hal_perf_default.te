@@ -34,4 +34,4 @@ allow vendor_hal_perf_default {appdomain}:process sigkill;
 hal_client_domain(vendor_hal_perf_default, vendor_hal_poweroptservice)
 
 allow vendor_hal_perf_default vendor_cpuset_device:file { read write open getattr append };
-allow vendor_hal_perf_default vendor_cpuset_device:dir { add_name };
+allow vendor_hal_perf_default vendor_cpuset_device:dir { add_name search };

@@ -33,4 +33,4 @@
 allow vendor_qti_init_shell configfs:dir { create w_dir_perms };
 allow vendor_qti_init_shell configfs:file { create };
 allow vendor_qti_init_shell configfs:lnk_file { create };
-
+allow vendor_qti_init_shell vendor_cpuset_device:dir { search };

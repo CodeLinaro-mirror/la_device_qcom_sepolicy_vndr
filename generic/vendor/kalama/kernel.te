@@ -45,7 +45,7 @@ allow kernel device:chr_file { create setattr unlink getattr };
 dontaudit kernel self:capability dac_read_search;
 
 allow kernel rootfs:system module_load;
-#allow kernel device:blk_file { create setattr };
+allow kernel device:blk_file { create setattr };
 allow kernel vendor_sysfs_bootkpi:dir search;
 allow kernel vendor_sysfs_bootkpi:file { write open };
 allow kernel sysfs_dt_firmware_android:dir { read search };
