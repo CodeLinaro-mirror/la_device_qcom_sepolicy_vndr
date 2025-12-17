@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 set_prop(rild, vendor_xlat_prop)
 
 allow rild self:capability {
@@ -43,3 +47,12 @@ allow rild self:netlink_route_socket nlmsg_readpriv;
 allow rild self:netlink_route_socket nlmsg_write;
 allow rild vendor_automs_vndr_data_file:dir create_dir_perms;
 allow rild vendor_automs_vndr_data_file:file create_file_perms;
+
+userdebug_or_eng(`
+allow rild vendor_someip_daemon_data_file:dir { search write add_name remove_name };
+allow rild vendor_someip_daemon_data_file:file { create write open lock setattr append getattr };
+')
+allow rild vendor_someip_daemon_sock_file:dir { add_name search write remove_name };
+allow rild vendor_someip_daemon_sock_file:file { create lock open write };
+allow rild vendor_someip_daemon_sock_file:sock_file { create setattr write unlink };
+allow rild vendor_vsomeip_daemon:unix_stream_socket connectto;

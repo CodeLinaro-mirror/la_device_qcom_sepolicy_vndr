@@ -1,0 +1,38 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# qva/vendor/common/vsomeip_daemon.te - sepolicy rules for qti value added vsomeip daemon
+
+type vendor_vsomeip_daemon, domain;
+type vendor_vsomeip_daemon_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_vsomeip_daemon)
+
+# allows shell execute vsomeip_daemon in userdebug mode.
+userdebug_or_eng(`
+  allow shell vendor_vsomeip_daemon_exec:file rx_file_perms;
+')
+
+# Enable standard network access
+net_domain(vendor_vsomeip_daemon)
+
+
+# IPC Router
+allow vendor_vsomeip_daemon self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow vendor_vsomeip_daemon property_socket:sock_file write;
+allow vendor_vsomeip_daemon vendor_location:unix_stream_socket { read write };
+
+# someip log file access in userdebug mode
+userdebug_or_eng(`
+allow vendor_vsomeip_daemon vendor_someip_daemon_data_file:dir { add_name search write remove_name };
+allow vendor_vsomeip_daemon vendor_someip_daemon_data_file:file { create lock open write append getattr };
+')
+# someip sock file
+allow vendor_vsomeip_daemon vendor_someip_daemon_sock_file:dir { add_name search write remove_name };
+allow vendor_vsomeip_daemon vendor_someip_daemon_sock_file:file { create lock open write };
+allow vendor_vsomeip_daemon vendor_someip_daemon_sock_file:sock_file { create setattr write unlink };
+
+#Allow connectto other hal daemon
+allow vendor_vsomeip_daemon vendor_location_locIdlClient_daemon:unix_stream_socket connectto;
+allow vendor_vsomeip_daemon rild:unix_stream_socket connectto;
+allow vendor_vsomeip_daemon hal_sensors_default:unix_stream_socket connectto;
