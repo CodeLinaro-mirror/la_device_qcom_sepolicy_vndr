@@ -96,3 +96,8 @@ set_prop(vendor_init, vendor_dcf_prop)
 
 # Allow vendor_init to set vendor_drm_smmu_prop
 set_prop(vendor_init, vendor_drm_smmu_prop);
+
+#allow vendor_init bluetooth_prop:property_service set;
+#allow vendor_init config_prop:property_service set;
+#allow vendor_init persist_debug_prop:property_service set;
+#allow vendor_init vendor_persist_camera_prop:property_service set;
