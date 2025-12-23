@@ -103,6 +103,7 @@
 /dev/ims_dc_sub2                                u:object_r:vendor_imsdc_device:s0
 
 #vnw devices
+/dev/ptp2                                       u:object_r:vendor_vnw_device:s0
 /dev/ptp1                                       u:object_r:vendor_vnw_device:s0
 /dev/ptp0                                       u:object_r:vendor_vnw_device:s0
 /dev/gptp_shm                                   u:object_r:vendor_vnw_device:s0
