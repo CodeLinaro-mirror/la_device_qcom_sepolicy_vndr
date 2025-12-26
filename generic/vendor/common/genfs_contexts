@@ -220,5 +220,6 @@ genfscon sysfs /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp  u:object_r:ven
 # vnw
 genfscon sysfs /devices/platform/soc/23000000.qcom,ethernet/net/eth0/operstate  u:object_r:vendor_emac_state:s0
 genfscon sysfs /devices/platform/soc/23000000.qcom,ethernet/net/eth1/operstate  u:object_r:vendor_emac_state:s0
+genfscon sysfs /devices/virtual/ptp  u:object_r:vendor_sysfs_vnw_type:s0
 
 genfscon sysfs /kernel/boot_kpi/kpi_values                  u:object_r:vendor_sysfs_kpi:s0
