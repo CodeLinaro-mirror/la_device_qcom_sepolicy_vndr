@@ -25,25 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This domain is for wificfr hal service
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-type wificfrsvc, domain;
-type wificfrsvc_exec, exec_type, vendor_file_type, file_type;
+#Define the files used by powermodule
+type vendor_pm_data_file, file_type, data_file_type;
+type vendor_sysfs_guestvm, fs_type, sysfs_type;;
 
-init_daemon_domain(wificfrsvc)
-hal_server_domain(wificfrsvc, hal_wificfr)
-
-#allows calls between client and server and vice-versa
-binder_call(hal_wificfr_client, hal_wificfr_server)
-binder_call(hal_wificfr_server, hal_wificfr_client)
-
-#register aidl service and allow aidl clients to find the service
-hal_attribute_service(hal_wificfr, hal_wificfr_service)
-
-binder_call(wificfrsvc, servicemanager)
-
-allow hal_wificfr self:netlink_generic_socket create_socket_perms_no_ioctl;
-
-allow wificfrsvc vendor_wifi_vendor_data_file:dir search;
-allow wificfrsvc vendor_wifi_cfr_file:dir create_dir_perms;
-allow wificfrsvc vendor_wifi_cfr_file:file create_file_perms;
+type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;
