@@ -39,7 +39,6 @@
 /dev/hab-vnw                                                        u:object_r:vendor_hab_vnw_device:s0
 /dev/hab-ext                                                        u:object_r:vendor_hab_ext_device:s0
 /dev/hab-gpce                                                       u:object_r:vendor_hab_gpce_device:s0
-/dev/open-dice.*                                                    u:object_r:open_dice_device:s0
 
 /dev/hgsl                                                           u:object_r:gpu_device:s0
 
