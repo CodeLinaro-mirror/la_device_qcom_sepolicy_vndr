@@ -39,9 +39,6 @@ init_daemon_domain(hal_display_demura_default)
 binder_call(vendor_hal_display_demura_client, vendor_hal_display_demura_server)
 binder_call(vendor_hal_display_demura_server, vendor_hal_display_demura_client)
 
-# Add hwservice related rules
-hal_attribute_hwservice(vendor_hal_display_demura, vendor_hal_display_demura_hwservice)
-
 # Rule for vndbinder usage
 allow vendor_hal_display_demura vendor_qdisplay_service:service_manager find;
 vndbinder_use(vendor_hal_display_demura);
@@ -56,3 +53,7 @@ allow hal_display_demura_default mnt_vendor_file:dir search;
 # Allow reading/writing to '/mnt/vendor/persist/display/*'
 allow hal_display_demura_default vendor_persist_display_file:dir rw_dir_perms;
 allow hal_display_demura_default vendor_persist_display_file:file create_file_perms;
+
+# Rule for display demura AIDL hal
+hal_attribute_service(vendor_hal_display_demura, vendor_hal_display_demura_aidl_service)
+binder_call(vendor_hal_display_demura_server, servicemanager)

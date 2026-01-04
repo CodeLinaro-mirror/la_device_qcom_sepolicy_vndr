@@ -32,12 +32,12 @@
 #subsys nodes (varying hardware layouts; can optimize for specific hw variant)
 
 #qdss sysfs-node
-genfscon sysfs /devices/platform/soc/10b05000.tmc/coresight-tmc-etf u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10048000.tmc/coresight-tmc-etr u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/1004f000.tmc/coresight-tmc-etr1 u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10002000.stm/coresight-stm u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/10b11000.csr/coresight-swao-csr u:object_r:vendor_sysfs_qdss_dev:s0
-genfscon sysfs /devices/platform/soc/soc:modem_diag/coresight-modem-diag u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10b05000.tmc/tmc_etf0 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10048000.tmc/tmc_etr0 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/1004f000.tmc/tmc_etr1 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10002000.stm/stm0 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10b11000.csr/swao_csr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/soc:modem_diag/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
 
 # Power supply device nodes
 genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
@@ -155,6 +155,7 @@ genfscon sysfs /devices/platform/soc/soc:qfprom@0/feat_conf12 u:object_r:vendor_
 # Guest vm nodes
 genfscon sysfs /kernel/load_guestvm_cpusys_vm/boot_guestvm u:object_r:vendor_sysfs_guestvm:s0
 genfscon sysfs /kernel/load_guestvm_trustedvm/boot_guestvm u:object_r:vendor_sysfs_guestvm:s0
+genfscon sysfs /kernel/load_guestvm_oemvm/boot_guestvm u:object_r:vendor_sysfs_guestvm:s0
 
 genfscon sysfs /devices/platform/soc/3d00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
 
