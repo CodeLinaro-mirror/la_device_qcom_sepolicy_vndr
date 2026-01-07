@@ -298,3 +298,5 @@ type vendor_gptp_socket, file_type;
 
 # Sensor Hal Config
 type vendor_sensor_hal_config, file_type, vendor_file_type;
+
+type vendor_sysfs_pm_mode, fs_type, sysfs_type;
