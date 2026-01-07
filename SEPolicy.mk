@@ -1,9 +1,16 @@
 # Board specific SELinux policy variable definitions
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 SEPOLICY_PATH:= device/qcom/sepolicy_vndr
+
+ifneq (,$(filter bp4a cp2a, $(TARGET_RELEASE_PLATFORM)))
+  BOARD_SYSTEM_EXT_SEPOLICY_PREBUILT_DIRS := device/qcom/sepolicy/generic
+  BOARD_PRODUCT_SEPOLICY_PREBUILT_DIRS := device/qcom/sepolicy/generic/product
+else
+  BOARD_SYSTEM_EXT_PREBUILT_DIR := device/qcom/sepolicy/generic
+  BOARD_PRODUCT_PREBUILT_DIR := device/qcom/sepolicy/generic/product
+endif
+
 QSSI_SEPOLICY_PATH:= device/qcom/sepolicy
-BOARD_SYSTEM_EXT_PREBUILT_DIR := device/qcom/sepolicy/generic
-BOARD_PRODUCT_PREBUILT_DIR := device/qcom/sepolicy/generic/product
 SYS_ATTR_PROJECT_PATH := $(TOP)/device/qcom/sepolicy/generic/public/attribute
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS:= \
     $(SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS) \
@@ -45,7 +52,7 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
   BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
 endif
 
-ifeq ( ,$(filter Baklava 16,$(PLATFORM_VERSION)))
+ifeq ( ,$(filter Baklava 16 CinnamonBun 17,$(PLATFORM_VERSION)))
   BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/34
 else
   BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/202504
