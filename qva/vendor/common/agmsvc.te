@@ -78,3 +78,6 @@ userdebug_or_eng(`
   allow vendor_agmservice_qti proc_sysrq:file rw_file_perms;
   allow vendor_agmservice_qti vendor_sysfs_kpi:file w_file_perms;
 ')
+
+#to allow hab-aud
+allow vendor_agmservice_qti vendor_hab_aud_device:chr_file { read write open ioctl };
