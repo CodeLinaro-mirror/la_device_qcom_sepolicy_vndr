@@ -289,7 +289,12 @@
 /(vendor|system/vendor)/bin/c2c_hub        u:object_r:vendor_c2c_hub_exec:s0
 /(vendor|system/vendor)/bin/dm        u:object_r:vendor_dm_exec:s0
 /(vendor|system/vendor)/bin/mosquitto        u:object_r:vendor_mosquitto_exec:s0
+/(vendor|system/vendor)/bin/qlas_file_migrator        u:object_r:vendor_qlas_file_migrator_exec:s0
 /mnt/vendor/persist/data/c2c(/.*)?    u:object_r:vendor_qlas_persist_data_file:s0
+
+/vendor/etc/qlas(/.*)?    u:object_r:vendor_qlas_conf_file:s0
+/vendor/etc/qlas_migration\.conf    u:object_r:vendor_qlas_migration_config:s0
+
 
 # qlas sockets
 /dev/socket/qlas(/.*)?       u:object_r:vendor_qlas_socket:s0
