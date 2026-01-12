@@ -73,3 +73,6 @@ wakelock_use(hal_drm_widevine);
 
 # Required to read drm_smmu property
 get_prop(hal_drm_widevine, vendor_drm_smmu_prop);
+
+# Required to read property used to differentiate between QNX and HGY
+get_prop(hal_drm_widevine, vendor_platform_prop);
