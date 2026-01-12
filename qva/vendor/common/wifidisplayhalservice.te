@@ -134,3 +134,6 @@ binder_call(vendor_wifidisplayhalservice_qti, vendor_tsa_hdcpservice);
 
 #Allow for WFD vendor property access
 set_prop(vendor_wifidisplayhalservice_qti,vendor_wfd_prop)
+
+#Suppress the denial for net_raw
+dontaudit vendor_wifidisplayhalservice_qti self:capability net_raw;
