@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# ​​​​​Changes from Qualcomm Technologies, Inc. are provided under the following license:
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
@@ -265,3 +265,5 @@ type vendor_nicm_data_file, file_type, data_file_type;
 type vendor_sysfs_cpsk_power, sysfs_type, fs_type;
 
 type vendor_sysfs_sd, fs_type, sysfs_type;
+
+type vendor_sysfs_powercap, fs_type, sysfs_type;
