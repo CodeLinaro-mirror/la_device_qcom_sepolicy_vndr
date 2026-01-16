@@ -1,4 +1,4 @@
-# Copyright (c) 2021 The Linux Foundation. All rights reserved.
+# Copyright (c) 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -29,4 +29,18 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-vendor.qti.hardware.display.demura::IDemuraFileFinder           u:object_r:vendor_hal_display_demura_hwservice:s0
+allow vendor_hal_perf_default {appdomain}:process sigkill;
+allow vendor_hal_perf_default sysfs_android_usb:dir search;
+allow vendor_hal_perf_default sysfs_android_usb:file { open read getattr };
+
+allow vendor_hal_perf_default {
+     vendor_sysfs_cache_alloc
+}:dir r_dir_perms;
+
+allow vendor_hal_perf_default {
+     vendor_sysfs_cache_alloc
+}:file rw_file_perms;
+
+allow vendor_hal_perf_default {
+    vendor_sysfs_cache_alloc
+}:lnk_file r_file_perms;
