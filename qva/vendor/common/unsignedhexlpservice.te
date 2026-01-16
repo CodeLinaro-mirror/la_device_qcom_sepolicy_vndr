@@ -16,6 +16,9 @@ binder_call(vendor_hal_unsignedhexlp_client, vendor_hal_unsignedhexlp_server)
 binder_call(vendor_hal_unsignedhexlp_server, vendor_hal_unsignedhexlp_client)
 binder_call(vendor_unsignedhexlpservice, servicemanager)
 
+# allow binder call/transfer between service manager and unsigned Hexlp service
+binder_use(vendor_unsignedhexlpservice)
+
 # Allow access to /data/vendor/unsignedhexlp/
 allow vendor_unsignedhexlpservice vendor_unsignedhexlp_data_file:dir create_dir_perms;
 allow vendor_unsignedhexlpservice vendor_unsignedhexlp_data_file:file create_file_perms;
