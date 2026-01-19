@@ -32,3 +32,9 @@
 genfscon sysfs /power/disk  u:object_r:vendor_sysfs_power_disk:s0
 genfscon sysfs /power/image_size    u:object_r:vendor_sysfs_power_imagesize:s0
 genfscon proc /sys/vm/swappiness    u:object_r:vendor_proc_swappiness:s0
+
+# PCIe MHI wakeup node
+genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi_1107_00.01.00/wakeup u:object_r:sysfs_wakeup:s0
+
+# Power-state wakeup node
+genfscon sysfs /devices/platform/soc/soc:qcom,power-state/wakeup u:object_r:sysfs_wakeup:s0
