@@ -1,0 +1,13 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type virtwifi_sh, domain;
+type virtwifi_sh_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(virtwifi_sh)
+
+allow virtwifi_sh vendor_shell_exec:file rx_file_perms;
+allow virtwifi_sh wifi_service:service_manager find;
+
+### TODO: The following is required but not allowed in recent Android versions.
+# allow virtwifi_sh system_file:file rx_file_perms;
+# binder_call(virtwifi_sh, servicemanager)

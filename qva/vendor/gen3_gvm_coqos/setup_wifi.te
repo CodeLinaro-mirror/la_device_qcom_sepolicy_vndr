@@ -1,0 +1,34 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type setup_wifi, domain;
+type setup_wifi_exec, exec_type, vendor_file_type, file_type;
+type init_wifi_sh, domain;
+type init_wifi_sh_exec, vendor_file_type, exec_type, file_type;
+type mac80211_create_radios, domain;
+type mac80211_create_radios_exec, exec_type, vendor_file_type, file_type;
+type rename_netiface, domain;
+type rename_netiface_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init_wifi_sh)
+init_daemon_domain(setup_wifi)
+init_daemon_domain(rename_netiface)
+
+vendor_internal_prop(vendor_wifi_mac_prefix);
+
+allow setup_wifi self:capability { net_admin net_raw sys_module };
+allow setup_wifi self:udp_socket { create ioctl };
+allow setup_wifi self:netlink_route_socket { bind create nlmsg_write read write getattr };
+allow setup_wifi kernel:system module_request;
+get_prop(setup_wifi, vendor_wifi_mac_prefix)
+
+allow init_wifi_sh self:capability { fowner chown net_admin net_raw };
+allow init_wifi_sh vendor_toolbox_exec:file execute_no_trans;
+allow init_wifi_sh mac80211_create_radios_exec:file execute_no_trans;
+get_prop(init_wifi_sh, vendor_wifi_mac_prefix);
+allow init_wifi_sh self:netlink_generic_socket create_socket_perms_no_ioctl;
+
+allow rename_netiface self:capability { net_admin net_raw sys_module };
+allow rename_netiface self:udp_socket { create ioctl };
+allow rename_netiface self:netlink_route_socket { bind create nlmsg_write read write getattr };
+allow rename_netiface kernel:system module_request;
