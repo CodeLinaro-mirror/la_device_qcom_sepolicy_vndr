@@ -1,4 +1,5 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-hal_attribute_service(vendor_hal_datafactory_qti, vendor_hal_factory_aidlservice)
+
+allow hal_bluetooth_default vendor_sysfs_bt_uart:file w_file_perms;

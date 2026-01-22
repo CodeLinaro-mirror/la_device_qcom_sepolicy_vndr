@@ -203,3 +203,6 @@ type vendor_wifi_tx_powerboost_file, file_type, data_file_type;
 
 #eSE files
 type vendor_ese_gpio_proc, fs_type, proc_type;
+
+# WifiCfr tool files
+type vendor_wifi_cfr_file, file_type, data_file_type;

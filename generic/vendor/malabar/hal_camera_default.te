@@ -29,5 +29,12 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# Qvirtmgr Policies
-allow vendor_qvirtmgr vendor_gunyah_chr_device:chr_file rw_file_perms;
+allow hal_camera_default tee_device:chr_file rw_file_perms;
+allow hal_camera_default vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow hal_camera_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+allow hal_camera_default vendor_membuf_dev:chr_file r_file_perms;
+allowxperm hal_camera_default vendor_dmabuf_display_heap_device:chr_file ioctl DMA_HEAP_IOCTL_ALLOC;
+allow hal_camera_default vendor_dmabuf_display_heap_device:chr_file r_file_perms;
+allow hal_camera_default vendor_vm_cp_non_pixel_device:chr_file r_file_perms;
+allow hal_camera_default vendor_vm_cp_pixel_device:chr_file r_file_perms;
+

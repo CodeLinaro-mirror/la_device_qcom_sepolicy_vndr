@@ -1,5 +1,5 @@
-# Copyright (c) 2021 The Linux Foundation. All rights reserved.
-#
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -29,17 +29,14 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-allow hal_graphics_allocator_default vendor_dmabuf_system_heap_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_dmabuf_secure_pixel:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_dmabuf_display_heap_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_dmabuf_secure_cdsp_heap_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_membuf_dev:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_vm_cp_camera_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_vm_cp_camera_preview_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_vm_cp_sec_display_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_vm_cp_cdsp_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_dmabuf_demura_heap_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_dmabuf_ubwcp_heap_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_smmu_proxy_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_dmabuf_system_movable_heap_device:chr_file r_file_perms;
-allow hal_graphics_allocator_default vendor_dmabuf_ubwcp_movable_heap_device:chr_file r_file_perms;
+#Define Domain for Power module
+type vendor_powermodule_app, domain;
+app_domain(vendor_powermodule_app);
+
+hal_client_domain(vendor_powermodule_app, vendor_hal_perf);
+hal_client_domain(vendor_powermodule_app, vendor_hal_poweroptservice)
+
+# Allow invoking activity of vendor_powermodule_app
+allow vendor_powermodule_app app_api_service:service_manager find;
+
+dontaudit vendor_powermodule_app default_prop:file read;

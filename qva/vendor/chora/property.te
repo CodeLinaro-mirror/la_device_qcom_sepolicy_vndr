@@ -1,4 +1,4 @@
-# Copyright (c) 2021 The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -29,5 +29,5 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# Qvirtmgr Policies
-allow vendor_qvirtmgr vendor_gunyah_chr_device:chr_file rw_file_perms;
+#face3d
+vendor_internal_prop(vendor_face3d_producer_prop);

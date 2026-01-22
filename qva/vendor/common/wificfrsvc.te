@@ -44,3 +44,6 @@ binder_call(wificfrsvc, servicemanager)
 
 allow hal_wificfr self:netlink_generic_socket create_socket_perms_no_ioctl;
 
+allow wificfrsvc vendor_wifi_vendor_data_file:dir search;
+allow wificfrsvc vendor_wifi_cfr_file:dir create_dir_perms;
+allow wificfrsvc vendor_wifi_cfr_file:file create_file_perms;
