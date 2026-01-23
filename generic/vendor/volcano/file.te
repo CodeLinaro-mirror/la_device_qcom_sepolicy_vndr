@@ -36,6 +36,8 @@ type vendor_sysfs_guestvm, fs_type, sysfs_type;;
 type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;
 
 type vendor_qlas_persist_data_file, file_type , vendor_persist_type;
+type vendor_qlas_conf_file, file_type, vendor_file_type;
 type vendor_qlas_socket, file_type;
 type vendor_mosquitto_socket, file_type;
+type vendor_qlas_migration_config, file_type, vendor_file_type;
 
