@@ -23,4 +23,7 @@ allow vendor_qlas_file_migrator vendor_persist_data_file:dir {search};
 set_prop(vendor_qlas_file_migrator, vendor_qlas_migrated_prop)
 set_prop(vendor_qlas_file_migrator, vendor_qlas_migrated_files_prop)
 
-allow vendor_qlas_file_migrator vendor_mink_trace_prop:file { read open getattr map };
+userdebug_or_eng(`
+    get_prop(vendor_qlas_file_migrator, vendor_mink_trace_prop)
+')
+
