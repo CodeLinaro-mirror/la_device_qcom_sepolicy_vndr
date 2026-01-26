@@ -1,0 +1,18 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow hal_evs_default sysfs_gpu:file { r_file_perms };
+allow hal_evs_default gpu_device:dir { r_dir_perms };
+
+# Basic access needed to talk to the render node
+allow hal_evs_default graphics_device:chr_file { rw_file_perms };
+# GPU/DRM specific operations
+allow hal_evs_default graphics_device:chr_file { getattr ioctl map };
+
+allow hal_evs_default hal_graphics_mapper_service:service_manager find;
+
+# Allow to access default property.
+allow hal_evs_default default_prop:file { getattr map };
+# get_prop(hal_evs_default, default_prop) triggers neverallow checks.
+# Known issue (b/322843384).
+dontaudit hal_evs_default default_prop:file { open read };

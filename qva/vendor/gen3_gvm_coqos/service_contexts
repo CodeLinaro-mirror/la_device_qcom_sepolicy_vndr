@@ -1,0 +1,6 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Label mapper/minigbm with hal_graphics_mapper_service to allow to
+# interact with it Graphics Mapper HAL.
+mapper/minigbm      u:object_r:hal_graphics_mapper_service:s0
