@@ -8,6 +8,8 @@
 /sys/devices/platform/odm/[0-9a-f]+\.virtio_mmio/virtio[0-9]+/virtio-ports u:object_r:vendor_sysfs_virtio_ports:s0
 /sys/devices/platform/odm/[0-9a-f]+\.virtio_mmio/virtio[0-9]+/virtio-ports/vport[0-9]+p[0-1] u:object_r:vendor_sysfs_virtio_ports:s0
 /sys/devices/platform/odm/[0-9a-f]+\.virtio_mmio/virtio[0-9]+/virtio-ports/vport[0-9]+p[0-1]/name  u:object_r:vendor_sysfs_virtio_ports:s0
+/sys/devices/platform/odm/[0-9a-f]+\.virtio_mmio/virtio[0-9]+/uevent u:object_r:sysfs_gpu:s0
+/sys/devices/platform/odm/[0-9a-f]+\.virtio_mmio/uevent u:object_r:sysfs_gpu:s0
 
 /vendor/bin/vport_trigger  u:object_r:vport_trigger_exec:s0
 
