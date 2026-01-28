@@ -1,0 +1,11 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type hal_bootstat_default, domain;
+
+binder_use(hal_bootstat_default)
+binder_call(hal_bootstat_default, servicemanager)
+
+allow hal_bootstat_default servicemanager:binder { call transfer };
+allow servicemanager hal_bootstat_default:binder call;
+
