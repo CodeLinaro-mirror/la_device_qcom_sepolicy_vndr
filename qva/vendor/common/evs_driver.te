@@ -56,3 +56,7 @@ binder_call(vendor_hal_evs_driver, automotive_display_service_server);
 allow vendor_hal_evs_driver fwk_automotive_display_hwservice:hwservice_manager find;
 
 allow vendor_hal_evs_driver vendor_sysfs_kpi:file w_file_perms;
+
+#setprop
+set_prop(vendor_hal_evs_driver, vendor_camera_prop)
+
