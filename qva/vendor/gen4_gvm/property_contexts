@@ -8,3 +8,4 @@ ro.vendor.bootctrl.enable                         u:object_r:vendor_bootctrl_pro
 persist.vendor.max_vol_startup                    u:object_r:vendor_audio_prop:s0
 persist.vendor.default_ambiance                   u:object_r:vendor_audio_prop:s0
 persist.vendor.default_agc                        u:object_r:vendor_audio_prop:s0
+persist.vendor.media_inactivitytimeout            u:object_r:vendor_audio_prop:s0
