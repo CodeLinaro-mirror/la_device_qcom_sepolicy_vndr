@@ -77,6 +77,7 @@ genfscon sysfs /devices/platform/soc/a300000.remoteproc-cdsp/wakeup u:object_r:s
 genfscon sysfs /devices/platform/soc/soc:remoteproc-wpss@8a00000/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.pcie/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a84000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a84000.i2c/i2c-0/0-0028/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi_1103_00.01.00/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c08000.pcie/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup u:object_r:sysfs_wakeup:s0

@@ -24,6 +24,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+#
+#
 ###################################
 # Dev block nodes
 
@@ -218,4 +225,5 @@
 /vendor/bin/hw/vendor\.qti\.hardware\.display\.demura-service u:object_r:hal_display_demura_default_exec:s0
 
 # VM Specific
+/dev/gunyah                                                          u:object_r:vendor_gunyah_dev:s0
 /vendor/vm-system(/.*)?              u:object_r:vendor_vm_system_file:s0
