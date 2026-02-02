@@ -59,6 +59,7 @@ binder_call(vendor_location_slim_daemon, system_server)
 # allows shell execute slim_daemon in userdebug mode.
 userdebug_or_eng(`
   allow shell vendor_location_slim_daemon_exec:file rx_file_perms;
+  allow vendor_hal_gnss_qti vendor_sysfs_kpi:file { open write getattr };
 ')
 
 # IPC Router

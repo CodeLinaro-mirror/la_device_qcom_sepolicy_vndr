@@ -57,6 +57,7 @@ allow vendor_location_engine_service vendor_data_file:file { read write getattr 
 # allows shell execute engine-service in userdebug mode.
 userdebug_or_eng(`
   allow shell vendor_location_engine_service_exec:file rx_file_perms;
+  allow vendor_hal_gnss_qti vendor_sysfs_kpi:file { open write getattr };
 ')
 
 #diag

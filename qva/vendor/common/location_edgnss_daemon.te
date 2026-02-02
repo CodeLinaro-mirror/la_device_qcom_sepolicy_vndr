@@ -58,6 +58,7 @@ binder_call(vendor_location_edgnss_daemon, system_server)
 # allows shell execute edgnss-daemon in userdebug mode.
 userdebug_or_eng(`
   allow shell vendor_location_edgnss_daemon_exec:file rx_file_perms;
+  allow vendor_hal_gnss_qti vendor_sysfs_kpi:file { open write getattr };
 ')
 
 # Enable standard network access

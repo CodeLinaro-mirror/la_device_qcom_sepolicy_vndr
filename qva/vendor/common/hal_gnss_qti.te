@@ -39,6 +39,7 @@ allow vendor_hal_gnss_qti vendor_qwesd_socket:sock_file write;
 
 userdebug_or_eng(`
   get_prop(vendor_hal_gnss_qti, vendor_pd_locater_dbg_prop)
+  allow vendor_hal_gnss_qti vendor_sysfs_kpi:file { open write getattr };
 ')
 
 allow hal_gnss self:qipcrtr_socket create_socket_perms_no_ioctl;
