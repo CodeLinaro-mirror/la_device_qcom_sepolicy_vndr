@@ -32,3 +32,5 @@
 #Add new domain for powermodule app
 user=_app seinfo=platform name=.powermodule domain=vendor_powermodule_app type=app_data_file levelFrom=all
 
+#face3d
+vendor_internal_prop(vendor_face3d_producer_prop);

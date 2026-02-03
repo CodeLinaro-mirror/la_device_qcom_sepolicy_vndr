@@ -1,4 +1,4 @@
-# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019,  The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,17 +24,24 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
 # Changes from Qualcomm Technologies, Inc. are provided under the following license:
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+# nordic node file
+type vendor_nordic_sysfs_node, sysfs_type, fs_type;
 
-#extcon under graphics sysfs
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.0/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.1/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.2/name u:object_r:vendor_sysfs_graphics:s0
 
-#cache alloc sysfs
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/enable_monitor u:object_r:vendor_sysfs_cache_alloc:s0
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/bw_mon_ratio_thresh u:object_r:vendor_sysfs_cache_alloc:s0
+# kineticsxr file
+type vendor_kx_file, file_type, vendor_file_type;
+
+#calib file types
+type vendor_calib_file, file_type, vendor_calib_file_type;
+allow { vendor_calib_file }self:filesystem associate;
+
+#suspend/hibernate files
+type vendor_sysfs_mem_sleep, fs_type, sysfs_type;
+type vendor_sysfs_power_disk, sysfs_type, fs_type;
+type vendor_sysfs_cpu_sleep_disabled, sysfs_type, fs_type;
+type vendor_sysfs_suspend, fs_type, sysfs_type;

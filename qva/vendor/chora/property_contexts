@@ -26,8 +26,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Technologies, Inc. are provided under the following license:
+
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #face3d
 persist.vendor.biometricsface.pr u:object_r:vendor_face3d_producer_prop:s0
+# Allow composer client to find demura service.
+hal_client_domain(hal_graphics_composer_default, vendor_hal_display_demura);

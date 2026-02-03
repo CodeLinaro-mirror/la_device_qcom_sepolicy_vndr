@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -24,17 +24,14 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
 # Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+# Allow mediacodec to create DisplayConfig client interface
+hal_client_domain(mediacodec, hal_graphics_composer)
+hal_client_domain(mediacodec, vendor_hal_perf)
+binder_call(mediacodec, hal_graphics_composer_default)
 
-#extcon under graphics sysfs
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.0/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.1/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.2/name u:object_r:vendor_sysfs_graphics:s0
-
-#cache alloc sysfs
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/enable_monitor u:object_r:vendor_sysfs_cache_alloc:s0
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/bw_mon_ratio_thresh u:object_r:vendor_sysfs_cache_alloc:s0

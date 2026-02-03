@@ -1,4 +1,4 @@
-# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -13,7 +13,7 @@
 #       contributors may be used to endorse or promote products derived
 #       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED"AS IS" AND ANY EXPRESS OR IMPLIED
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
 # ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
@@ -26,15 +26,16 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Technologies, Inc. are provided under the following license:
+
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+allow hal_camera_default tee_device:chr_file rw_file_perms;
+allow hal_camera_default vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow hal_camera_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+allow hal_camera_default vendor_membuf_dev:chr_file r_file_perms;
+allowxperm hal_camera_default vendor_dmabuf_display_heap_device:chr_file ioctl DMA_HEAP_IOCTL_ALLOC;
+allow hal_camera_default vendor_dmabuf_display_heap_device:chr_file r_file_perms;
+allow hal_camera_default vendor_vm_cp_non_pixel_device:chr_file r_file_perms;
+allow hal_camera_default vendor_vm_cp_pixel_device:chr_file r_file_perms;
 
-#extcon under graphics sysfs
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.0/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.1/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.2/name u:object_r:vendor_sysfs_graphics:s0
-
-#cache alloc sysfs
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/enable_monitor u:object_r:vendor_sysfs_cache_alloc:s0
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/bw_mon_ratio_thresh u:object_r:vendor_sysfs_cache_alloc:s0

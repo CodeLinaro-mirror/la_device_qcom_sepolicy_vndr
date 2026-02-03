@@ -1,4 +1,4 @@
-# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,17 +24,29 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+#
 # Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+# nordic node file
+/(vendor|system/vendor)/bin/hw/vendor\.kineticsxr\.hardware\.nordic@1\.0-service u:object_r:vendor_hal_nordic_default_exec:s0
+/sys/devices/platform/soc/990000\.spi/spi_master/spi0/spi0\.0/jsrequest u:object_r:vendor_nordic_sysfs_node:s0
+/sys/devices/platform/soc/990000\.spi/spi_master/spi0/spi0\.0/jsmem u:object_r:vendor_nordic_sysfs_node:s0
 
-#extcon under graphics sysfs
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.0/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.1/name u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.2/name u:object_r:vendor_sysfs_graphics:s0
+# kineticsxr file
+/etc/resources_ctrlr(/.*)?			u:object_r:vendor_kx_file:s0
 
-#cache alloc sysfs
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/enable_monitor u:object_r:vendor_sysfs_cache_alloc:s0
-genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/bw_mon_ratio_thresh u:object_r:vendor_sysfs_cache_alloc:s0
+# calib partition
+/mnt/vendor/calib(/.*)?               u:object_r:vendor_calib_file:s0
+
+###power_state dev node
+/dev/power_state                      u:object_r:vendor_power_state_device:s0
+
+###swap partition node
+/dev/block/by-name/swap               u:object_r:vendor_hibernate_swap:s0
+
+###Power State HAL
+/vendor/bin/hw/vendor\.qti\.hardware\.powerstateservice@1\.0-service u:object_r:vendor_hal_powerstateservice_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.powerstateutility@1\.0-service u:object_r:vendor_hal_powerstateutility_qti_exec:s0
