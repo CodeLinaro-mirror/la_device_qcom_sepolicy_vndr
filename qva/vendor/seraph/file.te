@@ -44,3 +44,6 @@ allow { vendor_calib_file }self:filesystem associate;
 type vendor_sysfs_power_disk, sysfs_type, fs_type;
 type vendor_sysfs_cpu_sleep_disabled, sysfs_type, fs_type;
 type vendor_sysfs_suspend, fs_type, sysfs_type;
+
+#Resume device sysfs
+type vendor_sysfs_hib_resume_device, sysfs_type, fs_type;

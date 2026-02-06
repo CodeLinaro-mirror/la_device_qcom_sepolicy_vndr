@@ -50,3 +50,6 @@
 ###Power State HAL
 /vendor/bin/hw/vendor\.qti\.hardware\.powerstateservice-aidl-service u:object_r:vendor_hal_powerstateservice_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.powerstateutility-aidl-service u:object_r:vendor_hal_powerstateutility_qti_exec:s0
+
+# hibernation resume device
+/sys/power/resume u:object_r:vendor_sysfs_hib_resume_device:s0
