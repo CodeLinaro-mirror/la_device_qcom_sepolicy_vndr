@@ -225,10 +225,6 @@
 /sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/name     u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]+/name    u:object_r:vendor_sysfs_ssr:s0
 
-#subsys nodes
-/sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/ab00000.remoteproc-lpass/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
-
 /sys/devices/platform/soc/ab00000.qcom,lpass/subsys[0-9]+/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/b300000.qcom,turing/subsys[0-9]+/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/5ab0000.qcom,venus/subsys[0-9]+/restart_level  u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -241,6 +237,3 @@
 
 #Graphics
 /sys/devices/platform/soc/5900000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpubusy u:object_r:vendor_sysfs_kgsl_gpubusy:s0
-
-/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name   u:object_r:vendor_sysfs_ssr:s0
-/sys/devices/platform/soc/ab00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
