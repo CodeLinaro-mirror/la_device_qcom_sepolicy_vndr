@@ -1,4 +1,4 @@
 #Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
-graphic_access(mediacodec)
+allow init vendor_sysfs_vda_discard_max_bytes:file { rw_file_perms };

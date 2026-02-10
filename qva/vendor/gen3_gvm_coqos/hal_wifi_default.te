@@ -1,0 +1,13 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow hal_wifi_default self:netlink_route_socket {
+    create
+    bind
+    read
+    write
+    nlmsg_read
+    nlmsg_readpriv
+};
+
+allow hal_wifi_default self:capability { sys_module };

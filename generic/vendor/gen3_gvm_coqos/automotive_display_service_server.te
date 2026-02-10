@@ -1,0 +1,6 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+graphic_access(automotive_display_service_server)
+
+dontaudit automotive_display_service_server vendor_default_prop:file { read };
