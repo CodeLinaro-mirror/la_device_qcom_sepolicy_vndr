@@ -18,4 +18,4 @@ type vendor_hab_xvm_device, dev_type;
 type vendor_hab_vnw_device, dev_type;
 type vendor_hab_ext_device, dev_type;
 type vendor_hab_gpce_device, dev_type;
-type open_dice_device, dev_type;
+type vendor_open_dice_device, dev_type;
