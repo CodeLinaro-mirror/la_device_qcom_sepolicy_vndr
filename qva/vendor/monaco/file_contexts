@@ -183,3 +183,5 @@
 
 #senors glink dev node
 /dev/glinkpkt_slate_ssc_hal                       u:object_r:vendor_glink_slate_ssc_hal_device:s0
+
+/(vendor|system/vendor)/bin/init\.qti\.can\.sh    u:object_r:vendor_qti_init_shell_exec:s0

@@ -31,3 +31,4 @@
 
 
 allow vendor_qcomsysd tombstoned_crash_socket:sock_file write;
+userdebug_or_eng(`dontaudit vendor_qcomsysd self:capability sys_admin;')
