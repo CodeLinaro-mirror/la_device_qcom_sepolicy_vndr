@@ -2,4 +2,4 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 genfscon sysfs /power/mem_sleep u:object_r:vendor_sysfs_suspend:s0
-
+genfscon sysfs /class/typec     u:object_r:vendor_sysfs_usb_c:s0
