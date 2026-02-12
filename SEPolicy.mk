@@ -54,4 +54,8 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     endif
 endif
 
+ifneq ($(PLATFORM_VERSION), CinnamonBun)
+    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/202504
+endif
+
 endif
