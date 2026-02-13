@@ -1,0 +1,7 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#allow untrusted_app_27 (video player) to access graphics components
+userdebug_or_eng(`
+    graphic_access(untrusted_app_27)
+')
