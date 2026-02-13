@@ -62,6 +62,9 @@
 /dev/btpower                                    u:object_r:vendor_bt_device:s0
 /dev/btfmslim                                   u:object_r:vendor_bt_device:s0
 /dev/btfmswr                                    u:object_r:vendor_bt_device:s0
+/dev/glink_pkt_bt_gatt_offload_chnl             u:object_r:vendor_bt_device:s0
+/dev/glink_pkt_bt_socket_hal_chnl               u:object_r:vendor_bt_device:s0
+/dev/glink_pkt_hci_arbiter_chnl                 u:object_r:vendor_bt_device:s0
 /dev/diag                                       u:object_r:vendor_diag_device:s0
 /dev/kgsl-3d0                                   u:object_r:gpu_device:s0
 /dev/rtc0                                       u:object_r:rtc_device:s0

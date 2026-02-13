@@ -1,4 +1,6 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-hal_attribute_service(vendor_hal_datafactory_qti, vendor_hal_factory_aidlservice)
+get_prop(mediaswcodec, vendor_display_prop)
+allow mediaswcodec gpu_device:chr_file { ioctl open read write };
+
