@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center,Inc. are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ###################################
@@ -426,3 +426,6 @@
 
 #DRM_SMMU
 /vendor/bin/init.drm.smmu.sh                                                     u:object_r:vendor_qti_drm_smmu_exec:s0
+
+#compute_cape
+/vendor/bin/compute_cape_client                                                  u:object_r:compute_cape_exec:s0
