@@ -159,7 +159,7 @@ genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-09/1c0a000.spmi:
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-07/1c0a000.spmi:qcom,pmiv010x@7:qcom,vibrator@df00/leds/vibrator u:object_r:sysfs_leds:s0
 
 # USB device wakeup nodes
-genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4e00000.hsusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a800000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 
 # DCVS nodes
@@ -242,7 +242,7 @@ genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-1/1-0028/wakeup u:object_r:s
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup24 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup25 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/mhi0/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4e00000.hsusb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:gpio_keys/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/32300000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
@@ -290,3 +290,6 @@ genfscon sysfs /devices/platform/soc/4e00000.ssusb/wakeup u:object_r:sysfs_wakeu
 # sys net
 genfscon sysfs /devices/platform/soc/17110040.qcom,wcn6750/net/ u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/c800000.qcom,icnss/net/ u:object_r:sysfs_net:s0
+
+#USB node
+genfscon sysfs /devices/platform/soc/4e00000.hsusb/mode u:object_r:vendor_sysfs_usb_device:s0
