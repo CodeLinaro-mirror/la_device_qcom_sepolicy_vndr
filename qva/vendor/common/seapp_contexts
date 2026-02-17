@@ -35,9 +35,5 @@ user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=vendor_perfdum
 #Add new domain for powerservice app
 user=_app seinfo=platform name=.pasr domain=vendor_powerservice_app type=app_data_file levelFrom=all
 
-#Add new domain for qtiwifi app
-user=_app seinfo=platform name=com.qualcomm.qti.server.qtiwifi domain=vendor_qtiwifi_app type=app_data_file levelFrom=all
-user=_app seinfo=platform name=vendor.qti.qtiwifisettings domain=vendor_qtiwifi_app type=app_data_file levelFrom=all
-
 #Add domain for QtiCarPowerService App
 user=_app  seinfo=platform isPrivApp=true name=com.qti.carpowerservice domain=qticarpower_app  type=app_data_file
