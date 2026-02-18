@@ -124,6 +124,8 @@
 
 /sys/class/drm/sde-conn-0-DSI-1/twm_enable                               u:object_r:vendor_sysfs_drm:s0
 /sys/class/drm/sde-conn-0-DSI-1/panel_power_state                        u:object_r:vendor_sysfs_drm:s0
+/sys/class/pmic-lpm/pmic_twm_enable                                      u:object_r:vendor_sysfs_twm:s0
+/sys/class/pmic-lpm/pmic_twm_exit                                        u:object_r:vendor_sysfs_twm:s0
 /sys/bus/i2c/devices/1-0024/pt_touch_offload                             u:object_r:vendor_sysfs_touch_offload:s0
 
 #bluetooth
