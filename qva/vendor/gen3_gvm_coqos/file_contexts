@@ -1,5 +1,0 @@
-# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
-
-# VirtWiFi
-/vendor/bin/virtwifi\.sh    u:object_r:virtwifi_sh_exec:s0
