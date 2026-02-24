@@ -1,7 +1,6 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-###################################
 # Dev block nodes
 
 # Block device for hal_bootctl
@@ -88,6 +87,8 @@
 # hypervisor node
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 /dev/gh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
+/dev/gunyah                                                          u:object_r:vendor_gunyah_dev:s0
+/dev/qgunyah                                                         u:object_r:vendor_gunyah_chr_device:s0
 
 #subsys nodes
 
