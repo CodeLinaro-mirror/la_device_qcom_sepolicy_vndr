@@ -15,6 +15,9 @@ binder_call(vendor_hal_hexlp_client, vendor_hal_hexlp_server)
 binder_call(vendor_hal_hexlp_server, vendor_hal_hexlp_client)
 binder_call(vendor_hexlpservice, servicemanager)
 
+# allow binder call/transfer between service manager and Hexlp service
+binder_use(vendor_hexlpservice)
+
 # allow hexlpservice to access adsprpcd
 r_dir_file(vendor_hexlpservice, adsprpcd_file);
 #get_prop(vendor_hexlpservice, adsprpc_prop)

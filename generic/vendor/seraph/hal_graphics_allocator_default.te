@@ -1,4 +1,4 @@
-# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -26,12 +26,18 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Changes from Qualcomm Technologies, Inc. are provided under the following license:
+
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-#Define the files used by powermodule
-type vendor_pm_data_file, file_type, data_file_type;
-type vendor_sysfs_guestvm, fs_type, sysfs_type;;
-
-type vendor_sysfs_lru_gen, fs_type, sysfs_type;
-type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;
+allow hal_graphics_allocator_default vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_dmabuf_secure_pixel:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_dmabuf_display_heap_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_dmabuf_secure_cdsp_heap_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_membuf_dev:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_vm_cp_camera_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_vm_cp_camera_preview_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_vm_cp_sec_display_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_vm_cp_cdsp_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_dmabuf_demura_heap_device:chr_file r_file_perms;
+allow hal_graphics_allocator_default vendor_smmu_proxy_device:chr_file r_file_perms;

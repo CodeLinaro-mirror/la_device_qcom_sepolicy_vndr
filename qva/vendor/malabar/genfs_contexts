@@ -33,3 +33,6 @@
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a88000.qcom,qup_uart/hs_uart_operation u:object_r:vendor_sysfs_bt_uart:s0
 #net sysfs
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net u:object_r:sysfs_net:s0
+#USB node
+genfscon sysfs /devices/platform/soc/4e00000.hsusb/4e00000.dwc3/xhci-hcd.1.auto/usb u:object_r:vendor_sysfs_usb_node:s0
+genfscon sysfs /devices/platform/soc/4e00000.hsusb/4e00000.dwc3/xhci-hcd.2.auto/usb u:object_r:vendor_sysfs_usb_node:s0
