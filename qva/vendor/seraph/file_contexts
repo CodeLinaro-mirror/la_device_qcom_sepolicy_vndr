@@ -53,3 +53,6 @@
 
 # hibernation resume device
 /sys/power/resume u:object_r:vendor_sysfs_hib_resume_device:s0
+
+#sensors glink dev node
+/dev/glinkpkt_lmcu_qsh_1_[0-9]+      u:object_r:vendor_glink_lmcu_qsh_device:s0
