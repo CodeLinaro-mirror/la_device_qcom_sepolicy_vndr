@@ -30,9 +30,10 @@
 
 /vendor/lib(64)?/hw/gralloc.minigbm.so u:object_r:same_process_hal_file:s0
 
+/dev/dri u:object_r:gpu_device:s0
+/dev/dri/renderD128  u:object_r:gpu_device:s0
+
 /dev/ttyS0 u:object_r:tty_device:s0
 
 /sys/devices/platform/odm/10000000.virtio_mmio/virtio[0-9]+/block/vda/queue/discard_max_bytes u:object_r:vendor_sysfs_vda_discard_max_bytes:s0
 /sys/devices/platform/odm/10002000.virtio_mmio/uevent u:object_r:vendor_sysfs_graphics:s0
-
-/dev/dri u:object_r:graphics_device:s0
