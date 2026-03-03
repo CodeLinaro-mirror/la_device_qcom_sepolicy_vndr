@@ -129,25 +129,27 @@ genfscon sysfs /devices/platform/soc/8a03000.csr/swao_csr u:object_r:vendor_sysf
 genfscon sysfs /devices/platform/soc/soc:modem_diag/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
 
 # Power supply device nodes
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/usb u:object_r:vendor_sysfs_usb_supply:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/wireless u:object_r:vendor_sysfs_usb_supply:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1 u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/battery u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/usb u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/wireless u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink1 u:object_r:vendor_sysfs_usb_supply:s0
 
 # PMIC devices wakeup nodes
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink_log/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1/wakeup u:object_r:sysfs_wakeup:s0
 
-genfscon sysfs /devices/platform/soc/1c40000.arbiter/spmi-0/0-00/1c0a000.spmi:qcom,pmk8350@0:rtc@6100/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/1c40000.arbiter/spmi-0/0-00/1c0a000.spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/1c40000.arbiter/spmi-0/0-00/1c0a000.spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/alarmtimer.2.auto/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/1c40000.arbiter/spmi-0/0-00/1c0a000.spmi:qcom,pmk8350@0:pon@1300/1c0a000.spmi:qcom,pmk8350@0:pon@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/1c40000.arbiter/spmi-0/0-00/1c0a000.spmi:qcom,pmk8350@0:pon@1300/1c0a000.spmi:qcom,pmk8350@0:pon@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink-log/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:battery-charger/power_supply/wireless/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pmic-glink/soc:pmic-glink:ucsi-glink/power_supply/ucsi-source-psy-soc:pmic-glink:ucsi-glink1/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pmk8350@0:rtc@6100/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/alarmtimer.1.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/alarmtimer.2.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pmk8350@0:pon@1300/1c40000.qcom,spmi:qcom,pmk8350@0:pon@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pmk8350@0:pon@1300/1c40000.qcom,spmi:qcom,pmk8350@0:pon@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
 
 #PMIC UI peripherals
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-1/1-0064/leds/red u:object_r:vendor_sysfs_graphics:s0
@@ -155,8 +157,8 @@ genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-1/1-0064/leds/blue u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a84000.i2c/i2c-1/1-0064/leds u:object_r:sysfs_leds:s0
 
-genfscon sysfs /devices/platform/soc/1c40000.arbiter/spmi-0/0-09/1c0a000.spmi:qcom,pm7250b@3:qcom,vibrator@5300/leds/vibrator u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/1c40000.arbiter/spmi-0/0-07/1c0a000.spmi:qcom,pmiv010x@7:qcom,vibrator@df00/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-09/1c40000.qcom,spmi:qcom,pm7250b@3:qcom,vibrator@5300/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-07/1c40000.qcom,spmi:qcom,pmiv010x@7:qcom,vibrator@df00/leds/vibrator u:object_r:sysfs_leds:s0
 
 # USB device wakeup nodes
 genfscon sysfs /devices/platform/soc/4e00000.hsusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
