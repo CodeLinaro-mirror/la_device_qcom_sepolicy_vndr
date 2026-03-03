@@ -33,6 +33,8 @@ set_prop(vendor_qti_init_shell, vendor_video_prop)
 
 set_prop(vendor_qti_init_shell, vendor_dataadpl_prop)
 
+set_prop(vendor_qti_init_shell, vendor_ctl_avf_prop)
+
 #perf
 set_prop(vendor_qti_init_shell, vendor_mpctl_prop)
 
