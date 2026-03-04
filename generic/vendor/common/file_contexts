@@ -541,6 +541,13 @@
 /sys/fs/ext4/sde[0-11]+/lifetime_write_kbytes                        u:object_r:vendor_sysfs_fs_ext4:s0
 /sys/power/disk                                                      u:object_r:vendor_sysfs_power:s0
 /sys/power/resume                                                    u:object_r:vendor_sysfs_power:s0
+
+# wall power
+/sys/devices/platform/power.0/power_supply                          u:object_r:vendor_sysfs_power_supply:s0
+/sys/devices/platform/power.0/power_supply/Ac/*                     u:object_r:vendor_sysfs_power_supply:s0
+/sys/devices/platform/power.0/power_supply/Ac/online                     u:object_r:vendor_sysfs_power_supply:s0
+/sys/devices/platform/power.0/power_supply/Ac/type                     u:object_r:vendor_sysfs_power_supply:s0
+
 # vendor_sysfs_graphics
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:vendor_sysfs_graphics:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
