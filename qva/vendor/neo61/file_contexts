@@ -13,6 +13,10 @@
 #swap partition node
 /dev/block/by-name/swap				  u:object_r:vendor_hibernate_swap:s0
 
+# mink socket
+/(vendor|system/vendor)/bin/hlosminkdaemon      u:object_r:vendor_hlosminkdaemon_exec:s0
+/dev/socket/hlos_mink_opener                    u:object_r:vendor_hlos_minkd_opener_socket:s0
+
 ###################################
 # System files
 #
