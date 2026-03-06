@@ -40,3 +40,7 @@ userdebug_or_eng(`
   allow vendor_modprobe { vendor_debugfs_kgsl_fence_tracing }:dir search;
 ')
 dontaudit vendor_modprobe self:capability sys_admin;
+
+userdebug_or_eng(`
+  allow vendor_modprobe vendor_debugfs_ipc:dir search;
+')
