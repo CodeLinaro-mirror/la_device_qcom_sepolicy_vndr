@@ -19,3 +19,4 @@
 /vendor/bin/hw/vendor\.qti\.hardware\.power\.powerstateservice@1\.0-service			   u:object_r:vendor_hal_powerstateservice_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.power\.powerstateutility@1\.0-service			   u:object_r:vendor_hal_powerstateutility_qti_exec:s0
 /vendor/bin/check_virtsupport\.sh                                                      u:object_r:vendor_init_check_virtsupport_sh_exec:s0
+/vendor/bin/vendor\.qti\.qvirtvendor-service                                           u:object_r:vendor_hal_qvirtvendor_default_exec:s0
