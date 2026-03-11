@@ -215,6 +215,8 @@
 /vendor/bin/hvdcp_opti                                                             u:object_r:vendor_hvdcp_exec:s0
 /vendor/bin/init.qti.chg_policy.sh                                                 u:object_r:vendor_qti_init_shell_exec:s0
 
+/(vendor|system/vendor)/bin/init\.qcom\.avf\.sh                                    u:object_r:vendor_qti_init_shell_exec:s0
+
 #battery_stats
 /vendor/bin/battery_stats                                           u:object_r:vendor_battery_stats_exec:s0
 /data/vendor/battery_stats(/.*)?                                    u:object_r:vendor_battery_stats_data_file:s0
