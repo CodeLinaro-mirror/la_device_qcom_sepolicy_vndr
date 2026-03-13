@@ -30,20 +30,23 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # early Video Service
-type vendor_earlyVideo, domain;
-type vendor_earlyVideo_exec, exec_type, file_type, vendor_file_type;
+type vendor_early_video_app, domain;
+type vendor_early_video_app_exec, exec_type, file_type, vendor_file_type;
 
-init_daemon_domain(vendor_earlyVideo)
-allow vendor_earlyVideo graphics_device:chr_file rw_file_perms;
-allow vendor_earlyVideo video_device:chr_file rw_file_perms;
-allow vendor_earlyVideo gpu_device:chr_file rw_file_perms;
-allow vendor_earlyVideo sysfs_power:file r_file_perms;
-allow vendor_earlyVideo kmsg_device:chr_file rw_file_perms;
-allow vendor_earlyVideo vendor_early_services:dir rw_dir_perms;
-allow vendor_earlyVideo vendor_early_services:file rw_file_perms;
-#allow vendor_earlyVideo vendor_sysfs_kpi:file w_file_perms;
-allow vendor_earlyVideo self:capability { chown setgid setuid sys_admin };
-allow vendor_earlyVideo dmabuf_system_heap_device:chr_file r_file_perms;
-allow vendor_earlyVideo vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+init_daemon_domain(vendor_early_video_app)
+allow vendor_early_video_app graphics_device:chr_file rw_file_perms;
+allow vendor_early_video_app video_device:chr_file rw_file_perms;
+allow vendor_early_video_app gpu_device:chr_file rw_file_perms;
+allow vendor_early_video_app sysfs_power:file r_file_perms;
+allow vendor_early_video_app kmsg_device:chr_file rw_file_perms;
+allow vendor_early_video_app vendor_early_services:dir rw_dir_perms;
+allow vendor_early_video_app vendor_early_services:file rw_file_perms;
+#allow vendor_early_video_app vendor_sysfs_kpi:file w_file_perms;
+allow vendor_early_video_app vendor_sysfs_bootkpi:dir search;
+allow vendor_early_video_app vendor_sysfs_bootkpi:file rw_file_perms;
+allow vendor_early_video_app sysfs:dir r_dir_perms;
+allow vendor_early_video_app self:capability { chown setgid setuid sys_admin };
+allow vendor_early_video_app dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_early_video_app vendor_dmabuf_system_heap_device:chr_file r_file_perms;
 allow video_device device:filesystem associate;
 

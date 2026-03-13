@@ -342,7 +342,7 @@
 /vendor_early_services/bin/init_early_test                                    u:object_r:vendor_init_early_test_exec:s0
 /vendor_early_services/system/bin/init_early_test                             u:object_r:vendor_init_early_test_exec:s0
 /vendor_early_services/system/bin/init_early_lxc                              u:object_r:vendor_earlyesplash_exec:s0
-/vendor_early_services/vendor/bin/earlyVideo                                  u:object_r:vendor_earlyVideo_exec:s0
+/vendor_early_services/vendor/bin/early_video_app                             u:object_r:vendor_early_video_app_exec:s0
 /vendor_early_services/vendor/bin/ais_server                                  u:object_r:vendor_ais_server_exec:s0
 /vendor_early_services/vendor/bin/qcarcam_edrm_rvc                            u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
 /vendor_early_services/vendor/bin/esplash                                     u:object_r:vendor_earlyesplash_exec:s0

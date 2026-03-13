@@ -9,8 +9,8 @@ allow init proc_asound:file { getattr setattr };
 # allowing audio-nxp-auto to access spidev
 allow init audio_device:chr_file { open read write };
 allow init audio_device:chr_file { ioctl };
-allow init vendor_earlyVideo_exec:file {r_file_perms execute};
-domain_auto_trans(init, vendor_earlyVideo_exec, vendor_earlyVideo)
+allow init vendor_early_video_app_exec:file {r_file_perms execute};
+domain_auto_trans(init, vendor_early_video_app_exec, vendor_early_video_app)
 
 #domain_auto_trans(init, vendor_ais_server_exec, vendor_ais_server)
 #domain_auto_trans(init, vendor_qcarcam_edrm_rvc_exec, vendor_qcarcam_edrm_rvc)
