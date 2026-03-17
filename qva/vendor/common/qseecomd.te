@@ -29,6 +29,7 @@
 allow tee vendor_qsee_ipc_irq_spss_device:chr_file rw_file_perms;
 allow tee tee_device:chr_file rw_file_perms;
 hal_client_domain(tee, vendor_hal_soter);
+hal_client_domain(tee, vendor_hal_powerstateservice);
 unix_socket_connect(tee, property, init)
 # Allow access to qsee data file
 allow tee vendor_data_qsee_file:dir create_dir_perms;
