@@ -39,3 +39,6 @@
 /sys/firmware/devicetree/base/memory/ddr_device_type                               u:object_r:vendor_sysfs_ddr:s0
 
 /sys/devices(/platform)?/soc/[a-f0-9]+.ufshc/spm_lvl                u:object_r:vendor_sysfs_scsi_host:s0
+
+#senors glink dev node
+/dev/glinkpkt_lpaicp_qsh_1_.*   u:object_r:vendor_glink_lpaicp_qsh_device:s0
