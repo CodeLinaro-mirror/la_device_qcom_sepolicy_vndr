@@ -52,3 +52,6 @@ get_prop(mediacodec, vendor_adsprpc_prop)
 
 #allow mediacodec to read drm_smmu_prop
 get_prop(mediacodec, vendor_drm_smmu_prop)
+
+#allow mediacodec to read platform_prop
+get_prop(mediacodec, vendor_platform_prop)
