@@ -366,3 +366,6 @@ genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm2250@0:vadc@3100/iio:device2 u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm2250@0:vadc@3100/iio:device3 u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:qcom,pm2250@0:vadc@3100/iio:device4 u:object_r:vendor_sysfs_battery_supply:s0
+
+genfscon sysfs /devices/platform/soc/4744000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0boot0/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
+genfscon sysfs /devices/platform/soc/4744000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0boot1/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
