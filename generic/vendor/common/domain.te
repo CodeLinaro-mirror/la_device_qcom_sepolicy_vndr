@@ -88,6 +88,7 @@ neverallow { domain
 - hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default
+is_flag_enabled(TARGET_DEFINES_AXR_CONFIGURATION, -hal_perception_server)
 - hal_audio_default
 - vendor_qvrd_vndr_cam
 userdebug_or_eng(` -vendor_usta_app')
