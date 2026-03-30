@@ -45,6 +45,7 @@ userdebug_or_eng(`
   allow vendor_modprobe { vendor_debugfs_kgsl_fence_tracing }:dir search;
   allow vendor_modprobe debugfs_bootreceiver_tracing:dir search;
   allow vendor_modprobe debugfs_wifi_tracing:dir search;
+  allow vendor_modprobe vendor_usb_events:dir search;
 ')
 allow vendor_modprobe vendor_init-qcom-wifi-sh:fd use;
 allow vendor_modprobe self:capability2 perfmon;
