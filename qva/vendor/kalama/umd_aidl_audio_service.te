@@ -1,0 +1,45 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#Define domain
+type vendor_umd_audio_service, domain;
+type vendor_umd_audio_service_exec, file_type, vendor_file_type, exec_type;
+
+typeattribute vendor_umd_audio_service hal_audio_client;
+
+#Allow for transition from init domain to umdservice
+init_daemon_domain(vendor_umd_audio_service)
+
+#Allow a base set of permissions required
+hal_server_domain(vendor_umd_audio_service, vendor_hal_umd)
+binder_call(vendor_hal_umd_client, vendor_hal_umd_server)
+binder_call(vendor_hal_umd_server, vendor_hal_umd_client)
+
+#Ability for domain to get vendor_hal_umd_hwservice to hwservice_manager
+#and find it
+hal_attribute_service(vendor_hal_umd, vendor_umd_service)
+binder_call(vendor_hal_umd_server, servicemanager)
+
+#Allow a base set of permissions for the domain to be the client of hal_graphics_allocator
+hal_client_domain(vendor_umd_audio_service, hal_graphics_allocator)
+
+#Allow the domain to access the properties required
+get_prop(vendor_umd_audio_service, vendor_umd_prop)
+get_prop(vendor_umd_audio_service, usb_control_prop)
+get_prop(vendor_umd_audio_service, codec2_config_prop)
+
+#Allow the domain to access the uvent socket and the audio device
+allow vendor_umd_audio_service self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow vendor_umd_audio_service vendor_pcm_device:chr_file rw_file_perms;
+allow vendor_umd_audio_service audio_device:dir r_dir_perms;
+
+#Allow the domain to access the configfs file and dir
+allow vendor_umd_audio_service configfs:file r_file_perms;
+allow vendor_umd_audio_service configfs:dir r_dir_perms;
+
+#allow the domain to access dmabuf
+allow vendor_umd_audio_service dmabuf_system_heap_device:chr_file r_file_perms;
+
+
+allow vendor_umd_audio_service vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_umd_audio_service vendor_membuf_dev:chr_file r_file_perms;

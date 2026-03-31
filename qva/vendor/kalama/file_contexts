@@ -25,9 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
 #
-# Copyright (c) 2022-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.face@1\.0-service    u:object_r:vendor_biometricsface_exec:s0
@@ -37,7 +37,9 @@
 /data/vendor/face3d_dir(/.*)?                                                      u:object_r:vendor_biometricsface_data_file:s0
 
 #umd_service
-/vendor/bin/hw/vendor\.qti\.hardware\.umd@1\.0-service   u:object_r:vendor_hal_umd_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.umd@1\.0-service    u:object_r:vendor_hal_umd_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.umd-audio-service  u:object_r:vendor_umd_audio_service_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.umd-camera-service u:object_r:vendor_umd_camera_service_exec:s0
 
 #uac
 /dev/snd/pcmC[1-9].*  u:object_r:vendor_pcm_device:s0
