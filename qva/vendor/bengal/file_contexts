@@ -197,6 +197,9 @@
 # FBE
 /vendor/bin/init.qti.qseecomd.sh                                u:object_r:vendor_init-qti-fbe-sh_exec:s0
 
+# VM Specific
+/dev/gunyah                                                          u:object_r:vendor_gunyah_dev:s0
+
 ##################################
 # same process HAL libs
 /vendor/lib(64)?/hw/vulkan\.bengal\.so                           u:object_r:same_process_hal_file:s0
