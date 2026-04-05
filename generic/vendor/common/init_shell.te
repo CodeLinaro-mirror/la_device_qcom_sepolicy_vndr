@@ -220,3 +220,6 @@ userdebug_or_eng(`
 allow vendor_qti_init_shell debugfs_tracing_debug:file { open write };
 allow vendor_qti_init_shell debugfs_tracing:file { open write };
 ')
+
+# Allow Vendor chre property
+set_prop(vendor_qti_init_shell, vendor_chre_prop)

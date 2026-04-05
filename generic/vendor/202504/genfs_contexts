@@ -3,5 +3,6 @@
 
 until_board_api(202504, `
      genfscon sysfs /power/mem_sleep u:object_r:vendor_sysfs_suspend:s0
+     genfscon sysfs /class/typec     u:object_r:vendor_sysfs_usb_c:s0
 ')
 
