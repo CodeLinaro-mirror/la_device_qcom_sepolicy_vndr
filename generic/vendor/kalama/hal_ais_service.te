@@ -28,6 +28,7 @@ allow vendor_hal_ais_service sysfs:file write;
 allow vendor_hal_ais_service sysfs:file getattr;
 allow vendor_hal_ais_service socket_device:sock_file write;
 allow vendor_hal_ais_service init:unix_stream_socket connectto;
+allow vendor_hal_ais_service vendor_init:unix_stream_socket connectto;
 
 
 
