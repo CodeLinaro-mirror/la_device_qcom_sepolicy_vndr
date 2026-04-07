@@ -15,3 +15,7 @@ userdebug_or_eng(`typeattribute compute_cape unconstrained_vsock_violators;')
 
 # 2. Keep your existing allow rules (or use the macro if available)
 userdebug_or_eng(`allow compute_cape self:vsock_socket create_socket_perms_no_ioctl;')
+userdebug_or_eng(`get_prop(compute_cape, vendor_platform_prop)')
+userdebug_or_eng(`allow compute_cape self:tcp_socket { create connect setopt read write bind accept listen shutdown getopt };')
+userdebug_or_eng(`allow compute_cape node:tcp_socket node_bind;')
+userdebug_or_eng(`allow compute_cape port:tcp_socket name_connect;')
