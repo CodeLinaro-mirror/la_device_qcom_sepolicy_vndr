@@ -41,3 +41,17 @@ genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.2
 #cache alloc sysfs
 genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/enable_monitor u:object_r:vendor_sysfs_cache_alloc:s0
 genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/bw_mon_ratio_thresh u:object_r:vendor_sysfs_cache_alloc:s0
+
+#bootup_wakeup_nodes
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:rtc@6000/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:rtc@6000/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:qcom,qpnp-smblite/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,smp2p_sleepstate_lmcu/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/6044000.qcom,bam_dmux/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4ac0000.geniqup/4aa0000.serial/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4e00000.ssusb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:pon_hlos@800/1c40000.qcom,spmi:pm4125@0:pon_hlos@800:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:pon_hlos@800/1c40000.qcom,spmi:pm4125@0:pon_hlos@800:resin/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:qpnp,qg/power_supply/bms/wakeup5 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:qcom,qpnp-smblite/power_supply/usb/wakeup8 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:qcom,qpnp-smblite/power_supply/battery/wakeup9 u:object_r:sysfs_wakeup:s0
