@@ -106,6 +106,7 @@
 /dev/socket/gptp_socket                         u:object_r:vendor_gptp_socket:s0
 /dev/utcshm                                     u:object_r:vendor_ipa_dev:s0
 /dev/timeinfo                                   u:object_r:vendor_ipa_dev:s0
+/dev/socket/gptp_power_socket                   u:object_r:vendor_gptp_power_socket:s0
 
 # dev socket nodes
 /dev/socket/chre                                u:object_r:vendor_chre_socket:s0
@@ -271,6 +272,7 @@
 
 ## Context for vnw
 /vendor/bin/qgptp               u:object_r:vendor_vnw_exec:s0
+/vendor/bin/qgptp_powerservice  u:object_r:vendor_vnw_exec:s0
 /vendor/bin/libgptp_test        u:object_r:vendor_vnw_exec:s0
 /vendor/bin/qavb_app            u:object_r:vendor_vnw_exec:s0
 /vendor/bin/utc_ts              u:object_r:vendor_vnw_exec:s0
