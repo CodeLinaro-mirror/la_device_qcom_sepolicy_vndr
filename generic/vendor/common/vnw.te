@@ -42,7 +42,14 @@ allowxperm vendor_vnw self:unix_dgram_socket ioctl { SIOCETHTOOL };
 allowxperm vendor_vnw self:tcp_socket ioctl { SIOCETHTOOL };
 allow vendor_vnw sysfs_net:dir { search };
 allow vendor_vnw vendor_emac_state:file { read open getattr create map setattr write };
+allow vendor_vnw socket_device:dir { write };
 allow vendor_vnw vendor_gptp_socket:sock_file { create_file_perms };
+allow vendor_vnw vendor_gptp_power_socket:sock_file { create write read unlink};
+# For gptp LPM support
+allow vendor_vnw carpowerpolicyd_service:service_manager find;
+binder_call(vendor_vnw, servicemanager)
+binder_call(vendor_vnw, carpowerpolicyd)
+binder_call(carpowerpolicyd, vendor_vnw)
 
 allow vendor_vnw vendor_vnw_device:file { create map open read setattr write };
 allow vendor_vnw vendor_vnw_device:dir { write add_name };
