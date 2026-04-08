@@ -5,3 +5,7 @@
 #Add till AOSP fixes these
 allow carservice_app { content_capture_service media_communication_service }:service_manager find;
 allow carservice_app vendor_sysfs_sb:file rw_file_perms;
+
+# Allow CarService to map SharedMemory (memfd) – API 37+
+allow carservice_app tmpfs:file { read write map open getattr };
+allow carservice_app tmpfs:dir search;
