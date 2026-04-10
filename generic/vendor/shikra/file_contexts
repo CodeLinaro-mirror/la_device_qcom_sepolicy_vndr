@@ -149,6 +149,18 @@
 /sys/devices/platform/soc/soc:remoteproc-mss@04080000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/soc:remoteproc-mss@04080000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
+
+/sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
+
+/sys/devices/platform/soc/b800000.remoteproc-lpaicp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/b800000.remoteproc-lpaicp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/b800000.remoteproc-lpaicp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
+
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
