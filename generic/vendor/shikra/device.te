@@ -36,3 +36,4 @@ type vendor_dip_device, dev_type;
 type vendor_rawdump_block_device, dev_type;
 type vendor_virtio_chr_device, dev_type;
 type vendor_gunyah_chr_device, dev_type;
+type vendor_glink_lpaicp_qsh_device, dev_type;
