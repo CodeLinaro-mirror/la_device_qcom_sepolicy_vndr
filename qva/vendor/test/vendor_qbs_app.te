@@ -7,6 +7,8 @@ app_domain(vendor_qbs_app)
 net_domain(vendor_qbs_app)
 binder_use(vendor_qbs_app)
 
+get_prop(vendor_qbs_app, vendor_qbs_prop)
+
 hal_client_domain(vendor_qbs_app, vendor_hal_secureprocessor)
 hal_client_domain(vendor_qbs_app, vendor_hal_perf);
 
