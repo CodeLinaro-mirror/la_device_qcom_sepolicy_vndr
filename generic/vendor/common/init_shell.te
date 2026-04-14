@@ -28,9 +28,10 @@
 # Normally these are shell commands or scripts invoked via sh
 # from an init*.rc file.  No service should ever run in this domain.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause-Clear
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_qti_init_shell, domain;
 type vendor_qti_init_shell_exec, exec_type, vendor_file_type,file_type;
@@ -225,3 +226,7 @@ userdebug_or_eng(`
 allow vendor_qti_init_shell debugfs_tracing_debug:file { open write };
 allow vendor_qti_init_shell debugfs_tracing:file { open write };
 ')
+
+# Allow vendor_qti_init_shell to write unprivileged_bpf_disabled
+# (needed by init scripts, AVC: denied { write } on proc_bpf)
+allow vendor_qti_init_shell proc_bpf_unprivileged:file { open write };
