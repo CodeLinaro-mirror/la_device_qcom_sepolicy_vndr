@@ -42,3 +42,7 @@
 
 #senors glink dev node
 /dev/glinkpkt_lpaicp_qsh_1_.*   u:object_r:vendor_glink_lpaicp_qsh_device:s0
+
+###################################
+#audio
+/dev/aud_pasthru_modem                          u:object_r:vendor_agm_device:s0
