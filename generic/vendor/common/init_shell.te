@@ -223,3 +223,7 @@ allow vendor_qti_init_shell debugfs_tracing:file { open write };
 
 # Allow Vendor chre property
 set_prop(vendor_qti_init_shell, vendor_chre_prop)
+
+# Allow vendor_qti_init_shell to write unprivileged_bpf_disabled
+# (needed by init scripts, AVC: denied { write } on proc_bpf)
+allow vendor_qti_init_shell proc_bpf_unprivileged:file { open write };
