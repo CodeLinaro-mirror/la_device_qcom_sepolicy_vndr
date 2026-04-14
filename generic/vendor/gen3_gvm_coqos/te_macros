@@ -7,4 +7,5 @@ define(`graphic_access', `
 allow $1 gpu_device:dir { open read search };
 allow $1 gpu_device:chr_file { getattr ioctl map open read write };
 allow $1 sysfs_gpu:file { getattr open read };
+allow $1 vendor_sysfs_graphics:file { getattr open read };
 ')
