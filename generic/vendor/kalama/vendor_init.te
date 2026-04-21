@@ -84,7 +84,7 @@ allow vendor_init tmpfs:filesystem { remount unmount };
 allow vendor_init tmpfs:lnk_file { create read };
 allow vendor_init vendor_agm_device:chr_file relabelto;
 allow vendor_init vendor_dmabuf_audio_ml_heap_device:chr_file relabelto;
-allow vendor_init vendor_dmabuf_system_heap_device:chr_file { ioctl open read relabelto };
+allow vendor_init vendor_dmabuf_system_heap_device:chr_file { ioctl open read write relabelto };
 #allow vendor_init vendor_early_video_app_exec:file execute_no_trans;
 allow vendor_init vendor_early_audio:dir search;
 allow vendor_init vendor_early_audio:file { open read };

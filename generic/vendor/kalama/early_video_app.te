@@ -46,7 +46,7 @@ allow vendor_early_video_app vendor_sysfs_bootkpi:dir search;
 allow vendor_early_video_app vendor_sysfs_bootkpi:file rw_file_perms;
 allow vendor_early_video_app sysfs:dir r_dir_perms;
 allow vendor_early_video_app self:capability { chown setgid setuid sys_admin };
-allow vendor_early_video_app dmabuf_system_heap_device:chr_file r_file_perms;
-allow vendor_early_video_app vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_early_video_app dmabuf_system_heap_device:chr_file rw_file_perms;
+allow vendor_early_video_app vendor_dmabuf_system_heap_device:chr_file rw_file_perms;
 allow video_device device:filesystem associate;
 
