@@ -33,6 +33,8 @@
 type vendor_pm_data_file, file_type, data_file_type;
 type vendor_sysfs_guestvm, fs_type, sysfs_type;;
 
+# EarlyServices
+type vendor_early_services, file_type;
 type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;
 
 type vendor_qlas_persist_data_file, file_type , vendor_persist_type;

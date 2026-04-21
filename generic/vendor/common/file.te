@@ -267,6 +267,8 @@ type vendor_sysfs_devicetree_cpu, sysfs_type, fs_type;
 
 type vendor_sysfs_devicetree_soc, sysfs_type, fs_type;
 type vendor_sysfs_microdump, fs_type, sysfs_type;
+# /sys/kernel/boot_kpi/kpi_values
+type vendor_sysfs_bootkpi, fs_type, sysfs_type;
 
 #rmnet module files
 type vendor_sysfs_rmnet, fs_type, sysfs_type;

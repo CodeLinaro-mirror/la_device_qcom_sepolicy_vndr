@@ -1,0 +1,6 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow vendor_pd_mapper vendor_early_services:dir search;
+allow vendor_pd_mapper vendor_early_services:file { read write };
+allow vendor_pd_mapper vendor_init:fd { use };
