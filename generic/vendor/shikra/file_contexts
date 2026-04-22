@@ -264,3 +264,12 @@
 
 #qdss node
 /dev/stm0                            u:object_r:vendor_qdss_device:s0
+
+# IIO devices for charger & QG
+/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:qpnp,qg/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:vadc@3100/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/1c40000.qcom,spmi/spmi-0/0-00/1c40000.qcom,spmi:pm4125@0:qcom,qpnp-smblite/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/soc:pm4125_pa_therm_bridge/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/soc:pm4125_quiet_therm_bridge/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/soc:pm4125_msm_therm_bridge/iio:device[0-9](/.*?) u:object_r:vendor_sysfs_battery_supply:s0
+
