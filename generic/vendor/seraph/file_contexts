@@ -217,6 +217,9 @@
 /dev/block/platform/soc/b24000.sdhci/by-name/limits                u:object_r:vendor_limits_block_device:s0
 /dev/block/platform/soc/b24000.sdhci/by-name/limits-cdsp           u:object_r:vendor_limits_block_device:s0
 
+# Vendor DMA-BUF Heaps
+/dev/dma_heap/qcom,sc-tcm               u:object_r:vendor_dmabuf_sc_tcm_heap_device:s0
+
 # hypervisor node
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 /dev/gh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
