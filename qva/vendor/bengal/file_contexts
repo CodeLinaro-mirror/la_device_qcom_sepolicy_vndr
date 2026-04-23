@@ -201,6 +201,9 @@
 # FBE
 /vendor/bin/init.qti.qseecomd.sh                                u:object_r:vendor_init-qti-fbe-sh_exec:s0
 
+# mmc device type
+/sys/devices/platform/soc/4784000.sdhci/mmc_host/mmc1/mmc1:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
+
 # VM Specific
 /dev/gunyah                                                          u:object_r:vendor_gunyah_dev:s0
 
