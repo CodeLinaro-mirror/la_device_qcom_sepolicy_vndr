@@ -405,3 +405,8 @@ genfscon sysfs /devices/platform/soc/ae94000.qcom,mdss_dsi_ctrl0/uio/uio1/name u
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-2/enabled u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-Virtual-1/enabled u:object_r:vendor_sysfs_graphics:s0
+
+# Devcoredump framework
+genfscon sysfs /devices/virtual/devcoredump/devcd1/data       u:object_r:vendor_sysfs_devcd:s0
+genfscon sysfs /devices/virtual/devcoredump/devcd2/data       u:object_r:vendor_sysfs_devcd:s0
+genfscon sysfs /devices/virtual/devcoredump/devcd3/data       u:object_r:vendor_sysfs_devcd:s0
