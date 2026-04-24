@@ -575,3 +575,6 @@
 #C2PA
 /vendor/bin/hw/vendor.qti.hardware.c2pa-aidl-service-qti u:object_r:vendor_hal_c2pa_qti_exec:s0
 /vendor/bin/C2PAInternetService u:object_r:vendor_c2painternetservice_exec:s0
+
+# Devcoredump framework
+/sys/devices/virtual/devcoredump/devcd[0-9]+/data       u:object_r:vendor_sysfs_devcd:s0
