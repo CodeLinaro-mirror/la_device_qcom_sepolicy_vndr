@@ -21,6 +21,9 @@ allow vendor_location_xtra_daemon vendor_location:unix_dgram_socket { read write
 
 # allow socket communication with gnss hal
 allow vendor_location_xtra_daemon vendor_hal_gnss_qti:unix_dgram_socket sendto;
+allow vendor_location_xtra_daemon vendor_persist_xtra_file:dir rw_dir_perms;
+allow vendor_location_xtra_daemon vendor_persist_xtra_file:file create_file_perms;
+allow vendor_location_xtra_daemon mnt_vendor_file:dir r_dir_perms;
 
 hwbinder_use(vendor_location_xtra_daemon)
 get_prop(vendor_location_xtra_daemon, hwservicemanager_prop)
