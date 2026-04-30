@@ -108,6 +108,8 @@
 /dev/block/platform/soc/4804000.ufshc/by-name/dtbo_[ab]         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/hyp_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/keymaster_[ab]    u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4804000.ufshc/by-name/secretkeeper_[ab] u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4804000.ufshc/by-name/pvmfw_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/mdtp_[ab]         u:object_r:vendor_mdtp_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/mdtpsecapp_[ab]   u:object_r:vendor_mdtp_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/modem_[ab]        u:object_r:vendor_modem_block_device:s0
@@ -146,6 +148,8 @@
 /dev/block/platform/soc/4744000.sdhci/by-name/devcfg_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/hyp_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/keymaster_[ab]    u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/secretkeeper_[ab] u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000.sdhci/by-name/pvmfw_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/modem_[ab]        u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/bluetooth_[ab]    u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/soc/4744000.sdhci/by-name/msadp_[ab]        u:object_r:vendor_custom_ab_block_device:s0
@@ -196,6 +200,9 @@
 
 # FBE
 /vendor/bin/init.qti.qseecomd.sh                                u:object_r:vendor_init-qti-fbe-sh_exec:s0
+
+# VM Specific
+/dev/gunyah                                                          u:object_r:vendor_gunyah_dev:s0
 
 ##################################
 # same process HAL libs

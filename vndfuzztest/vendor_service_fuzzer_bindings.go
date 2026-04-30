@@ -195,5 +195,7 @@ var (
     "vendor.qti.AvfQcvmManager.IAvfQcvmManager/default":                                    EXCEPTION_NO_FUZZER,
     "vendor.qti.hardware.display.snapallocext.ISnapAllocExt/default":                       []string{"aidl_fuzzer_display_gralloc"},
     "vendor.qti.hardware.camera.postproc.IPostProcService/camerapostprocservice":           EXCEPTION_NO_FUZZER,
+    "vendor.qti.hardware.powerstateservice.IPowerStateService/default":                     EXCEPTION_NO_FUZZER,
+    "vendor.qti.hardware.powerstateservice.IPowerStateUtility/default":                     EXCEPTION_NO_FUZZER,
  }
 )
