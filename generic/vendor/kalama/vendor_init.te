@@ -196,6 +196,22 @@ allow vendor_init logd:process setsched;
 allow vendor_init lmkd:process setsched;
 allow vendor_init keystore:process setsched;
 allow vendor_init vendor_qvirtmgr:process setsched;
+allow vendor_init socket_device:sock_file { create getattr setattr write };
+allow vendor_init vendor_init:netlink_route_socket read;
+allow vendor_init vendor_init:qipcrtr_socket { create getattr read setopt write };
+allow vendor_init vendor_init:udp_socket { create ioctl };
+allow vendor_init vendor_location_data_file:file { ioctl lock };
+allow vendor_init vendor_location_socket:lnk_file read;
+allow vendor_init vendor_location_socket:sock_file write;
+allow vendor_init vendor_pd_locater_dbg_prop:file { getattr map open read };
+allow vendor_init vendor_per_mgr:binder { call transfer };
+allow vendor_init vendor_per_mgr_service:service_manager find;
+allow vendor_init vendor_qc_aon_prop:file { getattr map open read };
+allow vendor_init vendor_qsap_location_socket:sock_file write;
+allow vendor_init vndbinder_device:chr_file { ioctl map open read write };
+allow vendor_init vndservicemanager:binder call;
 
 #allow vendor_init su:dbus send_msg;
 #allow su vendor_init:dbus send_msg;
+
+dontaudit vendor_init default_prop:property_service set;

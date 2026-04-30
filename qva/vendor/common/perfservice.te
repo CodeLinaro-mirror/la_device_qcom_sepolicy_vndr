@@ -28,3 +28,4 @@
 hal_client_domain(vendor_perfservice, vendor_hal_perf)
 hal_client_domain(vendor_perfservice, vendor_hal_iop)
 get_prop(vendor_perfservice, vendor_iop_prop)
+allow vendor_perfservice vendor_hal_performance_iperf_service:service_manager find;

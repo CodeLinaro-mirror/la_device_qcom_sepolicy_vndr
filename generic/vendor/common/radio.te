@@ -55,3 +55,4 @@ userdebug_or_eng(`
 ')
 
 get_prop(radio, vendor_radio_prop)
+allow radio vendor_hal_performance_iperf_service:service_manager find;

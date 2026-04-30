@@ -21,4 +21,6 @@ allow vendor_qtiwifi_app hint_service:service_manager find;
 allow vendor_qtiwifi_app activity_task_service:service_manager find;
 allow vendor_qtiwifi_app game_service:service_manager find;
 allow vendor_qtiwifi_app voiceinteraction_service:service_manager find;
-
+allow vendor_qtiwifi_app vendor_perf_service:service_manager find;
+allow vendor_qtiwifi_app vendor_hal_perf_default:binder call;
+allow vendor_qtiwifi_app vendor_hal_performance_iperf_service:service_manager find;

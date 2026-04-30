@@ -26,4 +26,5 @@ allow vendor_ais_v4l2_proxy sysfs:file read;
 allow vendor_ais_v4l2_proxy vendor_init:unix_stream_socket connectto;
 allow vendor_ais_v4l2_proxy vendor_sysfs_bootkpi:dir search;
 allow vendor_ais_v4l2_proxy sysfs:file { getattr open };
-
+allow vendor_ais_v4l2_proxy logd_socket:sock_file getattr;
+allow vendor_ais_v4l2_proxy vendor_early_services:dir search;

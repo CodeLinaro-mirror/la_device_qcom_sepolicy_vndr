@@ -29,8 +29,9 @@ allow vendor_hal_ais_service sysfs:file getattr;
 allow vendor_hal_ais_service socket_device:sock_file write;
 allow vendor_hal_ais_service init:unix_stream_socket connectto;
 allow vendor_hal_ais_service vendor_init:unix_stream_socket connectto;
-
-
+allow vendor_hal_ais_service kmsg_device:chr_file { open write };
+allow vendor_hal_ais_service logd_socket:sock_file getattr;
+allow vendor_hal_poweroptservice_qti tmpfs:dir { open read };
 
 allow vendor_hal_ais_service vndbinder_device:chr_file rw_file_perms;
 binder_call(vendor_hal_ais_service, servicemanager)

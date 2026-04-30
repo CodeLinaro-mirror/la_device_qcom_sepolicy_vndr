@@ -75,3 +75,4 @@ allow vendor_agmservice_qti kmsg_device:chr_file { append open getattr };
 allowxperm vendor_agmservice_qti kmsg_device:chr_file ioctl { 0x5401 };
 allow vendor_agmservice_qti vendor_sysfs_bootkpi:dir search;
 allow vendor_agmservice_qti kmsg_device:chr_file ioctl;
+allow vendor_agmservice_qti sysfs:dir { open read };

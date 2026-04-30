@@ -44,3 +44,4 @@ hal_client_domain(vendor_dataservice_app, vendor_hal_imsfactory)
 hal_client_domain(vendor_dataservice_app, vendor_hal_dcservice_qti)
 
 dontaudit vendor_dataservice_app vendor_hal_performance_iperf_service:service_manager find;
+dontaudit vendor_dataservice_app default_android_service:service_manager find;

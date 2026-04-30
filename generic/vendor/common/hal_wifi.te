@@ -64,3 +64,5 @@ allowxperm hal_wifi_default self:udp_socket ioctl { SIOCBRADDBR
                                                     SIOCBRDELBR
                                                     SIOCBRADDIF
                                                     SIOCBRDELIF };
+
+allow hal_wifi_default vendor_init:unix_dgram_socket sendto;

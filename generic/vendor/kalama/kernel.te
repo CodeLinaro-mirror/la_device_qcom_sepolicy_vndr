@@ -68,3 +68,4 @@ allow kernel tmpfs:lnk_file { create ioctl open read setattr };
 allow kernel self:capability { net_admin sys_module };
 allow kernel sysfs_dm:dir { open read };
 allow kernel self:capability dac_override;
+dontaudit kernel rootfs:file unlink;
