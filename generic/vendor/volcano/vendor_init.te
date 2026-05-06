@@ -1,0 +1,23 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+domain_auto_trans(vendor_init, vendor_init_early_test_exec, vendor_init_early_test)
+
+allow vendor_init self:qipcrtr_socket { read write create getattr };
+
+allow vendor_init firmware_file:filesystem { mount relabelfrom relabelto };
+
+allow vendor_init rootfs:dir { add_name read write mounton};
+allow vendor_init rootfs:file { getattr open read };
+allow vendor_init rootfs:filesystem unmount;
+allow vendor_init rootfs:system module_load;
+
+allow vendor_init tmpfs:dir { add_name mounton write create relabelfrom remove_name rmdir watch };
+allow vendor_init tmpfs:file { getattr create mounton relabelfrom write append ioctl lock rename unlink watch };
+allow vendor_init tmpfs:chr_file { create getattr ioctl open read relabelfrom setattr write };
+allow vendor_init tmpfs:lnk_file { create read getattr rename unlink};
+allow vendor_init tmpfs:blk_file create;
+allow vendor_init tmpfs:fifo_file create;
+allow vendor_init tmpfs:sock_file { create getattr setattr unlink write };
+
+allow vendor_init vendor_early_services:file { append lock };

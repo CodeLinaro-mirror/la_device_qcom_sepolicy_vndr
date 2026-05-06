@@ -1,0 +1,68 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow kernel self:process setexec;
+allow kernel audio_device:dir search;
+allow kernel vendor_early_services:dir search;
+allow kernel audio_device:dir create_dir_perms;
+allow kernel audio_device:chr_file { create setattr };
+
+#!!!! This avc is allowed in the current policy
+allow kernel vendor_file:file read;
+
+allow kernel firmware_file:filesystem  { relabelto relabelfrom  mount };
+allow kernel vendor_early_services:dir r_dir_perms;
+allow kernel tmpfs:chr_file rw_file_perms;
+allow kernel tmpfs:dir { write add_name r_dir_perms };
+allow kernel proc_cmdline:file r_file_perms;
+allow kernel sepolicy_file:file r_file_perms;
+allow kernel device:dir create_dir_perms;
+#allow kernel vendor_debugfs_ipc:dir search;
+#allow kernel vendor_debugfs_wlan:dir search;
+#allow kernel vendor_sysfs_kpi:file { open write };
+allow kernel vendor_early_services:file { relabelto read getattr};
+allow kernel audio_device:dir create_dir_perms;
+allow kernel audio_device:chr_file { create setattr };
+allow kernel rootfs:dir { create relabelfrom relabelto add_name write mounton remove_name unlink};
+allow kernel rootfs:lnk_file { create relabelfrom };
+allow kernel vendor_early_services:dir relabelto;
+allow kernel sysfs:dir mounton;
+allow kernel sysfs:filesystem mount;
+allow kernel vendor_file:dir r_dir_perms;
+allow kernel vendor_file:dir { relabelto };
+allow kernel vendor_file:file { relabelto };
+allow kernel system_linker_exec:file { relabelto };
+allow kernel vendor_early_services:lnk_file { relabelto read };
+allow kernel vendor_init_early_test_exec:file { relabelto };
+allow kernel vendor_init_exec:file { relabelto read open };
+
+allow kernel vfat:file {open read};
+allow kernel vfat:dir { search };
+allow kernel kernel:capability { mknod sys_admin };
+allow kernel device:chr_file { create setattr unlink getattr};
+dontaudit kernel self:capability dac_read_search;
+
+allow kernel rootfs:system module_load;
+#allow kernel device:blk_file { create setattr };
+allow kernel vendor_sysfs_bootkpi:dir search;
+allow kernel vendor_sysfs_bootkpi:file { write open };
+allow kernel sysfs_dt_firmware_android:dir { read search };
+allow kernel sysfs_dt_firmware_android:file { getattr open read };
+allow kernel tmpfs:file create;
+allow kernel rootfs:dir rmdir;
+allow kernel rootfs:lnk_file unlink;
+allow kernel self:netlink_kobject_uevent_socket create;
+allow kernel sysfs:dir { open read };
+allow kernel sysfs_dt_firmware_android:dir open;
+allow kernel vendor_early_services:file open;
+allow kernel tmpfs:chr_file { create setattr };
+allow kernel vendor_sysfs_graphics:file { write open };
+allow kernel sysfs_wakeup:dir { open read };
+allow kernel tmpfs:dir create;
+allow kernel sysfs_wakeup:dir search;
+allow kernel sysfs_wakeup:file { open write };
+allow kernel tmpfs:blk_file { create ioctl open read setattr };
+allow kernel tmpfs:lnk_file { create ioctl open read setattr };
+allow kernel self:capability { net_admin sys_module };
+allow kernel sysfs_dm:dir { open read };
+#allow kernel self:capability dac_override;
