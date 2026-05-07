@@ -59,3 +59,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type vendor_sysfs_fps_attr, fs_type, sysfs_type;
+type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;
