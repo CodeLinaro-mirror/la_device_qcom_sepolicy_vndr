@@ -34,6 +34,9 @@
 # Dev block nodes
 /dev/block/mmcblk0                                                 u:object_r:root_block_device:s0
 
+# Dev node for rpmb
+/dev/mmcblk0rpmb                                                   u:object_r:vendor_rpmb_device:s0
+
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                       u:object_r:vendor_gpt_block_device:s0
 
@@ -148,6 +151,18 @@
 /sys/devices/platform/soc/soc:remoteproc-mss@04080000/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-mss@04080000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/soc:remoteproc-mss@04080000/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
+
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/6080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
+
+/sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/b300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
+
+/sys/devices/platform/soc/b800000.remoteproc-lpaicp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/b800000.remoteproc-lpaicp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/b800000.remoteproc-lpaicp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:remoteproc-adsp@03000000/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
