@@ -1,4 +1,5 @@
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type qtiwifi, domain;
@@ -7,8 +8,8 @@ type qtiwifi_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(qtiwifi)
 
 binder_use(qtiwifi)
-typeattribute qtiwifi vendor_hal_qtiwifi_server;
-typeattribute qtiwifi vendor_hal_qtiwifi;
+typeattribute qtiwifi hal_qtiwifi_server;
+typeattribute qtiwifi hal_qtiwifi;
 
 allow qtiwifi self:netlink_generic_socket create_socket_perms_no_ioctl;
 allowxperm qtiwifi self:udp_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
