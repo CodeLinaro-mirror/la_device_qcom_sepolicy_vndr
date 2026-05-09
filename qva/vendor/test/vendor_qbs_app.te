@@ -1,0 +1,22 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_qbs_app, domain;
+
+app_domain(vendor_qbs_app)
+net_domain(vendor_qbs_app)
+binder_use(vendor_qbs_app)
+
+get_prop(vendor_qbs_app, vendor_qbs_prop)
+
+hal_client_domain(vendor_qbs_app, vendor_hal_secureprocessor)
+hal_client_domain(vendor_qbs_app, vendor_hal_perf);
+
+allow vendor_qbs_app {
+app_api_service
+cameraserver_service
+mediaextractor_service
+mediametrics_service
+mediaserver_service
+}:service_manager find;
+

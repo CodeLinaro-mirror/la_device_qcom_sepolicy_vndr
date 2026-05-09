@@ -33,3 +33,8 @@ vendor_restricted_prop(vendor_fda_prop);
 
 #kineticsxr
 type vendor_kineticsxr_prop, property_type;
+
+# Qualcomm Biometric Solution
+vendor_restricted_prop(vendor_qbs_prop);
+vendor_restricted_prop(vendor_qbs_ssr_prop);
+
