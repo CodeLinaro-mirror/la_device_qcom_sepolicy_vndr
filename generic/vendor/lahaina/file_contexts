@@ -208,6 +208,9 @@
 /dev/block/platform/soc/4804000.ufshc/by-name/limits                u:object_r:vendor_limits_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/limits-cdsp           u:object_r:vendor_limits_block_device:s0
 
+/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
 # hdmi device
 /dev/hdmi_bdg_irq_handler             u:object_r:vendor_hdmi_bdg_irq_device:s0
 
