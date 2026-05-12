@@ -1,4 +1,6 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+until_board_api(202604, `
 genfscon sysfs /class/typec     u:object_r:vendor_sysfs_usb_c:s0
+')

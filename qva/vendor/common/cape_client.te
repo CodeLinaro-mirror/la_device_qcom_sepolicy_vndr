@@ -1,0 +1,17 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# device/qcom/sepolicy/vendor/compute_cape.te
+
+# Define the type for the executable
+type compute_cape_exec, exec_type, vendor_file_type, file_type;
+
+# (Optional) If the binary runs as a service/process, define a domain for it
+type compute_cape, domain;
+init_daemon_domain(compute_cape)
+
+# 1. Add the exemption attribute
+userdebug_or_eng(`typeattribute compute_cape unconstrained_vsock_violators;')
+
+# 2. Keep your existing allow rules (or use the macro if available)
+userdebug_or_eng(`allow compute_cape self:vsock_socket create_socket_perms_no_ioctl;')

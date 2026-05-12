@@ -1,0 +1,16 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_early_eth, domain;
+type vendor_early_eth_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_early_eth)
+
+allow vendor_early_eth self:udp_socket { create ioctl };
+allowxperm vendor_early_eth self:udp_socket ioctl { SIOCSIFADDR SIOCSIFFLAGS };
+allow vendor_early_eth vendor_toolbox_exec:file { rx_file_perms execute_no_trans };
+allow vendor_early_eth vendor_shell_exec:file { rx_file_perms execute_no_trans };
+allow vendor_early_eth vendor_early_eth:capability { net_admin };
+allow vendor_early_eth proc_net:file w_file_perms;
+allow vendor_early_eth sysfs_net:dir search;
+userdebug_or_eng(`allow vendor_early_eth kmsg_device:chr_file { open write };')
