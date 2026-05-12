@@ -38,6 +38,9 @@ allow audioserver audio_service:service_manager find;
 # allow audioserver to use DMA-BUF file descriptors
 allow audioserver vendor_modprobe:fd use;
 
+# Allow audioserver to access FMQ memfd files on tmpfs
+allow audioserver system_server:memfd_file { getattr map read write };
+
 # audio properties
 get_prop(audioserver, vendor_audio_prop)
 

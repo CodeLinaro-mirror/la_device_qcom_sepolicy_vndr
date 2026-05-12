@@ -7,6 +7,11 @@ type vendor_audiohalservice_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_audiohalservice_qti)
 hal_server_domain(vendor_audiohalservice_qti,hal_audio)
 
+# Allow FMQ (Fast Message Queue) memfd operations for AIDL audio HAL
+# memfd_create("MessageQueue") is used by FMQ for command/reply/data queues
+allow vendor_audiohalservice_qti self:memfd_file { create read write getattr map };
+allow audioserver vendor_audiohalservice_qti:memfd_file { read write getattr map };
+
 vndbinder_use(vendor_audiohalservice_qti)
 binder_call(vendor_audiohalservice_qti,servicemanager)
 binder_call(vendor_audiohalservice_qti,audioserver)
