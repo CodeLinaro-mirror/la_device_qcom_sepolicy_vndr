@@ -486,6 +486,9 @@
 # sensor hal config file
 /vendor/etc/hal_config               u:object_r:vendor_sensor_hal_config:s0
 
+# sensor hal config file in /data
+/data/vendor/etc/hal_config                 u:object_r:data_sensor_hal_config:s0
+
 # /
 /tombstones                          u:object_r:rootfs:s0
 /vendor/dsp(/.*)?                    u:object_r:adsprpcd_file:s0

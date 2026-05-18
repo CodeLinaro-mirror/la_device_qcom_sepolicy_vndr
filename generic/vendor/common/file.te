@@ -296,3 +296,6 @@ type vendor_gptp_power_socket, file_type;
 
 # Sensor Hal Config
 type vendor_sensor_hal_config, file_type, vendor_file_type;
+
+# Sensor HAL COnfig In /data
+type data_sensor_hal_config, file_type, data_file_type;
