@@ -67,3 +67,6 @@
 
 #aidirector
 /dev/snd/controlC0  u:object_r:vendor_aid_audio_device:s0
+
+#sysfs file
+/sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:vendor_sysfs_spss:s0
