@@ -169,6 +169,7 @@ var (
     "android.hardware.gnss.IGnss/default":                                                  EXCEPTION_NO_FUZZER, 
     "android.hardware.drm.IDrmFactory/wfdhdcp":                                             EXCEPTION_NO_FUZZER,
     "android.hardware.power.IPower/default":                                                EXCEPTION_NO_FUZZER,
+    "vendor.qti.hardware.bluetooth.gatt.IBluetoothGatt/default":                            []string{"vendor.qti.hardware.bluetooth.gatt-aidl_fuzzer"},
     "android.hardware.gatekeeper.IGatekeeper/default":                                      EXCEPTION_NO_FUZZER,
     "android.hardware.security.secureclock.ISecureClock/default":                           EXCEPTION_NO_FUZZER,
     "android.hardware.security.sharedsecret.ISharedSecret/default":                         EXCEPTION_NO_FUZZER,
