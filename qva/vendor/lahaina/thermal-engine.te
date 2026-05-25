@@ -1,0 +1,6 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow vendor_thermal-engine to access sysfs thremal nodes
+allow vendor_thermal-engine self:capability sys_admin;
+allow vendor_thermal-engine sysfs_thermal:file rw_file_perms;
