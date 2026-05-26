@@ -35,5 +35,17 @@ hal_client_domain(hal_graphics_composer_default, vendor_hal_display_demura);
 # Allow composer service to read secure pixel dma-buf heap
 allow hal_graphics_composer_default vendor_dmabuf_secure_pixel:chr_file r_file_perms;
 
+# Allow composer service to read system_uncached dma-buf heap
+allow hal_graphics_composer_default vendor_dmabuf_system_uncached_heap_device:chr_file r_file_perms;
+
+# Allow composer service to read vendor_dmabuf_display_heap_device
+allow hal_graphics_composer_default vendor_dmabuf_display_heap_device:chr_file r_file_perms;
+
+# Allow composer service to read vendor_vm_cp_camera_device
+allow hal_graphics_composer_default vendor_vm_cp_camera_device:chr_file r_file_perms;
+
+# Allow composer service to read vendor_vm_cp_camera_preview_device
+allow hal_graphics_composer_default vendor_vm_cp_camera_preview_device:chr_file r_file_perms;
+
 # Also added for proxy device access
 allow hal_graphics_composer_default vendor_smmu_proxy_device:chr_file r_file_perms;

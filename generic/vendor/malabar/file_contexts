@@ -111,6 +111,7 @@
 /dev/block/platform/soc/4804000.ufshc/by-name/xbl_ramdump_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/spuservice_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/4804000.ufshc/by-name/qtvm_dtbo_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4804000.ufshc/by-name/secretkeeper_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 
 
 # Block device holding the GPT, where the A/B attributes are stored.
