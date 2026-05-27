@@ -286,3 +286,6 @@ type vendor_usb_events, file_type, tracefs_type;
 
 #EMMC Health
 type vendor_sysfs_emmc_health, sysfs_type, fs_type;
+
+#bpf
+type proc_bpf_unprivileged, proc_type, fs_type;
