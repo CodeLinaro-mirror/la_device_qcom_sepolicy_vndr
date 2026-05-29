@@ -66,6 +66,9 @@ allow system_server vendor_netmgrd:udp_socket { getattr getopt read write };
 
 dontaudit system_server vendor_proc_shs:dir search;
 dontaudit system_server vendor_hal_performance_iperf_service:service_manager find;
+dontaudit system_server default_android_service:service_manager find;
+dontaudit system_server vndbinder_device:chr_file write;
+allow system_server sysfs:file getattr;
 
 #allow system_server vendor_default_prop:file { map read open getattr };
 

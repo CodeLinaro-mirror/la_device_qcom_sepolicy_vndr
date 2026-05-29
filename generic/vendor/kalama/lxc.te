@@ -48,6 +48,10 @@ allow app_in_lxc sysfs_loop:file { getattr };
 allow app_in_lxc vendor_sysfs_sd:file { getattr };
 allow app_in_lxc sysfs_devices_block:dir { search };
 allow app_in_lxc sysfs_devices_block:file { getattr };
+allow app_in_lxc app_in_lxc:capability2 { audit_read bpf perfmon };
+allow app_in_lxc binder_device:chr_file setattr;
+allow app_in_lxc hwbinder_device:chr_file setattr;
+allow app_in_lxc vndbinder_device:chr_file { getattr setattr };
 
 # systemd-udevd to /sys/devices/virtual/wakeup/wakeup79/uevent
 allow app_in_lxc sysfs_wakeup:dir search;
@@ -108,6 +112,8 @@ allowxperm app_in_lxc devpts:file ioctl { 0x5401 0x5437 0x540d 0x4b3a 0x4b45 0x4
 allow app_in_lxc proc_meminfo:file { read open };
 allow app_in_lxc vendor_sysfs_ddr:file { read open getattr };
 
+dontaudit app_in_lxc configfs:filesystem mount;
+dontaudit app_in_lxc fusectlfs:filesystem mount;
 ##################### systemd-udevd in lxc --end ###############################
 
 # systemd-journal to weston
@@ -118,6 +124,16 @@ allow app_in_lxc devpts:chr_file ioctl;
 allow app_in_lxc self:netlink_audit_socket { read write };
 allow app_in_lxc tmpfs:chr_file ioctl;
 allow app_in_lxc tmpfs:file watch;
+
+#weston
+allow weston app_in_lxc:fd use;
+allow weston app_in_lxc:dir { getattr open read search };
+allow weston app_in_lxc:file { getattr open read };
+allow weston gpu_device:chr_file { getattr ioctl open read write };
+allow weston proc_cmdline:file { getattr open read };
+allow weston tmpfs:dir { add_name getattr open read remove_name search write };
+allow weston tmpfs:file { append create getattr open rename setattr unlink write };
+allow weston weston:file { getattr ioctl open };
 
 #dontaudit vendor_lxc_shell self:capability_class_set *;
 #dontaudit vendor_lxc_shell kernel:security *;
@@ -181,9 +197,36 @@ allow vendor_init vendor_sysfs_bootkpi:dir search;
 allow vendor_init vendor_sysfs_bootkpi:file write;
 allow vendor_init vendor_sysfs_graphics:file { getattr open read };
 
+
 ################## weston in lxc -- end ####################
 
 #allow mk_loop device:dir { write };
 #allow mk_loop kmsg_device:chr_file { write };
 #allow mk_loop block_device:dir { search };
 #allow mk_loop sysfs:dir { read };
+
+allow vendor_qti_init_shell app_in_lxc:dir search;
+allow vendor_qti_init_shell app_in_lxc:file { getattr open read };
+allow vendor_qti_init_shell app_in_lxc:lnk_file read;
+allow vendor_qti_init_shell app_in_lxc:process signull;
+allow vendor_qti_init_shell app_in_lxc:unix_stream_socket connectto;
+allow vendor_qti_init_shell app_in_lxc_exec:dir search;
+allow vendor_qti_init_shell app_in_lxc_exec:file { execute map open read };
+allow vendor_qti_init_shell node:tcp_socket node_bind;
+allow vendor_qti_init_shell node:udp_socket node_bind;
+allow vendor_qti_init_shell port:tcp_socket name_bind;
+allow vendor_qti_init_shell port:udp_socket name_bind;
+allow vendor_qti_init_shell tmpfs:dir { add_name write };
+allow vendor_qti_init_shell tmpfs:sock_file { create setattr write };
+#allow vendor_qti_init_shell vendor_agm_hwservice:hwservice_manager find;
+allow vendor_qti_init_shell vendor_agmservice_qti:binder { call transfer };
+allow vendor_qti_init_shell vendor_default_prop:file { getattr map open read };
+allow vendor_qti_init_shell vendor_qti_init_shell:tcp_socket { accept bind create listen };
+allow vendor_qti_init_shell vendor_qti_init_shell:udp_socket { bind create };
+allow vendor_qti_init_shell kmsg_device:chr_file { open write };
+dontaudit vndservicemanager vendor_init:binder transfer;
+dontaudit mediaswcodec vendor_early_services:dir search;
+dontaudit audioserver vendor_early_services:dir search;
+dontaudit mediaextractor default_in_lxc:dir search;
+dontaudit mediaserver default_in_lxc:dir search;
+dontaudit cameraserver default_in_lxc:dir search;
