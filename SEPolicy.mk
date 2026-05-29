@@ -2,7 +2,7 @@
 ifneq (,$(call is-vendor-board-qcom))
 SEPOLICY_PATH:= device/qcom/sepolicy_vndr
 
-ifeq ($(TARGET_RELEASE_PLATFORM),bp4a)
+ifneq ( , $(filter Baklava 16 CinnamonBun 17, $(PLATFORM_VERSION)))
   BOARD_SYSTEM_EXT_SEPOLICY_PREBUILT_DIRS := device/qcom/sepolicy/generic
   BOARD_PRODUCT_SEPOLICY_PREBUILT_DIRS := device/qcom/sepolicy/generic/product
 else
