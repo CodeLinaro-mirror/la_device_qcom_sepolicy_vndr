@@ -37,6 +37,7 @@ genfscon sysfs /devices/platform/soc/10048000.tmc/tmc_etr0 u:object_r:vendor_sys
 genfscon sysfs /devices/platform/soc/1004f000.tmc/tmc_etr1 u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/10002000.stm/stm0 u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/10b11000.csr/swao_csr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10001000.csr/swao_csr u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:modem_diag/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
 
 # Power supply device nodes
