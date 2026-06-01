@@ -47,3 +47,8 @@ persist.debug_imudegree              u:object_r:vendor_kineticsxr_prop:s0
 persist.debug_dynamiccheck           u:object_r:vendor_kineticsxr_prop:s0
 persist.debug_predicttime            u:object_r:vendor_kineticsxr_prop:s0
 persist.debug_sctrlcalib             u:object_r:vendor_kineticsxr_prop:s0
+
+# Qualcomm Biometric Solution
+persist.vendor.qbs.record.enable             u:object_r:vendor_qbs_prop:s0
+persist.vendor.ssr.restart_level             u:object_r:vendor_qbs_ssr_prop:s0
+
