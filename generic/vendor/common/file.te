@@ -29,6 +29,11 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+#
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+#
 type vendor_sysfs_audio, fs_type, sysfs_type;
 type vendor_sysfs_sndcard, fs_type, sysfs_type;
 type vendor_sysfs_battery_supply, sysfs_type, fs_type;
@@ -278,3 +283,9 @@ type vendor_someip_data_file, file_type, data_file_type;
 type vendor_someip_cfg_file, file_type, vendor_file_type;
 
 type vendor_usb_events, file_type, tracefs_type;
+
+#EMMC Health
+type vendor_sysfs_emmc_health, sysfs_type, fs_type;
+
+#bpf
+type proc_bpf_unprivileged, proc_type, fs_type;
