@@ -1,0 +1,7 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#BT and GNSS virtio consoles
+/dev/vport[0-9]+p0     u:object_r:vendor_virtio_bt_device:s0
+/dev/vport[0-9]+p1     u:object_r:vendor_virtio_gnss_device:s0
+

@@ -1,0 +1,6 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_virtio_bt_device, dev_type;
+type vendor_virtio_gnss_device, dev_type;
+
