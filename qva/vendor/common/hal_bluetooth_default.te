@@ -57,3 +57,10 @@ allowxperm hal_bluetooth_default self:udp_socket ioctl { SIOCSIFFLAGS };
 
 # for TCP and UDP sockets
 net_domain(hal_bluetooth_default)
+
+# Allow the BT HAL (hal_bluetooth_default) to act as a client of the
+# PowerStateService so it can register/unregister for hibernate events
+# via IPowerStateService.registerHibernateClient() /
+# IPowerStateService.unregisterHibernateClient().
+hal_client_domain(hal_bluetooth_default, vendor_hal_powerstateservice)
+
