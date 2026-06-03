@@ -47,3 +47,4 @@ type vendor_hal_dspmanager_hwservice, hwservice_manager_type;
 type vendor_hal_camera_aon_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_poweroptservice_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_limits_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_ais_hwservice, hwservice_manager_type, protected_hwservice;

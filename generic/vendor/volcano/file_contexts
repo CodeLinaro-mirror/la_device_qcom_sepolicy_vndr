@@ -307,3 +307,16 @@
 # qlas sockets
 /dev/socket/qlas(/.*)?       u:object_r:vendor_qlas_socket:s0
 /dev/socket/mosquitto(/.*)?       u:object_r:vendor_mosquitto_socket:s0
+
+
+# ais camera
+/(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
+/dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
+# /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                          u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
+
+#aidl camera provider
+/(vendor|system/vendor)/bin/hw/android.hardware.camera.provider@V1-qti-service   u:object_r:vendor_aidl_camera_provider_qti_exec:s0
+
+# Qcarcam HAL
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_qti_exec:s0

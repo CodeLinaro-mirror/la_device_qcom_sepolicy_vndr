@@ -17,10 +17,16 @@ allow vendor_hal_ais_qti self:capability sys_nice;
 allow vendor_hal_ais_qti vendor_dmabuf_system_heap_device:chr_file { read open ioctl};
 allow vendor_hal_ais_qti vendor_dmabuf_system_uncached_heap_device:chr_file { read open ioctl };
 allow vendor_hal_ais_qti vendor_hal_ais_service:service_manager add;
+allow vendor_hal_ais_qti vendor_hal_ais_service:service_manager find;
 allow vendor_hal_ais_qti tmpfs:sock_file write;
 allow vendor_hal_ais_qti vendor_init:unix_stream_socket connectto;
+allow vendor_hal_ais_qti hwservicemanager_prop:file { getattr map open read };
+allow vendor_hal_ais_qti hwservicemanager:binder transfer;
+allow vendor_hal_ais_qti hidl_base_hwservice:hwservice_manager add;
+allow vendor_hal_ais_qti hwservicemanager:binder call;
 allow vendor_hal_ais_qti vendor_sysfs_bootkpi:dir search;
 
+get_prop(vendor_hal_ais_qti,hwservicemanager_prop)
 add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
 add_service(vendor_hal_ais_qti, vendor_hal_ais_service)
 allow vendor_hal_ais_qti vndbinder_device:chr_file rw_file_perms;
