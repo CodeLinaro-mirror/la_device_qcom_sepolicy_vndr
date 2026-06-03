@@ -55,6 +55,9 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/mst_test_app
+      ifeq ($(TARGET_BOARD_PLATFORM),lahaina)
+        BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/qbs_app
+      endif
     endif
 endif
 

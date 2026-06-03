@@ -26,4 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow vendor_init vendor_binder_state:file r_file_perms;
+set_prop(vendor_init, vendor_qbs_ssr_prop)
 

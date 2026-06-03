@@ -1,0 +1,30 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_qbs_app, domain;
+
+# Mark as coredomain to exempt from the full_treble_only neverallow that blocks
+# appdomain (excluding coredomain) from finding vendor_service types.
+# This mirrors the platform_app pattern: platform_app is both appdomain and coredomain.
+typeattribute vendor_qbs_app coredomain;
+
+app_domain(vendor_qbs_app)
+net_domain(vendor_qbs_app)
+binder_use(vendor_qbs_app)
+
+get_prop(vendor_qbs_app, vendor_qbs_prop)
+
+hal_client_domain(vendor_qbs_app, vendor_hal_secureprocessor)
+hal_client_domain(vendor_qbs_app, vendor_hal_perf);
+
+# AIDL binder call to the biometricsolution HAL service
+binder_call(vendor_qbs_app, vendor_hal_biometricsolution)
+
+allow vendor_qbs_app {
+    app_api_service
+    cameraserver_service
+    mediaextractor_service
+    mediametrics_service
+    mediaserver_service
+    vendor_hal_biometricsolution_service
+}:service_manager find;

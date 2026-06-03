@@ -10,3 +10,4 @@ type vendor_aidl_rcsservice, vendor_service,service_manager_type;
 type vendor_hal_factory_aidlservice, vendor_service,service_manager_type;
 type vendor_hal_vnddisplayconfig_service, vendor_service,service_manager_type;
 
+type vendor_hal_biometricsolution_service,    vendor_service, service_manager_type;

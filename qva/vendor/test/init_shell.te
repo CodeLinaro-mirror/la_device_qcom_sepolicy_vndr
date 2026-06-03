@@ -1,0 +1,10 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. 
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow adb shell to read QBS properties (debug/userdebug only)
+get_prop(shell, vendor_qbs_prop)
+get_prop(shell, vendor_qbs_ssr_prop)
+
+# SSR setup reads the restart level property to configure subsystem restart
+get_prop(vendor_ssr_setup, vendor_qbs_ssr_prop)
+
