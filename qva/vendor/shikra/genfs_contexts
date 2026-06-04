@@ -68,3 +68,5 @@ genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp/wakeup u:object_r:sys
 genfscon sysfs /devices/platform/soc/c800000.qcom,icnss/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4c00000.hsusb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/45e8000.pcie/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/soc/c800000.qcom,icnss/net u:object_r:sysfs_net:s0
