@@ -1,0 +1,9 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#============= bpfloader ==============
+# Allow bpfloader to control unprivileged BPF program loading
+# by writing to /sys/kernel/unprivileged_bpf_disabled
+# This is required for [specific use case/feature]
+allow bpfloader proc_bpf_unprivileged:file rw_file_perms;
+neverallow { domain -bpfloader -vendor_qti_init_shell } proc_bpf_unprivileged:file write;
