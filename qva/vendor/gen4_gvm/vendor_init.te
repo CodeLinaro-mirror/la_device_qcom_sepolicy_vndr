@@ -5,6 +5,9 @@ get_prop(vendor_init, debug_prop);
 allow vendor_init vendor_ipa_dev:file w_file_perms;
 set_prop(vendor_init, vendor_bootctrl_prop);
 
+# Allow vendor_init to set IOP and gesture fling boost properties
+set_prop(vendor_init, vendor_iop_prop);
+set_prop(vendor_init, vendor_scroll_prop);
+
 # Allow vendor_init to read USB properties (sys.usb.config.hid etc.)
 get_prop(vendor_init, usb_prop);
-
