@@ -1,0 +1,35 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# tdm-out-put-clock permission
+type vendor_tdm_output_clock, domain;
+type vendor_tdm_output_clock_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_tdm_output_clock)
+
+# Allows access to Audio HAL as a binder client
+binder_use(vendor_tdm_output_clock)
+binder_call(vendor_tdm_output_clock, hal_audio_default)
+
+# access /dev/snd
+allow vendor_tdm_output_clock audio_device:dir r_dir_perms;
+allow vendor_tdm_output_clock audio_device:chr_file rw_file_perms;
+
+# access /proc/asound
+allow vendor_tdm_output_clock proc_asound:dir r_dir_perms;
+allow vendor_tdm_output_clock proc_asound:file r_file_perms;
+
+# /sys/kernel/mm/pgsize_migration/enabled
+allow vendor_tdm_output_clock sysfs:file { read open getattr };
+
+# Allows hwservicemanager prop
+allow vendor_tdm_output_clock hwservicemanager_prop:file { read open getattr map };
+
+# Allows calling hwservicemanager via binder
+allow vendor_tdm_output_clock hwservicemanager:binder call;
+
+# hwservicemanager property
+get_prop(vendor_tdm_output_clock, hwservicemanager_prop)
+
+# Macros automatically handle hwservice find + binder call/transfer
+hal_client_domain(vendor_tdm_output_clock, hal_audio)

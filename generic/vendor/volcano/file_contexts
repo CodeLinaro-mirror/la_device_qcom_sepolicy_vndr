@@ -320,3 +320,6 @@
 
 # Qcarcam HAL
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service         u:object_r:vendor_hal_ais_qti_exec:s0
+
+# Audio files
+/vendor/bin/agmcap    u:object_r:vendor_tdm_output_clock_exec:s0
