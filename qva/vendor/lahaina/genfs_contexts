@@ -105,6 +105,7 @@ genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/wakeup u:object_r:
 genfscon sysfs /devices/platform/soc/soc:q6core_audio/soc:q6core_audio:bolero-cdc/tx-macro/tx_swr_ctrl/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a800000.ssusb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/884000.i2c/i2c-2/2-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0
 
 #discard_max_bytes
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes    u:object_r:sysfs_discard_max_bytes:s0
