@@ -1,0 +1,8 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+genfscon sysfs /devices/platform/odm/1000f000.virtio_mmio/virtio14/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/1000f000.virtio_mmio/virtio14/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/odm/1000f000.virtio_mmio/virtio15/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/1000f000.virtio_mmio/virtio15/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
