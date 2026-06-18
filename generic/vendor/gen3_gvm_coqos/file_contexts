@@ -46,3 +46,5 @@
 /dev/dri/renderD128  u:object_r:gpu_device:s0
 
 /dev/ttyS0 u:object_r:tty_device:s0
+
+/vendor/bin/hw/android\.hardware\.composer\.hwc3-service\.drm  u:object_r:hal_graphics_composer_default_exec:s0
