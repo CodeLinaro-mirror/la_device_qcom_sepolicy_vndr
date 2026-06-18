@@ -434,3 +434,13 @@ genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remotepr
 genfscon sysfs /devices/virtual/devcoredump/devcd1/data       u:object_r:vendor_sysfs_devcd:s0
 genfscon sysfs /devices/virtual/devcoredump/devcd2/data       u:object_r:vendor_sysfs_devcd:s0
 genfscon sysfs /devices/virtual/devcoredump/devcd3/data       u:object_r:vendor_sysfs_devcd:s0
+
+# ufs device type
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:1/block/sdb/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:2/block/sdc/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:3/block/sdd/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:4/block/sde/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:5/block/sdf/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:6/block/sdg/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:7/block/sdh/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
