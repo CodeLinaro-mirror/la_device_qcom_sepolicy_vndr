@@ -35,6 +35,11 @@ genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.0
 genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.1/name u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon/extcon0/cable.2/name u:object_r:vendor_sysfs_graphics:s0
 
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd9378-codec/extcon/extcon1/cable.0/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd9378-codec/extcon/extcon1/cable.1/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd9378-codec/extcon/extcon1/cable.2/name u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform:lpass-cdc/wcd9378-codec/extcon/extcon1/cable.3/name u:object_r:vendor_sysfs_graphics:s0
+
 #cache alloc sysfs
 genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/enable_monitor u:object_r:vendor_sysfs_cache_alloc:s0
 genfscon sysfs /devices/platform/soc/1d83a400.qcom,cache-allocation/bw_mon_ratio_thresh u:object_r:vendor_sysfs_cache_alloc:s0
