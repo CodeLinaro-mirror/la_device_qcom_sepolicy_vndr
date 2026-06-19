@@ -13,3 +13,10 @@ genfscon sysfs /devices/platform/60019000.virtio-mmio/virtio17/net u:object_r:sy
 genfscon sysfs /devices/platform/soc/1a80000.ethernet/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/4000000000.pci/pci0002:00/0002:00:00.0/0002:01:00.0/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/400000000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio27/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio28/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/2801a000.virtio-mmio/virtio16/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/28019000.virtio-mmio/virtio17/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/3001a000.virtio-mmio/virtio14/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/30019000.virtio-mmio/virtio15/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio25/net u:object_r:sysfs_net:s0
