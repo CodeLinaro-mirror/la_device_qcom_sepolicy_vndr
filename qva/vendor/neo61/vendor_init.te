@@ -1,5 +1,5 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# Qvirtmgr Policies
-allow vendor_qvirtmgr vendor_gunyah_chr_device:chr_file rw_file_perms;
+#VM shutdown feature
+set_prop(vendor_init,vendor_vm_ssrenable_prop)
