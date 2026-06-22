@@ -46,3 +46,8 @@
 ###################################
 #audio
 /dev/aud_pasthru_modem                          u:object_r:vendor_agm_device:s0
+
+###################################
+#RIL
+/vendor/bin/hw/qcrilLited         u:object_r:rild_exec:s0
+/(vendor|system/vendor)/bin/init\.qcrilLited\.sh        u:object_r:vendor_qti_init_shell_exec:s0
