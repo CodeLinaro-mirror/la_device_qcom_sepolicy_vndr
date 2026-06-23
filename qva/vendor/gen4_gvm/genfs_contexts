@@ -23,6 +23,7 @@ genfscon sysfs /devices/platform/soc/23049000.qcom,ethernet/net u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/23000000.ethernet/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/2300c000.qcom,ethernet/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio25/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio26/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio24/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio29/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio27/net u:object_r:sysfs_net:s0
