@@ -27,3 +27,6 @@
 
 # Allow vendor_qti_init_shell to set vendor_pasr_prop
 set_prop(vendor_qti_init_shell, vendor_pasr_prop)
+
+# Allow vendor_qti_init_shell to update ADSP remoteproc state
+allow vendor_qti_init_shell vendor_sysfs_remoteproc_adsp_state:file { open write getattr };
