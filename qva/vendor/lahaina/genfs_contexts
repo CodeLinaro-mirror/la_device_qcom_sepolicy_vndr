@@ -106,3 +106,8 @@ genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/884000.i2c/i2c-
 
 #discard_max_bytes
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes    u:object_r:sysfs_discard_max_bytes:s0
+
+# ADSP remoteproc state node
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc0/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc1/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc2/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
