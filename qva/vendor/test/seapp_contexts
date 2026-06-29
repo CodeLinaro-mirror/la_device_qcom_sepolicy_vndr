@@ -30,8 +30,6 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # Add new domain for location test apps
-user=_app seinfo=platform name=com.qualcomm.qct.dlt levelfrom=all domain=vendor_location_app_test type=app_data_file
-user=_app seinfo=platform name=com.qualcomm.qti.qlogcat levelfrom=all domain=vendor_location_app_test type=app_data_file
 user=system seinfo=platform name=.loopbackservice domain=vendor_qtiloopback_app type=system_app_data_file
 user=system seinfo=platform name=qcom.cta.cta_ui domain=vendor_cta_app type=system_app_data_file
 user=system seinfo=platform name=com.qualcomm.qti.logkit.lite domain=vendor_logkit_app type=system_app_data_file
