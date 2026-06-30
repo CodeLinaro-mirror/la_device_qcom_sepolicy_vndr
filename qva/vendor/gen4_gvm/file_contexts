@@ -1,4 +1,4 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 ###################################
@@ -38,6 +38,7 @@
 /dev/hab-bufferq                                                    u:object_r:vendor_hab_bufferq_device:s0
 /dev/hab-network                                                    u:object_r:vendor_hab_network_device:s0
 /dev/hab-hsi2s                                                      u:object_r:vendor_hab_hsi2s_device:s0
+/dev/virt-eavb                                                      u:object_r:vendor_virt_eavb_device:s0
 /dev/hab-xvm                                                        u:object_r:vendor_hab_xvm_device:s0
 /dev/hab-vnw                                                        u:object_r:vendor_hab_vnw_device:s0
 /dev/hab-ext                                                        u:object_r:vendor_hab_ext_device:s0

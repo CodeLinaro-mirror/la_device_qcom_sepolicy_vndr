@@ -1,0 +1,4 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow vendor_audiohalservice_qti vendor_virt_eavb_device:chr_file { open read write ioctl map };
