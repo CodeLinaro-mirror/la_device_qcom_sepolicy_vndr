@@ -50,3 +50,6 @@ type btss_sysfs_bt, sysfs_type, fs_type;
 
 #dsqb sysfs
 type sysfs_dsqb, fs_type, sysfs_type;
+
+# soc-util sysfs class (/sys/class/soc-util/)
+type vendor_sysfs_soc_util, fs_type, sysfs_type;
