@@ -44,3 +44,6 @@ get_prop(vendor_hexlpservice, vendor_adsprpc_prop)
 
 hal_client_domain(vendor_hexlpservice, hal_graphics_allocator)
 hal_client_domain(vendor_hexlpservice, vendor_hal_capabilityconfigstore_qti)
+
+# allow hexlpservice to access hab device
+allow vendor_hexlpservice vendor_hab_vid_device:chr_file rw_file_perms;
