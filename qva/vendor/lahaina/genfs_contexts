@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #net sysfs
@@ -61,6 +61,8 @@ genfscon sysfs /devices/platform/soc/soc:spf_core_platform/soc:spf_core_platform
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/state u:object_r:vendor_sysfs_graphics:s0
 
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/spm_lvl         u:object_r:vendor_sysfs_scsi_host:s0
+
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/qcom/cap_hs_gear_limit u:object_r:sysfs_thermal:s0
 
 #camera
 genfscon sysfs /firmware/devicetree/base/memory/ddr_device_type                               u:object_r:vendor_sysfs_ddr:s0
