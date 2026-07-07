@@ -40,8 +40,7 @@ hal_server_domain(vendor_dspservice, vendor_hal_dspmanager)
 binder_call(vendor_hal_dspmanager_client, vendor_hal_dspmanager_server)
 binder_call(vendor_hal_dspmanager_server, vendor_hal_dspmanager_client)
 
-# Add AIDL dspservice to servicemanager and allow it to be discovered
-hal_attribute_service(vendor_hal_dspmanager, vendor_hal_dspmanager_aidlservice)
+#hal_attribute_service(vendor_hal_dspmanager, vendor_hal_dspmanager_aidlservice)
 binder_call(vendor_hal_dspmanager_server, servicemanager)
 
 # For reading dir/files on "/vendor/dsp"

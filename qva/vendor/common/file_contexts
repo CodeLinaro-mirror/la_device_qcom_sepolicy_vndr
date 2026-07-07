@@ -333,3 +333,5 @@
 
 #Tx powerboost files
 /data/vendor/tx_powerboost(/.*)?       u:object_r:vendor_wifi_tx_powerboost_file:s0
+#AIDL Vehicle HAL QTI service
+/vendor/bin/hw/android.hardware.automotive.vehicle@V1-qti-service   u:object_r:vendor_aidl_hal_automotive_vehicle_qti_exec:s0
