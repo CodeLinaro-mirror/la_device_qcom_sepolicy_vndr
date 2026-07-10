@@ -65,20 +65,3 @@ genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remotepr
 genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc1/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc0/state u:object_r:vendor_sysfs_rproc_state:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc1/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc1/state u:object_r:vendor_sysfs_rproc_state:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc2/state u:object_r:vendor_sysfs_rproc_state:s0
