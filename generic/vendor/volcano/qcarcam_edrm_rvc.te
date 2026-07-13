@@ -27,7 +27,7 @@ allow vendor_qcarcam_edrm_rvc self:capability sys_admin;
 allow vendor_qcarcam_edrm_rvc vendor_early_services:dir search;
 allow vendor_qcarcam_edrm_rvc vendor_sysfs_bootkpi:file write;
 allow vendor_qcarcam_edrm_rvc vendor_sysfs_bootkpi:file { open write };
-allow vendor_qcarcam_edrm_rvc vendor_early_services:file { write open append};
+allow vendor_qcarcam_edrm_rvc vendor_early_services:file { create write open append };
 allow vendor_qcarcam_edrm_rvc vendor_early_services:dir rw_dir_perms;
 allow vendor_qcarcam_edrm_rvc vendor_early_services:file rw_file_perms;
 # allows qcarcam_rvc access kmsg node in userdebug mode
@@ -39,3 +39,5 @@ allow vendor_qcarcam_edrm_rvc vendor_ais_server:fd use;
 allow vendor_qcarcam_edrm_rvc vendor_init:fd use;
 allow vendor_qcarcam_edrm_rvc device:dir r_dir_perms;
 allow vendor_qcarcam_edrm_rvc device:file r_file_perms;
+allow vendor_qcarcam_edrm_rvc sysfs:file { read write open getattr };
+allow vendor_qcarcam_edrm_rvc tmpfs:sock_file write;

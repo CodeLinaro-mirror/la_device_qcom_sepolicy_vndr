@@ -66,3 +66,5 @@ allow kernel tmpfs:lnk_file { create ioctl open read setattr };
 allow kernel self:capability { net_admin sys_module };
 allow kernel sysfs_dm:dir { open read };
 #allow kernel self:capability dac_override;
+allow kernel vendor_ais_server_exec:file relabelto;
+allow kernel vendor_qcarcam_edrm_rvc_exec:file relabelto;
