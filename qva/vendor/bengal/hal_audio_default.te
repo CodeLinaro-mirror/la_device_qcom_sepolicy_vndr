@@ -1,0 +1,5 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#Allow audio hal to communicate to usb pcm node
+allow hal_audio_default vendor_pcm_device:chr_file rw_file_perms;

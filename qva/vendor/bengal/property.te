@@ -1,5 +1,8 @@
-#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #memopt property for optimization
 vendor_internal_prop(vendor_qc_memopt_prop);
+
+#umd property
+vendor_restricted_prop(vendor_umd_prop);
