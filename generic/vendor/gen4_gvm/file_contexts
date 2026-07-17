@@ -55,6 +55,8 @@
 /sys/devices/virtual/misc/msm_wma/wakeup[0-9]*(/.*)?                                                                                             u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/msm_wmapro/wakeup[0-9]*(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/wakeup(/.*)?                                                                                                                u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/1c800000\.virtio-spmi/virtio[0-9]+/spmi-0/0-00/1c800000\.virtio-spmi:virt_spmi:qcom,pm8775@0:qcom,pm8775_1_rtc/wakeup(/.*)?                               u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/1c800000\.virtio-spmi/virtio[0-9]+/spmi-0/0-00/1c800000\.virtio-spmi:virt_spmi:qcom,pm8775@0:qcom,pm8775_1_rtc/rtc/rtc0/alarmtimer\.[0-9]+\.auto/wakeup(/.*)?  u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/188101c\.qcom,spss/subsys[0-9]+/wakeup(/.*)?                                                                           u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/9800000\.qcom,npu/wakeup(/.*)?                                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/20000\.qcom,ethernet/wakeup(/.*)?                                                                                      u:object_r:sysfs_wakeup:s0
