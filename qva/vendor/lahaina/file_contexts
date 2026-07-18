@@ -48,3 +48,7 @@
 #uac
 /dev/snd/pcmC1D0c    u:object_r:vendor_pcm_device:s0
 /dev/snd/pcmC1D0p    u:object_r:vendor_pcm_device:s0
+
+# mmc device type
+/sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc[0-1]/mmc[0-1]:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
+
