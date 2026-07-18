@@ -70,3 +70,7 @@
 
 #sysfs file
 /sys/devices(/platform)?/soc/soc:qcom,spss_utils(/.*)?             u:object_r:vendor_sysfs_spss:s0
+
+# mmc device type
+/sys/devices/platform/soc/8804000.sdhci/mmc_host/mmc[0-1]/mmc[0-1]:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0
+
