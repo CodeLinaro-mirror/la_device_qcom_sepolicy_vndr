@@ -1,4 +1,4 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hab_device, dev_type;
@@ -18,3 +18,4 @@ type vendor_hab_xvm_device, dev_type;
 type vendor_hab_vnw_device, dev_type;
 type vendor_hab_ext_device, dev_type;
 type vendor_hab_gpce_device, dev_type;
+type vendor_virt_eavb_device, dev_type;
