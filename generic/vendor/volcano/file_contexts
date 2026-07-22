@@ -290,6 +290,7 @@
 /vendor_early_services/system/bin/init_early_test                             u:object_r:vendor_init_early_test_exec:s0
 /vendor_early_services/vendor/bin/ais_server                                  u:object_r:vendor_ais_server_exec:s0
 /vendor_early_services/vendor/bin/qcarcam_edrm_rvc                            u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
+/vendor_early_services/system/bin/early_video_app                             u:object_r:vendor_early_video_app_exec:s0
 /vendor_early_services/system/lib(64)?(/.*)?                                  u:object_r:system_lib_file:s0
 /vendor_early_services/vendor/lib/modules(/.*)?                               u:object_r:vendor_file:s0
 /vendor_early_services/system/bin/bootstrap/linker(64)?                       u:object_r:system_linker_exec:s0

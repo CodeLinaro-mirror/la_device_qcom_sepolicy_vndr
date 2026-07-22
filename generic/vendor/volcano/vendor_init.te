@@ -4,6 +4,7 @@
 domain_auto_trans(vendor_init, vendor_init_early_test_exec, vendor_init_early_test)
 domain_auto_trans(vendor_init, vendor_ais_server_exec, vendor_ais_server)
 domain_auto_trans(vendor_init, vendor_qcarcam_edrm_rvc_exec, vendor_qcarcam_edrm_rvc)
+domain_auto_trans(vendor_init, vendor_early_video_app_exec, vendor_early_video_app)
 
 allow vendor_init self:qipcrtr_socket { read write create getattr };
 
@@ -29,7 +30,12 @@ allow vendor_init vendor_qcarcam_edrm_rvc:process share;
 allow vendor_init vendor_early_services:file { append lock };
 allow vendor_init vendor_ais_server_exec:file { execute };
 allow vendor_init vendor_qcarcam_edrm_rvc_exec:file { execute };
+allow vendor_init vendor_early_video_app_exec:file { execute };
 allow vendor_init vendor_camera_socket:dir search;
 allow vendor_init vendor_camera_socket:sock_file write;
 allow vendor_init vendor_qcarcam_edrm_rvc:dir search;
 allow vendor_init vendor_qcarcam_edrm_rvc:file rw_file_perms;
+allow vendor_init vendor_dmabuf_system_heap_device:chr_file { ioctl open read write relabelto };
+allow vendor_init video_device:chr_file { ioctl open read relabelfrom relabelto write };
+allowxperm vendor_init kmsg_device:chr_file ioctl { 0x5401 };
+allow vendor_init kmsg_device:chr_file ioctl;
