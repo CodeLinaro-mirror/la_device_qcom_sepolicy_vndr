@@ -29,9 +29,31 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-#Define the files used by powermodule
-type vendor_pm_data_file, file_type, data_file_type;
-type vendor_sysfs_guestvm, fs_type, sysfs_type;;
+# Define domain
+type hal_display_demura_default, domain;
+hal_server_domain(hal_display_demura_default, vendor_hal_display_demura)
+type hal_display_demura_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_display_demura_default)
 
-type vendor_sysfs_lru_gen, fs_type, sysfs_type;
-type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;
+# Allow hwbinder call from hal client to server
+binder_call(vendor_hal_display_demura_client, vendor_hal_display_demura_server)
+binder_call(vendor_hal_display_demura_server, vendor_hal_display_demura_client)
+
+# Rule for vndbinder usage
+allow vendor_hal_display_demura vendor_qdisplay_service:service_manager find;
+vndbinder_use(vendor_hal_display_demura);
+
+# Allow reading/writing to "/data/vendor/display"
+allow hal_display_demura_default vendor_display_vendor_data_file:dir create_dir_perms;
+allow hal_display_demura_default vendor_display_vendor_data_file:file create_file_perms;
+
+# Allow only directory search to '/mnt/vendor/persist/'
+allow hal_display_demura_default mnt_vendor_file:dir search;
+
+# Allow reading/writing to '/mnt/vendor/persist/display/*'
+allow hal_display_demura_default vendor_persist_display_file:dir rw_dir_perms;
+allow hal_display_demura_default vendor_persist_display_file:file create_file_perms;
+
+# Rule for display demura AIDL hal
+hal_attribute_service(vendor_hal_display_demura, vendor_hal_display_demura_aidl_service)
+binder_call(vendor_hal_display_demura_server, servicemanager)

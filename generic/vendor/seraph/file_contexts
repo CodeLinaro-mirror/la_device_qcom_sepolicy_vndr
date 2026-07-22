@@ -217,6 +217,9 @@
 /dev/block/platform/soc/b24000.sdhci/by-name/limits                u:object_r:vendor_limits_block_device:s0
 /dev/block/platform/soc/b24000.sdhci/by-name/limits-cdsp           u:object_r:vendor_limits_block_device:s0
 
+# Vendor DMA-BUF Heaps
+/dev/dma_heap/qcom,sc-tcm               u:object_r:vendor_dmabuf_sc_tcm_heap_device:s0
+
 # hypervisor node
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 /dev/gh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
@@ -228,9 +231,15 @@
 /sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
+#Balsam ADSP nodes
 /sys/devices/platform/soc/6c00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/6c00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 /sys/devices/platform/soc/6c00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
+
+#Bonsai ADSP nodes
+/sys/devices/platform/soc/33c00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/name  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/33c00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/33c00000.remoteproc-adsp/remoteproc/remoteproc[0-9]+/state u:object_r:vendor_sysfs_rproc_state:s0
 
 /sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/32300000.remoteproc-cdsp/remoteproc/remoteproc[0-9]+/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
