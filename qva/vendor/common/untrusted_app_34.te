@@ -1,0 +1,7 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause
+
+# allow untrusted_app_34 to use DMA-BUF file descriptors for AAudio MMAP
+userdebug_or_eng(`
+  allow untrusted_app_34 vendor_modprobe:fd use;
+')
