@@ -7,4 +7,3 @@ allow recovery boottime_prop:property_service { set };
 allow recovery kernel:system { syslog_mod };
 allow recovery aac_drc_prop:file { open getattr map};
 allow recovery adaptive_haptics_prop:file { open getattr };
-allow recovery sysfs:file { getattr };
