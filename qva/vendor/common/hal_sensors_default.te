@@ -37,3 +37,5 @@ allow hal_sensors_default vendor_someip_data_file:file { create write open lock 
 allow hal_sensors_default vendor_someip_sock_file:dir { add_name search write remove_name };
 allow hal_sensors_default vendor_someip_sock_file:file { create lock open write };
 allow hal_sensors_default vendor_someip_sock_file:sock_file { create setattr write unlink };
+allow hal_sensors_default vendor_vsomeip_daemon:unix_stream_socket connectto;
+

@@ -54,5 +54,6 @@ allow rild vendor_someip_data_file:file { create write open lock setattr append 
 allow rild vendor_someip_sock_file:dir { add_name search write remove_name };
 allow rild vendor_someip_sock_file:file { create lock open write };
 allow rild vendor_someip_sock_file:sock_file { create setattr write unlink };
+allow rild vendor_vsomeip_daemon:unix_stream_socket connectto;
 
 hal_client_domain(rild, vendor_syshealthmon)
