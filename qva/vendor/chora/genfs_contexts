@@ -65,3 +65,5 @@ genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remotepr
 genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/22800000.qcom,icnss/wakeup u:object_r:sysfs_wakeup:s0
