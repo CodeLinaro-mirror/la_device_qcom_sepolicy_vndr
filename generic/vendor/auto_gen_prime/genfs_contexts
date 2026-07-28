@@ -1,0 +1,10 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Keep the leading separator because these genfs fragments are concatenated
+# with inherited policy fragments during the build. The entries below
+# match fixed LA Prime virtio-mmio nodes from the board device tree.
+genfscon sysfs /devices/platform/30030000.virtio-mmio/uevent u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/30030000.virtio-mmio/drm u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/30030000.virtio-mmio/drm/card0 u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/30017000.virtio_blk_userdata u:object_r:sysfs_devices_block:s0
