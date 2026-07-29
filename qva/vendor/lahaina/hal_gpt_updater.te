@@ -1,0 +1,6 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+binder_call(hal_gpt_updater_client, hal_gpt_updater_server)
+binder_call(hal_gpt_updater_server, hal_gpt_updater_client)
+hal_attribute_hwservice(hal_gpt_updater, hal_gpt_updater_hwservice)
