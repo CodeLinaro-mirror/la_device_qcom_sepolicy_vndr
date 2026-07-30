@@ -30,4 +30,3 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_gunyah_dev, dev_type, mlstrustedobject, vm_manager_device_type;
-type vendor_secretkeeper_block_device, dev_type;
