@@ -34,6 +34,7 @@ vendor.slate_reset                           u:object_r:vendor_slate_daemon_prop
 vendor.slate.boot_complete                   u:object_r:vendor_slate_boot_complete_prop:s0
 persist.vendor.touch_offload                 u:object_r:vendor_touch_offload_prop:s0
 persist.vendor.uioffload.logs.level          u:object_r:vendor_uioffload_logging_prop:s0
+persist.vendor.uioffload.compress_all        u:object_r:vendor_persist_uioffload_comp_prop:s0
 ro.boot.vendor.lefty                         u:object_r:vendor_lefty_prop:s0
 ro.vendor.qc_aon_presence                    u:object_r:vendor_qc_aon_prop:s0
 persist.vendor.qc_aon.dfu_update             u:object_r:vendor_qc_aon_dfu_update_prop:s0
