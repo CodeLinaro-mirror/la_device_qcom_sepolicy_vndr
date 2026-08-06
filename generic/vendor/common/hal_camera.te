@@ -97,6 +97,13 @@ hal_attribute_service(hal_camera, vendor_hal_camera_aon_service)
 # ADSP access
 allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
 dontaudit hal_camera_default default_prop:file read;
+# Camera HAL init makes a benign tcp_socket probe during boot.
+# Camera HAL has no legitimate need for network sockets and
+# hal_neverallows.te explicitly disallows tcp_socket for
+# non-networking HALs. This denial has no functional impact -
+# cameraserver and HAL init proceed normally after this denial.
+# Suppressing log noise. (CR 4603014)
+dontaudit hal_camera_default self:tcp_socket create;
 
 # SSG access
 unix_socket_connect(hal_camera_default, vendor_ssgtzd, vendor_ssgtzd)
@@ -115,7 +122,7 @@ userdebug_or_eng(`
 ')
 
 # Allow access to read the VM SSR flag
-allow hal_camera_default vendor_vm_ssrenable_prop:file read;
+get_prop(hal_camera_default, vendor_vm_ssrenable_prop)
 
 # Allow access to AVF qVirt manager interface
 hal_client_domain(hal_camera_default, vendor_hal_avf_qcvm_qti)
