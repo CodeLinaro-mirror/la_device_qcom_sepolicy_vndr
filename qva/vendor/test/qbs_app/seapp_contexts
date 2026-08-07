@@ -1,0 +1,4 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+user=_app seinfo=platform name=com.qualcomm.qti.qbssapp.debug domain=vendor_qbs_app type=app_data_file levelFrom=all

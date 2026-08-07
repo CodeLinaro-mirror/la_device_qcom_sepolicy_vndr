@@ -1,0 +1,39 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_hal_biometricsolution, domain;
+type vendor_hal_biometricsolution_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_hal_biometricsolution)
+
+binder_use(vendor_hal_biometricsolution)
+
+# Allow interaction with servicemanager (AIDL binder)
+add_service(vendor_hal_biometricsolution, vendor_hal_biometricsolution_service)
+
+# Callback binder calls from the HAL service back to its clients
+userdebug_or_eng(`
+binder_call(vendor_hal_biometricsolution, vendor_qbs_app)
+')
+
+# ION memory allocation (IonBuffer for output buffer)
+allow vendor_hal_biometricsolution ion_device:chr_file { open read ioctl };
+
+# Camera image buffers arrive as DMA-BUF FDs allocated by hal_graphics_allocator_default
+allow vendor_hal_biometricsolution hal_graphics_allocator_default:fd use;
+
+# QSEECom: TEE TA communication (QSEECom_start_app / QSEECom_send_cmd / QSEECom_send_modified_cmd_64)
+allow vendor_hal_biometricsolution tee_device:chr_file { read write open ioctl };
+
+# TA binary loading: QSEECom_start_app searches /vendor/firmware_mnt/image/ etc.
+r_dir_file(vendor_hal_biometricsolution, firmware_file)
+
+# CDSP FastRPC: QBSS Secure PD (qbssproxypd_open, remote_register_dma_handle_attr)
+r_dir_file(vendor_hal_biometricsolution, adsprpcd_file)
+get_prop(vendor_hal_biometricsolution, vendor_adsprpc_prop)
+# /dev/adsprpc-smd-secure (Secure PD FastRPC) and /dev/adsprpc-smd (regular FastRPC)
+allow vendor_hal_biometricsolution vendor_xdsp_device:chr_file { read open ioctl };
+allow vendor_hal_biometricsolution vendor_qdsp_device:chr_file { read open };
+
+# hwservicemanager property (read during FastRPC/binder initialisation)
+get_prop(vendor_hal_biometricsolution, hwservicemanager_prop)
