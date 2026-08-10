@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
 #subsys nodes (varying hardware layouts; can optimize for specific hw variant)
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
@@ -171,6 +175,7 @@ genfscon sysfs /devices/platform/soc/soc:gpio_keys/wakeup/wakeup u:object_r:sysf
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:vendor_sysfs_usb_controller:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a800000.ssusb/a800000.dwc3/udc/a800000.dwc3 u:object_r:vendor_sysfs_usb_controller:s0
+genfscon sysfs /devices/platform/soc/8c00000.hsusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/platform/soc/a800000.ssusb/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 
 # DCVS nodes
