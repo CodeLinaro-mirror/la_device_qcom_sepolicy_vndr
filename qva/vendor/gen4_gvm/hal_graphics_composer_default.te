@@ -3,3 +3,9 @@
 #
 
 allow hal_graphics_composer_default vendor_hab_ogles_device:chr_file rw_file_perms;
+
+# dlog: access /dev/qdss/ nodes and STM passthrough
+allow hal_graphics_composer_default vendor_qdss_dir:dir search;
+allow hal_graphics_composer_default vendor_elf_offsets_file:file { open read map getattr };
+allow hal_graphics_composer_default vendor_enable_dlog_device:file { open read map getattr };
+allow hal_graphics_composer_default vendor_stm_passthrough_device:chr_file { open write };
