@@ -114,3 +114,8 @@ genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/blo
 genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc0/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
 genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc1/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
 genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc2/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
+
+#qdss sysfs-node
+genfscon sysfs /devices/platform/soc/6048000.tmc/tmc_etr0 u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/soc:dummy_source/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/6002000.stm/stm0 u:object_r:vendor_sysfs_qdss_dev:s0
