@@ -38,6 +38,7 @@ type vendor_hal_poweroptservice_qti_exec, exec_type, vendor_file_type, file_type
 init_daemon_domain(vendor_hal_poweroptservice_qti)
 
 #allow hwbinder call bw client and server
+binder_use(vendor_hal_poweroptservice_qti)
 binder_call(vendor_hal_poweroptservice_client, vendor_hal_poweroptservice_server)
 binder_call(vendor_hal_poweroptservice_server, vendor_hal_poweroptservice_client)
 
