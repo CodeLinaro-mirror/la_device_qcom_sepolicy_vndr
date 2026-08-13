@@ -31,3 +31,6 @@
 
 #AON
 vendor_internal_prop(vendor_qc_aon_prop);
+
+# hal_health prop
+vendor_internal_prop(vendor_hal_health_prop);

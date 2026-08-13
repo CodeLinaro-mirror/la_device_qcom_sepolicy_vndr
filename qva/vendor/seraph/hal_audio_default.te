@@ -1,4 +1,7 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
-userdebug_or_eng(`dontaudit vendor_qcomsysd self:capability sys_admin;')
+# Allow audio hal to read mink trace property
+userdebug_or_eng(`
+  get_prop(hal_audio, vendor_mink_trace_prop)
+')

@@ -203,3 +203,6 @@ allow vendor_hal_perf_default vendor_sys_sp_comp:file r_file_perms;
 
 # Allow QFPS to get soc name and apply parameters to different targets
 get_prop(vendor_hal_perf_default, vendor_soc_name_prop);
+
+#allow perfhal to read boot complete prop
+get_prop(vendor_hal_perf_default, boot_status_prop);

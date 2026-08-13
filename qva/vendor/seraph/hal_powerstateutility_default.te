@@ -24,10 +24,14 @@ allow vendor_hal_powerstateutility_qti sysfs_power:file rw_file_perms;
 allow vendor_hal_powerstateutility_qti vendor_sysfs_power_disk:file rw_file_perms;
 
 allow vendor_hal_powerstateutility_qti vendor_sysfs_suspend:file rw_file_perms;
-allow vendor_hal_powerstateutility_qti vendor_sysfs_mem_sleep:file rw_file_perms;
+allow vendor_hal_powerstateutility_qti sysfs_mem_sleep:file rw_file_perms;
 
 allow vendor_hal_powerstateutility_qti vendor_sysfs_cpu_sleep_disabled:file rw_file_perms;
 
 allow vendor_hal_powerstateutility_qti block_device:dir { search };
 allow vendor_hal_powerstateutility_qti vendor_hibernate_swap:blk_file { getattr ioctl open read write };
 allow vendor_hal_powerstateutility_qti self:capability sys_admin;
+
+#allow service to use binder communication
+binder_use(vendor_hal_powerstateutility_qti);
+hal_attribute_service(vendor_hal_powerstateutility,vendor_hal_powerstateutility_service)

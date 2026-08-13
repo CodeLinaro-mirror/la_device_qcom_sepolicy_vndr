@@ -47,6 +47,15 @@
 ###swap partition node
 /dev/block/by-name/swap               u:object_r:vendor_hibernate_swap:s0
 
+/vendor/bin/hw/vendor\.qti\.hardware\.bluetooth\.gatt-service\.default                 u:object_r:vendor_hal_bluetooth_gatt_exec:s0
+
 ###Power State HAL
-/vendor/bin/hw/vendor\.qti\.hardware\.powerstateservice@1\.0-service u:object_r:vendor_hal_powerstateservice_qti_exec:s0
-/vendor/bin/hw/vendor\.qti\.hardware\.powerstateutility@1\.0-service u:object_r:vendor_hal_powerstateutility_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.powerstateservice-aidl-service u:object_r:vendor_hal_powerstateservice_qti_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.powerstateutility-aidl-service u:object_r:vendor_hal_powerstateutility_qti_exec:s0
+
+# hibernation resume device
+/sys/power/resume u:object_r:vendor_sysfs_hib_resume_device:s0
+
+#sensors glink dev node
+/dev/glinkpkt_lmcu_qsh_1_[0-9]+      u:object_r:vendor_glink_lmcu_qsh_device:s0
+/dev/glinkpkt_lmcu_qsh_drc_1_[0-6]+  u:object_r:vendor_glink_lmcu_qsh_device:s0

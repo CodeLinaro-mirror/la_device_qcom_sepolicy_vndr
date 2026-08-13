@@ -31,3 +31,10 @@
 
 # Allow composer client to find demura service.
 hal_client_domain(hal_graphics_composer_default, vendor_hal_display_demura);
+
+
+# Allow composer service to read secure pixel dma-buf heap
+allow hal_graphics_composer_default vendor_dmabuf_secure_pixel:chr_file r_file_perms;
+
+# Also added for proxy device access
+allow hal_graphics_composer_default vendor_smmu_proxy_device:chr_file r_file_perms;
