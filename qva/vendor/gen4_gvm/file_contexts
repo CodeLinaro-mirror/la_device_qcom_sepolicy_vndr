@@ -20,6 +20,7 @@
 /dev/block/init_boot_[ab]                                           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/vendor_boot_[ab]                                         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/vm-bootloader_[ab]                                       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/bootloader_[ab]                                          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/dsp_[ab]                                                 u:object_r:vendor_custom_ab_block_device:s0
 
 
