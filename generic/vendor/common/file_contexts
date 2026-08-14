@@ -712,6 +712,7 @@
 /sys/devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remoteproc[0-5]+/state        u:object_r:vendor_remoteproc_adsp_ssr:s0
 
 #EMAC
+/(vendor|system/vendor)/bin/early_eth\.sh                u:object_r:vendor_qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/emac_rps_settings\.sh        u:object_r:vendor_qti_init_shell_exec:s0
 /sys/devices/platform/soc/20000\.qcom,ethernet/net/eth0/queues/rx-[0-9]/rps_cpus u:object_r:vendor_sysfs_rx_config:s0
 
