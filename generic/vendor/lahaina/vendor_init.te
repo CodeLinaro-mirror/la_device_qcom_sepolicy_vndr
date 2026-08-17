@@ -1,0 +1,6 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#  SPDX-License-Identifier: BSD-3-Clause-Clear
+
+
+# Allow init actions to trigger on the derived NFC capability
+get_prop(vendor_init, vendor_nfc_disabled_prop);
