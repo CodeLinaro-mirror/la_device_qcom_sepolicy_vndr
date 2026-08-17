@@ -38,4 +38,15 @@ allowxperm hal_camera_default vendor_dmabuf_display_heap_device:chr_file ioctl D
 allow hal_camera_default vendor_dmabuf_display_heap_device:chr_file r_file_perms;
 allow hal_camera_default vendor_vm_cp_non_pixel_device:chr_file r_file_perms;
 allow hal_camera_default vendor_vm_cp_pixel_device:chr_file r_file_perms;
-
+userdebug_or_eng(`
+get_prop(hal_camera_default, vendor_mink_trace_prop)
+')
+allow hal_camera_default vendor_vm_trusted_device:chr_file r_file_perms;
+# Allow hal_camera_default to open /dev/mem_buf_vm/qcom,self - required by the
+# Mink socket transport (libvmmem / minksocket) to resolve the local VM handle
+# before establishing a connection to the TrustedVM. Without this rule the
+# transport fails with EACCES (errno=13) and rc=-96 on every IPC call to the TA.
+allow hal_camera_default vendor_vm_self_device:chr_file r_file_perms;
+# Allow hal_camera_default to connect to the HLOS Mink daemon socket - required
+# for the Mink IPC transport to obtain the VM handle via hlosminkdaemon.
+unix_socket_connect(hal_camera_default, vendor_hlos_minkd_opener, vendor_hlosminkdaemon)
