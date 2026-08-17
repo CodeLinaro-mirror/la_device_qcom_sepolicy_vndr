@@ -1,0 +1,5 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow sensors-hal to access /dev/dhms device node
+allow hal_sensors_default vendor_dhms_device:chr_file rw_file_perms;
