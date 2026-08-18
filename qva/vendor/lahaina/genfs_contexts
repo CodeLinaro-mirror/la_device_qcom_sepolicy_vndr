@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-#Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #net sysfs
@@ -62,6 +62,8 @@ genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon/extcon2/state 
 
 genfscon sysfs /devices/platform/soc/1d84000.ufshc/spm_lvl         u:object_r:vendor_sysfs_scsi_host:s0
 
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/qcom/cap_hs_gear_limit u:object_r:sysfs_thermal:s0
+
 #camera
 genfscon sysfs /firmware/devicetree/base/memory/ddr_device_type                               u:object_r:vendor_sysfs_ddr:s0
 
@@ -92,3 +94,23 @@ genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qco
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300:pwrkey/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300/c440000.qcom,spmi:qcom,pmk8350@0:pon@1300:resin/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:rtc@6100/wakeup u:object_r:sysfs_wakeup:s0
+
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/0-00/c440000.qcom,spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/alarmtimer.0.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/890000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/884000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/misc/fastrpc-sdsp-secure/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:q6core_audio/soc:q6core_audio:bolero-cdc/tx-macro/tx_swr_ctrl/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a800000.ssusb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_2_geni_se/884000.i2c/i2c-2/2-0028/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,spcom/wakeup u:object_r:sysfs_wakeup:s0
+
+#discard_max_bytes
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes    u:object_r:sysfs_discard_max_bytes:s0
+
+# ADSP remoteproc state node
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc0/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc1/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0
+genfscon sysfs /devices/platform/soc/3700000.remoteproc-adsp/remoteproc/remoteproc2/state u:object_r:vendor_sysfs_remoteproc_adsp_state:s0

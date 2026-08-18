@@ -76,3 +76,4 @@ set_prop(vendor_init, vendor_uwb_prop)
 
 # DCF
 set_prop(vendor_init, vendor_dcf_prop)
+set_prop(vendor_init, vendor_location_prop)

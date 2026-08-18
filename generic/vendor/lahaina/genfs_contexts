@@ -282,6 +282,53 @@ genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remotepro
 genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc3/name u:object_r:vendor_sysfs_ssr:s0
 genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc3/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc3/state u:object_r:vendor_sysfs_rproc_state:s0
+genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc4/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/4080000.remoteproc-mss/remoteproc/remoteproc4/state u:object_r:vendor_sysfs_rproc_state:s0
+
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc1/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc3/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/17300000.remoteproc-adsp/remoteproc/remoteproc4/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc1/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc3/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/98900000.remoteproc-cdsp/remoteproc/remoteproc4/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc1/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc3/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/5c00000.remoteproc-slpi/remoteproc/remoteproc4/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc1/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc3/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc4/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc4/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
 
 #net for kodiak
 genfscon sysfs /devices/platform/soc/17a10040.qcom,wcn6750/net u:object_r:sysfs_net:s0
@@ -358,3 +405,8 @@ genfscon sysfs /devices/platform/soc/ae94000.qcom,mdss_dsi_ctrl0/uio/uio1/name u
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DP-1/enabled u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-2/enabled u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-Virtual-1/enabled u:object_r:vendor_sysfs_graphics:s0
+
+# Devcoredump framework
+genfscon sysfs /devices/virtual/devcoredump/devcd1/data       u:object_r:vendor_sysfs_devcd:s0
+genfscon sysfs /devices/virtual/devcoredump/devcd2/data       u:object_r:vendor_sysfs_devcd:s0
+genfscon sysfs /devices/virtual/devcoredump/devcd3/data       u:object_r:vendor_sysfs_devcd:s0
