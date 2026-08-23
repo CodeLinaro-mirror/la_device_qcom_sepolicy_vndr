@@ -37,6 +37,7 @@ genfscon sysfs /devices/platform/soc/10048000.tmc/tmc_etr0 u:object_r:vendor_sys
 genfscon sysfs /devices/platform/soc/1004f000.tmc/tmc_etr1 u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/10002000.stm/stm0 u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/10b11000.csr/swao_csr u:object_r:vendor_sysfs_qdss_dev:s0
+genfscon sysfs /devices/platform/soc/10001000.csr/swao_csr u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:modem_diag/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
 
 # Power supply device nodes
@@ -52,11 +53,16 @@ genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-01/c42d000.qcom,
 
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-07/c42d000.qcom,spmi:qcom,pm7550ba@7:qcom,vibrator@df00/leds/vibrator u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-07/c42d000.qcom,spmi:qcom,pmiv010x@7:qcom,vibrator@df00/leds/vibrator u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-09/c42d000.qcom,spmi:qcom,pm7250b@3:qcom,vibrator@5300/leds/vibrator u:object_r:sysfs_leds:s0
 
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0064/leds/red u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0064/leds/green u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0064/leds/blue u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-0064/leds u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-5/5-0064/leds/red   u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-5/5-0064/leds/green u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-5/5-0064/leds/blue  u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-5/5-0064/leds u:object_r:sysfs_leds:s0
 
 #PMIC devices wakeup nodes
 genfscon sysfs /devices/platform/soc/soc:pmic-glink/wakeup u:object_r:sysfs_wakeup:s0
@@ -169,6 +175,7 @@ genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0001:00/0001:00:00.0/0
 genfscon sysfs /devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/17210040.qcom,wcn7750/net/ u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/17210040.qcom,wcn6450/net/ u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc/22800000.qcom,icnss/net/ u:object_r:sysfs_net:s0
 
 #wakeup sysfs nodes listed by SuspendSepolicyTests.sh
 genfscon sysfs /devices/platform/soc/988000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
@@ -206,6 +213,7 @@ genfscon sysfs /devices/platform/soc/soc:qcom,smp2p-wpss/wakeup u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-2/2-0028/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.geniqup/a84000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/99c000.qcom,qup_uart/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a8c000.i2c/i2c-5/5-0028/wakeup u:object_r:sysfs_wakeup:s0
 
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a80000.i2c/i2c-1/1-0028/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup u:object_r:sysfs_wakeup:s0
