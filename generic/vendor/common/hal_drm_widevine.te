@@ -43,6 +43,9 @@ allow hal_drm_widevine vendor_qce_device:chr_file rw_file_perms;
 #Allow access to smcinvoke device
 allow hal_drm_widevine tee_device:chr_file rw_file_perms;
 
+# Allow Widevine HAL to access encrypted input buffers shared via memfd
+allow hal_drm_widevine system_app:memfd_file { read write map };
+
 # The QTI DRM-HAL implementation uses a vendor-binder service provided
 # by the HWC HAL.
 vndbinder_use(hal_drm_widevine);
