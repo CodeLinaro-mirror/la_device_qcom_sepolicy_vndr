@@ -194,7 +194,7 @@ allow vendor_hal_perf_default self:capability ipc_lock;
 #allow dolphin to register callback for TargetFPS.
 binder_call(vendor_hal_perf_default, surfaceflinger)
 
-dontaudit vendor_hal_perf_default self:capability dac_override;
+dontaudit vendor_hal_perf_default self:capability { dac_override net_admin };
 dontaudit vendor_hal_perf_default system_server:dir search;
 dontaudit vendor_hal_perf_default { domain - appdomain }:process { getsched setsched };
 
