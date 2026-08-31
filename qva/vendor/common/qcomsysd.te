@@ -64,3 +64,6 @@ userdebug_or_eng(`
 
 #allow qcomsysd access boot mode switch 
 set_prop(vendor_qcomsysd, vendor_boot_mode_prop);
+
+#sys_admin
+allow vendor_qcomsysd self:capability sys_admin;
