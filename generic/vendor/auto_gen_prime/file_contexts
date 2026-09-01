@@ -22,3 +22,6 @@
 #       subtree where the kernel exposes the 'name' attribute file.
 /sys/class/video4linux(/.*)?  u:object_r:sysfs_video4linux:s0
 /sys/devices/platform/[0-9a-fA-F]+\.virtio-mmio/video4linux(/.*)?  u:object_r:sysfs_video4linux:s0
+
+# v4l2_codec2 service
+/vendor/bin/hw/android\.hardware\.media\.c2-service-v4l2(-32|-64) u:object_r:mediacodec_exec:s0
