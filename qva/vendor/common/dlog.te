@@ -1,0 +1,20 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type vendor_dlog, domain;
+type vendor_dlog_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_dlog)
+
+# Only allow access to /vendor/bin/elf_offset_dlog.bin, not entire vendor partition
+allow vendor_dlog vendor_file:dir search;
+allow vendor_dlog vendor_dlog_bin_file:file r_file_perms;
+
+# /dev/qdss/ directory access
+allow vendor_dlog vendor_qdss_dir:dir r_dir_perms;
+allow vendor_dlog vendor_elf_offsets_file:file { open read write getattr map };
+
+# init creates /dev/qdss/ and files within
+allow vendor_init vendor_qdss_dir:dir { create add_name write setattr };
+allow vendor_init vendor_elf_offsets_file:file { create open write getattr setattr };
+allow vendor_init vendor_enable_dlog_device:file { create open write getattr setattr };

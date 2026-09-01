@@ -432,3 +432,11 @@
 
 #compute_cape
 /vendor/bin/compute_cape_client                                                  u:object_r:compute_cape_exec:s0
+
+# dlog service (QDSS/STM)
+/(vendor|system/vendor)/bin/dlog_service                                          u:object_r:vendor_dlog_exec:s0
+/(vendor|system/vendor)/bin/elf_offset_dlog\.bin                                  u:object_r:vendor_dlog_bin_file:s0
+/dev/stm-passthrough                                                             u:object_r:vendor_stm_passthrough_device:s0
+/dev/qdss                                                                        u:object_r:vendor_qdss_dir:s0
+/dev/qdss/elf_offsets                                                            u:object_r:vendor_elf_offsets_file:s0
+/dev/qdss/enable_dlog                                                            u:object_r:vendor_enable_dlog_device:s0
