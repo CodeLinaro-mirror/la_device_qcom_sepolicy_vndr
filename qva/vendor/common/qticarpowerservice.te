@@ -3,8 +3,8 @@
 
 type vendor_qticarpower_app, domain;
 app_domain(vendor_qticarpower_app)
-typeattribute vendor_qticarpower_app mlstrustedsubject;
 
+typeattribute vendor_sysfs_usb_device mlstrustedobject;
 # Required for service start
 allow vendor_qticarpower_app {
     activity_service
@@ -24,3 +24,4 @@ allow vendor_qticarpower_app vendor_sysfs_usb_node:dir r_dir_perms;
 
 allow vendor_qticarpower_app gpu_service:service_manager find;
 allow vendor_qticarpower_app system_data_file:dir search;
+allow vendor_qticarpower_app app_data_file:dir r_dir_perms;
