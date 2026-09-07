@@ -1,0 +1,7 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+userdebug_or_eng(`
+  dontaudit vendor_usta_app default_prop:file { getattr open map };
+  allow vendor_usta_app vendor_glink_lpaicp_qsh_device:chr_file rw_file_perms;
+')
