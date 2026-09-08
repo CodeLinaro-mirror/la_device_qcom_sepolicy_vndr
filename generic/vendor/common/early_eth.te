@@ -11,6 +11,6 @@ allowxperm vendor_early_eth self:udp_socket ioctl { SIOCSIFADDR SIOCSIFFLAGS };
 allow vendor_early_eth vendor_toolbox_exec:file { rx_file_perms execute_no_trans };
 allow vendor_early_eth vendor_shell_exec:file { rx_file_perms execute_no_trans };
 allow vendor_early_eth vendor_early_eth:capability { net_admin };
-allow vendor_early_eth proc_net:file w_file_perms;
-allow vendor_early_eth sysfs_net:dir search;
+allow vendor_early_eth proc_net:file rw_file_perms;
+allow vendor_early_eth sysfs_net:dir { open read search };
 userdebug_or_eng(`allow vendor_early_eth kmsg_device:chr_file { open write };')
