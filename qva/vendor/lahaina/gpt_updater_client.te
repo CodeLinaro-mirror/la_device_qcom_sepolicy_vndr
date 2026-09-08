@@ -1,0 +1,18 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#gpt updater client
+type gpt_updater_client, domain;
+type gpt_updater_client_exec, exec_type, vendor_file_type, file_type;
+hal_client_domain(gpt_updater_client,hal_gpt_updater);
+hal_client_domain(gpt_updater_client,hal_bootctl);
+init_daemon_domain(gpt_updater_client)
+
+
+set_prop(gpt_updater_client, vendor_gptupdater_status_prop)
+get_prop(gpt_updater_client, vendor_gptupdater_split_prop)
+
+neverallow { domain -platform_app -gpt_updater_client -vendor_init -init} {
+  vendor_gptupdater_status_prop
+  vendor_gptupdater_split_prop
+}:property_service set;

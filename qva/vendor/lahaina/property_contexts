@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023,2024,2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #face3d
@@ -47,3 +47,6 @@ vendor.secdm.service                         u:object_r:vendor_secdm_prop:s0
 #aware-agent
 vendor.awareagent.service                    u:object_r:vendor_awareagent_prop:s0
 
+#GPTUpdater
+vendor.gptupdater.split                      u:object_r:vendor_gptupdater_split_prop:s0
+vendor.gptupdater.status                     u:object_r:vendor_gptupdater_status_prop:s0

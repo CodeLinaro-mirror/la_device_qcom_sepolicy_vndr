@@ -1,0 +1,13 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+type hal_gpt_updater_service, domain;
+type hal_gpt_updater_service_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(hal_gpt_updater_service, hal_gpt_updater);
+hal_server_domain(hal_gpt_updater_service, hal_bootctl);
+init_daemon_domain(hal_gpt_updater_service);
+set_prop(hal_gpt_updater_service, powerctl_prop);
+
+#For UFS device
+allow hal_gpt_updater_service vendor_rawdump_block_device:blk_file getattr;
+allow hal_gpt_updater_service block_device:blk_file getattr;
