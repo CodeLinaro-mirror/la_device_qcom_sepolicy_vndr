@@ -1,7 +1,10 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
 #Add till AOSP fixes these
 allow carservice_app { content_capture_service media_communication_service }:service_manager find;
 allow carservice_app vendor_sysfs_sb:file rw_file_perms;
+
+# Required for car audio CAPE feature: reads persist.vendor.audio.cape.* properties
+get_prop(carservice_app, vendor_audio_cape_prop)

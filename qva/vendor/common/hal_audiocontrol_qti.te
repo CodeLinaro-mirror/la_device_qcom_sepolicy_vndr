@@ -1,4 +1,4 @@
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 
@@ -13,3 +13,6 @@ hal_server_domain(vendor_hal_audiocontrol_qti_aidl, hal_audiocontrol)
 type vendor_hal_audiocontrol_qti_aidl_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_hal_audiocontrol_qti_aidl)
 hal_client_domain(vendor_hal_audiocontrol_qti_aidl, hal_audio)
+get_prop(vendor_hal_audiocontrol_qti_aidl, vendor_audio_prop)
+get_prop(vendor_hal_audiocontrol_qti_aidl, vendor_audio_cape_prop)
+

@@ -28,8 +28,8 @@
 # Normally these are shell commands or scripts invoked via sh
 # from an init*.rc file.  No service should ever run in this domain.
 #
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_qti_init_shell, domain;
@@ -87,6 +87,7 @@ set_prop(vendor_qti_init_shell, vendor_system_prop)
 set_prop(vendor_qti_init_shell, vendor_mpctl_prop)
 set_prop(vendor_qti_init_shell, vendor_radio_prop)
 set_prop(vendor_qti_init_shell, vendor_audio_prop)
+set_prop(vendor_qti_init_shell, vendor_audio_cape_prop)
 get_prop(vendor_qti_init_shell, radio_control_prop)
 set_prop(vendor_qti_init_shell, vendor_gpu_prop)
 set_prop(vendor_qti_init_shell, vendor_sensors_prop)

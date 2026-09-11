@@ -32,6 +32,7 @@ allow vendor_audiohalservice_qti audio_device:chr_file { ioctl open read write }
 allow vendor_audiohalservice_qti vendor_dmabuf_system_uncached_heap_device:chr_file { ioctl open read };
 allow vendor_audiohalservice_qti vendor_dmabuf_system_heap_device:chr_file { ioctl open read };
 get_prop(vendor_audiohalservice_qti, boot_status_prop)
+get_prop(vendor_audiohalservice_qti, vendor_audio_cape_prop)
 
 allow vendor_audiohalservice_qti vendor_agm_device:chr_file { ioctl open read write };
 

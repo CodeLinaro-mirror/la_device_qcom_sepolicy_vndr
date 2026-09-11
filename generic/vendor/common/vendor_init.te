@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 allow vendor_init vendor_persist_block_device:{ blk_file lnk_file } relabelto;
@@ -79,6 +79,9 @@ get_prop(vendor_init, vendor_memory_min_free_kbytes)
 set_prop(vendor_init, system_prop)
 set_prop(vendor_init, vendor_usb_prop)
 set_prop(vendor_init, vendor_audio_prop)
+set_prop(vendor_init, vendor_audio_cape_prop)
+set_prop(vendor_init, audio_prop)
+
 #Enable radio properties setting
 set_prop(vendor_init, vendor_radio_prop)
 
