@@ -4,7 +4,6 @@
 #Define domain
 type vendor_hal_umd_qti, domain;
 type vendor_hal_umd_qti_exec, file_type, vendor_file_type, exec_type;
-type vendor_hal_umd_qti_service, service_manager_type;
 
 type vendor_pcm_device, dev_type;
 

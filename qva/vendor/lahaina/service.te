@@ -2,3 +2,4 @@
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_hal_qteeconnector_service,   hal_service_type, protected_service, service_manager_type;
+type vendor_hal_umd_qti_service, hal_service_type, protected_service, service_manager_type;
