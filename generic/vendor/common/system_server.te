@@ -61,3 +61,13 @@ allow system_server vendor_netmgrd:fd use;
 allow system_server vendor_netmgrd:udp_socket { getattr getopt read write };
 
 dontaudit system_server vendor_proc_shs:dir search;
+
+dontaudit system_server vendor_default_prop:file read;
+
+# Allow system_server to access /dev/hidraw* nodes labeled vendor_hidraw_device.
+# Fixes AVC denial seen in CTS BrailleDisplayControllerTest#connect* on vendor
+# sepolicy version 33.0, where vendor_hidraw_device has no system_server compat
+# grant (that grant was only added starting API 34 in
+# system/sepolicy/private/compat/34.0/34.0.compat.cil).
+allow system_server vendor_hidraw_device:chr_file { getattr open read ioctl lock map watch watch_reads };
+allow system_server vendor_hidraw_device:dir { getattr open read search ioctl lock watch watch_reads };
