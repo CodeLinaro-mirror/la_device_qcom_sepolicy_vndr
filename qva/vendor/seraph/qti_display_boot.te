@@ -1,0 +1,5 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# allow qti_display_boot to set display prime shader property
+set_prop(qti_display_boot, system_display_prime_shader_prop)
