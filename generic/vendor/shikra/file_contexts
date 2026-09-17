@@ -34,6 +34,9 @@
 # Dev block nodes
 /dev/block/mmcblk0                                                 u:object_r:root_block_device:s0
 
+#SD Card supported block device.
+/dev/block/mmcblk1                                                 u:object_r:root_block_device:s0
+
 # Dev node for rpmb
 /dev/mmcblk0rpmb                                                   u:object_r:vendor_rpmb_device:s0
 
