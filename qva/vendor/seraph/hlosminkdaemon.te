@@ -35,3 +35,10 @@ init_daemon_domain(vendor_hlosminkdaemon)
 # Remove this when QMI service moves to pfmd
 allow vendor_hlosminkdaemon self:{ socket qipcrtr_socket } create_socket_perms;
 allowxperm vendor_hlosminkdaemon self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
+# Allow minkdaemon to register with powerstate HAL service for hibernate support
+hal_client_domain(vendor_hlosminkdaemon, vendor_hal_powerstateservice);
+
+# Allow access to regular binder/servicemanager, required to register with
+# the AIDL powerstateservice HAL for hibernate enter/exit notifications.
+binder_use(vendor_hlosminkdaemon)
