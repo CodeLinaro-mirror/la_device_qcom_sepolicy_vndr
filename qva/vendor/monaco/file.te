@@ -50,3 +50,6 @@ type btss_sysfs_bt, sysfs_type, fs_type;
 
 #dsqb sysfs
 type sysfs_dsqb, fs_type, sysfs_type;
+
+# wear_config sysfs class (/sys/class/wear_config/)
+type vendor_sysfs_wear_config, fs_type, sysfs_type;

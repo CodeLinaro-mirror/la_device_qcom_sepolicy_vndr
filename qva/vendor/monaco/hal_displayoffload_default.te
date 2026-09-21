@@ -56,6 +56,7 @@ allow vendor_hal_displayoffload_default vendor_sysfs_touch_offload:file w_file_p
 
 set_prop(vendor_hal_displayoffload_default, vendor_slate_boot_complete_prop)
 get_prop(vendor_hal_displayoffload_default, vendor_uioffload_logging_prop)
+get_prop(vendor_hal_displayoffload_default, vendor_persist_uioffload_comp_prop)
 
 set_prop(vendor_hal_displayoffload_default, vendor_lefty_prop)
 

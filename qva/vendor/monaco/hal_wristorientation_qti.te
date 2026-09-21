@@ -46,3 +46,7 @@ allow vendor_hal_wristorientation_qti self:netlink_kobject_uevent_socket create_
 get_prop(vendor_hal_wristorientation_qti, wrist_orientation_prop)
 #wakelock policy
 wakelock_use(vendor_hal_wristorientation_qti);
+
+# Allow wrist orientation HAL to read/write wear_config sysfs node
+r_dir_file(vendor_hal_wristorientation_qti, vendor_sysfs_wear_config)
+allow vendor_hal_wristorientation_qti vendor_sysfs_wear_config:file { write };
