@@ -132,3 +132,4 @@ genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.2.auto/usb u:object_r:vendor_sysfs_usb_node:s0
 
 genfscon proc /device-tree/soc/st54spi_gpio u:object_r:vendor_ese_gpio_proc:s0
+genfscon sysfs /firmware/devicetree/base/qcom,softsku-id u:object_r:vendor_sysfs_softsku_id:s0
