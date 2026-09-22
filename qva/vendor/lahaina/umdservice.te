@@ -42,6 +42,14 @@ allow vendor_hal_umd_qti configfs:dir r_dir_perms;
 
 allow vendor_hal_umd_qti ion_device:chr_file r_file_perms;
 
+# Allow UMD H264 encoder path to create codec2/ION block pools.
+# Without these permissions, vendor_hal_umd_qti cannot access /dev/membuf
+# or /dev/dma_heap/system in enforcing mode, causing VmMem/block-pool setup
+# to fail before the H264 stream starts.
+allow vendor_hal_umd_qti vendor_membuf_dev:chr_file r_file_perms;
+allow vendor_hal_umd_qti dmabuf_system_heap_device:chr_file r_file_perms;
+allow vendor_hal_umd_qti vendor_vm_cp_bitstream_device:chr_file r_file_perms;
+
 #Allow camera to read vendor_umd_prop and binder call vendor_hal_umd_qti
 get_prop(hal_camera_default, vendor_umd_prop)
 binder_call(vendor_hal_umd_qti, hal_camera_default);
