@@ -69,5 +69,5 @@ dontaudit system_server vendor_default_prop:file read;
 # sepolicy version 33.0, where vendor_hidraw_device has no system_server compat
 # grant (that grant was only added starting API 34 in
 # system/sepolicy/private/compat/34.0/34.0.compat.cil).
-allow system_server vendor_hidraw_device:chr_file { getattr open read ioctl lock map watch watch_reads };
+allow system_server vendor_hidraw_device:chr_file { getattr open read append write ioctl lock map watch watch_reads };
 allow system_server vendor_hidraw_device:dir { getattr open read search ioctl lock watch watch_reads };
