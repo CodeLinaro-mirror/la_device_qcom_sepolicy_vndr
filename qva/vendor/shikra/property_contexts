@@ -31,3 +31,6 @@
 
 #face3d
 persist.vendor.biometricsface.pr u:object_r:vendor_face3d_producer_prop:s0
+
+#Qcril-Lite
+ctl.vendor.qcrilLited u:object_r:vendor_ctl_qcrild_prop:s0
