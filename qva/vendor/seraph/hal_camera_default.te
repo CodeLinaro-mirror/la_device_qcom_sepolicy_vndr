@@ -1,0 +1,11 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+#allow camera hal to open glink dev node
+allow hal_camera_default vendor_glink_lmcu_qsh_device:chr_file rw_file_perms;
+
+#allow camera hal to mmap dhms device for glink DRC session
+allow hal_camera_default vendor_dhms_device:chr_file rw_file_perms;
+
+#allow camera hal to hold wakelock
+allow hal_camera_default sysfs_wake_lock:file { append open };

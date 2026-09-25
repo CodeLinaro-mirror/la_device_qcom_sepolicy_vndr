@@ -1,5 +1,5 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
-
+# Copyright (c) 2020-2021, The Linux Foundation. All rights reserved.
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
@@ -24,35 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
-# define SELinux domain
-type hal_drm_widevine, domain;
-hal_server_domain(hal_drm_widevine, hal_drm)
-
-type hal_drm_widevine_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_drm_widevine)
-
-allow hal_drm_widevine mediacodec:fd use;
-allow hal_drm_widevine vendor_qce_device:chr_file rw_file_perms;
-
-# The QTI DRM-HAL implementation uses a vendor-binder service provided
-# by the HWC HAL.
-vndbinder_use(hal_drm_widevine);
-allow hal_drm_widevine vendor_qdisplay_service:service_manager { find };
-#binder_call(hal_drm_widevine, hal_graphics_composer)
-hal_client_domain(hal_drm_widevine, hal_graphics_composer);
-allow hal_drm_widevine vendor_mediadrm_vendor_data_file:dir create_dir_perms;
-allow hal_drm_widevine vendor_mediadrm_vendor_data_file:file create_file_perms;
-
-#DMA Buf
-allow hal_drm_widevine vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
-allow hal_drm_widevine vendor_membuf_dev:chr_file r_file_perms;
-allow hal_drm_widevine vendor_dmabuf_system_heap_device:chr_file r_file_perms;
-allow hal_drm_widevine vendor_vm_cp_bitstream_device:chr_file r_file_perms;
-allow hal_drm_widevine vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
-
-#socket change
-unix_socket_connect(hal_drm_widevine, vendor_notify-topology, tee);
-
-# Required for idle thread
-wakelock_use(hal_drm_widevine);
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a8c000.qcom,qup_uart/power/control u:object_r:vendor_sysfs_uart_power:s0
+genfscon sysfs /devices/platform/soc/4ac0000.qcom,qupv3_0_geni_se/4a8c000.qcom,qup_uart/power/runtime_status u:object_r:vendor_sysfs_uart_power_status:s0
