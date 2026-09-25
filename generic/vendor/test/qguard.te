@@ -43,6 +43,9 @@ userdebug_or_eng(`
   allow vendor_qguard domain:file r_file_perms;
   allow vendor_qguard domain:lnk_file read;
 
+  # allow vendor_qguard to read max pid
+  allow vendor_qguard proc_pid_max:file r_file_perms;
+
   # write into hung_task_enh
   allow vendor_qguard proc:file { write open };
 
