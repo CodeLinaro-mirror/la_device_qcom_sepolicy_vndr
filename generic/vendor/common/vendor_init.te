@@ -142,3 +142,5 @@ set_prop(vendor_init, vendor_trustedui_listener_enabled_prop)
 set_prop(vendor_init, vendor_trustedui_listener_start_prop)
 set_prop(vendor_init, vendor_trustedui_start_prop)
 
+# Properties for configuring camera modes
+set_prop(vendor_init, vendor_camera_prop)

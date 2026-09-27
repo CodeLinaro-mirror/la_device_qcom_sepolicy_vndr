@@ -52,6 +52,7 @@ ro.vendor.alarm_boot       u:object_r:vendor_alarm_boot_prop:s0
 ro.boot.alarmboot          u:object_r:vendor_alarm_boot_prop:s0
 vendor.debug.camera.       u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.     u:object_r:vendor_camera_prop:s0
+vendor.camera.mode.burst   u:object_r:vendor_camera_prop:s0
 persist.vendor.sys.crash_rcu      u:object_r:vendor_ramdump_prop:s0
 persist.vendor.sys.modem.diag.    u:object_r:vendor_modem_diag_prop:s0
 persist.vendor.sys.cnd     u:object_r:vendor_cnd_prop:s0
