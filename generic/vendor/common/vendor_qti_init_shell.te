@@ -1,0 +1,5 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# Allow vendor_qti_init_shell to inspect /dev/rtc0 while waiting for time_daemon
+allow vendor_qti_init_shell rtc_device:chr_file getattr;
