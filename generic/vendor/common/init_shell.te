@@ -210,3 +210,6 @@ allow vendor_qti_init_shell vendor_sysfs_sd:file rw_file_perms;
 
 # Allow access to rproc state
 allow vendor_qti_init_shell vendor_sysfs_rproc_state:file rw_file_perms;
+
+# Allow vendor_qti_init_shell to inspect /dev/rtc0 while waiting for time_daemon
+allow vendor_qti_init_shell rtc_device:chr_file getattr;
