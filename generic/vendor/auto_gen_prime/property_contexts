@@ -1,4 +1,6 @@
 # Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
+vendor.mesa.    u:object_r:vendor_mesa_prop:s0
+
 vendor.all.modules.ready   u:object_r:vendor_modprobe_prop:s0
