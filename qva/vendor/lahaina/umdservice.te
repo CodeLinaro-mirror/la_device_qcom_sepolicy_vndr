@@ -56,3 +56,5 @@ binder_call(vendor_hal_umd_qti, hal_camera_default);
 
 #Allow UMD HAL to register its AIDL service instances.
 allow vendor_hal_umd_qti vendor_hal_umd_qti_service:service_manager add;
+
+allow vendor_hal_umd_qti device:dir { read watch };
