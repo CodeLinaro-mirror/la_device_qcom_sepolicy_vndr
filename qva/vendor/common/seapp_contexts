@@ -37,4 +37,4 @@ user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=vendor_perfdum
 user=_app seinfo=platform name=.pasr domain=vendor_powerservice_app type=app_data_file levelFrom=all
 
 #Add domain for QtiCarPowerService App
-user=_app  seinfo=platform isPrivApp=true name=com.qti.carpowerservice domain=vendor_qticarpower_app  type=app_data_file
+user=_app  seinfo=platform isPrivApp=true name=com.qti.carpowerservice domain=vendor_qticarpower_app  type=app_data_file levelFrom=all
