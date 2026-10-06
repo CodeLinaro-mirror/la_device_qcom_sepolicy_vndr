@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 ###################################
 # Dev block nodes
@@ -114,6 +114,17 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/soccp_debug_[ab]      u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/soccp_dcd_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/pdp_cdb_[ab]          u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/xbl_ac_config_[ab]    u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/dcp_[ab]              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/secretkeeper_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/soccp_[ab]            u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/tme_config_[ab]       u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/tme_fw_[ab]           u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/tme_seq_patch_[ab]    u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/tz_ac_config_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/tz_qti_config_[ab]    u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/hyp_ac_config_[ab]    u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/qtvm_dtbo_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/platform/soc/1d84000.ufshc/sd[ade]                       u:object_r:vendor_gpt_block_device:s0
@@ -281,4 +292,4 @@
 /sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:8/block/sdi/queue/read_ahead_kb  u:object_r:vendor_sysfs_sd:s0
 
 # VM Specific
-/vendor/vm-system(/.*)?              u:object_r:same_process_hal_file:s0
+/vendor/vm-system(/.*)?              u:object_r:vendor_vm_file:s0

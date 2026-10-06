@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 userdebug_or_eng(`
   allow domain vendor_diag_device:chr_file rw_file_perms;
 ')
@@ -108,11 +112,14 @@ neverallow { domain
 - vendor_qvrd_vndr
 - vendor_thermal-engine
 - vendor_dspservice
+- vendor_hexlpservice
+- vendor_unsignedhexlpservice
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 } vendor_qdsp_device:chr_file *;
 neverallow { domain -init -vendor_init - ueventd } vendor_qdsp_device:chr_file ~{r_file_perms};
 neverallow { appdomain - shell userdebug_or_eng(`-vendor_sysmonapp_app_test') } vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow mediacodec vendor_qdsp_device:chr_file ~{ioctl read};
+neverallow vendor_unsignedhexlpservice vendor_qdsp_device:chr_file ~{ioctl read};
 neverallow { domain
 - init
 - vendor_init

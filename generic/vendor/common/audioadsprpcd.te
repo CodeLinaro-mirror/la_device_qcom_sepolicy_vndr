@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 type vendor_audioadsprpcd, domain;
@@ -53,3 +53,6 @@ allow vendor_audioadsprpcd vendor_audio_dsp_data_file:dir r_dir_perms;
 allow vendor_audioadsprpcd vendor_audio_dsp_data_file:file r_file_perms;
 
 allow vendor_audioadsprpcd device:dir { read watch };
+
+r_dir_file(vendor_audioadsprpcd, vendor_sysfs_public);
+allow vendor_audioadsprpcd sysfs:dir r_dir_perms;

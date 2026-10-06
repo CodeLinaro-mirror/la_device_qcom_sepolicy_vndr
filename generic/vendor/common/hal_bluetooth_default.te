@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 allow hal_bluetooth_default vendor_bt_device:chr_file rw_file_perms;
 
 # talk to system_server to set priority
@@ -34,6 +38,12 @@ allow hal_bluetooth system_server:binder call;
 set_prop(hal_bluetooth, vendor_bluetooth_wifi_prop)
 set_prop(hal_bluetooth, vendor_bluetooth_prop)
 set_prop(hal_bluetooth, vendor_bluetooth_btadvaudio_prop)
+
+# Proximity/BCS Soft SKU license
+set_prop(hal_bluetooth, vendor_proximity_prop)
+
+# For wifi properties
+get_prop(hal_bluetooth, wifi_hal_prop)
 
 #For bluetooth firmware
 r_dir_file(hal_bluetooth_default, bt_firmware_file)

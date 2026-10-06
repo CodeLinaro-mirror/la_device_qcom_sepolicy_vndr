@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 type vendor_adsprpcd, domain;
 type vendor_adsprpcd_exec, exec_type, vendor_file_type, file_type;
 
@@ -48,3 +52,5 @@ allow vendor_adsprpcd vendor_persist_sensors_file:file create_file_perms;
 allow vendor_adsprpcd mnt_vendor_file:dir r_dir_perms;
 
 allow vendor_adsprpcd device:dir { read watch };
+r_dir_file(vendor_adsprpcd, vendor_sysfs_public);
+allow vendor_adsprpcd sysfs:dir r_dir_perms;

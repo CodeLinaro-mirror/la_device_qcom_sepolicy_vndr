@@ -25,6 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 #allow priv_app to access hal_qspmhal
 hal_client_domain(priv_app, vendor_hal_qspmhal)
 
@@ -35,3 +39,8 @@ hal_client_domain(priv_app, vendor_hal_qesdhal)
 # allow priv_app to be a client of DSP HAL
 hal_client_domain(priv_app, vendor_hal_dspmanager)
 
+#allow priv_app to read UWB vendor hal property
+get_prop(priv_app, vendor_uwb_prop)
+
+# allow priv_app to read Proximity properties
+get_prop(priv_app, vendor_proximity_prop)
