@@ -25,9 +25,10 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
 #
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted (subject to the limitations in the
@@ -78,6 +79,7 @@ type vendor_sysfs_kgsl, sysfs_type, fs_type;
 type vendor_sysfs_sd, sysfs_type, fs_type;
 type vendor_sysfs_kgsl_proc, sysfs_type, fs_type;
 type vendor_sysfs_kgsl_shell, sysfs_type, fs_type;
+type vendor_sysfs_kgsl_ctx_pri_req, sysfs_type, fs_type;
 type vendor_hbtp_kernel_sysfs, sysfs_type, fs_type;
 type vendor_sysfs_irqbalance, sysfs_type, fs_type;
 type vendor_sysfs_laser, sysfs_type, fs_type;
@@ -115,6 +117,7 @@ type vendor_sysfs_trusted_touch_enable, sysfs_type, fs_type;
 type vendor_sysfs_trusted_touch_event, sysfs_type, fs_type;
 type vendor_sysfs_trusted_touch_type, sysfs_type, fs_type;
 type vendor_sysfs_mmc_device_type, fs_type, sysfs_type;
+type vendor_sysfs_fdcvs, fs_type, sysfs_type;
 
 # /proc
 type vendor_proc_wifi_dbg, fs_type, proc_type;
@@ -173,6 +176,8 @@ type vendor_persist_audio_file, file_type, vendor_persist_type;
 type vendor_persist_bluetooth_file, file_type, vendor_persist_type;
 type vendor_persist_alarm_file, file_type, vendor_persist_type;
 type vendor_persist_feature_enabler_file, file_type, vendor_persist_type;
+#xtra-daemon files
+type vendor_persist_xtra_file, file_type, vendor_persist_type;
 
 type vendor_qmipriod_data_file, file_type, data_file_type;
 type vendor_ipa_vendor_data_file, file_type, data_file_type;
@@ -195,6 +200,10 @@ type vendor_mbn_data_file, file_type, data_file_type;
 type vendor_firmware_data_file, file_type, data_file_type;
 type vendor_qmcs_file, file_type, vendor_qmcs_file_type;
 allow { vendor_qmcs_file }self:filesystem associate;
+type vendor_soccp_file, file_type, contextmount_type, vendor_file_type;
+allow { vendor_soccp_file }self:filesystem associate;
+type vendor_dcp_file, file_type, contextmount_type, vendor_file_type;
+allow { vendor_dcp_file }self:filesystem associate;
 
 #vendor capability configstore hal
 type vendor_capabilityconfigstore_data_file, file_type, data_file_type;
@@ -216,6 +225,9 @@ type vendor_sysfs_max_chipset_log_size, fs_type, sysfs_type;
 
 #diag sysfs files
 type vendor_sysfs_diag, fs_type, sysfs_type;
+
+#wifi dump in progress sysfs files
+type vendor_sysfs_dump_in_progress, fs_type, sysfs_type;
 
 type vendor_hexagon_halide_file, vendor_file_type, file_type;
 
@@ -295,3 +307,16 @@ type vendor_nicm_data_file, file_type, data_file_type;
 
 #CPSK service
 type vendor_sysfs_cpsk_power, sysfs_type, fs_type;
+
+#Mpam Service
+type vendor_mpam_data_file, file_type, data_file_type;
+type vendor_sysfs_mpam, fs_type, sysfs_type;
+
+until_board_api(202604, `
+    type vendor_sysfs_powercap, fs_type, sysfs_type;
+')
+
+type mnt_vendor_vm_file, file_type;
+
+# for NPU Observer
+type vendor_sysfs_npu_pids_remote_sessions, sysfs_type, fs_type;

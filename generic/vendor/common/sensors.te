@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 # Policy for sensor daemon
 type vendor_sensors, domain;
 type vendor_sensors_exec, exec_type, vendor_file_type, file_type;
@@ -68,3 +72,6 @@ allow vendor_sensors vendor_persist_sensors_file:file create_file_perms;
 
 # Access to wakelock sysfs
 wakelock_use(vendor_sensors)
+
+r_dir_file(vendor_sensors, vendor_sysfs_public);
+allow vendor_sensors sysfs:dir r_dir_perms;

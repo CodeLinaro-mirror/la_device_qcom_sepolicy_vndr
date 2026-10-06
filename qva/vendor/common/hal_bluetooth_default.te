@@ -25,13 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 hal_server_domain(hal_bluetooth_default, vendor_hal_fm)
 hal_server_domain(hal_bluetooth_default, vendor_hal_btconfigstore)
 hal_server_domain(hal_bluetooth_default, vendor_hal_xpanprovider)
+
+#allow hal_bluetooth_default to find hal_thermal
+hal_client_domain(hal_bluetooth_default, hal_thermal)
+
 # hal_bluetooth_default needs  open read on fm_radio_device
 allow hal_bluetooth_default vendor_fm_radio_device:chr_file r_file_perms;
 
@@ -47,8 +51,16 @@ hal_attribute_service(hal_bluetooth, vendor_hal_bttpi_service)
 binder_call(hal_bluetooth, servicemanager)
 
 allow hal_bluetooth_default self:netlink_generic_socket { bind create getattr read setopt write };
+allow hal_bluetooth_default self:netlink_route_socket { nlmsg_read nlmsg_write };
 allow hal_bluetooth_default self:udp_socket create_socket_perms;
 allowxperm hal_bluetooth_default self:udp_socket ioctl { SIOCSIFFLAGS };
 
 # for TCP and UDP sockets
 net_domain(hal_bluetooth_default)
+
+# Allow the BT HAL (hal_bluetooth_default) to act as a client of the
+# PowerStateService so it can register/unregister for hibernate events
+# via IPowerStateService.registerHibernateClient() /
+# IPowerStateService.unregisterHibernateClient().
+hal_client_domain(hal_bluetooth_default, vendor_hal_powerstateservice)
+

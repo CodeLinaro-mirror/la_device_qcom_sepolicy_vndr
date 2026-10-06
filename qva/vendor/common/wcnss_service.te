@@ -24,6 +24,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # allow access to network performance tuner
 unix_socket_connect(vendor_wcnss_service, vendor_wigignpt, vendor_wigignpt)
@@ -45,3 +49,9 @@ allow vendor_wcnss_service vendor_wifi_vendor_wpa_socket:file rw_file_perms;
 binder_call(vendor_wcnss_service,servicemanager)
 # allow vendor_wcnss_service vendor_hal_perf_hwservice:hwservice_manager find
 hal_client_domain(vendor_wcnss_service, vendor_hal_perf)
+allow vendor_wcnss_service vendor_sysfs_dump_in_progress:file { getattr open read write watch };
+allow vendor_wcnss_service vendor_sysfs_dump_in_progress:dir search;
+allow vendor_wcnss_service vendor_wifihal_socket:dir { write remove_name search add_name };
+allow vendor_wcnss_service vendor_wifihal_socket:sock_file { setattr unlink create };
+allow vendor_wcnss_service wpa_data_file:sock_file write;
+allow vendor_wcnss_service hal_wifi_supplicant_default:unix_dgram_socket sendto;

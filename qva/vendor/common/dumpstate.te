@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 # CTS test case  CtsSecurityHostTestCases#testNoBugreportDenials
@@ -41,6 +41,12 @@ allow dumpstate firmware_file:dir getattr;
 allow dumpstate firmware_file:filesystem getattr;
 allow dumpstate vendor_vm_system_file:dir getattr;
 allow dumpstate vendor_vm_system_file:filesystem getattr;
+allow dumpstate vendor_soccp_file:dir getattr;
+allow dumpstate vendor_soccp_file:filesystem getattr;
+allow dumpstate vendor_vm_file:dir getattr;
+allow dumpstate vendor_vm_file:dir getattr;
+allow dumpstate mnt_vendor_vm_file:filesystem getattr;
+allow dumpstate mnt_vendor_vm_file:filesystem getattr;
 dontaudit dumpstate sysfs:file *;
 allow dumpstate debugfs_mmc:dir search;
 

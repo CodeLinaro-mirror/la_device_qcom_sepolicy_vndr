@@ -25,8 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# Changes from Qualcomm Innovation Center,Inc. are provided under the following license:
-# Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ###################################
@@ -57,6 +57,7 @@
 /dev/qmc_dma                          u:object_r:vendor_qmc_dma_device:s0
 /dev/qmc_cma                          u:object_r:vendor_qmc_cma_device:s0
 /dev/q2spiuwb                         u:object_r:vendor_q2spiuwb_device:s0
+/dev/spiuwb                           u:object_r:vendor_spiuwb_device:s0
 /dev/ipa_events                       u:object_r:vendor_ipaevents_device:s0
 
 ###################################
@@ -95,7 +96,7 @@
 /vendor/bin/init\.qti\.ese\.strongbox\.sh                                          u:object_r:vendor_init-qti-ese-strongbox-sh_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service-spu-qti                u:object_r:vendor_hal_keymint_spu_qti_exec:s0
 /vendor/bin/hw/android\.hardware\.weaver-service-spu-qti                           u:object_r:vendor_hal_weaver_spu_qti_exec:s0
-/vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox-nxp         u:object_r:vendor_hal_keymint_strongbox_exec:s0
+/vendor/bin/hw/android\.hardware\.security\.keymint4-service\.strongbox-nxp-qti    u:object_r:vendor_hal_keymint_strongbox_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.strongbox-thales      u:object_r:vendor_hal_keymint_strongbox_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.nxp-qti          u:object_r:vendor_hal_weaver_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.weaver-service\.thales           u:object_r:vendor_hal_weaver_default_exec:s0
@@ -161,6 +162,7 @@
 /(vendor|system/vendor)/bin/ks                                                     u:object_r:vendor_mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mmi                                                    u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/vendor_npu_monitor_observer                            u:object_r:vendor_npu_monitor_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.[0-1]-service     u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory-service              u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.[0-2]-service u:object_r:vendor_hal_srvctracker_default_exec:s0
@@ -192,6 +194,8 @@
 /vendor/bin/trusteduilistener                                                      u:object_r:vendor_trusteduilistener_exec:s0
 /vendor/bin/modemManager                                                           u:object_r:vendor_modem_manager_exec:s0
 /vendor/bin/qsap_dcfd                                                              u:object_r:vendor_dcfd_exec:s0
+/vendor/bin/vendor\.qti\.qvirtvendor-service                                       u:object_r:vendor_hal_qvirtvendor_default_exec:s0
+/vendor/bin/vendor\.qti\.qtvm\.proxyclient-service                                u:object_r:vendor_qvirt_proxyclient_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
@@ -210,6 +214,8 @@
 #hvdcp
 /vendor/bin/hvdcp_opti                                                             u:object_r:vendor_hvdcp_exec:s0
 /vendor/bin/init.qti.chg_policy.sh                                                 u:object_r:vendor_qti_init_shell_exec:s0
+
+/(vendor|system/vendor)/bin/init\.qcom\.avf\.sh                                    u:object_r:vendor_qti_init_shell_exec:s0
 
 #battery_stats
 /vendor/bin/battery_stats                                           u:object_r:vendor_battery_stats_exec:s0
@@ -230,6 +236,7 @@
 /data/vendor/qwes(/.*)?                                             u:object_r:vendor_qwes_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/hexlp(/.*)?                                            u:object_r:vendor_hexlp_data_file:s0
+/data/vendor/hexlp_unsigned(/.*)?                                   u:object_r:vendor_unsignedhexlp_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:vendor_wigig_hostapd_socket:s0
 /data/vendor/lm(/.*)?                                               u:object_r:vendor_lm_data_file:s0
 /data/vendor/secure_element(/.*)?                                   u:object_r:vendor_secure_element_vendor_data_file:s0
@@ -296,3 +303,6 @@
 
 #UWB persist files
 /mnt/vendor/persist/uwb(/.*)?    u:object_r:vendor_persist_uwb_file:s0
+
+#Tx powerboost files
+/data/vendor/tx_powerboost(/.*)?       u:object_r:vendor_wifi_tx_powerboost_file:s0

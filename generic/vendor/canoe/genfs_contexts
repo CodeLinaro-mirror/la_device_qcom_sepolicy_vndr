@@ -25,9 +25,8 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-#Changes from Qualcomm Innovation Center are provided under the following license:
-#
-#Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+#Changes from Qualcomm Technologies, Inc. are provided under the following license:
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #subsys nodes (varying hardware layouts; can optimize for specific hw variant)
@@ -288,3 +287,11 @@ genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup38 u:object_r:sys
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp/wakeup37 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-cdsp-secure/wakeup38 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup40 u:object_r:sysfs_wakeup:s0
+
+# sys net
+genfscon sysfs /devices/platform/soc/17010040.qcom,wcn7750/net/ u:object_r:sysfs_net:s0
+
+#fdcvs nodes
+genfscon sysfs /devices/platform/soc/soc:qcom,fdcvs/profile_enable u:object_r:vendor_sysfs_fdcvs:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,fdcvs/profile_index u:object_r:vendor_sysfs_fdcvs:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,fdcvs/start_tuning u:object_r:vendor_sysfs_fdcvs:s0

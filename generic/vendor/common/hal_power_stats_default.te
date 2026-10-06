@@ -1,0 +1,8 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+# This is required for powercap sysfs access
+until_board_api(202604, `
+    allow hal_power_stats_default vendor_sysfs_powercap:dir r_dir_perms;
+    allow hal_power_stats_default vendor_sysfs_powercap:file r_file_perms;
+')
