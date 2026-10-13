@@ -21,3 +21,6 @@ genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,
 
 # uart wakeup node
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a84000.serial/wakeup u:object_r:sysfs_wakeup:s0
+
+# mdss_mdp wakeup node
+genfscon sysfs /devices/platform/soc/9800000.qcom,mdss_mdp/wakeup u:object_r:sysfs_wakeup:s0
