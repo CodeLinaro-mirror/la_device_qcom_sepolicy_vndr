@@ -61,6 +61,8 @@ dontaudit init kernel:system module_request;
 
 allow init sysfs_leds:lnk_file r_file_perms;
 
+userdebug_or_eng(`allow init debugfs_mmc:file setattr;')
+
 allow init socket_device:sock_file create_file_perms;
 
 #Needed for restorecon. Init already has these permissions
