@@ -42,3 +42,5 @@ vendor_internal_prop(vendor_secca_prop);
 
 #WFD
 vendor_internal_prop(vendor_wfd_prop)
+
+vendor_internal_prop(vendor_camera_aec_als_prop)

@@ -8,3 +8,6 @@ typeattribute hal_camera_default hal_audio_client;
 allow hal_camera_default vendor_aid_audio_device:chr_file rw_file_perms;
 allow hal_camera_default audio_device:dir r_dir_perms;
 get_prop(hal_camera_default, vendor_audio_prop)
+
+# Allow camera AEC code to read its vendor IR/ALS configuration.
+get_prop(hal_camera_default, vendor_camera_aec_als_prop)

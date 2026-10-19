@@ -47,3 +47,6 @@ vendor.secca.service                         u:object_r:vendor_secca_prop:s0
 
 #WFD
 vendor.qti.wfd.                              u:object_r:vendor_wfd_prop:s0
+
+# Camera AEC IR/ALS property
+persist.vendor.aec.ir_demo_als                 u:object_r:vendor_camera_aec_als_prop:s0 exact string
