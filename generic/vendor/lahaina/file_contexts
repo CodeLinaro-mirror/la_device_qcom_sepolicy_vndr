@@ -95,6 +95,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/qupfw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/qweslicstore_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/rpm_[ab]              u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/secretkeeper_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/shrm_[ab]             u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/system_[ab]           u:object_r:system_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/tz_[ab]               u:object_r:vendor_custom_ab_block_device:s0
@@ -210,6 +211,10 @@
 
 /sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/188101c.remoteproc-spss/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+
+#secondary usb reboot
+/sys/devices/platform/soc/8c00000.hsusb/8c00000.dwc3(/.*)? u:object_r:audio_sysfs_usb_controller:s0
+/sys/devices/platform/soc/a600000.ssusb/a600000.dwc3(/.*)? u:object_r:audio_sysfs_usb_controller:s0
 
 # hdmi device
 /dev/hdmi_bdg_irq_handler             u:object_r:vendor_hdmi_bdg_irq_device:s0
