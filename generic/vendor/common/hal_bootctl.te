@@ -54,6 +54,8 @@ allow hal_bootctl vendor_mdtp_device:blk_file getattr;
 allow hal_bootctl_server misc_block_device:blk_file rw_file_perms;
 allow hal_bootctl_default vendor_uefi_block_device:blk_file getattr;
 
+allow hal_bootctl_default vendor_swap_block_device:blk_file getattr;
+
 # Access /dev/sgN or /dev/ufs-bsg* devices (generic SCSI) to write the
 # A/B slot selection for the XBL partition. Allow also to issue a
 # UFS_IOCTL_QUERY or SG_IO ioctl.
