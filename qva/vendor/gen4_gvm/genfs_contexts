@@ -18,6 +18,7 @@ genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio27/net u:object
 genfscon sysfs /devices/platform/vdevs/1b018000.virtio_net/virtio28/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/2801a000.virtio-mmio/virtio16/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/28019000.virtio-mmio/virtio17/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/28019000.virtio-mmio/virtio18/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/3001a000.virtio-mmio/virtio14/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/30019000.virtio-mmio/virtio15/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/23049000.qcom,ethernet/net u:object_r:sysfs_net:s0
@@ -28,6 +29,7 @@ genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio26/net u:object_r
 genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio24/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio29/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/vdevs/1b018000.ethernet/virtio27/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/2801a000.virtio-mmio/virtio17/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/3001a000.virtio-mmio/virtio13/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/30019000.virtio-mmio/virtio14/net u:object_r:sysfs_net:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp-0-0/extcon/ u:object_r:vendor_sysfs_graphics:s0
