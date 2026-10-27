@@ -120,3 +120,5 @@ genfscon sysfs /devices/platform/soc/6048000.tmc/tmc_etr0 u:object_r:vendor_sysf
 genfscon sysfs /devices/platform/soc/soc:dummy_source/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/6002000.stm/stm0 u:object_r:vendor_sysfs_qdss_dev:s0
 genfscon sysfs /devices/platform/soc/soc:modem_diag/modem_diag u:object_r:vendor_sysfs_qdss_dev:s0
+
+genfscon sysfs /devices/virtual/hdcp/msm_hdcp/min_level_change                 u:object_r:vendor_sysfs_hdcp:s0

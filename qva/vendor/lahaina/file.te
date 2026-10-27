@@ -40,3 +40,5 @@ type sysfs_discard_max_bytes, sysfs_type, fs_type;
 
 # sysfs node for remoteproc ADSP state
 type vendor_sysfs_remoteproc_adsp_state, fs_type, sysfs_type;
+
+type vendor_sysfs_hdcp, fs_type, sysfs_type;

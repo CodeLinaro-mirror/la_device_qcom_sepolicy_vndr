@@ -1,0 +1,4 @@
+#Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+#SPDX-License-Identifier: BSD-3-Clause-Clear
+
+allow vendor_hal_perf_default sysfs_wake_lock:file r_file_perms;
