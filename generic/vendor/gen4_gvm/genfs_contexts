@@ -2,6 +2,9 @@
 #SPDX-License-Identifier: BSD-3-Clause-Clear
 
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:vendor_sysfs_usb_controller:s0
+genfscon sysfs /devices/platform/soc/a400000.ssusb/a400000.dwc3/xhci-hcd.1.auto/usb1/authorized u:object_r:sysfs_usb:s0
+genfscon sysfs /devices/platform/soc/a400000.ssusb/a400000.dwc3/xhci-hcd.1.auto/usb2/authorized u:object_r:sysfs_usb:s0
+genfscon sysfs /devices/platform/soc/a200000.hsusb/a200000.dwc3/udc/a200000.dwc3/state u:object_r:sysfs_udc:s0
 
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
