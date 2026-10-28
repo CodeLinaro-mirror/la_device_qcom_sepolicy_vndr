@@ -25,8 +25,14 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# Changes from Qualcomm Technologies, Inc. are provided under the following license:
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
 # Allow vendor_qti_init_shell to set vendor_pasr_prop
 set_prop(vendor_qti_init_shell, vendor_pasr_prop)
 
 # Allow vendor_qti_init_shell to update ADSP remoteproc state
 allow vendor_qti_init_shell vendor_sysfs_remoteproc_adsp_state:file { open write getattr };
+
+allow vendor_qti_init_shell rtc_device:chr_file getattr;
