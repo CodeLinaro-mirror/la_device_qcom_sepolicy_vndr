@@ -202,6 +202,18 @@
 /dev/block/platform/soc/4784000.sdhci/by-name/persist                            u:object_r:vendor_persist_block_device:s0
 /dev/block/platform/soc/4784000.sdhci/by-name/super                              u:object_r:super_block_device:s0
 
+#SD-Card A/B partition for OTA
+/dev/block/platform/soc/4784000.sdhci/by-name/init_boot_[ab]        u:object_r:boot_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/multiimgqti_[ab]      u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/qweslicstore_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/pvmfw_[ab]            u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/qtvm_dtbo_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/secretkeeper_[ab]     u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/shrm_[ab]             u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/uefi_[ab]             u:object_r:vendor_uefi_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/uefi_dtb_[ab]         u:object_r:vendor_uefi_block_device:s0
+/dev/block/platform/soc/4784000.sdhci/by-name/vm-bootsys_[ab]       u:object_r:vendor_custom_ab_block_device:s0
+
 # hypervisor node
 /dev/hh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
 /dev/gh_virtio.*                                                     u:object_r:vendor_virtio_chr_device:s0
