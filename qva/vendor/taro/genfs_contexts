@@ -44,3 +44,13 @@ genfscon sysfs /devices/platform/soc/3000000.remoteproc-adsp/remoteproc/remotepr
 genfscon sysfs /devices/virtual/misc/fastrpc-adsp-secure/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c08000.pcie/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/power_supply/ucsi-source-psy-soc:qcom,pmic_glink:qcom,ucsi1/wakeup u:object_r:sysfs_wakeup:s0
+
+#remoteproc under ssr sysfs
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc0/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc1/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc1/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc2/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc3/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/8a00000.remoteproc-wpss/remoteproc/remoteproc3/recovery u:object_r:vendor_sysfs_ssr_toggle:s0
