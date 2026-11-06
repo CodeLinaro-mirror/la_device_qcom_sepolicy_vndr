@@ -11,3 +11,14 @@ set_prop(hal_gpt_updater_service, powerctl_prop);
 #For UFS device
 allow hal_gpt_updater_service vendor_rawdump_block_device:blk_file getattr;
 allow hal_gpt_updater_service block_device:blk_file getattr;
+
+# Needed for ReadDefaultFstab (libboot_control/libfstab, statically linked
+# into vendor.qti.gptupdater@1.1-impl).
+allow hal_gpt_updater_service sysfs_dt_firmware_android:dir search;
+allow hal_gpt_updater_service sysfs_dt_firmware_android:file r_file_perms;
+dontaudit hal_gpt_updater_service proc_cmdline:file r_file_perms;
+
+# ReadDefaultFstab looks for /metadata/gsi/booted. We don't care about getting
+# a GSI-corrected fstab.
+dontaudit hal_gpt_updater_service metadata_file:dir search;
+
