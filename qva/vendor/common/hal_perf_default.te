@@ -194,7 +194,7 @@ allow vendor_hal_perf_default self:capability ipc_lock;
 #allow dolphin to register callback for TargetFPS.
 binder_call(vendor_hal_perf_default, surfaceflinger)
 
-dontaudit vendor_hal_perf_default self:capability dac_override;
+dontaudit vendor_hal_perf_default self:capability { dac_override net_admin };
 dontaudit vendor_hal_perf_default system_server:dir search;
 dontaudit vendor_hal_perf_default { domain - appdomain }:process { getsched setsched };
 
@@ -206,3 +206,6 @@ get_prop(vendor_hal_perf_default, vendor_soc_name_prop);
 
 #allow perfhal to read boot complete prop
 get_prop(vendor_hal_perf_default, boot_status_prop);
+
+#allow perfhal to write THP sysnode
+allow vendor_hal_perf_default sysfs_transparent_hugepage:file w_file_perms;
